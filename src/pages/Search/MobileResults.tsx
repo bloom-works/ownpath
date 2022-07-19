@@ -10,7 +10,7 @@ import ResultCard from "../../components/Search/ResultCard";
 import ResultsList from "../../components/Search/ResultsList";
 import ResultsMap from "../../components/Search/ResultsMap";
 import { CareProviderSearchResult } from "../../types";
-import { getResultBounds } from "../../util";
+import { getResultBounds } from "../../utils";
 import { ReactComponent as Close } from "../../images/close.svg";
 
 const T_PREFIX = "pages.search.";

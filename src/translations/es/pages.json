@@ -97,6 +97,24 @@
         "someone": "Estoy buscando ayuda para un ser querido"
       }
     },
+    "ageGroup": {
+      "yourself": {
+        "question": "Selecciona la categoría de tu edad para que podamos encontrar el tipo adecuado de recurso para ti: ",
+        "answers": {
+          "under_18": "Menores de 18 años",
+          "adult": "Un joven o adulto (18-64 años)",
+          "older_adult": "Un adulto mayor (más de 65 años)"
+        }
+      },
+      "someone": {
+        "question": "Estoy buscando ayuda para alguien que es: ",
+        "answers": {
+          "under_18": "Menores de 18 años",
+          "adult": "Un joven o adulto (18-64 años)",
+          "older_adult": "Un adulto mayor (más de 65 años)"
+        }
+      }
+    },
     "typeOfHelp": {
       "yourself": {
         "question": "Por favor selecciona las frases que mejor describen el tipo de ayuda que estás buscando.",
@@ -122,24 +140,25 @@
       }
     },
     "languages": {
-      "question": "¿Cuál es tu idioma preferido?"
-    },
-    "feesPreference": {
-      "question": "¿Cómo prefiere usted, o la persona a la que cuida, pagar los cuidados?",
-      "answers": {
-        "Medicaid": "Medicaid",
-        "PrivateInsurance": "Seguro privado",
-        "SlidingFeeScale": "Opciones de pago según ingresos",
-        "SelfPay": "Pago directo/por cuenta propia",
-        "DontKnow": "No puedo pagar / No lo sé."
+      "yourself": {
+        "question": "Quiero obtener ayuda en…"
+      },
+      "someone": {
+        "question": "Mi ser querido quiere obtener ayuda en..."
       }
     },
     "location": {
       "question": "¿En dónde estás buscando servicios?"
     },
     "distance": {
-      "distance": "¿Qué tan lejos podrías transportarte, o podría transportarse tu ser querido, para obtener servicios?",
-      "withinMiles": "Máximo {{n}} millas"
+      "yourself": {
+        "distance": "¿Qué tan lejos puedes trasladarte para obtener ayuda?",
+        "withinMiles": "Máximo {{n}} millas"
+      },
+      "someone": {
+        "distance": "¿Qué tan lejos puede trasladarse tu ser querido para obtener ayuda?",
+        "withinMiles": "Máximo {{n}} millas"
+      }
     }
   },
   "whoops": {

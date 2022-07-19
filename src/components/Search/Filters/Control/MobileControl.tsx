@@ -14,6 +14,7 @@ import {
   getFiltersWithOptionalCleared,
 } from "./utils";
 import { ReactComponent as Filter } from "../../../../images/filter.svg";
+import AgeGroupInput from "../AgeGroupInput";
 
 const T_PREFIX = "components.search.";
 
@@ -123,6 +124,13 @@ function MobileControl({ filters, setFilters }: MobileControlProps) {
               filters={controlFilters}
               setFilters={setControlFilters}
               tPrefix={`${T_PREFIX}filters.languages.`}
+            />
+          </div>
+          <div className="margin-y-3">
+            <AgeGroupInput
+              filters={controlFilters}
+              setFilters={setControlFilters}
+              tPrefix={`${T_PREFIX}filters.ageGroup.`}
             />
           </div>
           <Button type="submit" className="usa-button">

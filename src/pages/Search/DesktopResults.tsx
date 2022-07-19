@@ -7,7 +7,7 @@ import { markerActiveIcon, markerIcon } from "../../components/Map";
 import ResultsList from "../../components/Search/ResultsList";
 import ResultsMap from "../../components/Search/ResultsMap";
 import { CareProviderSearchResult } from "../../types";
-import { getResultBounds } from "../../util";
+import { getResultBounds } from "../../utils";
 
 /**
  * The side-by-side list + map view for desktop or tablet,

@@ -5,10 +5,10 @@ import { useTranslation } from "react-i18next";
 import { useSearchParams, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import {
-  getMatchingCare,
+  applySearchFilters,
   getFiltersFromSearchParams,
   MILE_DISTANCE_OPTIONS,
-} from "../../util";
+} from "../../utils";
 import CARE_PROVIDER_DATA from "../../data/ladders_data.json";
 import { CareProvider, SearchFilters, SearchResult } from "../../types";
 import DesktopControl from "../../components/Search/Filters/Control/DesktopControl";
@@ -52,7 +52,7 @@ function Search() {
   const navigate = useNavigate();
 
   const performSearch = (filters: SearchFilters) => {
-    const result = getMatchingCare(
+    const result = applySearchFilters(
       CARE_PROVIDER_DATA as CareProvider[],
       filters
     );

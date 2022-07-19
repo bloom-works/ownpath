@@ -1,6 +1,5 @@
 import {
   Button,
-  ErrorMessage,
   Fieldset,
   Form,
   GridContainer,
@@ -16,20 +15,20 @@ import HelpRecipientInput, {
 } from "../components/GuidedSearch/HelpRecipientInput";
 import ZipInput from "../components/ZipInput";
 import DistanceInput from "../components/Search/Filters/DistanceInput";
-import FeePreferenceInput from "../components/Search/Filters/FeePreferenceInput";
 import LanguageInput from "../components/Search/Filters/LanguageInput";
 import TypeOfHelpInput from "../components/Search/Filters/TypeOfHelpInput";
+import AgeGroupInput from "../components/Search/Filters/AgeGroupInput";
 import { SearchFilters, TypeOfHelp } from "../types";
-import { EMPTY_SEARCH_FILTERS, getZipSearchMetadata } from "../util";
+import { EMPTY_SEARCH_FILTERS, getZipSearchMetadata } from "../utils";
 
 const GUIDED_SEARCH_STEPS = [
   "helpRecipient",
+  "ageGroup",
   "typeOfHelp",
   "language",
-  "feePreference",
   "location",
   "distance",
-];
+] as const;
 
 const getStepStatus = (thisIdx: number, currentStepIdx: number) => {
   if (thisIdx === currentStepIdx) return "current";
@@ -132,6 +131,12 @@ function GuidedSearch() {
               helpRecipient={helpRecipient}
               setHelpRecipient={setHelpRecipient}
             />
+          ) : currentStep === "ageGroup" ? (
+            <AgeGroupInput
+              filters={searchFilters}
+              setFilters={setSearchFilters}
+              tPrefix={`${T_PREFIX}ageGroup.${helpRecipient}.`}
+            />
           ) : currentStep === "typeOfHelp" ? (
             <TypeOfHelpInput
               filters={searchFilters}
@@ -150,20 +155,7 @@ function GuidedSearch() {
             <LanguageInput
               filters={searchFilters}
               setFilters={setSearchFilters}
-              tPrefix={`${T_PREFIX}languages.`}
-            />
-          ) : currentStep === "feePreference" ? (
-            <FeePreferenceInput
-              options={[
-                "SelfPay",
-                "PrivateInsurance",
-                "Medicaid",
-                "SlidingFeeScale",
-                "DontKnow",
-              ]}
-              filters={searchFilters}
-              setFilters={setSearchFilters}
-              tPrefix={`${T_PREFIX}feesPreference.`}
+              tPrefix={`${T_PREFIX}languages.${helpRecipient}.`}
             />
           ) : currentStep === "location" ? (
             <>
@@ -183,7 +175,7 @@ function GuidedSearch() {
             <DistanceInput
               filters={searchFilters}
               setFilters={setSearchFilters}
-              tPrefix={`${T_PREFIX}distance.`}
+              tPrefix={`${T_PREFIX}distance.${helpRecipient}.`}
             />
           ) : (
             <></>

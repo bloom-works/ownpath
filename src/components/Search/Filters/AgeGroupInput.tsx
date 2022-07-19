@@ -2,34 +2,33 @@ import { Fieldset } from "@trussworks/react-uswds";
 import { Dispatch, SetStateAction } from "react";
 import { useTranslation } from "react-i18next";
 import { AnalyticsAction, logEvent } from "../../../analytics";
-import { DayOfWeek, DAYS_OF_THE_WEEK, SearchFilters } from "../../../types";
-import { toggleItemInList } from "../../../utils";
-import FilterCheckbox from "./FilterCheckbox";
+import { SearchFilters, AgeGroup } from "../../../types";
+import FilterRadio from "./FilterRadio";
 
-type HoursInputProps = {
+type AgeGroupInputProps = {
   hideLegend?: boolean;
   filters: SearchFilters;
   setFilters: Dispatch<SetStateAction<SearchFilters>>;
   tPrefix: string;
 };
 
-function HoursInput({
-  hideLegend = false,
+function AgeGroupInput({
+  hideLegend,
   filters,
   setFilters,
   tPrefix,
-}: HoursInputProps) {
+}: AgeGroupInputProps) {
   const { t } = useTranslation();
-
-  const setHoursFilter = (day: DayOfWeek) => {
+  const setAgeFilter = (age: AgeGroup) => {
     logEvent(AnalyticsAction.UpdateFilter, {
-      label: "hours",
-      filter_type: "hours",
-      filter_value: day,
+      label: "age group",
+      filter_type: "age group",
+      filter_value: age,
     });
+
     setFilters({
       ...filters,
-      hours: toggleItemInList(filters.hours, day),
+      age,
     });
   };
 
@@ -38,13 +37,13 @@ function HoursInput({
       legend={t(`${tPrefix}question`)}
       legendStyle={hideLegend ? "srOnly" : "large"}
     >
-      {DAYS_OF_THE_WEEK.map((option) => (
-        <FilterCheckbox
-          name="hours"
+      {[AgeGroup.Under18, AgeGroup.Adult, AgeGroup.OlderAdult].map((option) => (
+        <FilterRadio
+          name="age"
           value={option}
-          tPrefix={"common.daysOfWeek."}
-          selectedFilterValues={filters.hours}
-          onChange={() => setHoursFilter(option)}
+          label={t(`${tPrefix}answers.${option}`)}
+          selected={filters.age === option}
+          onChange={() => setAgeFilter(option)}
           key={option}
         />
       ))}
@@ -52,4 +51,4 @@ function HoursInput({
   );
 }
 
-export default HoursInput;
+export default AgeGroupInput;

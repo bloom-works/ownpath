@@ -1,7 +1,6 @@
-import { Button, Fieldset, Grid } from "@trussworks/react-uswds";
+import { Grid } from "@trussworks/react-uswds";
 import { useTranslation } from "react-i18next";
-import { Dispatch, SetStateAction, useEffect, useState } from "react";
-import styled from "styled-components";
+import { Dispatch, SetStateAction, useState } from "react";
 import { SearchFilters, TypeOfHelp } from "../../../../types";
 import DesktopControlDropdown from "./DesktopControlDropdown";
 import FeePreferenceInput from "../FeePreferenceInput";
@@ -11,6 +10,7 @@ import TypeOfHelpInput from "../TypeOfHelpInput";
 import AccessibilityInput from "../AccessibilityInput";
 import DistanceInput from "../DistanceInput";
 import ControlToggles from "./DesktopControlToggles";
+import AgeGroupInput from "../AgeGroupInput";
 
 type DesktopControlProps = {
   filters: SearchFilters;
@@ -104,6 +104,17 @@ function DesktopControl({ filters, setFilters }: DesktopControlProps) {
               setFilters(filters);
             }}
             tPrefix="components.search.filters.distance."
+          />
+        </DesktopControlDropdown>
+        <DesktopControlDropdown
+          title={t("components.search.filters.ageGroup.question")}
+          hasSelection={!!filters.age}
+        >
+          <AgeGroupInput
+            hideLegend
+            filters={filters}
+            setFilters={setFilters}
+            tPrefix="components.search.filters.ageGroup."
           />
         </DesktopControlDropdown>
       </Grid>

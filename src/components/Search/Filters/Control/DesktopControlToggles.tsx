@@ -1,7 +1,10 @@
 import { Button, Grid } from "@trussworks/react-uswds";
 import { useSearchParams } from "react-router-dom";
 import { SearchFilters } from "../../../../types";
-import { getFiltersFromSearchParams, toggleItemInList } from "../../../../util";
+import {
+  getFiltersFromSearchParams,
+  toggleItemInList,
+} from "../../../../utils";
 import { ReactComponent as Close } from "../../../../images/close.svg";
 import { useTranslation } from "react-i18next";
 import { Dispatch, SetStateAction } from "react";
@@ -106,6 +109,17 @@ function ControlToggles({ setFilters }: ControlTogglesProps) {
           }
         />
       ))}
+      {!!filters.age && (
+        <DesktopControlToggle
+          key="age"
+          name={t(`components.search.filters.ageGroup.answers.${filters.age}`)}
+          onClick={() => {
+            const updatedFilters = { ...filters };
+            delete updatedFilters.age;
+            setFilters(updatedFilters);
+          }}
+        />
+      )}
       <Button
         unstyled
         className="width-auto"

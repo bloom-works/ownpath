@@ -11,7 +11,7 @@ import ResultDatum from "./ResultDatum";
 import Hours from "./Hours";
 
 import { CareProvider } from "../../types";
-import { anyAreTrue } from "../../util";
+import { anyAreTrue } from "../../utils";
 import CommaSeparatedList from "../CommaSeparatedList";
 import WebsiteLink from "./WebsiteLink";
 import { Fragment } from "react";

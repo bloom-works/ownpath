@@ -1,7 +1,11 @@
+import { text } from "node:stream/consumers";
+import { textSpanContainsPosition } from "typescript";
 import {
   AccessibilityOptions,
   ACCESSIBILITY_OPTIONS,
+  AgeGroup,
   CareProvider,
+  CareProviderSearchResult,
   DailyHours,
   DayOfWeek,
   FeePreference,
@@ -21,7 +25,7 @@ import {
   addSearchMetadata,
   isWithinRadius,
   compareDistance,
-  getMatchingCare,
+  applySearchFilters,
   EMPTY_SEARCH_FILTERS,
   getZipSearchMetadata,
   DEFAULT_DENSE_RADIUS_MILES,
@@ -32,7 +36,8 @@ import {
   isOpenOnSelectedDays,
   supportsLanguages,
   DEFAULT_SPARSE_RADIUS_MILES,
-} from "./util";
+  servesAgeGroup,
+} from "./utils";
 
 const DUMMY_CARE_PROVIDER: CareProvider = {
   id: "1",
@@ -155,10 +160,10 @@ describe("compareDistance", () => {
   });
 });
 
-describe("getMatchingCare", () => {
+describe("applySearchFilters", () => {
   describe("bad zip", () => {
     test("it returns no results if provided zip is not valid - length < 5", () => {
-      const { results } = getMatchingCare([DUMMY_CARE_PROVIDER], {
+      const { results } = applySearchFilters([DUMMY_CARE_PROVIDER], {
         ...EMPTY_SEARCH_FILTERS,
         zip: INVALID_ZIP,
         miles: `${DEFAULT_RADIUS_MILES}`,
@@ -167,7 +172,7 @@ describe("getMatchingCare", () => {
     });
 
     test("it returns no results if provided zip is not valid - not in CO list", () => {
-      const { results } = getMatchingCare([DUMMY_CARE_PROVIDER], {
+      const { results } = applySearchFilters([DUMMY_CARE_PROVIDER], {
         ...EMPTY_SEARCH_FILTERS,
         zip: VALID_NOT_CO_ZIP,
         miles: `${DEFAULT_RADIUS_MILES}`,
@@ -199,7 +204,7 @@ describe("getMatchingCare", () => {
       },
     ];
 
-    const { results } = getMatchingCare(DATA, {
+    const { results } = applySearchFilters(DATA, {
       ...EMPTY_SEARCH_FILTERS,
       zip: VALID_CO_ZIP,
       miles: `${DEFAULT_RADIUS_MILES}`,
@@ -419,5 +424,91 @@ describe("supportsLanguages", () => {
       true
     );
     expect(supportsLanguages(spanishProvider, ["Mandarin"])).toEqual(false);
+  });
+});
+
+describe("servesAgeGroup", () => {
+  test("true if age is null", () => {
+    expect(servesAgeGroup(DUMMY_CARE_PROVIDER, null)).toEqual(true);
+  });
+
+  const servesYouth: CareProviderSearchResult = {
+    ...DUMMY_CARE_PROVIDER,
+    populationsServed: {
+      ...DUMMY_CARE_PROVIDER.populationsServed,
+      Youth: true,
+    },
+  };
+  const servesMinors: CareProviderSearchResult = {
+    ...DUMMY_CARE_PROVIDER,
+    populationsServed: {
+      ...DUMMY_CARE_PROVIDER.populationsServed,
+      "Minors/Adolescents": true,
+    },
+  };
+
+  const servesBoth: CareProviderSearchResult = {
+    ...DUMMY_CARE_PROVIDER,
+    populationsServed: {
+      ...DUMMY_CARE_PROVIDER.populationsServed,
+      Youth: true,
+      "Minors/Adolescents": true,
+    },
+  };
+  const servesOlderAdults: CareProviderSearchResult = {
+    ...DUMMY_CARE_PROVIDER,
+    populationsServed: {
+      ...DUMMY_CARE_PROVIDER.populationsServed,
+      OlderAdults: true,
+    },
+  };
+
+  const servesOtherPops: CareProviderSearchResult = {
+    ...DUMMY_CARE_PROVIDER,
+    populationsServed: {
+      ...DUMMY_CARE_PROVIDER.populationsServed,
+      Women: true,
+      Homeless: true,
+    },
+  };
+
+  const servesOtherPopsAndUnder18: CareProviderSearchResult = {
+    ...DUMMY_CARE_PROVIDER,
+    populationsServed: {
+      ...DUMMY_CARE_PROVIDER.populationsServed,
+      Women: true,
+      Homeless: true,
+    },
+  };
+  test("true if Under18 selected and youth and/or minors served", () => {
+    expect(servesAgeGroup(servesMinors, AgeGroup.Under18)).toEqual(true);
+    expect(servesAgeGroup(servesYouth, AgeGroup.Under18)).toEqual(true);
+    expect(servesAgeGroup(servesBoth, AgeGroup.Under18)).toEqual(true);
+
+    expect(servesAgeGroup(DUMMY_CARE_PROVIDER, AgeGroup.Under18)).toEqual(
+      false
+    );
+  });
+
+  test("true if OlderAdult selected and older adults served", () => {
+    expect(servesAgeGroup(servesOlderAdults, AgeGroup.OlderAdult)).toEqual(
+      true
+    );
+    expect(servesAgeGroup(DUMMY_CARE_PROVIDER, AgeGroup.OlderAdult)).toEqual(
+      false
+    );
+  });
+
+  test("true if Adult selected and does not serve any populations", () => {
+    expect(servesAgeGroup(DUMMY_CARE_PROVIDER, AgeGroup.Adult)).toEqual(true);
+  });
+  test("true if Adult selected and anything other than ONLY youth/minor or ONLY older adult served", () => {
+    expect(servesAgeGroup(servesOtherPops, AgeGroup.Adult)).toEqual(true);
+    expect(servesAgeGroup(servesOtherPopsAndUnder18, AgeGroup.Adult)).toEqual(
+      true
+    );
+
+    expect(servesAgeGroup(servesBoth, AgeGroup.Adult)).toEqual(false);
+    expect(servesAgeGroup(servesOlderAdults, AgeGroup.Adult)).toEqual(false);
   });
 });

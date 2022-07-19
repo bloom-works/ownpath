@@ -27,6 +27,14 @@
         "distance": "Distancia",
         "withinMiles": "Máximo {{n}} millas"
       },
+      "ageGroup": {
+        "question": "Rango de edad",
+        "answers": {
+          "under_18": "Menores de 18 años",
+          "adult": "Un joven o adulto (18-64 años)",
+          "older_adult": "Un adulto mayor (más de 65 años)"
+        }
+      },
       "typeOfHelp": {
         "question": "Tipo de ayuda",
         "answers": {
