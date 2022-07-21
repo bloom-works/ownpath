@@ -1,0 +1,4664 @@
+{
+  "80002": {
+    "PO_NAME": "Arvada",
+    "STATE": "CO",
+    "POPULATION": 18800,
+    "POP_SQMI": 3286.71,
+    "SQMI": 5.72,
+    "centroid_lon": -105.1043873,
+    "centroid_lat": 39.7951653
+  },
+  "80003": {
+    "PO_NAME": "Arvada",
+    "STATE": "CO",
+    "POPULATION": 34962,
+    "POP_SQMI": 5345.87,
+    "SQMI": 6.54,
+    "centroid_lon": -105.0642475,
+    "centroid_lat": 39.82676518
+  },
+  "80004": {
+    "PO_NAME": "Arvada",
+    "STATE": "CO",
+    "POPULATION": 36280,
+    "POP_SQMI": 4645.33,
+    "SQMI": 7.81,
+    "centroid_lon": -105.1236378,
+    "centroid_lat": 39.81449798
+  },
+  "80005": {
+    "PO_NAME": "Arvada",
+    "STATE": "CO",
+    "POPULATION": 29534,
+    "POP_SQMI": 2522.12,
+    "SQMI": 11.71,
+    "centroid_lon": -105.127755,
+    "centroid_lat": 39.84790953
+  },
+  "80007": {
+    "PO_NAME": "Arvada",
+    "STATE": "CO",
+    "POPULATION": 16899,
+    "POP_SQMI": 813.23,
+    "SQMI": 20.78,
+    "centroid_lon": -105.1978385,
+    "centroid_lat": 39.857041
+  },
+  "80010": {
+    "PO_NAME": "Aurora",
+    "STATE": "CO",
+    "POPULATION": 43863,
+    "POP_SQMI": 8183.4,
+    "SQMI": 5.36,
+    "centroid_lon": -104.8626703,
+    "centroid_lat": 39.74009707
+  },
+  "80011": {
+    "PO_NAME": "Aurora",
+    "STATE": "CO",
+    "POPULATION": 52198,
+    "POP_SQMI": 2198.74,
+    "SQMI": 23.74,
+    "centroid_lon": -104.7862874,
+    "centroid_lat": 39.73801508
+  },
+  "80012": {
+    "PO_NAME": "Aurora",
+    "STATE": "CO",
+    "POPULATION": 51243,
+    "POP_SQMI": 7097.37,
+    "SQMI": 7.22,
+    "centroid_lon": -104.8378605,
+    "centroid_lat": 39.69975154
+  },
+  "80013": {
+    "PO_NAME": "Aurora",
+    "STATE": "CO",
+    "POPULATION": 71382,
+    "POP_SQMI": 5076.96,
+    "SQMI": 14.06,
+    "centroid_lon": -104.7658488,
+    "centroid_lat": 39.66143007
+  },
+  "80014": {
+    "PO_NAME": "Aurora",
+    "STATE": "CO",
+    "POPULATION": 41640,
+    "POP_SQMI": 4769.76,
+    "SQMI": 8.73,
+    "centroid_lon": -104.8373798,
+    "centroid_lat": 39.66079283
+  },
+  "80015": {
+    "PO_NAME": "Aurora",
+    "STATE": "CO",
+    "POPULATION": 71009,
+    "POP_SQMI": 5617.8,
+    "SQMI": 12.64,
+    "centroid_lon": -104.7710395,
+    "centroid_lat": 39.62343496
+  },
+  "80016": {
+    "PO_NAME": "Aurora",
+    "STATE": "CO",
+    "POPULATION": 63182,
+    "POP_SQMI": 1368.76,
+    "SQMI": 46.16,
+    "centroid_lon": -104.6944725,
+    "centroid_lat": 39.59637136
+  },
+  "80017": {
+    "PO_NAME": "Aurora",
+    "STATE": "CO",
+    "POPULATION": 35475,
+    "POP_SQMI": 6757.14,
+    "SQMI": 5.25,
+    "centroid_lon": -104.7857876,
+    "centroid_lat": 39.69618776
+  },
+  "80018": {
+    "PO_NAME": "Aurora",
+    "STATE": "CO",
+    "POPULATION": 14370,
+    "POP_SQMI": 560.45,
+    "SQMI": 25.64,
+    "centroid_lon": -104.6971046,
+    "centroid_lat": 39.69119037
+  },
+  "80019": {
+    "PO_NAME": "Aurora",
+    "STATE": "CO",
+    "POPULATION": 2806,
+    "POP_SQMI": 118.2,
+    "SQMI": 23.74,
+    "centroid_lon": -104.7008381,
+    "centroid_lat": 39.7820463
+  },
+  "80020": {
+    "PO_NAME": "Broomfield",
+    "STATE": "CO",
+    "POPULATION": 54563,
+    "POP_SQMI": 2768.29,
+    "SQMI": 19.71,
+    "centroid_lon": -105.0743314,
+    "centroid_lat": 39.93164464
+  },
+  "80021": {
+    "PO_NAME": "Broomfield",
+    "STATE": "CO",
+    "POPULATION": 35884,
+    "POP_SQMI": 1498.91,
+    "SQMI": 23.94,
+    "centroid_lon": -105.1362283,
+    "centroid_lat": 39.89499936
+  },
+  "80022": {
+    "PO_NAME": "Commerce City",
+    "STATE": "CO",
+    "POPULATION": 55217,
+    "POP_SQMI": 565.17,
+    "SQMI": 97.7,
+    "centroid_lon": -104.7742012,
+    "centroid_lat": 39.86937246
+  },
+  "80023": {
+    "PO_NAME": "Broomfield",
+    "STATE": "CO",
+    "POPULATION": 28022,
+    "POP_SQMI": 1584.95,
+    "SQMI": 17.68,
+    "centroid_lon": -105.0119621,
+    "centroid_lat": 39.97432951
+  },
+  "80026": {
+    "PO_NAME": "Lafayette",
+    "STATE": "CO",
+    "POPULATION": 33089,
+    "POP_SQMI": 1330.48,
+    "SQMI": 24.87,
+    "centroid_lon": -105.1001175,
+    "centroid_lat": 40.01856914
+  },
+  "80027": {
+    "PO_NAME": "Louisville",
+    "STATE": "CO",
+    "POPULATION": 34643,
+    "POP_SQMI": 2011.79,
+    "SQMI": 17.22,
+    "centroid_lon": -105.1549169,
+    "centroid_lat": 39.95401065
+  },
+  "80030": {
+    "PO_NAME": "Westminster",
+    "STATE": "CO",
+    "POPULATION": 15884,
+    "POP_SQMI": 5592.96,
+    "SQMI": 2.84,
+    "centroid_lon": -105.0370088,
+    "centroid_lat": 39.82988528
+  },
+  "80031": {
+    "PO_NAME": "Westminster",
+    "STATE": "CO",
+    "POPULATION": 39748,
+    "POP_SQMI": 4558.26,
+    "SQMI": 8.72,
+    "centroid_lon": -105.0402877,
+    "centroid_lat": 39.87492617
+  },
+  "80033": {
+    "PO_NAME": "Wheat Ridge",
+    "STATE": "CO",
+    "POPULATION": 27518,
+    "POP_SQMI": 2981.37,
+    "SQMI": 9.23,
+    "centroid_lon": -105.1053536,
+    "centroid_lat": 39.7739166
+  },
+  "80045": {
+    "PO_NAME": "Aurora",
+    "STATE": "CO",
+    "POPULATION": 1270,
+    "POP_SQMI": 1380.43,
+    "SQMI": 0.92,
+    "centroid_lon": -104.8373859,
+    "centroid_lat": 39.7474016
+  },
+  "80101": {
+    "PO_NAME": "Agate",
+    "STATE": "CO",
+    "POPULATION": 402,
+    "POP_SQMI": 0.95,
+    "SQMI": 424.87,
+    "centroid_lon": -103.9512918,
+    "centroid_lat": 39.40599522
+  },
+  "80102": {
+    "PO_NAME": "Bennett",
+    "STATE": "CO",
+    "POPULATION": 6518,
+    "POP_SQMI": 21.12,
+    "SQMI": 308.56,
+    "centroid_lon": -104.4301839,
+    "centroid_lat": 39.71785399
+  },
+  "80103": {
+    "PO_NAME": "Byers",
+    "STATE": "CO",
+    "POPULATION": 2844,
+    "POP_SQMI": 8.05,
+    "SQMI": 353.1,
+    "centroid_lon": -104.1007378,
+    "centroid_lat": 39.7775758
+  },
+  "80104": {
+    "PO_NAME": "Castle Rock",
+    "STATE": "CO",
+    "POPULATION": 34138,
+    "POP_SQMI": 490.77,
+    "SQMI": 69.56,
+    "centroid_lon": -104.8218049,
+    "centroid_lat": 39.30600502
+  },
+  "80105": {
+    "PO_NAME": "Deer Trail",
+    "STATE": "CO",
+    "POPULATION": 1257,
+    "POP_SQMI": 3.11,
+    "SQMI": 404.21,
+    "centroid_lon": -103.9665776,
+    "centroid_lat": 39.62111558
+  },
+  "80106": {
+    "PO_NAME": "Elbert",
+    "STATE": "CO",
+    "POPULATION": 4712,
+    "POP_SQMI": 24.5,
+    "SQMI": 192.32,
+    "centroid_lon": -104.5129799,
+    "centroid_lat": 39.18434728
+  },
+  "80107": {
+    "PO_NAME": "Elizabeth",
+    "STATE": "CO",
+    "POPULATION": 14352,
+    "POP_SQMI": 93.46,
+    "SQMI": 153.56,
+    "centroid_lon": -104.5695335,
+    "centroid_lat": 39.40863322
+  },
+  "80108": {
+    "PO_NAME": "Castle Rock",
+    "STATE": "CO",
+    "POPULATION": 32895,
+    "POP_SQMI": 957.92,
+    "SQMI": 34.34,
+    "centroid_lon": -104.853097,
+    "centroid_lat": 39.4429185
+  },
+  "80109": {
+    "PO_NAME": "Castle Rock",
+    "STATE": "CO",
+    "POPULATION": 26701,
+    "POP_SQMI": 902.98,
+    "SQMI": 29.57,
+    "centroid_lon": -104.9058554,
+    "centroid_lat": 39.36631928
+  },
+  "80110": {
+    "PO_NAME": "Englewood",
+    "STATE": "CO",
+    "POPULATION": 24722,
+    "POP_SQMI": 3751.44,
+    "SQMI": 6.59,
+    "centroid_lon": -105.0084706,
+    "centroid_lat": 39.64616249
+  },
+  "80111": {
+    "PO_NAME": "Englewood",
+    "STATE": "CO",
+    "POPULATION": 31701,
+    "POP_SQMI": 2114.81,
+    "SQMI": 14.99,
+    "centroid_lon": -104.8725327,
+    "centroid_lat": 39.61725301
+  },
+  "80112": {
+    "PO_NAME": "Englewood",
+    "STATE": "CO",
+    "POPULATION": 35101,
+    "POP_SQMI": 2011.52,
+    "SQMI": 17.45,
+    "centroid_lon": -104.8587799,
+    "centroid_lat": 39.57310996
+  },
+  "80113": {
+    "PO_NAME": "Englewood",
+    "STATE": "CO",
+    "POPULATION": 22489,
+    "POP_SQMI": 2909.31,
+    "SQMI": 7.73,
+    "centroid_lon": -104.9612012,
+    "centroid_lat": 39.64206315
+  },
+  "80116": {
+    "PO_NAME": "Franktown",
+    "STATE": "CO",
+    "POPULATION": 4561,
+    "POP_SQMI": 50.63,
+    "SQMI": 90.09,
+    "centroid_lon": -104.719886,
+    "centroid_lat": 39.30755891
+  },
+  "80117": {
+    "PO_NAME": "Kiowa",
+    "STATE": "CO",
+    "POPULATION": 2749,
+    "POP_SQMI": 17.87,
+    "SQMI": 153.87,
+    "centroid_lon": -104.4254609,
+    "centroid_lat": 39.36838621
+  },
+  "80118": {
+    "PO_NAME": "Larkspur",
+    "STATE": "CO",
+    "POPULATION": 6074,
+    "POP_SQMI": 39.43,
+    "SQMI": 154.03,
+    "centroid_lon": -104.9007973,
+    "centroid_lat": 39.19725036
+  },
+  "80120": {
+    "PO_NAME": "Littleton",
+    "STATE": "CO",
+    "POPULATION": 30765,
+    "POP_SQMI": 3511.99,
+    "SQMI": 8.76,
+    "centroid_lon": -105.0093016,
+    "centroid_lat": 39.59304031
+  },
+  "80121": {
+    "PO_NAME": "Littleton",
+    "STATE": "CO",
+    "POPULATION": 18434,
+    "POP_SQMI": 2539.12,
+    "SQMI": 7.26,
+    "centroid_lon": -104.9535904,
+    "centroid_lat": 39.61048211
+  },
+  "80122": {
+    "PO_NAME": "Littleton",
+    "STATE": "CO",
+    "POPULATION": 31628,
+    "POP_SQMI": 4511.84,
+    "SQMI": 7.01,
+    "centroid_lon": -104.9557094,
+    "centroid_lat": 39.58058881
+  },
+  "80123": {
+    "PO_NAME": "Littleton",
+    "STATE": "CO",
+    "POPULATION": 48401,
+    "POP_SQMI": 3641.91,
+    "SQMI": 13.29,
+    "centroid_lon": -105.0682838,
+    "centroid_lat": 39.61531055
+  },
+  "80124": {
+    "PO_NAME": "Lone Tree",
+    "STATE": "CO",
+    "POPULATION": 24788,
+    "POP_SQMI": 1344.98,
+    "SQMI": 18.43,
+    "centroid_lon": -104.9190239,
+    "centroid_lat": 39.51204134
+  },
+  "80125": {
+    "PO_NAME": "Littleton",
+    "STATE": "CO",
+    "POPULATION": 12897,
+    "POP_SQMI": 253.68,
+    "SQMI": 50.84,
+    "centroid_lon": -105.0568796,
+    "centroid_lat": 39.47982125
+  },
+  "80126": {
+    "PO_NAME": "Littleton",
+    "STATE": "CO",
+    "POPULATION": 46660,
+    "POP_SQMI": 4241.82,
+    "SQMI": 11,
+    "centroid_lon": -104.9620264,
+    "centroid_lat": 39.54046803
+  },
+  "80127": {
+    "PO_NAME": "Littleton",
+    "STATE": "CO",
+    "POPULATION": 46774,
+    "POP_SQMI": 679.16,
+    "SQMI": 68.87,
+    "centroid_lon": -105.1576458,
+    "centroid_lat": 39.52940417
+  },
+  "80128": {
+    "PO_NAME": "Littleton",
+    "STATE": "CO",
+    "POPULATION": 35835,
+    "POP_SQMI": 3287.61,
+    "SQMI": 10.9,
+    "centroid_lon": -105.0759122,
+    "centroid_lat": 39.57369055
+  },
+  "80129": {
+    "PO_NAME": "Littleton",
+    "STATE": "CO",
+    "POPULATION": 30770,
+    "POP_SQMI": 4220.85,
+    "SQMI": 7.29,
+    "centroid_lon": -105.0122802,
+    "centroid_lat": 39.54476056
+  },
+  "80130": {
+    "PO_NAME": "Littleton",
+    "STATE": "CO",
+    "POPULATION": 28174,
+    "POP_SQMI": 5691.72,
+    "SQMI": 4.95,
+    "centroid_lon": -104.9216339,
+    "centroid_lat": 39.5397684
+  },
+  "80131": {
+    "PO_NAME": "Louviers",
+    "STATE": "CO",
+    "POPULATION": 279,
+    "POP_SQMI": 270.87,
+    "SQMI": 1.03,
+    "centroid_lon": -105.0050156,
+    "centroid_lat": 39.47731088
+  },
+  "80132": {
+    "PO_NAME": "Monument",
+    "STATE": "CO",
+    "POPULATION": 25265,
+    "POP_SQMI": 740.91,
+    "SQMI": 34.1,
+    "centroid_lon": -104.8454405,
+    "centroid_lat": 39.09505624
+  },
+  "80133": {
+    "PO_NAME": "Palmer Lake",
+    "STATE": "CO",
+    "POPULATION": 2861,
+    "POP_SQMI": 1104.63,
+    "SQMI": 2.59,
+    "centroid_lon": -104.9039686,
+    "centroid_lat": 39.11456276
+  },
+  "80134": {
+    "PO_NAME": "Parker",
+    "STATE": "CO",
+    "POPULATION": 73734,
+    "POP_SQMI": 1249.52,
+    "SQMI": 59.01,
+    "centroid_lon": -104.7797408,
+    "centroid_lat": 39.48258832
+  },
+  "80135": {
+    "PO_NAME": "Sedalia",
+    "STATE": "CO",
+    "POPULATION": 4427,
+    "POP_SQMI": 11.85,
+    "SQMI": 373.49,
+    "centroid_lon": -105.1601772,
+    "centroid_lat": 39.26367849
+  },
+  "80136": {
+    "PO_NAME": "Strasburg",
+    "STATE": "CO",
+    "POPULATION": 5895,
+    "POP_SQMI": 25.14,
+    "SQMI": 234.49,
+    "centroid_lon": -104.2898603,
+    "centroid_lat": 39.80672317
+  },
+  "80137": {
+    "PO_NAME": "Watkins",
+    "STATE": "CO",
+    "POPULATION": 1732,
+    "POP_SQMI": 14.82,
+    "SQMI": 116.87,
+    "centroid_lon": -104.5938581,
+    "centroid_lat": 39.72931759
+  },
+  "80138": {
+    "PO_NAME": "Parker",
+    "STATE": "CO",
+    "POPULATION": 35758,
+    "POP_SQMI": 543.35,
+    "SQMI": 65.81,
+    "centroid_lon": -104.6653919,
+    "centroid_lat": 39.51589266
+  },
+  "80202": {
+    "PO_NAME": "Denver",
+    "STATE": "CO",
+    "POPULATION": 19222,
+    "POP_SQMI": 17474.55,
+    "SQMI": 1.1,
+    "centroid_lon": -104.9975142,
+    "centroid_lat": 39.75244993
+  },
+  "80203": {
+    "PO_NAME": "Denver",
+    "STATE": "CO",
+    "POPULATION": 23591,
+    "POP_SQMI": 21843.52,
+    "SQMI": 1.08,
+    "centroid_lon": -104.9823634,
+    "centroid_lat": 39.7316184
+  },
+  "80204": {
+    "PO_NAME": "Denver",
+    "STATE": "CO",
+    "POPULATION": 40565,
+    "POP_SQMI": 7129.17,
+    "SQMI": 5.69,
+    "centroid_lon": -105.020144,
+    "centroid_lat": 39.73497056
+  },
+  "80205": {
+    "PO_NAME": "Denver",
+    "STATE": "CO",
+    "POPULATION": 36208,
+    "POP_SQMI": 7957.8,
+    "SQMI": 4.55,
+    "centroid_lon": -104.9632118,
+    "centroid_lat": 39.75858155
+  },
+  "80206": {
+    "PO_NAME": "Denver",
+    "STATE": "CO",
+    "POPULATION": 26356,
+    "POP_SQMI": 10542.4,
+    "SQMI": 2.5,
+    "centroid_lon": -104.9528347,
+    "centroid_lat": 39.73043008
+  },
+  "80207": {
+    "PO_NAME": "Denver",
+    "STATE": "CO",
+    "POPULATION": 22123,
+    "POP_SQMI": 5658.06,
+    "SQMI": 3.91,
+    "centroid_lon": -104.9202593,
+    "centroid_lat": 39.76092836
+  },
+  "80209": {
+    "PO_NAME": "Denver",
+    "STATE": "CO",
+    "POPULATION": 25637,
+    "POP_SQMI": 7242.09,
+    "SQMI": 3.54,
+    "centroid_lon": -104.9645564,
+    "centroid_lat": 39.70648548
+  },
+  "80210": {
+    "PO_NAME": "Denver",
+    "STATE": "CO",
+    "POPULATION": 38059,
+    "POP_SQMI": 6208.65,
+    "SQMI": 6.13,
+    "centroid_lon": -104.9619369,
+    "centroid_lat": 39.67795667
+  },
+  "80211": {
+    "PO_NAME": "Denver",
+    "STATE": "CO",
+    "POPULATION": 43614,
+    "POP_SQMI": 9481.3,
+    "SQMI": 4.6,
+    "centroid_lon": -105.0203241,
+    "centroid_lat": 39.7672451
+  },
+  "80212": {
+    "PO_NAME": "Denver",
+    "STATE": "CO",
+    "POPULATION": 19899,
+    "POP_SQMI": 5050.51,
+    "SQMI": 3.94,
+    "centroid_lon": -105.0489,
+    "centroid_lat": 39.77185287
+  },
+  "80214": {
+    "PO_NAME": "Denver",
+    "STATE": "CO",
+    "POPULATION": 27615,
+    "POP_SQMI": 6003.26,
+    "SQMI": 4.6,
+    "centroid_lon": -105.0711128,
+    "centroid_lat": 39.74212619
+  },
+  "80215": {
+    "PO_NAME": "Denver",
+    "STATE": "CO",
+    "POPULATION": 19484,
+    "POP_SQMI": 3418.25,
+    "SQMI": 5.7,
+    "centroid_lon": -105.1157106,
+    "centroid_lat": 39.74372835
+  },
+  "80216": {
+    "PO_NAME": "Denver",
+    "STATE": "CO",
+    "POPULATION": 16652,
+    "POP_SQMI": 1595.02,
+    "SQMI": 10.44,
+    "centroid_lon": -104.9594267,
+    "centroid_lat": 39.78637962
+  },
+  "80218": {
+    "PO_NAME": "Denver",
+    "STATE": "CO",
+    "POPULATION": 19493,
+    "POP_SQMI": 14125.36,
+    "SQMI": 1.38,
+    "centroid_lon": -104.9712842,
+    "centroid_lat": 39.73243025
+  },
+  "80219": {
+    "PO_NAME": "Denver",
+    "STATE": "CO",
+    "POPULATION": 68621,
+    "POP_SQMI": 9161.68,
+    "SQMI": 7.49,
+    "centroid_lon": -105.0347942,
+    "centroid_lat": 39.69503563
+  },
+  "80220": {
+    "PO_NAME": "Denver",
+    "STATE": "CO",
+    "POPULATION": 38700,
+    "POP_SQMI": 7485.49,
+    "SQMI": 5.17,
+    "centroid_lon": -104.9168548,
+    "centroid_lat": 39.73371116
+  },
+  "80221": {
+    "PO_NAME": "Denver",
+    "STATE": "CO",
+    "POPULATION": 44189,
+    "POP_SQMI": 4641.7,
+    "SQMI": 9.52,
+    "centroid_lon": -105.0103545,
+    "centroid_lat": 39.81548073
+  },
+  "80222": {
+    "PO_NAME": "Denver",
+    "STATE": "CO",
+    "POPULATION": 22867,
+    "POP_SQMI": 6197.02,
+    "SQMI": 3.69,
+    "centroid_lon": -104.9278267,
+    "centroid_lat": 39.67143188
+  },
+  "80223": {
+    "PO_NAME": "Denver",
+    "STATE": "CO",
+    "POPULATION": 22186,
+    "POP_SQMI": 3968.87,
+    "SQMI": 5.59,
+    "centroid_lon": -105.0016573,
+    "centroid_lat": 39.69660255
+  },
+  "80224": {
+    "PO_NAME": "Denver",
+    "STATE": "CO",
+    "POPULATION": 18661,
+    "POP_SQMI": 5724.23,
+    "SQMI": 3.26,
+    "centroid_lon": -104.9116163,
+    "centroid_lat": 39.68886894
+  },
+  "80225": {
+    "PO_NAME": "Denver",
+    "STATE": "CO",
+    "POPULATION": 0,
+    "POP_SQMI": 0,
+    "SQMI": 0.93,
+    "centroid_lon": -105.1188331,
+    "centroid_lat": 39.71823905
+  },
+  "80226": {
+    "PO_NAME": "Denver",
+    "STATE": "CO",
+    "POPULATION": 32559,
+    "POP_SQMI": 4739.3,
+    "SQMI": 6.87,
+    "centroid_lon": -105.086982,
+    "centroid_lat": 39.71000206
+  },
+  "80227": {
+    "PO_NAME": "Denver",
+    "STATE": "CO",
+    "POPULATION": 36590,
+    "POP_SQMI": 3148.88,
+    "SQMI": 11.62,
+    "centroid_lon": -105.1076947,
+    "centroid_lat": 39.66299256
+  },
+  "80228": {
+    "PO_NAME": "Denver",
+    "STATE": "CO",
+    "POPULATION": 35289,
+    "POP_SQMI": 3546.63,
+    "SQMI": 9.95,
+    "centroid_lon": -105.152079,
+    "centroid_lat": 39.6922663
+  },
+  "80229": {
+    "PO_NAME": "Denver",
+    "STATE": "CO",
+    "POPULATION": 56930,
+    "POP_SQMI": 4365.8,
+    "SQMI": 13.04,
+    "centroid_lon": -104.9591519,
+    "centroid_lat": 39.8550441
+  },
+  "80230": {
+    "PO_NAME": "Denver",
+    "STATE": "CO",
+    "POPULATION": 9296,
+    "POP_SQMI": 3380.36,
+    "SQMI": 2.75,
+    "centroid_lon": -104.8893991,
+    "centroid_lat": 39.72041171
+  },
+  "80231": {
+    "PO_NAME": "Denver",
+    "STATE": "CO",
+    "POPULATION": 36317,
+    "POP_SQMI": 7981.76,
+    "SQMI": 4.55,
+    "centroid_lon": -104.8876294,
+    "centroid_lat": 39.67041227
+  },
+  "80232": {
+    "PO_NAME": "Denver",
+    "STATE": "CO",
+    "POPULATION": 22201,
+    "POP_SQMI": 5454.79,
+    "SQMI": 4.07,
+    "centroid_lon": -105.0906499,
+    "centroid_lat": 39.68953316
+  },
+  "80233": {
+    "PO_NAME": "Denver",
+    "STATE": "CO",
+    "POPULATION": 44467,
+    "POP_SQMI": 4881.12,
+    "SQMI": 9.11,
+    "centroid_lon": -104.9461133,
+    "centroid_lat": 39.89970306
+  },
+  "80234": {
+    "PO_NAME": "Denver",
+    "STATE": "CO",
+    "POPULATION": 28560,
+    "POP_SQMI": 3933.88,
+    "SQMI": 7.26,
+    "centroid_lon": -105.0060915,
+    "centroid_lat": 39.9123848
+  },
+  "80235": {
+    "PO_NAME": "Denver",
+    "STATE": "CO",
+    "POPULATION": 8911,
+    "POP_SQMI": 2369.95,
+    "SQMI": 3.76,
+    "centroid_lon": -105.0915413,
+    "centroid_lat": 39.64551231
+  },
+  "80236": {
+    "PO_NAME": "Denver",
+    "STATE": "CO",
+    "POPULATION": 16445,
+    "POP_SQMI": 4808.48,
+    "SQMI": 3.42,
+    "centroid_lon": -105.0395203,
+    "centroid_lat": 39.65152807
+  },
+  "80237": {
+    "PO_NAME": "Denver",
+    "STATE": "CO",
+    "POPULATION": 23465,
+    "POP_SQMI": 6224.14,
+    "SQMI": 3.77,
+    "centroid_lon": -104.9018783,
+    "centroid_lat": 39.64047703
+  },
+  "80238": {
+    "PO_NAME": "Denver",
+    "STATE": "CO",
+    "POPULATION": 25450,
+    "POP_SQMI": 4206.61,
+    "SQMI": 6.05,
+    "centroid_lon": -104.8820095,
+    "centroid_lat": 39.77618102
+  },
+  "80239": {
+    "PO_NAME": "Denver",
+    "STATE": "CO",
+    "POPULATION": 48327,
+    "POP_SQMI": 5958.94,
+    "SQMI": 8.11,
+    "centroid_lon": -104.8303972,
+    "centroid_lat": 39.78416168
+  },
+  "80241": {
+    "PO_NAME": "Thornton",
+    "STATE": "CO",
+    "POPULATION": 34071,
+    "POP_SQMI": 4895.26,
+    "SQMI": 6.96,
+    "centroid_lon": -104.9548999,
+    "centroid_lat": 39.92845056
+  },
+  "80246": {
+    "PO_NAME": "Denver",
+    "STATE": "CO",
+    "POPULATION": 15181,
+    "POP_SQMI": 9429.19,
+    "SQMI": 1.61,
+    "centroid_lon": -104.9314137,
+    "centroid_lat": 39.70456884
+  },
+  "80247": {
+    "PO_NAME": "Denver",
+    "STATE": "CO",
+    "POPULATION": 30197,
+    "POP_SQMI": 9206.4,
+    "SQMI": 3.28,
+    "centroid_lon": -104.8813941,
+    "centroid_lat": 39.69653094
+  },
+  "80249": {
+    "PO_NAME": "Denver",
+    "STATE": "CO",
+    "POPULATION": 35235,
+    "POP_SQMI": 1015.71,
+    "SQMI": 34.69,
+    "centroid_lon": -104.7090716,
+    "centroid_lat": 39.83712928
+  },
+  "80260": {
+    "PO_NAME": "Denver",
+    "STATE": "CO",
+    "POPULATION": 33088,
+    "POP_SQMI": 6965.89,
+    "SQMI": 4.75,
+    "centroid_lon": -105.0055532,
+    "centroid_lat": 39.86770779
+  },
+  "80264": {
+    "PO_NAME": "Denver",
+    "STATE": "CO",
+    "POPULATION": null,
+    "POP_SQMI": null,
+    "SQMI": 0,
+    "centroid_lon": -104.9858006,
+    "centroid_lat": 39.74248649
+  },
+  "80265": {
+    "PO_NAME": "Denver",
+    "STATE": "CO",
+    "POPULATION": null,
+    "POP_SQMI": null,
+    "SQMI": 0.01,
+    "centroid_lon": -104.9946048,
+    "centroid_lat": 39.7480127
+  },
+  "80293": {
+    "PO_NAME": "Denver",
+    "STATE": "CO",
+    "POPULATION": null,
+    "POP_SQMI": null,
+    "SQMI": 0,
+    "centroid_lon": -104.9900824,
+    "centroid_lat": 39.74579664
+  },
+  "80294": {
+    "PO_NAME": "Denver",
+    "STATE": "CO",
+    "POPULATION": null,
+    "POP_SQMI": null,
+    "SQMI": 0.01,
+    "centroid_lon": -104.9892557,
+    "centroid_lat": 39.74946903
+  },
+  "80301": {
+    "PO_NAME": "Boulder",
+    "STATE": "CO",
+    "POPULATION": 25614,
+    "POP_SQMI": 865.05,
+    "SQMI": 29.61,
+    "centroid_lon": -105.199185,
+    "centroid_lat": 40.04627914
+  },
+  "80302": {
+    "PO_NAME": "Boulder",
+    "STATE": "CO",
+    "POPULATION": 30007,
+    "POP_SQMI": 310.12,
+    "SQMI": 96.76,
+    "centroid_lon": -105.3623087,
+    "centroid_lat": 40.0336593
+  },
+  "80303": {
+    "PO_NAME": "Boulder",
+    "STATE": "CO",
+    "POPULATION": 26592,
+    "POP_SQMI": 848.23,
+    "SQMI": 31.35,
+    "centroid_lon": -105.2236105,
+    "centroid_lat": 39.96236483
+  },
+  "80304": {
+    "PO_NAME": "Boulder",
+    "STATE": "CO",
+    "POPULATION": 27595,
+    "POP_SQMI": 3042.45,
+    "SQMI": 9.07,
+    "centroid_lon": -105.2915076,
+    "centroid_lat": 40.04283839
+  },
+  "80305": {
+    "PO_NAME": "Boulder",
+    "STATE": "CO",
+    "POPULATION": 17213,
+    "POP_SQMI": 3428.88,
+    "SQMI": 5.02,
+    "centroid_lon": -105.2520221,
+    "centroid_lat": 39.97855883
+  },
+  "80309": {
+    "PO_NAME": "Boulder",
+    "STATE": "CO",
+    "POPULATION": 4990,
+    "POP_SQMI": 29352.94,
+    "SQMI": 0.17,
+    "centroid_lon": -105.2692532,
+    "centroid_lat": 40.00851431
+  },
+  "80310": {
+    "PO_NAME": "Boulder",
+    "STATE": "CO",
+    "POPULATION": null,
+    "POP_SQMI": null,
+    "SQMI": 0.22,
+    "centroid_lon": -105.2630817,
+    "centroid_lat": 40.00458071
+  },
+  "80401": {
+    "PO_NAME": "Golden",
+    "STATE": "CO",
+    "POPULATION": 42488,
+    "POP_SQMI": 843.35,
+    "SQMI": 50.38,
+    "centroid_lon": -105.2316578,
+    "centroid_lat": 39.71799315
+  },
+  "80403": {
+    "PO_NAME": "Golden",
+    "STATE": "CO",
+    "POPULATION": 21713,
+    "POP_SQMI": 144.71,
+    "SQMI": 150.05,
+    "centroid_lon": -105.327314,
+    "centroid_lat": 39.83396237
+  },
+  "80419": {
+    "PO_NAME": "Golden",
+    "STATE": "CO",
+    "POPULATION": null,
+    "POP_SQMI": null,
+    "SQMI": 0.09,
+    "centroid_lon": -105.2024397,
+    "centroid_lat": 39.72849517
+  },
+  "80420": {
+    "PO_NAME": "Alma",
+    "STATE": "CO",
+    "POPULATION": 305,
+    "POP_SQMI": 897.06,
+    "SQMI": 0.34,
+    "centroid_lon": -106.0655759,
+    "centroid_lat": 39.28528101
+  },
+  "80421": {
+    "PO_NAME": "Bailey",
+    "STATE": "CO",
+    "POPULATION": 9061,
+    "POP_SQMI": 33.81,
+    "SQMI": 267.96,
+    "centroid_lon": -105.5568602,
+    "centroid_lat": 39.43421334
+  },
+  "80422": {
+    "PO_NAME": "Black Hawk",
+    "STATE": "CO",
+    "POPULATION": 3815,
+    "POP_SQMI": 79.98,
+    "SQMI": 47.7,
+    "centroid_lon": -105.4690159,
+    "centroid_lat": 39.85718674
+  },
+  "80423": {
+    "PO_NAME": "Bond",
+    "STATE": "CO",
+    "POPULATION": 197,
+    "POP_SQMI": 0.89,
+    "SQMI": 221.17,
+    "centroid_lon": -106.6624754,
+    "centroid_lat": 39.82713938
+  },
+  "80424": {
+    "PO_NAME": "Breckenridge",
+    "STATE": "CO",
+    "POPULATION": 10678,
+    "POP_SQMI": 84.61,
+    "SQMI": 126.21,
+    "centroid_lon": -106.0168961,
+    "centroid_lat": 39.47091499
+  },
+  "80425": {
+    "PO_NAME": "Buffalo Creek",
+    "STATE": "CO",
+    "POPULATION": 5,
+    "POP_SQMI": 0.12,
+    "SQMI": 40.75,
+    "centroid_lon": -105.2680181,
+    "centroid_lat": 39.35355954
+  },
+  "80427": {
+    "PO_NAME": "Central City",
+    "STATE": "CO",
+    "POPULATION": 644,
+    "POP_SQMI": 17.85,
+    "SQMI": 36.08,
+    "centroid_lon": -105.547879,
+    "centroid_lat": 39.81879373
+  },
+  "80428": {
+    "PO_NAME": "Clark",
+    "STATE": "CO",
+    "POPULATION": 739,
+    "POP_SQMI": 2.09,
+    "SQMI": 353.29,
+    "centroid_lon": -106.8534919,
+    "centroid_lat": 40.74529544
+  },
+  "80430": {
+    "PO_NAME": "Coalmont",
+    "STATE": "CO",
+    "POPULATION": 223,
+    "POP_SQMI": 0.61,
+    "SQMI": 364.25,
+    "centroid_lon": -106.4747251,
+    "centroid_lat": 40.52504855
+  },
+  "80432": {
+    "PO_NAME": "Como",
+    "STATE": "CO",
+    "POPULATION": 10,
+    "POP_SQMI": 0.26,
+    "SQMI": 39.02,
+    "centroid_lon": -105.787921,
+    "centroid_lat": 39.19165947
+  },
+  "80433": {
+    "PO_NAME": "Conifer",
+    "STATE": "CO",
+    "POPULATION": 8618,
+    "POP_SQMI": 97.58,
+    "SQMI": 88.32,
+    "centroid_lon": -105.273605,
+    "centroid_lat": 39.4693651
+  },
+  "80435": {
+    "PO_NAME": "Dillon",
+    "STATE": "CO",
+    "POPULATION": 8082,
+    "POP_SQMI": 66.74,
+    "SQMI": 121.1,
+    "centroid_lon": -105.9345022,
+    "centroid_lat": 39.60830174
+  },
+  "80436": {
+    "PO_NAME": "Dumont",
+    "STATE": "CO",
+    "POPULATION": 512,
+    "POP_SQMI": 38.61,
+    "SQMI": 13.26,
+    "centroid_lon": -105.6273639,
+    "centroid_lat": 39.77124229
+  },
+  "80438": {
+    "PO_NAME": "Empire",
+    "STATE": "CO",
+    "POPULATION": 313,
+    "POP_SQMI": 5.01,
+    "SQMI": 62.42,
+    "centroid_lon": -105.7728483,
+    "centroid_lat": 39.76316576
+  },
+  "80439": {
+    "PO_NAME": "Evergreen",
+    "STATE": "CO",
+    "POPULATION": 25823,
+    "POP_SQMI": 178.92,
+    "SQMI": 144.33,
+    "centroid_lon": -105.3941541,
+    "centroid_lat": 39.6378225
+  },
+  "80440": {
+    "PO_NAME": "Fairplay",
+    "STATE": "CO",
+    "POPULATION": 3678,
+    "POP_SQMI": 6.79,
+    "SQMI": 542,
+    "centroid_lon": -105.9981443,
+    "centroid_lat": 39.15274487
+  },
+  "80442": {
+    "PO_NAME": "Fraser",
+    "STATE": "CO",
+    "POPULATION": 2783,
+    "POP_SQMI": 81.93,
+    "SQMI": 33.97,
+    "centroid_lon": -105.7666668,
+    "centroid_lat": 39.93037207
+  },
+  "80443": {
+    "PO_NAME": "Frisco",
+    "STATE": "CO",
+    "POPULATION": 4075,
+    "POP_SQMI": 40.49,
+    "SQMI": 100.64,
+    "centroid_lon": -106.1668763,
+    "centroid_lat": 39.49859709
+  },
+  "80444": {
+    "PO_NAME": "Georgetown",
+    "STATE": "CO",
+    "POPULATION": 1107,
+    "POP_SQMI": 21.04,
+    "SQMI": 52.61,
+    "centroid_lon": -105.7363068,
+    "centroid_lat": 39.63807502
+  },
+  "80446": {
+    "PO_NAME": "Granby",
+    "STATE": "CO",
+    "POPULATION": 3946,
+    "POP_SQMI": 9.73,
+    "SQMI": 405.46,
+    "centroid_lon": -105.8455568,
+    "centroid_lat": 40.02346275
+  },
+  "80447": {
+    "PO_NAME": "Grand Lake",
+    "STATE": "CO",
+    "POPULATION": 2132,
+    "POP_SQMI": 7.12,
+    "SQMI": 299.37,
+    "centroid_lon": -105.8799355,
+    "centroid_lat": 40.29798912
+  },
+  "80448": {
+    "PO_NAME": "Grant",
+    "STATE": "CO",
+    "POPULATION": 45,
+    "POP_SQMI": 0.63,
+    "SQMI": 71.51,
+    "centroid_lon": -105.753011,
+    "centroid_lat": 39.4675005
+  },
+  "80449": {
+    "PO_NAME": "Hartsel",
+    "STATE": "CO",
+    "POPULATION": 939,
+    "POP_SQMI": 15.15,
+    "SQMI": 61.96,
+    "centroid_lon": -105.903194,
+    "centroid_lat": 38.90429169
+  },
+  "80451": {
+    "PO_NAME": "Hot Sulphur Springs",
+    "STATE": "CO",
+    "POPULATION": 865,
+    "POP_SQMI": 11.44,
+    "SQMI": 75.62,
+    "centroid_lon": -106.0686932,
+    "centroid_lat": 40.10956967
+  },
+  "80452": {
+    "PO_NAME": "Idaho Springs",
+    "STATE": "CO",
+    "POPULATION": 3844,
+    "POP_SQMI": 23.97,
+    "SQMI": 160.35,
+    "centroid_lon": -105.5914353,
+    "centroid_lat": 39.68517957
+  },
+  "80453": {
+    "PO_NAME": "Idledale",
+    "STATE": "CO",
+    "POPULATION": 288,
+    "POP_SQMI": 364.56,
+    "SQMI": 0.79,
+    "centroid_lon": -105.2439857,
+    "centroid_lat": 39.66877328
+  },
+  "80454": {
+    "PO_NAME": "Indian Hills",
+    "STATE": "CO",
+    "POPULATION": 1415,
+    "POP_SQMI": 275.83,
+    "SQMI": 5.13,
+    "centroid_lon": -105.2537723,
+    "centroid_lat": 39.63389253
+  },
+  "80455": {
+    "PO_NAME": "Jamestown",
+    "STATE": "CO",
+    "POPULATION": 422,
+    "POP_SQMI": 24.34,
+    "SQMI": 17.34,
+    "centroid_lon": -105.4285475,
+    "centroid_lat": 40.08611159
+  },
+  "80456": {
+    "PO_NAME": "Jefferson",
+    "STATE": "CO",
+    "POPULATION": 1122,
+    "POP_SQMI": 5.83,
+    "SQMI": 192.44,
+    "centroid_lon": -105.7770095,
+    "centroid_lat": 39.3402169
+  },
+  "80457": {
+    "PO_NAME": "Kittredge",
+    "STATE": "CO",
+    "POPULATION": 721,
+    "POP_SQMI": 1287.5,
+    "SQMI": 0.56,
+    "centroid_lon": -105.3004652,
+    "centroid_lat": 39.65024806
+  },
+  "80459": {
+    "PO_NAME": "Kremmling",
+    "STATE": "CO",
+    "POPULATION": 2499,
+    "POP_SQMI": 4.54,
+    "SQMI": 550.75,
+    "centroid_lon": -106.4693418,
+    "centroid_lat": 40.15799285
+  },
+  "80461": {
+    "PO_NAME": "Leadville",
+    "STATE": "CO",
+    "POPULATION": 8059,
+    "POP_SQMI": 40.43,
+    "SQMI": 199.31,
+    "centroid_lon": -106.2989519,
+    "centroid_lat": 39.26711498
+  },
+  "80463": {
+    "PO_NAME": "Mc Coy",
+    "STATE": "CO",
+    "POPULATION": 80,
+    "POP_SQMI": 2.3,
+    "SQMI": 34.83,
+    "centroid_lon": -106.7979548,
+    "centroid_lat": 39.8947036
+  },
+  "80465": {
+    "PO_NAME": "Morrison",
+    "STATE": "CO",
+    "POPULATION": 16077,
+    "POP_SQMI": 410.97,
+    "SQMI": 39.12,
+    "centroid_lon": -105.2154495,
+    "centroid_lat": 39.60852862
+  },
+  "80466": {
+    "PO_NAME": "Nederland",
+    "STATE": "CO",
+    "POPULATION": 3862,
+    "POP_SQMI": 42.89,
+    "SQMI": 90.04,
+    "centroid_lon": -105.5441418,
+    "centroid_lat": 39.97633611
+  },
+  "80467": {
+    "PO_NAME": "Oak Creek",
+    "STATE": "CO",
+    "POPULATION": 2701,
+    "POP_SQMI": 14.03,
+    "SQMI": 192.57,
+    "centroid_lon": -106.8658694,
+    "centroid_lat": 40.24027231
+  },
+  "80468": {
+    "PO_NAME": "Parshall",
+    "STATE": "CO",
+    "POPULATION": 252,
+    "POP_SQMI": 0.54,
+    "SQMI": 462.99,
+    "centroid_lon": -106.1283827,
+    "centroid_lat": 40.00661928
+  },
+  "80469": {
+    "PO_NAME": "Phippsburg",
+    "STATE": "CO",
+    "POPULATION": 192,
+    "POP_SQMI": 8.49,
+    "SQMI": 22.62,
+    "centroid_lon": -106.9814482,
+    "centroid_lat": 40.2122586
+  },
+  "80470": {
+    "PO_NAME": "Pine",
+    "STATE": "CO",
+    "POPULATION": 4045,
+    "POP_SQMI": 61.43,
+    "SQMI": 65.85,
+    "centroid_lon": -105.3590297,
+    "centroid_lat": 39.42202125
+  },
+  "80473": {
+    "PO_NAME": "Rand",
+    "STATE": "CO",
+    "POPULATION": 32,
+    "POP_SQMI": 3.24,
+    "SQMI": 9.89,
+    "centroid_lon": -106.140758,
+    "centroid_lat": 40.44165824
+  },
+  "80474": {
+    "PO_NAME": "Rollinsville",
+    "STATE": "CO",
+    "POPULATION": 439,
+    "POP_SQMI": 9.66,
+    "SQMI": 45.43,
+    "centroid_lon": -105.6046172,
+    "centroid_lat": 39.89935765
+  },
+  "80475": {
+    "PO_NAME": "Shawnee",
+    "STATE": "CO",
+    "POPULATION": 156,
+    "POP_SQMI": 11.3,
+    "SQMI": 13.8,
+    "centroid_lon": -105.5756201,
+    "centroid_lat": 39.43388864
+  },
+  "80476": {
+    "PO_NAME": "Silver Plume",
+    "STATE": "CO",
+    "POPULATION": 184,
+    "POP_SQMI": 4.19,
+    "SQMI": 43.96,
+    "centroid_lon": -105.8311568,
+    "centroid_lat": 39.68811487
+  },
+  "80478": {
+    "PO_NAME": "Tabernash",
+    "STATE": "CO",
+    "POPULATION": 2076,
+    "POP_SQMI": 322.36,
+    "SQMI": 6.44,
+    "centroid_lon": -105.8426914,
+    "centroid_lat": 39.97726684
+  },
+  "80479": {
+    "PO_NAME": "Toponas",
+    "STATE": "CO",
+    "POPULATION": 371,
+    "POP_SQMI": 1.11,
+    "SQMI": 334.75,
+    "centroid_lon": -106.8507653,
+    "centroid_lat": 40.0385239
+  },
+  "80480": {
+    "PO_NAME": "Walden",
+    "STATE": "CO",
+    "POPULATION": 1126,
+    "POP_SQMI": 0.9,
+    "SQMI": 1245.84,
+    "centroid_lon": -106.3062669,
+    "centroid_lat": 40.70960034
+  },
+  "80481": {
+    "PO_NAME": "Ward",
+    "STATE": "CO",
+    "POPULATION": 611,
+    "POP_SQMI": 6.45,
+    "SQMI": 94.76,
+    "centroid_lon": -105.508805,
+    "centroid_lat": 40.10456319
+  },
+  "80482": {
+    "PO_NAME": "Winter Park",
+    "STATE": "CO",
+    "POPULATION": 1159,
+    "POP_SQMI": 98.81,
+    "SQMI": 11.73,
+    "centroid_lon": -105.7734009,
+    "centroid_lat": 39.8946501
+  },
+  "80483": {
+    "PO_NAME": "Yampa",
+    "STATE": "CO",
+    "POPULATION": 458,
+    "POP_SQMI": 46.5,
+    "SQMI": 9.85,
+    "centroid_lon": -106.9049299,
+    "centroid_lat": 40.1443133
+  },
+  "80487": {
+    "PO_NAME": "Steamboat Springs",
+    "STATE": "CO",
+    "POPULATION": 18947,
+    "POP_SQMI": 31.88,
+    "SQMI": 594.28,
+    "centroid_lon": -106.8938256,
+    "centroid_lat": 40.45693193
+  },
+  "80498": {
+    "PO_NAME": "Silverthorne",
+    "STATE": "CO",
+    "POPULATION": 8608,
+    "POP_SQMI": 22.82,
+    "SQMI": 377.17,
+    "centroid_lon": -106.2929003,
+    "centroid_lat": 39.7804569
+  },
+  "80501": {
+    "PO_NAME": "Longmont",
+    "STATE": "CO",
+    "POPULATION": 43128,
+    "POP_SQMI": 3486.5,
+    "SQMI": 12.37,
+    "centroid_lon": -105.1024406,
+    "centroid_lat": 40.1649311
+  },
+  "80503": {
+    "PO_NAME": "Longmont",
+    "STATE": "CO",
+    "POPULATION": 36415,
+    "POP_SQMI": 387.48,
+    "SQMI": 93.98,
+    "centroid_lon": -105.200213,
+    "centroid_lat": 40.16958455
+  },
+  "80504": {
+    "PO_NAME": "Longmont",
+    "STATE": "CO",
+    "POPULATION": 60928,
+    "POP_SQMI": 618.5,
+    "SQMI": 98.51,
+    "centroid_lon": -105.0263328,
+    "centroid_lat": 40.1654061
+  },
+  "80510": {
+    "PO_NAME": "Allenspark",
+    "STATE": "CO",
+    "POPULATION": 373,
+    "POP_SQMI": 20.42,
+    "SQMI": 18.27,
+    "centroid_lon": -105.5081876,
+    "centroid_lat": 40.23016324
+  },
+  "80512": {
+    "PO_NAME": "Bellvue",
+    "STATE": "CO",
+    "POPULATION": 2460,
+    "POP_SQMI": 5.17,
+    "SQMI": 475.42,
+    "centroid_lon": -105.559171,
+    "centroid_lat": 40.62360933
+  },
+  "80513": {
+    "PO_NAME": "Berthoud",
+    "STATE": "CO",
+    "POPULATION": 15359,
+    "POP_SQMI": 220.93,
+    "SQMI": 69.52,
+    "centroid_lon": -105.1067527,
+    "centroid_lat": 40.29867323
+  },
+  "80514": {
+    "PO_NAME": "Dacono",
+    "STATE": "CO",
+    "POPULATION": 6689,
+    "POP_SQMI": 838.22,
+    "SQMI": 7.98,
+    "centroid_lon": -104.9560736,
+    "centroid_lat": 40.07144912
+  },
+  "80515": {
+    "PO_NAME": "Drake",
+    "STATE": "CO",
+    "POPULATION": 879,
+    "POP_SQMI": 9.04,
+    "SQMI": 97.25,
+    "centroid_lon": -105.3760506,
+    "centroid_lat": 40.45819095
+  },
+  "80516": {
+    "PO_NAME": "Erie",
+    "STATE": "CO",
+    "POPULATION": 32452,
+    "POP_SQMI": 813.74,
+    "SQMI": 39.88,
+    "centroid_lon": -105.0169341,
+    "centroid_lat": 40.05138869
+  },
+  "80517": {
+    "PO_NAME": "Estes Park",
+    "STATE": "CO",
+    "POPULATION": 10846,
+    "POP_SQMI": 35.82,
+    "SQMI": 302.76,
+    "centroid_lon": -105.6112283,
+    "centroid_lat": 40.40129335
+  },
+  "80520": {
+    "PO_NAME": "Firestone",
+    "STATE": "CO",
+    "POPULATION": 1880,
+    "POP_SQMI": 3916.67,
+    "SQMI": 0.48,
+    "centroid_lon": -104.9326689,
+    "centroid_lat": 40.1132482
+  },
+  "80521": {
+    "PO_NAME": "Fort Collins",
+    "STATE": "CO",
+    "POPULATION": 37505,
+    "POP_SQMI": 2988.45,
+    "SQMI": 12.55,
+    "centroid_lon": -105.1270954,
+    "centroid_lat": 40.59400263
+  },
+  "80523": {
+    "PO_NAME": "Fort Collins",
+    "STATE": "CO",
+    "POPULATION": null,
+    "POP_SQMI": null,
+    "SQMI": 0.36,
+    "centroid_lon": -105.085078,
+    "centroid_lat": 40.57382036
+  },
+  "80524": {
+    "PO_NAME": "Fort Collins",
+    "STATE": "CO",
+    "POPULATION": 38901,
+    "POP_SQMI": 301.07,
+    "SQMI": 129.21,
+    "centroid_lon": -105.0194349,
+    "centroid_lat": 40.64551591
+  },
+  "80525": {
+    "PO_NAME": "Fort Collins",
+    "STATE": "CO",
+    "POPULATION": 58294,
+    "POP_SQMI": 2143.16,
+    "SQMI": 27.2,
+    "centroid_lon": -105.038492,
+    "centroid_lat": 40.52676054
+  },
+  "80526": {
+    "PO_NAME": "Fort Collins",
+    "STATE": "CO",
+    "POPULATION": 46808,
+    "POP_SQMI": 1432.75,
+    "SQMI": 32.67,
+    "centroid_lon": -105.1305044,
+    "centroid_lat": 40.52223999
+  },
+  "80528": {
+    "PO_NAME": "Fort Collins",
+    "STATE": "CO",
+    "POPULATION": 22647,
+    "POP_SQMI": 1214.32,
+    "SQMI": 18.65,
+    "centroid_lon": -105.0000867,
+    "centroid_lat": 40.49433423
+  },
+  "80530": {
+    "PO_NAME": "Frederick",
+    "STATE": "CO",
+    "POPULATION": 5382,
+    "POP_SQMI": 1915.3,
+    "SQMI": 2.81,
+    "centroid_lon": -104.9244693,
+    "centroid_lat": 40.09913736
+  },
+  "80532": {
+    "PO_NAME": "Glen Haven",
+    "STATE": "CO",
+    "POPULATION": 138,
+    "POP_SQMI": 28.63,
+    "SQMI": 4.82,
+    "centroid_lon": -105.4523132,
+    "centroid_lat": 40.4632244
+  },
+  "80534": {
+    "PO_NAME": "Johnstown",
+    "STATE": "CO",
+    "POPULATION": 18057,
+    "POP_SQMI": 365.3,
+    "SQMI": 49.43,
+    "centroid_lon": -104.9409652,
+    "centroid_lat": 40.33038705
+  },
+  "80535": {
+    "PO_NAME": "Laporte",
+    "STATE": "CO",
+    "POPULATION": 2885,
+    "POP_SQMI": 75.98,
+    "SQMI": 37.97,
+    "centroid_lon": -105.1887102,
+    "centroid_lat": 40.72461717
+  },
+  "80536": {
+    "PO_NAME": "Livermore",
+    "STATE": "CO",
+    "POPULATION": 1981,
+    "POP_SQMI": 5.48,
+    "SQMI": 361.44,
+    "centroid_lon": -105.4092685,
+    "centroid_lat": 40.87426174
+  },
+  "80537": {
+    "PO_NAME": "Loveland",
+    "STATE": "CO",
+    "POPULATION": 45744,
+    "POP_SQMI": 434,
+    "SQMI": 105.4,
+    "centroid_lon": -105.1797218,
+    "centroid_lat": 40.3806952
+  },
+  "80538": {
+    "PO_NAME": "Loveland",
+    "STATE": "CO",
+    "POPULATION": 51875,
+    "POP_SQMI": 504.52,
+    "SQMI": 102.82,
+    "centroid_lon": -105.160719,
+    "centroid_lat": 40.48202399
+  },
+  "80540": {
+    "PO_NAME": "Lyons",
+    "STATE": "CO",
+    "POPULATION": 4827,
+    "POP_SQMI": 23.76,
+    "SQMI": 203.14,
+    "centroid_lon": -105.4272511,
+    "centroid_lat": 40.23503196
+  },
+  "80542": {
+    "PO_NAME": "Mead",
+    "STATE": "CO",
+    "POPULATION": 4866,
+    "POP_SQMI": 547.36,
+    "SQMI": 8.89,
+    "centroid_lon": -105.0011925,
+    "centroid_lat": 40.23292739
+  },
+  "80543": {
+    "PO_NAME": "Milliken",
+    "STATE": "CO",
+    "POPULATION": 9181,
+    "POP_SQMI": 253.41,
+    "SQMI": 36.23,
+    "centroid_lon": -104.8532222,
+    "centroid_lat": 40.34456359
+  },
+  "80544": {
+    "PO_NAME": "Niwot",
+    "STATE": "CO",
+    "POPULATION": 124,
+    "POP_SQMI": 1377.78,
+    "SQMI": 0.09,
+    "centroid_lon": -105.1706337,
+    "centroid_lat": 40.10425772
+  },
+  "80545": {
+    "PO_NAME": "Red Feather Lakes",
+    "STATE": "CO",
+    "POPULATION": 1037,
+    "POP_SQMI": 1.84,
+    "SQMI": 564.07,
+    "centroid_lon": -105.8426754,
+    "centroid_lat": 40.84399243
+  },
+  "80546": {
+    "PO_NAME": "Severance",
+    "STATE": "CO",
+    "POPULATION": 145,
+    "POP_SQMI": 725,
+    "SQMI": 0.2,
+    "centroid_lon": -104.8517316,
+    "centroid_lat": 40.52447528
+  },
+  "80547": {
+    "PO_NAME": "Timnath",
+    "STATE": "CO",
+    "POPULATION": 4631,
+    "POP_SQMI": 792.98,
+    "SQMI": 5.84,
+    "centroid_lon": -104.9611195,
+    "centroid_lat": 40.53210186
+  },
+  "80549": {
+    "PO_NAME": "Wellington",
+    "STATE": "CO",
+    "POPULATION": 13087,
+    "POP_SQMI": 59.08,
+    "SQMI": 221.51,
+    "centroid_lon": -105.0845371,
+    "centroid_lat": 40.84901465
+  },
+  "80550": {
+    "PO_NAME": "Windsor",
+    "STATE": "CO",
+    "POPULATION": 37008,
+    "POP_SQMI": 636.31,
+    "SQMI": 58.16,
+    "centroid_lon": -104.8986623,
+    "centroid_lat": 40.47848219
+  },
+  "80601": {
+    "PO_NAME": "Brighton",
+    "STATE": "CO",
+    "POPULATION": 41907,
+    "POP_SQMI": 1497.21,
+    "SQMI": 27.99,
+    "centroid_lon": -104.8098753,
+    "centroid_lat": 39.95952099
+  },
+  "80602": {
+    "PO_NAME": "Brighton",
+    "STATE": "CO",
+    "POPULATION": 42529,
+    "POP_SQMI": 1369.25,
+    "SQMI": 31.06,
+    "centroid_lon": -104.9087258,
+    "centroid_lat": 39.96605133
+  },
+  "80603": {
+    "PO_NAME": "Brighton",
+    "STATE": "CO",
+    "POPULATION": 14775,
+    "POP_SQMI": 203.57,
+    "SQMI": 72.58,
+    "centroid_lon": -104.7527152,
+    "centroid_lat": 39.99106071
+  },
+  "80610": {
+    "PO_NAME": "Ault",
+    "STATE": "CO",
+    "POPULATION": 3652,
+    "POP_SQMI": 16.49,
+    "SQMI": 221.48,
+    "centroid_lon": -104.5725386,
+    "centroid_lat": 40.67840623
+  },
+  "80611": {
+    "PO_NAME": "Briggsdale",
+    "STATE": "CO",
+    "POPULATION": 834,
+    "POP_SQMI": 2.07,
+    "SQMI": 402.46,
+    "centroid_lon": -104.2403178,
+    "centroid_lat": 40.61335296
+  },
+  "80612": {
+    "PO_NAME": "Carr",
+    "STATE": "CO",
+    "POPULATION": 621,
+    "POP_SQMI": 3.45,
+    "SQMI": 180.05,
+    "centroid_lon": -104.8940982,
+    "centroid_lat": 40.88320473
+  },
+  "80614": {
+    "PO_NAME": "Eastlake",
+    "STATE": "CO",
+    "POPULATION": null,
+    "POP_SQMI": null,
+    "SQMI": 0.04,
+    "centroid_lon": -104.9606019,
+    "centroid_lat": 39.92352231
+  },
+  "80615": {
+    "PO_NAME": "Eaton",
+    "STATE": "CO",
+    "POPULATION": 9792,
+    "POP_SQMI": 113.2,
+    "SQMI": 86.5,
+    "centroid_lon": -104.6652796,
+    "centroid_lat": 40.53379104
+  },
+  "80620": {
+    "PO_NAME": "Evans",
+    "STATE": "CO",
+    "POPULATION": 21172,
+    "POP_SQMI": 4242.89,
+    "SQMI": 4.99,
+    "centroid_lon": -104.7115978,
+    "centroid_lat": 40.37605313
+  },
+  "80621": {
+    "PO_NAME": "Fort Lupton",
+    "STATE": "CO",
+    "POPULATION": 14263,
+    "POP_SQMI": 109.99,
+    "SQMI": 129.67,
+    "centroid_lon": -104.7964748,
+    "centroid_lat": 40.11028656
+  },
+  "80622": {
+    "PO_NAME": "Galeton",
+    "STATE": "CO",
+    "POPULATION": 76,
+    "POP_SQMI": 3.97,
+    "SQMI": 19.14,
+    "centroid_lon": -104.4579626,
+    "centroid_lat": 40.56154902
+  },
+  "80623": {
+    "PO_NAME": "Gilcrest",
+    "STATE": "CO",
+    "POPULATION": 1029,
+    "POP_SQMI": 2450,
+    "SQMI": 0.42,
+    "centroid_lon": -104.7789471,
+    "centroid_lat": 40.28616539
+  },
+  "80624": {
+    "PO_NAME": "Gill",
+    "STATE": "CO",
+    "POPULATION": 1170,
+    "POP_SQMI": 26.77,
+    "SQMI": 43.7,
+    "centroid_lon": -104.4821206,
+    "centroid_lat": 40.47721914
+  },
+  "80631": {
+    "PO_NAME": "Greeley",
+    "STATE": "CO",
+    "POPULATION": 55982,
+    "POP_SQMI": 532.65,
+    "SQMI": 105.1,
+    "centroid_lon": -104.6724261,
+    "centroid_lat": 40.44123132
+  },
+  "80634": {
+    "PO_NAME": "Greeley",
+    "STATE": "CO",
+    "POPULATION": 67998,
+    "POP_SQMI": 1976.69,
+    "SQMI": 34.4,
+    "centroid_lon": -104.781538,
+    "centroid_lat": 40.39982402
+  },
+  "80639": {
+    "PO_NAME": "Greeley",
+    "STATE": "CO",
+    "POPULATION": null,
+    "POP_SQMI": null,
+    "SQMI": 0.26,
+    "centroid_lon": -104.7004096,
+    "centroid_lat": 40.40384718
+  },
+  "80640": {
+    "PO_NAME": "Henderson",
+    "STATE": "CO",
+    "POPULATION": 11123,
+    "POP_SQMI": 733.71,
+    "SQMI": 15.16,
+    "centroid_lon": -104.8845294,
+    "centroid_lat": 39.88615904
+  },
+  "80642": {
+    "PO_NAME": "Hudson",
+    "STATE": "CO",
+    "POPULATION": 4424,
+    "POP_SQMI": 44.15,
+    "SQMI": 100.21,
+    "centroid_lon": -104.6156683,
+    "centroid_lat": 40.05083242
+  },
+  "80643": {
+    "PO_NAME": "Keenesburg",
+    "STATE": "CO",
+    "POPULATION": 3803,
+    "POP_SQMI": 23.83,
+    "SQMI": 159.57,
+    "centroid_lon": -104.4966389,
+    "centroid_lat": 40.08383251
+  },
+  "80644": {
+    "PO_NAME": "Kersey",
+    "STATE": "CO",
+    "POPULATION": 3146,
+    "POP_SQMI": 12.9,
+    "SQMI": 243.87,
+    "centroid_lon": -104.3908439,
+    "centroid_lat": 40.3585268
+  },
+  "80645": {
+    "PO_NAME": "La Salle",
+    "STATE": "CO",
+    "POPULATION": 4617,
+    "POP_SQMI": 47.54,
+    "SQMI": 97.12,
+    "centroid_lon": -104.6516458,
+    "centroid_lat": 40.2860128
+  },
+  "80646": {
+    "PO_NAME": "Lucerne",
+    "STATE": "CO",
+    "POPULATION": 82,
+    "POP_SQMI": 81.19,
+    "SQMI": 1.01,
+    "centroid_lon": -104.7064125,
+    "centroid_lat": 40.48822815
+  },
+  "80648": {
+    "PO_NAME": "Nunn",
+    "STATE": "CO",
+    "POPULATION": 1124,
+    "POP_SQMI": 4.53,
+    "SQMI": 248.31,
+    "centroid_lon": -104.7218768,
+    "centroid_lat": 40.8265763
+  },
+  "80649": {
+    "PO_NAME": "Orchard",
+    "STATE": "CO",
+    "POPULATION": 435,
+    "POP_SQMI": 4.04,
+    "SQMI": 107.77,
+    "centroid_lon": -104.1361488,
+    "centroid_lat": 40.38696794
+  },
+  "80650": {
+    "PO_NAME": "Pierce",
+    "STATE": "CO",
+    "POPULATION": 1901,
+    "POP_SQMI": 32.06,
+    "SQMI": 59.29,
+    "centroid_lon": -104.7503072,
+    "centroid_lat": 40.64905272
+  },
+  "80651": {
+    "PO_NAME": "Platteville",
+    "STATE": "CO",
+    "POPULATION": 5278,
+    "POP_SQMI": 57.73,
+    "SQMI": 91.43,
+    "centroid_lon": -104.8185989,
+    "centroid_lat": 40.23725562
+  },
+  "80652": {
+    "PO_NAME": "Roggen",
+    "STATE": "CO",
+    "POPULATION": 624,
+    "POP_SQMI": 2.42,
+    "SQMI": 258.23,
+    "centroid_lon": -104.2932691,
+    "centroid_lat": 40.14853439
+  },
+  "80653": {
+    "PO_NAME": "Weldona",
+    "STATE": "CO",
+    "POPULATION": 744,
+    "POP_SQMI": 5.45,
+    "SQMI": 136.62,
+    "centroid_lon": -103.9744796,
+    "centroid_lat": 40.39122936
+  },
+  "80654": {
+    "PO_NAME": "Wiggins",
+    "STATE": "CO",
+    "POPULATION": 2728,
+    "POP_SQMI": 12.21,
+    "SQMI": 223.38,
+    "centroid_lon": -104.0726983,
+    "centroid_lat": 40.13881073
+  },
+  "80701": {
+    "PO_NAME": "Fort Morgan",
+    "STATE": "CO",
+    "POPULATION": 16696,
+    "POP_SQMI": 26.21,
+    "SQMI": 637.12,
+    "centroid_lon": -103.8234934,
+    "centroid_lat": 40.14639881
+  },
+  "80705": {
+    "PO_NAME": "Log Lane Village",
+    "STATE": "CO",
+    "POPULATION": 1001,
+    "POP_SQMI": 953.33,
+    "SQMI": 1.05,
+    "centroid_lon": -103.8237135,
+    "centroid_lat": 40.27043429
+  },
+  "80720": {
+    "PO_NAME": "Akron",
+    "STATE": "CO",
+    "POPULATION": 2695,
+    "POP_SQMI": 2.48,
+    "SQMI": 1085.37,
+    "centroid_lon": -103.1996709,
+    "centroid_lat": 40.0676276
+  },
+  "80721": {
+    "PO_NAME": "Amherst",
+    "STATE": "CO",
+    "POPULATION": 133,
+    "POP_SQMI": 1.48,
+    "SQMI": 89.77,
+    "centroid_lon": -102.1434996,
+    "centroid_lat": 40.68249885
+  },
+  "80722": {
+    "PO_NAME": "Atwood",
+    "STATE": "CO",
+    "POPULATION": 410,
+    "POP_SQMI": 20.43,
+    "SQMI": 20.07,
+    "centroid_lon": -103.2759539,
+    "centroid_lat": 40.52517322
+  },
+  "80723": {
+    "PO_NAME": "Brush",
+    "STATE": "CO",
+    "POPULATION": 7514,
+    "POP_SQMI": 33.55,
+    "SQMI": 223.95,
+    "centroid_lon": -103.5653065,
+    "centroid_lat": 40.16980262
+  },
+  "80726": {
+    "PO_NAME": "Crook",
+    "STATE": "CO",
+    "POPULATION": 392,
+    "POP_SQMI": 2.39,
+    "SQMI": 163.9,
+    "centroid_lon": -102.7940587,
+    "centroid_lat": 40.91387338
+  },
+  "80727": {
+    "PO_NAME": "Eckley",
+    "STATE": "CO",
+    "POPULATION": 429,
+    "POP_SQMI": 2.65,
+    "SQMI": 162.08,
+    "centroid_lon": -102.5030177,
+    "centroid_lat": 40.0441333
+  },
+  "80728": {
+    "PO_NAME": "Fleming",
+    "STATE": "CO",
+    "POPULATION": 935,
+    "POP_SQMI": 2.93,
+    "SQMI": 319.3,
+    "centroid_lon": -102.8858635,
+    "centroid_lat": 40.61992409
+  },
+  "80729": {
+    "PO_NAME": "Grover",
+    "STATE": "CO",
+    "POPULATION": 574,
+    "POP_SQMI": 0.93,
+    "SQMI": 620.35,
+    "centroid_lon": -104.2043779,
+    "centroid_lat": 40.87544941
+  },
+  "80731": {
+    "PO_NAME": "Haxtun",
+    "STATE": "CO",
+    "POPULATION": 1645,
+    "POP_SQMI": 3.85,
+    "SQMI": 427.09,
+    "centroid_lon": -102.5917247,
+    "centroid_lat": 40.6159732
+  },
+  "80732": {
+    "PO_NAME": "Hereford",
+    "STATE": "CO",
+    "POPULATION": 18,
+    "POP_SQMI": 360,
+    "SQMI": 0.05,
+    "centroid_lon": -104.3054257,
+    "centroid_lat": 40.97548006
+  },
+  "80733": {
+    "PO_NAME": "Hillrose",
+    "STATE": "CO",
+    "POPULATION": 544,
+    "POP_SQMI": 13.95,
+    "SQMI": 38.99,
+    "centroid_lon": -103.4565807,
+    "centroid_lat": 40.35422672
+  },
+  "80734": {
+    "PO_NAME": "Holyoke",
+    "STATE": "CO",
+    "POPULATION": 2926,
+    "POP_SQMI": 8.09,
+    "SQMI": 361.46,
+    "centroid_lon": -102.2646001,
+    "centroid_lat": 40.54470272
+  },
+  "80735": {
+    "PO_NAME": "Idalia",
+    "STATE": "CO",
+    "POPULATION": 402,
+    "POP_SQMI": 1.55,
+    "SQMI": 258.64,
+    "centroid_lon": -102.2346081,
+    "centroid_lat": 39.68191638
+  },
+  "80736": {
+    "PO_NAME": "Iliff",
+    "STATE": "CO",
+    "POPULATION": 707,
+    "POP_SQMI": 4.58,
+    "SQMI": 154.53,
+    "centroid_lon": -103.0314795,
+    "centroid_lat": 40.79556437
+  },
+  "80737": {
+    "PO_NAME": "Julesburg",
+    "STATE": "CO",
+    "POPULATION": 1496,
+    "POP_SQMI": 6.25,
+    "SQMI": 239.19,
+    "centroid_lon": -102.1827247,
+    "centroid_lat": 40.8784869
+  },
+  "80740": {
+    "PO_NAME": "Lindon",
+    "STATE": "CO",
+    "POPULATION": 180,
+    "POP_SQMI": 1.02,
+    "SQMI": 175.88,
+    "centroid_lon": -103.3900782,
+    "centroid_lat": 39.69141001
+  },
+  "80741": {
+    "PO_NAME": "Merino",
+    "STATE": "CO",
+    "POPULATION": 952,
+    "POP_SQMI": 4.88,
+    "SQMI": 195.25,
+    "centroid_lon": -103.458908,
+    "centroid_lat": 40.57603101
+  },
+  "80742": {
+    "PO_NAME": "New Raymer",
+    "STATE": "CO",
+    "POPULATION": 250,
+    "POP_SQMI": 0.59,
+    "SQMI": 425.62,
+    "centroid_lon": -103.8167772,
+    "centroid_lat": 40.74308864
+  },
+  "80743": {
+    "PO_NAME": "Otis",
+    "STATE": "CO",
+    "POPULATION": 979,
+    "POP_SQMI": 2.27,
+    "SQMI": 432.2,
+    "centroid_lon": -102.9445676,
+    "centroid_lat": 40.23388493
+  },
+  "80744": {
+    "PO_NAME": "Ovid",
+    "STATE": "CO",
+    "POPULATION": 493,
+    "POP_SQMI": 3.98,
+    "SQMI": 123.89,
+    "centroid_lon": -102.3800281,
+    "centroid_lat": 40.87306727
+  },
+  "80745": {
+    "PO_NAME": "Padroni",
+    "STATE": "CO",
+    "POPULATION": 101,
+    "POP_SQMI": 0.47,
+    "SQMI": 214,
+    "centroid_lon": -103.4226688,
+    "centroid_lat": 40.90517896
+  },
+  "80746": {
+    "PO_NAME": "Paoli",
+    "STATE": "CO",
+    "POPULATION": 34,
+    "POP_SQMI": 5.83,
+    "SQMI": 5.83,
+    "centroid_lon": -102.429578,
+    "centroid_lat": 40.61643728
+  },
+  "80747": {
+    "PO_NAME": "Peetz",
+    "STATE": "CO",
+    "POPULATION": 497,
+    "POP_SQMI": 2.8,
+    "SQMI": 177.32,
+    "centroid_lon": -103.1356256,
+    "centroid_lat": 40.94695619
+  },
+  "80749": {
+    "PO_NAME": "Sedgwick",
+    "STATE": "CO",
+    "POPULATION": 382,
+    "POP_SQMI": 2.04,
+    "SQMI": 186.95,
+    "centroid_lon": -102.5497485,
+    "centroid_lat": 40.87402153
+  },
+  "80750": {
+    "PO_NAME": "Snyder",
+    "STATE": "CO",
+    "POPULATION": 450,
+    "POP_SQMI": 2.69,
+    "SQMI": 167.52,
+    "centroid_lon": -103.5965248,
+    "centroid_lat": 40.42783339
+  },
+  "80751": {
+    "PO_NAME": "Sterling",
+    "STATE": "CO",
+    "POPULATION": 18364,
+    "POP_SQMI": 37.8,
+    "SQMI": 485.8,
+    "centroid_lon": -103.2510361,
+    "centroid_lat": 40.64291501
+  },
+  "80754": {
+    "PO_NAME": "Stoneham",
+    "STATE": "CO",
+    "POPULATION": 188,
+    "POP_SQMI": 1.14,
+    "SQMI": 165.5,
+    "centroid_lon": -103.6423465,
+    "centroid_lat": 40.71528019
+  },
+  "80755": {
+    "PO_NAME": "Vernon",
+    "STATE": "CO",
+    "POPULATION": 185,
+    "POP_SQMI": 1.41,
+    "SQMI": 130.85,
+    "centroid_lon": -102.3663594,
+    "centroid_lat": 39.8730986
+  },
+  "80757": {
+    "PO_NAME": "Woodrow",
+    "STATE": "CO",
+    "POPULATION": 216,
+    "POP_SQMI": 0.58,
+    "SQMI": 375.61,
+    "centroid_lon": -103.5967211,
+    "centroid_lat": 39.81279017
+  },
+  "80758": {
+    "PO_NAME": "Wray",
+    "STATE": "CO",
+    "POPULATION": 3879,
+    "POP_SQMI": 4.91,
+    "SQMI": 789.78,
+    "centroid_lon": -102.2269886,
+    "centroid_lat": 40.12869373
+  },
+  "80759": {
+    "PO_NAME": "Yuma",
+    "STATE": "CO",
+    "POPULATION": 4756,
+    "POP_SQMI": 6.45,
+    "SQMI": 737.44,
+    "centroid_lon": -102.6626847,
+    "centroid_lat": 40.09631811
+  },
+  "80801": {
+    "PO_NAME": "Anton",
+    "STATE": "CO",
+    "POPULATION": 165,
+    "POP_SQMI": 1.05,
+    "SQMI": 157.49,
+    "centroid_lon": -103.1425171,
+    "centroid_lat": 39.72299799
+  },
+  "80802": {
+    "PO_NAME": "Arapahoe",
+    "STATE": "CO",
+    "POPULATION": 272,
+    "POP_SQMI": 0.63,
+    "SQMI": 430.46,
+    "centroid_lon": -102.1803375,
+    "centroid_lat": 38.82453414
+  },
+  "80804": {
+    "PO_NAME": "Arriba",
+    "STATE": "CO",
+    "POPULATION": 343,
+    "POP_SQMI": 1.05,
+    "SQMI": 326.51,
+    "centroid_lon": -103.2562986,
+    "centroid_lat": 39.34248905
+  },
+  "80805": {
+    "PO_NAME": "Bethune",
+    "STATE": "CO",
+    "POPULATION": 467,
+    "POP_SQMI": 3.02,
+    "SQMI": 154.83,
+    "centroid_lon": -102.4476625,
+    "centroid_lat": 39.29028855
+  },
+  "80807": {
+    "PO_NAME": "Burlington",
+    "STATE": "CO",
+    "POPULATION": 4289,
+    "POP_SQMI": 6.24,
+    "SQMI": 687.46,
+    "centroid_lon": -102.2260084,
+    "centroid_lat": 39.30118489
+  },
+  "80808": {
+    "PO_NAME": "Calhan",
+    "STATE": "CO",
+    "POPULATION": 6797,
+    "POP_SQMI": 19.34,
+    "SQMI": 351.46,
+    "centroid_lon": -104.312303,
+    "centroid_lat": 38.99451296
+  },
+  "80809": {
+    "PO_NAME": "Cascade",
+    "STATE": "CO",
+    "POPULATION": 1814,
+    "POP_SQMI": 74.8,
+    "SQMI": 24.25,
+    "centroid_lon": -104.9745945,
+    "centroid_lat": 38.90165286
+  },
+  "80810": {
+    "PO_NAME": "Cheyenne Wells",
+    "STATE": "CO",
+    "POPULATION": 1144,
+    "POP_SQMI": 3.24,
+    "SQMI": 353.14,
+    "centroid_lon": -102.42367,
+    "centroid_lat": 38.8316405
+  },
+  "80812": {
+    "PO_NAME": "Cope",
+    "STATE": "CO",
+    "POPULATION": 384,
+    "POP_SQMI": 1.54,
+    "SQMI": 248.78,
+    "centroid_lon": -102.9878837,
+    "centroid_lat": 39.65673884
+  },
+  "80813": {
+    "PO_NAME": "Cripple Creek",
+    "STATE": "CO",
+    "POPULATION": 527,
+    "POP_SQMI": 22.37,
+    "SQMI": 23.56,
+    "centroid_lon": -105.1862018,
+    "centroid_lat": 38.79572064
+  },
+  "80814": {
+    "PO_NAME": "Divide",
+    "STATE": "CO",
+    "POPULATION": 4498,
+    "POP_SQMI": 40.32,
+    "SQMI": 111.57,
+    "centroid_lon": -105.1665848,
+    "centroid_lat": 38.93451964
+  },
+  "80815": {
+    "PO_NAME": "Flagler",
+    "STATE": "CO",
+    "POPULATION": 839,
+    "POP_SQMI": 1.84,
+    "SQMI": 455.97,
+    "centroid_lon": -103.0366909,
+    "centroid_lat": 39.30357023
+  },
+  "80816": {
+    "PO_NAME": "Florissant",
+    "STATE": "CO",
+    "POPULATION": 7812,
+    "POP_SQMI": 23.8,
+    "SQMI": 328.25,
+    "centroid_lon": -105.2089225,
+    "centroid_lat": 38.79264161
+  },
+  "80817": {
+    "PO_NAME": "Fountain",
+    "STATE": "CO",
+    "POPULATION": 33579,
+    "POP_SQMI": 290.02,
+    "SQMI": 115.78,
+    "centroid_lon": -104.6539893,
+    "centroid_lat": 38.61083772
+  },
+  "80818": {
+    "PO_NAME": "Genoa",
+    "STATE": "CO",
+    "POPULATION": 383,
+    "POP_SQMI": 1.42,
+    "SQMI": 269.44,
+    "centroid_lon": -103.4602932,
+    "centroid_lat": 39.41352073
+  },
+  "80819": {
+    "PO_NAME": "Green Mountain Falls",
+    "STATE": "CO",
+    "POPULATION": 726,
+    "POP_SQMI": 87.15,
+    "SQMI": 8.33,
+    "centroid_lon": -104.9927688,
+    "centroid_lat": 38.955152
+  },
+  "80820": {
+    "PO_NAME": "Guffey",
+    "STATE": "CO",
+    "POPULATION": 859,
+    "POP_SQMI": 1.68,
+    "SQMI": 511.27,
+    "centroid_lon": -105.6595084,
+    "centroid_lat": 38.8261594
+  },
+  "80821": {
+    "PO_NAME": "Hugo",
+    "STATE": "CO",
+    "POPULATION": 1081,
+    "POP_SQMI": 1.71,
+    "SQMI": 630.66,
+    "centroid_lon": -103.4881987,
+    "centroid_lat": 38.99421659
+  },
+  "80822": {
+    "PO_NAME": "Joes",
+    "STATE": "CO",
+    "POPULATION": 238,
+    "POP_SQMI": 1.99,
+    "SQMI": 119.37,
+    "centroid_lon": -102.6858275,
+    "centroid_lat": 39.6651303
+  },
+  "80823": {
+    "PO_NAME": "Karval",
+    "STATE": "CO",
+    "POPULATION": 299,
+    "POP_SQMI": 0.5,
+    "SQMI": 593.34,
+    "centroid_lon": -103.3821706,
+    "centroid_lat": 38.721058
+  },
+  "80824": {
+    "PO_NAME": "Kirk",
+    "STATE": "CO",
+    "POPULATION": 252,
+    "POP_SQMI": 1.73,
+    "SQMI": 145.54,
+    "centroid_lon": -102.4976005,
+    "centroid_lat": 39.65741384
+  },
+  "80825": {
+    "PO_NAME": "Kit Carson",
+    "STATE": "CO",
+    "POPULATION": 437,
+    "POP_SQMI": 0.45,
+    "SQMI": 978.47,
+    "centroid_lon": -102.8437453,
+    "centroid_lat": 38.8313777
+  },
+  "80827": {
+    "PO_NAME": "Lake George",
+    "STATE": "CO",
+    "POPULATION": 993,
+    "POP_SQMI": 2.12,
+    "SQMI": 469.08,
+    "centroid_lon": -105.5183506,
+    "centroid_lat": 39.09808644
+  },
+  "80828": {
+    "PO_NAME": "Limon",
+    "STATE": "CO",
+    "POPULATION": 3495,
+    "POP_SQMI": 8.12,
+    "SQMI": 430.5,
+    "centroid_lon": -103.6896476,
+    "centroid_lat": 39.28389525
+  },
+  "80829": {
+    "PO_NAME": "Manitou Springs",
+    "STATE": "CO",
+    "POPULATION": 5626,
+    "POP_SQMI": 287.19,
+    "SQMI": 19.59,
+    "centroid_lon": -104.9312719,
+    "centroid_lat": 38.82912587
+  },
+  "80830": {
+    "PO_NAME": "Matheson",
+    "STATE": "CO",
+    "POPULATION": 241,
+    "POP_SQMI": 1.32,
+    "SQMI": 182.97,
+    "centroid_lon": -103.8841587,
+    "centroid_lat": 39.0926128
+  },
+  "80831": {
+    "PO_NAME": "Peyton",
+    "STATE": "CO",
+    "POPULATION": 30801,
+    "POP_SQMI": 182.08,
+    "SQMI": 169.16,
+    "centroid_lon": -104.512041,
+    "centroid_lat": 38.98117048
+  },
+  "80832": {
+    "PO_NAME": "Ramah",
+    "STATE": "CO",
+    "POPULATION": 891,
+    "POP_SQMI": 2.89,
+    "SQMI": 308.53,
+    "centroid_lon": -104.0431057,
+    "centroid_lat": 39.06474296
+  },
+  "80833": {
+    "PO_NAME": "Rush",
+    "STATE": "CO",
+    "POPULATION": 731,
+    "POP_SQMI": 1.82,
+    "SQMI": 400.96,
+    "centroid_lon": -103.9651798,
+    "centroid_lat": 38.73452776
+  },
+  "80834": {
+    "PO_NAME": "Seibert",
+    "STATE": "CO",
+    "POPULATION": 339,
+    "POP_SQMI": 1.7,
+    "SQMI": 199.24,
+    "centroid_lon": -102.8761669,
+    "centroid_lat": 39.32197179
+  },
+  "80835": {
+    "PO_NAME": "Simla",
+    "STATE": "CO",
+    "POPULATION": 979,
+    "POP_SQMI": 7.83,
+    "SQMI": 125.09,
+    "centroid_lon": -104.0703103,
+    "centroid_lat": 39.1741243
+  },
+  "80836": {
+    "PO_NAME": "Stratton",
+    "STATE": "CO",
+    "POPULATION": 1189,
+    "POP_SQMI": 3.19,
+    "SQMI": 372.55,
+    "centroid_lon": -102.57525,
+    "centroid_lat": 39.31705278
+  },
+  "80840": {
+    "PO_NAME": "Usaf Academy",
+    "STATE": "CO",
+    "POPULATION": 7197,
+    "POP_SQMI": 249.72,
+    "SQMI": 28.82,
+    "centroid_lon": -104.8567735,
+    "centroid_lat": 38.99492794
+  },
+  "80860": {
+    "PO_NAME": "Victor",
+    "STATE": "CO",
+    "POPULATION": 595,
+    "POP_SQMI": 1652.78,
+    "SQMI": 0.36,
+    "centroid_lon": -105.1409111,
+    "centroid_lat": 38.70969564
+  },
+  "80861": {
+    "PO_NAME": "Vona",
+    "STATE": "CO",
+    "POPULATION": 255,
+    "POP_SQMI": 0.87,
+    "SQMI": 291.56,
+    "centroid_lon": -102.7439294,
+    "centroid_lat": 39.30020912
+  },
+  "80862": {
+    "PO_NAME": "Wild Horse",
+    "STATE": "CO",
+    "POPULATION": 64,
+    "POP_SQMI": 1280,
+    "SQMI": 0.05,
+    "centroid_lon": -103.0062068,
+    "centroid_lat": 38.82519236
+  },
+  "80863": {
+    "PO_NAME": "Woodland Park",
+    "STATE": "CO",
+    "POPULATION": 13426,
+    "POP_SQMI": 107.42,
+    "SQMI": 124.99,
+    "centroid_lon": -105.0760856,
+    "centroid_lat": 39.01402349
+  },
+  "80864": {
+    "PO_NAME": "Yoder",
+    "STATE": "CO",
+    "POPULATION": 1528,
+    "POP_SQMI": 5.85,
+    "SQMI": 261.15,
+    "centroid_lon": -104.1994331,
+    "centroid_lat": 38.71917439
+  },
+  "80902": {
+    "PO_NAME": "Colorado Springs",
+    "STATE": "CO",
+    "POPULATION": 8934,
+    "POP_SQMI": 3358.65,
+    "SQMI": 2.66,
+    "centroid_lon": -104.804638,
+    "centroid_lat": 38.73728406
+  },
+  "80903": {
+    "PO_NAME": "Colorado Springs",
+    "STATE": "CO",
+    "POPULATION": 16086,
+    "POP_SQMI": 3904.37,
+    "SQMI": 4.12,
+    "centroid_lon": -104.8168498,
+    "centroid_lat": 38.83332013
+  },
+  "80904": {
+    "PO_NAME": "Colorado Springs",
+    "STATE": "CO",
+    "POPULATION": 22727,
+    "POP_SQMI": 1630.34,
+    "SQMI": 13.94,
+    "centroid_lon": -104.8766998,
+    "centroid_lat": 38.86983525
+  },
+  "80905": {
+    "PO_NAME": "Colorado Springs",
+    "STATE": "CO",
+    "POPULATION": 18910,
+    "POP_SQMI": 3766.93,
+    "SQMI": 5.02,
+    "centroid_lon": -104.8357597,
+    "centroid_lat": 38.81750436
+  },
+  "80906": {
+    "PO_NAME": "Colorado Springs",
+    "STATE": "CO",
+    "POPULATION": 39386,
+    "POP_SQMI": 809.58,
+    "SQMI": 48.65,
+    "centroid_lon": -104.873177,
+    "centroid_lat": 38.76423718
+  },
+  "80907": {
+    "PO_NAME": "Colorado Springs",
+    "STATE": "CO",
+    "POPULATION": 27018,
+    "POP_SQMI": 2718.11,
+    "SQMI": 9.94,
+    "centroid_lon": -104.824264,
+    "centroid_lat": 38.87875648
+  },
+  "80908": {
+    "PO_NAME": "Colorado Springs",
+    "STATE": "CO",
+    "POPULATION": 22061,
+    "POP_SQMI": 227.18,
+    "SQMI": 97.11,
+    "centroid_lon": -104.6905646,
+    "centroid_lat": 39.04137688
+  },
+  "80909": {
+    "PO_NAME": "Colorado Springs",
+    "STATE": "CO",
+    "POPULATION": 39555,
+    "POP_SQMI": 4975.47,
+    "SQMI": 7.95,
+    "centroid_lon": -104.7741732,
+    "centroid_lat": 38.8526585
+  },
+  "80910": {
+    "PO_NAME": "Colorado Springs",
+    "STATE": "CO",
+    "POPULATION": 32486,
+    "POP_SQMI": 4627.64,
+    "SQMI": 7.02,
+    "centroid_lon": -104.775314,
+    "centroid_lat": 38.81161124
+  },
+  "80911": {
+    "PO_NAME": "Colorado Springs",
+    "STATE": "CO",
+    "POPULATION": 34734,
+    "POP_SQMI": 2550.22,
+    "SQMI": 13.62,
+    "centroid_lon": -104.7167853,
+    "centroid_lat": 38.75639619
+  },
+  "80912": {
+    "PO_NAME": "Colorado Springs",
+    "STATE": "CO",
+    "POPULATION": 351,
+    "POP_SQMI": 487.5,
+    "SQMI": 0.72,
+    "centroid_lon": -104.5264467,
+    "centroid_lat": 38.80313722
+  },
+  "80913": {
+    "PO_NAME": "Colorado Springs",
+    "STATE": "CO",
+    "POPULATION": 8147,
+    "POP_SQMI": 63.03,
+    "SQMI": 129.25,
+    "centroid_lon": -104.8093897,
+    "centroid_lat": 38.61213393
+  },
+  "80914": {
+    "PO_NAME": "Colorado Springs",
+    "STATE": "CO",
+    "POPULATION": 543,
+    "POP_SQMI": 631.4,
+    "SQMI": 0.86,
+    "centroid_lon": -104.7053869,
+    "centroid_lat": 38.82804512
+  },
+  "80915": {
+    "PO_NAME": "Colorado Springs",
+    "STATE": "CO",
+    "POPULATION": 21699,
+    "POP_SQMI": 2992.97,
+    "SQMI": 7.25,
+    "centroid_lon": -104.7165898,
+    "centroid_lat": 38.85357659
+  },
+  "80916": {
+    "PO_NAME": "Colorado Springs",
+    "STATE": "CO",
+    "POPULATION": 37897,
+    "POP_SQMI": 2235.81,
+    "SQMI": 16.95,
+    "centroid_lon": -104.712533,
+    "centroid_lat": 38.80593374
+  },
+  "80917": {
+    "PO_NAME": "Colorado Springs",
+    "STATE": "CO",
+    "POPULATION": 31530,
+    "POP_SQMI": 5228.86,
+    "SQMI": 6.03,
+    "centroid_lon": -104.7442155,
+    "centroid_lat": 38.88611811
+  },
+  "80918": {
+    "PO_NAME": "Colorado Springs",
+    "STATE": "CO",
+    "POPULATION": 49076,
+    "POP_SQMI": 4042.5,
+    "SQMI": 12.14,
+    "centroid_lon": -104.7801476,
+    "centroid_lat": 38.911748
+  },
+  "80919": {
+    "PO_NAME": "Colorado Springs",
+    "STATE": "CO",
+    "POPULATION": 30246,
+    "POP_SQMI": 2085.93,
+    "SQMI": 14.5,
+    "centroid_lon": -104.8549805,
+    "centroid_lat": 38.92737875
+  },
+  "80920": {
+    "PO_NAME": "Colorado Springs",
+    "STATE": "CO",
+    "POPULATION": 41550,
+    "POP_SQMI": 3494.53,
+    "SQMI": 11.89,
+    "centroid_lon": -104.7697952,
+    "centroid_lat": 38.95558989
+  },
+  "80921": {
+    "PO_NAME": "Colorado Springs",
+    "STATE": "CO",
+    "POPULATION": 28023,
+    "POP_SQMI": 371.66,
+    "SQMI": 75.4,
+    "centroid_lon": -104.9226412,
+    "centroid_lat": 39.05686728
+  },
+  "80922": {
+    "PO_NAME": "Colorado Springs",
+    "STATE": "CO",
+    "POPULATION": 29603,
+    "POP_SQMI": 4917.44,
+    "SQMI": 6.02,
+    "centroid_lon": -104.7015935,
+    "centroid_lat": 38.88999828
+  },
+  "80923": {
+    "PO_NAME": "Colorado Springs",
+    "STATE": "CO",
+    "POPULATION": 33053,
+    "POP_SQMI": 4933.28,
+    "SQMI": 6.7,
+    "centroid_lon": -104.7142923,
+    "centroid_lat": 38.92664854
+  },
+  "80924": {
+    "PO_NAME": "Colorado Springs",
+    "STATE": "CO",
+    "POPULATION": 14202,
+    "POP_SQMI": 2509.19,
+    "SQMI": 5.66,
+    "centroid_lon": -104.7212795,
+    "centroid_lat": 38.96688126
+  },
+  "80925": {
+    "PO_NAME": "Colorado Springs",
+    "STATE": "CO",
+    "POPULATION": 13209,
+    "POP_SQMI": 620.72,
+    "SQMI": 21.28,
+    "centroid_lon": -104.6411506,
+    "centroid_lat": 38.73998583
+  },
+  "80926": {
+    "PO_NAME": "Colorado Springs",
+    "STATE": "CO",
+    "POPULATION": 1448,
+    "POP_SQMI": 35.29,
+    "SQMI": 41.03,
+    "centroid_lon": -104.8922683,
+    "centroid_lat": 38.66339799
+  },
+  "80927": {
+    "PO_NAME": "Colorado Springs",
+    "STATE": "CO",
+    "POPULATION": 6888,
+    "POP_SQMI": 4004.65,
+    "SQMI": 1.72,
+    "centroid_lon": -104.6736866,
+    "centroid_lat": 38.92534995
+  },
+  "80928": {
+    "PO_NAME": "Colorado Springs",
+    "STATE": "CO",
+    "POPULATION": 1056,
+    "POP_SQMI": 4.28,
+    "SQMI": 246.66,
+    "centroid_lon": -104.414159,
+    "centroid_lat": 38.63142018
+  },
+  "80929": {
+    "PO_NAME": "Colorado Springs",
+    "STATE": "CO",
+    "POPULATION": 252,
+    "POP_SQMI": 6.11,
+    "SQMI": 41.22,
+    "centroid_lon": -104.6078524,
+    "centroid_lat": 38.81758122
+  },
+  "80930": {
+    "PO_NAME": "Colorado Springs",
+    "STATE": "CO",
+    "POPULATION": 1060,
+    "POP_SQMI": 26.27,
+    "SQMI": 40.35,
+    "centroid_lon": -104.4975597,
+    "centroid_lat": 38.80332817
+  },
+  "80938": {
+    "PO_NAME": "Colorado Springs",
+    "STATE": "CO",
+    "POPULATION": 34,
+    "POP_SQMI": 33.01,
+    "SQMI": 1.03,
+    "centroid_lon": -104.6765553,
+    "centroid_lat": 38.90206361
+  },
+  "80939": {
+    "PO_NAME": "Colorado Springs",
+    "STATE": "CO",
+    "POPULATION": 0,
+    "POP_SQMI": 0,
+    "SQMI": 0.62,
+    "centroid_lon": -104.6779385,
+    "centroid_lat": 38.87706422
+  },
+  "80951": {
+    "PO_NAME": "Colorado Springs",
+    "STATE": "CO",
+    "POPULATION": 4670,
+    "POP_SQMI": 450.77,
+    "SQMI": 10.36,
+    "centroid_lon": -104.6526006,
+    "centroid_lat": 38.88824796
+  },
+  "81001": {
+    "PO_NAME": "Pueblo",
+    "STATE": "CO",
+    "POPULATION": 31455,
+    "POP_SQMI": 438.46,
+    "SQMI": 71.74,
+    "centroid_lon": -104.4674786,
+    "centroid_lat": 38.32388918
+  },
+  "81003": {
+    "PO_NAME": "Pueblo",
+    "STATE": "CO",
+    "POPULATION": 15544,
+    "POP_SQMI": 1680.43,
+    "SQMI": 9.25,
+    "centroid_lon": -104.6374835,
+    "centroid_lat": 38.27848053
+  },
+  "81004": {
+    "PO_NAME": "Pueblo",
+    "STATE": "CO",
+    "POPULATION": 27030,
+    "POP_SQMI": 147.05,
+    "SQMI": 183.81,
+    "centroid_lon": -104.7462869,
+    "centroid_lat": 38.05162526
+  },
+  "81005": {
+    "PO_NAME": "Pueblo",
+    "STATE": "CO",
+    "POPULATION": 31549,
+    "POP_SQMI": 160.08,
+    "SQMI": 197.08,
+    "centroid_lon": -104.8475356,
+    "centroid_lat": 38.2117363
+  },
+  "81006": {
+    "PO_NAME": "Pueblo",
+    "STATE": "CO",
+    "POPULATION": 12788,
+    "POP_SQMI": 157.82,
+    "SQMI": 81.03,
+    "centroid_lon": -104.4934972,
+    "centroid_lat": 38.22769699
+  },
+  "81007": {
+    "PO_NAME": "Pueblo",
+    "STATE": "CO",
+    "POPULATION": 32737,
+    "POP_SQMI": 131.07,
+    "SQMI": 249.77,
+    "centroid_lon": -104.7872437,
+    "centroid_lat": 38.40112249
+  },
+  "81008": {
+    "PO_NAME": "Pueblo",
+    "STATE": "CO",
+    "POPULATION": 11162,
+    "POP_SQMI": 102.21,
+    "SQMI": 109.21,
+    "centroid_lon": -104.5794709,
+    "centroid_lat": 38.43517707
+  },
+  "81019": {
+    "PO_NAME": "Colorado City",
+    "STATE": "CO",
+    "POPULATION": 2407,
+    "POP_SQMI": 191.49,
+    "SQMI": 12.57,
+    "centroid_lon": -104.8170703,
+    "centroid_lat": 37.95808663
+  },
+  "81020": {
+    "PO_NAME": "Aguilar",
+    "STATE": "CO",
+    "POPULATION": 906,
+    "POP_SQMI": 3.98,
+    "SQMI": 227.61,
+    "centroid_lon": -104.7248086,
+    "centroid_lat": 37.37432784
+  },
+  "81021": {
+    "PO_NAME": "Arlington",
+    "STATE": "CO",
+    "POPULATION": 17,
+    "POP_SQMI": 0.07,
+    "SQMI": 244.87,
+    "centroid_lon": -103.3663649,
+    "centroid_lat": 38.38956487
+  },
+  "81022": {
+    "PO_NAME": "Avondale",
+    "STATE": "CO",
+    "POPULATION": 1604,
+    "POP_SQMI": 7.11,
+    "SQMI": 225.75,
+    "centroid_lon": -104.4948498,
+    "centroid_lat": 38.08206526
+  },
+  "81023": {
+    "PO_NAME": "Beulah",
+    "STATE": "CO",
+    "POPULATION": 1197,
+    "POP_SQMI": 9.51,
+    "SQMI": 125.91,
+    "centroid_lon": -104.9432411,
+    "centroid_lat": 38.08096659
+  },
+  "81024": {
+    "PO_NAME": "Boncarbo",
+    "STATE": "CO",
+    "POPULATION": 193,
+    "POP_SQMI": 6.42,
+    "SQMI": 30.04,
+    "centroid_lon": -104.688092,
+    "centroid_lat": 37.20197253
+  },
+  "81025": {
+    "PO_NAME": "Boone",
+    "STATE": "CO",
+    "POPULATION": 1133,
+    "POP_SQMI": 2.21,
+    "SQMI": 512.21,
+    "centroid_lon": -104.2553752,
+    "centroid_lat": 38.35518003
+  },
+  "81027": {
+    "PO_NAME": "Branson",
+    "STATE": "CO",
+    "POPULATION": 163,
+    "POP_SQMI": 0.27,
+    "SQMI": 604.65,
+    "centroid_lon": -103.7678141,
+    "centroid_lat": 37.20482387
+  },
+  "81029": {
+    "PO_NAME": "Campo",
+    "STATE": "CO",
+    "POPULATION": 358,
+    "POP_SQMI": 0.72,
+    "SQMI": 498.27,
+    "centroid_lon": -102.5323333,
+    "centroid_lat": 37.1048003
+  },
+  "81030": {
+    "PO_NAME": "Cheraw",
+    "STATE": "CO",
+    "POPULATION": null,
+    "POP_SQMI": null,
+    "SQMI": 0.09,
+    "centroid_lon": -103.5119796,
+    "centroid_lat": 38.10687357
+  },
+  "81033": {
+    "PO_NAME": "Crowley",
+    "STATE": "CO",
+    "POPULATION": 17,
+    "POP_SQMI": 62.96,
+    "SQMI": 0.27,
+    "centroid_lon": -103.8547308,
+    "centroid_lat": 38.19544436
+  },
+  "81036": {
+    "PO_NAME": "Eads",
+    "STATE": "CO",
+    "POPULATION": 998,
+    "POP_SQMI": 1.54,
+    "SQMI": 648.61,
+    "centroid_lon": -102.7726972,
+    "centroid_lat": 38.44449306
+  },
+  "81039": {
+    "PO_NAME": "Fowler",
+    "STATE": "CO",
+    "POPULATION": 1977,
+    "POP_SQMI": 3.26,
+    "SQMI": 605.7,
+    "centroid_lon": -104.2161726,
+    "centroid_lat": 37.95819435
+  },
+  "81040": {
+    "PO_NAME": "Gardner",
+    "STATE": "CO",
+    "POPULATION": 632,
+    "POP_SQMI": 1.94,
+    "SQMI": 325.86,
+    "centroid_lon": -105.3002594,
+    "centroid_lat": 37.7723711
+  },
+  "81041": {
+    "PO_NAME": "Granada",
+    "STATE": "CO",
+    "POPULATION": 755,
+    "POP_SQMI": 1.96,
+    "SQMI": 384.51,
+    "centroid_lon": -102.3832432,
+    "centroid_lat": 37.84714247
+  },
+  "81044": {
+    "PO_NAME": "Hasty",
+    "STATE": "CO",
+    "POPULATION": 172,
+    "POP_SQMI": 1,
+    "SQMI": 172.33,
+    "centroid_lon": -102.9214867,
+    "centroid_lat": 37.98716025
+  },
+  "81045": {
+    "PO_NAME": "Haswell",
+    "STATE": "CO",
+    "POPULATION": 127,
+    "POP_SQMI": 0.42,
+    "SQMI": 301.96,
+    "centroid_lon": -103.1371005,
+    "centroid_lat": 38.46616113
+  },
+  "81047": {
+    "PO_NAME": "Holly",
+    "STATE": "CO",
+    "POPULATION": 1606,
+    "POP_SQMI": 2.39,
+    "SQMI": 673.25,
+    "centroid_lon": -102.2015887,
+    "centroid_lat": 38.00760513
+  },
+  "81049": {
+    "PO_NAME": "Kim",
+    "STATE": "CO",
+    "POPULATION": 265,
+    "POP_SQMI": 0.22,
+    "SQMI": 1184.46,
+    "centroid_lon": -103.3692562,
+    "centroid_lat": 37.33395632
+  },
+  "81050": {
+    "PO_NAME": "La Junta",
+    "STATE": "CO",
+    "POPULATION": 10707,
+    "POP_SQMI": 19.63,
+    "SQMI": 545.34,
+    "centroid_lon": -103.5246782,
+    "centroid_lat": 37.92146338
+  },
+  "81052": {
+    "PO_NAME": "Lamar",
+    "STATE": "CO",
+    "POPULATION": 9545,
+    "POP_SQMI": 17.23,
+    "SQMI": 554.09,
+    "centroid_lon": -102.606501,
+    "centroid_lat": 37.9444187
+  },
+  "81054": {
+    "PO_NAME": "Las Animas",
+    "STATE": "CO",
+    "POPULATION": 5288,
+    "POP_SQMI": 4.24,
+    "SQMI": 1248.51,
+    "centroid_lon": -103.1160413,
+    "centroid_lat": 37.89536112
+  },
+  "81055": {
+    "PO_NAME": "La Veta",
+    "STATE": "CO",
+    "POPULATION": 1414,
+    "POP_SQMI": 5.12,
+    "SQMI": 276.08,
+    "centroid_lon": -105.083662,
+    "centroid_lat": 37.49492609
+  },
+  "81057": {
+    "PO_NAME": "Mc Clave",
+    "STATE": "CO",
+    "POPULATION": 525,
+    "POP_SQMI": 3.42,
+    "SQMI": 153.38,
+    "centroid_lon": -102.9246595,
+    "centroid_lat": 38.17942273
+  },
+  "81058": {
+    "PO_NAME": "Manzanola",
+    "STATE": "CO",
+    "POPULATION": 959,
+    "POP_SQMI": 5.36,
+    "SQMI": 178.98,
+    "centroid_lon": -103.9036771,
+    "centroid_lat": 38.01308405
+  },
+  "81059": {
+    "PO_NAME": "Model",
+    "STATE": "CO",
+    "POPULATION": 761,
+    "POP_SQMI": 0.59,
+    "SQMI": 1281.54,
+    "centroid_lon": -104.1426267,
+    "centroid_lat": 37.56066799
+  },
+  "81062": {
+    "PO_NAME": "Olney Springs",
+    "STATE": "CO",
+    "POPULATION": 2669,
+    "POP_SQMI": 11.51,
+    "SQMI": 231.94,
+    "centroid_lon": -103.9724889,
+    "centroid_lat": 38.3125175
+  },
+  "81063": {
+    "PO_NAME": "Ordway",
+    "STATE": "CO",
+    "POPULATION": 2846,
+    "POP_SQMI": 7.35,
+    "SQMI": 387.22,
+    "centroid_lon": -103.7951146,
+    "centroid_lat": 38.43204592
+  },
+  "81064": {
+    "PO_NAME": "Pritchett",
+    "STATE": "CO",
+    "POPULATION": 342,
+    "POP_SQMI": 0.61,
+    "SQMI": 562.91,
+    "centroid_lon": -103.0033791,
+    "centroid_lat": 37.26011345
+  },
+  "81067": {
+    "PO_NAME": "Rocky Ford",
+    "STATE": "CO",
+    "POPULATION": 5708,
+    "POP_SQMI": 29.45,
+    "SQMI": 193.85,
+    "centroid_lon": -103.7410812,
+    "centroid_lat": 37.98194771
+  },
+  "81069": {
+    "PO_NAME": "Rye",
+    "STATE": "CO",
+    "POPULATION": 2203,
+    "POP_SQMI": 10.74,
+    "SQMI": 205.05,
+    "centroid_lon": -104.8548055,
+    "centroid_lat": 37.90625335
+  },
+  "81071": {
+    "PO_NAME": "Sheridan Lake",
+    "STATE": "CO",
+    "POPULATION": 326,
+    "POP_SQMI": 0.53,
+    "SQMI": 619.12,
+    "centroid_lon": -102.2891825,
+    "centroid_lat": 38.43871053
+  },
+  "81073": {
+    "PO_NAME": "Springfield",
+    "STATE": "CO",
+    "POPULATION": 1949,
+    "POP_SQMI": 2.94,
+    "SQMI": 661.9,
+    "centroid_lon": -102.6837801,
+    "centroid_lat": 37.4327849
+  },
+  "81076": {
+    "PO_NAME": "Sugar City",
+    "STATE": "CO",
+    "POPULATION": 466,
+    "POP_SQMI": 1.37,
+    "SQMI": 339.57,
+    "centroid_lon": -103.6114668,
+    "centroid_lat": 38.35986441
+  },
+  "81077": {
+    "PO_NAME": "Swink",
+    "STATE": "CO",
+    "POPULATION": 62,
+    "POP_SQMI": 182.35,
+    "SQMI": 0.34,
+    "centroid_lon": -103.6279688,
+    "centroid_lat": 38.01472108
+  },
+  "81081": {
+    "PO_NAME": "Trinchera",
+    "STATE": "CO",
+    "POPULATION": 82,
+    "POP_SQMI": 0.31,
+    "SQMI": 264.54,
+    "centroid_lon": -104.1540516,
+    "centroid_lat": 37.09194393
+  },
+  "81082": {
+    "PO_NAME": "Trinidad",
+    "STATE": "CO",
+    "POPULATION": 11961,
+    "POP_SQMI": 14.8,
+    "SQMI": 808.24,
+    "centroid_lon": -104.2807033,
+    "centroid_lat": 37.28801774
+  },
+  "81084": {
+    "PO_NAME": "Two Buttes",
+    "STATE": "CO",
+    "POPULATION": 122,
+    "POP_SQMI": 1.62,
+    "SQMI": 75.33,
+    "centroid_lon": -102.3861025,
+    "centroid_lat": 37.52364234
+  },
+  "81087": {
+    "PO_NAME": "Vilas",
+    "STATE": "CO",
+    "POPULATION": 136,
+    "POP_SQMI": 5.67,
+    "SQMI": 23.97,
+    "centroid_lon": -102.43337,
+    "centroid_lat": 37.3420682
+  },
+  "81089": {
+    "PO_NAME": "Walsenburg",
+    "STATE": "CO",
+    "POPULATION": 4949,
+    "POP_SQMI": 5.38,
+    "SQMI": 920.59,
+    "centroid_lon": -104.7813381,
+    "centroid_lat": 37.68670684
+  },
+  "81090": {
+    "PO_NAME": "Walsh",
+    "STATE": "CO",
+    "POPULATION": 963,
+    "POP_SQMI": 1.25,
+    "SQMI": 771.27,
+    "centroid_lon": -102.2188897,
+    "centroid_lat": 37.34988602
+  },
+  "81091": {
+    "PO_NAME": "Weston",
+    "STATE": "CO",
+    "POPULATION": 944,
+    "POP_SQMI": 1.87,
+    "SQMI": 505.83,
+    "centroid_lon": -104.9421384,
+    "centroid_lat": 37.14157974
+  },
+  "81092": {
+    "PO_NAME": "Wiley",
+    "STATE": "CO",
+    "POPULATION": 828,
+    "POP_SQMI": 10.22,
+    "SQMI": 81,
+    "centroid_lon": -102.7383657,
+    "centroid_lat": 38.20354529
+  },
+  "81101": {
+    "PO_NAME": "Alamosa",
+    "STATE": "CO",
+    "POPULATION": 15951,
+    "POP_SQMI": 46.66,
+    "SQMI": 341.89,
+    "centroid_lon": -105.8408334,
+    "centroid_lat": 37.46832003
+  },
+  "81102": {
+    "PO_NAME": "Alamosa",
+    "STATE": "CO",
+    "POPULATION": null,
+    "POP_SQMI": null,
+    "SQMI": 0.03,
+    "centroid_lon": -105.8795615,
+    "centroid_lat": 37.47102191
+  },
+  "81120": {
+    "PO_NAME": "Antonito",
+    "STATE": "CO",
+    "POPULATION": 2624,
+    "POP_SQMI": 2.73,
+    "SQMI": 961.97,
+    "centroid_lon": -106.2751765,
+    "centroid_lat": 37.17868467
+  },
+  "81121": {
+    "PO_NAME": "Arboles",
+    "STATE": "CO",
+    "POPULATION": 61,
+    "POP_SQMI": 65.59,
+    "SQMI": 0.93,
+    "centroid_lon": -107.4201862,
+    "centroid_lat": 37.0181238
+  },
+  "81122": {
+    "PO_NAME": "Bayfield",
+    "STATE": "CO",
+    "POPULATION": 9502,
+    "POP_SQMI": 19.21,
+    "SQMI": 494.71,
+    "centroid_lon": -107.5193822,
+    "centroid_lat": 37.36935883
+  },
+  "81123": {
+    "PO_NAME": "Blanca",
+    "STATE": "CO",
+    "POPULATION": 863,
+    "POP_SQMI": 4.78,
+    "SQMI": 180.5,
+    "centroid_lon": -105.5641128,
+    "centroid_lat": 37.38773834
+  },
+  "81124": {
+    "PO_NAME": "Capulin",
+    "STATE": "CO",
+    "POPULATION": null,
+    "POP_SQMI": null,
+    "SQMI": 1.61,
+    "centroid_lon": -106.1080838,
+    "centroid_lat": 37.29135017
+  },
+  "81125": {
+    "PO_NAME": "Center",
+    "STATE": "CO",
+    "POPULATION": 4027,
+    "POP_SQMI": 7.68,
+    "SQMI": 524.14,
+    "centroid_lon": -106.0641982,
+    "centroid_lat": 37.8201863
+  },
+  "81126": {
+    "PO_NAME": "Chama",
+    "STATE": "CO",
+    "POPULATION": null,
+    "POP_SQMI": null,
+    "SQMI": 1.73,
+    "centroid_lon": -105.371632,
+    "centroid_lat": 37.16436995
+  },
+  "81129": {
+    "PO_NAME": "Conejos",
+    "STATE": "CO",
+    "POPULATION": null,
+    "POP_SQMI": null,
+    "SQMI": 0.46,
+    "centroid_lon": -106.0161075,
+    "centroid_lat": 37.08727678
+  },
+  "81130": {
+    "PO_NAME": "Creede",
+    "STATE": "CO",
+    "POPULATION": 749,
+    "POP_SQMI": 0.84,
+    "SQMI": 891.25,
+    "centroid_lon": -106.9557997,
+    "centroid_lat": 37.66922006
+  },
+  "81131": {
+    "PO_NAME": "Crestone",
+    "STATE": "CO",
+    "POPULATION": 1080,
+    "POP_SQMI": 8.36,
+    "SQMI": 129.22,
+    "centroid_lon": -105.5777836,
+    "centroid_lat": 37.89592196
+  },
+  "81132": {
+    "PO_NAME": "Del Norte",
+    "STATE": "CO",
+    "POPULATION": 3551,
+    "POP_SQMI": 6.71,
+    "SQMI": 529.04,
+    "centroid_lon": -106.431373,
+    "centroid_lat": 37.61051116
+  },
+  "81133": {
+    "PO_NAME": "Fort Garland",
+    "STATE": "CO",
+    "POPULATION": 1067,
+    "POP_SQMI": 2.53,
+    "SQMI": 421.24,
+    "centroid_lon": -105.3184469,
+    "centroid_lat": 37.44149033
+  },
+  "81136": {
+    "PO_NAME": "Hooper",
+    "STATE": "CO",
+    "POPULATION": 254,
+    "POP_SQMI": 3.27,
+    "SQMI": 77.64,
+    "centroid_lon": -105.818003,
+    "centroid_lat": 37.71608504
+  },
+  "81137": {
+    "PO_NAME": "Ignacio",
+    "STATE": "CO",
+    "POPULATION": 5822,
+    "POP_SQMI": 25.5,
+    "SQMI": 228.28,
+    "centroid_lon": -107.6295549,
+    "centroid_lat": 37.08166715
+  },
+  "81138": {
+    "PO_NAME": "Jaroso",
+    "STATE": "CO",
+    "POPULATION": null,
+    "POP_SQMI": null,
+    "SQMI": 1.04,
+    "centroid_lon": -105.6186365,
+    "centroid_lat": 37.00330542
+  },
+  "81140": {
+    "PO_NAME": "La Jara",
+    "STATE": "CO",
+    "POPULATION": 2852,
+    "POP_SQMI": 19.46,
+    "SQMI": 146.52,
+    "centroid_lon": -106.0471121,
+    "centroid_lat": 37.29946881
+  },
+  "81141": {
+    "PO_NAME": "Manassa",
+    "STATE": "CO",
+    "POPULATION": 1490,
+    "POP_SQMI": 2292.31,
+    "SQMI": 0.65,
+    "centroid_lon": -105.9357788,
+    "centroid_lat": 37.17228398
+  },
+  "81143": {
+    "PO_NAME": "Moffat",
+    "STATE": "CO",
+    "POPULATION": 971,
+    "POP_SQMI": 1.93,
+    "SQMI": 504.34,
+    "centroid_lon": -105.8661229,
+    "centroid_lat": 38.06758981
+  },
+  "81144": {
+    "PO_NAME": "Monte Vista",
+    "STATE": "CO",
+    "POPULATION": 7866,
+    "POP_SQMI": 28.91,
+    "SQMI": 272.11,
+    "centroid_lon": -106.1553559,
+    "centroid_lat": 37.54512565
+  },
+  "81146": {
+    "PO_NAME": "Mosca",
+    "STATE": "CO",
+    "POPULATION": 737,
+    "POP_SQMI": 2.47,
+    "SQMI": 298.85,
+    "centroid_lon": -105.7115599,
+    "centroid_lat": 37.63851424
+  },
+  "81147": {
+    "PO_NAME": "Pagosa Springs",
+    "STATE": "CO",
+    "POPULATION": 14556,
+    "POP_SQMI": 12.23,
+    "SQMI": 1190.1,
+    "centroid_lon": -106.9983512,
+    "centroid_lat": 37.18210564
+  },
+  "81149": {
+    "PO_NAME": "Saguache",
+    "STATE": "CO",
+    "POPULATION": 955,
+    "POP_SQMI": 0.57,
+    "SQMI": 1676.01,
+    "centroid_lon": -106.5464058,
+    "centroid_lat": 38.14766663
+  },
+  "81151": {
+    "PO_NAME": "Sanford",
+    "STATE": "CO",
+    "POPULATION": 2301,
+    "POP_SQMI": 7.03,
+    "SQMI": 327.49,
+    "centroid_lon": -105.7282854,
+    "centroid_lat": 37.23069106
+  },
+  "81152": {
+    "PO_NAME": "San Luis",
+    "STATE": "CO",
+    "POPULATION": 1366,
+    "POP_SQMI": 2.94,
+    "SQMI": 464.39,
+    "centroid_lon": -105.4183194,
+    "centroid_lat": 37.10327691
+  },
+  "81154": {
+    "PO_NAME": "South Fork",
+    "STATE": "CO",
+    "POPULATION": 1183,
+    "POP_SQMI": 4.48,
+    "SQMI": 264.34,
+    "centroid_lon": -106.6824515,
+    "centroid_lat": 37.68043012
+  },
+  "81155": {
+    "PO_NAME": "Villa Grove",
+    "STATE": "CO",
+    "POPULATION": 267,
+    "POP_SQMI": 1.01,
+    "SQMI": 264.29,
+    "centroid_lon": -106.0750744,
+    "centroid_lat": 38.31566773
+  },
+  "81201": {
+    "PO_NAME": "Salida",
+    "STATE": "CO",
+    "POPULATION": 9965,
+    "POP_SQMI": 23.83,
+    "SQMI": 418.19,
+    "centroid_lon": -106.0679498,
+    "centroid_lat": 38.55176837
+  },
+  "81210": {
+    "PO_NAME": "Almont",
+    "STATE": "CO",
+    "POPULATION": 206,
+    "POP_SQMI": 0.38,
+    "SQMI": 546.91,
+    "centroid_lon": -106.6166318,
+    "centroid_lat": 38.801861
+  },
+  "81211": {
+    "PO_NAME": "Buena Vista",
+    "STATE": "CO",
+    "POPULATION": 8297,
+    "POP_SQMI": 15.25,
+    "SQMI": 544.24,
+    "centroid_lon": -106.2332457,
+    "centroid_lat": 38.87423053
+  },
+  "81212": {
+    "PO_NAME": "Canon City",
+    "STATE": "CO",
+    "POPULATION": 31122,
+    "POP_SQMI": 61.76,
+    "SQMI": 503.94,
+    "centroid_lon": -105.3448422,
+    "centroid_lat": 38.53774639
+  },
+  "81220": {
+    "PO_NAME": "Cimarron",
+    "STATE": "CO",
+    "POPULATION": 159,
+    "POP_SQMI": 0.94,
+    "SQMI": 169.13,
+    "centroid_lon": -107.5083707,
+    "centroid_lat": 38.37208133
+  },
+  "81223": {
+    "PO_NAME": "Cotopaxi",
+    "STATE": "CO",
+    "POPULATION": 2188,
+    "POP_SQMI": 6.41,
+    "SQMI": 341.56,
+    "centroid_lon": -105.5458161,
+    "centroid_lat": 38.4063588
+  },
+  "81224": {
+    "PO_NAME": "Crested Butte",
+    "STATE": "CO",
+    "POPULATION": 4036,
+    "POP_SQMI": 18.69,
+    "SQMI": 215.91,
+    "centroid_lon": -106.889554,
+    "centroid_lat": 38.89681815
+  },
+  "81225": {
+    "PO_NAME": "Crested Butte",
+    "STATE": "CO",
+    "POPULATION": 868,
+    "POP_SQMI": 1112.82,
+    "SQMI": 0.78,
+    "centroid_lon": -106.9670748,
+    "centroid_lat": 38.90881863
+  },
+  "81226": {
+    "PO_NAME": "Florence",
+    "STATE": "CO",
+    "POPULATION": 9851,
+    "POP_SQMI": 103.83,
+    "SQMI": 94.88,
+    "centroid_lon": -105.1509045,
+    "centroid_lat": 38.32327995
+  },
+  "81228": {
+    "PO_NAME": "Granite",
+    "STATE": "CO",
+    "POPULATION": 356,
+    "POP_SQMI": 5.46,
+    "SQMI": 65.24,
+    "centroid_lon": -106.2665615,
+    "centroid_lat": 39.09154347
+  },
+  "81230": {
+    "PO_NAME": "Gunnison",
+    "STATE": "CO",
+    "POPULATION": 11395,
+    "POP_SQMI": 7.91,
+    "SQMI": 1440.87,
+    "centroid_lon": -107.0612394,
+    "centroid_lat": 38.51215676
+  },
+  "81231": {
+    "PO_NAME": "Gunnison",
+    "STATE": "CO",
+    "POPULATION": null,
+    "POP_SQMI": null,
+    "SQMI": 1.38,
+    "centroid_lon": -106.90457,
+    "centroid_lat": 38.55220205
+  },
+  "81233": {
+    "PO_NAME": "Howard",
+    "STATE": "CO",
+    "POPULATION": 979,
+    "POP_SQMI": 3.41,
+    "SQMI": 287.3,
+    "centroid_lon": -105.7942608,
+    "centroid_lat": 38.46765999
+  },
+  "81235": {
+    "PO_NAME": "Lake City",
+    "STATE": "CO",
+    "POPULATION": 699,
+    "POP_SQMI": 0.68,
+    "SQMI": 1026.63,
+    "centroid_lon": -107.3104634,
+    "centroid_lat": 37.83336132
+  },
+  "81236": {
+    "PO_NAME": "Nathrop",
+    "STATE": "CO",
+    "POPULATION": 1510,
+    "POP_SQMI": 13,
+    "SQMI": 116.19,
+    "centroid_lon": -106.2265208,
+    "centroid_lat": 38.68561834
+  },
+  "81237": {
+    "PO_NAME": "Ohio City",
+    "STATE": "CO",
+    "POPULATION": 72,
+    "POP_SQMI": 4.08,
+    "SQMI": 17.64,
+    "centroid_lon": -106.5933378,
+    "centroid_lat": 38.61379883
+  },
+  "81239": {
+    "PO_NAME": "Parlin",
+    "STATE": "CO",
+    "POPULATION": 61,
+    "POP_SQMI": 1.32,
+    "SQMI": 46.32,
+    "centroid_lon": -106.6225364,
+    "centroid_lat": 38.53776209
+  },
+  "81240": {
+    "PO_NAME": "Penrose",
+    "STATE": "CO",
+    "POPULATION": 4544,
+    "POP_SQMI": 20.38,
+    "SQMI": 222.95,
+    "centroid_lon": -105.0212123,
+    "centroid_lat": 38.46958873
+  },
+  "81241": {
+    "PO_NAME": "Pitkin",
+    "STATE": "CO",
+    "POPULATION": 119,
+    "POP_SQMI": 476,
+    "SQMI": 0.25,
+    "centroid_lon": -106.5162879,
+    "centroid_lat": 38.60876868
+  },
+  "81242": {
+    "PO_NAME": "Poncha Springs",
+    "STATE": "CO",
+    "POPULATION": 746,
+    "POP_SQMI": 738.61,
+    "SQMI": 1.01,
+    "centroid_lon": -106.070819,
+    "centroid_lat": 38.51069291
+  },
+  "81243": {
+    "PO_NAME": "Powderhorn",
+    "STATE": "CO",
+    "POPULATION": 250,
+    "POP_SQMI": 1.23,
+    "SQMI": 202.9,
+    "centroid_lon": -107.130469,
+    "centroid_lat": 38.24975574
+  },
+  "81244": {
+    "PO_NAME": "Rockvale",
+    "STATE": "CO",
+    "POPULATION": null,
+    "POP_SQMI": null,
+    "SQMI": 1.8,
+    "centroid_lon": -105.1653891,
+    "centroid_lat": 38.36337121
+  },
+  "81251": {
+    "PO_NAME": "Twin Lakes",
+    "STATE": "CO",
+    "POPULATION": 94,
+    "POP_SQMI": 0.73,
+    "SQMI": 129.08,
+    "centroid_lon": -106.4498842,
+    "centroid_lat": 39.14544365
+  },
+  "81252": {
+    "PO_NAME": "Westcliffe",
+    "STATE": "CO",
+    "POPULATION": 4518,
+    "POP_SQMI": 8.4,
+    "SQMI": 537.54,
+    "centroid_lon": -105.4480891,
+    "centroid_lat": 38.11276194
+  },
+  "81253": {
+    "PO_NAME": "Wetmore",
+    "STATE": "CO",
+    "POPULATION": 537,
+    "POP_SQMI": 2.45,
+    "SQMI": 219.07,
+    "centroid_lon": -105.1608676,
+    "centroid_lat": 38.08126537
+  },
+  "81301": {
+    "PO_NAME": "Durango",
+    "STATE": "CO",
+    "POPULATION": 32265,
+    "POP_SQMI": 63.2,
+    "SQMI": 510.56,
+    "centroid_lon": -107.8319394,
+    "centroid_lat": 37.44914525
+  },
+  "81303": {
+    "PO_NAME": "Durango",
+    "STATE": "CO",
+    "POPULATION": 8546,
+    "POP_SQMI": 33.23,
+    "SQMI": 257.21,
+    "centroid_lon": -107.9187525,
+    "centroid_lat": 37.16611696
+  },
+  "81320": {
+    "PO_NAME": "Cahone",
+    "STATE": "CO",
+    "POPULATION": 302,
+    "POP_SQMI": 0.36,
+    "SQMI": 834.15,
+    "centroid_lon": -108.3984642,
+    "centroid_lat": 37.75751042
+  },
+  "81321": {
+    "PO_NAME": "Cortez",
+    "STATE": "CO",
+    "POPULATION": 14310,
+    "POP_SQMI": 47.67,
+    "SQMI": 300.21,
+    "centroid_lon": -108.7420692,
+    "centroid_lat": 37.3470491
+  },
+  "81323": {
+    "PO_NAME": "Dolores",
+    "STATE": "CO",
+    "POPULATION": 4548,
+    "POP_SQMI": 12.27,
+    "SQMI": 370.76,
+    "centroid_lon": -108.3498727,
+    "centroid_lat": 37.54437822
+  },
+  "81324": {
+    "PO_NAME": "Dove Creek",
+    "STATE": "CO",
+    "POPULATION": 1557,
+    "POP_SQMI": 6.69,
+    "SQMI": 232.85,
+    "centroid_lon": -108.9449424,
+    "centroid_lat": 37.73072353
+  },
+  "81325": {
+    "PO_NAME": "Egnar",
+    "STATE": "CO",
+    "POPULATION": 115,
+    "POP_SQMI": 0.21,
+    "SQMI": 544.52,
+    "centroid_lon": -108.7589017,
+    "centroid_lat": 38.00603663
+  },
+  "81326": {
+    "PO_NAME": "Hesperus",
+    "STATE": "CO",
+    "POPULATION": 2734,
+    "POP_SQMI": 8.22,
+    "SQMI": 332.75,
+    "centroid_lon": -108.145398,
+    "centroid_lat": 37.14431456
+  },
+  "81327": {
+    "PO_NAME": "Lewis",
+    "STATE": "CO",
+    "POPULATION": 764,
+    "POP_SQMI": 17.48,
+    "SQMI": 43.71,
+    "centroid_lon": -108.6352522,
+    "centroid_lat": 37.52149812
+  },
+  "81328": {
+    "PO_NAME": "Mancos",
+    "STATE": "CO",
+    "POPULATION": 4684,
+    "POP_SQMI": 11.19,
+    "SQMI": 418.43,
+    "centroid_lon": -108.2971544,
+    "centroid_lat": 37.35320814
+  },
+  "81331": {
+    "PO_NAME": "Pleasant View",
+    "STATE": "CO",
+    "POPULATION": 348,
+    "POP_SQMI": 1.59,
+    "SQMI": 219.16,
+    "centroid_lon": -108.8775749,
+    "centroid_lat": 37.5193645
+  },
+  "81332": {
+    "PO_NAME": "Rico",
+    "STATE": "CO",
+    "POPULATION": 292,
+    "POP_SQMI": 275.47,
+    "SQMI": 1.06,
+    "centroid_lon": -108.029205,
+    "centroid_lat": 37.6881796
+  },
+  "81334": {
+    "PO_NAME": "Towaoc",
+    "STATE": "CO",
+    "POPULATION": 1390,
+    "POP_SQMI": 2.02,
+    "SQMI": 689.03,
+    "centroid_lon": -108.7071737,
+    "centroid_lat": 37.13168576
+  },
+  "81335": {
+    "PO_NAME": "Yellow Jacket",
+    "STATE": "CO",
+    "POPULATION": 188,
+    "POP_SQMI": 3.51,
+    "SQMI": 53.49,
+    "centroid_lon": -108.7822505,
+    "centroid_lat": 37.49511988
+  },
+  "81401": {
+    "PO_NAME": "Montrose",
+    "STATE": "CO",
+    "POPULATION": 23952,
+    "POP_SQMI": 116.62,
+    "SQMI": 205.39,
+    "centroid_lon": -107.7910311,
+    "centroid_lat": 38.49832416
+  },
+  "81403": {
+    "PO_NAME": "Montrose",
+    "STATE": "CO",
+    "POPULATION": 12261,
+    "POP_SQMI": 28.46,
+    "SQMI": 430.82,
+    "centroid_lon": -107.9461054,
+    "centroid_lat": 38.36091298
+  },
+  "81410": {
+    "PO_NAME": "Austin",
+    "STATE": "CO",
+    "POPULATION": 1712,
+    "POP_SQMI": 65.69,
+    "SQMI": 26.06,
+    "centroid_lon": -107.9410033,
+    "centroid_lat": 38.79564762
+  },
+  "81411": {
+    "PO_NAME": "Bedrock",
+    "STATE": "CO",
+    "POPULATION": 91,
+    "POP_SQMI": 0.29,
+    "SQMI": 309.18,
+    "centroid_lon": -108.9197126,
+    "centroid_lat": 38.30445749
+  },
+  "81413": {
+    "PO_NAME": "Cedaredge",
+    "STATE": "CO",
+    "POPULATION": 4856,
+    "POP_SQMI": 25.14,
+    "SQMI": 193.19,
+    "centroid_lon": -107.8883767,
+    "centroid_lat": 38.97714621
+  },
+  "81415": {
+    "PO_NAME": "Crawford",
+    "STATE": "CO",
+    "POPULATION": 1722,
+    "POP_SQMI": 5.79,
+    "SQMI": 297.4,
+    "centroid_lon": -107.6383426,
+    "centroid_lat": 38.6422836
+  },
+  "81416": {
+    "PO_NAME": "Delta",
+    "STATE": "CO",
+    "POPULATION": 14074,
+    "POP_SQMI": 36.61,
+    "SQMI": 384.41,
+    "centroid_lon": -108.1510204,
+    "centroid_lat": 38.7432641
+  },
+  "81418": {
+    "PO_NAME": "Eckert",
+    "STATE": "CO",
+    "POPULATION": 1898,
+    "POP_SQMI": 29.39,
+    "SQMI": 64.57,
+    "centroid_lon": -108.0512004,
+    "centroid_lat": 38.89375396
+  },
+  "81419": {
+    "PO_NAME": "Hotchkiss",
+    "STATE": "CO",
+    "POPULATION": 4541,
+    "POP_SQMI": 29.37,
+    "SQMI": 154.59,
+    "centroid_lon": -107.7581798,
+    "centroid_lat": 38.83420924
+  },
+  "81422": {
+    "PO_NAME": "Naturita",
+    "STATE": "CO",
+    "POPULATION": 699,
+    "POP_SQMI": 2.59,
+    "SQMI": 269.64,
+    "centroid_lon": -108.7009745,
+    "centroid_lat": 38.34279792
+  },
+  "81423": {
+    "PO_NAME": "Norwood",
+    "STATE": "CO",
+    "POPULATION": 1529,
+    "POP_SQMI": 3.96,
+    "SQMI": 385.92,
+    "centroid_lon": -108.3172316,
+    "centroid_lat": 38.04241498
+  },
+  "81424": {
+    "PO_NAME": "Nucla",
+    "STATE": "CO",
+    "POPULATION": 1319,
+    "POP_SQMI": 5.01,
+    "SQMI": 263.3,
+    "centroid_lon": -108.4595894,
+    "centroid_lat": 38.33923475
+  },
+  "81425": {
+    "PO_NAME": "Olathe",
+    "STATE": "CO",
+    "POPULATION": 6018,
+    "POP_SQMI": 17.39,
+    "SQMI": 346.14,
+    "centroid_lon": -108.2144113,
+    "centroid_lat": 38.52678714
+  },
+  "81426": {
+    "PO_NAME": "Ophir",
+    "STATE": "CO",
+    "POPULATION": 425,
+    "POP_SQMI": 5.78,
+    "SQMI": 73.54,
+    "centroid_lon": -107.8948424,
+    "centroid_lat": 37.85702653
+  },
+  "81427": {
+    "PO_NAME": "Ouray",
+    "STATE": "CO",
+    "POPULATION": 1078,
+    "POP_SQMI": 32.3,
+    "SQMI": 33.37,
+    "centroid_lon": -107.6840254,
+    "centroid_lat": 37.95249817
+  },
+  "81428": {
+    "PO_NAME": "Paonia",
+    "STATE": "CO",
+    "POPULATION": 3784,
+    "POP_SQMI": 15.02,
+    "SQMI": 251.98,
+    "centroid_lon": -107.5922213,
+    "centroid_lat": 38.98896556
+  },
+  "81429": {
+    "PO_NAME": "Paradox",
+    "STATE": "CO",
+    "POPULATION": 164,
+    "POP_SQMI": 8.13,
+    "SQMI": 20.16,
+    "centroid_lon": -108.9692089,
+    "centroid_lat": 38.37269602
+  },
+  "81430": {
+    "PO_NAME": "Placerville",
+    "STATE": "CO",
+    "POPULATION": 843,
+    "POP_SQMI": 5.46,
+    "SQMI": 154.44,
+    "centroid_lon": -108.0270115,
+    "centroid_lat": 37.96939682
+  },
+  "81431": {
+    "PO_NAME": "Redvale",
+    "STATE": "CO",
+    "POPULATION": 671,
+    "POP_SQMI": 2.95,
+    "SQMI": 227.58,
+    "centroid_lon": -108.2500883,
+    "centroid_lat": 38.21406619
+  },
+  "81432": {
+    "PO_NAME": "Ridgway",
+    "STATE": "CO",
+    "POPULATION": 3291,
+    "POP_SQMI": 8.01,
+    "SQMI": 410.67,
+    "centroid_lon": -107.7747764,
+    "centroid_lat": 38.11336331
+  },
+  "81433": {
+    "PO_NAME": "Silverton",
+    "STATE": "CO",
+    "POPULATION": 682,
+    "POP_SQMI": 1.78,
+    "SQMI": 383.93,
+    "centroid_lon": -107.6746083,
+    "centroid_lat": 37.76523812
+  },
+  "81434": {
+    "PO_NAME": "Somerset",
+    "STATE": "CO",
+    "POPULATION": 174,
+    "POP_SQMI": 0.3,
+    "SQMI": 572.47,
+    "centroid_lon": -107.3437557,
+    "centroid_lat": 38.93779236
+  },
+  "81435": {
+    "PO_NAME": "Telluride",
+    "STATE": "CO",
+    "POPULATION": 5314,
+    "POP_SQMI": 70.43,
+    "SQMI": 75.45,
+    "centroid_lon": -107.8481215,
+    "centroid_lat": 37.93918647
+  },
+  "81501": {
+    "PO_NAME": "Grand Junction",
+    "STATE": "CO",
+    "POPULATION": 26299,
+    "POP_SQMI": 2951.63,
+    "SQMI": 8.91,
+    "centroid_lon": -108.5460388,
+    "centroid_lat": 39.07213001
+  },
+  "81503": {
+    "PO_NAME": "Grand Junction",
+    "STATE": "CO",
+    "POPULATION": 17466,
+    "POP_SQMI": 1062.41,
+    "SQMI": 16.44,
+    "centroid_lon": -108.4883249,
+    "centroid_lat": 39.0362473
+  },
+  "81504": {
+    "PO_NAME": "Grand Junction",
+    "STATE": "CO",
+    "POPULATION": 31716,
+    "POP_SQMI": 1285.09,
+    "SQMI": 24.68,
+    "centroid_lon": -108.469954,
+    "centroid_lat": 39.1056955
+  },
+  "81505": {
+    "PO_NAME": "Grand Junction",
+    "STATE": "CO",
+    "POPULATION": 11433,
+    "POP_SQMI": 156.92,
+    "SQMI": 72.86,
+    "centroid_lon": -108.6003851,
+    "centroid_lat": 39.18570997
+  },
+  "81506": {
+    "PO_NAME": "Grand Junction",
+    "STATE": "CO",
+    "POPULATION": 11966,
+    "POP_SQMI": 325.87,
+    "SQMI": 36.72,
+    "centroid_lon": -108.5233949,
+    "centroid_lat": 39.15597872
+  },
+  "81507": {
+    "PO_NAME": "Grand Junction",
+    "STATE": "CO",
+    "POPULATION": 16351,
+    "POP_SQMI": 266.39,
+    "SQMI": 61.38,
+    "centroid_lon": -108.6573329,
+    "centroid_lat": 39.05299961
+  },
+  "81520": {
+    "PO_NAME": "Clifton",
+    "STATE": "CO",
+    "POPULATION": 13555,
+    "POP_SQMI": 1543.85,
+    "SQMI": 8.78,
+    "centroid_lon": -108.4319637,
+    "centroid_lat": 39.09083743
+  },
+  "81521": {
+    "PO_NAME": "Fruita",
+    "STATE": "CO",
+    "POPULATION": 17469,
+    "POP_SQMI": 137.29,
+    "SQMI": 127.24,
+    "centroid_lon": -108.6871581,
+    "centroid_lat": 39.25337188
+  },
+  "81522": {
+    "PO_NAME": "Gateway",
+    "STATE": "CO",
+    "POPULATION": 393,
+    "POP_SQMI": 0.43,
+    "SQMI": 922.86,
+    "centroid_lon": -108.7039216,
+    "centroid_lat": 38.69344526
+  },
+  "81523": {
+    "PO_NAME": "Glade Park",
+    "STATE": "CO",
+    "POPULATION": 998,
+    "POP_SQMI": 2.39,
+    "SQMI": 418.01,
+    "centroid_lon": -108.880383,
+    "centroid_lat": 38.98793287
+  },
+  "81524": {
+    "PO_NAME": "Loma",
+    "STATE": "CO",
+    "POPULATION": 2573,
+    "POP_SQMI": 39.05,
+    "SQMI": 65.89,
+    "centroid_lon": -108.7956954,
+    "centroid_lat": 39.26588254
+  },
+  "81525": {
+    "PO_NAME": "Mack",
+    "STATE": "CO",
+    "POPULATION": 946,
+    "POP_SQMI": 5.96,
+    "SQMI": 158.75,
+    "centroid_lon": -108.9501429,
+    "centroid_lat": 39.26565648
+  },
+  "81526": {
+    "PO_NAME": "Palisade",
+    "STATE": "CO",
+    "POPULATION": 5847,
+    "POP_SQMI": 181.3,
+    "SQMI": 32.25,
+    "centroid_lon": -108.3544036,
+    "centroid_lat": 39.09204414
+  },
+  "81527": {
+    "PO_NAME": "Whitewater",
+    "STATE": "CO",
+    "POPULATION": 2076,
+    "POP_SQMI": 8.72,
+    "SQMI": 238.16,
+    "centroid_lon": -108.4077363,
+    "centroid_lat": 38.92177697
+  },
+  "81601": {
+    "PO_NAME": "Glenwood Springs",
+    "STATE": "CO",
+    "POPULATION": 16739,
+    "POP_SQMI": 43.21,
+    "SQMI": 387.35,
+    "centroid_lon": -107.293787,
+    "centroid_lat": 39.60570075
+  },
+  "81610": {
+    "PO_NAME": "Dinosaur",
+    "STATE": "CO",
+    "POPULATION": 502,
+    "POP_SQMI": 1.06,
+    "SQMI": 474.24,
+    "centroid_lon": -108.8195358,
+    "centroid_lat": 40.36177156
+  },
+  "81611": {
+    "PO_NAME": "Aspen",
+    "STATE": "CO",
+    "POPULATION": 9743,
+    "POP_SQMI": 32.11,
+    "SQMI": 303.46,
+    "centroid_lon": -106.7914124,
+    "centroid_lat": 39.11704947
+  },
+  "81612": {
+    "PO_NAME": "Aspen",
+    "STATE": "CO",
+    "POPULATION": 109,
+    "POP_SQMI": 87.9,
+    "SQMI": 1.24,
+    "centroid_lon": -106.8227622,
+    "centroid_lat": 39.20666924
+  },
+  "81615": {
+    "PO_NAME": "Snowmass Village",
+    "STATE": "CO",
+    "POPULATION": 3326,
+    "POP_SQMI": 136.26,
+    "SQMI": 24.41,
+    "centroid_lon": -106.9420859,
+    "centroid_lat": 39.21406759
+  },
+  "81620": {
+    "PO_NAME": "Avon",
+    "STATE": "CO",
+    "POPULATION": 10445,
+    "POP_SQMI": 790.69,
+    "SQMI": 13.21,
+    "centroid_lon": -106.5111113,
+    "centroid_lat": 39.63276236
+  },
+  "81621": {
+    "PO_NAME": "Basalt",
+    "STATE": "CO",
+    "POPULATION": 6985,
+    "POP_SQMI": 17.72,
+    "SQMI": 394.12,
+    "centroid_lon": -106.8355555,
+    "centroid_lat": 39.33922314
+  },
+  "81623": {
+    "PO_NAME": "Carbondale",
+    "STATE": "CO",
+    "POPULATION": 16607,
+    "POP_SQMI": 34.76,
+    "SQMI": 477.71,
+    "centroid_lon": -107.1955276,
+    "centroid_lat": 39.20693567
+  },
+  "81624": {
+    "PO_NAME": "Collbran",
+    "STATE": "CO",
+    "POPULATION": 1802,
+    "POP_SQMI": 3.16,
+    "SQMI": 570.42,
+    "centroid_lon": -107.7836947,
+    "centroid_lat": 39.24465945
+  },
+  "81625": {
+    "PO_NAME": "Craig",
+    "STATE": "CO",
+    "POPULATION": 13230,
+    "POP_SQMI": 8.69,
+    "SQMI": 1522.35,
+    "centroid_lon": -107.7677954,
+    "centroid_lat": 40.64811059
+  },
+  "81630": {
+    "PO_NAME": "De Beque",
+    "STATE": "CO",
+    "POPULATION": 1174,
+    "POP_SQMI": 0.95,
+    "SQMI": 1234.88,
+    "centroid_lon": -108.5500633,
+    "centroid_lat": 39.45273814
+  },
+  "81631": {
+    "PO_NAME": "Eagle",
+    "STATE": "CO",
+    "POPULATION": 8658,
+    "POP_SQMI": 35.58,
+    "SQMI": 243.32,
+    "centroid_lon": -106.7113576,
+    "centroid_lat": 39.54939481
+  },
+  "81632": {
+    "PO_NAME": "Edwards",
+    "STATE": "CO",
+    "POPULATION": 12433,
+    "POP_SQMI": 349.73,
+    "SQMI": 35.55,
+    "centroid_lon": -106.6333861,
+    "centroid_lat": 39.62634351
+  },
+  "81633": {
+    "PO_NAME": "Dinosaur",
+    "STATE": "CO",
+    "POPULATION": 52,
+    "POP_SQMI": 0.16,
+    "SQMI": 330.14,
+    "centroid_lon": -108.3615386,
+    "centroid_lat": 40.31879832
+  },
+  "81635": {
+    "PO_NAME": "Parachute",
+    "STATE": "CO",
+    "POPULATION": 6708,
+    "POP_SQMI": 18.73,
+    "SQMI": 358.15,
+    "centroid_lon": -108.0754016,
+    "centroid_lat": 39.54653659
+  },
+  "81637": {
+    "PO_NAME": "Gypsum",
+    "STATE": "CO",
+    "POPULATION": 9158,
+    "POP_SQMI": 12.46,
+    "SQMI": 735.21,
+    "centroid_lon": -107.0733205,
+    "centroid_lat": 39.79064155
+  },
+  "81638": {
+    "PO_NAME": "Hamilton",
+    "STATE": "CO",
+    "POPULATION": 183,
+    "POP_SQMI": 0.68,
+    "SQMI": 268.33,
+    "centroid_lon": -107.6062997,
+    "centroid_lat": 40.32057755
+  },
+  "81639": {
+    "PO_NAME": "Hayden",
+    "STATE": "CO",
+    "POPULATION": 2573,
+    "POP_SQMI": 3.02,
+    "SQMI": 851.5,
+    "centroid_lon": -107.1977805,
+    "centroid_lat": 40.63983081
+  },
+  "81640": {
+    "PO_NAME": "Maybell",
+    "STATE": "CO",
+    "POPULATION": 305,
+    "POP_SQMI": 0.15,
+    "SQMI": 1981.63,
+    "centroid_lon": -108.5208418,
+    "centroid_lat": 40.71830916
+  },
+  "81641": {
+    "PO_NAME": "Meeker",
+    "STATE": "CO",
+    "POPULATION": 3992,
+    "POP_SQMI": 2.9,
+    "SQMI": 1378.43,
+    "centroid_lon": -107.7086045,
+    "centroid_lat": 40.05457578
+  },
+  "81642": {
+    "PO_NAME": "Meredith",
+    "STATE": "CO",
+    "POPULATION": 249,
+    "POP_SQMI": 3.35,
+    "SQMI": 74.43,
+    "centroid_lon": -106.5716078,
+    "centroid_lat": 39.32432016
+  },
+  "81643": {
+    "PO_NAME": "Mesa",
+    "STATE": "CO",
+    "POPULATION": 1001,
+    "POP_SQMI": 3.69,
+    "SQMI": 271.21,
+    "centroid_lon": -108.1232213,
+    "centroid_lat": 39.07382488
+  },
+  "81645": {
+    "PO_NAME": "Minturn",
+    "STATE": "CO",
+    "POPULATION": 1538,
+    "POP_SQMI": 141.88,
+    "SQMI": 10.84,
+    "centroid_lon": -106.3955835,
+    "centroid_lat": 39.54967016
+  },
+  "81647": {
+    "PO_NAME": "New Castle",
+    "STATE": "CO",
+    "POPULATION": 7907,
+    "POP_SQMI": 21.26,
+    "SQMI": 371.91,
+    "centroid_lon": -107.5244631,
+    "centroid_lat": 39.6069405
+  },
+  "81648": {
+    "PO_NAME": "Rangely",
+    "STATE": "CO",
+    "POPULATION": 2974,
+    "POP_SQMI": 2.48,
+    "SQMI": 1198.46,
+    "centroid_lon": -108.7453643,
+    "centroid_lat": 39.96657249
+  },
+  "81649": {
+    "PO_NAME": "Red Cliff",
+    "STATE": "CO",
+    "POPULATION": 372,
+    "POP_SQMI": 1690.91,
+    "SQMI": 0.22,
+    "centroid_lon": -106.3697945,
+    "centroid_lat": 39.51048555
+  },
+  "81650": {
+    "PO_NAME": "Rifle",
+    "STATE": "CO",
+    "POPULATION": 13936,
+    "POP_SQMI": 13.15,
+    "SQMI": 1059.54,
+    "centroid_lon": -108.1158227,
+    "centroid_lat": 39.76526661
+  },
+  "81652": {
+    "PO_NAME": "Silt",
+    "STATE": "CO",
+    "POPULATION": 5563,
+    "POP_SQMI": 53.5,
+    "SQMI": 103.99,
+    "centroid_lon": -107.6759491,
+    "centroid_lat": 39.46439235
+  },
+  "81653": {
+    "PO_NAME": "Slater",
+    "STATE": "CO",
+    "POPULATION": 25,
+    "POP_SQMI": 0.14,
+    "SQMI": 180.57,
+    "centroid_lon": -107.4510164,
+    "centroid_lat": 40.91602646
+  },
+  "81654": {
+    "PO_NAME": "Snowmass",
+    "STATE": "CO",
+    "POPULATION": 1472,
+    "POP_SQMI": 13.97,
+    "SQMI": 105.36,
+    "centroid_lon": -107.0249468,
+    "centroid_lat": 39.21796512
+  },
+  "81655": {
+    "PO_NAME": "Wolcott",
+    "STATE": "CO",
+    "POPULATION": 299,
+    "POP_SQMI": 15.16,
+    "SQMI": 19.72,
+    "centroid_lon": -106.6949937,
+    "centroid_lat": 39.69274516
+  },
+  "81656": {
+    "PO_NAME": "Woody Creek",
+    "STATE": "CO",
+    "POPULATION": 369,
+    "POP_SQMI": 205,
+    "SQMI": 1.8,
+    "centroid_lon": -106.8899165,
+    "centroid_lat": 39.28224719
+  },
+  "81657": {
+    "PO_NAME": "Vail",
+    "STATE": "CO",
+    "POPULATION": 5977,
+    "POP_SQMI": 13.65,
+    "SQMI": 437.93,
+    "centroid_lon": -106.3939827,
+    "centroid_lat": 39.55226248
+  },
+  "00027": {
+    "PO_NAME": "Pike Ntl Forest",
+    "STATE": "CO",
+    "POPULATION": null,
+    "POP_SQMI": null,
+    "SQMI": 43.02,
+    "centroid_lon": -104.98532,
+    "centroid_lat": 38.87175006
+  }
+}

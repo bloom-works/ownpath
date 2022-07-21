@@ -1,0 +1,81 @@
+{
+  "banner": {
+    "immediateHelp": "Need immediate help for an emotional, mental health, or substance use crisis?",
+    "changeLanguage": "Change language"
+  },
+  "footer": {
+    "feedbackPrompt": "Have a suggestion for improvement on this website?",
+    "feedbackCta": "Submit a suggestion on this Google form.",
+    "betaExplanation": "OwnPath is in BETA (active development), as we work to improve performance and add features to the site.",
+    "ourCommitment": "Our commitment to you",
+    "privacyPolicy": "You’ll never need to create an account to use this service, and any personally identifiable information you share will be kept secure."
+  },
+  "dataCollectionAlert": {
+    "alert": "You’ll never need to create an account to use this service, and we do not store any personally identifiable information about you while using this service."
+  },
+  "search": {
+    "milesAway": "{{ miles }} miles away",
+    "toggleFiltersButton_zero": "Filter results",
+    "toggleFiltersButton_one": "Filter results ({{count}} selected)",
+    "toggleFiltersButton_other": "Filter results ({{count}} selected)",
+    "clearFiltersButton": "Clear all filters",
+    "filteredBy": "Filtered by",
+    "viewResultsButton": "Apply filters",
+    "filters": {
+      "distance": {
+        "distance": "Distance",
+        "withinMiles": "Within {{n}} miles"
+      },
+      "typeOfHelp": {
+        "question": "Type of help",
+        "answers": {
+          "substance_use": "Drugs and/or alcohol use",
+          "court_mandated_treatment": "Court-mandated treatment",
+          "mental_health": "Mental health (persistent feelings of sadness, loneliness, worry, suicidal thoughts)"
+        }
+      },
+      "feePreference": {
+        "question": "Payment types accepted",
+        "answers": {
+          "Medicaid": "Medicaid",
+          "PrivateInsurance": "Private insurance",
+          "SlidingFeeScale": "Sliding fee scale"
+        }
+      },
+      "accessibility": {
+        "question": "Accessibility",
+        "answers": {
+          "Deaf/HardofHearing": "Support for a person with a hearing impairment or who is deaf",
+          "VisuallyImpaired": "Support for a person with a visual impairment or who is blind",
+          "Wheelchair": "Support for a person who uses a wheelchair"
+        }
+      },
+      "hours": {
+        "question": "Days of operation"
+      },
+      "languages": {
+        "question": "Languages"
+      }
+    }
+  },
+  "resultDetail": {
+    "telephoneNumber": "Telephone number",
+    "website": "Website",
+    "address": "Address",
+    "hours": "Hours of operation",
+    "contactForInfo": "Please contact the clinic or organization for information",
+    "fees": "Payment types accepted",
+    "_fees": {
+      "Medicaid": "Medicaid",
+      "PrivateInsurance": "Private insurance",
+      "SelfPay": "Self pay",
+      "SlidingFeeScale": "Sliding fee scale"
+    }
+  },
+  "home": {
+    "zipPrompt": "Enter your zip code to find care near your area",
+    "zipInput": "Zip code",
+    "guidedSearchPrompt": "Get a list of providers based on your answers to a few questions.",
+    "guidedSearchButton": "Try our guided experience"
+  }
+}

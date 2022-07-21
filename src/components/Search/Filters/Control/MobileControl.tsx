@@ -1,0 +1,149 @@
+import { Button } from "@trussworks/react-uswds";
+import { Dispatch, SetStateAction, useState } from "react";
+import { useTranslation } from "react-i18next";
+import { AnalyticsAction, logEvent } from "../../../../analytics";
+import { SearchFilters, TypeOfHelp } from "../../../../types";
+import FeePreferenceInput from "../FeePreferenceInput";
+import HoursInput from "../HoursInput";
+import LanguageInput from "../LanguageInput";
+import TypeOfHelpInput from "../TypeOfHelpInput";
+import AccessibilityInput from "../AccessibilityInput";
+import DistanceInput from "../DistanceInput";
+import {
+  getAppliedOptionalFiltersCount,
+  getFiltersWithOptionalCleared,
+} from "./utils";
+import { ReactComponent as Filter } from "../../../../images/filter.svg";
+
+const T_PREFIX = "components.search.";
+
+type MobileControlProps = {
+  filters: SearchFilters;
+  setFilters: Dispatch<SetStateAction<SearchFilters>>;
+};
+
+function MobileControl({ filters, setFilters }: MobileControlProps) {
+  const { t } = useTranslation();
+  const [isExpanded, setIsExpanded] = useState<boolean>(false);
+  const [controlFilters, setControlFilters] = useState(filters);
+
+  const countSelected = getAppliedOptionalFiltersCount(filters);
+
+  return (
+    <div className="tablet:display-none" aria-hidden>
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          logEvent(AnalyticsAction.ApplyFilter, { label: "Apply button" });
+          setFilters(controlFilters);
+          setIsExpanded(false);
+          setTimeout(() => window.scrollTo(0, 0), 100);
+        }}
+      >
+        <Button
+          type="button"
+          className="radius-pill display-flex flex-align-center flex-justify-center"
+          onClick={() => {
+            if (isExpanded) {
+              setIsExpanded(false);
+              setControlFilters(filters);
+            } else {
+              setIsExpanded(true);
+            }
+          }}
+          outline={countSelected === 0}
+          base={countSelected !== 0}
+        >
+          <Filter className="margin-right-05" />
+          {t("components.search.toggleFiltersButton", {
+            count: countSelected,
+          })}
+        </Button>
+        <div className={isExpanded ? "display-block" : "display-none"}>
+          <div className="margin-y-2">
+            {countSelected > 0 && (
+              <Button
+                type="button"
+                onClick={() => {
+                  logEvent(AnalyticsAction.ApplyFilter, {
+                    label: "Clear filters button",
+                  });
+                  setControlFilters(getFiltersWithOptionalCleared(filters));
+                  setFilters(getFiltersWithOptionalCleared(filters));
+                }}
+                unstyled
+              >
+                {t(`${T_PREFIX}clearFiltersButton`)}
+              </Button>
+            )}
+          </div>
+          <div className="margin-y-3">
+            <DistanceInput
+              filters={controlFilters}
+              setFilters={setControlFilters}
+              tPrefix={`${T_PREFIX}filters.distance.`}
+            />
+          </div>
+          <div className="margin-y-3">
+            <TypeOfHelpInput
+              options={[
+                TypeOfHelp.SubstanceUse,
+                TypeOfHelp.CourtMandatedTreatment,
+                TypeOfHelp.MentalHealth,
+              ]}
+              filters={controlFilters}
+              setFilters={setControlFilters}
+              tPrefix={`${T_PREFIX}filters.typeOfHelp.`}
+            />
+          </div>
+          <div className="margin-y-3">
+            <FeePreferenceInput
+              options={["PrivateInsurance", "Medicaid", "SlidingFeeScale"]}
+              filters={controlFilters}
+              setFilters={setControlFilters}
+              tPrefix={`${T_PREFIX}filters.feePreference.`}
+            />
+          </div>
+          <div className="margin-y-3">
+            <AccessibilityInput
+              filters={controlFilters}
+              setFilters={setControlFilters}
+              tPrefix={`${T_PREFIX}filters.accessibility.`}
+            />
+          </div>
+          <div className="margin-y-3">
+            <HoursInput
+              filters={controlFilters}
+              setFilters={setControlFilters}
+              tPrefix={`${T_PREFIX}filters.hours.`}
+            />
+          </div>
+          <div className="margin-y-3">
+            <LanguageInput
+              filters={controlFilters}
+              setFilters={setControlFilters}
+              tPrefix={`${T_PREFIX}filters.languages.`}
+            />
+          </div>
+          <Button type="submit" className="usa-button">
+            {t(`${T_PREFIX}viewResultsButton`)}
+          </Button>
+          <div className="padding-top-2">
+            <Button
+              type="button"
+              onClick={() => {
+                setIsExpanded(false);
+                setControlFilters(filters);
+              }}
+              unstyled
+            >
+              {t("common.cancel")}
+            </Button>
+          </div>
+        </div>
+      </form>
+    </div>
+  );
+}
+
+export default MobileControl;

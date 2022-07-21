@@ -1,0 +1,10 @@
+{
+    "name": "co-care-directory",
+    "stack": "container",
+    "formation": {
+        "web": {
+            "quantity": 1,
+            "size": "standard-2x"
+        }
+    }
+}

@@ -1,0 +1,149 @@
+{
+  "home": {
+    "heading": "Encuentra aquí opciones de apoyo para la salud mental y con el uso de sustancias.",
+    "_coloradoCrisisService": {
+      "heading": "Si estás pasando por una crisis",
+      "content": "Sin importar por lo que estés pasando, hay ayuda disponible. Llama a los Servicios de Crisis en Colorado al 844-493-TALK (8255) o envía un mensaje de texto con la palabra TALK al 38255",
+      "cta": "Obtén más detalles en ColoradoCrisisServices.org",
+      "link": "https://coloradocrisisservices.org/es"
+    },
+    "_iMatter": {
+      "heading": "Terapia gratis para menores de 21 años",
+      "content": "Yo Importo puede conectar a personas de 18 años o menos (21 años o menos  si están recibiendo servicios de educación especial) con un/a terapeuta para recibir hasta 6 sesiones de terapia gratis y confidenciales.",
+      "cta": "Visita YoImportoColorado.org para encontrar un/a terapeuta y programar una cita.",
+      "link": "https://yoimportocolorado.org"
+    }
+  },
+  "search": {
+    "resultCount_one": "{{count}} resultado cercanos al {{zip}}",
+    "resultCount_other": "{{count}} resultados cercanos al {{zip}}",
+    "noResultsExpandRadius": "No hay resultados a máximo {{miles}} millas. Aumenta la distancia de tu búsqueda para ver más resultados.",
+    "noResultsGeneric": "No hay resultados a máximo {{miles}} millas. Cambia los filtros para ampliar tu búsqueda.",
+    "fullDetailButton": "Detalles completos sobre este lugar",
+    "mapHelper": "Toca un marcador en el mapa para obtener información sobre ese lugar.",
+    "share": "Comparta estos resultados"
+  },
+  "resultDetail": {
+    "share": "**Compartir este proveedor",
+    "backToSearch": "Regresa a la búsqueda",
+    "basicInfo": "**Información básica",
+    "details": "Detalles",
+    "populationsServed": "Personas a quienes atienden",
+    "_populationsServed": {
+      "Homeless": "Personas sin vivienda",
+      "LGBT": "Personas LGBTQ+",
+      "Men": "Hombres",
+      "Military": "Integrantes de las fuerzas armadas",
+      "OlderAdults": "Adultos mayores",
+      "PregnantWomen": "Mujeres embarazadas",
+      "Women": "Mujeres",
+      "Youth": "Personas menores de 21 años",
+      "Offender": "Integrantes de las fuerzas armadas",
+      "Minors/Adolescents": "Menores de edad/Adolescentes",
+      "ClientsreferredfromCourt/JudicialSystem": "Personas recomendados a través de los tribunales/sistema judicial",
+      "AmericanIndian": "Personas indoamericanas",
+      "HIV": "Personas con una prueba positiva del VIH"
+    },
+    "accessibilityOptions": "Accesibilidad",
+    "_accessibilityOptions": {
+      "Deaf/HardofHearing": "Apoyo para personas con un impedimento auditivo o sordera",
+      "VisuallyImpaired": "Apoyo para personas con un impedimento visual o ceguera",
+      "Wheelchair": "Apoyo para personas que usa una silla de ruedas"
+    },
+    "services": "Servicios",
+    "substanceUseServices": "Servicios para el uso de substancias",
+    "_substanceUseServices": {
+      "ClinicallyManagedHighIntensityResidentialServices": "Servicios de alta intensidad administrados clínicamente en un establecimiento residencial",
+      "ClinicallyManagedLowIntensityResidentialServices": "Servicios de baja intensidad administrados clínicamente en un establecimiento residencial",
+      "ClinicallyManagedMediumIntensityResidentialServices": "Servicios de moderada intensidad administrados clínicamente en un establecimiento residencial",
+      "ClinicallyManagedResidentialDetoxification": "Desintoxicación residencial administrada clínicamente",
+      "DayTreatment(PartialHospitalization)": "Tratamiento diurno (hospitalización parcial)",
+      "DUI/DWI": "Por conducir bajo la influencia (DUI) / en estado de intoxicación (DWI)",
+      "Education&TreatmentServicesforPersonsinCriminalJusticeSystem": "Servicios de educación y tratamiento para personas en el sistema de justicia penal",
+      "GenderResponsiveTreatmentforWomen": "Tratamiento sensible al género para mujeres",
+      "GeneralTreatment": "Tratamiento general",
+      "IntensiveOutpatient": "Tratamiento ambulatorio intensivo",
+      "MedicallyMonitoredInpatientDetoxification": "Desintoxicación con internación monitoreada médicamente",
+      "MedicallyMonitoredIntensiveResidentialTreatment": "Tratamiento residencial intensivo monitoreado médicamente",
+      "MedicationAssistedTherapy": "Terapia asistida con medicamentos",
+      "OpioidTreatmentPrograms": "Programas para el tratamiento de opioides",
+      "Outpatient": "Servicios ambulatorios",
+      "YouthTreatment": "Tratamiento para personas menores de 21 años"
+    },
+    "mentalHealthServices": "Servicios para la salud mental",
+    "_mentalHealthServices": {
+      "72-HourTreatment&Evaluation": "Tratamiento y evaluación por 72 horas",
+      "AcuteTreatmentUnit": "Unidad de tratamiento intensivo",
+      "CommunityMentalHealthCenter": "Centro comunitario de salud mental",
+      "CommunityMentalHealthClinic": "Clínica comunitaria de salud mental",
+      "CrisisStabilizationUnit": "Unidad de estabilización durante una crisis",
+      "DayTreatment": "Tratamiento diurno",
+      "Emergency": "De emergencia",
+      "Hospital": "Hospitalario",
+      "IntensiveOutpatient": "Ambulatorio intensivo",
+      "Outpatient": "Ambulatorio",
+      "PsychiatricResidential": "Residencial psiquiátrico",
+      "ResidentialChildCareFacility": "Establecimiento residencial para niños y adolescentes",
+      "ResidentialLongTermTreatment": "Tratamiento residencial a largo plazo",
+      "ResidentialShortTermTreatment": "Tratamiento residencial a corto plazo"
+    }
+  },
+  "guidedSearch": {
+    "nextQuestion": "Próxima pregunta",
+    "helpRecipient": {
+      "question": "¿Estás buscando ayuda para ti o para un ser querido?",
+      "answers": {
+        "yourself": "Estoy buscando ayuda para mí",
+        "someone": "Estoy buscando ayuda para un ser querido"
+      }
+    },
+    "typeOfHelp": {
+      "yourself": {
+        "question": "Por favor selecciona las frases que mejor describen el tipo de ayuda que estás buscando.",
+        "answers": {
+          "substance_use": "Por uso de drogas o alcohol",
+          "court_mandates_treatment": "Porque una corte ordenó tratamiento",
+          "mental_health": "Para mi salud mental (sentimientos constantes de tristeza, soledad, preocupación...)",
+          "suicidal_ideation": "Porque estoy pensando en matarme o querer estar muerto/a",
+          "unsure": "No estoy seguro/a",
+          "none": "Ninguna de las anteriores"
+        }
+      },
+      "someone": {
+        "question": "Por favor selecciona las frases que mejor describen el tipo de ayuda que tu ser querido está buscando.",
+        "answers": {
+          "substance_use": "Un ser querido necesita ayuda por uso de drogas o alcohol",
+          "court_mandates_treatment": "Un ser querido necesita tratamiento que la corte ordenó",
+          "mental_health": "Un ser querido necesita ayuda con su salud mental (sentimientos constantes de tristeza, soledad, preocupación...)",
+          "suicidal_ideation": "Un ser querido está pensando en matarse o querer estar muerto/a",
+          "unsure": "No estoy seguro/a",
+          "none": "Ninguna de las anteriores"
+        }
+      }
+    },
+    "languages": {
+      "question": "¿Cuál es tu idioma preferido?"
+    },
+    "feesPreference": {
+      "question": "¿Cómo prefiere usted, o la persona a la que cuida, pagar los cuidados?",
+      "answers": {
+        "Medicaid": "Medicaid",
+        "PrivateInsurance": "Seguro privado",
+        "SlidingFeeScale": "Opciones de pago según ingresos",
+        "SelfPay": "Pago directo/por cuenta propia",
+        "DontKnow": "No puedo pagar / No lo sé."
+      }
+    },
+    "location": {
+      "question": "¿En dónde estás buscando servicios?"
+    },
+    "distance": {
+      "distance": "¿Qué tan lejos podrías transportarte, o podría transportarse tu ser querido, para obtener servicios?",
+      "withinMiles": "Máximo {{n}} millas"
+    }
+  },
+  "whoops": {
+    "heading": "Oh, oh.",
+    "returnToHome": "Regresa a la página de inicio"
+  }
+}

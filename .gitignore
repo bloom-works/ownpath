@@ -1,0 +1,28 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# Processed data file
+src/data/ladders_data.json
+
+# dependencies
+**/node_modules
+/.pnp
+.pnp.js
+
+# testing
+**/coverage
+
+# production
+**/build
+
+# misc
+**/npm-debug.log*
+**/yarn-debug.log*
+**/yarn-error.log*
+
+# VS Code
+.vscode
+.devcontainer
+
+# Terraform
+.terraform*
+terraform.tfstate*

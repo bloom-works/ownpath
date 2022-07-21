@@ -1,0 +1,32 @@
+# Base Docker Compose configuration.
+# Not used by itself, but with the CI or DEV override files. Examples below...
+#
+# DEV Up (which builds the app container) -- Doesn't exist currently, probably doesn't need to for this project
+# $ docker-compose -f docker-compose.yml -f docker-compose.dev.yml up
+#
+# CI Run Command in App Container (which uses a built container for the app tagged: ${GITHUB_REPOSITORY}/${GITHUB_HEAD_REF} )
+# $ docker-compose -f docker-compose.yml -f ci/docker-compose.ci.yml run app <command>
+#
+# Place dev-only configuration in docker-compose.override.yaml, which is read by default when running `docker-compose up`
+# but will not be included when specific configuration files are supplied (as in the CI command above)
+
+version: "3"
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+  ## ---- UNCOMMENT BELOW FOR POSTGRESQL DATABASE AND REDIS (common for web apps) -----
+  # links:
+  #    - database
+  #     - sessions
+  # database:
+  #   image: postgres:11
+  #   ports:
+  #     - '5432:5432'
+  #   environment:
+  #     - POSTGRES_HOST_AUTH_METHOD=trust
+  # sessions:
+  #   image: redis:5
+  #   ports:
+  #     - '6379:6379'
