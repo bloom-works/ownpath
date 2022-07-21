@@ -1,0 +1,34 @@
+# Each line is a file pattern followed by one or more owners.
+# Order is important; the last matching pattern takes the most
+# precedence. This means that you should put broad things first.
+
+# Note: Any group referenced in this file must have a minimum of `write` permissions.
+
+# Infrastructure/build changes -- only needs to be reviewed by a dev
+/.github/           @bloom-works/co-bha-care-directory-devs
+/ci/                @bloom-works/co-bha-care-directory-devs
+/.*ignore           @bloom-works/co-bha-care-directory-devs
+/Dockerfile         @bloom-works/co-bha-care-directory-devs
+/*.json             @bloom-works/co-bha-care-directory-devs
+/*.tf               @bloom-works/co-bha-care-directory-devs
+/infra/            @bloom-works/co-bha-care-directory-devs
+docker*             @bloom-works/co-bha-care-directory-devs
+/*.yml              @bloom-works/co-bha-care-directory-devs
+/*.json             @bloom-works/co-bha-care-directory-devs
+
+# Feature changes -- needs to be reviewed by product (does it meet the need), UX (does it meet the design), and dev (is the code safe and maintainable)
+/public/            @bloom-works/co-bha-care-directory-ux @bloom-works/co-bha-care-directory-devs @bloom-works/co-bha-care-directory-product
+/src/               @bloom-works/co-bha-care-directory-ux @bloom-works/co-bha-care-directory-devs @bloom-works/co-bha-care-directory-product
+
+
+# License and contributing changes -- reviewed by product and dev
+LICENSE*            @bloom-works/co-bha-care-directory-devs @bloom-works/co-bha-care-directory-product
+CONTRIBUTING*       @bloom-works/co-bha-care-directory-devs @bloom-works/co-bha-care-directory-product
+
+# Data updates -- only a product person needs to review
+/raw_data/          @bloom-works/co-bha-care-directory-product
+
+
+# Assumes no one is required to review documentation, but leaving commented out in case folks want to change that someday
+# /docs/             @bloom-works/co-bha-care-directory-devs
+# *.md               @bloom-works/co-bha-care-directory-devs

@@ -1,0 +1,37 @@
+# Run when the PR is closed
+# ---
+
+name: Tag main branch
+on: 
+  pull_request:
+    types: [closed]
+    branches: main
+
+jobs:
+  tag_main:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0 # Gets all the tags
+      - name: Tag major release
+        if: contains(github.event.pull_request.labels.*.name, 'release-major')
+        run: git tag $(bash ci/semver.sh bump major $(git tag -l --sort "v:refname" "*.*.*" | tail -1))
+      - name: Tag major release
+        if: contains(github.event.pull_request.labels.*.name, 'release-minor')
+        run: git tag $(bash ci/semver.sh bump minor $(git tag -l --sort "v:refname" "*.*.*" | tail -1))
+      - name: Tag patch release
+        if: contains(github.event.pull_request.labels.*.name, 'release-patch')
+        run: git tag $(bash ci/semver.sh bump patch $(git tag -l --sort "v:refname" "*.*.*" | tail -1))
+      - name: Push tag
+        run: git push origin --tags
+      - name: Build Docker container
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          file: ./Dockerfile
+          load: true
+          tags: ${{ github.repository }}:${{ github.head_ref }}
+      - name: Build and publish artifacts
+        run: docker run -v "$PWD:/app" -e TF_VAR_bucket_name=${{ secrets.TF_VAR_bucket_name }} -e TF_VAR_domains=${{ secrets.TF_VAR_domains }} -e AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }} -e AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }} -e AWS_DEFAULT_REGION=us-east-1 ${{ github.repository }}:${{ github.head_ref }} sh ci/publish_build.sh $(git tag -l --sort "v:refname" "*.*.*" | tail -1)

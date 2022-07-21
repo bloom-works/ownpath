@@ -1,0 +1,21 @@
+# Check to make sure there is one, and only one, release tag applied
+
+name: Check for release labels
+on: 
+  pull_request:
+    types: [opened, reopened, synchronize, labeled, unlabeled]
+    branches: main
+
+jobs:
+  one_release_label:
+    runs-on: ubuntu-latest
+    steps:
+      - name: At least one release label applied
+        if: "!(contains(github.event.pull_request.labels.*.name, 'release-major') || contains(github.event.pull_request.labels.*.name, 'release-minor') || contains(github.event.pull_request.labels.*.name, 'release-patch'))"
+        run: exit 1 
+      - name: If major label is applied, no other release labels exist
+        if: "contains(github.event.pull_request.labels.*.name, 'release-major') && (contains(github.event.pull_request.labels.*.name, 'release-minor') || contains(github.event.pull_request.labels.*.name, 'release-patch'))"
+        run: exit 1 
+      - name: If minor label is applied, no other release labels exist
+        if: "contains(github.event.pull_request.labels.*.name, 'release-minor') && contains(github.event.pull_request.labels.*.name, 'release-patch')"
+        run: exit 1 
