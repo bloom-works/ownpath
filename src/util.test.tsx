@@ -429,7 +429,7 @@ describe("supportsLanguages", () => {
 
 describe("servesAgeGroup", () => {
   test("true if age is null", () => {
-    expect(servesAgeGroup(DUMMY_CARE_PROVIDER, null)).toEqual(true);
+    expect(servesAgeGroup(DUMMY_CARE_PROVIDER, undefined)).toEqual(true);
   });
 
   const servesYouth: CareProviderSearchResult = {
@@ -468,7 +468,6 @@ describe("servesAgeGroup", () => {
     populationsServed: {
       ...DUMMY_CARE_PROVIDER.populationsServed,
       Women: true,
-      Homeless: true,
     },
   };
 
@@ -477,7 +476,6 @@ describe("servesAgeGroup", () => {
     populationsServed: {
       ...DUMMY_CARE_PROVIDER.populationsServed,
       Women: true,
-      Homeless: true,
     },
   };
   test("true if Under18 selected and youth and/or minors served", () => {
@@ -502,13 +500,41 @@ describe("servesAgeGroup", () => {
   test("true if Adult selected and does not serve any populations", () => {
     expect(servesAgeGroup(DUMMY_CARE_PROVIDER, AgeGroup.Adult)).toEqual(true);
   });
-  test("true if Adult selected and anything other than ONLY youth/minor or ONLY older adult served", () => {
+  test("true if Adult selected and anything other than ONLY youth/minor + modifiers or ONLY older adult + modifiers served", () => {
     expect(servesAgeGroup(servesOtherPops, AgeGroup.Adult)).toEqual(true);
     expect(servesAgeGroup(servesOtherPopsAndUnder18, AgeGroup.Adult)).toEqual(
       true
     );
 
     expect(servesAgeGroup(servesBoth, AgeGroup.Adult)).toEqual(false);
+    expect(servesAgeGroup(servesOlderAdults, AgeGroup.Adult)).toEqual(false);
+  });
+
+  test("false if adult selected and only serves under 18 + modifiers", () => {
+    const servesYouthAndModifiers: CareProviderSearchResult = {
+      ...servesYouth,
+      populationsServed: {
+        ...servesYouth.populationsServed,
+        Homeless: true,
+        LGBT: true,
+      },
+    };
+
+    expect(servesAgeGroup(servesYouthAndModifiers, AgeGroup.Adult)).toEqual(
+      false
+    );
+  });
+
+  test("false if adult selected and only serves older adult + modifiers", () => {
+    const servesOlderAndModifiers: CareProviderSearchResult = {
+      ...servesOlderAdults,
+      populationsServed: {
+        ...servesOlderAdults.populationsServed,
+        Homeless: true,
+        LGBT: true,
+      },
+    };
+
     expect(servesAgeGroup(servesOlderAdults, AgeGroup.Adult)).toEqual(false);
   });
 });

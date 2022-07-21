@@ -26,6 +26,7 @@ import {
   meetsAccessibilityNeeds,
   meetsAnyFeePreference,
   offersAnyTypesOfHelpNeeded,
+  servesAgeGroup,
 } from "./filters";
 import { supportsLanguages } from "./filters/languages";
 
@@ -73,6 +74,7 @@ export function applySearchFilters(
     accessibility,
     hours,
     languages,
+    age,
   } = filters;
 
   const zipSearchMetadata = getZipSearchMetadata(zip);
@@ -86,12 +88,16 @@ export function applySearchFilters(
 
   // calculate distance, apply filters, & sort results by distance
   const results = addSearchMetadata(careData, zipSearchMetadata.center)
-    .filter((result) => isWithinRadius(result, miles))
-    .filter((result) => offersAnyTypesOfHelpNeeded(result, typesOfHelp))
-    .filter((result) => meetsAnyFeePreference(result, feePreferences))
-    .filter((result) => meetsAccessibilityNeeds(result, accessibility))
-    .filter((result) => isOpenOnSelectedDays(result, hours))
-    .filter((result) => supportsLanguages(result, languages))
+    .filter(
+      (result) =>
+        isWithinRadius(result, miles) &&
+        offersAnyTypesOfHelpNeeded(result, typesOfHelp) &&
+        meetsAnyFeePreference(result, feePreferences) &&
+        meetsAccessibilityNeeds(result, accessibility) &&
+        isOpenOnSelectedDays(result, hours) &&
+        supportsLanguages(result, languages) &&
+        servesAgeGroup(result, age)
+    )
     .sort(compareDistance);
 
   return { results };
