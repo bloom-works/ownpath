@@ -29,6 +29,7 @@ const ContentOverlay = styled.div`
 const Heading = styled.h1`
   color: black;
   background-color: white;
+  padding: 1rem 1.2rem 0 1.2rem;
   @media (min-width: 40em) {
     color: white;
     background-color: transparent;
