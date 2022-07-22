@@ -26,7 +26,7 @@ function Footer() {
             </Grid>
 
             <Grid col className="margin-left-2">
-              <h2 className="font-body-lg margin-y-1 text-bold">
+              <h2 className="margin-y-1">
                 {t("components.footer.ourCommitment")}
               </h2>
               <p className="margin-y-1">
