@@ -55,6 +55,7 @@ function Layout() {
             </div>
 
             <Button
+              className="width-auto margin-x-1"
               type="button"
               unstyled
               onClick={() => setShowCrisisAlert(false)}
