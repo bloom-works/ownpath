@@ -37,7 +37,7 @@ const Hero = styled.img`
 
 const ContentOverlay = styled.div`
   position: relative;
-  margin-top: -22%;
+  margin-top: -28%;
 `;
 
 const Heading = styled.h1`
@@ -47,6 +47,7 @@ const Heading = styled.h1`
   @media (min-width: 40em) {
     color: white;
     background-color: transparent;
+    padding: 0;
   }
   @media only screen and (min-width: 768px) and (max-width: 1279px) {
     padding-left: 2rem;
