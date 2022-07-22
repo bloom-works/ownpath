@@ -1,7 +1,6 @@
-import { Button, Fieldset, Grid } from "@trussworks/react-uswds";
+import { Grid } from "@trussworks/react-uswds";
 import { useTranslation } from "react-i18next";
-import { Dispatch, SetStateAction, useEffect, useState } from "react";
-import styled from "styled-components";
+import { Dispatch, SetStateAction, useState } from "react";
 import { SearchFilters, TypeOfHelp } from "../../../../types";
 import DesktopControlDropdown from "./DesktopControlDropdown";
 import FeePreferenceInput from "../FeePreferenceInput";
@@ -37,6 +36,7 @@ function DesktopControl({ filters, setFilters }: DesktopControlProps) {
               TypeOfHelp.MentalHealth,
               TypeOfHelp.CourtMandatedTreatment,
               TypeOfHelp.SubstanceUse,
+              TypeOfHelp.SuicidalIdeation,
             ]}
             filters={filters}
             setFilters={setFilters}

@@ -90,6 +90,7 @@ function MobileControl({ filters, setFilters }: MobileControlProps) {
                 TypeOfHelp.SubstanceUse,
                 TypeOfHelp.CourtMandatedTreatment,
                 TypeOfHelp.MentalHealth,
+                TypeOfHelp.SuicidalIdeation,
               ]}
               filters={controlFilters}
               setFilters={setControlFilters}
