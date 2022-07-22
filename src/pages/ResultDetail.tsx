@@ -1,6 +1,6 @@
-import { Grid, GridContainer } from "@trussworks/react-uswds";
+import { Grid, GridContainer, Link } from "@trussworks/react-uswds";
 import { Marker } from "react-leaflet";
-import { Link, Navigate, useLocation, useParams } from "react-router-dom";
+import { Navigate, useLocation, useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 import { ReactComponent as ArrowLeft } from "../images/arrow-left.svg";
@@ -57,7 +57,7 @@ function ResultDetail() {
       <div className="margin-y-2">
         <Link
           className="display-flex flex-align-center"
-          to={`/search${prevSearch ?? ""}`}
+          href={`/search${prevSearch ?? ""}`}
         >
           <ArrowLeft className="margin-right-1" />
           {t(`${T_PREFIX}backToSearch`)}
@@ -100,14 +100,14 @@ function ResultDetail() {
           </Grid>
         </Grid>
       </section>
-      <section>
-        <h2>{t(`${T_PREFIX}details`)}</h2>
-        <Horizontal />
-        <Grid row>
-          <Grid tablet={{ col: 5 }}>
+      <Horizontal />
+      <Grid row gap>
+        <Grid col={12} tablet={{ col: 6 }}>
+          <section>
+            <h2>{t(`${T_PREFIX}details`)}</h2>
             <ResultDatum Icon={Populations} key="population">
               <div>
-                <h3 className="font-body-sm display-inline">
+                <h3 className="font-body-sm display-inline text-bold">
                   {t(`${T_PREFIX}populationsServed`)}:{" "}
                 </h3>
                 <CommaSeparatedList
@@ -118,7 +118,7 @@ function ResultDetail() {
             </ResultDatum>
             <ResultDatum Icon={Accessibility} key="accessibility">
               <div>
-                <h3 className="font-body-sm display-inline">
+                <h3 className="font-body-sm display-inline text-bold">
                   {t(`${T_PREFIX}accessibilityOptions`)}:{" "}
                 </h3>
                 <CommaSeparatedList
@@ -127,39 +127,44 @@ function ResultDetail() {
                 />
               </div>
             </ResultDatum>
-          </Grid>
+          </section>
         </Grid>
-      </section>
-      {(data.substanceUse.supported || data.mentalHealth.supported) && (
-        <section>
-          <h2>{t(`${T_PREFIX}services`)}</h2>
-          <Horizontal />
-          {data.substanceUse.supported && (
-            <>
-              <h3>{t(`${T_PREFIX}substanceUseServices`)}:</h3>
-              <ul>
-                <BulletedList
-                  boolMap={data.substanceUse.services}
-                  translationPrefix={`${T_PREFIX}_substanceUseServices.`}
-                  className="line-heigh-body-4"
-                />
-              </ul>
-            </>
-          )}
-          {data.mentalHealth.supported && (
-            <>
-              <h3>{t(`${T_PREFIX}mentalHealthServices`)}:</h3>
-              <ul>
-                <BulletedList
-                  boolMap={data.mentalHealth.services}
-                  translationPrefix={`${T_PREFIX}_mentalHealthServices.`}
-                  className="line-heigh-body-4"
-                />
-              </ul>
-            </>
-          )}
-        </section>
-      )}
+        {(data.substanceUse.supported || data.mentalHealth.supported) && (
+          <Grid col={12} tablet={{ col: 6 }}>
+            <section>
+              <h2>{t(`${T_PREFIX}services`)}</h2>
+              {data.substanceUse.supported && (
+                <>
+                  <h3 className="font-body-sm text-bold">
+                    {t(`${T_PREFIX}substanceUseServices`)}:
+                  </h3>
+                  <ul>
+                    <BulletedList
+                      boolMap={data.substanceUse.services}
+                      translationPrefix={`${T_PREFIX}_substanceUseServices.`}
+                      className="line-heigh-body-4"
+                    />
+                  </ul>
+                </>
+              )}
+              {data.mentalHealth.supported && (
+                <>
+                  <h3 className="font-body-sm">
+                    {t(`${T_PREFIX}mentalHealthServices`)}:
+                  </h3>
+                  <ul>
+                    <BulletedList
+                      boolMap={data.mentalHealth.services}
+                      translationPrefix={`${T_PREFIX}_mentalHealthServices.`}
+                      className="line-heigh-body-4"
+                    />
+                  </ul>
+                </>
+              )}
+            </section>
+          </Grid>
+        )}
+      </Grid>
     </GridContainer>
   );
 }
