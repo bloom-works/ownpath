@@ -48,7 +48,9 @@ function Layout() {
             <div>
               <>
                 {t("components.layout.immediateHelp")}
-                <Link href="tel:+18444938255">1-844-493-TALK (8255).</Link>
+                <Link href="tel:+18444938255" className="margin-left-1">
+                  1-844-493-TALK (8255).
+                </Link>
               </>
             </div>
 

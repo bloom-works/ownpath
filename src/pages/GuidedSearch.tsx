@@ -169,7 +169,7 @@ function GuidedSearch() {
                   showError={showZipValidation}
                 />
               </Fieldset>
-              <AppAlert Icon={Info} className="margin-top-4">
+              <AppAlert Icon={Info} className="margin-top-2">
                 {t("common.dataCollectionAlert")}
               </AppAlert>
             </>
