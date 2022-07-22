@@ -19,9 +19,10 @@ type DesktopControlProps = {
 
 function DesktopControl({ filters, setFilters }: DesktopControlProps) {
   const { t } = useTranslation();
-  // flag to display distance filter in active state once user has changed distance
-  // from default or guided search selection
+  // flags to display distance and age filters in active state
+  // ONLY after user has changed from default or guided search selection
   const [showDistanceActive, setShowDistanceActive] = useState(false);
+  const [showAgeActive, setShowAgeActive] = useState(false);
 
   return (
     <div className="display-none tablet:display-block">
@@ -99,9 +100,9 @@ function DesktopControl({ filters, setFilters }: DesktopControlProps) {
           <DistanceInput
             hideLegend
             filters={filters}
-            setFilters={(filters) => {
+            setFilters={(_filters) => {
               setShowDistanceActive(true);
-              setFilters(filters);
+              setFilters(_filters);
             }}
             tPrefix="components.search.filters.distance."
           />
@@ -113,7 +114,10 @@ function DesktopControl({ filters, setFilters }: DesktopControlProps) {
           <AgeGroupInput
             hideLegend
             filters={filters}
-            setFilters={setFilters}
+            setFilters={(_filters) => {
+              setShowAgeActive(true);
+              setFilters(_filters);
+            }}
             tPrefix="components.search.filters.ageGroup."
           />
         </DesktopControlDropdown>

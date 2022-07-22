@@ -38,9 +38,7 @@ function Search() {
   // TODO: do we need this, or can we just use searchParams to track filter state?
   const [searchFilters, setSearchFilters] =
     useState<SearchFilters>(initialFilters);
-  // flag to display distance filter in active state once user has changed distance
-  // from default or guided search selection
-  const [showDistanceActive, setShowDistanceActive] = useState(false);
+
   // Filtered set of CareProviders OR error string
   const [searchResult, setSearchResult] = useState<SearchResult | null>(null);
 
