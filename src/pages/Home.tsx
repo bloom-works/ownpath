@@ -123,9 +123,7 @@ function Home() {
                 headerContent={<ColoradoCrisisServicesLogo />}
                 bodyContent={
                   <>
-                    <h2 className="font-body-lg text-bold">
-                      {t(`${T_PREFIX}_coloradoCrisisService.heading`)}
-                    </h2>
+                    <h2>{t(`${T_PREFIX}_coloradoCrisisService.heading`)}</h2>
                     <p>{t(`${T_PREFIX}_coloradoCrisisService.content`)}</p>
                   </>
                 }
@@ -143,9 +141,7 @@ function Home() {
                 headerContent={<IMatterLogo />}
                 bodyContent={
                   <>
-                    <h2 className="font-body-lg text-bold">
-                      {t(`${T_PREFIX}_iMatter.heading`)}
-                    </h2>
+                    <h2>{t(`${T_PREFIX}_iMatter.heading`)}</h2>
                     <p>{t(`${T_PREFIX}_iMatter.content`)}</p>
                   </>
                 }
@@ -163,9 +159,7 @@ function Home() {
                 headerContent={<StandUpColorado />}
                 bodyContent={
                   <>
-                    <h2 className="font-body-lg text-bold">
-                      {t(`${T_PREFIX}_standUp.heading`)}
-                    </h2>
+                    <h2>{t(`${T_PREFIX}_standUp.heading`)}</h2>
                     <p>{t(`${T_PREFIX}_standUp.content`)}</p>
                   </>
                 }

@@ -64,7 +64,7 @@ function ResultDetail() {
         </Link>
       </div>
       <Grid row className="flex-justify margin-bottom-2">
-        <h1 className="text-bold">{data.name}</h1>
+        <h1>{data.name}</h1>
         <ShareButton text={t(`${T_PREFIX}share`)} />
       </Grid>
 
@@ -107,7 +107,7 @@ function ResultDetail() {
             <h2>{t(`${T_PREFIX}details`)}</h2>
             <ResultDatum Icon={Populations} key="population">
               <div>
-                <h3 className="font-body-sm display-inline text-bold">
+                <h3 className="display-inline">
                   {t(`${T_PREFIX}populationsServed`)}:{" "}
                 </h3>
                 <CommaSeparatedList
@@ -118,7 +118,7 @@ function ResultDetail() {
             </ResultDatum>
             <ResultDatum Icon={Accessibility} key="accessibility">
               <div>
-                <h3 className="font-body-sm display-inline text-bold">
+                <h3 className="display-inline">
                   {t(`${T_PREFIX}accessibilityOptions`)}:{" "}
                 </h3>
                 <CommaSeparatedList
@@ -135,9 +135,7 @@ function ResultDetail() {
               <h2>{t(`${T_PREFIX}services`)}</h2>
               {data.substanceUse.supported && (
                 <>
-                  <h3 className="font-body-sm text-bold">
-                    {t(`${T_PREFIX}substanceUseServices`)}:
-                  </h3>
+                  <h3>{t(`${T_PREFIX}substanceUseServices`)}:</h3>
                   <ul>
                     <BulletedList
                       boolMap={data.substanceUse.services}
@@ -149,9 +147,7 @@ function ResultDetail() {
               )}
               {data.mentalHealth.supported && (
                 <>
-                  <h3 className="font-body-sm">
-                    {t(`${T_PREFIX}mentalHealthServices`)}:
-                  </h3>
+                  <h3>{t(`${T_PREFIX}mentalHealthServices`)}:</h3>
                   <ul>
                     <BulletedList
                       boolMap={data.mentalHealth.services}
