@@ -121,7 +121,7 @@ export const EMPTY_SEARCH_FILTERS: SearchFilters = {
 export function getFiltersFromSearchParams(
   searchParams: URLSearchParams
 ): SearchFilters {
-  return {
+  const filters: SearchFilters = {
     zip: searchParams.get("zip") ?? "",
     miles: searchParams.get("miles") ?? "",
     // TODO: how to enforce type?
@@ -132,8 +132,11 @@ export function getFiltersFromSearchParams(
     ) as AccessibilityOptions[],
     hours: searchParams.getAll("hours") as DayOfWeek[],
     languages: searchParams.getAll("languages") as Languages[],
-    age: (searchParams.get("age") as AgeGroup) ?? undefined,
+    age: searchParams.get("age") as AgeGroup,
   };
+
+  if (!filters.age) delete filters.age;
+  return filters;
 }
 
 /**
