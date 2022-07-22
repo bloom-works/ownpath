@@ -43,27 +43,26 @@ function TypeOfHelpInput({
       legendStyle={hideLegend ? "srOnly" : "large"}
     >
       {options.map((option) => (
-        <FilterCheckbox
-          name="type of help"
-          value={option}
-          tPrefix={`${tPrefix}answers.`}
-          selectedFilterValues={filters.typesOfHelp}
-          onChange={() => {
-            if (option === TypeOfHelp.None || option === TypeOfHelp.Unsure)
-              return; // do not apply no-op filters
-            setTypeOfHelpFilter(option);
-          }}
-          key={option}
-        />
+        <>
+          <FilterCheckbox
+            name="type of help"
+            value={option}
+            tPrefix={`${tPrefix}answers.`}
+            selectedFilterValues={filters.typesOfHelp}
+            onChange={() => setTypeOfHelpFilter(option)}
+            key={option}
+          />
+          {option === TypeOfHelp.SuicidalIdeation &&
+            filters.typesOfHelp.includes(TypeOfHelp.SuicidalIdeation) && (
+              <AppAlert Icon={Phone}>
+                <div>{t("common.suicidalIdeationPopup.crisisServices")}</div>
+                <div className="text-bold margin-top-1">
+                  {t("common.suicidalIdeationPopup.emergency")}
+                </div>
+              </AppAlert>
+            )}
+        </>
       ))}
-      {filters.typesOfHelp.includes(TypeOfHelp.SuicidalIdeation) && (
-        <AppAlert Icon={Phone}>
-          <div>{t("common.suicidalIdeationPopup.crisisServices")}</div>
-          <div className="text-bold margin-top-1">
-            {t("common.suicidalIdeationPopup.emergency")}
-          </div>
-        </AppAlert>
-      )}
     </Fieldset>
   );
 }
