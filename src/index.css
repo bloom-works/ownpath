@@ -74,6 +74,9 @@ body {
 .usa-footer__secondary-section a {
   color: white;
 }
+.usa-footer__secondary-section > .grid-container {
+  max-width: inherit;
+}
 
 .usa-legend--large {
   font-size: 1.5rem;
