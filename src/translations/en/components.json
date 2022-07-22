@@ -1,7 +1,9 @@
 {
   "banner": {
-    "immediateHelp": "Need immediate help for an emotional, mental health, or substance use crisis?",
     "changeLanguage": "Change language"
+  },
+  "layout": {
+    "immediateHelp": "Need immediate help for an emotional, mental health, or substance use crisis?"
   },
   "footer": {
     "feedbackPrompt": "Have a suggestion for improvement on this website?",
