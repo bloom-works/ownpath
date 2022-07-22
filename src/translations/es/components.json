@@ -13,9 +13,6 @@
     "privacyPolicy": "Nunca tendrás que crear una cuenta para usar este servicio, y mantendremos la seguridad de cualquier información que compartas con nosotros y te identifique personalmente.",
     "cta": "Lee nuestra norma de privacidad."
   },
-  "dataCollectionAlert": {
-    "alert": "Nunca tendrá que crear una cuenta para utilizar este servicio, y no almacenamos ninguna información personal identificable sobre usted mientras utiliza este servicio."
-  },
   "search": {
     "milesAway": "A {{ miles }} millas",
     "toggleFiltersButton_zero": "Filtrar resultados",

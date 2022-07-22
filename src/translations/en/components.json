@@ -12,9 +12,6 @@
     "ourCommitment": "Our commitment to you",
     "privacyPolicy": "You’ll never need to create an account to use this service, and any personally identifiable information you share will be kept secure."
   },
-  "dataCollectionAlert": {
-    "alert": "You’ll never need to create an account to use this service, and we do not store any personally identifiable information about you while using this service."
-  },
   "search": {
     "milesAway": "{{ miles }} miles away",
     "toggleFiltersButton_zero": "Filter results",
