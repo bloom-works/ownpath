@@ -99,7 +99,7 @@ function Search() {
                   </ResponsiveHeader>
 
                   <Button
-                    className="margin-left-1 width-auto"
+                    className="margin-left-1 padding-y-05 width-auto"
                     type="button"
                     unstyled
                     onClick={() => {
