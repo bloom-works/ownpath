@@ -105,7 +105,7 @@ function GuidedSearch() {
         </div>
       </div>
       <form
-        className="margin-y-4 col-12 tablet:col-8"
+        className="margin-y-4 grid-col-12 tablet:grid-col-8"
         onSubmit={(e) => {
           e.preventDefault();
           if (currentStep === "location") {
