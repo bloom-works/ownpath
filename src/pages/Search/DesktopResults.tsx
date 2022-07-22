@@ -30,11 +30,11 @@ function DesktopResults({ results }: { results: CareProviderSearchResult[] }) {
   }, [results]);
 
   return (
-    <div className="display-none tablet:display-block">
+    <div className="display-none tablet:display-block padding-x-4">
       <Grid row className="border-top border-base-lighter overflow-x-hidden">
         <Grid
           tablet={{ col: 7 }}
-          className="height-viewport padding-left-3"
+          className="height-viewport"
           key="desktop-list"
         >
           <ResultsList results={results} selectedResultId={selectedResultId} />

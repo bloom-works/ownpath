@@ -89,7 +89,7 @@ function Search() {
             >
               <div>
                 <div className="display-flex flex-align-baseline">
-                  <ResponsiveHeader className="margin-y-0 text-bold">
+                  <ResponsiveHeader className="margin-top-0 text-bold">
                     {t(`${T_PREFIX}resultCount`, {
                       count: searchResult.results.length,
                       zip: searchFilters.zip,
@@ -97,7 +97,7 @@ function Search() {
                   </ResponsiveHeader>
 
                   <Button
-                    className="margin-left-1 width-auto"
+                    className="margin-left-1 padding-y-05 width-auto"
                     type="button"
                     unstyled
                     onClick={() => {
