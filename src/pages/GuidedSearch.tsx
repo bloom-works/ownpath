@@ -1,7 +1,6 @@
 import {
   Button,
   Fieldset,
-  Form,
   GridContainer,
   StepIndicatorStep,
 } from "@trussworks/react-uswds";
@@ -9,7 +8,6 @@ import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { createSearchParams, useNavigate } from "react-router-dom";
 import { AnalyticsAction, logEvent, logPageView } from "../analytics";
-import DataCollectionAlert from "../components/DataCollectionAlert";
 import HelpRecipientInput, {
   HelpRecipient,
 } from "../components/GuidedSearch/HelpRecipientInput";
@@ -20,6 +18,8 @@ import TypeOfHelpInput from "../components/Search/Filters/TypeOfHelpInput";
 import AgeGroupInput from "../components/Search/Filters/AgeGroupInput";
 import { SearchFilters, TypeOfHelp } from "../types";
 import { EMPTY_SEARCH_FILTERS, getZipSearchMetadata } from "../utils";
+import AppAlert from "../components/AppAlert";
+import { ReactComponent as Info } from "../images/info.svg";
 
 const GUIDED_SEARCH_STEPS = [
   "helpRecipient",
@@ -104,8 +104,8 @@ function GuidedSearch() {
           ))}
         </div>
       </div>
-      <Form
-        className="margin-y-4"
+      <form
+        className="margin-y-4 col-12 tablet:col-8"
         onSubmit={(e) => {
           e.preventDefault();
           if (currentStep === "location") {
@@ -169,7 +169,9 @@ function GuidedSearch() {
                   showError={showZipValidation}
                 />
               </Fieldset>
-              <DataCollectionAlert wide className="margin-top-4" />
+              <AppAlert Icon={Info} className="margin-top-4">
+                {t("common.dataCollectionAlert")}
+              </AppAlert>
             </>
           ) : currentStep === "distance" ? (
             <DistanceInput
@@ -183,7 +185,7 @@ function GuidedSearch() {
         </div>
 
         <Button type="submit">{t(`${T_PREFIX}nextQuestion`)}</Button>
-      </Form>
+      </form>
     </GridContainer>
   );
 }
