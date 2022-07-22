@@ -4,7 +4,9 @@ import { useTranslation } from "react-i18next";
 import { AnalyticsAction, logEvent } from "../../../analytics";
 import { SearchFilters, TypeOfHelp } from "../../../types";
 import { toggleItemInList } from "../../../utils";
+import AppAlert from "../../AppAlert";
 import FilterCheckbox from "./FilterCheckbox";
+import { ReactComponent as Phone } from "../../../images/phone.svg";
 
 type TypeOfHelpInputProps = {
   hideLegend?: boolean;
@@ -55,10 +57,12 @@ function TypeOfHelpInput({
         />
       ))}
       {filters.typesOfHelp.includes(TypeOfHelp.SuicidalIdeation) && (
-        <div className="margin-top-3 radius-lg bg-teal padding-y-1 padding-x-3">
-          <p>{t("common.suicidalIdeationPopup.crisisServices")}</p>
-          <p>{t("common.suicidalIdeationPopup.emergency")}</p>
-        </div>
+        <AppAlert Icon={Phone}>
+          <div>{t("common.suicidalIdeationPopup.crisisServices")}</div>
+          <div className="text-bold margin-top-1">
+            {t("common.suicidalIdeationPopup.emergency")}
+          </div>
+        </AppAlert>
       )}
     </Fieldset>
   );
