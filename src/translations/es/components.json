@@ -18,7 +18,7 @@
     "toggleFiltersButton_zero": "Filtrar resultados",
     "toggleFiltersButton_one": "Filtrar resultados ({{ count}} seleccionados",
     "toggleFiltersButton_other": "Filtrar resultados ({{ count}} seleccionados",
-    "clearFiltersButton": "Borrar todos los filtros",
+    "clearFiltersButton": "Borra todos los filtros",
     "filteredBy": "Filtrado por",
     "viewResultsButton": "Ver resultados",
     "filters": {
