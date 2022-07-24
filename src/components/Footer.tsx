@@ -52,6 +52,7 @@ function Footer() {
             <Grid row>
               {t(`${T_PREFIX}feedbackPrompt`)}
               <ExternalLink
+                className="margin-left-1"
                 variant="external"
                 target="_blank "
                 href={t("common.feedbackUrl")}

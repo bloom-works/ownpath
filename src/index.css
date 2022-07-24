@@ -69,7 +69,8 @@ p {
   color: #2f6fa7;
   text-decoration: none;
 }
-.usa-dark-background a {
+.usa-dark-background a,
+.usa-footer__secondary-section a {
   color: var(--light-blue, lightblue);
 }
 
