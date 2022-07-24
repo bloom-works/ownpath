@@ -1,5 +1,6 @@
 {
   "home": {
+    "or": "or",
     "heading": "Find behavioral health care that’s meaningful for you.",
     "_coloradoCrisisService": {
       "heading": "If you’re experiencing crisis",
@@ -26,11 +27,11 @@
     "noResultsExpandRadius": "There are no results within {{miles}} miles. Search a wider distance to see more results.",
     "noResultsGeneric": "There are no results within {{miles}} miles. Adjust the filters to expand your search.",
     "fullDetailButton": "Full detail about this location",
-    "mapHelper": "Tap a marker to pull up information for that location.",
+    "mapHelper": " Tap a marker to pull up information for that location. To zoom in or out on the map on a mobile device, use a two finger pinching gesture.",
     "share": "Share these results"
   },
   "resultDetail": {
-    "share": "Share this provider",
+    "share": "Share this provider’s details",
     "backToSearch": "Back to search",
     "basicInfo": "Basic information",
     "details": "Details",
@@ -167,8 +168,8 @@
       }
     }
   },
-  "whoops": {
-    "heading": "Whoops!",
+  "notFound": {
+    "heading": "Our apologies, this isn’t working.Return to the homepage to continue on your path to care.",
     "returnToHome": "Return to homepage"
   }
 }

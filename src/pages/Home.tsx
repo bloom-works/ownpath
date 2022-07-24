@@ -110,7 +110,7 @@ function Home() {
               <ZipCard />
               <div className="display-flex flex-justify-center margin-bottom-2">
                 <Line></Line>
-                <Or>or</Or>
+                <Or>{t("pages.home.or")}</Or>
               </div>
               <GuidedSearchCard />
             </CardGroup>
