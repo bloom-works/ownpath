@@ -15,7 +15,7 @@ function GuidedSearchCard() {
         <Hands className="data-icon" />
       </CardHeader>
       <CardBody>
-        <div className="flex-col flex-justify-center">
+        <div className="text-center">
           <p>{t(`${T_PREFIX}guidedSearchPrompt`)}</p>
           <Link to="/guided-search" className="usa-button margin-0">
             {t(`${T_PREFIX}guidedSearchButton`)}
