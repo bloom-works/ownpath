@@ -32,7 +32,7 @@
     "saturday": "Sat",
     "sunday": "Sun"
   },
-  "languages": {
+  "languagesWithTranslation": {
     "English": "English",
     "Spanish": "Spanish / Español",
     "Vietnamese": "Vietnamese / Tiếng Việt",
@@ -45,6 +45,20 @@
     "Cambodian": "Cambodian / កម្ពុជា",
     "Mongolian": "Mongolian / Монгол",
     "Cantonese": "Cantonese / 粵語"
+  },
+  "languages": {
+    "English": "English",
+    "Spanish": "Español",
+    "Vietnamese": "Tiếng Việt",
+    "German": "Deutsch",
+    "Russian": "Русский",
+    "Polish": "Polski",
+    "Ukrainian": "український",
+    "French": "Français",
+    "Mandarin": "普通话",
+    "Cambodian": "កម្ពុជា",
+    "Mongolian": "Монгол",
+    "Cantonese": "粵語"
   },
   "closed": "Closed",
   "title": "OwnPath"

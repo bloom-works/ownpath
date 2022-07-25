@@ -32,7 +32,7 @@
     "saturday": "Sábado",
     "sunday": "Domingo"
   },
-  "languages": {
+  "languagesWithTranslation": {
     "English": "Inglés / English",
     "Spanish": "Español",
     "Vietnamese": "Vietnamita / Tiếng Việt",
@@ -45,6 +45,20 @@
     "Cambodian": "Camboyano / កម្ពុជា",
     "Mongolian": "Mongol / Монгол",
     "Cantonese": "Chino cantonés / 粵語"
+  },
+  "langauges": {
+    "English": "English",
+    "Spanish": "Español",
+    "Vietnamese": "Tiếng Việt",
+    "German": "Deutsch",
+    "Russian": "Русский",
+    "Polish": "Polski",
+    "Ukrainian": "український",
+    "French": "Français",
+    "Mandarin": "普通话",
+    "Cambodian": "កម្ពុជា",
+    "Mongolian": "Монгол",
+    "Cantonese": "粵語"
   },
   "closed": "Cerrada",
   "title": "Mi Propia Senda"

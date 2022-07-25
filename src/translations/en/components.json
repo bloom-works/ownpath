@@ -31,6 +31,11 @@
           "under_18": "Under 18",
           "adult": "A young adult or adult (18-64)",
           "older_adult": "An older adult (65+)"
+        },
+        "shortAnswers": {
+          "under_18": "Under 18",
+          "adult": "18 - 64",
+          "older_adult": "65+"
         }
       },
       "typeOfHelp": {
@@ -38,7 +43,14 @@
         "answers": {
           "substance_use": "Drugs and/or alcohol use",
           "court_mandated_treatment": "Court-mandated treatment",
-          "mental_health": "Mental health (persistent feelings of sadness, loneliness, worry, suicidal thoughts)"
+          "mental_health": "Mental health (persistent feelings of sadness, loneliness, worry...)",
+          "suicidal_ideation": "Thoughts of killing myself and/or wishing I was dead"
+        },
+        "shortAnswers": {
+          "substance_use": "Drugs and/or alcohol use",
+          "court_mandated_treatment": "Court-mandated",
+          "mental_health": "Mental health",
+          "suicidal_ideation": "Thoughts of killing self"
         }
       },
       "feePreference": {
@@ -55,6 +67,11 @@
           "Deaf/HardofHearing": "Support for a person with a hearing impairment or who is deaf",
           "VisuallyImpaired": "Support for a person with a visual impairment or who is blind",
           "Wheelchair": "Support for a person who uses a wheelchair"
+        },
+        "shortAnswers": {
+          "Deaf/HardofHearing": "Hearing assistance",
+          "VisuallyImpaired": "Visual assistance",
+          "Wheelchair": "Wheelchair support"
         }
       },
       "hours": {
