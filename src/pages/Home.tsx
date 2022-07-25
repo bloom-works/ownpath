@@ -15,8 +15,23 @@ import { logPageView } from "../analytics";
 const Hero = styled.img`
   max-width: 110%;
   margin-left: -5%;
+  border-radius: 10px;
   @media (min-width: 40em) {
     max-width: 110%;
+  }
+  @media only screen and (min-width: 768px) and (max-width: 1279px) {
+    border-radius: 0px;
+    width: 100%;
+    margin: 0;
+  }
+  @media (max-width: 767px) {
+    border-radius: 0px;
+    max-width: 100vw;
+    margin-left: -4.5%;
+    width: 100vw;
+    object-fit: cover;
+    object-position: right;
+    height: calc(100vw - 50px);
   }
 `;
 
@@ -31,6 +46,15 @@ const Heading = styled.h1`
   @media (min-width: 40em) {
     color: white;
     background-color: transparent;
+  }
+  @media only screen and (min-width: 768px) and (max-width: 1279px) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  @media (max-width: 414px) {
+    font-size: 1.75rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 `;
 
