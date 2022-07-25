@@ -165,9 +165,12 @@ function Home() {
                   </>
                 }
                 cta={
-                  <Link href={t(`${T_PREFIX}_standUp.link`)}>
+                  <>
                     {t(`${T_PREFIX}_standUp.cta`)}
-                  </Link>
+                    <Link href={t(`${T_PREFIX}_standUp.link`)}>
+                      (855) 978-2638
+                    </Link>
+                  </>
                 }
               />
             </CardGroup>

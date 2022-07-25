@@ -104,7 +104,7 @@ function ResultDetail() {
       <Grid row gap>
         <Grid col={12} tablet={{ col: 6 }}>
           <section>
-            <h2>{t(`${T_PREFIX}details`)}</h2>
+            <h2 className="margin-top-1">{t(`${T_PREFIX}details`)}</h2>
             <ResultDatum Icon={Populations} key="population">
               <div>
                 <h3 className="display-inline">
@@ -132,10 +132,12 @@ function ResultDetail() {
         {(data.substanceUse.supported || data.mentalHealth.supported) && (
           <Grid col={12} tablet={{ col: 6 }}>
             <section>
-              <h2>{t(`${T_PREFIX}services`)}</h2>
+              <h2 className="margin-top-1">{t(`${T_PREFIX}services`)}</h2>
               {data.substanceUse.supported && (
                 <>
-                  <h3>{t(`${T_PREFIX}substanceUseServices`)}:</h3>
+                  <h3 className="margin-top-1">
+                    {t(`${T_PREFIX}substanceUseServices`)}:
+                  </h3>
                   <ul>
                     <BulletedList
                       boolMap={data.substanceUse.services}
@@ -147,7 +149,9 @@ function ResultDetail() {
               )}
               {data.mentalHealth.supported && (
                 <>
-                  <h3>{t(`${T_PREFIX}mentalHealthServices`)}:</h3>
+                  <h3 className="margin-top-1">
+                    {t(`${T_PREFIX}mentalHealthServices`)}:
+                  </h3>
                   <ul>
                     <BulletedList
                       boolMap={data.mentalHealth.services}

@@ -1,5 +1,5 @@
 import { Button, Grid, Header, Link } from "@trussworks/react-uswds";
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import Banner from "./Banner";
 import Footer from "./Footer";
 import { ReactComponent as ColoradoBhaLogo } from "../images/logos/colorado_bha.svg";
@@ -17,6 +17,8 @@ const Wrapper = styled.div`
 
 function Layout() {
   const [showCrisisAlert, setShowCrisisAlert] = useState(true);
+  const location = useLocation();
+  console.log("location ", location.pathname);
   return (
     <Wrapper className="display-flex flex-column">
       <Header basic color="primary" role="banner">
@@ -39,7 +41,7 @@ function Layout() {
           </div>
         </div>
       </Header>
-      {showCrisisAlert && (
+      {showCrisisAlert && location.pathname !== "/guided-search" && (
         <AppAlert
           className="margin-x-4 margin-top-2 margin-bottom-0"
           Icon={Phone}
@@ -48,7 +50,7 @@ function Layout() {
             <div>
               <>
                 {t("components.layout.immediateHelp")}
-                <Link href="tel:+18444938255" className="margin-left-1">
+                <Link href="tel:+18444938255" className="text-no-wrap">
                   1-844-493-TALK (8255).
                 </Link>
               </>

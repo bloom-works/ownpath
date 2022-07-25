@@ -3,7 +3,7 @@
     "changeLanguage": "Cambiar idioma"
   },
   "layout": {
-    "immediateHelp": "¿Necesitas ayuda inmediata con una crisis emocional, de salud mental o de uso de sustancias?"
+    "immediateHelp": "¿Necesitas ayuda inmediata con una crisis emocional, de salud mental o de uso de sustancias? "
   },
   "footer": {
     "feedbackPrompt": "¿Tienes alguna sugerencia para mejorar este sitio web?",
@@ -99,7 +99,8 @@
   "home": {
     "zipPrompt": "Ingresa tu código postal para encontrar atención cercana a tu área.",
     "zipInput": "Código postal",
-    "guidedSearchPrompt": "Usa nuestra experiencia guiada para ver una lista personalizada y confidencial de resultados.",
+    "guidedSearchHeading": "Estamos aquí para apoyarte con tu búsqueda.",
+    "guidedSearchPrompt": "Contesta un par de preguntas sobre ti o tu ser querido para obtener resultados personalizados y confidenciales.",
     "guidedSearchButton": "Prueba nuestra experiencia guiada."
   }
 }

@@ -3,7 +3,7 @@
     "changeLanguage": "Change language"
   },
   "layout": {
-    "immediateHelp": "Need immediate help for an emotional, mental health, or substance use crisis?"
+    "immediateHelp": "Need immediate help for an emotional, mental health, or substance use crisis? "
   },
   "footer": {
     "feedbackPrompt": "Have a suggestion for improvement on this website?",
@@ -99,7 +99,8 @@
   "home": {
     "zipPrompt": "Enter your zip code to find care near your area",
     "zipInput": "Zip code",
-    "guidedSearchPrompt": "Get a list of providers based on your answers to a few questions.",
+    "guidedSearchHeading": "We’re here to support your search",
+    "guidedSearchPrompt": "Answer a few questions about you or your loved one for custom and confidential results.",
     "guidedSearchButton": "Try our guided experience"
   }
 }

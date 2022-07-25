@@ -39,6 +39,7 @@ const getStepStatus = (thisIdx: number, currentStepIdx: number) => {
 // TODO: validate zip
 function GuidedSearch() {
   useEffect(() => {
+    window.scrollTo(0, 0);
     logPageView();
   }, []);
 
@@ -89,11 +90,11 @@ function GuidedSearch() {
   const currentStep = GUIDED_SEARCH_STEPS[currentStepIdx];
   return (
     <GridContainer>
-      <h1>
+      <h1 className="font-body-md margin-top-2 tablet:margin-top-4">
         <span className="usa-sr-only">Guided search </span>Question{" "}
         {currentStepIdx + 1} of {GUIDED_SEARCH_STEPS.length}
       </h1>
-      <div className="usa-step-indicator usa-step-indicator--no-labels">
+      <div className="usa-step-indicator usa-step-indicator--no-labels margin-bottom-0 tablet:margin-bottom-2">
         <div className="usa-step-indicator__segments">
           {GUIDED_SEARCH_STEPS.map((step, idx) => (
             <StepIndicatorStep
@@ -105,7 +106,7 @@ function GuidedSearch() {
         </div>
       </div>
       <form
-        className="margin-y-4 grid-col-12 tablet:grid-col-8"
+        className="margin-bottom-4 grid-col-12 tablet:grid-col-8"
         onSubmit={(e) => {
           e.preventDefault();
           if (currentStep === "location") {
@@ -125,7 +126,7 @@ function GuidedSearch() {
           goToNextStep();
         }}
       >
-        <div className="margin-y-2">
+        <div className="margin-top-2 margin-bottom-4">
           {currentStep === "helpRecipient" ? (
             <HelpRecipientInput
               helpRecipient={helpRecipient}
