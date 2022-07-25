@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 import { useTranslation } from "react-i18next";
 import ContentCard from "../components/Home/ContentCard";
-import heroPath from "../images/hero.png";
+import heroPath from "../images/hero.jpg";
 import { ReactComponent as ColoradoCrisisServicesLogo } from "../images/logos/colorado_crisis_services.svg";
 import { ReactComponent as IMatterLogo } from "../images/logos/imatter.svg";
 import { ReactComponent as StandUpColorado } from "../images/logos/stand_up_co.svg";
@@ -16,8 +16,7 @@ const Hero = styled.img`
   max-width: 110%;
   margin-left: -5%;
   @media (min-width: 40em) {
-    max-width: 150%;
-    margin-left: -9%; // WHY!
+    max-width: 110%;
   }
 `;
 
