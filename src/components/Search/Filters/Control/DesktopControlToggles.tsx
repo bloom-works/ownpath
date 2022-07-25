@@ -100,7 +100,9 @@ function ControlToggles({ setFilters }: ControlTogglesProps) {
       {filters.typesOfHelp.map((filter) => (
         <DesktopControlToggle
           key="types-of-help"
-          name={t(`components.search.filters.typeOfHelp.answers.${filter}`)}
+          name={t(
+            `components.search.filters.typeOfHelp.shortAnswers.${filter}`
+          )}
           onClick={() =>
             setFilters({
               ...filters,
@@ -112,7 +114,9 @@ function ControlToggles({ setFilters }: ControlTogglesProps) {
       {!!filters.age && (
         <DesktopControlToggle
           key="age"
-          name={t(`components.search.filters.ageGroup.answers.${filters.age}`)}
+          name={t(
+            `components.search.filters.ageGroup.shortAnswers.${filters.age}`
+          )}
           onClick={() => {
             const updatedFilters = { ...filters };
             delete updatedFilters.age;

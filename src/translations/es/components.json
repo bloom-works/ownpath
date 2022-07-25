@@ -32,6 +32,11 @@
           "under_18": "Menores de 18 años",
           "adult": "Un joven o adulto (18-64 años)",
           "older_adult": "Un adulto mayor (más de 65 años)"
+        },
+        "shortAnswers": {
+          "under_18": "Menor de 18 años",
+          "adult": "18 a 64",
+          "older_adult": "65 o más"
         }
       },
       "typeOfHelp": {
@@ -39,7 +44,14 @@
         "answers": {
           "substance_use": "Por uso de drogas o alcohol",
           "court_mandated_treatment": "Porque una corte ordenó tratamiento",
-          "mental_health": "Salud mental (sentimientos constantes de tristeza, soledad, preocupación....)"
+          "mental_health": "Salud mental (sentimientos constantes de tristeza, soledad, preocupación....)",
+          "suicidal_ideation": "Porque estoy pensando en matarme o querer estar muerto/a"
+        },
+        "shortAnswers": {
+          "substance_use": "Uso de drogas o alcohol",
+          "court_mandated_treatment": "Orden de la corte",
+          "mental_health": "Salud mental",
+          "suicidal_ideation": "Pensamientos de matarse"
         }
       },
       "feePreference": {
@@ -56,6 +68,11 @@
           "Deaf/HardofHearing": "Apoyo para personas con un impedimento auditivo o sordera",
           "VisuallyImpaired": "Apoyo para personas con un impedimento visual o ceguera",
           "Wheelchair": "Apoyo para personas que usa una silla de ruedas"
+        },
+        "shortAnswers": {
+          "Deaf/HardofHearing": "Ayuda auditiva",
+          "VisuallyImpaired": "Ayuda visual",
+          "Wheelchair": "Apoyo con silla de ruedas"
         }
       },
       "hours": {

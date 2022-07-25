@@ -42,7 +42,7 @@ function LanguageInput({
         <FilterCheckbox
           name="languages"
           value={option}
-          tPrefix={"common.languages."}
+          tPrefix={"common.languagesWithTranslation."}
           selectedFilterValues={filters.languages}
           onChange={() => setLanguagesFilter(option)}
           key={option}
