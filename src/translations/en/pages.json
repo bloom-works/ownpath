@@ -103,6 +103,24 @@
         "someone": "I am searching for someone I care about"
       }
     },
+    "ageGroup": {
+      "yourself": {
+        "question": "Select your age range so we can find the right resource type for you: ",
+        "answers": {
+          "under_18": "Under 18",
+          "adult": "A young adult or adult (18-64)",
+          "older_adult": "An older adult (65+)"
+        }
+      },
+      "someone": {
+        "question": "I’m looking for help for someone who is: ",
+        "answers": {
+          "under_18": "Under 18",
+          "adult": "A young adult or adult (18-64)",
+          "older_adult": "An older adult (65+)"
+        }
+      }
+    },
     "typeOfHelp": {
       "yourself": {
         "question": "Please select the statements below that best describe the type of help you are looking for.",
@@ -128,24 +146,25 @@
       }
     },
     "languages": {
-      "question": "What language do you want to speak to get help?"
-    },
-    "feesPreference": {
-      "question": "How do you, or the person you care about, prefer to pay for care?",
-      "answers": {
-        "Medicaid": "Medicaid",
-        "PrivateInsurance": "Private insurance",
-        "SlidingFeeScale": "Sliding fee scale",
-        "SelfPay": "Self Pay",
-        "DontKnow": "I can't pay / I don't know"
+      "yourself": {
+        "question": "I want to get help in..."
+      },
+      "someone": {
+        "question": "The person I care about wants help in..."
       }
     },
     "location": {
-      "question": "Where are you looking for care?"
+      "question": "Where are you looking for help?"
     },
     "distance": {
-      "distance": "How far are you, or the person you care about, able to travel for care?",
-      "withinMiles": "Within {{n}} miles"
+      "yourself": {
+        "distance": "How far can you travel for help?",
+        "withinMiles": "Within {{n}} miles"
+      },
+      "someone": {
+        "distance": "How far can the person you care about travel for help?",
+        "withinMiles": "Within {{n}} miles"
+      }
     }
   },
   "whoops": {

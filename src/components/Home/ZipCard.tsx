@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import { createSearchParams, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { SearchFilters } from "../../types";
-import { EMPTY_SEARCH_FILTERS, getZipSearchMetadata } from "../../util";
+import { EMPTY_SEARCH_FILTERS, getZipSearchMetadata } from "../../utils";
 import ZipInput from "../ZipInput";
 
 const ZipButton = styled(Button)`

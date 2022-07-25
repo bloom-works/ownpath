@@ -73,7 +73,7 @@ export const POPULATIONS_SERVED = [
   "ClientsreferredfromCourt/JudicialSystem",
   "AmericanIndian",
   "HIV",
-];
+] as const;
 export type PopulationsServed = typeof POPULATIONS_SERVED[number];
 
 export const ACCESSIBILITY_OPTIONS = [
@@ -131,49 +131,3 @@ export type CareProvider = {
   languages: { [key in Languages]: boolean };
   latlng: LatLngLiteral | null;
 };
-
-export type CareProviderSearchMetadata = {
-  distance?: number;
-};
-
-export type CareProviderSearchResult = CareProvider &
-  CareProviderSearchMetadata;
-
-export type SearchResult = {
-  results: CareProviderSearchResult[];
-};
-
-export interface ZipData {
-  [key: string]: {
-    PO_NAME: string;
-    STATE: string;
-    POPULATION: number | null;
-    POP_SQMI: number | null;
-    SQMI: number;
-    centroid_lon: number;
-    centroid_lat: number;
-  };
-}
-
-export type ZipSearchMetadata =
-  | { isValidZip: false }
-  | { isValidZip: true; defaultRadiusMiles: number; center: LatLngLiteral };
-
-export type SearchFilters = {
-  zip: string;
-  miles: string;
-  typesOfHelp: TypeOfHelp[];
-  feePreferences: FeePreference[];
-  accessibility: AccessibilityOptions[];
-  hours: DayOfWeek[];
-  languages: Languages[];
-};
-
-export enum TypeOfHelp {
-  SubstanceUse = "substance_use",
-  CourtMandatedTreatment = "court_mandated_treatment",
-  MentalHealth = "mental_health",
-  SuicidalIdeation = "suicidal_ideation",
-  Unsure = "unsure",
-  None = "none",
-}

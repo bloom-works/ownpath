@@ -26,6 +26,14 @@
         "distance": "Distance",
         "withinMiles": "Within {{n}} miles"
       },
+      "ageGroup": {
+        "question": "Age range",
+        "answers": {
+          "under_18": "Under 18",
+          "adult": "A young adult or adult (18-64)",
+          "older_adult": "An older adult (65+)"
+        }
+      },
       "typeOfHelp": {
         "question": "Type of help",
         "answers": {

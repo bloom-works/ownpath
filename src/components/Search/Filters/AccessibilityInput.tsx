@@ -7,7 +7,7 @@ import {
   ACCESSIBILITY_OPTIONS,
   SearchFilters,
 } from "../../../types";
-import { toggleItemInList } from "../../../util";
+import { toggleItemInList } from "../../../utils";
 import FilterCheckbox from "./FilterCheckbox";
 
 type AccessibilityInputProps = {

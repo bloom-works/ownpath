@@ -3,7 +3,7 @@ import { Dispatch, SetStateAction } from "react";
 import { useTranslation } from "react-i18next";
 import { AnalyticsAction, logEvent } from "../../../analytics";
 import { FeePreference, SearchFilters } from "../../../types";
-import { toggleItemInList } from "../../../util";
+import { toggleItemInList } from "../../../utils";
 import FilterCheckbox from "./FilterCheckbox";
 
 type FeePreferenceInputProps = {
