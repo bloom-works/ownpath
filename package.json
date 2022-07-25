@@ -4,7 +4,6 @@
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "~5.16.4",
-    "@testing-library/react": "~13.3.0",
     "@testing-library/user-event": "~13.5.0",
     "@trussworks/react-uswds": "~3.0.2",
     "@types/jest": "~27.5.2",
@@ -57,5 +56,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@testing-library/react": "^13.3.0",
+    "@types/jest-axe": "^3.5.4",
+    "jest-axe": "^6.0.0",
+    "jest-dom": "^4.0.0"
   }
 }

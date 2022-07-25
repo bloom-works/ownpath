@@ -11,7 +11,7 @@ import GuidedSearch from "./pages/GuidedSearch";
 
 function App() {
   return (
-    <div className="App">
+    <main className="App">
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
@@ -21,7 +21,7 @@ function App() {
           <Route path="*" element={<Whoops />} />
         </Route>
       </Routes>
-    </div>
+    </main>
   );
 }
 

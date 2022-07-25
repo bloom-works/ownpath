@@ -72,7 +72,7 @@ function Home() {
 
   return (
     <GridContainer>
-      <Hero src={heroPath} />
+      <Hero src={heroPath} alt="hero image" />
       <ContentOverlay>
         <Grid row>
           <Grid col={12} tablet={{ col: 7 }}>
@@ -81,7 +81,7 @@ function Home() {
             </Heading>
           </Grid>
           <Grid col={12}>
-            <CardGroup className="bg-white radius-lg padding-x-1 tablet:padding-top-3 justify-content-around">
+            <CardGroup className="bg-white radius-lg padding-x-1 tablet:padding-top-3 justify-content-around" role="list">
               <ZipCard />
               <div className="display-flex flex-justify-center margin-bottom-2">
                 <Line></Line>

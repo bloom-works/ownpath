@@ -11,9 +11,11 @@ function GuidedSearchCard() {
       gridLayout={{ col: 12, tablet: { col: 4 } }}
       containerProps={{ className: "border-0 bg-lightest-blue" }}
     >
-      <CardHeader className="display-flex flex-justify-center">
+      <div
+        className="usa-card__header-alt display-flex flex-justify-center"
+      >
         <Hands className="data-icon" />
-      </CardHeader>
+      </div>
       <CardBody>
         <div className="flex-col flex-justify-center">
           <p>{t(`${T_PREFIX}guidedSearchPrompt`)}</p>

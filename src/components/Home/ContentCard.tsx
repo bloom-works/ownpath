@@ -27,9 +27,11 @@ function ContentCard({
       }}
       gridLayout={{ mobile: { col: 12 }, tablet: { col: fullWidth ? 12 : 4 } }}
     >
-      <CardHeader className="height-15 display-flex flex-justify-center flex-align-center">
+      <div
+        className="usa-card__header-alt height-15 display-flex flex-justify-center flex-align-center"
+      >
         {headerContent}
-      </CardHeader>
+      </div>
       <CardBody className={fullWidth ? "padding-top-2" : ""}>
         {bodyContent}
       </CardBody>

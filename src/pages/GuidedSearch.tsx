@@ -1,6 +1,5 @@
 import {
   Button,
-  ErrorMessage,
   Fieldset,
   Form,
   GridContainer,
@@ -95,7 +94,7 @@ function GuidedSearch() {
         {currentStepIdx + 1} of {GUIDED_SEARCH_STEPS.length}
       </h1>
       <div className="usa-step-indicator usa-step-indicator--no-labels">
-        <div className="usa-step-indicator__segments">
+        <ul className="usa-step-indicator__segments">
           {GUIDED_SEARCH_STEPS.map((step, idx) => (
             <StepIndicatorStep
               key={step}
@@ -103,7 +102,7 @@ function GuidedSearch() {
               label={step}
             />
           ))}
-        </div>
+        </ul>
       </div>
       <Form
         className="margin-y-4"
