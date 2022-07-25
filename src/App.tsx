@@ -13,7 +13,7 @@ function App() {
   const { t } = useTranslation();
 
   useEffect(() => {
-    document.title = t(`common.title`);
+    document.title = t("common.title");
   });
 
   return (
