@@ -12,8 +12,6 @@ import BasicResultDetail from "../components/ResultDetail/BasicResultDetail";
 import CARE_PROVIDER_DATA from "../data/ladders_data.json";
 import { CareProvider, CareProviderSearchResult } from "../types";
 import ResultDatum from "../components/ResultDetail/ResultDatum";
-import Horizontal from "../components/Horizontal";
-import CommaSeparatedList from "../components/CommaSeparatedList";
 import BulletedList from "../components/BulletedList";
 import { useEffect } from "react";
 import DirectionsLink from "../components/ResultDetail/DirectionsLink";
@@ -102,7 +100,7 @@ function ResultDetail() {
           </Grid>
         </Grid>
       </section>
-      <Horizontal />
+      <hr className="margin-bottom-3" />
       <Grid row gap>
         <Grid col={12} tablet={{ col: 6 }}>
           <section>

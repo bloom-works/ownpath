@@ -119,7 +119,7 @@ function Home() {
             </CardGroup>
           </Grid>
         </Grid>
-        <hr className="margin-bottom-3" />
+        <hr className="display-none tablet:display-block margin-bottom-3" />
         <Grid row>
           <Grid col={12}>
             <CardGroup>
