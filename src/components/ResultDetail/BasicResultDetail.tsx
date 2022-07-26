@@ -11,7 +11,7 @@ import ResultDatum from "./ResultDatum";
 import Hours from "./Hours";
 
 import { CareProvider } from "../../types";
-import { anyAreTrue } from "../../util";
+import { anyAreTrue } from "../../utils";
 import CommaSeparatedList from "../CommaSeparatedList";
 import WebsiteLink from "./WebsiteLink";
 import { Fragment } from "react";
@@ -61,7 +61,7 @@ function BasicResultDetail({ headingLevel, result }: BasicResultDetailProps) {
       </div>
 
       <ResultDatum Icon={DollarSign} key="fees">
-        <Heading className="font-body-sm text-bold margin-top-0 margin-bottom-05">
+        <Heading className="margin-top-0 margin-bottom-05">
           {t(`${T_PREFIX}fees`)}
         </Heading>
         {!!anyAreTrue(result.fees) ? (
@@ -80,7 +80,7 @@ function BasicResultDetail({ headingLevel, result }: BasicResultDetailProps) {
       </ResultDatum>
 
       <ResultDatum Icon={Clock} key="hours">
-        <Heading className="font-body-sm text-bold margin-top-0 margin-bottom-05">
+        <Heading className="margin-top-0 margin-bottom-05">
           {t(`${T_PREFIX}hours`)}
         </Heading>
         <Hours hours={result.hours} />

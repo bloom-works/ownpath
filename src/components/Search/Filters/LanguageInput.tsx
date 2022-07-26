@@ -3,7 +3,7 @@ import { Dispatch, SetStateAction } from "react";
 import { useTranslation } from "react-i18next";
 import { AnalyticsAction, logEvent } from "../../../analytics";
 import { LANGUAGES, Languages, SearchFilters } from "../../../types";
-import { toggleItemInList } from "../../../util";
+import { toggleItemInList } from "../../../utils";
 import FilterCheckbox from "./FilterCheckbox";
 
 type LanguageInputProps = {
@@ -42,7 +42,7 @@ function LanguageInput({
         <FilterCheckbox
           name="languages"
           value={option}
-          tPrefix={"common.languages."}
+          tPrefix={"common.languagesWithTranslation."}
           selectedFilterValues={filters.languages}
           onChange={() => setLanguagesFilter(option)}
           key={option}

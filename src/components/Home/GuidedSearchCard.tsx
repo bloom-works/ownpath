@@ -8,14 +8,15 @@ function GuidedSearchCard() {
   const T_PREFIX = "components.home.";
   return (
     <Card
-      gridLayout={{ col: 12, tablet: { col: 4 } }}
+      gridLayout={{ col: 12, tablet: { col: 7 } }}
       containerProps={{ className: "border-0 bg-lightest-blue" }}
     >
-      <CardHeader className="display-flex flex-justify-center">
-        <Hands className="data-icon" />
-      </CardHeader>
-      <CardBody>
-        <div className="flex-col flex-justify-center">
+      <CardBody className="display-flex margin-top-1">
+        <Hands className="data-icon margin-right-1" />
+        <div>
+          <h2 className="margin-top-0">
+            {t(`${T_PREFIX}guidedSearchHeading`)}
+          </h2>
           <p>{t(`${T_PREFIX}guidedSearchPrompt`)}</p>
           <Link to="/guided-search" className="usa-button margin-0">
             {t(`${T_PREFIX}guidedSearchButton`)}

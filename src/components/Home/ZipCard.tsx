@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import { createSearchParams, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { SearchFilters } from "../../types";
-import { EMPTY_SEARCH_FILTERS, getZipSearchMetadata } from "../../util";
+import { EMPTY_SEARCH_FILTERS, getZipSearchMetadata } from "../../utils";
 import ZipInput from "../ZipInput";
 
 const ZipButton = styled(Button)`
@@ -27,8 +27,10 @@ function ZipCard() {
   return (
     <Card
       className="margin-bottom-0"
-      containerProps={{ className: "border-0 margin-bottom-0 padding-right-5" }}
-      gridLayout={{ col: 12, tablet: { col: 7 } }}
+      containerProps={{
+        className: "border-0 margin-bottom-0",
+      }}
+      gridLayout={{ col: 12, tablet: { col: 4 } }}
     >
       <CardBody>
         <p className="text-bold font-body-lg margin-bottom-05">

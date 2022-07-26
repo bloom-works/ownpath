@@ -5,10 +5,10 @@ import { useTranslation } from "react-i18next";
 import { useSearchParams, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import {
-  getMatchingCare,
+  applySearchFilters,
   getFiltersFromSearchParams,
   MILE_DISTANCE_OPTIONS,
-} from "../../util";
+} from "../../utils";
 import CARE_PROVIDER_DATA from "../../data/ladders_data.json";
 import { CareProvider, SearchFilters, SearchResult } from "../../types";
 import DesktopControl from "../../components/Search/Filters/Control/DesktopControl";
@@ -38,9 +38,7 @@ function Search() {
   // TODO: do we need this, or can we just use searchParams to track filter state?
   const [searchFilters, setSearchFilters] =
     useState<SearchFilters>(initialFilters);
-  // flag to display distance filter in active state once user has changed distance
-  // from default or guided search selection
-  const [showDistanceActive, setShowDistanceActive] = useState(false);
+
   // Filtered set of CareProviders OR error string
   const [searchResult, setSearchResult] = useState<SearchResult | null>(null);
 
@@ -52,7 +50,7 @@ function Search() {
   const navigate = useNavigate();
 
   const performSearch = (filters: SearchFilters) => {
-    const result = getMatchingCare(
+    const result = applySearchFilters(
       CARE_PROVIDER_DATA as CareProvider[],
       filters
     );
@@ -70,6 +68,7 @@ function Search() {
         replace: true,
       });
     } else {
+      window.scrollTo(0, 0);
       performSearch(searchFilters);
       logPageView();
     }
@@ -91,7 +90,7 @@ function Search() {
             >
               <div>
                 <div className="display-flex flex-align-baseline">
-                  <ResponsiveHeader className="margin-y-0 text-bold">
+                  <ResponsiveHeader className="margin-top-0 text-bold">
                     {t(`${T_PREFIX}resultCount`, {
                       count: searchResult.results.length,
                       zip: searchFilters.zip,
@@ -99,7 +98,7 @@ function Search() {
                   </ResponsiveHeader>
 
                   <Button
-                    className="margin-left-1 width-auto"
+                    className="margin-left-1 padding-y-05 width-auto"
                     type="button"
                     unstyled
                     onClick={() => {
