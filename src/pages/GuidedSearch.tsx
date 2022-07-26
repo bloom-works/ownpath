@@ -1,7 +1,6 @@
 import {
   Button,
   Fieldset,
-  Form,
   GridContainer,
   StepIndicatorStep,
 } from "@trussworks/react-uswds";
@@ -9,7 +8,6 @@ import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { createSearchParams, useNavigate } from "react-router-dom";
 import { AnalyticsAction, logEvent, logPageView } from "../analytics";
-import DataCollectionAlert from "../components/DataCollectionAlert";
 import HelpRecipientInput, {
   HelpRecipient,
 } from "../components/GuidedSearch/HelpRecipientInput";
@@ -20,6 +18,8 @@ import TypeOfHelpInput from "../components/Search/Filters/TypeOfHelpInput";
 import AgeGroupInput from "../components/Search/Filters/AgeGroupInput";
 import { SearchFilters, TypeOfHelp } from "../types";
 import { EMPTY_SEARCH_FILTERS, getZipSearchMetadata } from "../utils";
+import AppAlert from "../components/AppAlert";
+import { ReactComponent as Info } from "../images/info.svg";
 
 const GUIDED_SEARCH_STEPS = [
   "helpRecipient",
@@ -39,6 +39,7 @@ const getStepStatus = (thisIdx: number, currentStepIdx: number) => {
 // TODO: validate zip
 function GuidedSearch() {
   useEffect(() => {
+    window.scrollTo(0, 0);
     logPageView();
   }, []);
 
@@ -89,11 +90,11 @@ function GuidedSearch() {
   const currentStep = GUIDED_SEARCH_STEPS[currentStepIdx];
   return (
     <GridContainer>
-      <h1>
+      <h1 className="font-body-md margin-top-2 tablet:margin-top-4">
         <span className="usa-sr-only">Guided search </span>Question{" "}
         {currentStepIdx + 1} of {GUIDED_SEARCH_STEPS.length}
       </h1>
-      <div className="usa-step-indicator usa-step-indicator--no-labels">
+      <div className="usa-step-indicator usa-step-indicator--no-labels margin-bottom-0 tablet:margin-bottom-2">
         <div className="usa-step-indicator__segments">
           {GUIDED_SEARCH_STEPS.map((step, idx) => (
             <StepIndicatorStep
@@ -104,8 +105,8 @@ function GuidedSearch() {
           ))}
         </div>
       </div>
-      <Form
-        className="margin-y-4"
+      <form
+        className="margin-bottom-4 grid-col-12 tablet:grid-col-8"
         onSubmit={(e) => {
           e.preventDefault();
           if (currentStep === "location") {
@@ -125,7 +126,7 @@ function GuidedSearch() {
           goToNextStep();
         }}
       >
-        <div className="margin-y-2">
+        <div className="margin-top-2 margin-bottom-4">
           {currentStep === "helpRecipient" ? (
             <HelpRecipientInput
               helpRecipient={helpRecipient}
@@ -169,7 +170,9 @@ function GuidedSearch() {
                   showError={showZipValidation}
                 />
               </Fieldset>
-              <DataCollectionAlert wide className="margin-top-4" />
+              <AppAlert Icon={Info} className="margin-top-2">
+                {t("common.dataCollectionAlert")}
+              </AppAlert>
             </>
           ) : currentStep === "distance" ? (
             <DistanceInput
@@ -183,7 +186,7 @@ function GuidedSearch() {
         </div>
 
         <Button type="submit">{t(`${T_PREFIX}nextQuestion`)}</Button>
-      </Form>
+      </form>
     </GridContainer>
   );
 }

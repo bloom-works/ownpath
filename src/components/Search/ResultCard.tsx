@@ -15,10 +15,8 @@ export default function ResultCard({ data }: ResultCardProps) {
   return (
     <div>
       <MilesAway meters={data.distance} />
-      <h3 className="usa-card__heading margin-top-1 margin-bottom-3 text-bold">
-        {data.name}
-      </h3>
-      <BasicResultDetail headingLevel="h4" result={data} />
+      <h2 className="margin-top-1 margin-bottom-3">{data.name}</h2>
+      <BasicResultDetail headingLevel="h3" result={data} />
       <Link
         className="usa-button"
         to={`/result/${data.id}`}

@@ -38,6 +38,7 @@ function DesktopControl({ filters, setFilters }: DesktopControlProps) {
               TypeOfHelp.MentalHealth,
               TypeOfHelp.CourtMandatedTreatment,
               TypeOfHelp.SubstanceUse,
+              TypeOfHelp.SuicidalIdeation,
             ]}
             filters={filters}
             setFilters={setFilters}

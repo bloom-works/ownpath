@@ -10,6 +10,7 @@
     "crisisServices": "Sin importar por lo que estés pasando, hay ayuda disponible. Llama a los Servicios de Crisis en Colorado al 844-493-TALK (8255) o envía un mensaje de texto con la palabra TALK al 38255.",
     "emergency": "Si estás teniendo una emergencia médica, por favor llama al 911."
   },
+  "dataCollectionAlert": "Nunca tendrá que crear una cuenta para utilizar este servicio, y no almacenamos ninguna información personal identificable sobre usted mientras utiliza este servicio.",
   "zipCode": "Código postal",
   "zipCodeError": "Por favor ingresa un código postal válido de Colorado",
   "feedbackUrl": "https://docs.google.com/forms/d/e/1FAIpQLSdoan0__hPL8XKHjhbghd8nWHYoOu0qfo56tgHGHMJuVNA9Sg/viewform",
@@ -31,7 +32,7 @@
     "saturday": "Sábado",
     "sunday": "Domingo"
   },
-  "languages": {
+  "languagesWithTranslation": {
     "English": "Inglés / English",
     "Spanish": "Español",
     "Vietnamese": "Vietnamita / Tiếng Việt",
@@ -44,6 +45,20 @@
     "Cambodian": "Camboyano / កម្ពុជា",
     "Mongolian": "Mongol / Монгол",
     "Cantonese": "Chino cantonés / 粵語"
+  },
+  "langauges": {
+    "English": "English",
+    "Spanish": "Español",
+    "Vietnamese": "Tiếng Việt",
+    "German": "Deutsch",
+    "Russian": "Русский",
+    "Polish": "Polski",
+    "Ukrainian": "український",
+    "French": "Français",
+    "Mandarin": "普通话",
+    "Cambodian": "កម្ពុជា",
+    "Mongolian": "Монгол",
+    "Cantonese": "粵語"
   },
   "closed": "Cerrada",
   "title": "Mi Propia Senda"

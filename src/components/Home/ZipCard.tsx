@@ -27,8 +27,10 @@ function ZipCard() {
   return (
     <Card
       className="margin-bottom-0"
-      containerProps={{ className: "border-0 margin-bottom-0 padding-right-5" }}
-      gridLayout={{ col: 12, tablet: { col: 7 } }}
+      containerProps={{
+        className: "border-0 margin-bottom-0",
+      }}
+      gridLayout={{ col: 12, tablet: { col: 4 } }}
     >
       <CardBody>
         <p className="text-bold font-body-lg margin-bottom-05">

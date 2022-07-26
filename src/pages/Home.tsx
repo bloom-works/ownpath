@@ -37,15 +37,17 @@ const Hero = styled.img`
 
 const ContentOverlay = styled.div`
   position: relative;
-  margin-top: -22%;
+  margin-top: -28%;
 `;
 
 const Heading = styled.h1`
   color: black;
   background-color: white;
+  padding: 1rem 1.2rem 0 1.2rem;
   @media (min-width: 40em) {
     color: white;
     background-color: transparent;
+    padding: 0;
   }
   @media only screen and (min-width: 768px) and (max-width: 1279px) {
     padding-left: 2rem;
@@ -108,7 +110,7 @@ function Home() {
               <ZipCard />
               <div className="display-flex flex-justify-center margin-bottom-2">
                 <Line></Line>
-                <Or>or</Or>
+                <Or>{t("pages.home.or")}</Or>
               </div>
               <GuidedSearchCard />
             </CardGroup>
@@ -122,9 +124,7 @@ function Home() {
                 headerContent={<ColoradoCrisisServicesLogo />}
                 bodyContent={
                   <>
-                    <h2 className="font-body-lg text-bold">
-                      {t(`${T_PREFIX}_coloradoCrisisService.heading`)}
-                    </h2>
+                    <h2>{t(`${T_PREFIX}_coloradoCrisisService.heading`)}</h2>
                     <p>{t(`${T_PREFIX}_coloradoCrisisService.content`)}</p>
                   </>
                 }
@@ -142,9 +142,7 @@ function Home() {
                 headerContent={<IMatterLogo />}
                 bodyContent={
                   <>
-                    <h2 className="font-body-lg text-bold">
-                      {t(`${T_PREFIX}_iMatter.heading`)}
-                    </h2>
+                    <h2>{t(`${T_PREFIX}_iMatter.heading`)}</h2>
                     <p>{t(`${T_PREFIX}_iMatter.content`)}</p>
                   </>
                 }
@@ -162,16 +160,17 @@ function Home() {
                 headerContent={<StandUpColorado />}
                 bodyContent={
                   <>
-                    <h2 className="font-body-lg text-bold">
-                      {t(`${T_PREFIX}_standUp.heading`)}
-                    </h2>
+                    <h2>{t(`${T_PREFIX}_standUp.heading`)}</h2>
                     <p>{t(`${T_PREFIX}_standUp.content`)}</p>
                   </>
                 }
                 cta={
-                  <Link href={t(`${T_PREFIX}_standUp.link`)}>
+                  <>
                     {t(`${T_PREFIX}_standUp.cta`)}
-                  </Link>
+                    <Link href={t(`${T_PREFIX}_standUp.link`)}>
+                      (855) 978-2638
+                    </Link>
+                  </>
                 }
               />
             </CardGroup>

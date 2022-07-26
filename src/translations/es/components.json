@@ -1,7 +1,9 @@
 {
   "banner": {
-    "immediateHelp": "¿Necesitas ayuda inmediata con una crisis emocional, de salud mental o de uso de sustancias?",
     "changeLanguage": "Cambiar idioma"
+  },
+  "layout": {
+    "immediateHelp": "¿Necesitas ayuda inmediata con una crisis emocional, de salud mental o de uso de sustancias? "
   },
   "footer": {
     "feedbackPrompt": "¿Tienes alguna sugerencia para mejorar este sitio web?",
@@ -11,15 +13,12 @@
     "privacyPolicy": "Nunca tendrás que crear una cuenta para usar este servicio, y mantendremos la seguridad de cualquier información que compartas con nosotros y te identifique personalmente.",
     "cta": "Lee nuestra norma de privacidad."
   },
-  "dataCollectionAlert": {
-    "alert": "Nunca tendrá que crear una cuenta para utilizar este servicio, y no almacenamos ninguna información personal identificable sobre usted mientras utiliza este servicio."
-  },
   "search": {
     "milesAway": "A {{ miles }} millas",
     "toggleFiltersButton_zero": "Filtrar resultados",
     "toggleFiltersButton_one": "Filtrar resultados ({{ count}} seleccionados",
     "toggleFiltersButton_other": "Filtrar resultados ({{ count}} seleccionados",
-    "clearFiltersButton": "Borrar todos los filtros",
+    "clearFiltersButton": "Borra todos los filtros",
     "filteredBy": "Filtrado por",
     "viewResultsButton": "Ver resultados",
     "filters": {
@@ -33,6 +32,11 @@
           "under_18": "Menores de 18 años",
           "adult": "Un joven o adulto (18-64 años)",
           "older_adult": "Un adulto mayor (más de 65 años)"
+        },
+        "shortAnswers": {
+          "under_18": "Menor de 18 años",
+          "adult": "18 a 64",
+          "older_adult": "65 o más"
         }
       },
       "typeOfHelp": {
@@ -40,7 +44,14 @@
         "answers": {
           "substance_use": "Por uso de drogas o alcohol",
           "court_mandated_treatment": "Porque una corte ordenó tratamiento",
-          "mental_health": "Salud mental (sentimientos constantes de tristeza, soledad, preocupación....)"
+          "mental_health": "Salud mental (sentimientos constantes de tristeza, soledad, preocupación....)",
+          "suicidal_ideation": "Porque estoy pensando en matarme o querer estar muerto/a"
+        },
+        "shortAnswers": {
+          "substance_use": "Uso de drogas o alcohol",
+          "court_mandated_treatment": "Orden de la corte",
+          "mental_health": "Salud mental",
+          "suicidal_ideation": "Pensamientos de matarse"
         }
       },
       "feePreference": {
@@ -57,6 +68,11 @@
           "Deaf/HardofHearing": "Apoyo para personas con un impedimento auditivo o sordera",
           "VisuallyImpaired": "Apoyo para personas con un impedimento visual o ceguera",
           "Wheelchair": "Apoyo para personas que usa una silla de ruedas"
+        },
+        "shortAnswers": {
+          "Deaf/HardofHearing": "Ayuda auditiva",
+          "VisuallyImpaired": "Ayuda visual",
+          "Wheelchair": "Apoyo con silla de ruedas"
         }
       },
       "hours": {
@@ -83,7 +99,8 @@
   "home": {
     "zipPrompt": "Ingresa tu código postal para encontrar atención cercana a tu área.",
     "zipInput": "Código postal",
-    "guidedSearchPrompt": "Usa nuestra experiencia guiada para ver una lista personalizada y confidencial de resultados.",
+    "guidedSearchHeading": "Estamos aquí para apoyarte con tu búsqueda.",
+    "guidedSearchPrompt": "Contesta un par de preguntas sobre ti o tu ser querido para obtener resultados personalizados y confidenciales.",
     "guidedSearchButton": "Prueba nuestra experiencia guiada."
   }
 }

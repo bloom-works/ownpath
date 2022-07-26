@@ -4,13 +4,13 @@ import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { logPageView } from "../analytics";
 
-function Whoops() {
+function NotFound() {
   useEffect(() => {
     logPageView();
   }, []);
 
   const { t } = useTranslation();
-  const T_PREFIX = "pages.whoops.";
+  const T_PREFIX = "pages.notFound.";
   return (
     <GridContainer>
       <Grid row className="flex-justify-center">
@@ -23,4 +23,4 @@ function Whoops() {
   );
 }
 
-export default Whoops;
+export default NotFound;

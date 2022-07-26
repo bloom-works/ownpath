@@ -10,6 +10,7 @@
     "crisisServices": "No matter what you’re going through, help is available. Call Colorado Crisis Services at 844-493-TALK (8255) or text TALK to 38255.",
     "emergency": "If you are experiencing a medical emergency, please call 911."
   },
+  "dataCollectionAlert": "You’ll never need to create an account to use this service, and we do not store any personally identifiable information about you while using this service.",
   "zipCode": "Zip code",
   "zipCodeError": "Please enter a valid Colorado zip code",
   "feedbackUrl": "https://docs.google.com/forms/d/e/1FAIpQLSfXb19-4PgIamwjgg2J0vCp8nvCXNCYvz3v2tDtQFF0uNCTUA/viewform",
@@ -31,7 +32,7 @@
     "saturday": "Sat",
     "sunday": "Sun"
   },
-  "languages": {
+  "languagesWithTranslation": {
     "English": "English",
     "Spanish": "Spanish / Español",
     "Vietnamese": "Vietnamese / Tiếng Việt",
@@ -44,6 +45,20 @@
     "Cambodian": "Cambodian / កម្ពុជា",
     "Mongolian": "Mongolian / Монгол",
     "Cantonese": "Cantonese / 粵語"
+  },
+  "languages": {
+    "English": "English",
+    "Spanish": "Español",
+    "Vietnamese": "Tiếng Việt",
+    "German": "Deutsch",
+    "Russian": "Русский",
+    "Polish": "Polski",
+    "Ukrainian": "український",
+    "French": "Français",
+    "Mandarin": "普通话",
+    "Cambodian": "កម្ពុជា",
+    "Mongolian": "Монгол",
+    "Cantonese": "粵語"
   },
   "closed": "Closed",
   "title": "OwnPath"

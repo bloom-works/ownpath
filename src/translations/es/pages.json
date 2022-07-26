@@ -1,17 +1,24 @@
 {
   "home": {
+    "or": "o",
     "heading": "Encuentra aquí opciones de apoyo para la salud mental y con el uso de sustancias.",
     "_coloradoCrisisService": {
       "heading": "Si estás pasando por una crisis",
       "content": "Sin importar por lo que estés pasando, hay ayuda disponible. Llama a los Servicios de Crisis en Colorado al 844-493-TALK (8255) o envía un mensaje de texto con la palabra TALK al 38255",
-      "cta": "Obtén más detalles en ColoradoCrisisServices.org",
+      "cta": "Obtén más detalles sobre Colorado Crisis Services",
       "link": "https://coloradocrisisservices.org/es"
     },
     "_iMatter": {
       "heading": "Terapia gratis para menores de 21 años",
       "content": "Yo Importo puede conectar a personas de 18 años o menos (21 años o menos  si están recibiendo servicios de educación especial) con un/a terapeuta para recibir hasta 6 sesiones de terapia gratis y confidenciales.",
-      "cta": "Visita YoImportoColorado.org para encontrar un/a terapeuta y programar una cita.",
+      "cta": "Visita YoImporto para encontrar un/a terapeuta y programar una cita.",
       "link": "https://yoimportocolorado.org"
+    },
+    "_standUp": {
+      "heading": "Si estás enfrentando o usando conducta abusiva",
+      "content": "Conecta con un/a profesional para que conteste tus preguntas y apoye a cualquier persona que esté usando, enfrentando o siendo testigo de violencia en una relación.",
+      "cta": "Llama a la línea telefónica de ayuda de Stand Up Colorado al ",
+      "link": "tel:+18559782638"
     }
   },
   "search": {
@@ -20,13 +27,13 @@
     "noResultsExpandRadius": "No hay resultados a máximo {{miles}} millas. Aumenta la distancia de tu búsqueda para ver más resultados.",
     "noResultsGeneric": "No hay resultados a máximo {{miles}} millas. Cambia los filtros para ampliar tu búsqueda.",
     "fullDetailButton": "Detalles completos sobre este lugar",
-    "mapHelper": "Toca un marcador en el mapa para obtener información sobre ese lugar.",
-    "share": "Comparta estos resultados"
+    "mapHelper": "Toca un marcador en el mapa para obtener información sobre ese lugar. Para ver más de cerca o más de lejos en el mapa si estás usando un dispositivo móvil, usa dos dedos como si estuvieras pellizcando.",
+    "share": "Comparte estos resultados"
   },
   "resultDetail": {
-    "share": "**Compartir este proveedor",
+    "share": "Comparte los detalles de este proveedor",
     "backToSearch": "Regresa a la búsqueda",
-    "basicInfo": "**Información básica",
+    "basicInfo": "Información básica",
     "details": "Detalles",
     "populationsServed": "Personas a quienes atienden",
     "_populationsServed": {
@@ -130,10 +137,10 @@
       "someone": {
         "question": "Por favor selecciona las frases que mejor describen el tipo de ayuda que tu ser querido está buscando.",
         "answers": {
-          "substance_use": "Un ser querido necesita ayuda por uso de drogas o alcohol",
-          "court_mandates_treatment": "Un ser querido necesita tratamiento que la corte ordenó",
-          "mental_health": "Un ser querido necesita ayuda con su salud mental (sentimientos constantes de tristeza, soledad, preocupación...)",
-          "suicidal_ideation": "Un ser querido está pensando en matarse o querer estar muerto/a",
+          "substance_use": "Ayuda por uso de drogas o alcohol",
+          "court_mandates_treatment": "Tratamiento que la corte ordenó ",
+          "mental_health": "Ayuda con su salud mental (sentimientos constantes de tristeza, soledad, preocupación....)",
+          "suicidal_ideation": "Pensamientos de matarse o querer estar muerto/a",
           "unsure": "No estoy seguro/a",
           "none": "Ninguna de las anteriores"
         }
@@ -141,7 +148,7 @@
     },
     "languages": {
       "yourself": {
-        "question": "Quiero obtener ayuda en…"
+        "question": "Quiero obtener ayuda en..."
       },
       "someone": {
         "question": "Mi ser querido quiere obtener ayuda en..."
@@ -161,8 +168,8 @@
       }
     }
   },
-  "whoops": {
-    "heading": "Oh, oh.",
-    "returnToHome": "Regresa a la página de inicio"
+  "notFound": {
+    "heading": "Discúlpanos, esto no está funcionando. Regresa a la página principal para continuar tu senda y obtener apoyo.",
+    "returnToHome": "Regresa a la página principal."
   }
 }
