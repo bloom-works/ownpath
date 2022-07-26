@@ -63,8 +63,10 @@ function ResultDetail() {
           {t(`${T_PREFIX}backToSearch`)}
         </Link>
       </div>
-      <Grid row className="flex-justify margin-bottom-2">
-        <h1>{data.name}</h1>
+      <Grid row className="flex-justify flex-align-baseline margin-bottom-2">
+        <Grid col={12} tablet={{ col: 8 }}>
+          <h1 className="margin-top-2">{data.name}</h1>
+        </Grid>
         <ShareButton text={t(`${T_PREFIX}share`)} />
       </Grid>
 
@@ -110,9 +112,10 @@ function ResultDetail() {
                 <h3 className="display-inline">
                   {t(`${T_PREFIX}populationsServed`)}:{" "}
                 </h3>
-                <CommaSeparatedList
+                <BulletedList
                   boolMap={data.populationsServed}
                   translationPrefix={`${T_PREFIX}_populationsServed.`}
+                  className="line-height-body-4"
                 />
               </div>
             </ResultDatum>
@@ -121,9 +124,10 @@ function ResultDetail() {
                 <h3 className="display-inline">
                   {t(`${T_PREFIX}accessibilityOptions`)}:{" "}
                 </h3>
-                <CommaSeparatedList
+                <BulletedList
                   boolMap={data.accessibility}
                   translationPrefix={`${T_PREFIX}_accessibilityOptions.`}
+                  className="line-height-body-4"
                 />
               </div>
             </ResultDatum>
@@ -135,28 +139,28 @@ function ResultDetail() {
               <h2 className="margin-top-1">{t(`${T_PREFIX}services`)}</h2>
               {data.substanceUse.supported && (
                 <>
-                  <h3 className="margin-top-1">
+                  <h3 className="display-inline">
                     {t(`${T_PREFIX}substanceUseServices`)}:
                   </h3>
                   <ul>
                     <BulletedList
                       boolMap={data.substanceUse.services}
                       translationPrefix={`${T_PREFIX}_substanceUseServices.`}
-                      className="line-heigh-body-4"
+                      className="line-height-body-4"
                     />
                   </ul>
                 </>
               )}
               {data.mentalHealth.supported && (
                 <>
-                  <h3 className="margin-top-1">
+                  <h3 className="display-inline">
                     {t(`${T_PREFIX}mentalHealthServices`)}:
                   </h3>
                   <ul>
                     <BulletedList
                       boolMap={data.mentalHealth.services}
                       translationPrefix={`${T_PREFIX}_mentalHealthServices.`}
-                      className="line-heigh-body-4"
+                      className="line-height-body-4"
                     />
                   </ul>
                 </>
