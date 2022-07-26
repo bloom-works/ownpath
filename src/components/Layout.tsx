@@ -25,7 +25,7 @@ function Layout() {
               <a
                 className="margin-left-2"
                 href="https://bha.colorado.gov/"
-                target="_blank"
+                target="_blank" rel="noreferrer"
               >
                 <ColoradoBhaLogo />
               </a>
