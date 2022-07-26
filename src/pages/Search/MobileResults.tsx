@@ -29,7 +29,9 @@ function MobileResults({ results }: { results: CareProviderSearchResult[] }) {
 
   const mapRef = useRef<LeafletMap>(null);
   const rerenderMap = () => {
+    console.log("rerender");
     setTimeout(() => {
+      mapRef.current?.invalidateSize();
       mapRef.current?.fitBounds(getResultBounds(results), { animate: false });
     }, 100);
   };
@@ -46,7 +48,6 @@ function MobileResults({ results }: { results: CareProviderSearchResult[] }) {
   const onShowMap = () => {
     logEvent(AnalyticsAction.ToggleResultView, { label: "map" });
     setIsListView(false);
-    mapRef.current?.invalidateSize();
     rerenderMap();
   };
 
