@@ -38,6 +38,9 @@ const Hero = styled.img`
 const ContentOverlay = styled.div`
   position: relative;
   margin-top: -28%;
+  @media (min-width: 40em) {
+    margin-top: -22%;
+  }
 `;
 
 const Heading = styled.h1`
