@@ -55,6 +55,9 @@ p {
   font-weight: 500;
   font-size: 1.125rem;
 }
+.usa-link {
+  font-family: Trebuchet MS, san-serif;
+}
 .usa-link:visited,
 .a:visited {
   font-size: inherit;
