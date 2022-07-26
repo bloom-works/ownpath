@@ -23,7 +23,7 @@ function ZipInput({
       </Label>
       <div className="display-flex">
         <TextInput
-          className="margin-top-0 width-10"
+          className="margin-top-0 tablet:width-15"
           id="zip"
           name="zip"
           type="text"
