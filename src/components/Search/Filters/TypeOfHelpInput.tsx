@@ -43,7 +43,7 @@ function TypeOfHelpInput({
       legendStyle={hideLegend ? "srOnly" : "large"}
     >
       {options.map((option) => (
-        <>
+        <div key={option}>
           <FilterCheckbox
             name="type of help"
             value={option}
@@ -61,7 +61,7 @@ function TypeOfHelpInput({
                 </div>
               </AppAlert>
             )}
-        </>
+        </div>
       ))}
     </Fieldset>
   );
