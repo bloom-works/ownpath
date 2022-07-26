@@ -29,7 +29,6 @@ function MobileResults({ results }: { results: CareProviderSearchResult[] }) {
 
   const mapRef = useRef<LeafletMap>(null);
   const rerenderMap = () => {
-    console.log("rerender");
     setTimeout(() => {
       mapRef.current?.invalidateSize();
       mapRef.current?.fitBounds(getResultBounds(results), { animate: false });
