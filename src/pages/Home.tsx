@@ -103,7 +103,7 @@ function Home() {
       <Hero src={heroPath} />
       <ContentOverlay>
         <Grid row>
-          <Grid col={12} tablet={{ col: 7 }}>
+          <Grid col={12} desktop={{ col: 7 }}>
             <Heading className="radius-lg padding-y-2 text-bold">
               {t(`${T_PREFIX}heading`)}
             </Heading>
