@@ -68,6 +68,7 @@ function Search() {
         replace: true,
       });
     } else {
+      window.scrollTo(0, 0);
       performSearch(searchFilters);
       logPageView();
     }
