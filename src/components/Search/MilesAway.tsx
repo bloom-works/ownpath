@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { METERS_IN_A_MILE } from "../../util";
+import { METERS_IN_A_MILE } from "../../utils";
 
 export default function MilesAway({ meters }: { meters?: number }) {
   const { t } = useTranslation();

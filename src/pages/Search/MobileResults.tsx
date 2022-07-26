@@ -10,7 +10,7 @@ import ResultCard from "../../components/Search/ResultCard";
 import ResultsList from "../../components/Search/ResultsList";
 import ResultsMap from "../../components/Search/ResultsMap";
 import { CareProviderSearchResult } from "../../types";
-import { getResultBounds } from "../../util";
+import { getResultBounds } from "../../utils";
 import { ReactComponent as Close } from "../../images/close.svg";
 
 const T_PREFIX = "pages.search.";
@@ -29,7 +29,9 @@ function MobileResults({ results }: { results: CareProviderSearchResult[] }) {
 
   const mapRef = useRef<LeafletMap>(null);
   const rerenderMap = () => {
+    console.log("rerender");
     setTimeout(() => {
+      mapRef.current?.invalidateSize();
       mapRef.current?.fitBounds(getResultBounds(results), { animate: false });
     }, 100);
   };
@@ -46,7 +48,6 @@ function MobileResults({ results }: { results: CareProviderSearchResult[] }) {
   const onShowMap = () => {
     logEvent(AnalyticsAction.ToggleResultView, { label: "map" });
     setIsListView(false);
-    mapRef.current?.invalidateSize();
     rerenderMap();
   };
 

@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 import { useTranslation } from "react-i18next";
 import ContentCard from "../components/Home/ContentCard";
-import heroPath from "../images/hero.png";
+import heroPath from "../images/hero.jpg";
 import { ReactComponent as ColoradoCrisisServicesLogo } from "../images/logos/colorado_crisis_services.svg";
 import { ReactComponent as IMatterLogo } from "../images/logos/imatter.svg";
 import { ReactComponent as StandUpColorado } from "../images/logos/stand_up_co.svg";
@@ -15,23 +15,48 @@ import { logPageView } from "../analytics";
 const Hero = styled.img`
   max-width: 110%;
   margin-left: -5%;
+  border-radius: 10px;
   @media (min-width: 40em) {
-    max-width: 150%;
-    margin-left: -9%; // WHY!
+    max-width: 110%;
+  }
+  @media only screen and (min-width: 768px) and (max-width: 1279px) {
+    border-radius: 0px;
+    width: 100%;
+    margin: 0;
+  }
+  @media (max-width: 767px) {
+    border-radius: 0px;
+    max-width: 100vw;
+    margin-left: -4.5%;
+    width: 100vw;
+    object-fit: cover;
+    object-position: right;
+    height: calc(100vw - 50px);
   }
 `;
 
 const ContentOverlay = styled.div`
   position: relative;
-  margin-top: -22%;
+  margin-top: -28%;
 `;
 
 const Heading = styled.h1`
   color: black;
   background-color: white;
+  padding: 1rem 1.2rem 0 1.2rem;
   @media (min-width: 40em) {
     color: white;
     background-color: transparent;
+    padding: 0;
+  }
+  @media only screen and (min-width: 768px) and (max-width: 1279px) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  @media (max-width: 414px) {
+    font-size: 1.75rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 `;
 
@@ -85,7 +110,7 @@ function Home() {
               <ZipCard />
               <div className="display-flex flex-justify-center margin-bottom-2">
                 <Line></Line>
-                <Or>or</Or>
+                <Or>{t("pages.home.or")}</Or>
               </div>
               <GuidedSearchCard />
             </CardGroup>
@@ -99,9 +124,7 @@ function Home() {
                 headerContent={<ColoradoCrisisServicesLogo />}
                 bodyContent={
                   <>
-                    <h2 className="font-body-lg text-bold">
-                      {t(`${T_PREFIX}_coloradoCrisisService.heading`)}
-                    </h2>
+                    <h2>{t(`${T_PREFIX}_coloradoCrisisService.heading`)}</h2>
                     <p>{t(`${T_PREFIX}_coloradoCrisisService.content`)}</p>
                   </>
                 }
@@ -119,9 +142,7 @@ function Home() {
                 headerContent={<IMatterLogo />}
                 bodyContent={
                   <>
-                    <h2 className="font-body-lg text-bold">
-                      {t(`${T_PREFIX}_iMatter.heading`)}
-                    </h2>
+                    <h2>{t(`${T_PREFIX}_iMatter.heading`)}</h2>
                     <p>{t(`${T_PREFIX}_iMatter.content`)}</p>
                   </>
                 }
@@ -139,16 +160,17 @@ function Home() {
                 headerContent={<StandUpColorado />}
                 bodyContent={
                   <>
-                    <h2 className="font-body-lg text-bold">
-                      {t(`${T_PREFIX}_standUp.heading`)}
-                    </h2>
+                    <h2>{t(`${T_PREFIX}_standUp.heading`)}</h2>
                     <p>{t(`${T_PREFIX}_standUp.content`)}</p>
                   </>
                 }
                 cta={
-                  <Link href={t(`${T_PREFIX}_standUp.link`)}>
+                  <>
                     {t(`${T_PREFIX}_standUp.cta`)}
-                  </Link>
+                    <Link href={t(`${T_PREFIX}_standUp.link`)}>
+                      (855) 978-2638
+                    </Link>
+                  </>
                 }
               />
             </CardGroup>

@@ -3,8 +3,10 @@ import { Dispatch, SetStateAction } from "react";
 import { useTranslation } from "react-i18next";
 import { AnalyticsAction, logEvent } from "../../../analytics";
 import { SearchFilters, TypeOfHelp } from "../../../types";
-import { toggleItemInList } from "../../../util";
+import { toggleItemInList } from "../../../utils";
+import AppAlert from "../../AppAlert";
 import FilterCheckbox from "./FilterCheckbox";
+import { ReactComponent as Phone } from "../../../images/phone.svg";
 
 type TypeOfHelpInputProps = {
   hideLegend?: boolean;
@@ -41,25 +43,26 @@ function TypeOfHelpInput({
       legendStyle={hideLegend ? "srOnly" : "large"}
     >
       {options.map((option) => (
-        <FilterCheckbox
-          name="type of help"
-          value={option}
-          tPrefix={`${tPrefix}answers.`}
-          selectedFilterValues={filters.typesOfHelp}
-          onChange={() => {
-            if (option === TypeOfHelp.None || option === TypeOfHelp.Unsure)
-              return; // do not apply no-op filters
-            setTypeOfHelpFilter(option);
-          }}
-          key={option}
-        />
+        <>
+          <FilterCheckbox
+            name="type of help"
+            value={option}
+            tPrefix={`${tPrefix}answers.`}
+            selectedFilterValues={filters.typesOfHelp}
+            onChange={() => setTypeOfHelpFilter(option)}
+            key={option}
+          />
+          {option === TypeOfHelp.SuicidalIdeation &&
+            filters.typesOfHelp.includes(TypeOfHelp.SuicidalIdeation) && (
+              <AppAlert Icon={Phone}>
+                <div>{t("common.suicidalIdeationPopup.crisisServices")}</div>
+                <div className="text-bold margin-top-1">
+                  {t("common.suicidalIdeationPopup.emergency")}
+                </div>
+              </AppAlert>
+            )}
+        </>
       ))}
-      {filters.typesOfHelp.includes(TypeOfHelp.SuicidalIdeation) && (
-        <div className="margin-top-3 radius-lg bg-teal padding-y-1 padding-x-3">
-          <p>{t("common.suicidalIdeationPopup.crisisServices")}</p>
-          <p>{t("common.suicidalIdeationPopup.emergency")}</p>
-        </div>
-      )}
     </Fieldset>
   );
 }

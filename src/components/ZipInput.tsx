@@ -1,5 +1,5 @@
 import { Label, TextInput, ErrorMessage } from "@trussworks/react-uswds";
-import { Dispatch, PropsWithChildren, SetStateAction } from "react";
+import { PropsWithChildren } from "react";
 import { useTranslation } from "react-i18next";
 
 type ZipInputProps = {
@@ -23,7 +23,7 @@ function ZipInput({
       </Label>
       <div className="display-flex">
         <TextInput
-          className="margin-top-0"
+          className="margin-top-0 tablet:width-15"
           id="zip"
           name="zip"
           type="text"
