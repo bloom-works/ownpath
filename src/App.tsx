@@ -1,6 +1,6 @@
-import React from "react";
-
+import React, { useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 import Layout from "./components/Layout";
 import Search from "./pages/Search/Search";
@@ -10,6 +10,12 @@ import Whoops from "./pages/Whoops";
 import GuidedSearch from "./pages/GuidedSearch";
 
 function App() {
+  const { t } = useTranslation();
+
+  useEffect(() => {
+    document.title = t("common.title");
+  });
+
   return (
     <div className="App">
       <Routes>
