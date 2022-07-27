@@ -1,5 +1,3 @@
-import { text } from "node:stream/consumers";
-import { textSpanContainsPosition } from "typescript";
 import {
   AccessibilityOptions,
   ACCESSIBILITY_OPTIONS,
@@ -535,6 +533,8 @@ describe("servesAgeGroup", () => {
       },
     };
 
-    expect(servesAgeGroup(servesOlderAdults, AgeGroup.Adult)).toEqual(false);
+    expect(servesAgeGroup(servesOlderAndModifiers, AgeGroup.Adult)).toEqual(
+      false
+    );
   });
 });

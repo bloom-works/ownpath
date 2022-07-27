@@ -38,6 +38,9 @@ const Hero = styled.img`
 const ContentOverlay = styled.div`
   position: relative;
   margin-top: -28%;
+  @media (min-width: 40em) {
+    margin-top: -22%;
+  }
 `;
 
 const Heading = styled.h1`
@@ -100,7 +103,7 @@ function Home() {
       <Hero src={heroPath} />
       <ContentOverlay>
         <Grid row>
-          <Grid col={12} tablet={{ col: 7 }}>
+          <Grid col={12} desktop={{ col: 7 }}>
             <Heading className="radius-lg padding-y-2 text-bold">
               {t(`${T_PREFIX}heading`)}
             </Heading>
@@ -116,8 +119,7 @@ function Home() {
             </CardGroup>
           </Grid>
         </Grid>
-        <hr className="margin-bottom-3" />
-        <Grid row>
+        <Grid row className="margin-top-3">
           <Grid col={12}>
             <CardGroup>
               <ContentCard
