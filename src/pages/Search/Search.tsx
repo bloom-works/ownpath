@@ -130,7 +130,7 @@ function Search() {
                   </form>
                 )}
               </div>
-              <ShareButton text={t(`${T_PREFIX}share`)} />
+              {/* <ShareButton text={t(`${T_PREFIX}share`)} /> */}
             </Grid>
             <DesktopControl
               filters={searchFilters}

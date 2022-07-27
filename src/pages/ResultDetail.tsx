@@ -67,7 +67,7 @@ function ResultDetail() {
         <Grid col={12} tablet={{ col: 8 }}>
           <h1 className="margin-top-2">{data.name}</h1>
         </Grid>
-        <ShareButton text={t(`${T_PREFIX}share`)} />
+        {/* <ShareButton text={t(`${T_PREFIX}share`)} /> */}
       </Grid>
 
       <section>
