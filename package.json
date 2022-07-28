@@ -36,6 +36,7 @@
     "build": "ts-node src/data/process_data.ts && react-scripts build",
     "test": "ts-node src/data/process_data.ts && react-scripts test",
     "test:ci": "ts-node src/data/process_data.ts && $(npm bin)/react-scripts test --watchAll=false",
+    "test:e2e": "playwright test",
     "eject": "react-scripts eject",
     "processdata": "ts-node src/data/process_data.ts"
   },

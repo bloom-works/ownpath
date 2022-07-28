@@ -1,6 +1,7 @@
 import { test, expect } from "@playwright/test";
 
-const baseURL = "http://localhost:3000";
+const devBaseURL = "http://localhost:3000";
+const baseURL = "https://ownpath.co/";
 test.beforeEach(async ({ page }) => {
   await page.goto(baseURL);
 });
@@ -30,7 +31,7 @@ test('Homepage has "Try our guided experience" button that leads to the guided-s
   const guidedExperience = page.locator("text=Try our guided experience");
   await expect(guidedExperience).toHaveAttribute("href", "/guided-search");
   await guidedExperience.click();
-  await expect(page).toHaveURL(/guided-search/);
+  await expect(page).toContain(/guided-search/);
 });
 
 test('Homepage has "Search" button throws an error if provided an invalid zip code', async ({
@@ -59,5 +60,5 @@ test('Homepage has "Search" button that leads to the correct page when given a v
   await searchInput.fill(zip);
   await expect(searchInput).toHaveValue(zip);
   await searchButton.click();
-  await expect(page).toHaveURL(`${baseURL}/search?zip=${zip}&miles=5`);
+  await expect(page).toContain(`/search?zip=${zip}&miles=5`);
 });

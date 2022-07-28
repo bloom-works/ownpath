@@ -6,3 +6,4 @@ set -e
 # -----
 echo 'Run tests'
 npm run test:ci
+npm run test:e2e
