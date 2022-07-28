@@ -18,7 +18,6 @@ const Wrapper = styled.div`
 function Layout() {
   const [showCrisisAlert, setShowCrisisAlert] = useState(true);
   const location = useLocation();
-  console.log("location ", location.pathname);
   return (
     <Wrapper className="display-flex flex-column">
       <Header basic color="primary" role="banner">
