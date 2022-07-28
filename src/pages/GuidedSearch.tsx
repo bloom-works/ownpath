@@ -20,6 +20,7 @@ import { SearchFilters, TypeOfHelp } from "../types";
 import { EMPTY_SEARCH_FILTERS, getZipSearchMetadata } from "../utils";
 import AppAlert from "../components/AppAlert";
 import { ReactComponent as Info } from "../images/info.svg";
+import BackButton from "../components/BackButton";
 
 const GUIDED_SEARCH_STEPS = [
   "helpRecipient",
@@ -90,6 +91,14 @@ function GuidedSearch() {
   const currentStep = GUIDED_SEARCH_STEPS[currentStepIdx];
   return (
     <GridContainer>
+      {currentStepIdx > 0 && (
+        <div className="margin-top-1">
+          <BackButton
+            text={t(`${T_PREFIX}previousQuestion`)}
+            onClick={() => setCurrentStepIdx((idx) => idx - 1)}
+          />
+        </div>
+      )}
       <h1 className="font-body-md margin-top-2 tablet:margin-top-4">
         <span className="usa-sr-only">Guided search </span>Question{" "}
         {currentStepIdx + 1} of {GUIDED_SEARCH_STEPS.length}

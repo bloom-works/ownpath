@@ -51,23 +51,20 @@ p {
 
 /* override USWDS settings */
 .usa-button {
-  font: Trebuchet MS, san-serif !important;
+  font-family: Trebuchet MS, san-serif !important;
   font-weight: 500;
   font-size: 1.125rem;
 }
 .usa-link {
   font-family: Trebuchet MS, san-serif !important;
+  font-size: 1.125rem;
 }
 .usa-link:visited,
 .a:visited {
-  font-size: inherit;
-  font-weight: inherit;
   color: #562b97;
 }
 .usa-link:hover,
 .a:hover {
-  font-size: inherit;
-  font-weight: inherit;
   color: #2f6fa7;
   text-decoration: none;
 }

@@ -3,7 +3,6 @@ import { Marker } from "react-leaflet";
 import { Navigate, useLocation, useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
-import { ReactComponent as ArrowLeft } from "../images/arrow-left.svg";
 import { ReactComponent as Populations } from "../images/populations.svg";
 import { ReactComponent as Accessibility } from "../images/accessibility.svg";
 
@@ -17,6 +16,7 @@ import { useEffect } from "react";
 import DirectionsLink from "../components/ResultDetail/DirectionsLink";
 import ShareButton from "../components/ShareButton";
 import { logPageView } from "../analytics";
+import BackButton from "../components/BackButton";
 
 function ResultDetail() {
   // Ensure user sees the top of the page
@@ -53,13 +53,10 @@ function ResultDetail() {
   return (
     <GridContainer className="ResultDetail">
       <div className="margin-y-2">
-        <Link
-          className="display-flex flex-align-center"
+        <BackButton
+          text={t(`${T_PREFIX}backToSearch`)}
           href={`/search${prevSearch ?? ""}`}
-        >
-          <ArrowLeft className="margin-right-1" />
-          {t(`${T_PREFIX}backToSearch`)}
-        </Link>
+        />
       </div>
       <Grid row className="flex-justify flex-align-baseline margin-bottom-2">
         <Grid col={12} tablet={{ col: 8 }}>
