@@ -1,28 +1,18 @@
-// const React = require("react");
-// const { axe, toHaveNoViolations } = require("jest-axe");
-// const { render } = require("@testing-library/react");
-// const { BrowserRouter } = require("react-router-dom");
-// const App = require("./App");
-// const ResultDetail = require("./pages/ResultDetail");
-// const Whoops = require("./pages/Whoops");
-// const Home = require("./pages/Home");
-// const GuidedSearch = require("./pages/GuidedSearch");
-// const Search = require("./pages/Search/Search");
+import React from "react";
+import { render } from "./testHelper";
+import { axe } from "jest-axe";
+import Home from "./pages/Home";
 
-const React = require("react");
-const { render } = require("@testing-library/react");
-const { axe, toHaveNoViolations } = require("jest-axe");
-const ResultDetail = require("./pages/ResultDetail");
-// import React from "react";
-// import { axe, toHaveNoViolations } from "jest-axe";
-// import { render } from "@testing-library/react";
-// import ResultDetail from './pages/ResultDetail';
-
-expect.extend(toHaveNoViolations);
-test("Should not have basic a11y issues, ResultDetail", async () => {
-  const { container } = render(<ResultDetail />);
+test("Home", async () => {
+  const { container } = render(<Home />);
   expect(await axe(container)).toHaveNoViolations();
 });
+
+// expect.extend(toHaveNoViolations);
+// test("Should not have basic a11y issues, ResultDetail", async () => {
+//   const { container } = render(<ResultDetail />);
+//   expect(await axe(container)).toHaveNoViolations();
+// });
 
 // it("Should not have basic a11y issues, Whoops", async () => {
 //   const { container } = render(

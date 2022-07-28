@@ -33,9 +33,7 @@ function ZipCard() {
       gridLayout={{ col: 12, tablet: { col: 4 } }}
     >
       <CardBody>
-        <p className="text-bold font-body-lg margin-bottom-05">
-          {t(`${T_PREFIX}zipPrompt`)}
-        </p>
+        <h2>{t(`${T_PREFIX}zipPrompt`)}</h2>
         <form
           onSubmit={(evt) => {
             evt.preventDefault();
