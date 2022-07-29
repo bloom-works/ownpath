@@ -50,6 +50,9 @@ p {
 }
 
 /* override USWDS settings */
+.usa-header {
+  font-family: Trebuchet MS, san-serif !important;
+}
 .usa-button {
   font-family: Trebuchet MS, san-serif !important;
   font-weight: 500;

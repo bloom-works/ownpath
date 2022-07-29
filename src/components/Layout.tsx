@@ -34,7 +34,7 @@ function Layout() {
                   <OwnPathLogo height={38} />
                 )}
               </a>
-              by
+              {t("components.layout.for")}
               <a
                 className="margin-x-2"
                 href="https://bha.colorado.gov/"
