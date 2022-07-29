@@ -44,7 +44,7 @@ function ShareButton({ text }: ShareButtonProps) {
         onClick={onClick}
         className="display-flex align-items-center margin-y-1"
         data-position="top"
-        aria-aria-describedby="copied-tool-tip"
+        aria-describedby="copied-tool-tip"
       >
         {text}
         <Share className="margin-left-1" />
