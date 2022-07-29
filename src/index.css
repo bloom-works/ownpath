@@ -71,9 +71,12 @@ p {
   color: #2f6fa7;
   text-decoration: none;
 }
-.usa-dark-background a,
-.usa-footer__secondary-section a {
-  color: var(--light-blue, lightblue);
+
+.usa-link.dark-background {
+  color: white;
+}
+.usa-link:visited.dark-background {
+  color: var(--light-blue);
 }
 
 .usa-link.usa-button {
@@ -118,9 +121,6 @@ p {
   color: white;
 }
 
-.usa-footer__secondary-section a {
-  color: white;
-}
 .usa-footer__secondary-section > .grid-container {
   max-width: inherit;
 }
