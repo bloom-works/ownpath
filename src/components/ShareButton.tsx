@@ -1,5 +1,5 @@
 import { Button } from "@trussworks/react-uswds";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styled from "styled-components";
 import { ReactComponent as Share } from "../images/share.svg";
 
@@ -12,13 +12,25 @@ type ShareButtonProps = {
 
 function ShareButton({ text }: ShareButtonProps) {
   const [showCopiedToolTip, setShowCopiedToolTip] = useState(false);
+  const [mobile, setMobile] = useState(
+    window.matchMedia("(max-width: 40em)").matches
+  );
+
+  useEffect(() => {
+    const mobile = window.matchMedia("(max-width: 40em)");
+    mobile.addEventListener("change", (e) => setMobile(e.matches));
+
+    return () =>
+      mobile.removeEventListener("change", (e) => setMobile(e.matches));
+  }, []);
+
   const onClick = () => {
     const shareData = {
       title: "OwnPath",
       text: "Search results from OwnPath",
       url: window.location.href,
     };
-    if (navigator.canShare(shareData)) {
+    if (navigator.canShare && navigator.canShare(shareData) && mobile) {
       navigator.share(shareData);
     } else {
       navigator.clipboard.writeText(window.location.href);
@@ -44,7 +56,7 @@ function ShareButton({ text }: ShareButtonProps) {
         onClick={onClick}
         className="display-flex align-items-center margin-y-1"
         data-position="top"
-        aria-aria-describedby="copied-tool-tip"
+        aria-describedby="copied-tool-tip"
       >
         {text}
         <Share className="margin-left-1" />
