@@ -40,7 +40,6 @@
     "build": "ts-node src/data/process_data.ts && react-scripts build",
     "test": "react-scripts test",
     "test:ci": "ts-node src/data/process_data.ts && $(npm bin)/react-scripts test --watchAll=false",
-    "test:e2e": "playwright test",
     "eject": "react-scripts eject",
     "processdata": "ts-node src/data/process_data.ts"
   },
@@ -69,8 +68,5 @@
     "transformIgnorePatterns": [
       "/node_modules/(?!(react-leaflet|@react-leaflet|leaflet))"
     ]
-  },
-  "devDependencies": {
-    "@playwright/test": "^1.24.1"
   }
 }

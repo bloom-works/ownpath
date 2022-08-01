@@ -26,6 +26,3 @@ src/data/ladders_data.json
 # Terraform
 .terraform*
 terraform.tfstate*
-/test-results/
-/playwright-report/
-/playwright/.cache/
