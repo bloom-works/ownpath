@@ -25,13 +25,12 @@ function Layout() {
         <div className="display-flex flex-justify-center border-bottom border-base-lighter">
           <div className="padding-top-2 padding-bottom-1 height-auto">
             <Grid row className="flex-align-center ">
-              <a href="/" title="Home" aria-label="Home" data-testid="homeLink">
+              <a href="/" title="Home" aria-label="Home">
                 <OwnPathLogo height={38} />
               </a>
               by
               <a
                 className="margin-left-2"
-                data-testid="bhaLink"
                 href="https://bha.colorado.gov/"
                 target="_blank"
                 rel="noreferrer"
