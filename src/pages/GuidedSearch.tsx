@@ -92,7 +92,7 @@ function GuidedSearch() {
   return (
     <GridContainer>
       {currentStepIdx > 0 && (
-        <div className="margin-top-1">
+        <div className="margin-top-2 margin-bottom-5">
           <BackButton
             text={t(`${T_PREFIX}previousQuestion`)}
             onClick={() => setCurrentStepIdx((idx) => idx - 1)}
