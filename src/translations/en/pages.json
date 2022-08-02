@@ -24,7 +24,8 @@
   "search": {
     "resultCount_one": "{{count}} result near {{zip}}",
     "resultCount_other": "{{count}} results near {{zip}}",
-    "noResultsExpandRadius": "There are no results within {{miles}} miles. Search a wider distance to see more results.",
+    "noResultsExpandRadius": "There are no results within {{miles}} miles.",
+    "noResultsExpandRadiusButton": "Search a wider distance to see more results.",
     "noResultsGeneric": "There are no results within {{miles}} miles. Adjust the filters to expand your search.",
     "fullDetailButton": "Full detail about this location",
     "mapHelper": " Tap a marker to pull up information for that location. To zoom in or out on the map on a mobile device, use a two finger pinching gesture.",
