@@ -55,7 +55,11 @@ function ZipCard() {
             setZip={(zip) => setFilters({ ...filters, zip })}
             showError={showValidation}
           >
-            <ZipButton type="submit" className="usa-button margin-left-1">
+            <ZipButton
+              type="submit"
+              className="usa-button margin-left-1"
+              data-testid="submitButton"
+            >
               {t("common.search")}
             </ZipButton>
           </ZipInput>
