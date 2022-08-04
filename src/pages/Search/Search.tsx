@@ -115,14 +115,38 @@ function Search() {
               className="flex-justify-start tablet:flex-justify flex-align-center margin-bottom-2"
             >
               <div>
-                <div className="display-flex flex-align-baseline">
+                <div className="display-flex flex-align-baseline flex-wrap">
                   <ResponsiveHeader className="margin-top-0 text-bold">
                     {t("searchPageHeading", {
                       count: searchResult.results.length,
-                      zip: searchFilters.zip,
+                      zip: showZipInput ? "" : searchFilters.zip,
                     })}
+                    {showZipInput && (
+                      <span className="tablet:display-none">...</span>
+                    )}
                   </ResponsiveHeader>
-
+                  {showZipInput && (
+                    <div className="searchContainer">
+                      <form
+                        onSubmit={() => {
+                          setSearchParams({ ...searchFilters, zip });
+                          setShowZipInput(false);
+                        }}
+                        className="tablet:margin-left-1 w-fit"
+                      >
+                        <ZipInput
+                          zip={zip}
+                          setZip={(_zip) => setZip(_zip)}
+                          noLabel
+                          autoFocus
+                        >
+                          <Button className="margin-left-05" type="submit">
+                            {t("search")}
+                          </Button>
+                        </ZipInput>
+                      </form>
+                    </div>
+                  )}
                   <Button
                     className="margin-left-1 padding-y-05 width-auto"
                     type="button"
@@ -134,27 +158,13 @@ function Search() {
                   >
                     {showZipInput ? (
                       <>
-                        {t("close")} <Close className="margin-left-05" />
+                        {t("cancel")} <Close className="margin-left-05" />
                       </>
                     ) : (
                       t("change")
                     )}
                   </Button>
                 </div>
-                {showZipInput && (
-                  <form
-                    onSubmit={() => {
-                      setSearchParams({ ...searchFilters, zip });
-                      setShowZipInput(false);
-                    }}
-                  >
-                    <ZipInput zip={zip} setZip={(_zip) => setZip(_zip)}>
-                      <Button className="margin-left-1" type="submit">
-                        {t("search")}
-                      </Button>
-                    </ZipInput>
-                  </form>
-                )}
               </div>
               {/* <ShareButton text={t("searchPageShare")} /> */}
             </Grid>
