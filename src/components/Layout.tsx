@@ -39,6 +39,7 @@ function Layout() {
                 className="margin-x-2"
                 href="https://bha.colorado.gov/"
                 target="_blank"
+                rel="noreferrer"
               >
                 <ColoradoBhaLogo />
               </a>
