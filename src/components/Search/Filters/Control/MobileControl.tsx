@@ -1,5 +1,5 @@
 import { Button } from "@trussworks/react-uswds";
-import { Dispatch, SetStateAction, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { AnalyticsAction, logEvent } from "../../../../analytics";
 import { SearchFilters, TypeOfHelp } from "../../../../types";
@@ -27,6 +27,10 @@ function MobileControl({ filters, setFilters }: MobileControlProps) {
   const { t } = useTranslation();
   const [isExpanded, setIsExpanded] = useState<boolean>(false);
   const [controlFilters, setControlFilters] = useState(filters);
+
+  useEffect(() => {
+    setControlFilters(filters);
+  }, [filters]);
 
   const countSelected = getAppliedOptionalFiltersCount(filters);
 
