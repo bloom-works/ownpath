@@ -6,10 +6,11 @@ import { ReactComponent as ColoradoBhaLogo } from "../images/logos/colorado_bha.
 import { ReactComponent as OwnPathLogo } from "../images/logos/ownpath.svg";
 import { ReactComponent as Phone } from "../images/phone.svg";
 import { ReactComponent as Close } from "../images/close.svg";
+import { ReactComponent as MiPropiaSendaLogo } from "../images/logos/mi_propia_senda.svg";
 import styled from "styled-components";
 import { useState } from "react";
 import AppAlert from "./AppAlert";
-import { t } from "i18next";
+import { useTranslation } from "react-i18next";
 
 const Wrapper = styled.div`
   min-height: 100%;
@@ -18,6 +19,7 @@ const Wrapper = styled.div`
 function Layout() {
   const [showCrisisAlert, setShowCrisisAlert] = useState(true);
   const location = useLocation();
+  const { t, i18n } = useTranslation();
   return (
     <Wrapper className="display-flex flex-column">
       <Header basic color="primary" role="banner">
@@ -26,11 +28,15 @@ function Layout() {
           <div className="padding-top-2 padding-bottom-1 height-auto">
             <Grid row className="flex-align-center ">
               <a href="/" title="Home" aria-label="Home">
-                <OwnPathLogo height={38} />
+                {i18n.language === "es" ? (
+                  <MiPropiaSendaLogo height={38} className="margin-right-2" />
+                ) : (
+                  <OwnPathLogo height={38} />
+                )}
               </a>
-              by
+              {t("components.layout.by")}
               <a
-                className="margin-left-2"
+                className="margin-x-2"
                 href="https://bha.colorado.gov/"
                 target="_blank"
                 rel="noreferrer"

@@ -97,6 +97,7 @@
   },
   "guidedSearch": {
     "nextQuestion": "Próxima pregunta",
+    "previousQuestion": "Volver a la pregunta anterior",
     "helpRecipient": {
       "question": "¿Estás buscando ayuda para ti o para un ser querido?",
       "answers": {

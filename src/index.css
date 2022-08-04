@@ -50,30 +50,33 @@ p {
 }
 
 /* override USWDS settings */
+.usa-header {
+  font-family: Trebuchet MS, san-serif !important;
+}
 .usa-button {
-  font: Trebuchet MS, san-serif !important;
+  font-family: Trebuchet MS, san-serif !important;
   font-weight: 500;
-  font-size: 1.125rem;
+  font-size: 1rem;
 }
 .usa-link {
   font-family: Trebuchet MS, san-serif !important;
+  font-size: 1rem;
 }
 .usa-link:visited,
 .a:visited {
-  font-size: inherit;
-  font-weight: inherit;
   color: #562b97;
 }
 .usa-link:hover,
 .a:hover {
-  font-size: inherit;
-  font-weight: inherit;
   color: #2f6fa7;
   text-decoration: none;
 }
-.usa-dark-background a,
-.usa-footer__secondary-section a {
-  color: var(--light-blue, lightblue);
+
+.usa-link.dark-background {
+  color: white;
+}
+.usa-link:visited.dark-background {
+  color: var(--light-blue);
 }
 
 .usa-link.usa-button {
@@ -118,9 +121,6 @@ p {
   color: white;
 }
 
-.usa-footer__secondary-section a {
-  color: white;
-}
 .usa-footer__secondary-section > .grid-container {
   max-width: inherit;
 }

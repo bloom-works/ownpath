@@ -49,10 +49,10 @@ function Footer() {
                 {t(`${T_PREFIX}betaExplanation`)}
               </p>
             </Grid>
-            <Grid row>
+            <Grid row className="flex-justify">
               {t(`${T_PREFIX}feedbackPrompt`)}
               <ExternalLink
-                className="margin-left-1"
+                className="dark-background"
                 variant="external"
                 target="_blank "
                 href={t("common.feedbackUrl")}
