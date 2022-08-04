@@ -3,7 +3,8 @@
     "changeLanguage": "Change language"
   },
   "layout": {
-    "immediateHelp": "Need immediate help for an emotional, mental health, or substance use crisis? "
+    "immediateHelp": "Need immediate help for an emotional, mental health, or substance use crisis?",
+    "by": "by"
   },
   "footer": {
     "feedbackPrompt": "Have a suggestion for improvement on this website?",

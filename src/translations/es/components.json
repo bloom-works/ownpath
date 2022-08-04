@@ -3,7 +3,8 @@
     "changeLanguage": "Cambiar idioma"
   },
   "layout": {
-    "immediateHelp": "¿Necesitas ayuda inmediata con una crisis emocional, de salud mental o de uso de sustancias? "
+    "immediateHelp": "¿Necesitas ayuda inmediata con una crisis emocional, de salud mental o de uso de sustancias?",
+    "by": "de"
   },
   "footer": {
     "feedbackPrompt": "¿Tienes alguna sugerencia para mejorar este sitio web?",
