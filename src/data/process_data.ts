@@ -21,6 +21,7 @@ type InputRow = {
   Accessibility: string;
   AccountID: string;
   AccountName: string;
+  DisplayName: string;
   ActiveMHDesignation: string;
   ActiveSUDLicense: string;
   CommunityMentalHealthCenter: string;
@@ -117,7 +118,7 @@ const transformRow = (row: InputRow): CareProvider => {
   const mentalHealthServices = splitBySemicolons(row.MentalHealthSettings);
   const cleaned = {
     id: row.AccountID,
-    name: row.AccountName,
+    name: row.DisplayName,
     phone: row.Phone,
     hideAddress,
     address:
