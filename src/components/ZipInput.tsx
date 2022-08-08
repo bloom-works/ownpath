@@ -22,11 +22,9 @@ function ZipInput({
 
   return (
     <div className="width-full">
-      {!noLabel && (
-        <Label htmlFor="zip" className="margin-bottom-1">
-          {t("locationTitle")}
-        </Label>
-      )}
+      <Label htmlFor="zip" className="margin-bottom-1" srOnly={noLabel}>
+        {t("locationTitle")}
+      </Label>
       <div className="display-flex">
         <TextInput
           className="margin-top-0 tablet:width-15"
