@@ -15,9 +15,14 @@ import AgeGroupInput from "../AgeGroupInput";
 type DesktopControlProps = {
   filters: SearchFilters;
   setFilters: Dispatch<SetStateAction<SearchFilters>>;
+  distanceUpdatedExternally: boolean;
 };
 
-function DesktopControl({ filters, setFilters }: DesktopControlProps) {
+function DesktopControl({
+  filters,
+  setFilters,
+  distanceUpdatedExternally,
+}: DesktopControlProps) {
   const { t } = useTranslation();
   // flags to display distance and age filters in active state
   // ONLY after user has changed from default or guided search selection
@@ -96,7 +101,7 @@ function DesktopControl({ filters, setFilters }: DesktopControlProps) {
         </DesktopControlDropdown>
         <DesktopControlDropdown
           title={t("components.search.filters.distance.distance")}
-          hasSelection={showDistanceActive}
+          hasSelection={showDistanceActive || distanceUpdatedExternally}
         >
           <DistanceInput
             hideLegend
@@ -110,7 +115,7 @@ function DesktopControl({ filters, setFilters }: DesktopControlProps) {
         </DesktopControlDropdown>
         <DesktopControlDropdown
           title={t("components.search.filters.ageGroup.question")}
-          hasSelection={!!filters.age}
+          hasSelection={!!filters.age && showAgeActive}
         >
           <AgeGroupInput
             hideLegend
