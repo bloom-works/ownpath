@@ -29,6 +29,13 @@ function DesktopResults({ results }: { results: CareProviderSearchResult[] }) {
     rerenderMap();
   }, [results]);
 
+  useEffect(() => {
+    window.onpopstate = () =>  {
+      window.onpopstate = () => {}
+      window.history.back();
+    }
+  });
+
   return (
     <div className="display-none tablet:display-block padding-x-4">
       <Grid row className="border-top border-base-lighter overflow-x-hidden">
