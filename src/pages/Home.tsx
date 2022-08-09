@@ -20,6 +20,10 @@ const Hero = styled.img`
     border-radius: 5px;
     width: 100%;
     max-width: 110%;
+<<<<<<< HEAD
+=======
+    background-color: red;
+>>>>>>> smaller margin
     margin: 0;
   }
   @media (max-width: 767px) {
