@@ -1,3 +1,4 @@
+import * as React from 'react';
 import { Fieldset } from "@trussworks/react-uswds";
 import { Dispatch, SetStateAction } from "react";
 import { useTranslation } from "react-i18next";
@@ -43,7 +44,7 @@ function TypeOfHelpInput({
       legendStyle={hideLegend ? "srOnly" : "large"}
     >
       {options.map((option) => (
-        <>
+        <React.Fragment key={option}>
           <FilterCheckbox
             name="type of help"
             value={option}
@@ -61,7 +62,7 @@ function TypeOfHelpInput({
                 </div>
               </AppAlert>
             )}
-        </>
+        </React.Fragment>
       ))}
     </Fieldset>
   );

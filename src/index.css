@@ -50,6 +50,9 @@ p {
 }
 
 /* override USWDS settings */
+.usa-header {
+  font-family: Trebuchet MS, san-serif !important;
+}
 .usa-button {
   font-family: Trebuchet MS, san-serif !important;
   font-weight: 500;
@@ -162,6 +165,12 @@ p {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+.usa-card__header-alt {
+  padding-bottom: 0.5rem;
+  padding-top: 1.5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }

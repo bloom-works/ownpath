@@ -104,7 +104,7 @@ function GuidedSearch() {
         {currentStepIdx + 1} of {GUIDED_SEARCH_STEPS.length}
       </h1>
       <div className="usa-step-indicator usa-step-indicator--no-labels margin-bottom-0 tablet:margin-bottom-2">
-        <div className="usa-step-indicator__segments">
+        <ul className="usa-step-indicator__segments">
           {GUIDED_SEARCH_STEPS.map((step, idx) => (
             <StepIndicatorStep
               key={step}
@@ -112,7 +112,7 @@ function GuidedSearch() {
               label={step}
             />
           ))}
-        </div>
+        </ul>
       </div>
       <form
         className="margin-bottom-4 grid-col-12 tablet:grid-col-8"

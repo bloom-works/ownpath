@@ -33,11 +33,7 @@ function Search() {
   const { t } = useTranslation();
   // Search filters as URL search params
   const [searchParams, setSearchParams] = useSearchParams();
-  const initialFilters = getFiltersFromSearchParams(searchParams);
-
-  // TODO: do we need this, or can we just use searchParams to track filter state?
-  const [searchFilters, setSearchFilters] =
-    useState<SearchFilters>(initialFilters);
+  let searchFilters = getFiltersFromSearchParams(searchParams);
 
   // Filtered set of CareProviders OR error string
   const [searchResult, setSearchResult] = useState<SearchResult | null>(null);
@@ -47,7 +43,44 @@ function Search() {
   // state var to hold zip to ensure changes are only applied after button click
   const [zip, setZip] = useState(searchFilters.zip);
 
+  // flag to pass down into Desktop controls to indicate if distance
+  // has been updated (by expand radius button when no results)
+  const [distanceUpdated, setDistanceUpdated] = useState(false);
+
   const navigate = useNavigate();
+
+  const isWidestRadius = (miles: string) =>
+    miles === MILE_DISTANCE_OPTIONS[MILE_DISTANCE_OPTIONS.length - 1];
+
+  const expandSearchRadius = (miles: string) => {
+    // if expanded search radius is max, update search filters and stop recursing
+    if (isWidestRadius(miles)) {
+      setDistanceUpdated(true);
+      setSearchParams({ ...searchFilters, miles });
+      return;
+    }
+    // otherwise, set radius to next radius and apply updated filters
+    const nextRadius =
+      MILE_DISTANCE_OPTIONS[
+        MILE_DISTANCE_OPTIONS.findIndex((_miles) => miles === _miles) + 1
+      ];
+
+    const updatedFilters = { ...searchFilters, miles: nextRadius };
+    const resultCount = applySearchFilters(
+      CARE_PROVIDER_DATA as CareProvider[],
+      updatedFilters
+    ).results.length;
+
+    // Base case -- results found, set search filters & stop recursing
+    if (resultCount > 0) {
+      setDistanceUpdated(true);
+      setSearchParams(updatedFilters);
+      return;
+    }
+
+    // continue recursing
+    expandSearchRadius(nextRadius);
+  };
 
   const performSearch = (filters: SearchFilters) => {
     const result = applySearchFilters(
@@ -57,13 +90,9 @@ function Search() {
     setSearchResult(result);
   };
 
-  const isCurrentlyAtWidestRadius =
-    searchFilters.miles ===
-    MILE_DISTANCE_OPTIONS[MILE_DISTANCE_OPTIONS.length - 1];
-
   useEffect(() => {
     // zip is the only required filter - redirect to homepage if it doesn't exist
-    if (!initialFilters.zip) {
+    if (!searchFilters.zip) {
       navigate("/", {
         replace: true,
       });
@@ -75,9 +104,8 @@ function Search() {
   }, []);
 
   useEffect(() => {
-    setSearchParams(searchFilters);
     performSearch(searchFilters);
-  }, [searchFilters]);
+  }, [searchParams]);
 
   return (
     <div className="Search">
@@ -118,7 +146,7 @@ function Search() {
                 {showZipInput && (
                   <form
                     onSubmit={() => {
-                      setSearchFilters({ ...searchFilters, zip });
+                      setSearchParams({ ...searchFilters, zip });
                       setShowZipInput(false);
                     }}
                   >
@@ -133,9 +161,10 @@ function Search() {
               {/* <ShareButton text={t(`${T_PREFIX}share`)} /> */}
             </Grid>
             <DesktopControl
+              distanceUpdatedExternally={distanceUpdated}
               filters={searchFilters}
               setFilters={(filters) => {
-                setSearchFilters(filters);
+                setSearchParams({ ...filters });
                 logEvent(AnalyticsAction.ApplyFilter, {
                   label: "Filter dropdown button",
                 });
@@ -143,27 +172,40 @@ function Search() {
             />
             <MobileControl
               filters={searchFilters}
-              setFilters={setSearchFilters}
+              setFilters={(filters) => setSearchParams({ ...filters })}
             />
           </div>
-          <div>
-            {searchResult.results.length ? (
-              <>
-                <DesktopResults results={searchResult.results} />
-                <MobileResults results={searchResult.results} />
-              </>
-            ) : (
-              <p className="p-5">
-                {isCurrentlyAtWidestRadius
-                  ? t(`${T_PREFIX}noResultsGeneric`, {
-                      miles: searchFilters.miles,
-                    })
-                  : t(`${T_PREFIX}noResultsExpandRadius`, {
+
+          {searchResult.results.length ? (
+            <div>
+              <DesktopResults results={searchResult.results} />
+              <MobileResults results={searchResult.results} />
+            </div>
+          ) : (
+            <div className="p-5">
+              {isWidestRadius(searchFilters.miles) ? (
+                <p>
+                  {t(`${T_PREFIX}noResultsGeneric`, {
+                    miles: searchFilters.miles,
+                  })}
+                </p>
+              ) : (
+                <>
+                  <p>
+                    {t(`${T_PREFIX}noResultsExpandRadius`, {
                       miles: searchFilters.miles,
                     })}
-              </p>
-            )}
-          </div>
+                  </p>
+                  <Button
+                    type="button"
+                    onClick={() => expandSearchRadius(searchFilters.miles)}
+                  >
+                    {t(`${T_PREFIX}noResultsExpandRadiusButton`)}
+                  </Button>
+                </>
+              )}
+            </div>
+          )}
         </div>
       )}
     </div>

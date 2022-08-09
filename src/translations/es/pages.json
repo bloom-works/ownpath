@@ -24,7 +24,8 @@
   "search": {
     "resultCount_one": "{{count}} resultado cercanos al {{zip}}",
     "resultCount_other": "{{count}} resultados cercanos al {{zip}}",
-    "noResultsExpandRadius": "No hay resultados a máximo {{miles}} millas. Aumenta la distancia de tu búsqueda para ver más resultados.",
+    "noResultsExpandRadius": "No hay resultados a máximo {{miles}} millas.",
+    "noResultsExpandRadiusButton": "Aumenta la distancia de tu búsqueda para ver más resultados",
     "noResultsGeneric": "No hay resultados a máximo {{miles}} millas. Cambia los filtros para ampliar tu búsqueda.",
     "fullDetailButton": "Detalles completos sobre este lugar",
     "mapHelper": "Toca un marcador en el mapa para obtener información sobre ese lugar. Para ver más de cerca o más de lejos en el mapa si estás usando un dispositivo móvil, usa dos dedos como si estuvieras pellizcando.",
