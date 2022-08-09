@@ -64,7 +64,7 @@ function ControlToggles({ setFilters }: ControlTogglesProps) {
       {filters.feePreferences.map((filter) => (
         <DesktopControlToggle
           key="fee-preference"
-          name={t(`feesShortValues${filter}`)}
+          name={t(`feesValues${filter}`)}
           onClick={() =>
             setFilters({
               ...filters,
@@ -88,7 +88,7 @@ function ControlToggles({ setFilters }: ControlTogglesProps) {
       {filters.languages.map((filter) => (
         <DesktopControlToggle
           key="languages"
-          name={t(`languagesShortValues${filter}`)}
+          name={t(`languageShortValues${filter}`)}
           onClick={() =>
             setFilters({
               ...filters,

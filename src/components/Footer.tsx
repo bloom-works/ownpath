@@ -44,7 +44,7 @@ function Footer() {
                 {t("betaExplanation")}
               </p>
             </Grid>
-            <Grid row className="flex-justify">
+            <Grid row className="flex-justify font-body-sm">
               {t("feedbackPrompt")}
               <ExternalLink
                 className="dark-background"

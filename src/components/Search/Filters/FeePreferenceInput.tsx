@@ -31,6 +31,7 @@ function FeePreferenceInput({
       filter_type: "payment options",
       filter_value: feePreference,
     });
+
     setFilters({
       ...filters,
       feePreferences: toggleItemInList(filters.feePreferences, feePreference),
