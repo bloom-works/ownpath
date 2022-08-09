@@ -9,11 +9,7 @@ const english: { [key: string]: string } = {};
 const spanish: { [key: string]: string } = {};
 
 for (var i = 0; i < workbook.SheetNames.length; i++) {
-  if (
-    workbook.SheetNames[i].trim() === "Pending" ||
-    workbook.SheetNames[i].trim() === "How to use"
-  )
-    continue;
+  if (workbook.SheetNames[i].trim() === "How to use") continue;
 
   const rows: string[][] = utils.sheet_to_json(
     workbook.Sheets[workbook.SheetNames[i]],
@@ -24,14 +20,22 @@ for (var i = 0; i < workbook.SheetNames.length; i++) {
   );
 
   rows.forEach((row) => {
-    if (row.length === 4) {
+    // rows with 1 column do not contain content, they're just organizational so don't try to parse them
+    if (row.length > 1) {
+      // row[0]: plain-language description of the content
+      // row[1]: english translation
       const en = row[1];
+      // row[2]: spanish translation
       const es = row[2];
+      // row[3]: key to use in application
       const key = row[3];
 
       if (!es) {
         console.log("spanish translation missing for ", row[0]);
-        console.log(row[1], row[2]);
+      }
+
+      if (!key) {
+        console.log("key missing for ", row[0]);
       }
 
       english[key] = en;

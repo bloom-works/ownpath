@@ -77,11 +77,23 @@ npm run processdata
 
 This happens automatically as part of `npm run build` and `npm run start`, so you don't typically have to run this unless you're debugging the data transformation itself.
 
-## Using SVGs 
+## Generating translations JSON
+
+Translations are maintained in a [google sheet](https://docs.google.com/spreadsheets/d/1-BrtUlIZb8otb8Ant6CMovvqUGFCkhcjwXkP-NbzQkE/edit#gid=1026945337), which is transformed into JSON for the application to use by a standalone script. To generate updated translations JSON, download the sheet to your local machine and run:
+
+```
+npm run generatetranslations [path to file]
+```
+
+This process must be run manually whenever content changes or updates are made in the google doc. The changes then need to be committed to the repo and merged to be reflected in the application. Any rows missing translations will be printed to the console where the script is run to help avoid accidentally adding un-translated content.
+
+## Using SVGs
+
 Using SVGs in React apps is super easy. To make them fully component prop/CSS customizable ensure you do these things:
+
 1. Only set width or height (not both) on the main SVG element. This allows you to scale the size of the SVG by setting width/height prop on the component.
 1. set "fill" prop on <svg> element to be "currentColor". This allows you to color the SVG with CSS "color" property.
-1. DON'T set "fill" prop on any inner elements within the <svg>. This will prohibit you from dynamically setting the color with CSS "color" property. 
+1. DON'T set "fill" prop on any inner elements within the <svg>. This will prohibit you from dynamically setting the color with CSS "color" property.
 
 ## AWS Deployment
 
@@ -97,7 +109,7 @@ The first time you ever deploy the site to an AWS Account from _any_ computer, r
    1. Next
    1. Attach existing policies directly
       - ✅ AdministratorAccess (TODO: This grants anything. Remove this and specify only what's needed)
-   1. Set permission boundary: Create user without a permissions boundary (TODO Reduce this) 
+   1. Set permission boundary: Create user without a permissions boundary (TODO Reduce this)
    1. Next
    1. Next
    1. Create user
@@ -110,14 +122,13 @@ Next, we need to create storage for the Terraform state.
 1. Launch a terminal in the dev container from the root of the code base: `docker run -it -v $PWD:/app --rm coloradodigitalservice/co-care-directory bash` (TODO: Remove directory mapping after state is stored centrally)
 1. Navigate to: `cd infra/aws/state`
 1. Set `export TF_VAR_bucket_name="<S3 bucket name>"` with a [valid name](https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html) of the S3 bucket where built app files will be stored. This must be unique across all of AWS.
-1. Set `export AWS_ACCESS_KEY_ID="<your AWS user's access key ID>"` 
-1. Set `export AWS_SECRET_ACCESS_KEY="<your AWS secret access key>"`  
+1. Set `export AWS_ACCESS_KEY_ID="<your AWS user's access key ID>"`
+1. Set `export AWS_SECRET_ACCESS_KEY="<your AWS secret access key>"`
 1. Setup Terraform: `terraform init`
-1. Build the infrastructure:  `terraform apply` and then type `yes`
+1. Build the infrastructure: `terraform apply` and then type `yes`
 1. Save a backup of the `terraform.state` file
    - This is a state file containing only the S3 storage for the deployment's state file and Dynamo DB table that locks Terraform runs to one user at a time. There is no central backup, so put it somewhere safe even though you'll probably never need it again.
    - If you _do_ lose this state file, you can manually modify/remove the S3 bucket and DynamoDB table both named `${TF_VAR_bucket_name}-terraform-state`
-
 
 ### Manual deployment
 
@@ -130,6 +141,6 @@ These steps might need to be run if an automatic deployment fails, a prior state
 1. (optional) Set `export TF_VAR_domains='["domain1.com","domain2.org"]'` with the domains, with primary domain first
    - If no domains specified, it'll just use a CloudFront generated domain
    - The order of the domains needs to be the same _every_ time
-1. Set `export AWS_ACCESS_KEY_ID="<your AWS user's access key ID>"` 
-1. Set `export AWS_SECRET_ACCESS_KEY="<your AWS secret access key>"` 
+1. Set `export AWS_ACCESS_KEY_ID="<your AWS user's access key ID>"`
+1. Set `export AWS_SECRET_ACCESS_KEY="<your AWS secret access key>"`
 1. Run the deployment `sh ci/publish_build.sh`
