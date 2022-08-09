@@ -3,6 +3,8 @@ import { initReactI18next } from "react-i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
 
 // TODO: consolidate translation imports
+import en_translations from "./translations/en/translations.json";
+import es_translations from "./translations/es/translations.json";
 import en_pages from "./translations/en/pages.json";
 import en_components from "./translations/en/components.json";
 import en_common from "./translations/en/common.json";
@@ -41,6 +43,7 @@ i18n
     resources: {
       en: {
         translation: {
+          ...en_translations,
           pages: en_pages,
           components: en_components,
           common: en_common,
@@ -48,6 +51,7 @@ i18n
       },
       es: {
         translation: {
+          ...es_translations,
           pages: es_pages,
           components: es_components,
           common: es_common,

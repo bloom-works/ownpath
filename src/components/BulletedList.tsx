@@ -2,13 +2,13 @@ import { useTranslation } from "react-i18next";
 
 type BulletedListProps = {
   boolMap: { [key: string]: boolean };
-  translationPrefix: string;
+  translationPrefix?: string;
   className?: string;
 };
 
 function BulletedList({
   boolMap,
-  translationPrefix,
+  translationPrefix = "",
   className,
 }: BulletedListProps) {
   const { t } = useTranslation();
