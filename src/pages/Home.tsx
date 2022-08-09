@@ -16,11 +16,12 @@ const Hero = styled.img`
   max-width: 110%;
   margin-left: -5%;
   border-radius: 10px;
-  @media only screen and (min-width: 768px) and (max-width: 1279px) {
-    border-radius: 5px;
-    width: 100%;
+  @media (min-width: 40em) {
     max-width: 110%;
-    background-color: red;
+  }
+  @media only screen and (min-width: 768px) and (max-width: 1279px) {
+    border-radius: 0px;
+    width: 100%;
     margin: 0;
   }
   @media (max-width: 767px) {
@@ -54,9 +55,6 @@ const Heading = styled.h1`
   @media only screen and (min-width: 768px) and (max-width: 1279px) {
     padding-left: 2rem;
     padding-right: 2rem;
-  }
-  @media only screen and (min-width: 768px) and (max-width: 1023px) {
-    width: 70%;
   }
   @media (max-width: 414px) {
     font-size: 1.75rem;
