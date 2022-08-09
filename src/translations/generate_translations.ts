@@ -12,10 +12,9 @@ for (var i = 0; i < workbook.SheetNames.length; i++) {
   if (
     workbook.SheetNames[i].trim() === "Pending" ||
     workbook.SheetNames[i].trim() === "How to use"
-  ) {
-    console.log("SKIPPING SHEET ", workbook.SheetNames[i]);
+  )
     continue;
-  }
+
   const rows: string[][] = utils.sheet_to_json(
     workbook.Sheets[workbook.SheetNames[i]],
     {
@@ -30,6 +29,11 @@ for (var i = 0; i < workbook.SheetNames.length; i++) {
       const es = row[2];
       const key = row[3];
 
+      if (!es) {
+        console.log("spanish translation missing for ", row[0]);
+        console.log(row[1], row[2]);
+      }
+
       english[key] = en;
       spanish[key] = es;
     }
@@ -37,11 +41,11 @@ for (var i = 0; i < workbook.SheetNames.length; i++) {
 }
 
 fs.writeFileSync(
-  path.resolve(__dirname, "./en/translations.json"),
+  path.resolve(__dirname, "./en_translations.json"),
   JSON.stringify(english)
 );
 
 fs.writeFileSync(
-  path.resolve(__dirname, "./es/translations.json"),
+  path.resolve(__dirname, "./es_translations.json"),
   JSON.stringify(spanish)
 );

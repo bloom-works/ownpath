@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Dropdown, Grid, Label, Link } from "@trussworks/react-uswds";
+import { Dropdown, Grid, Label } from "@trussworks/react-uswds";
 import { useTranslation } from "react-i18next";
 
 import { ReactComponent as Globe } from "../images/globe.svg";
@@ -22,7 +22,6 @@ const StyledDropdown = styled(Dropdown)`
 
 function Banner() {
   const { t, i18n } = useTranslation();
-  const T_PREFIX = "components.banner.";
 
   return (
     <div className="Banner usa-dark-background font-body-3xs">
@@ -34,7 +33,7 @@ function Banner() {
               htmlFor="change-language"
               className="display-none tablet:display-flex margin-top-0 margin-left-1 font-body-3xs text-white"
             >
-              {t(`${T_PREFIX}changeLanguage`)}
+              {t("changeLanguage")}
             </Label>
             <StyledDropdown
               name="change-language"

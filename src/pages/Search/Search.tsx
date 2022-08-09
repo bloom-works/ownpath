@@ -12,7 +12,7 @@ import {
 import CARE_PROVIDER_DATA from "../../data/ladders_data.json";
 import { CareProvider, SearchFilters, SearchResult } from "../../types";
 import DesktopControl from "../../components/Search/Filters/Control/DesktopControl";
-import ShareButton from "../../components/ShareButton";
+// import ShareButton from "../../components/ShareButton";
 import { AnalyticsAction, logEvent, logPageView } from "../../analytics";
 import MobileControl from "../../components/Search/Filters/Control/MobileControl";
 import ZipInput from "../../components/ZipInput";

@@ -33,7 +33,7 @@ function DesktopControl({
     <div className="display-none tablet:display-block">
       <Grid row className="margin-bottom-2">
         <DesktopControlDropdown
-          title={t("components.search.filters.typeOfHelp.question")}
+          title={t("typeOfHelpTitle")}
           hasSelection={!!filters.typesOfHelp?.length}
           clear={() => setFilters({ ...filters, typesOfHelp: [] })}
         >

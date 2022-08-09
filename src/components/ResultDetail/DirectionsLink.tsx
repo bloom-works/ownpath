@@ -26,7 +26,7 @@ function DirectionsLink({
       href={googleMapsDirectionsURL}
     >
       <DirectionsIcon className="margin-right-1" />
-      {t(`common.getDirections`)}
+      {t("getDirections")}
     </ExternalLink>
   );
 }

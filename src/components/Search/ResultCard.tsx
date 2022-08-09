@@ -22,7 +22,7 @@ export default function ResultCard({ data }: ResultCardProps) {
         to={`/result/${data.id}`}
         state={{ prevSearch: location.search, data }}
       >
-        {t("pages.search.fullDetailButton")}
+        {t("fullDetail")}
       </Link>
     </div>
   );

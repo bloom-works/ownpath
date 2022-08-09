@@ -47,12 +47,12 @@ function ControlToggles({ setFilters }: ControlTogglesProps) {
   return (
     <Grid row className="margin-bottom-2 flex-align-baseline">
       <span className="text-bold text-dark-blue margin-right-2">
-        {t("components.search.filteredBy")}:
+        {t("filteredBy")}:
       </span>
       {filters.accessibility.map((filter) => (
         <DesktopControlToggle
           key="accessibility"
-          name={t(`components.search.filters.accessibility.answers.${filter}`)}
+          name={t(`accessibilityShortValues${filter}`)}
           onClick={() =>
             setFilters({
               ...filters,
@@ -64,7 +64,7 @@ function ControlToggles({ setFilters }: ControlTogglesProps) {
       {filters.feePreferences.map((filter) => (
         <DesktopControlToggle
           key="fee-preference"
-          name={t(`components.search.filters.feePreference.answers.${filter}`)}
+          name={t(`feesShortValues${filter}`)}
           onClick={() =>
             setFilters({
               ...filters,
@@ -76,7 +76,7 @@ function ControlToggles({ setFilters }: ControlTogglesProps) {
       {filters.hours.map((filter) => (
         <DesktopControlToggle
           key="hours"
-          name={t(`common.daysOfWeek.${filter}`)}
+          name={t(`hoursValues${filter}`)}
           onClick={() =>
             setFilters({
               ...filters,
@@ -88,7 +88,7 @@ function ControlToggles({ setFilters }: ControlTogglesProps) {
       {filters.languages.map((filter) => (
         <DesktopControlToggle
           key="languages"
-          name={t(`common.languages.${filter}`)}
+          name={t(`languagesShortValues${filter}`)}
           onClick={() =>
             setFilters({
               ...filters,
@@ -100,9 +100,7 @@ function ControlToggles({ setFilters }: ControlTogglesProps) {
       {filters.typesOfHelp.map((filter) => (
         <DesktopControlToggle
           key="types-of-help"
-          name={t(
-            `components.search.filters.typeOfHelp.shortAnswers.${filter}`
-          )}
+          name={t(`typeOfHelpShortValues${filter}`)}
           onClick={() =>
             setFilters({
               ...filters,
@@ -114,9 +112,7 @@ function ControlToggles({ setFilters }: ControlTogglesProps) {
       {!!filters.age && (
         <DesktopControlToggle
           key="age"
-          name={t(
-            `components.search.filters.ageGroup.shortAnswers.${filters.age}`
-          )}
+          name={t(`ageShortValues${filters.age}`)}
           onClick={() => {
             const updatedFilters = { ...filters };
             delete updatedFilters.age;
@@ -135,7 +131,7 @@ function ControlToggles({ setFilters }: ControlTogglesProps) {
           });
         }}
       >
-        {t("components.search.clearFiltersButton")}
+        {t("clearAll")}
       </Button>
     </Grid>
   );

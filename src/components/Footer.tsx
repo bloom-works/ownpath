@@ -7,7 +7,6 @@ import { useTranslation } from "react-i18next";
 import { ReactComponent as ColoradoBhaLogoWhite } from "../images/logos/colorado_bha_white.svg";
 import { ReactComponent as BhaLogo } from "../images/logos/bha.svg";
 
-const T_PREFIX = "components.footer.";
 const betaLabel = (
   <span className="font-body-sm bg-primary-light radius-pill padding-x-1 margin-right-1">
     BETA
@@ -26,12 +25,8 @@ function Footer() {
             </Grid>
 
             <Grid col className="margin-left-2">
-              <h2 className="margin-y-1">
-                {t("components.footer.ourCommitment")}
-              </h2>
-              <p className="margin-y-1">
-                {t("components.footer.privacyPolicy")}
-              </p>
+              <h2 className="margin-y-1">{t("privacyCommitmentHeading")}</h2>
+              <p className="margin-y-1">{t("privacyCommitment")}</p>
             </Grid>
           </Grid>
         </div>
@@ -46,18 +41,18 @@ function Footer() {
             <Grid row>
               <p>
                 {betaLabel}
-                {t(`${T_PREFIX}betaExplanation`)}
+                {t("betaExplanation")}
               </p>
             </Grid>
             <Grid row className="flex-justify">
-              {t(`${T_PREFIX}feedbackPrompt`)}
+              {t("feedbackPrompt")}
               <ExternalLink
                 className="dark-background"
                 variant="external"
                 target="_blank "
-                href={t("common.feedbackUrl")}
+                href={t("feedbackLink")}
               >
-                {t(`${T_PREFIX}feedbackCta`)}
+                {t("feedbackCta")}
               </ExternalLink>
             </Grid>
           </Grid>

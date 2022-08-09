@@ -4,7 +4,11 @@ import { Map as LeafletMap } from "leaflet";
 import { useState, useRef, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { logEvent, AnalyticsAction } from "../../analytics";
-import { markerActiveIcon, markerIcon } from "../../components/Map";
+import {
+  markerActiveIcon,
+  markerIcon,
+  rerenderMap,
+} from "../../components/Map";
 import MobileViewToggle from "../../components/Search/MobileViewToggle";
 import ResultCard from "../../components/Search/ResultCard";
 import ResultsList from "../../components/Search/ResultsList";
@@ -26,18 +30,11 @@ function MobileResults({ results }: { results: CareProviderSearchResult[] }) {
   const { t } = useTranslation();
 
   const mapRef = useRef<LeafletMap>(null);
-  const rerenderMap = () => {
-    console.log("rerender");
-    setTimeout(() => {
-      mapRef.current?.invalidateSize();
-      mapRef.current?.fitBounds(getResultBounds(results), { animate: false });
-    }, 100);
-  };
 
   // Rerender map whenever search filters change to ensure map displays
   // filtered results correctly
   useEffect(() => {
-    rerenderMap();
+    rerenderMap(mapRef, results);
   }, [results]);
 
   // invalidate size and rerender map when user switches to map view
@@ -46,7 +43,7 @@ function MobileResults({ results }: { results: CareProviderSearchResult[] }) {
   const onShowMap = () => {
     logEvent(AnalyticsAction.ToggleResultView, { label: "map" });
     setIsListView(false);
-    rerenderMap();
+    rerenderMap(mapRef, results);
   };
 
   const onShowList = () => {

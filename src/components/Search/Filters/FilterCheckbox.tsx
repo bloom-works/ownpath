@@ -1,5 +1,4 @@
 import { Checkbox } from "@trussworks/react-uswds";
-import { useTranslation } from "react-i18next";
 
 type FilterCheckboxProps = {
   name: string;
@@ -16,8 +15,6 @@ function FilterCheckbox({
   selectedFilterValues,
   onChange,
 }: FilterCheckboxProps) {
-  const { t } = useTranslation();
-
   return (
     <Checkbox
       id={value}
