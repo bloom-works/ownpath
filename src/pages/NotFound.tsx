@@ -10,14 +10,13 @@ function NotFound() {
   }, []);
 
   const { t } = useTranslation();
-  const T_PREFIX = "pages.notFound.";
   return (
     <GridContainer>
       <Grid row className="flex-justify-center">
-        <h1>{t(`${T_PREFIX}heading`)}</h1>
+        <h1>{t("404PageHeading")}</h1>
       </Grid>
       <Grid row className="flex-justify-center">
-        <Link to="/">{t(`${T_PREFIX}returnToHome`)}</Link>
+        <Link to="/">{t("404PageButton")}</Link>
       </Grid>
     </GridContainer>
   );
