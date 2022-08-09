@@ -13,8 +13,6 @@ import { CareProviderSearchResult } from "../../types";
 import { getResultBounds } from "../../utils";
 import { ReactComponent as Close } from "../../images/close.svg";
 
-const T_PREFIX = "pages.search.";
-
 /**
  * The toggle-able list + map views for mobile,
  * which are visually hidden in tablet/desktop via CSS
@@ -117,7 +115,7 @@ function MobileResults({ results }: { results: CareProviderSearchResult[] }) {
                   className="flex-align-center"
                   onClick={() => setSelectedResult(undefined)}
                 >
-                  {t("common.close")} <Close />
+                  {t("close")} <Close />
                 </Button>
               </Grid>
             </Grid>
@@ -130,7 +128,7 @@ function MobileResults({ results }: { results: CareProviderSearchResult[] }) {
             headingLevel=""
             className="radius-lg margin-y-2"
           >
-            {t(`${T_PREFIX}mapHelper`)}
+            {t("mapHelper")}
           </Alert>
         )}
       </div>

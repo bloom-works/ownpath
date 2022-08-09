@@ -6,17 +6,17 @@ import { SearchFilters, AgeGroup } from "../../../types";
 import FilterRadio from "./FilterRadio";
 
 type AgeGroupInputProps = {
+  legend: string;
   hideLegend?: boolean;
   filters: SearchFilters;
   setFilters: Dispatch<SetStateAction<SearchFilters>>;
-  tPrefix: string;
 };
 
 function AgeGroupInput({
+  legend,
   hideLegend,
   filters,
   setFilters,
-  tPrefix,
 }: AgeGroupInputProps) {
   const { t } = useTranslation();
   const setAgeFilter = (age: AgeGroup) => {
@@ -33,15 +33,12 @@ function AgeGroupInput({
   };
 
   return (
-    <Fieldset
-      legend={t(`${tPrefix}question`)}
-      legendStyle={hideLegend ? "srOnly" : "large"}
-    >
+    <Fieldset legend={legend} legendStyle={hideLegend ? "srOnly" : "large"}>
       {[AgeGroup.Under18, AgeGroup.Adult, AgeGroup.OlderAdult].map((option) => (
         <FilterRadio
           name="age"
           value={option}
-          label={t(`${tPrefix}answers.${option}`)}
+          label={t(`ageValues${option}`)}
           selected={filters.age === option}
           onChange={() => setAgeFilter(option)}
           key={option}

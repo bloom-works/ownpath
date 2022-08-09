@@ -7,19 +7,21 @@ import { toggleItemInList } from "../../../utils";
 import FilterCheckbox from "./FilterCheckbox";
 
 type FeePreferenceInputProps = {
+  legend: string;
   hideLegend?: boolean;
   options: FeePreference[];
+  optionLabelPrefix: string;
   filters: SearchFilters;
   setFilters: Dispatch<SetStateAction<SearchFilters>>;
-  tPrefix: string;
 };
 
 function FeePreferenceInput({
+  legend,
   hideLegend = false,
   options,
+  optionLabelPrefix,
   filters,
   setFilters,
-  tPrefix,
 }: FeePreferenceInputProps) {
   const { t } = useTranslation();
 
@@ -36,15 +38,12 @@ function FeePreferenceInput({
   };
 
   return (
-    <Fieldset
-      legend={t(`${tPrefix}question`)}
-      legendStyle={hideLegend ? "srOnly" : "large"}
-    >
+    <Fieldset legend={legend} legendStyle={hideLegend ? "srOnly" : "large"}>
       {options.map((option) => (
         <FilterCheckbox
           name="payment options"
           value={option}
-          tPrefix={`${tPrefix}answers.`}
+          label={t(`${optionLabelPrefix}${option}`)}
           selectedFilterValues={filters.feePreferences}
           onChange={() => {
             setFeePreferenceFilter(option);

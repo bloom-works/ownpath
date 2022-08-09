@@ -20,8 +20,6 @@ import DesktopResults from "./DesktopResults";
 import MobileResults from "./MobileResults";
 import { ReactComponent as Close } from "../../images/close.svg";
 
-const T_PREFIX = "pages.search.";
-
 const ResponsiveHeader = styled.h1`
   font-size: 1.5rem;
   @media (min-width: 40em) {
@@ -119,7 +117,7 @@ function Search() {
               <div>
                 <div className="display-flex flex-align-baseline">
                   <ResponsiveHeader className="margin-top-0 text-bold">
-                    {t(`${T_PREFIX}resultCount`, {
+                    {t("searchPageHeading", {
                       count: searchResult.results.length,
                       zip: searchFilters.zip,
                     })}
@@ -136,10 +134,10 @@ function Search() {
                   >
                     {showZipInput ? (
                       <>
-                        {t("common.close")} <Close className="margin-left-05" />
+                        {t("close")} <Close className="margin-left-05" />
                       </>
                     ) : (
-                      t("common.change")
+                      t("change")
                     )}
                   </Button>
                 </div>
@@ -152,13 +150,13 @@ function Search() {
                   >
                     <ZipInput zip={zip} setZip={(_zip) => setZip(_zip)}>
                       <Button className="margin-left-1" type="submit">
-                        {t("common.search")}
+                        {t("search")}
                       </Button>
                     </ZipInput>
                   </form>
                 )}
               </div>
-              {/* <ShareButton text={t(`${T_PREFIX}share`)} /> */}
+              {/* <ShareButton text={t("searchPageShare")} /> */}
             </Grid>
             <DesktopControl
               distanceUpdatedExternally={distanceUpdated}
@@ -185,14 +183,14 @@ function Search() {
             <div className="p-5">
               {isWidestRadius(searchFilters.miles) ? (
                 <p>
-                  {t(`${T_PREFIX}noResultsGeneric`, {
+                  {t("noResultsFilters", {
                     miles: searchFilters.miles,
                   })}
                 </p>
               ) : (
                 <>
                   <p>
-                    {t(`${T_PREFIX}noResultsExpandRadius`, {
+                    {t("noResultsRadius", {
                       miles: searchFilters.miles,
                     })}
                   </p>
@@ -200,7 +198,7 @@ function Search() {
                     type="button"
                     onClick={() => expandSearchRadius(searchFilters.miles)}
                   >
-                    {t(`${T_PREFIX}noResultsExpandRadiusButton`)}
+                    {t("noResultsRadiusButton")}
                   </Button>
                 </>
               )}

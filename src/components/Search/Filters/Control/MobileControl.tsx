@@ -16,8 +16,6 @@ import {
 import { ReactComponent as Filter } from "../../../../images/filter.svg";
 import AgeGroupInput from "../AgeGroupInput";
 
-const T_PREFIX = "components.search.";
-
 type MobileControlProps = {
   filters: SearchFilters;
   setFilters: Dispatch<SetStateAction<SearchFilters>>;
@@ -60,7 +58,7 @@ function MobileControl({ filters, setFilters }: MobileControlProps) {
           base={countSelected !== 0}
         >
           <Filter className="margin-right-05" />
-          {t("components.search.toggleFiltersButton", {
+          {t("toggleFiltersButton", {
             count: countSelected,
           })}
         </Button>
@@ -78,68 +76,68 @@ function MobileControl({ filters, setFilters }: MobileControlProps) {
                 }}
                 unstyled
               >
-                {t(`${T_PREFIX}clearFiltersButton`)}
+                {t(`clearAll`)}
               </Button>
             )}
           </div>
           <div className="margin-y-3">
             <DistanceInput
+              legend={t("distanceTitle")}
               filters={controlFilters}
               setFilters={setControlFilters}
-              tPrefix={`${T_PREFIX}filters.distance.`}
             />
           </div>
           <div className="margin-y-3">
             <TypeOfHelpInput
+              legend={t("typeOfHelpTitle")}
               options={[
                 TypeOfHelp.SubstanceUse,
                 TypeOfHelp.CourtMandatedTreatment,
                 TypeOfHelp.MentalHealth,
                 TypeOfHelp.SuicidalIdeation,
               ]}
+              optionLabelPrefix="typeOfHelpValues"
               filters={controlFilters}
               setFilters={setControlFilters}
-              tPrefix={`${T_PREFIX}filters.typeOfHelp.`}
             />
           </div>
           <div className="margin-y-3">
             <FeePreferenceInput
+              legend={t("feesTitle")}
               options={["PrivateInsurance", "Medicaid", "SlidingFeeScale"]}
+              optionLabelPrefix="feesValues"
               filters={controlFilters}
               setFilters={setControlFilters}
-              tPrefix={`${T_PREFIX}filters.feePreference.`}
             />
           </div>
           <div className="margin-y-3">
             <AccessibilityInput
               filters={controlFilters}
               setFilters={setControlFilters}
-              tPrefix={`${T_PREFIX}filters.accessibility.`}
             />
           </div>
           <div className="margin-y-3">
             <HoursInput
               filters={controlFilters}
               setFilters={setControlFilters}
-              tPrefix={`${T_PREFIX}filters.hours.`}
             />
           </div>
           <div className="margin-y-3">
             <LanguageInput
+              legend={t("languageTitle")}
               filters={controlFilters}
               setFilters={setControlFilters}
-              tPrefix={`${T_PREFIX}filters.languages.`}
             />
           </div>
           <div className="margin-y-3">
             <AgeGroupInput
+              legend={t("ageTitle")}
               filters={controlFilters}
               setFilters={setControlFilters}
-              tPrefix={`${T_PREFIX}filters.ageGroup.`}
             />
           </div>
           <Button type="submit" className="usa-button">
-            {t(`${T_PREFIX}viewResultsButton`)}
+            {t("applyFilters")}
           </Button>
           <div className="padding-top-2">
             <Button
@@ -150,7 +148,7 @@ function MobileControl({ filters, setFilters }: MobileControlProps) {
               }}
               unstyled
             >
-              {t("common.cancel")}
+              {t("cancel")}
             </Button>
           </div>
         </div>

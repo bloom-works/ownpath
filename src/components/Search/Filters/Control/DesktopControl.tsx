@@ -38,6 +38,7 @@ function DesktopControl({
           clear={() => setFilters({ ...filters, typesOfHelp: [] })}
         >
           <TypeOfHelpInput
+            legend={t("typeOfHelpTitle")}
             hideLegend
             options={[
               TypeOfHelp.MentalHealth,
@@ -45,50 +46,46 @@ function DesktopControl({
               TypeOfHelp.SubstanceUse,
               TypeOfHelp.SuicidalIdeation,
             ]}
+            optionLabelPrefix="typeOfHelpValues"
             filters={filters}
             setFilters={setFilters}
-            tPrefix="components.search.filters.typeOfHelp."
           />
         </DesktopControlDropdown>
         <DesktopControlDropdown
-          title={t("components.search.filters.feePreference.question")}
+          title={t("feesTitle")}
           hasSelection={!!filters.feePreferences?.length}
           clear={() => setFilters({ ...filters, feePreferences: [] })}
         >
           <FeePreferenceInput
+            legend={t("feesTitle")}
             hideLegend
             options={["PrivateInsurance", "Medicaid", "SlidingFeeScale"]}
+            optionLabelPrefix="feesValues"
             filters={filters}
             setFilters={setFilters}
-            tPrefix="components.search.filters.feePreference."
           />
         </DesktopControlDropdown>
         <DesktopControlDropdown
-          title={t("components.search.filters.hours.question")}
+          title={t("hoursTitle")}
           hasSelection={!!filters.hours?.length}
           clear={() => setFilters({ ...filters, hours: [] })}
         >
-          <HoursInput
-            hideLegend
-            filters={filters}
-            setFilters={setFilters}
-            tPrefix="components.search.filters.hours."
-          />
+          <HoursInput hideLegend filters={filters} setFilters={setFilters} />
         </DesktopControlDropdown>
         <DesktopControlDropdown
-          title={t("components.search.filters.languages.question")}
+          title={t("languageTitle")}
           hasSelection={!!filters.languages?.length}
           clear={() => setFilters({ ...filters, languages: [] })}
         >
           <LanguageInput
+            legend={t("languageTitle")}
             hideLegend
             filters={filters}
             setFilters={setFilters}
-            tPrefix="components.search.filters.languages."
           />
         </DesktopControlDropdown>
         <DesktopControlDropdown
-          title={t("components.search.filters.accessibility.question")}
+          title={t("accessibilityTitle")}
           hasSelection={!!filters.accessibility?.length}
           clear={() => setFilters({ ...filters, accessibility: [] })}
         >
@@ -96,35 +93,34 @@ function DesktopControl({
             hideLegend
             filters={filters}
             setFilters={setFilters}
-            tPrefix="components.search.filters.accessibility."
           />
         </DesktopControlDropdown>
         <DesktopControlDropdown
-          title={t("components.search.filters.distance.distance")}
+          title={t("distanceTitle")}
           hasSelection={showDistanceActive || distanceUpdatedExternally}
         >
           <DistanceInput
+            legend={t("distanceTitle")}
             hideLegend
             filters={filters}
             setFilters={(_filters) => {
               setShowDistanceActive(true);
               setFilters(_filters);
             }}
-            tPrefix="components.search.filters.distance."
           />
         </DesktopControlDropdown>
         <DesktopControlDropdown
-          title={t("components.search.filters.ageGroup.question")}
+          title={t("ageTitle")}
           hasSelection={!!filters.age && showAgeActive}
         >
           <AgeGroupInput
+            legend={t("ageTitle")}
             hideLegend
             filters={filters}
             setFilters={(_filters) => {
               setShowAgeActive(true);
               setFilters(_filters);
             }}
-            tPrefix="components.search.filters.ageGroup."
           />
         </DesktopControlDropdown>
       </Grid>
