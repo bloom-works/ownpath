@@ -92,7 +92,6 @@ const Or = styled.div`
 
 function Home() {
   const { t } = useTranslation();
-  const T_PREFIX = "pages.home.";
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -106,15 +105,18 @@ function Home() {
         <Grid row>
           <Grid col={12} desktop={{ col: 7 }}>
             <Heading className="radius-lg padding-y-2 text-bold">
-              {t(`${T_PREFIX}heading`)}
+              {t("homePageHeading")}
             </Heading>
           </Grid>
           <Grid col={12}>
-            <CardGroup className="bg-white radius-lg padding-x-1 tablet:padding-top-3 justify-content-around" role="list">
+            <CardGroup
+              className="bg-white radius-lg padding-x-1 tablet:padding-top-3 justify-content-around"
+              role="list"
+            >
               <ZipCard />
               <div className="display-flex flex-justify-center margin-bottom-2">
                 <Line></Line>
-                <Or>{t("pages.home.or")}</Or>
+                <Or>{t("or")}</Or>
               </div>
               <GuidedSearchCard />
             </CardGroup>
@@ -127,17 +129,17 @@ function Home() {
                 headerContent={<ColoradoCrisisServicesLogo />}
                 bodyContent={
                   <>
-                    <h2>{t(`${T_PREFIX}_coloradoCrisisService.heading`)}</h2>
-                    <p>{t(`${T_PREFIX}_coloradoCrisisService.content`)}</p>
+                    <h2>{t("crisisServicesHeading")}</h2>
+                    <p>{t("crisisServicesContent")}</p>
                   </>
                 }
                 cta={
                   <Link
-                    href={t(`${T_PREFIX}_coloradoCrisisService.link`)}
+                    href={t("crisisServicesLink")}
                     target="_blank"
                     variant="external"
                   >
-                    {t(`${T_PREFIX}_coloradoCrisisService.cta`)}
+                    {t("crisisServicesCta")}
                   </Link>
                 }
               />
@@ -145,17 +147,17 @@ function Home() {
                 headerContent={<IMatterLogo />}
                 bodyContent={
                   <>
-                    <h2>{t(`${T_PREFIX}_iMatter.heading`)}</h2>
-                    <p>{t(`${T_PREFIX}_iMatter.content`)}</p>
+                    <h2>{t("iMatterHeading")}</h2>
+                    <p>{t("iMatterContent")}</p>
                   </>
                 }
                 cta={
                   <Link
-                    href={t(`${T_PREFIX}_iMatter.link`)}
+                    href={t("iMatterLink")}
                     target="_blank"
                     variant="external"
                   >
-                    {t(`${T_PREFIX}_iMatter.cta`)}
+                    {t("iMatterCta")}
                   </Link>
                 }
               />
@@ -163,16 +165,14 @@ function Home() {
                 headerContent={<StandUpColorado />}
                 bodyContent={
                   <>
-                    <h2>{t(`${T_PREFIX}_standUp.heading`)}</h2>
-                    <p>{t(`${T_PREFIX}_standUp.content`)}</p>
+                    <h2>{t("standUpColoradoHeading")}</h2>
+                    <p>{t("standUpColoradoContent")}</p>
                   </>
                 }
                 cta={
                   <>
-                    {t(`${T_PREFIX}_standUp.cta`)}
-                    <Link href={t(`${T_PREFIX}_standUp.link`)}>
-                      (855) 978-2638
-                    </Link>
+                    {t("standUpColoradoCta")}
+                    <Link href={t("standUpColoradoLink")}>(855) 978-2638</Link>
                   </>
                 }
               />

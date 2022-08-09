@@ -2,7 +2,8 @@ import * as path from "path";
 import * as fs from "fs";
 import { readFile, utils } from "xlsx";
 
-const csvPath = path.resolve(__dirname, "./raw_translations.xlsx");
+const filePath = process.argv[2];
+const csvPath = path.resolve(__dirname, filePath);
 const workbook = readFile(csvPath);
 const english: { [key: string]: string } = {};
 const spanish: { [key: string]: string } = {};
