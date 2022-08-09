@@ -140,7 +140,7 @@ function Search() {
                           noLabel
                           autoFocus
                         >
-                          <Button className="margin-left-2" type="submit">
+                          <Button className="margin-left-1" type="submit">
                             {t("search")}
                           </Button>
                         </ZipInput>
