@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import ResultDetail from "./pages/ResultDetail";
 import NotFound from "./pages/NotFound";
 import GuidedSearch from "./pages/GuidedSearch";
+import FAQ  from "./pages/FAQ";
 
 function App() {
   const { t } = useTranslation();
@@ -24,6 +25,7 @@ function App() {
           <Route path="search" element={<Search />} />
           <Route path="guided-search" element={<GuidedSearch />} />
           <Route path="result/:resultId" element={<ResultDetail />} />
+          <Route path="faq" element={<FAQ />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>

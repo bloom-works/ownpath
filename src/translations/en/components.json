@@ -7,6 +7,7 @@
     "by": "by"
   },
   "footer": {
+    "faq": "Frequently Asked Questions",
     "feedbackPrompt": "Have a suggestion for improvement on this website?",
     "feedbackCta": "Submit a suggestion on this Google form.",
     "betaExplanation": "OwnPath is in BETA (active development), as we work to improve performance and add features to the site.",
@@ -103,5 +104,57 @@
     "guidedSearchHeading": "We’re here to support your search",
     "guidedSearchPrompt": "Answer a few questions about you or your loved one for custom and confidential results.",
     "guidedSearchButton": "Try our guided experience"
+  },
+  "faq": {
+    "accordions": [
+      {
+        "title": "What is OwnPath",
+        "content": [
+          "Recognizing that we are all striving for wellbeing, OwnPath provides individuals with a resource to begin their own path to wellness, no matter where in the journey they are. The searchable online directory allows people in Colorado to find behavioral health providers licensed by the BHA and to search for specific services or use a guided search to identify providers or resources that best meet their needs. Searches can be narrowed by criteria such as location, days of operation, language support, payment types accepted, and more.",
+          "\"Ownpath is a new resource for Coloradans to further provide people with access to behavioral health services when they need them the most. We are committed to expanding affordable mental health resources in our state to save people money and make sure every Coloradan has the opportunity to thrive,\" said Gov. Polis. \"I commend Dr. Medlock and the behavioral health workers for their dedicated and commitment to improving the lives of our neighbors, friends, and family members.\"",
+          "\"The concept of OwnPath is new to the state of Colorado, and should tremendously improve access to care. This is the BHA's first step in building a reimagined behavioral health system,\" said BHA Commissioner, Dr. Morgan Medlock."
+        ]
+      },
+      {
+        "title": "What updates have been made?",
+        "content": []
+      },
+      {
+        "title": "How is OwnPath designed to address inequality?",
+        "content": []
+      },
+      {
+        "title": "Why did BHA decide to build this tool?",
+        "content": []
+      },
+      {
+        "title": "Why aren't all providers in Colorado listed?",
+        "content": []
+      },
+      {
+        "title": "How can I update my facility information if I am a BHA licensed facility?",
+        "content": []
+      },
+      {
+        "title": "What else is BHA doing to increase access to providers?",
+        "content": []
+      },
+      {
+        "title": "How does the BHA plan to address accessibility for users?",
+        "content": []
+      },
+      {
+        "title": "Where can i give feedback on the tool?",
+        "content": []
+      },
+      {
+        "title": "Will searches or any personal information be stored?",
+        "content": []
+      },
+      {
+        "title": "Where can I find more information?",
+        "content": []
+      }
+    ]
   }
 }

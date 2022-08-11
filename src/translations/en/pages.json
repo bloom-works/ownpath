@@ -173,5 +173,8 @@
   "notFound": {
     "heading": "Our apologies, this isn’t working.Return to the homepage to continue on your path to care.",
     "returnToHome": "Return to homepage"
+  },
+  "faq": {
+    "heading": "Frequently Asked Questions"
   }
 }

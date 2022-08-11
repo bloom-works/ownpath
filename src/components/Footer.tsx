@@ -6,6 +6,7 @@ import {
 import { useTranslation } from "react-i18next";
 import { ReactComponent as ColoradoBhaLogoWhite } from "../images/logos/colorado_bha_white.svg";
 import { ReactComponent as BhaLogo } from "../images/logos/bha.svg";
+import { Link } from 'react-router-dom';
 
 const T_PREFIX = "components.footer.";
 const betaLabel = (
@@ -37,43 +38,52 @@ function Footer() {
         </div>
       }
       secondary={
-        <Grid
-          row
-          tablet={{ col: true }}
-          className="flex-justify-end flex-align-end"
-        >
-          <Grid col="auto" tablet={{ col: 6 }} className="font-body-2xs">
-            <Grid row>
-              <p>
-                {betaLabel}
-                {t(`${T_PREFIX}betaExplanation`)}
-              </p>
-            </Grid>
-            <Grid row className="flex-justify">
-              {t(`${T_PREFIX}feedbackPrompt`)}
-              <ExternalLink
-                className="dark-background"
-                variant="external"
-                target="_blank "
-                href={t("common.feedbackUrl")}
-              >
-                {t(`${T_PREFIX}feedbackCta`)}
-              </ExternalLink>
-            </Grid>
-          </Grid>
-          <Grid
-            col="auto"
-            tablet={{ col: 6 }}
-            className="margin-top-2 tablet:margin-top-0"
+        <>
+          <Link
+            to="/faq"
+            className="text-white"
           >
-            <Grid row className="flex-justify-end">
-              <ColoradoBhaLogoWhite height={30} />
+            {t(`${T_PREFIX}faq`)}
+          </Link>
+          <hr />
+          <Grid
+            row
+            tablet={{ col: true }}
+            className="flex-justify-end flex-align-end"
+          >
+            <Grid col="auto" tablet={{ col: 6 }} className="font-body-2xs">
+              <Grid row>
+                <p>
+                  {betaLabel}
+                  {t(`${T_PREFIX}betaExplanation`)}
+                </p>
+              </Grid>
+              <Grid row className="flex-justify">
+                {t(`${T_PREFIX}feedbackPrompt`)}
+                <ExternalLink
+                  className="dark-background"
+                  variant="external"
+                  target="_blank "
+                  href={t("common.feedbackUrl")}
+                >
+                  {t(`${T_PREFIX}feedbackCta`)}
+                </ExternalLink>
+              </Grid>
             </Grid>
-            <Grid row className="flex-justify-end margin-top-2">
-              © 2022
+            <Grid
+              col="auto"
+              tablet={{ col: 6 }}
+              className="margin-top-2 tablet:margin-top-0"
+            >
+              <Grid row className="flex-justify-end">
+                <ColoradoBhaLogoWhite height={30} />
+              </Grid>
+              <Grid row className="flex-justify-end margin-top-2">
+                © 2022
+              </Grid>
             </Grid>
           </Grid>
-        </Grid>
+        </>
       }
     />
   );
