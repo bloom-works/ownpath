@@ -95,6 +95,7 @@ function Home() {
   const T_PREFIX = "pages.home.";
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     logPageView();
   }, []);
 
