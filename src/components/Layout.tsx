@@ -57,7 +57,7 @@ function Layout() {
               <>
                 {t("crisisAlert")}{" "}
                 <Link href="tel:+18444938255" className="text-no-wrap">
-                  1-844-493-TALK (8255).
+                  {t("crisisAlertNumber")}
                 </Link>
               </>
             </div>

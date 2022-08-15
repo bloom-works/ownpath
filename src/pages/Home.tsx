@@ -171,8 +171,8 @@ function Home() {
                 }
                 cta={
                   <>
-                    {t("standUpColoradoCta")}
-                    <Link href={t("standUpColoradoLink")}>(855) 978-2638</Link>
+                    {t("standUpColoradoCta")}{" "}
+                    <Link href={t("standUpColoradoLink")}>(855) 978-2638.</Link>
                   </>
                 }
               />

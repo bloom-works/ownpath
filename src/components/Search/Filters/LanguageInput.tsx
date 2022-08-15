@@ -34,10 +34,7 @@ function LanguageInput({
   };
 
   return (
-    <Fieldset
-      legend={t("languageTitle")}
-      legendStyle={hideLegend ? "srOnly" : "large"}
-    >
+    <Fieldset legend={legend} legendStyle={hideLegend ? "srOnly" : "large"}>
       {LANGUAGES.map((option) => (
         <FilterCheckbox
           name="languages"
