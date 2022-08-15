@@ -1,4 +1,4 @@
-import { Button, Card, CardBody, ErrorMessage } from "@trussworks/react-uswds";
+import { Button, Card, CardBody } from "@trussworks/react-uswds";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { createSearchParams, useNavigate } from "react-router-dom";
@@ -18,7 +18,6 @@ function ZipCard() {
 
   const { t } = useTranslation();
   const navigate = useNavigate();
-  const T_PREFIX = "components.home.";
 
   const zipMeta = getZipSearchMetadata(filters.zip);
   // don't show validation errors until clicking search or clicking out of input
@@ -33,7 +32,7 @@ function ZipCard() {
       gridLayout={{ col: 12, tablet: { col: 4 } }}
     >
       <CardBody>
-        <h2>{t(`${T_PREFIX}zipPrompt`)}</h2>
+        <h2>{t("zipCodePrompt")}</h2>
         <form
           onSubmit={(evt) => {
             evt.preventDefault();
@@ -56,7 +55,7 @@ function ZipCard() {
             showError={showValidation}
           >
             <ZipButton type="submit" className="usa-button margin-left-1">
-              {t("common.search")}
+              {t("search")}
             </ZipButton>
           </ZipInput>
         </form>

@@ -1,9 +1,4 @@
-import {
-  Card,
-  CardBody,
-  CardFooter,
-  CardHeader,
-} from "@trussworks/react-uswds";
+import { Card, CardBody, CardFooter } from "@trussworks/react-uswds";
 import { ReactNode } from "react";
 
 type ContentCardProps = {
@@ -27,9 +22,7 @@ function ContentCard({
       }}
       gridLayout={{ mobile: { col: 12 }, tablet: { col: fullWidth ? 12 : 4 } }}
     >
-      <div
-        className="usa-card__header-alt height-15 display-flex flex-justify-center flex-align-center"
-      >
+      <div className="usa-card__header-alt height-15 display-flex flex-justify-center flex-align-center">
         {headerContent}
       </div>
       <CardBody className={fullWidth ? "padding-top-2" : ""}>

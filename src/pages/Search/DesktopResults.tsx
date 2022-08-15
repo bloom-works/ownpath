@@ -3,7 +3,11 @@ import { Marker } from "react-leaflet";
 import { Map as LeafletMap } from "leaflet";
 import { useState, useRef, useEffect } from "react";
 import { logEvent, AnalyticsAction } from "../../analytics";
-import { markerActiveIcon, markerIcon } from "../../components/Map";
+import {
+  markerActiveIcon,
+  markerIcon,
+  rerenderMap,
+} from "../../components/Map";
 import ResultsList from "../../components/Search/ResultsList";
 import ResultsMap from "../../components/Search/ResultsMap";
 import { CareProviderSearchResult } from "../../types";
@@ -17,17 +21,12 @@ import { getResultBounds } from "../../utils";
 function DesktopResults({ results }: { results: CareProviderSearchResult[] }) {
   const [selectedResultId, setSelectedResultId] = useState<string>("");
   const mapRef = useRef<LeafletMap>(null);
-  const rerenderMap = () => {
-    setTimeout(() => {
-      mapRef.current?.fitBounds(getResultBounds(results), { animate: false });
-    }, 100);
-  };
 
   // Rerender map whenever search filters change to ensure map displays
   // filtered results correctly
   useEffect(() => {
-    rerenderMap();
-  }, [results]);
+    rerenderMap(mapRef, results);
+  }, [mapRef, results]);
 
   // Whenever the popstate event is fired (active history, back button) it fires off a explicit
   // history.back and a callback of the popstate. The popstate is called this way because moving through history

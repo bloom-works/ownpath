@@ -1,10 +1,9 @@
 import { Checkbox } from "@trussworks/react-uswds";
-import { useTranslation } from "react-i18next";
 
 type FilterCheckboxProps = {
   name: string;
   value: string;
-  tPrefix: string;
+  label: string;
   selectedFilterValues: string[];
   onChange: () => void;
 };
@@ -12,17 +11,15 @@ type FilterCheckboxProps = {
 function FilterCheckbox({
   name,
   value,
-  tPrefix,
+  label,
   selectedFilterValues,
   onChange,
 }: FilterCheckboxProps) {
-  const { t } = useTranslation();
-
   return (
     <Checkbox
       id={value}
       name={name}
-      label={t(`${tPrefix}${value}`)}
+      label={label}
       checked={selectedFilterValues.includes(value)}
       onChange={onChange}
       value={value}

@@ -14,14 +14,12 @@ type AccessibilityInputProps = {
   hideLegend?: boolean;
   filters: SearchFilters;
   setFilters: Dispatch<SetStateAction<SearchFilters>>;
-  tPrefix: string;
 };
 
 function AccessibilityInput({
   hideLegend = false,
   filters,
   setFilters,
-  tPrefix,
 }: AccessibilityInputProps) {
   const { t } = useTranslation();
 
@@ -44,14 +42,14 @@ function AccessibilityInput({
 
   return (
     <Fieldset
-      legend={t(`${tPrefix}question`)}
+      legend={t("accessibilityTitle")}
       legendStyle={hideLegend ? "srOnly" : "large"}
     >
       {ACCESSIBILITY_OPTIONS.map((option) => (
         <FilterCheckbox
           name="accessibility"
           value={option}
-          tPrefix={`${tPrefix}answers.`}
+          label={t(`accessibilityValues${option}`)}
           selectedFilterValues={filters.accessibility}
           onChange={() => setAccessibilityFilter(option)}
           key={option}

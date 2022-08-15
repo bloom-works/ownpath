@@ -34,7 +34,7 @@ function Layout() {
                   <OwnPathLogo height={38} />
                 )}
               </a>
-              {t("components.layout.by")}
+              {t("by")}
               <a
                 className="margin-x-2"
                 href="https://bha.colorado.gov/"
@@ -55,9 +55,9 @@ function Layout() {
           <div className="display-flex flex-justify">
             <div>
               <>
-                {t("components.layout.immediateHelp")}
+                {t("crisisAlert")}{" "}
                 <Link href="tel:+18444938255" className="text-no-wrap">
-                  1-844-493-TALK (8255).
+                  {t("crisisAlertNumber")}
                 </Link>
               </>
             </div>

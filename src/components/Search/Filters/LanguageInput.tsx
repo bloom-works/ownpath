@@ -7,17 +7,17 @@ import { toggleItemInList } from "../../../utils";
 import FilterCheckbox from "./FilterCheckbox";
 
 type LanguageInputProps = {
+  legend: string;
   hideLegend?: boolean;
   filters: SearchFilters;
   setFilters: Dispatch<SetStateAction<SearchFilters>>;
-  tPrefix: string;
 };
 
 function LanguageInput({
+  legend,
   hideLegend = false,
   filters,
   setFilters,
-  tPrefix,
 }: LanguageInputProps) {
   const { t } = useTranslation();
 
@@ -34,15 +34,12 @@ function LanguageInput({
   };
 
   return (
-    <Fieldset
-      legend={t(`${tPrefix}question`)}
-      legendStyle={hideLegend ? "srOnly" : "large"}
-    >
+    <Fieldset legend={legend} legendStyle={hideLegend ? "srOnly" : "large"}>
       {LANGUAGES.map((option) => (
         <FilterCheckbox
           name="languages"
           value={option}
-          tPrefix={"common.languagesWithTranslation."}
+          label={t(`languageValues${option}`)}
           selectedFilterValues={filters.languages}
           onChange={() => setLanguagesFilter(option)}
           key={option}

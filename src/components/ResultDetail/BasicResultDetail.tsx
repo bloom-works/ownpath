@@ -23,7 +23,6 @@ type BasicResultDetailProps = {
 
 function BasicResultDetail({ headingLevel, result }: BasicResultDetailProps) {
   const { t } = useTranslation();
-  const T_PREFIX = "components.resultDetail.";
   const Heading = headingLevel;
 
   return (
@@ -31,9 +30,7 @@ function BasicResultDetail({ headingLevel, result }: BasicResultDetailProps) {
       <div className="margin-bottom-3">
         {result.phone && (
           <ResultDatum Icon={Telephone} key="telephone">
-            <Heading className="usa-sr-only">
-              {t(`${T_PREFIX}telephoneNumber`)}
-            </Heading>
+            <Heading className="usa-sr-only">{t("telephoneNumber")}</Heading>
             <Link variant="external" href={`tel:${result.phone}`}>
               {result.phone}
             </Link>
@@ -41,7 +38,7 @@ function BasicResultDetail({ headingLevel, result }: BasicResultDetailProps) {
         )}
         {!!result.address?.length && (
           <ResultDatum Icon={Location} key="address">
-            <Heading className="usa-sr-only">{t(`${T_PREFIX}address`)}</Heading>
+            <Heading className="usa-sr-only">{t("address")}</Heading>
             <div>
               {result.address.map((addr, idx) => (
                 <Fragment key={idx}>
@@ -54,7 +51,7 @@ function BasicResultDetail({ headingLevel, result }: BasicResultDetailProps) {
         )}
         {result.website && (
           <ResultDatum Icon={Website} key="website">
-            <Heading className="usa-sr-only">{t(`${T_PREFIX}website`)}</Heading>
+            <Heading className="usa-sr-only">{t("website")}</Heading>
             <WebsiteLink url={result.website} />
           </ResultDatum>
         )}
@@ -62,26 +59,26 @@ function BasicResultDetail({ headingLevel, result }: BasicResultDetailProps) {
 
       <ResultDatum Icon={DollarSign} key="fees">
         <Heading className="margin-top-0 margin-bottom-05">
-          {t(`${T_PREFIX}fees`)}
+          {t("feesTitle")}
         </Heading>
         {!!anyAreTrue(result.fees) ? (
           <>
             <CommaSeparatedList
               boolMap={result.fees}
-              translationPrefix={`${T_PREFIX}_fees.`}
+              translationPrefix="feesValues"
             />
             {/* <Button type="button" unstyled className="font-ui-xs">
                 What do these mean?
               </Button> */}
           </>
         ) : (
-          t(`${T_PREFIX}contactForInfo`)
+          t("moreInfo")
         )}
       </ResultDatum>
 
       <ResultDatum Icon={Clock} key="hours">
         <Heading className="margin-top-0 margin-bottom-05">
-          {t(`${T_PREFIX}hours`)}
+          {t("hours")}
         </Heading>
         <Hours hours={result.hours} />
       </ResultDatum>

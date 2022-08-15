@@ -1,4 +1,4 @@
-import * as React from 'react';
+import * as React from "react";
 import { Fieldset } from "@trussworks/react-uswds";
 import { Dispatch, SetStateAction } from "react";
 import { useTranslation } from "react-i18next";
@@ -10,19 +10,21 @@ import FilterCheckbox from "./FilterCheckbox";
 import { ReactComponent as Phone } from "../../../images/phone.svg";
 
 type TypeOfHelpInputProps = {
+  legend: string;
   hideLegend?: boolean;
   options: TypeOfHelp[];
+  optionLabelPrefix: string;
   filters: SearchFilters;
   setFilters: Dispatch<SetStateAction<SearchFilters>>;
-  tPrefix: string;
 };
 
 function TypeOfHelpInput({
+  legend,
   hideLegend = false,
   options,
+  optionLabelPrefix,
   filters,
   setFilters,
-  tPrefix,
 }: TypeOfHelpInputProps) {
   const { t } = useTranslation();
 
@@ -39,16 +41,13 @@ function TypeOfHelpInput({
   };
 
   return (
-    <Fieldset
-      legend={t(`${tPrefix}question`)}
-      legendStyle={hideLegend ? "srOnly" : "large"}
-    >
+    <Fieldset legend={legend} legendStyle={hideLegend ? "srOnly" : "large"}>
       {options.map((option) => (
         <React.Fragment key={option}>
           <FilterCheckbox
             name="type of help"
             value={option}
-            tPrefix={`${tPrefix}answers.`}
+            label={t(`${optionLabelPrefix}${option}`)}
             selectedFilterValues={filters.typesOfHelp}
             onChange={() => setTypeOfHelpFilter(option)}
             key={option}
@@ -56,9 +55,9 @@ function TypeOfHelpInput({
           {option === TypeOfHelp.SuicidalIdeation &&
             filters.typesOfHelp.includes(TypeOfHelp.SuicidalIdeation) && (
               <AppAlert Icon={Phone}>
-                <div>{t("common.suicidalIdeationPopup.crisisServices")}</div>
+                <div>{t("suicidalIdeationAlert")}</div>
                 <div className="text-bold margin-top-1">
-                  {t("common.suicidalIdeationPopup.emergency")}
+                  {t("suicidalIdeationCta")}
                 </div>
               </AppAlert>
             )}

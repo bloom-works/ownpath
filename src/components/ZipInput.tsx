@@ -19,7 +19,7 @@ function ZipInput({
   return (
     <div className="width-full">
       <Label htmlFor="zip" className="margin-bottom-1">
-        {t(`common.zipCode`)}
+        {t(`locationTitle`)}
       </Label>
       <div className="display-flex">
         <TextInput
@@ -36,7 +36,7 @@ function ZipInput({
         />
         {children}
       </div>
-      {showError && <ErrorMessage>{t("common.zipCodeError")}</ErrorMessage>}
+      {showError && <ErrorMessage>{t("zipCodeError")}</ErrorMessage>}
     </div>
   );
 }

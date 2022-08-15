@@ -2,7 +2,7 @@ import { TFunction, useTranslation } from "react-i18next";
 import { DailyHours, DAYS_OF_THE_WEEK, WeeklyHours } from "../../types";
 
 const formatDailyHours = (hours: DailyHours, t: TFunction) => {
-  return hours.open ? `${hours.start}-${hours.end}` : t("common.closed");
+  return hours.open ? `${hours.start}-${hours.end}` : t("closed");
 };
 
 type CondensedHoursDatum = {
@@ -55,18 +55,13 @@ function Hours({ hours }: { hours: WeeklyHours }) {
 
   const rows = getCondensedHoursData(hours);
   if (!rows) {
-    return (
-      <div className="margin-bottom-1">
-        {t("components.resultDetail.contactForInfo")}
-      </div>
-    );
+    return <div className="margin-bottom-1">{t("moreInfo")}</div>;
   }
   return (
     <>
       {rows.map((row) => {
-        const startDayStr = t(`common.daysOfWeekShort.${row.startDay}`);
-        const endDayStr =
-          row.endDay && t(`common.daysOfWeekShort.${row.endDay}`);
+        const startDayStr = t(`hoursValues${row.startDay}`);
+        const endDayStr = row.endDay && t(`hoursValues${row.endDay}`);
         const label = endDayStr
           ? `${startDayStr}-${endDayStr}: `
           : `${startDayStr}: `;

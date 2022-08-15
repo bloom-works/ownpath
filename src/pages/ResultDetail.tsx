@@ -1,4 +1,4 @@
-import { Grid, GridContainer, Link } from "@trussworks/react-uswds";
+import { Grid, GridContainer } from "@trussworks/react-uswds";
 import { Marker } from "react-leaflet";
 import { Navigate, useLocation, useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -14,7 +14,7 @@ import ResultDatum from "../components/ResultDetail/ResultDatum";
 import BulletedList from "../components/BulletedList";
 import { useEffect } from "react";
 import DirectionsLink from "../components/ResultDetail/DirectionsLink";
-import ShareButton from "../components/ShareButton";
+// import ShareButton from "../components/ShareButton";
 import { logPageView } from "../analytics";
 import BackButton from "../components/BackButton";
 
@@ -28,7 +28,6 @@ function ResultDetail() {
   }, []);
 
   const { t } = useTranslation();
-  const T_PREFIX = "pages.resultDetail.";
   const location = useLocation();
   const params = useParams();
 
@@ -54,7 +53,7 @@ function ResultDetail() {
     <GridContainer className="ResultDetail">
       <div className="margin-y-2">
         <BackButton
-          text={t(`${T_PREFIX}backToSearch`)}
+          text={t("backToSearch")}
           href={`/search${prevSearch ?? ""}`}
         />
       </div>
@@ -62,7 +61,7 @@ function ResultDetail() {
         <Grid col={12} tablet={{ col: 8 }}>
           <h1 className="margin-top-2">{data.name}</h1>
         </Grid>
-        {/* <ShareButton text={t(`${T_PREFIX}share`)} /> */}
+        {/* <ShareButton text={t("detailsPageShare")} /> */}
       </Grid>
 
       <section>
@@ -101,27 +100,22 @@ function ResultDetail() {
       <Grid row gap>
         <Grid col={12} tablet={{ col: 6 }}>
           <section>
-            <h2 className="margin-top-1">{t(`${T_PREFIX}details`)}</h2>
+            <h2 className="margin-top-1">{t("details")}</h2>
             <ResultDatum Icon={Populations} key="population">
               <div>
-                <h3 className="display-inline">
-                  {t(`${T_PREFIX}populationsServed`)}:{" "}
-                </h3>
+                <h3 className="display-inline">{t("populations")}: </h3>
                 <BulletedList
                   boolMap={data.populationsServed}
-                  translationPrefix={`${T_PREFIX}_populationsServed.`}
                   className="line-height-body-4"
                 />
               </div>
             </ResultDatum>
             <ResultDatum Icon={Accessibility} key="accessibility">
               <div>
-                <h3 className="display-inline">
-                  {t(`${T_PREFIX}accessibilityOptions`)}:{" "}
-                </h3>
+                <h3 className="display-inline">{t("accessibilityTitle")}: </h3>
                 <BulletedList
                   boolMap={data.accessibility}
-                  translationPrefix={`${T_PREFIX}_accessibilityOptions.`}
+                  translationPrefix="accessibilityValues"
                   className="line-height-body-4"
                 />
               </div>
@@ -131,16 +125,15 @@ function ResultDetail() {
         {(data.substanceUse.supported || data.mentalHealth.supported) && (
           <Grid col={12} tablet={{ col: 6 }}>
             <section>
-              <h2 className="margin-top-1">{t(`${T_PREFIX}services`)}</h2>
+              <h2 className="margin-top-1">{t("services")}</h2>
               {data.substanceUse.supported && (
                 <>
                   <h3 className="display-inline">
-                    {t(`${T_PREFIX}substanceUseServices`)}:
+                    {t("substanceUseServices")}:
                   </h3>
                   <ul>
                     <BulletedList
                       boolMap={data.substanceUse.services}
-                      translationPrefix={`${T_PREFIX}_substanceUseServices.`}
                       className="line-height-body-4"
                     />
                   </ul>
@@ -149,12 +142,11 @@ function ResultDetail() {
               {data.mentalHealth.supported && (
                 <>
                   <h3 className="display-inline">
-                    {t(`${T_PREFIX}mentalHealthServices`)}:
+                    {t("mentalHealthServices")}:
                   </h3>
                   <ul>
                     <BulletedList
                       boolMap={data.mentalHealth.services}
-                      translationPrefix={`${T_PREFIX}_mentalHealthServices.`}
                       className="line-height-body-4"
                     />
                   </ul>

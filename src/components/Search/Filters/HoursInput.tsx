@@ -10,14 +10,12 @@ type HoursInputProps = {
   hideLegend?: boolean;
   filters: SearchFilters;
   setFilters: Dispatch<SetStateAction<SearchFilters>>;
-  tPrefix: string;
 };
 
 function HoursInput({
   hideLegend = false,
   filters,
   setFilters,
-  tPrefix,
 }: HoursInputProps) {
   const { t } = useTranslation();
 
@@ -35,14 +33,14 @@ function HoursInput({
 
   return (
     <Fieldset
-      legend={t(`${tPrefix}question`)}
+      legend={t("hoursTitle")}
       legendStyle={hideLegend ? "srOnly" : "large"}
     >
       {DAYS_OF_THE_WEEK.map((option) => (
         <FilterCheckbox
           name="hours"
           value={option}
-          tPrefix={"common.daysOfWeek."}
+          label={t(`hoursValues${option}`)}
           selectedFilterValues={filters.hours}
           onChange={() => setHoursFilter(option)}
           key={option}

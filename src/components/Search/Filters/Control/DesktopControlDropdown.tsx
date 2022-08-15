@@ -47,9 +47,7 @@ function DesktopControlDropdown({
             onClick={clear}
             className="display-flex flex-justify-center"
           >
-            <div className="usa-button usa-button--unstyled">
-              {t("common.clear")}
-            </div>
+            <div className="usa-button usa-button--unstyled">{t("clear")}</div>
           </Dropdown.Item>
         )}
       </Dropdown.Menu>

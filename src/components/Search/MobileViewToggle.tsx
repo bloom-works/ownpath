@@ -1,4 +1,5 @@
 import { ButtonGroup, Button } from "@trussworks/react-uswds";
+import { useTranslation } from "react-i18next";
 
 export type MobileViewToggleProps = {
   isListView: boolean;
@@ -11,6 +12,7 @@ function MobileViewToggle({
   onShowMap,
   onShowList,
 }: MobileViewToggleProps) {
+  const { t } = useTranslation();
   return (
     <div className="margin-y-2">
       <ButtonGroup type="segmented">
@@ -21,7 +23,7 @@ function MobileViewToggle({
           onClick={onShowList}
           className="radius-pill"
         >
-          List view
+          {t("listView")}
         </Button>
         <Button
           type="button"
@@ -30,7 +32,7 @@ function MobileViewToggle({
           onClick={onShowMap}
           className="radius-pill"
         >
-          Map view
+          {t("mapView")}
         </Button>
       </ButtonGroup>
     </div>

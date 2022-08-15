@@ -45,7 +45,6 @@ function GuidedSearch() {
   }, []);
 
   const { t } = useTranslation();
-  const T_PREFIX = "pages.guidedSearch.";
 
   // Index of current step
   const [currentStepIdx, setCurrentStepIdx] = useState(0);
@@ -94,14 +93,14 @@ function GuidedSearch() {
       {currentStepIdx > 0 && (
         <div className="margin-top-2 margin-bottom-5">
           <BackButton
-            text={t(`${T_PREFIX}previousQuestion`)}
+            text={t("previousQuestion")}
             onClick={() => setCurrentStepIdx((idx) => idx - 1)}
           />
         </div>
       )}
       <h1 className="font-body-md margin-top-2 tablet:margin-top-4">
-        <span className="usa-sr-only">Guided search </span>Question{" "}
-        {currentStepIdx + 1} of {GUIDED_SEARCH_STEPS.length}
+        <span className="usa-sr-only">{t("guidedSearch")}</span>
+        {t("question")} {currentStepIdx + 1} of {GUIDED_SEARCH_STEPS.length}
       </h1>
       <div className="usa-step-indicator usa-step-indicator--no-labels margin-bottom-0 tablet:margin-bottom-2">
         <ul className="usa-step-indicator__segments">
@@ -143,15 +142,16 @@ function GuidedSearch() {
             />
           ) : currentStep === "ageGroup" ? (
             <AgeGroupInput
+              legend={t(`ageQuestion${helpRecipient}`)}
               filters={searchFilters}
               setFilters={setSearchFilters}
-              tPrefix={`${T_PREFIX}ageGroup.${helpRecipient}.`}
             />
           ) : currentStep === "typeOfHelp" ? (
             <TypeOfHelpInput
+              legend={t(`typeOfHelpQuestion${helpRecipient}`)}
               filters={searchFilters}
               setFilters={setSearchFilters}
-              tPrefix={`${T_PREFIX}typeOfHelp.${helpRecipient}.`}
+              optionLabelPrefix={`typeOfHelpAnswers${helpRecipient}`}
               options={[
                 TypeOfHelp.SubstanceUse,
                 TypeOfHelp.CourtMandatedTreatment,
@@ -163,16 +163,13 @@ function GuidedSearch() {
             />
           ) : currentStep === "language" ? (
             <LanguageInput
+              legend={t(`languageQuestion${helpRecipient}`)}
               filters={searchFilters}
               setFilters={setSearchFilters}
-              tPrefix={`${T_PREFIX}languages.${helpRecipient}.`}
             />
           ) : currentStep === "location" ? (
             <>
-              <Fieldset
-                legend={t(`${T_PREFIX}location.question`)}
-                legendStyle="large"
-              >
+              <Fieldset legend={t("locationQuestion")} legendStyle="large">
                 <ZipInput
                   zip={searchFilters.zip}
                   setZip={(zip) => setSearchFilters({ ...searchFilters, zip })}
@@ -180,21 +177,21 @@ function GuidedSearch() {
                 />
               </Fieldset>
               <AppAlert Icon={Info} className="margin-top-2">
-                {t("common.dataCollectionAlert")}
+                {t("dataCollectionAlert")}
               </AppAlert>
             </>
           ) : currentStep === "distance" ? (
             <DistanceInput
+              legend={t(`distanceQuestion${helpRecipient}`)}
               filters={searchFilters}
               setFilters={setSearchFilters}
-              tPrefix={`${T_PREFIX}distance.${helpRecipient}.`}
             />
           ) : (
             <></>
           )}
         </div>
 
-        <Button type="submit">{t(`${T_PREFIX}nextQuestion`)}</Button>
+        <Button type="submit">{t("next")}</Button>
       </form>
     </GridContainer>
   );

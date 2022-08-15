@@ -4,7 +4,11 @@ import { Map as LeafletMap } from "leaflet";
 import { useState, useRef, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { logEvent, AnalyticsAction } from "../../analytics";
-import { markerActiveIcon, markerIcon } from "../../components/Map";
+import {
+  markerActiveIcon,
+  markerIcon,
+  rerenderMap,
+} from "../../components/Map";
 import MobileViewToggle from "../../components/Search/MobileViewToggle";
 import ResultCard from "../../components/Search/ResultCard";
 import ResultsList from "../../components/Search/ResultsList";
@@ -12,8 +16,6 @@ import ResultsMap from "../../components/Search/ResultsMap";
 import { CareProviderSearchResult } from "../../types";
 import { getResultBounds } from "../../utils";
 import { ReactComponent as Close } from "../../images/close.svg";
-
-const T_PREFIX = "pages.search.";
 
 /**
  * The toggle-able list + map views for mobile,
@@ -28,18 +30,11 @@ function MobileResults({ results }: { results: CareProviderSearchResult[] }) {
   const { t } = useTranslation();
 
   const mapRef = useRef<LeafletMap>(null);
-  const rerenderMap = () => {
-    console.log("rerender");
-    setTimeout(() => {
-      mapRef.current?.invalidateSize();
-      mapRef.current?.fitBounds(getResultBounds(results), { animate: false });
-    }, 100);
-  };
 
   // Rerender map whenever search filters change to ensure map displays
   // filtered results correctly
   useEffect(() => {
-    rerenderMap();
+    rerenderMap(mapRef, results);
   }, [results]);
 
   // invalidate size and rerender map when user switches to map view
@@ -48,7 +43,7 @@ function MobileResults({ results }: { results: CareProviderSearchResult[] }) {
   const onShowMap = () => {
     logEvent(AnalyticsAction.ToggleResultView, { label: "map" });
     setIsListView(false);
-    rerenderMap();
+    rerenderMap(mapRef, results);
   };
 
   const onShowList = () => {
@@ -117,7 +112,7 @@ function MobileResults({ results }: { results: CareProviderSearchResult[] }) {
                   className="flex-align-center"
                   onClick={() => setSelectedResult(undefined)}
                 >
-                  {t("common.close")} <Close />
+                  {t("close")} <Close />
                 </Button>
               </Grid>
             </Grid>
@@ -130,7 +125,7 @@ function MobileResults({ results }: { results: CareProviderSearchResult[] }) {
             headingLevel=""
             className="radius-lg margin-y-2"
           >
-            {t(`${T_PREFIX}mapHelper`)}
+            {t("mapHelper")}
           </Alert>
         )}
       </div>

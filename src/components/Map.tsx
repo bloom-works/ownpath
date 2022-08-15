@@ -10,17 +10,28 @@ import {
   useMapEvents,
   ZoomControl,
 } from "react-leaflet";
-import { CSSProperties, PropsWithChildren, Ref } from "react";
+import { CSSProperties, PropsWithChildren, Ref, RefObject } from "react";
 
 import mapMarker from "../images/map-marker.svg";
 import mapMarkerActive from "../images/map-marker-active.svg";
+import { CareProviderSearchResult } from "../types";
+import { getResultBounds } from "../utils";
 
 const markerIcon = new Icon({ iconUrl: mapMarker, iconSize: [32, 32] });
 const markerActiveIcon = new Icon({
   iconUrl: mapMarkerActive,
   iconSize: [32, 32],
 });
-// From https://stackoverflow.com/a/65549235
+
+const rerenderMap = (
+  mapRef: RefObject<LeafletMap>,
+  results: CareProviderSearchResult[]
+) => {
+  setTimeout(() => {
+    mapRef.current?.invalidateSize();
+    mapRef.current?.fitBounds(getResultBounds(results), { animate: false });
+  }, 100);
+};
 
 function MapEvents({
   eventHandlers,
@@ -68,4 +79,4 @@ function Map({
 }
 
 export default Map;
-export { markerIcon, markerActiveIcon };
+export { markerIcon, markerActiveIcon, rerenderMap };

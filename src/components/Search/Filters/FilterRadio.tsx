@@ -1,5 +1,4 @@
 import { Radio } from "@trussworks/react-uswds";
-import { useTranslation } from "react-i18next";
 
 type FilterRadioProps = {
   name: string;
@@ -16,8 +15,6 @@ function FilterRadio({
   onChange,
   selected,
 }: FilterRadioProps) {
-  const { t } = useTranslation();
-
   return (
     <Radio
       id={value}
