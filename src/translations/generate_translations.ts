@@ -35,7 +35,12 @@ for (var i = 0; i < workbook.SheetNames.length; i++) {
       }
 
       if (!key) {
-        console.log("key missing for ", row[0]);
+        console.log(
+          "key missing for ",
+          row[0],
+          " on sheet ",
+          workbook.SheetNames[i]
+        );
       }
 
       english[key] = en;

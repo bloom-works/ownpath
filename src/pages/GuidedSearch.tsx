@@ -99,8 +99,8 @@ function GuidedSearch() {
         </div>
       )}
       <h1 className="font-body-md margin-top-2 tablet:margin-top-4">
-        <span className="usa-sr-only">Guided search </span>Question{" "}
-        {currentStepIdx + 1} of {GUIDED_SEARCH_STEPS.length}
+        <span className="usa-sr-only">{t("guidedSearch")}</span>
+        {t("question")} {currentStepIdx + 1} of {GUIDED_SEARCH_STEPS.length}
       </h1>
       <div className="usa-step-indicator usa-step-indicator--no-labels margin-bottom-0 tablet:margin-bottom-2">
         <ul className="usa-step-indicator__segments">
@@ -177,7 +177,7 @@ function GuidedSearch() {
                 />
               </Fieldset>
               <AppAlert Icon={Info} className="margin-top-2">
-                {t("common.dataCollectionAlert")}
+                {t("dataCollectionAlert")}
               </AppAlert>
             </>
           ) : currentStep === "distance" ? (

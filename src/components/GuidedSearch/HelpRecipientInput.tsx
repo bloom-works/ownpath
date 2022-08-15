@@ -17,21 +17,20 @@ function HelpRecipientInput({
   setHelpRecipient,
 }: HelpRecipientInputProps) {
   const { t } = useTranslation();
-  const T_PREFIX = "pages.guidedSearch.helpRecipient.";
 
   // TODO: consolidate getRadio logic? (see DistanceInput)
-  const getRadio = (rec: HelpRecipient) => (
+  const getRadio = (option: HelpRecipient) => (
     <Radio
-      id={rec}
-      name={rec}
-      label={t(`${T_PREFIX}answers.${rec}`)}
-      checked={helpRecipient === rec}
-      key={rec}
-      onChange={() => setHelpRecipient(rec)}
+      id={option}
+      name={option}
+      label={t(`helpRecipientAnswers${option}`)}
+      checked={helpRecipient === option}
+      key={option}
+      onChange={() => setHelpRecipient(option)}
     />
   );
   return (
-    <Fieldset legend={t(`${T_PREFIX}question`)} legendStyle="large">
+    <Fieldset legend={t("helpRecipientQuestion")} legendStyle="large">
       {getRadio(HelpRecipient.Yourself)}
       {getRadio(HelpRecipient.SomeoneElse)}
     </Fieldset>
