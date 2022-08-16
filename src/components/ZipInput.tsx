@@ -6,20 +6,24 @@ type ZipInputProps = {
   zip: string;
   setZip: (zip: string) => void;
   showError?: boolean;
+  noLabel?: boolean;
+  autoFocus?: boolean;
 };
 
 function ZipInput({
   children,
   zip,
   setZip,
+  noLabel = false,
+  autoFocus = false,
   showError = false,
 }: PropsWithChildren<ZipInputProps>) {
   const { t } = useTranslation();
 
   return (
     <div className="width-full">
-      <Label htmlFor="zip" className="margin-bottom-1">
-        {t(`locationTitle`)}
+      <Label htmlFor="zip" className="margin-bottom-1" srOnly={noLabel}>
+        {t("locationTitle")}
       </Label>
       <div className="display-flex">
         <TextInput
@@ -29,6 +33,7 @@ function ZipInput({
           type="text"
           maxLength={5}
           value={zip}
+          autoFocus={autoFocus}
           onChange={(evt) => {
             const cleanZipVal = evt.target.value.replace(/[^0-9]+/g, "");
             setZip(cleanZipVal);
