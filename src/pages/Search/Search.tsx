@@ -12,7 +12,6 @@ import {
 import CARE_PROVIDER_DATA from "../../data/ladders_data.json";
 import { CareProvider, SearchFilters, SearchResult } from "../../types";
 import DesktopControl from "../../components/Search/Filters/Control/DesktopControl";
-// import ShareButton from "../../components/ShareButton";
 import { AnalyticsAction, logEvent, logPageView } from "../../analytics";
 import MobileControl from "../../components/Search/Filters/Control/MobileControl";
 import ZipInput from "../../components/ZipInput";
@@ -21,7 +20,6 @@ import MobileResults from "./MobileResults";
 import { ReactComponent as Close } from "../../images/close.svg";
 import ShareButton, {
   ShareButtonContainer,
-  ShareButtonContainerES,
 } from "../../components/ShareButton";
 
 const ResponsiveHeader = styled.h1`
@@ -191,15 +189,9 @@ function Search() {
                       t("change")
                     )}
                   </Button>
-                  {i18n.language === "en" ? (
-                    <ShareButtonContainer className="tablet:margin-left-1">
-                      <ShareButton text={t("searchPageShare")} />
-                    </ShareButtonContainer>
-                  ) : (
-                    <ShareButtonContainerES className="tablet:margin-left-1">
-                      <ShareButton text={t("searchPageShare")} />
-                    </ShareButtonContainerES>
-                  )}
+                  <ShareButtonContainer lang={i18n.language}>
+                    <ShareButton text={t("searchPageShare")} />
+                  </ShareButtonContainer>
                 </div>
               </div>
             </Grid>

@@ -51,7 +51,7 @@ function ResultDetail() {
 
   return (
     <GridContainer className="ResultDetail">
-      <div className="margin-y-2 display-flex flex-justify-between">
+      <div className="margin-y-2 display-flex flex-justify">
         <BackButton
           text={t("backToSearch")}
           href={`/search${prevSearch ?? ""}`}

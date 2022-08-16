@@ -1,5 +1,5 @@
 import { Button } from "@trussworks/react-uswds";
-import { useState } from "react";
+import { PropsWithChildren, useState } from "react";
 import styled from "styled-components";
 import { ReactComponent as Share } from "../images/share.svg";
 import { isMobile } from "react-device-detect";
@@ -63,7 +63,7 @@ function ShareButton({ text }: ShareButtonProps) {
   );
 }
 
-const ShareButtonContainer = styled.div`
+const ShareButtonContainerEN = styled.div`
   position: absolute;
   right: 0;
   top: 47%;
@@ -89,5 +89,19 @@ const ShareButtonContainerES = styled.div`
   }
 `;
 
+const ShareButtonContainer = ({
+  lang,
+  children,
+}: PropsWithChildren<{ lang: string }>) =>
+  lang === "en" ? (
+    <ShareButtonContainerEN className="tablet:margin-left-1">
+      {children}
+    </ShareButtonContainerEN>
+  ) : (
+    <ShareButtonContainerES className="tablet:margin-left-1">
+      {children}
+    </ShareButtonContainerES>
+  );
+
 export default ShareButton;
-export { ShareButtonContainer, ShareButtonContainerES };
+export { ShareButtonContainer };
