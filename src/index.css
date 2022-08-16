@@ -53,7 +53,8 @@ p {
 .usa-header {
   font-family: Trebuchet MS, san-serif !important;
 }
-.usa-button {
+.usa-button,
+.usa-card__container {
   font-family: Trebuchet MS, san-serif !important;
   font-weight: 500;
   font-size: 1rem;

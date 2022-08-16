@@ -142,12 +142,9 @@ function Search() {
       {searchResult && (
         <div>
           <div className="margin-y-2 padding-x-2 tablet:padding-x-5">
-            <Grid
-              row
-              className="flex-justify-start tablet:flex-justify flex-align-center margin-bottom-2"
-            >
-              <div>
-                <div className="display-flex flex-align-baseline flex-wrap">
+            <Grid row className="margin-bottom-2">
+              <div className="width-full">
+                <div className="position-relative display-flex flex-align-baseline flex-wrap">
                   <ResponsiveHeader className="margin-top-0 text-bold">
                     {t("searchPageHeading", {
                       count: searchResult.results.length,
@@ -194,16 +191,16 @@ function Search() {
                       t("change")
                     )}
                   </Button>
+                  {i18n.language === "en" ? (
+                    <ShareButtonContainer className="tablet:margin-left-1">
+                      <ShareButton text={t("searchPageShare")} />
+                    </ShareButtonContainer>
+                  ) : (
+                    <ShareButtonContainerES className="tablet:margin-left-1">
+                      <ShareButton text={t("searchPageShare")} />
+                    </ShareButtonContainerES>
+                  )}
                 </div>
-                {i18n.language === "en" ? (
-                  <ShareButtonContainer className="tablet:margin-left-1">
-                    <ShareButton text={t("searchPageShare")} />
-                  </ShareButtonContainer>
-                ) : (
-                  <ShareButtonContainerES className="tablet:margin-left-1">
-                    <ShareButton text={t("searchPageShare")} />
-                  </ShareButtonContainerES>
-                )}
               </div>
             </Grid>
             <DesktopControl
