@@ -19,6 +19,10 @@ import ZipInput from "../../components/ZipInput";
 import DesktopResults from "./DesktopResults";
 import MobileResults from "./MobileResults";
 import { ReactComponent as Close } from "../../images/close.svg";
+import ShareButton, {
+  ShareButtonContainer,
+  ShareButtonContainerES,
+} from "../../components/ShareButton";
 
 const ResponsiveHeader = styled.h1`
   font-size: 1.5rem;
@@ -27,8 +31,36 @@ const ResponsiveHeader = styled.h1`
   }
 `;
 
+const SearchContainer = styled.div`
+  @media screen and (max-width: 45em) {
+    flex-basis: 100%;
+    order: 1;
+    margin-bottom: 1rem;
+  }
+`;
+
+const ZipSearch = styled.form`
+  width: fit-content;
+  @media screen and (max-width: 40em) {
+    width: 100%;
+    input {
+      width: 70%;
+    }
+    button {
+      width: 30%;
+    }
+  }
+`;
+
+const Ellipses = styled.div`
+  display: none;
+  @media screen and (max-width: 45em) {
+    display: inline-block;
+  }
+`;
+
 function Search() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   // Search filters as URL search params
   const [searchParams, setSearchParams] = useSearchParams();
   let searchFilters = getFiltersFromSearchParams(searchParams);
@@ -121,18 +153,16 @@ function Search() {
                       count: searchResult.results.length,
                       zip: showZipInput ? "" : searchFilters.zip,
                     })}
-                    {showZipInput && (
-                      <span className="tablet:display-none">...</span>
-                    )}
+                    {showZipInput && <Ellipses>...</Ellipses>}
                   </ResponsiveHeader>
                   {showZipInput && (
-                    <div className="searchContainer">
-                      <form
+                    <SearchContainer>
+                      <ZipSearch
                         onSubmit={() => {
                           setSearchParams({ ...searchFilters, zip });
                           setShowZipInput(false);
                         }}
-                        className="tablet:margin-left-1 w-fit"
+                        className="tablet:margin-left-1"
                       >
                         <ZipInput
                           zip={zip}
@@ -144,8 +174,8 @@ function Search() {
                             {t("search")}
                           </Button>
                         </ZipInput>
-                      </form>
-                    </div>
+                      </ZipSearch>
+                    </SearchContainer>
                   )}
                   <Button
                     className="margin-left-1 padding-y-05 width-auto"
@@ -165,8 +195,16 @@ function Search() {
                     )}
                   </Button>
                 </div>
+                {i18n.language === "en" ? (
+                  <ShareButtonContainer className="tablet:margin-left-1">
+                    <ShareButton text={t("searchPageShare")} />
+                  </ShareButtonContainer>
+                ) : (
+                  <ShareButtonContainerES className="tablet:margin-left-1">
+                    <ShareButton text={t("searchPageShare")} />
+                  </ShareButtonContainerES>
+                )}
               </div>
-              {/* <ShareButton text={t("searchPageShare")} /> */}
             </Grid>
             <DesktopControl
               distanceUpdatedExternally={distanceUpdated}
