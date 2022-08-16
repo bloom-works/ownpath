@@ -28,16 +28,6 @@ function DesktopResults({ results }: { results: CareProviderSearchResult[] }) {
     rerenderMap(mapRef, results);
   }, [mapRef, results]);
 
-  // Whenever the popstate event is fired (active history, back button) it fires off a explicit
-  // history.back and a callback of the popstate. The popstate is called this way because moving through history
-  // explicitly this way calls popstate again, this normalizes the behavior as we would expect it
-  useEffect(() => {
-    window.onpopstate = () =>  {
-      window.onpopstate = () => {}
-      window.history.back();
-    }
-  });
-
   return (
     <div className="display-none tablet:display-block padding-x-4">
       <Grid row className="border-top border-base-lighter overflow-x-hidden">
