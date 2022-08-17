@@ -1,7 +1,7 @@
-import { Grid, GridContainer } from "@trussworks/react-uswds";
+import { Grid, GridContainer, Link } from "@trussworks/react-uswds";
 import { Marker } from "react-leaflet";
 import { Navigate, useLocation, useParams } from "react-router-dom";
-import { useTranslation } from "react-i18next";
+import { Trans, useTranslation } from "react-i18next";
 
 import { ReactComponent as Populations } from "../images/populations.svg";
 import { ReactComponent as Accessibility } from "../images/accessibility.svg";
@@ -17,6 +17,7 @@ import DirectionsLink from "../components/ResultDetail/DirectionsLink";
 // import ShareButton from "../components/ShareButton";
 import { logPageView } from "../analytics";
 import BackButton from "../components/BackButton";
+import HighlightBox from "../components/HighlightBox";
 
 function ResultDetail() {
   // Ensure user sees the top of the page
@@ -155,6 +156,50 @@ function ResultDetail() {
             </section>
           </Grid>
         )}
+      </Grid>
+      <Grid row>
+        <Grid col={12}>
+          <section className="margin-y-4">
+            <HighlightBox size="md">
+              <h2 className="margin-top-1">{t("complaintTitle")}</h2>
+              <p>
+                <Trans i18nKey="complaintFormInfo">
+                  If you would like to report a problem with a behavioral health
+                  provider, you can submit a complaint to the Behavioral Health
+                  Administration by filling out our
+                  <Link href={t("complaintFormUrl")} variant="external">
+                    Individual Complaint Form
+                  </Link>
+                  or contacting us via:
+                </Trans>
+              </p>
+              <div className="display-flex">
+                <p className="text-bold">{t("phone")}:&nbsp;</p>
+                <Link href="tel:+13038667191">(303) 866-7191</Link>
+              </div>
+              <div className="display-flex padding-bottom-2">
+                <p className="text-bold">{t("email")}:&nbsp;</p>
+                <Link href="mailto:CDHS_BHA_complaint@state.co.us">
+                  CDHS_BHA_complaint@state.co.us
+                </Link>
+              </div>
+              <p>
+                <Trans i18nKey="complaintExtraInfo">
+                  We will do our best to assist you and resolve the matter. You
+                  can also submit your complaint to the behavioral health
+                  provider directly. For more information, check out
+                  <Link
+                    href="https://bha.colorado.gov/contact/contact-us"
+                    variant="external"
+                  >
+                    https://bha.colorado.gov/contact/contact-us
+                  </Link>
+                  .
+                </Trans>
+              </p>
+            </HighlightBox>
+          </section>
+        </Grid>
       </Grid>
     </GridContainer>
   );
