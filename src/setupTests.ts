@@ -17,4 +17,5 @@ jest.mock("react-i18next", () => ({
       },
     };
   },
+  Trans: ({ children }: any) => children,
 }));
