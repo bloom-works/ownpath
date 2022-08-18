@@ -17,7 +17,7 @@ import DirectionsLink from "../components/ResultDetail/DirectionsLink";
 import ShareButton from "../components/ShareButton";
 import { logPageView } from "../analytics";
 import BackButton from "../components/BackButton";
-import { getMapMarker } from "../utils";
+import { anyAreTrue, getMapMarker } from "../utils";
 
 function ResultDetail() {
   // Ensure user sees the top of the page
@@ -127,32 +127,34 @@ function ResultDetail() {
           <Grid col={12} tablet={{ col: 6 }}>
             <section>
               <h2 className="margin-top-1">{t("services")}</h2>
-              {data.substanceUse.supported && (
-                <>
-                  <h3 className="display-inline">
-                    {t("substanceUseServices")}:
-                  </h3>
-                  <ul>
-                    <BulletedList
-                      boolMap={data.substanceUse.services}
-                      className="line-height-body-4"
-                    />
-                  </ul>
-                </>
-              )}
-              {data.mentalHealth.supported && (
-                <>
-                  <h3 className="display-inline">
-                    {t("mentalHealthServices")}:
-                  </h3>
-                  <ul>
-                    <BulletedList
-                      boolMap={data.mentalHealth.services}
-                      className="line-height-body-4"
-                    />
-                  </ul>
-                </>
-              )}
+              {data.substanceUse.supported &&
+                anyAreTrue(data.substanceUse.services) && (
+                  <>
+                    <h3 className="display-inline">
+                      {t("substanceUseServices")}:
+                    </h3>
+                    <ul>
+                      <BulletedList
+                        boolMap={data.substanceUse.services}
+                        className="line-height-body-4"
+                      />
+                    </ul>
+                  </>
+                )}
+              {data.mentalHealth.supported &&
+                anyAreTrue(data.mentalHealth.services) && (
+                  <>
+                    <h3 className="display-inline">
+                      {t("mentalHealthServices")}:
+                    </h3>
+                    <ul>
+                      <BulletedList
+                        boolMap={data.mentalHealth.services}
+                        className="line-height-body-4"
+                      />
+                    </ul>
+                  </>
+                )}
             </section>
           </Grid>
         )}
