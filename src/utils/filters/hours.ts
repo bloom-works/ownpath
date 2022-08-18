@@ -1,7 +1,7 @@
-import { CareProviderSearchResult, DayOfWeek } from "../../types";
+import { CareProvider, DayOfWeek } from "../../types";
 
 export const isOpenOnSelectedDays = (
-  careProvider: CareProviderSearchResult,
+  careProvider: CareProvider,
   days: DayOfWeek[]
 ): boolean => {
   // if no days specified, don't apply any filter

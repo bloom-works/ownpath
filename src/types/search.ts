@@ -9,10 +9,16 @@ import {
 
 export type CareProviderSearchMetadata = {
   distance?: number;
+  searchRank: number;
 };
 
 export type CareProviderSearchResult = CareProvider &
   CareProviderSearchMetadata;
+
+export type UnrankedCareProviderSearchResult = Omit<
+  CareProviderSearchResult,
+  "searchRank"
+>;
 
 export type SearchResult = {
   results: CareProviderSearchResult[];

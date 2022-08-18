@@ -6,18 +6,19 @@ import { Trans, useTranslation } from "react-i18next";
 import { ReactComponent as Populations } from "../images/populations.svg";
 import { ReactComponent as Accessibility } from "../images/accessibility.svg";
 
-import Map, { markerIcon } from "../components/Map";
+import Map from "../components/Map";
 import BasicResultDetail from "../components/ResultDetail/BasicResultDetail";
 import CARE_PROVIDER_DATA from "../data/ladders_data.json";
-import { CareProvider, CareProviderSearchResult } from "../types";
+import { CareProvider } from "../types";
 import ResultDatum from "../components/ResultDetail/ResultDatum";
 import BulletedList from "../components/BulletedList";
 import { useEffect } from "react";
 import DirectionsLink from "../components/ResultDetail/DirectionsLink";
-// import ShareButton from "../components/ShareButton";
+import ShareButton from "../components/ShareButton";
 import { logPageView } from "../analytics";
 import BackButton from "../components/BackButton";
 import HighlightBox from "../components/HighlightBox";
+import { anyAreTrue, getMapMarker } from "../utils";
 
 function ResultDetail() {
   // Ensure user sees the top of the page
@@ -36,7 +37,7 @@ function ResultDetail() {
   // data and the url search params as `prevSearch`
   let { prevSearch, data } = (location.state ?? {}) as {
     prevSearch?: string;
-    data?: CareProviderSearchResult;
+    data?: CareProvider;
   };
   if (!data) {
     // If user navigated via different path, pull entity-specific data from CARE_DATA
@@ -52,17 +53,17 @@ function ResultDetail() {
 
   return (
     <GridContainer className="ResultDetail">
-      <div className="margin-y-2">
+      <div className="margin-y-2 display-flex flex-justify">
         <BackButton
           text={t("backToSearch")}
           href={`/search${prevSearch ?? ""}`}
         />
+        <ShareButton text={t("detailsPageShare")} />
       </div>
       <Grid row className="flex-justify flex-align-baseline margin-bottom-2">
         <Grid col={12} tablet={{ col: 8 }}>
           <h1 className="margin-top-2">{data.name}</h1>
         </Grid>
-        {/* <ShareButton text={t("detailsPageShare")} /> */}
       </Grid>
 
       <section>
@@ -80,7 +81,7 @@ function ResultDetail() {
                   }}
                 >
                   <Marker
-                    icon={markerIcon}
+                    icon={getMapMarker(data)}
                     position={data.latlng}
                     interactive={false}
                   />
@@ -127,32 +128,34 @@ function ResultDetail() {
           <Grid col={12} tablet={{ col: 6 }}>
             <section>
               <h2 className="margin-top-1">{t("services")}</h2>
-              {data.substanceUse.supported && (
-                <>
-                  <h3 className="display-inline">
-                    {t("substanceUseServices")}:
-                  </h3>
-                  <ul>
-                    <BulletedList
-                      boolMap={data.substanceUse.services}
-                      className="line-height-body-4"
-                    />
-                  </ul>
-                </>
-              )}
-              {data.mentalHealth.supported && (
-                <>
-                  <h3 className="display-inline">
-                    {t("mentalHealthServices")}:
-                  </h3>
-                  <ul>
-                    <BulletedList
-                      boolMap={data.mentalHealth.services}
-                      className="line-height-body-4"
-                    />
-                  </ul>
-                </>
-              )}
+              {data.substanceUse.supported &&
+                anyAreTrue(data.substanceUse.services) && (
+                  <>
+                    <h3 className="display-inline">
+                      {t("substanceUseServices")}:
+                    </h3>
+                    <ul>
+                      <BulletedList
+                        boolMap={data.substanceUse.services}
+                        className="line-height-body-4"
+                      />
+                    </ul>
+                  </>
+                )}
+              {data.mentalHealth.supported &&
+                anyAreTrue(data.mentalHealth.services) && (
+                  <>
+                    <h3 className="display-inline">
+                      {t("mentalHealthServices")}:
+                    </h3>
+                    <ul>
+                      <BulletedList
+                        boolMap={data.mentalHealth.services}
+                        className="line-height-body-4"
+                      />
+                    </ul>
+                  </>
+                )}
             </section>
           </Grid>
         )}

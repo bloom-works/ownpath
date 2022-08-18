@@ -1,7 +1,7 @@
-import { CareProviderSearchResult, FeePreference } from "../../types";
+import { CareProvider, FeePreference } from "../../types";
 
 export const meetsFeePreference = (
-  careProvider: CareProviderSearchResult,
+  careProvider: CareProvider,
   feePreference: FeePreference
 ) => {
   if (feePreference === "SelfPay") return true;
@@ -10,7 +10,7 @@ export const meetsFeePreference = (
 };
 
 export const meetsAnyFeePreference = (
-  careProvider: CareProviderSearchResult,
+  careProvider: CareProvider,
   feePreferences: FeePreference[]
 ): boolean => {
   // if no payment preferences specified, don't apply any filter

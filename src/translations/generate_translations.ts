@@ -51,10 +51,10 @@ for (var i = 0; i < workbook.SheetNames.length; i++) {
 
 fs.writeFileSync(
   path.resolve(__dirname, "./en_translations.json"),
-  JSON.stringify(english)
+  JSON.stringify(english, undefined, 2)
 );
 
 fs.writeFileSync(
   path.resolve(__dirname, "./es_translations.json"),
-  JSON.stringify(spanish)
+  JSON.stringify(spanish, undefined, 2)
 );
