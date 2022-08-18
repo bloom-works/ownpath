@@ -33,7 +33,7 @@ import { supportsLanguages } from "./filters/languages";
 export const addSearchMetadata = (
   careProviders: CareProvider[],
   searchLocation: LatLngLiteral
-): CareProviderSearchResult[] =>
+): UnrankedCareProviderSearchResult[] =>
   careProviders.map((result) => ({
     ...result,
     distance: result.latlng
@@ -98,7 +98,10 @@ export function applySearchFilters(
         supportsLanguages(result, languages) &&
         servesAgeGroup(result, age)
     )
-    .sort(compareDistance);
+    .sort(compareDistance)
+    .map((result, idx) => {
+      return { ...result, searchRank: idx + 1 };
+    });
 
   return { results };
 }

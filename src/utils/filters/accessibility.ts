@@ -1,7 +1,7 @@
-import { CareProviderSearchResult, AccessibilityOptions } from "../../types";
+import { AccessibilityOptions, CareProvider } from "../../types";
 
 export const meetsAccessibilityNeeds = (
-  careProvider: CareProviderSearchResult,
+  careProvider: CareProvider,
   accessibilityNeeds: AccessibilityOptions[]
 ): boolean => {
   // if no payment preferences specified, don't apply any filter

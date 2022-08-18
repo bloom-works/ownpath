@@ -1,7 +1,7 @@
-import { CareProviderSearchResult, TypeOfHelp } from "../../types";
+import { CareProvider, TypeOfHelp } from "../../types";
 
 export const offersTypeOfHelp = (
-  careProvider: CareProviderSearchResult,
+  careProvider: CareProvider,
   typeOfHelp: TypeOfHelp
 ): boolean => {
   switch (typeOfHelp) {
@@ -26,7 +26,7 @@ export const offersTypeOfHelp = (
 };
 
 export const offersAnyTypesOfHelpNeeded = (
-  careProvider: CareProviderSearchResult,
+  careProvider: CareProvider,
   helpNeeded: TypeOfHelp[]
 ): boolean => {
   // if no help types specified, don't apply any filter

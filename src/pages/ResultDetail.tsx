@@ -9,7 +9,7 @@ import { ReactComponent as Accessibility } from "../images/accessibility.svg";
 import Map, { markerIcon } from "../components/Map";
 import BasicResultDetail from "../components/ResultDetail/BasicResultDetail";
 import CARE_PROVIDER_DATA from "../data/ladders_data.json";
-import { CareProvider, CareProviderSearchResult } from "../types";
+import { CareProvider } from "../types";
 import ResultDatum from "../components/ResultDetail/ResultDatum";
 import BulletedList from "../components/BulletedList";
 import { useEffect } from "react";
@@ -35,7 +35,7 @@ function ResultDetail() {
   // data and the url search params as `prevSearch`
   let { prevSearch, data } = (location.state ?? {}) as {
     prevSearch?: string;
-    data?: CareProviderSearchResult;
+    data?: CareProvider;
   };
   if (!data) {
     // If user navigated via different path, pull entity-specific data from CARE_DATA
