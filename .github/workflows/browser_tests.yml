@@ -4,7 +4,7 @@ on: deployment_status
 jobs:
   playwright:
     name: "Playwright Tests"
-    if: github.event.deployment_status.state === "success"
+    if: github.event.deployment_status.state == "success"
     runs-on: ubuntu-latest
     container:
       image: mcr.microsoft.com/playwright:v1.25.0-focal
