@@ -53,7 +53,8 @@ p {
 .usa-header {
   font-family: Trebuchet MS, san-serif !important;
 }
-.usa-button {
+.usa-button,
+.usa-card__container {
   font-family: Trebuchet MS, san-serif !important;
   font-weight: 500;
   font-size: 1rem;
@@ -165,7 +166,8 @@ p {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
 }
 
 .usa-card__header-alt {
@@ -173,15 +175,4 @@ code {
   padding-top: 1.5rem;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
-}
-
-.w-fit {
-  width: fit-content;
-}
-
-@media screen and (max-width: 40em) {
-  .searchContainer {
-  flex-basis: 100%;
-  order: 1;
-  }
 }

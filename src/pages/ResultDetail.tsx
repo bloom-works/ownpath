@@ -14,7 +14,7 @@ import ResultDatum from "../components/ResultDetail/ResultDatum";
 import BulletedList from "../components/BulletedList";
 import { useEffect } from "react";
 import DirectionsLink from "../components/ResultDetail/DirectionsLink";
-// import ShareButton from "../components/ShareButton";
+import ShareButton from "../components/ShareButton";
 import { logPageView } from "../analytics";
 import BackButton from "../components/BackButton";
 
@@ -51,17 +51,17 @@ function ResultDetail() {
 
   return (
     <GridContainer className="ResultDetail">
-      <div className="margin-y-2">
+      <div className="margin-y-2 display-flex flex-justify">
         <BackButton
           text={t("backToSearch")}
           href={`/search${prevSearch ?? ""}`}
         />
+        <ShareButton text={t("detailsPageShare")} />
       </div>
       <Grid row className="flex-justify flex-align-baseline margin-bottom-2">
         <Grid col={12} tablet={{ col: 8 }}>
           <h1 className="margin-top-2">{data.name}</h1>
         </Grid>
-        {/* <ShareButton text={t("detailsPageShare")} /> */}
       </Grid>
 
       <section>
