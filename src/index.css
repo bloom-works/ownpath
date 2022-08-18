@@ -165,7 +165,8 @@ p {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
 }
 
 .usa-card__header-alt {
@@ -179,9 +180,37 @@ code {
   width: fit-content;
 }
 
+.custom-map-marker,
+.custom-map-marker-active {
+  display: block;
+}
+
+.map-marker-pin {
+  width: 40px;
+  height: 40px;
+  border-radius: 0 50% 50% 50%;
+  border: 2px solid white;
+  transform: rotate(225deg);
+  background-color: #337ab7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.custom-map-marker-active > .map-marker-pin {
+  background-color: #9ac6e5;
+}
+
+.map-marker-text {
+  color: white;
+  font-weight: bold;
+  font-size: 1.4em;
+  transform: rotate(-225deg);
+}
+
 @media screen and (max-width: 40em) {
   .searchContainer {
-  flex-basis: 100%;
-  order: 1;
+    flex-basis: 100%;
+    order: 1;
   }
 }

@@ -10,6 +10,7 @@ import {
   SearchFilters,
   SearchResult,
   TypeOfHelp,
+  UnrankedCareProviderSearchResult,
   ZipData,
   ZipSearchMetadata,
 } from "../types";
