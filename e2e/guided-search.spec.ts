@@ -2,6 +2,7 @@ import { test, expect } from "@playwright/test";
 
 const baseURL = process.env.URL || "http://localhost:4000";
 test.beforeEach(async ({ page }) => {
+  console.log("baseURL", baseURL);
   await page.goto(baseURL);
 });
 
