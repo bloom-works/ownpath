@@ -36,8 +36,9 @@
         dataLayer.push(arguments);
       }
       gtag("js", new Date());
-
-      gtag("config", "G-41V1YRXFBC", { anonymize_ip: true });
+      const PROD_HOSTS = ["ownpath.co", "mipropiasenda.co", "ownpathcolorado.com", "mipropiasendacolorado.com"];
+      const isProd = PROD_HOSTS.includes(window.location.host)
+      gtag("config", "G-41V1YRXFBC", { anonymize_ip: true, debug_mode: !isProd });
     </script>
   </head>
   <body>

@@ -53,7 +53,8 @@ p {
 .usa-header {
   font-family: Trebuchet MS, san-serif !important;
 }
-.usa-button {
+.usa-button,
+.usa-card__container {
   font-family: Trebuchet MS, san-serif !important;
   font-weight: 500;
   font-size: 1rem;
@@ -176,10 +177,6 @@ code {
   padding-right: 1.5rem;
 }
 
-.w-fit {
-  width: fit-content;
-}
-
 .custom-map-marker,
 .custom-map-marker-active {
   display: block;
@@ -211,11 +208,4 @@ code {
 
 .custom-map-marker-active > .map-marker-pin > .map-marker-text {
   color: #337ab7;
-}
-
-@media screen and (max-width: 40em) {
-  .searchContainer {
-    flex-basis: 100%;
-    order: 1;
-  }
 }

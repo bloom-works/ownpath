@@ -1,16 +1,26 @@
 import { Button } from "@trussworks/react-uswds";
-import { useState } from "react";
+import { PropsWithChildren, useState } from "react";
 import styled from "styled-components";
 import { ReactComponent as Share } from "../images/share.svg";
+import { isMobile } from "react-device-detect";
+import { useTranslation } from "react-i18next";
 
 const TopToolTip = styled.span`
   margin-top: -2.5rem;
 `;
+
+const NoHoverButton = styled(Button)`
+  &:hover {
+    text-decoration: none;
+  }
+`;
+
 type ShareButtonProps = {
   text: string;
 };
 
 function ShareButton({ text }: ShareButtonProps) {
+  const { t } = useTranslation();
   const [showCopiedToolTip, setShowCopiedToolTip] = useState(false);
   const onClick = () => {
     const shareData = {
@@ -18,7 +28,7 @@ function ShareButton({ text }: ShareButtonProps) {
       text: "Search results from OwnPath",
       url: window.location.href,
     };
-    if (navigator.canShare(shareData)) {
+    if (navigator.canShare && navigator.canShare(shareData) && isMobile) {
       navigator.share(shareData);
     } else {
       navigator.clipboard.writeText(window.location.href);
@@ -36,9 +46,9 @@ function ShareButton({ text }: ShareButtonProps) {
         }`}
         aria-hidden={!showCopiedToolTip}
       >
-        Copied to clipboard!
+        {t("linkCopied")}
       </TopToolTip>
-      <Button
+      <NoHoverButton
         type="button"
         unstyled
         onClick={onClick}
@@ -48,9 +58,50 @@ function ShareButton({ text }: ShareButtonProps) {
       >
         {text}
         <Share className="margin-left-1" />
-      </Button>
+      </NoHoverButton>
     </span>
   );
 }
 
+const ShareButtonContainerEN = styled.div`
+  position: absolute;
+  right: 0;
+  top: 47%;
+  transform: translate(0%, -50%);
+  @media screen and (max-width: 45em) {
+    order: 1;
+    position: relative;
+    flex-basis: 100%;
+    transform: translate(0, 0);
+  }
+`;
+
+const ShareButtonContainerES = styled.div`
+  position: absolute;
+  right: 0;
+  top: 47%;
+  transform: translate(0%, -50%);
+  @media screen and (max-width: 65em) {
+    order: 1;
+    position: relative;
+    flex-basis: 100%;
+    transform: translate(0, 0);
+  }
+`;
+
+const ShareButtonContainer = ({
+  lang,
+  children,
+}: PropsWithChildren<{ lang: string }>) =>
+  lang === "en" ? (
+    <ShareButtonContainerEN className="tablet:margin-left-1">
+      {children}
+    </ShareButtonContainerEN>
+  ) : (
+    <ShareButtonContainerES className="tablet:margin-left-1">
+      {children}
+    </ShareButtonContainerES>
+  );
+
 export default ShareButton;
+export { ShareButtonContainer };
