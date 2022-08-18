@@ -15,8 +15,8 @@ export const getMapMarker = (
   const marker = new DivIcon({
     className: markerClass,
     html: `<div class='map-marker-pin'><div class='map-marker-text'>${markerText}</div></div>`,
-    iconSize: [40, 40],
-    iconAnchor: [20, 40],
+    iconSize: [32, 32],
+    iconAnchor: [16, 46], // adjusts icon placement so that the pin point sits on the latlong location
   });
   return marker;
 };

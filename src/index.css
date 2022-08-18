@@ -197,15 +197,20 @@ code {
   align-items: center;
 }
 
-.custom-map-marker-active > .map-marker-pin {
-  background-color: #9ac6e5;
-}
-
 .map-marker-text {
   color: white;
   font-weight: bold;
   font-size: 1.4em;
   transform: rotate(-225deg);
+}
+
+.custom-map-marker-active > .map-marker-pin {
+  background-color: white;
+  border: 2px solid #337ab7;
+}
+
+.custom-map-marker-active > .map-marker-pin > .map-marker-text {
+  color: #337ab7;
 }
 
 @media screen and (max-width: 40em) {
