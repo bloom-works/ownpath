@@ -1,11 +1,7 @@
-import {
-  AgeGroup,
-  CareProviderSearchResult,
-  PopulationsServed,
-} from "../../types";
+import { AgeGroup, CareProvider, PopulationsServed } from "../../types";
 
 export const servesAgeGroup = (
-  careProvider: CareProviderSearchResult,
+  careProvider: CareProvider,
   age: AgeGroup | undefined
 ): boolean => {
   if (!age) return true;

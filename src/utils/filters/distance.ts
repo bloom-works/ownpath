@@ -1,4 +1,4 @@
-import { CareProviderSearchResult } from "../../types";
+import { UnrankedCareProviderSearchResult } from "../../types";
 
 export const DEFAULT_RADIUS_MILES = 10;
 export const DEFAULT_DENSE_RADIUS_MILES = 5;
@@ -11,7 +11,7 @@ export const METERS_IN_A_MILE = 1609.34;
 export const MILE_DISTANCE_OPTIONS = ["5", "10", "25", "50", "100"];
 
 export const isWithinRadius = (
-  careProvider: CareProviderSearchResult,
+  careProvider: UnrankedCareProviderSearchResult,
   miles: number
 ): boolean => {
   const radiusMeters = miles * METERS_IN_A_MILE;
@@ -20,8 +20,8 @@ export const isWithinRadius = (
 };
 
 export const compareDistance = (
-  a: CareProviderSearchResult,
-  b: CareProviderSearchResult
+  a: UnrankedCareProviderSearchResult,
+  b: UnrankedCareProviderSearchResult
 ): number => {
   if (a.distance === undefined) {
     return 1;

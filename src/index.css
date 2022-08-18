@@ -53,7 +53,8 @@ p {
 .usa-header {
   font-family: Trebuchet MS, san-serif !important;
 }
-.usa-button {
+.usa-button,
+.usa-card__container {
   font-family: Trebuchet MS, san-serif !important;
   font-weight: 500;
   font-size: 1rem;
@@ -165,7 +166,8 @@ p {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
 }
 
 .usa-card__header-alt {
@@ -175,13 +177,35 @@ code {
   padding-right: 1.5rem;
 }
 
-.w-fit {
-  width: fit-content;
+.custom-map-marker,
+.custom-map-marker-active {
+  display: block;
 }
 
-@media screen and (max-width: 40em) {
-  .searchContainer {
-  flex-basis: 100%;
-  order: 1;
-  }
+.map-marker-pin {
+  width: 40px;
+  height: 40px;
+  border-radius: 0 50% 50% 50%;
+  border: 2px solid white;
+  transform: rotate(225deg);
+  background-color: #337ab7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.map-marker-text {
+  color: white;
+  font-weight: bold;
+  font-size: 1.4em;
+  transform: rotate(-225deg);
+}
+
+.custom-map-marker-active > .map-marker-pin {
+  background-color: white;
+  border: 2px solid #337ab7;
+}
+
+.custom-map-marker-active > .map-marker-pin > .map-marker-text {
+  color: #337ab7;
 }

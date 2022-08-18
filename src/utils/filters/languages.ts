@@ -1,7 +1,7 @@
-import { CareProviderSearchResult, Languages } from "../../types";
+import { CareProvider, Languages } from "../../types";
 
 export const supportsLanguages = (
-  careProvider: CareProviderSearchResult,
+  careProvider: CareProvider,
   languages: Languages[]
 ): boolean => {
   // if no languages specified, don't apply any filter

@@ -14,7 +14,12 @@ export default function ResultCard({ data }: ResultCardProps) {
   const { t } = useTranslation();
   return (
     <div>
-      <MilesAway meters={data.distance} />
+      <div className="display-flex flex-justify">
+        <p className="margin-top-0 margin-bottom-0 text-bold">
+          {data.searchRank}.
+        </p>
+        <MilesAway meters={data.distance} />
+      </div>
       <h2 className="margin-top-1 margin-bottom-3">{data.name}</h2>
       <BasicResultDetail headingLevel="h3" result={data} />
       <Link

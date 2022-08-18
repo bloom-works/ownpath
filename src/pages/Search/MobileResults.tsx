@@ -4,17 +4,12 @@ import { Map as LeafletMap } from "leaflet";
 import { useState, useRef, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { logEvent, AnalyticsAction } from "../../analytics";
-import {
-  markerActiveIcon,
-  markerIcon,
-  rerenderMap,
-} from "../../components/Map";
 import MobileViewToggle from "../../components/Search/MobileViewToggle";
 import ResultCard from "../../components/Search/ResultCard";
 import ResultsList from "../../components/Search/ResultsList";
 import ResultsMap from "../../components/Search/ResultsMap";
 import { CareProviderSearchResult } from "../../types";
-import { getResultBounds } from "../../utils";
+import { getMapMarker, getResultBounds, rerenderMap } from "../../utils";
 import { ReactComponent as Close } from "../../images/close.svg";
 
 /**
@@ -84,14 +79,12 @@ function MobileResults({ results }: { results: CareProviderSearchResult[] }) {
                   <Marker
                     title={result.id}
                     position={result.latlng}
-                    icon={
-                      selectedResult?.id === result.id
-                        ? markerActiveIcon
-                        : markerIcon
-                    }
+                    icon={getMapMarker(result, selectedResult?.id)}
+                    zIndexOffset={selectedResult?.id === result.id ? 1000 : 1}
                     key={result.id}
                     eventHandlers={{
                       click: () => {
+                        logEvent(AnalyticsAction.ClickMapMarker, {});
                         setSelectedResult(
                           results.find((r) => r.id === result.id)
                         );
