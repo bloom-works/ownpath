@@ -3,15 +3,10 @@ import { Marker } from "react-leaflet";
 import { Map as LeafletMap } from "leaflet";
 import { useState, useRef, useEffect } from "react";
 import { logEvent, AnalyticsAction } from "../../analytics";
-import {
-  markerActiveIcon,
-  markerIcon,
-  rerenderMap,
-} from "../../components/Map";
 import ResultsList from "../../components/Search/ResultsList";
 import ResultsMap from "../../components/Search/ResultsMap";
 import { CareProviderSearchResult } from "../../types";
-import { getResultBounds } from "../../utils";
+import { getMapMarker, getResultBounds, rerenderMap } from "../../utils";
 
 /**
  * The side-by-side list + map view for desktop or tablet,
@@ -50,14 +45,8 @@ function DesktopResults({ results }: { results: CareProviderSearchResult[] }) {
                   result.latlng && (
                     <Marker
                       position={result.latlng}
-                      icon={
-                        selectedResultId === result.id
-                          ? markerActiveIcon
-                          : markerIcon
-                      }
-                      zIndexOffset={
-                        selectedResultId === result.id ? 1000 : undefined
-                      }
+                      icon={getMapMarker(result, selectedResultId)}
+                      zIndexOffset={selectedResultId === result.id ? 1000 : 1}
                       key={result.id}
                       eventHandlers={{
                         click: () => {

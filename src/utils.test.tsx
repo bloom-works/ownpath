@@ -3,7 +3,6 @@ import {
   ACCESSIBILITY_OPTIONS,
   AgeGroup,
   CareProvider,
-  CareProviderSearchResult,
   DailyHours,
   DayOfWeek,
   FeePreference,
@@ -79,6 +78,8 @@ const DUMMY_CARE_PROVIDER: CareProvider = {
   latlng: null,
 };
 
+const DUMMY_CARE_PROVIDER_RESULT = { ...DUMMY_CARE_PROVIDER, searchRank: 1 };
+
 // An invalid zipcode
 const INVALID_ZIP = "123";
 // A zipcode in NY
@@ -131,7 +132,7 @@ describe("isWithinRadius", () => {
     "it returns true if distance is < miles",
     (distanceMeters, radiusMiles, expected) => {
       const result = isWithinRadius(
-        { ...DUMMY_CARE_PROVIDER, distance: distanceMeters },
+        { ...DUMMY_CARE_PROVIDER_RESULT, distance: distanceMeters },
         radiusMiles
       );
       expect(result).toEqual(expected);
@@ -139,7 +140,7 @@ describe("isWithinRadius", () => {
   );
 
   test("it returns false if there is no distance", () => {
-    const result = isWithinRadius(DUMMY_CARE_PROVIDER, 1000);
+    const result = isWithinRadius(DUMMY_CARE_PROVIDER_RESULT, 1000);
     expect(result).toEqual(false);
   });
 });
@@ -147,9 +148,9 @@ describe("isWithinRadius", () => {
 describe("compareDistance", () => {
   test("it returns CareProviders sorted by distance with undefined at the end", () => {
     const sorted = [
-      { ...DUMMY_CARE_PROVIDER, id: "undefined" },
-      { ...DUMMY_CARE_PROVIDER, id: "one", distance: 1 },
-      { ...DUMMY_CARE_PROVIDER, id: "one hundred", distance: 100 },
+      { ...DUMMY_CARE_PROVIDER_RESULT, id: "undefined" },
+      { ...DUMMY_CARE_PROVIDER_RESULT, id: "one", distance: 1 },
+      { ...DUMMY_CARE_PROVIDER_RESULT, id: "one hundred", distance: 100 },
     ].sort(compareDistance);
 
     expect(sorted[0].id).toEqual("one");
@@ -430,14 +431,14 @@ describe("servesAgeGroup", () => {
     expect(servesAgeGroup(DUMMY_CARE_PROVIDER, undefined)).toEqual(true);
   });
 
-  const servesYouth: CareProviderSearchResult = {
+  const servesYouth: CareProvider = {
     ...DUMMY_CARE_PROVIDER,
     populationsServed: {
       ...DUMMY_CARE_PROVIDER.populationsServed,
       Youth: true,
     },
   };
-  const servesMinors: CareProviderSearchResult = {
+  const servesMinors: CareProvider = {
     ...DUMMY_CARE_PROVIDER,
     populationsServed: {
       ...DUMMY_CARE_PROVIDER.populationsServed,
@@ -445,7 +446,7 @@ describe("servesAgeGroup", () => {
     },
   };
 
-  const servesBoth: CareProviderSearchResult = {
+  const servesBoth: CareProvider = {
     ...DUMMY_CARE_PROVIDER,
     populationsServed: {
       ...DUMMY_CARE_PROVIDER.populationsServed,
@@ -453,7 +454,7 @@ describe("servesAgeGroup", () => {
       "Minors/Adolescents": true,
     },
   };
-  const servesOlderAdults: CareProviderSearchResult = {
+  const servesOlderAdults: CareProvider = {
     ...DUMMY_CARE_PROVIDER,
     populationsServed: {
       ...DUMMY_CARE_PROVIDER.populationsServed,
@@ -461,7 +462,7 @@ describe("servesAgeGroup", () => {
     },
   };
 
-  const servesOtherPops: CareProviderSearchResult = {
+  const servesOtherPops: CareProvider = {
     ...DUMMY_CARE_PROVIDER,
     populationsServed: {
       ...DUMMY_CARE_PROVIDER.populationsServed,
@@ -469,7 +470,7 @@ describe("servesAgeGroup", () => {
     },
   };
 
-  const servesOtherPopsAndUnder18: CareProviderSearchResult = {
+  const servesOtherPopsAndUnder18: CareProvider = {
     ...DUMMY_CARE_PROVIDER,
     populationsServed: {
       ...DUMMY_CARE_PROVIDER.populationsServed,
@@ -509,7 +510,7 @@ describe("servesAgeGroup", () => {
   });
 
   test("false if adult selected and only serves under 18 + modifiers", () => {
-    const servesYouthAndModifiers: CareProviderSearchResult = {
+    const servesYouthAndModifiers: CareProvider = {
       ...servesYouth,
       populationsServed: {
         ...servesYouth.populationsServed,
@@ -524,7 +525,7 @@ describe("servesAgeGroup", () => {
   });
 
   test("false if adult selected and only serves older adult + modifiers", () => {
-    const servesOlderAndModifiers: CareProviderSearchResult = {
+    const servesOlderAndModifiers: CareProvider = {
       ...servesOlderAdults,
       populationsServed: {
         ...servesOlderAdults.populationsServed,

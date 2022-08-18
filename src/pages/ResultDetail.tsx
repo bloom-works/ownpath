@@ -6,10 +6,10 @@ import { useTranslation } from "react-i18next";
 import { ReactComponent as Populations } from "../images/populations.svg";
 import { ReactComponent as Accessibility } from "../images/accessibility.svg";
 
-import Map, { markerIcon } from "../components/Map";
+import Map from "../components/Map";
 import BasicResultDetail from "../components/ResultDetail/BasicResultDetail";
 import CARE_PROVIDER_DATA from "../data/ladders_data.json";
-import { CareProvider, CareProviderSearchResult } from "../types";
+import { CareProvider } from "../types";
 import ResultDatum from "../components/ResultDetail/ResultDatum";
 import BulletedList from "../components/BulletedList";
 import { useEffect } from "react";
@@ -17,6 +17,7 @@ import DirectionsLink from "../components/ResultDetail/DirectionsLink";
 import ShareButton from "../components/ShareButton";
 import { logPageView } from "../analytics";
 import BackButton from "../components/BackButton";
+import { getMapMarker } from "../utils";
 
 function ResultDetail() {
   // Ensure user sees the top of the page
@@ -35,7 +36,7 @@ function ResultDetail() {
   // data and the url search params as `prevSearch`
   let { prevSearch, data } = (location.state ?? {}) as {
     prevSearch?: string;
-    data?: CareProviderSearchResult;
+    data?: CareProvider;
   };
   if (!data) {
     // If user navigated via different path, pull entity-specific data from CARE_DATA
@@ -79,7 +80,7 @@ function ResultDetail() {
                   }}
                 >
                   <Marker
-                    icon={markerIcon}
+                    icon={getMapMarker(data)}
                     position={data.latlng}
                     interactive={false}
                   />

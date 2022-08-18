@@ -10,7 +10,7 @@ type ResultsListProps = {
 const DESKTOP_CLASSES =
   "border-bottom border-base-lighter padding-y-3 padding-x-2";
 const DESKTOP_CLASSES_ACTIVE =
-  "border border-width-2px radius-sm border-primary-light padding-y-3 padding-x-2";
+  "border-05 radius-sm border-primary-light padding-y-3 padding-x-2";
 const MOBILE_CLASSES =
   "border border-base-lighter radius-lg padding-2 margin-bottom-1";
 
