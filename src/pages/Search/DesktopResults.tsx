@@ -3,11 +3,10 @@ import { Marker } from "react-leaflet";
 import { Map as LeafletMap } from "leaflet";
 import { useState, useRef, useEffect } from "react";
 import { logEvent, AnalyticsAction } from "../../analytics";
-import { rerenderMap } from "../../components/Map";
 import ResultsList from "../../components/Search/ResultsList";
 import ResultsMap from "../../components/Search/ResultsMap";
 import { CareProviderSearchResult } from "../../types";
-import { getMapMarker, getResultBounds } from "../../utils";
+import { getMapMarker, getResultBounds, rerenderMap } from "../../utils";
 
 /**
  * The side-by-side list + map view for desktop or tablet,

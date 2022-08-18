@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 import { ReactComponent as Populations } from "../images/populations.svg";
 import { ReactComponent as Accessibility } from "../images/accessibility.svg";
 
-import Map, { markerIcon } from "../components/Map";
+import Map from "../components/Map";
 import BasicResultDetail from "../components/ResultDetail/BasicResultDetail";
 import CARE_PROVIDER_DATA from "../data/ladders_data.json";
 import { CareProvider } from "../types";
@@ -17,6 +17,7 @@ import DirectionsLink from "../components/ResultDetail/DirectionsLink";
 // import ShareButton from "../components/ShareButton";
 import { logPageView } from "../analytics";
 import BackButton from "../components/BackButton";
+import { getMapMarker } from "../utils";
 
 function ResultDetail() {
   // Ensure user sees the top of the page
@@ -79,7 +80,7 @@ function ResultDetail() {
                   }}
                 >
                   <Marker
-                    icon={markerIcon}
+                    icon={getMapMarker(data)}
                     position={data.latlng}
                     interactive={false}
                   />

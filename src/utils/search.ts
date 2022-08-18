@@ -1,9 +1,8 @@
-import { LatLngLiteral, latLng, latLngBounds } from "leaflet";
+import { LatLngLiteral, latLng } from "leaflet";
 import {
   AccessibilityOptions,
   AgeGroup,
   CareProvider,
-  CareProviderSearchResult,
   DayOfWeek,
   FeePreference,
   Languages,
@@ -141,18 +140,4 @@ export function getFiltersFromSearchParams(
 
   if (!filters.age) delete filters.age;
   return filters;
-}
-
-/**
- * Helper function to get bounds for the search result map
- * based on the returned set of CareProviderSearchResults
- * @param searchResults
- * @returns
- */
-export function getResultBounds(searchResults: CareProviderSearchResult[]) {
-  return latLngBounds(
-    searchResults
-      .map((result) => result.latlng)
-      .filter((location): location is LatLngLiteral => !!location)
-  );
 }
