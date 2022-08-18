@@ -1,7 +1,7 @@
 # Run when the PR is created, updated with a new commit, or re-opened after closed
 
 name: Pull Request
-on: 
+on:
   pull_request:
     types: [opened, reopened, synchronize]
 
@@ -25,19 +25,19 @@ jobs:
       # - name: <job name>
       #   run: docker-compose -f docker-compose.yml -f docker-compose.ci.yml run app <terminal command>
       # --------
-      
+
       # --------
       # COMMON PR CHECKS
       # Add/remove what you do/don't use. Common ones provided below
-      # --------  
+      # --------
       # LINTER
       - name: Run linter
         run: docker-compose -f docker-compose.yml -f ci/docker-compose.ci.yml run app sh ci/linter.sh
-      
+
       # TESTS
       - name: Run tests
         run: docker-compose -f docker-compose.yml -f ci/docker-compose.ci.yml run app sh ci/tests.sh
-      
+
       # SECURITY
       - name: Run security scans
         run: docker-compose -f docker-compose.yml -f ci/docker-compose.ci.yml run app sh ci/security.sh

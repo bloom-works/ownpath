@@ -118,7 +118,7 @@ The first time you ever deploy the site to an AWS Account from _any_ computer, r
 
 Next, we need to create storage for the Terraform state.
 
-1. Build the dev/deploy tools Docker container: `docker build -t coloradodigitalservice/co-care-directory .`
+1. Build the dev/deploy tools Docker container: `docker build -t coloradodigitalservice/co-care-directory-deploy -f Dockerfile.Deploy .`
 1. Launch a terminal in the dev container from the root of the code base: `docker run -it -v $PWD:/app --rm coloradodigitalservice/co-care-directory bash` (TODO: Remove directory mapping after state is stored centrally)
 1. Navigate to: `cd infra/aws/state`
 1. Set `export TF_VAR_bucket_name="<S3 bucket name>"` with a [valid name](https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html) of the S3 bucket where built app files will be stored. This must be unique across all of AWS.
