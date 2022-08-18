@@ -1,7 +1,7 @@
 import ReactGA from "react-ga4";
 
 const initializeGA = () => {
-  ReactGA.initialize("G-MLZGY314R9", {
+  ReactGA.initialize("G-9L5WD4V6NV", {
     gaOptions: { anonymize_ip: true },
     gtagOptions: { anonymize_ip: true },
   });
