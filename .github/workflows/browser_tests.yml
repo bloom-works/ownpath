@@ -16,6 +16,6 @@ jobs:
       - uses: jwalton/gh-find-current-pr@v1
         id: findCurrentPr
       - name: Install dependencies
-        run: npx playwright install chrome msedge
+        run: npm i && npx playwright install chrome msedge
       - name: Run your tests
         run: URL=https://ownpath-pr-${{ steps.findCurrentPr.outputs.pr }}.herokuapp.com npm run test:e2e
