@@ -25,7 +25,9 @@ function FAQ() {
       id: itemKey,
       content: (
         <StyledAccordionContent key={itemKey}>
-          <ReactMarkdown>{t(`${itemKey}Answer`)}</ReactMarkdown>
+          <ReactMarkdown>
+            {`${t("answerAbbreviation")}. ${t(`${itemKey}Answer`)}`}
+          </ReactMarkdown>
         </StyledAccordionContent>
       ),
       headingLevel: "h3",
