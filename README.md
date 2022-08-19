@@ -118,8 +118,8 @@ The first time you ever deploy the site to an AWS Account from _any_ computer, r
 
 Next, we need to create storage for the Terraform state.
 
-1. Build the dev/deploy tools Docker container: `docker build -t coloradodigitalservice/co-care-directory .`
-1. Launch a terminal in the dev container from the root of the code base: `docker run -it -v $PWD:/app --rm coloradodigitalservice/co-care-directory bash` (TODO: Remove directory mapping after state is stored centrally)
+1. Build the dev/deploy tools Docker container: `docker build -t coloradodigitalservice/co-care-directory-deploy -f Dockerfile.Deploy .`
+1. Launch a terminal in the dev container from the root of the code base: `docker run -it -v $PWD:/app --rm coloradodigitalservice/co-care-directory-deploy bash` (TODO: Remove directory mapping after state is stored centrally)
 1. Navigate to: `cd infra/aws/state`
 1. Set `export TF_VAR_bucket_name="<S3 bucket name>"` with a [valid name](https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html) of the S3 bucket where built app files will be stored. This must be unique across all of AWS.
 1. Set `export AWS_ACCESS_KEY_ID="<your AWS user's access key ID>"`
@@ -135,8 +135,8 @@ Next, we need to create storage for the Terraform state.
 These steps might need to be run if an automatic deployment fails, a prior state of the application needs to be restored, or if you're setting up a dev AWS Account. These assume that the First Time instructions have been run on the AWS Account from _any_ computer _onece_ before this (i.e. most likely has been).
 
 1. Clone the repo and set to the tag or branch you want to deploy.
-1. Build the dev/deploy tools Docker container: `docker build -t coloradodigitalservice/co-care-directory .`
-1. Launch a terminal in the dev container from the root of the code base: `docker run -it --rm coloradodigitalservice/co-care-directory bash`
+1. Build the dev/deploy tools Docker container: `docker build -t coloradodigitalservice/co-care-directory-deploy -f Dockerfile.Deploy .`
+1. Launch a terminal in the dev container from the root of the code base: `docker run -it --rm coloradodigitalservice/co-care-directory-deploy bash`
 1. Set `export TF_VAR_bucket_name="<S3 bucket name>"` with a [valid name](https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html) of the S3 bucket where built app files will be stored. This must be unique across all of AWS.
 1. (optional) Set `export TF_VAR_domains='["domain1.com","domain2.org"]'` with the domains, with primary domain first
    - If no domains specified, it'll just use a CloudFront generated domain

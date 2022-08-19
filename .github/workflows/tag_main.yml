@@ -2,7 +2,7 @@
 # ---
 
 name: Tag main branch
-on: 
+on:
   pull_request:
     types: [closed]
     branches: main
@@ -30,7 +30,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: .
-          file: ./Dockerfile
+          file: ./Dockerfile.Deploy
           load: true
           tags: ${{ github.repository }}:${{ github.head_ref }}
       - name: Build and publish artifacts
