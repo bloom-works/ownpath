@@ -30,9 +30,9 @@ docker_ @bloom-works/co-bha-care-directory-devs
 LICENSE* @bloom-works/co-bha-care-directory-devs @bloom-works/co-bha-care-directory-product
 CONTRIBUTING* @bloom-works/co-bha-care-directory-devs @bloom-works/co-bha-care-directory-product
 
-# Data updates -- only a product person needs to review
+# Data updates -- reviewed by dev or product (until we make this automated!)
 
-/raw_data/ @bloom-works/co-bha-care-directory-product
+/raw_data/ @bloom-works/co-bha-care-directory-devs @bloom-works/co-bha-care-directory-product
 
 # Assumes no one is required to review documentation, but leaving commented out in case folks want to change that someday
 
