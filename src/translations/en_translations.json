@@ -157,6 +157,7 @@
   "missingProvidersQuestion": "Why aren’t all providers in Colorado listed? ",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   "missingProvidersAnswer": "As of right now, OwnPath consists of providers licensed through the BHA. We do acknowledge that the current set of entities may not encompass all facilities providing behavioral health services throughout the state and we are actively working towards including a larger set of these facilities in the directory. We appreciate your patience and understanding as we iteratively incorporate these additional sites and encourage you to tune back in to the site for more provider information as it becomes available.\n",
 =======
   "missingProvidersAnswer": ": As of right now, OwnPath consists of providers licensed through the BHA. We do acknowledge that the current set of entities may not encompass all facilities providing behavioral health services throughout the state and we are actively working towards including a larger set of these facilities in the directory. We appreciate your patience and understanding as we iteratively incorporate these additional sites and encourage you to tune back in to the site for more provider information as it becomes available.",
@@ -164,6 +165,9 @@
 =======
   "missingProvidersAnswer": ": As of right now, OwnPath consists of providers licensed through the BHA. We do acknowledge that the current set of entities may not encompass all facilities providing behavioral health services throughout the state and we are actively working towards including a larger set of these facilities in the directory. We appreciate your patience and understanding as we iteratively incorporate these additional sites and encourage you to tune back in to the site for more provider information as it becomes available.\n",
 >>>>>>> Toolkit question (english only) plus raw HTML in content and only generate content JSON if key is set
+=======
+  "missingProvidersAnswer": "As of right now, OwnPath consists of providers licensed through the BHA. We do acknowledge that the current set of entities may not encompass all facilities providing behavioral health services throughout the state and we are actively working towards including a larger set of these facilities in the directory. We appreciate your patience and understanding as we iteratively incorporate these additional sites and encourage you to tune back in to the site for more provider information as it becomes available.\n",
+>>>>>>> Remove :
   "updateInfoQuestion": "How can I update my facility information if I am a BHA licensed provider?",
   "updateInfoAnswer": "If your provider information is currently included in the OwnPath directory, please visit the [Colorado BHA for Providers website](https://www.colorado.gov/LADDERS/OBH_For_Providers) to update your information in the LADDERS platform. If it is not, visit the [provider website](https://www.colorado.gov/LADDERS/OBH_For_Providers) to sign up and learn more about the process. All updates to the provider data will appear in OwnPath in 5-7 business days.\n",
   "increaseAccessQuestion": "What else is BHA doing to increase access to providers?\n",
