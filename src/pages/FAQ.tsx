@@ -6,6 +6,7 @@ import { logPageView } from "../analytics";
 import styled from "styled-components";
 import { AccordionItemProps } from "@trussworks/react-uswds/lib/components/Accordion/Accordion";
 import ReactMarkdown from "react-markdown";
+import rehypeRaw from "rehype-raw";
 
 const StyledAccordionContent = styled.div`
   margin: 2rem auto 3rem;
@@ -25,7 +26,7 @@ function FAQ() {
       id: itemKey,
       content: (
         <StyledAccordionContent key={itemKey}>
-          <ReactMarkdown>
+          <ReactMarkdown rehypePlugins={[rehypeRaw]}>
             {`${t("answerAbbreviation")}. ${t(`${itemKey}Answer`)}`}
           </ReactMarkdown>
         </StyledAccordionContent>
@@ -52,6 +53,7 @@ function FAQ() {
             "dataCollection",
             "updates",
             "moreInfo",
+            "toolkit",
           ].map(getAccordionItem)}
           bordered={false}
           multiselectable={true}

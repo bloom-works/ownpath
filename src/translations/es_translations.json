@@ -252,5 +252,9 @@
 }
 =======
   "linkCopied": "¡Enlace copiado!"
+<<<<<<< HEAD
 }
 >>>>>>> Adds FAQ page with content
+=======
+}
+>>>>>>> Toolkit question (english only) plus raw HTML in content and only generate content JSON if key is set
