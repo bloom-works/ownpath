@@ -8,6 +8,12 @@
   --teal: #32747f;
 }
 
+@font-face {
+  font-family: "MuseoSlab";
+  src: local("MuseoSlab"),
+    url(./fonts/Museo_Slab_500-webfont.woff) format("woff");
+}
+
 html,
 body,
 #root,
@@ -21,7 +27,7 @@ h3,
 h4,
 h5 {
   margin: 3rem 0 1rem;
-  font-family: Trebuchet MS, san-serif;
+  font-family: "MuseoSlab";
   font-weight: 700;
   line-height: 1.25;
 }
@@ -61,12 +67,15 @@ p {
 }
 
 /* override USWDS settings */
-.usa-header {
-  font-family: Trebuchet MS, san-serif !important;
+.usa-header,
+legend,
+[class*="font-heading-"] {
+  font-family: "MuseoSlab";
 }
 .usa-button,
 .usa-card__container,
-.usa-prose {
+.usa-prose,
+.usa-fieldset {
   font-family: Trebuchet MS, san-serif !important;
   font-weight: 500;
   font-size: 1rem;
