@@ -74,7 +74,7 @@
       "\\.(js|ts|tsx)$": "ts-jest"
     },
     "transformIgnorePatterns": [
-      "/node_modules/(?!(react-leaflet|@react-leaflet|leaflet))"
+      "/node_modules/(?!(react-leaflet|@react-leaflet|leaflet|react-markdown|vfile|unified|bail|is-plain-obj|trough|remark-parse|micromark|decode-named-character-reference|character-entities|remark-rehype|mdast*|unist*|trim-lines|property-information|hast*|space-separated-tokens|comma-separated-tokens|rehype-raw|web-namespaces|zwitch|html-void-elements))"
     ]
   }
 }

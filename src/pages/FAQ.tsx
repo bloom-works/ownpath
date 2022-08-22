@@ -31,7 +31,7 @@ function FAQ() {
           </ReactMarkdown>
         </StyledAccordionContent>
       ),
-      headingLevel: "h3",
+      headingLevel: "h2",
     };
   }
   return (
@@ -56,7 +56,6 @@ function FAQ() {
             "toolkit",
           ].map(getAccordionItem)}
           bordered={false}
-          multiselectable={true}
         />
       </Grid>
     </GridContainer>
