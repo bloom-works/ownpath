@@ -30,13 +30,20 @@ for (var i = 0; i < workbook.SheetNames.length; i++) {
       // row[3]: key to use in application
       const key = row[3];
 
-      if (!es) {
-        console.log("spanish translation missing for ", row[0]);
-      }
-
       if (!key) {
         console.log(
-          "key missing for ",
+          "skipping translation for ",
+          row[0],
+          " on sheet ",
+          workbook.SheetNames[i],
+          ": no key"
+        );
+        return;
+      }
+
+      if (!es) {
+        console.log(
+          "spanish translation missing for ",
           row[0],
           " on sheet ",
           workbook.SheetNames[i]
