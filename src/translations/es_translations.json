@@ -130,13 +130,10 @@
   "ResidentialChildCareFacility": "Establecimiento residencial para niños y adolescentes",
   "ResidentialLongTermTreatment": "Tratamiento residencial a largo plazo",
   "ResidentialShortTermTreatment": "Tratamiento residencial a corto plazo",
-<<<<<<< HEAD
   "complaintTitle": "¿Tienes una inquietud o queja?",
   "complaintFormInfo": "\n\nSi te\ngustaría reportar un problema con un proveedor de servicios para la salud del comportamiento, puedes enviar\nuna queja a la Administración para la Salud del Comportamiento llenando nuestro\n<1>Formulario de quejas individuales</1> o comunicándote con nosotros\npor:  ",
   "complaintFormExtraInfo": "Haremos todo lo posible por ayudarte y resolver el asunto. También puedes enviar tu queja directamente al proveedor de servicios para la salud del comportamiento. Para obtener más información, visita <1>https://bha.colorado.gov/contact/contact-us</1>.",
   "complaintFormUrl": "https://docs.google.com/forms/d/e/1FAIpQLSfGoqxFYuLycSzeAQxsNv1Yr_GxHdN1vuWYLfudMWZ-yQWUjQ/viewform",
-=======
->>>>>>> Adds FAQ page with content
   "faqPageHeading": "Preguntas frecuentes\r",
   "questionAbbreviation": "P",
   "answerAbbreviation": "R",
@@ -162,16 +159,10 @@
   "updatesAnswer": "MiPropiaSenda se lanzó oficialmente el 26 de julio de 2022 y se irá mejorando continuamente con base en los comentarios e ideas de los usuarios y la comunidad. ¿Tienes alguna idea para mejorar el sitio web? [Envía tu sugerencia usando este formulario de Google.](https://docs.google.com/forms/d/e/1FAIpQLSdoan0__hPL8XKHjhbghd8nWHYoOu0qfo56tgHGHMJuVNA9Sg/viewform)\n",
   "moreInfoQuestion": "¿Dónde puedo encontrar más información?",
   "moreInfoAnswer": "[La página principal de la BHA](http://bit.ly/BHA-Colorado) tiene información adicional sobre MiPropiaSenda (en inglés: OwnPath), incluido un formulario digital para compartir sugerencias y preguntas, materiales de comunicación, hojas informativas y más, en español e inglés.",
-<<<<<<< HEAD
-<<<<<<< HEAD
   "toolkitQuestion": "¿Dónde puedo encontrar materiales de MiPropiaSenda para compartir con mi comunidad?",
-  "toolkitAnswer": "Hemos creado versiones de ciertos documentos de MiPropiaSenda para imprimir, y seguiremos agregando más cuando estén disponibles. \n\n- Descarga las preguntas frecuentes en: <a href='/resources/BHA OwnPath FAQs (EN).pdf' target='_blank' download>Inglés</a>, <a href='/resources/BHA OwnPath FAQs (ES).pdf' target='_blank' download>Español</a> \n\n- Descarga un resumen informativo en: <a href='/resources/BHA OwnPath one pager (EN).pdf' target='_blank' download>Inglés</a>, <a href='/resources/BHA OwnPath one pager (ES).pdf' target='_blank' download>Español</a>",
-=======
->>>>>>> Adds FAQ page with content
-=======
-  "toolkitQuestion": "¿Dónde puedo encontrar materiales de MiPropiaSenda para compartir con mi comunidad?",
-  "toolkitAnswer": "Hemos creado versiones de ciertos documentos de MiPropiaSenda para imprimir, y seguiremos agregando más cuando estén disponibles. \n\n- Descarga las preguntas frecuentes en: <a href='/resources/BHA OwnPath FAQs (EN).pdf' target='_blank' download>Inglés</a>, <a href='/resources/BHA OwnPath FAQs (ES).pdf' target='_blank' download>Español</a> \n\n- Descarga un resumen informativo en: <a href='/resources/BHA OwnPath one pager (EN).pdf' target='_blank' download>Inglés</a>, <a href='/resources/BHA OwnPath one pager (ES).pdf' target='_blank' download>Español</a>",
->>>>>>> Updated content
+  "toolkitAnswer": "Hemos creado versiones de ciertos documentos de MiPropiaSenda para imprimir, y seguiremos agregando más cuando estén disponibles. ",
+  "toolkitAnswerDownloadFAQ": "Descarga las preguntas frecuentes en:",
+  "toolkitAnswerDownloadOnePager": "Descarga un resumen informativo en:",
   "locationTitle": "Código postal",
   "distanceTitle": "Distancia",
   "distanceValuesTemplate": "Máximo {{ n }} millas",
@@ -250,16 +241,7 @@
   "change": "Cambiar",
   "search": "Buscar",
   "title": "Mi Propia Senda",
-<<<<<<< HEAD
   "linkCopied": "¡Enlace copiado!",
   "phone": "Teléfono",
   "email": "Email"
 }
-=======
-  "linkCopied": "¡Enlace copiado!"
-<<<<<<< HEAD
-}
->>>>>>> Adds FAQ page with content
-=======
-}
->>>>>>> Toolkit question (english only) plus raw HTML in content and only generate content JSON if key is set

@@ -1,10 +1,11 @@
 import React from "react";
 import { GridContainer, Grid, Accordion } from "@trussworks/react-uswds";
 import { useEffect } from "react";
-import { useTranslation } from "react-i18next";
+import { Trans, useTranslation } from "react-i18next";
 import { logPageView } from "../analytics";
 import styled from "styled-components";
 import { AccordionItemProps } from "@trussworks/react-uswds/lib/components/Accordion/Accordion";
+import { Link } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
 
@@ -26,9 +27,37 @@ function FAQ() {
       id: itemKey,
       content: (
         <StyledAccordionContent key={itemKey}>
-          <ReactMarkdown rehypePlugins={[rehypeRaw]}>
-            {`${t("answerAbbreviation")}. ${t(`${itemKey}Answer`)}`}
-          </ReactMarkdown>
+          {itemKey === "toolkit" ? (
+            <p>
+              {t("toolkitAnswer")}
+              <ul>
+                <li>
+                  {t("toolkitAnswerDownloadFAQ")}{" "}
+                  <Link download to="/resources/BHA OwnPath FAQs (EN).pdf">
+                    {t("languageValuesEnglish").split("/")[0].trim()}
+                  </Link>
+                  ,{" "}
+                  <Link download to="/resources/BHA OwnPath FAQs (ES).pdf">
+                    {t("languageValuesSpanish").split("/")[0].trim()}
+                  </Link>
+                </li>
+                <li>
+                  {t("toolkitAnswerDownloadOnePager")}{" "}
+                  <Link download to="/resources/BHA OwnPath one pager (EN).pdf">
+                    {t("languageValuesEnglish").split("/")[0].trim()}
+                  </Link>
+                  ,{" "}
+                  <Link download to="/resources/BHA OwnPath one pager (ES).pdf">
+                    {t("languageValuesSpanish").split("/")[0].trim()}
+                  </Link>
+                </li>
+              </ul>
+            </p>
+          ) : (
+            <ReactMarkdown rehypePlugins={[rehypeRaw]}>
+              {`${t("answerAbbreviation")}. ${t(`${itemKey}Answer`)}`}
+            </ReactMarkdown>
+          )}
         </StyledAccordionContent>
       ),
       headingLevel: "h2",
