@@ -32,23 +32,25 @@ function FAQ() {
               <ul>
                 <li>
                   {t("toolkitAnswerDownloadFAQ")}{" "}
-                  <Link download to="/resources/BHA OwnPath FAQs (EN).pdf">
+                  {/* For whatever reason using react-router <Link> makes these only function as page redirects,
+                      not content downloads even with 'download' attribute, so use vanilla <a> instead */}
+                  <a download href="/resources/BHA OwnPath FAQs (EN).pdf">
                     {t("languageValuesEnglish").split("/")[0].trim()}
-                  </Link>
+                  </a>
                   ,{" "}
-                  <Link download to="/resources/BHA OwnPath FAQs (ES).pdf">
+                  <a download href="/resources/BHA OwnPath FAQs (ES).pdf">
                     {t("languageValuesSpanish").split("/")[0].trim()}
-                  </Link>
+                  </a>
                 </li>
                 <li>
                   {t("toolkitAnswerDownloadOnePager")}{" "}
-                  <Link download to="/resources/BHA OwnPath one pager (EN).pdf">
+                  <a download href="/resources/BHA OwnPath one pager (EN).pdf">
                     {t("languageValuesEnglish").split("/")[0].trim()}
-                  </Link>
+                  </a>
                   ,{" "}
-                  <Link download to="/resources/BHA OwnPath one pager (ES).pdf">
+                  <a download href="/resources/BHA OwnPath one pager (ES).pdf">
                     {t("languageValuesSpanish").split("/")[0].trim()}
-                  </Link>
+                  </a>
                 </li>
               </ul>
             </>
