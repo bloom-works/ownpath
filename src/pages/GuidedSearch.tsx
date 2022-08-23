@@ -176,9 +176,9 @@ function GuidedSearch() {
                   showError={showZipValidation}
                 />
               </Fieldset>
-              <AppAlert Icon={Info} className="margin-top-2">
-                {t("dataCollectionAlert")}
-              </AppAlert>
+              <div className="margin-y-2">
+                <AppAlert Icon={Info}>{t("dataCollectionAlert")}</AppAlert>
+              </div>
             </>
           ) : currentStep === "distance" ? (
             <DistanceInput
