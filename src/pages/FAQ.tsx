@@ -28,7 +28,7 @@ function FAQ() {
         <StyledAccordionContent key={itemKey}>
           {itemKey === "toolkit" ? (
             <>
-              {t("toolkitAnswer")}
+              {`${t("answerAbbreviation")}. ${t("toolkitAnswer")}`}
               <ul>
                 <li>
                   {t("toolkitAnswerDownloadFAQ")}{" "}
