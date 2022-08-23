@@ -193,7 +193,7 @@ function ResultDetail() {
                         </Link>
                       </div>
                       <p>
-                        <Trans i18nKey="complaintExtraInfo">
+                        <Trans i18nKey="complaintFormExtraInfo">
                           We will do our best to assist you and resolve the
                           matter. You can also submit your complaint to the
                           behavioral health provider directly. For more
