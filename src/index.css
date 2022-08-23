@@ -54,7 +54,8 @@ p {
   font-family: Trebuchet MS, san-serif !important;
 }
 .usa-button,
-.usa-card__container {
+.usa-card__container,
+.usa-prose {
   font-family: Trebuchet MS, san-serif !important;
   font-weight: 500;
   font-size: 1rem;

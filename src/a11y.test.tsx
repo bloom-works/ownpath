@@ -8,6 +8,7 @@ import NotFound from "./pages/NotFound";
 import Search from "./pages/Search/Search";
 import { MemoryRouter } from "react-router-dom";
 import CARE_PROVIDER_DATA from "./data/ladders_data.json";
+import FAQ from "./pages/FAQ";
 
 window.scrollTo = jest.fn();
 
@@ -45,5 +46,10 @@ test("NotFound", async () => {
 
 test("Search", async () => {
   const { container } = render(<Search />);
+  expect(await axe(container)).toHaveNoViolations();
+});
+
+test("FAQ", async () => {
+  const { container } = render(<FAQ />);
   expect(await axe(container)).toHaveNoViolations();
 });

@@ -66,6 +66,7 @@ function Layout() {
               className="width-auto margin-x-1"
               type="button"
               unstyled
+              title="close"
               onClick={() => setShowCrisisAlert(false)}
             >
               <Close className="data-icon" />
