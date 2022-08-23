@@ -7,7 +7,6 @@ import styled from "styled-components";
 import { AccordionItemProps } from "@trussworks/react-uswds/lib/components/Accordion/Accordion";
 import { Link } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
-import rehypeRaw from "rehype-raw";
 
 const StyledAccordionContent = styled.div`
   margin: 2rem auto 3rem;
@@ -28,7 +27,7 @@ function FAQ() {
       content: (
         <StyledAccordionContent key={itemKey}>
           {itemKey === "toolkit" ? (
-            <p>
+            <>
               {t("toolkitAnswer")}
               <ul>
                 <li>
@@ -52,9 +51,9 @@ function FAQ() {
                   </Link>
                 </li>
               </ul>
-            </p>
+            </>
           ) : (
-            <ReactMarkdown rehypePlugins={[rehypeRaw]}>
+            <ReactMarkdown>
               {`${t("answerAbbreviation")}. ${t(`${itemKey}Answer`)}`}
             </ReactMarkdown>
           )}
