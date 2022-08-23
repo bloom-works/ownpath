@@ -184,6 +184,7 @@
   "moreInfoAnswer": "[The BHA landing page](http://bit.ly/BHA-Colorado) includes additional information about OwnPath, including a project dashboard, an online form to share feedback and submit questions, toolkit resources, fact sheets, and more—in English and Spanish.",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   "toolkitQuestion": "Where can I find OwnPath materials to share with my community?",
   "toolkitAnswer": "We’ve created printable versions of select OwnPath documents, and will continue to add more as they become available.\n\n- Download the FAQ in: <a href='/resources/BHA OwnPath FAQs (EN).pdf' target='_blank' download>English</a>,  <a href='/resources/BHA OwnPath FAQs (ES).pdf' target='_blank' download>Spanish</a>\n\n- Download the informational overview in:  <a href='/resources/BHA OwnPath one pager (EN).pdf' target='_blank' download>English</a>,  <a href='/resources/BHA OwnPath one pager (ES).pdf' target='_blank' download>Spanish</a>\n",
 =======
@@ -192,6 +193,10 @@
   "toolkitQuestion": "Where can I find OwnPath materials to print and share with my community?",
   "toolkitAnswer": "We’ve created printable versions of select OwnPath documents, and will continue to add more as they become available. \n\n- Download the FAQ in: <a href='/resources/BHA OwnPath FAQs (EN).pdf' target='_blank' download>English</a>,  <a href='/resources/BHA OwnPath FAQs (ES).pdf' target='_blank' download>Spanish</a> \n\n- Download the OwnPath Overview one pager in:  <a href='/resources/BHA OwnPath one pager (EN).pdf' target='_blank' download>English</a>,  <a href='/resources/BHA OwnPath one pager (ES).pdf' target='_blank' download>Spanish</a>\n",
 >>>>>>> Toolkit question (english only) plus raw HTML in content and only generate content JSON if key is set
+=======
+  "toolkitQuestion": "Where can I find OwnPath materials to share with my community?",
+  "toolkitAnswer": "We’ve created printable versions of select OwnPath documents, and will continue to add more as they become available.\n\n- Download the FAQ in: <a href='/resources/BHA OwnPath FAQs (EN).pdf' target='_blank' download>English</a>,  <a href='/resources/BHA OwnPath FAQs (ES).pdf' target='_blank' download>Spanish</a>\n\n- Download the informational overview in:  <a href='/resources/BHA OwnPath one pager (EN).pdf' target='_blank' download>English</a>,  <a href='/resources/BHA OwnPath one pager (ES).pdf' target='_blank' download>Spanish</a>\n",
+>>>>>>> Updated content
   "locationTitle": "Zip code",
   "distanceTitle": "Distance",
   "distanceValuesTemplate": "Within {{ n }} miles",
@@ -270,7 +275,11 @@
   "change": "Change",
   "search": "Search",
   "title": "OwnPath",
+<<<<<<< HEAD
   "linkCopied": "Link copied!",
   "phone": "Phone",
   "email": "Email"
+=======
+  "linkCopied": "Link copied!"
+>>>>>>> Updated content
 }
