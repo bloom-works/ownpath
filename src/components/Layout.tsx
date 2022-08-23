@@ -29,9 +29,13 @@ function Layout() {
             <Grid row className="flex-align-center ">
               <a href="/" title="Home" aria-label="Home">
                 {i18n.language === "es" ? (
-                  <MiPropiaSendaLogo height={38} className="margin-right-2" />
+                  <MiPropiaSendaLogo
+                    height={38}
+                    className="margin-right-2"
+                    title={t("ownPathLogoAlt")}
+                  />
                 ) : (
-                  <OwnPathLogo height={38} />
+                  <OwnPathLogo height={38} title={t("ownPathLogoAlt")} />
                 )}
               </a>
               {t("by")}
