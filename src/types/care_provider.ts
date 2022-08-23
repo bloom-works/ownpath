@@ -114,6 +114,7 @@ export type CareProvider = {
   phone: string;
   hideAddress: boolean;
   address: string[];
+  addressStr: string;
   website: string;
   substanceUse: {
     supported: boolean;
@@ -130,4 +131,5 @@ export type CareProvider = {
   fees: { [key in FeePreference]: boolean };
   languages: { [key in Languages]: boolean };
   latlng: LatLngLiteral | null;
+  lastUpdatedDate: string;
 };
