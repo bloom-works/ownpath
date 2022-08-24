@@ -21,6 +21,7 @@ type InputRow = {
   Accessibility: string;
   AccountID: string;
   AccountName: string;
+  AddressOneLine: string;
   DisplayName: string;
   ActiveMHDesignation: string;
   ActiveSUDLicense: string;
@@ -125,6 +126,7 @@ const transformRow = (row: InputRow): CareProvider => {
       hideAddress || !row.ProviderLocationDisplayLabel
         ? []
         : row.ProviderLocationDisplayLabel.split("_BR_ENCODED_"),
+    addressStr: hideAddress || !row.AddressOneLine ? "" : row.AddressOneLine,
     website:
       row.Website && !row.Website.startsWith("http")
         ? `https://${row.Website}`
@@ -159,6 +161,7 @@ const transformRow = (row: InputRow): CareProvider => {
     fees: getBooleanMap(FEE_PREFERENCES, splitBySemicolons(row.Fees)),
     languages: getBooleanMap(LANGUAGES, splitBySemicolons(row.LanguagesSpoken)),
     latlng: getLatLng(row),
+    lastUpdatedDate: row.ProviderDirectoryFormModifiedDate,
   };
   return cleaned;
 };

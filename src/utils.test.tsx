@@ -42,6 +42,7 @@ const DUMMY_CARE_PROVIDER: CareProvider = {
   phone: "123-456-7890",
   hideAddress: false,
   address: [],
+  addressStr: "",
   website: "",
   substanceUse: {
     supported: false,
@@ -76,6 +77,7 @@ const DUMMY_CARE_PROVIDER: CareProvider = {
     return map;
   }, {} as { [key in Languages]: boolean }),
   latlng: null,
+  lastUpdatedDate: "7/7/2022 7:00 AM",
 };
 
 const DUMMY_CARE_PROVIDER_RESULT = { ...DUMMY_CARE_PROVIDER, searchRank: 1 };
