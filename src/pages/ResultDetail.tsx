@@ -215,6 +215,11 @@ function ResultDetail() {
                 },
               ]}
             />
+            {data.lastUpdatedDate && (
+              <p className="margin-top-4">
+                {t("dataLastUpdated")}: {data.lastUpdatedDate}
+              </p>
+            )}
           </section>
         </Grid>
       </Grid>

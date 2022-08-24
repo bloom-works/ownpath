@@ -243,5 +243,6 @@
   "title": "OwnPath",
   "linkCopied": "Link copied!",
   "phone": "Phone",
-  "email": "Email"
+  "email": "Email",
+  "dataLastUpdated": "Data last updated"
 }

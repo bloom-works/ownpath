@@ -27,9 +27,9 @@ function Layout() {
         <div className="display-flex flex-justify-center flex-align-center border-bottom border-base-lighter padding-y-2 padding-x-1">
           <a href="/" title="Home" aria-label="Home">
             {i18n.language === "es" ? (
-              <MiPropiaSendaLogo height={38} width="auto" />
+              <MiPropiaSendaLogo height={38} width="auto" title={t("ownPathLogoAlt")} />
             ) : (
-              <OwnPathLogo height={38} width="auto" />
+              <OwnPathLogo height={38} width="auto" title={t("ownPathLogoAlt")} />
             )}
           </a>
           <div className="margin-x-1 tablet:margin-x-2">{t("by")}</div>
