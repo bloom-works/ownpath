@@ -24,31 +24,18 @@ function Layout() {
     <Wrapper className="display-flex flex-column">
       <Header basic color="primary" role="banner">
         <Banner />
-        <div className="display-flex flex-justify-center border-bottom border-base-lighter">
-          <div className="padding-top-2 padding-bottom-1 height-auto">
-            <Grid row className="flex-align-center ">
-              <a href="/" title="Home" aria-label="Home">
-                {i18n.language === "es" ? (
-                  <MiPropiaSendaLogo
-                    height={38}
-                    className="margin-right-2"
-                    title={t("ownPathLogoAlt")}
-                  />
-                ) : (
-                  <OwnPathLogo height={38} title={t("ownPathLogoAlt")} />
-                )}
-              </a>
-              {t("by")}
-              <a
-                className="margin-x-2"
-                href="https://bha.colorado.gov/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <ColoradoBhaLogo />
-              </a>
-            </Grid>
-          </div>
+        <div className="display-flex flex-justify-center flex-align-center border-bottom border-base-lighter padding-y-2 padding-x-1">
+          <a href="/" title="Home" aria-label="Home">
+            {i18n.language === "es" ? (
+              <MiPropiaSendaLogo height={38} width="auto" title={t("ownPathLogoAlt")} />
+            ) : (
+              <OwnPathLogo height={38} width="auto" title={t("ownPathLogoAlt")} />
+            )}
+          </a>
+          <div className="margin-x-1 tablet:margin-x-2">{t("by")}</div>
+          <a href="https://bha.colorado.gov/" target="_blank" rel="noreferrer">
+            <ColoradoBhaLogo height={34} width="auto" />
+          </a>
         </div>
       </Header>
       {showCrisisAlert && location.pathname !== "/guided-search" && (
