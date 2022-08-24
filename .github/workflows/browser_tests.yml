@@ -19,4 +19,4 @@ jobs:
         run: npm i && npx playwright install chrome msedge
       - name: Run your tests
         # https://github.com/microsoft/playwright/issues/6500
-        run: HOME=/root URL=https://ownpath-pr-${{ steps.findCurrentPr.outputs.pr }}.herokuapp.com npm run test:e2e
+        run: HOME=/root npm run test:e2e
