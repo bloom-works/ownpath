@@ -54,12 +54,14 @@ function TypeOfHelpInput({
           />
           {option === TypeOfHelp.SuicidalIdeation &&
             filters.typesOfHelp.includes(TypeOfHelp.SuicidalIdeation) && (
-              <AppAlert Icon={Phone}>
-                <div>{t("suicidalIdeationAlert")}</div>
-                <div className="text-bold margin-top-1">
-                  {t("suicidalIdeationCta")}
-                </div>
-              </AppAlert>
+              <div className="margin-y-2">
+                <AppAlert Icon={Phone}>
+                  <div>{t("suicidalIdeationAlert")}</div>
+                  <div className="text-bold margin-top-1">
+                    {t("suicidalIdeationCta")}
+                  </div>
+                </AppAlert>
+              </div>
             )}
         </React.Fragment>
       ))}
