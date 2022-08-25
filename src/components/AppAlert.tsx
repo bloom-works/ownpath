@@ -3,24 +3,17 @@ import HighlightBox from "./HighlightBox";
 
 type AppAlertProps = {
   Icon: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
-  className?: string;
 };
-function AppAlert({
-  Icon,
-  className,
-  children,
-}: PropsWithChildren<AppAlertProps>) {
+function AppAlert({ Icon, children }: PropsWithChildren<AppAlertProps>) {
   return (
-    <div className={`margin-y-1 ${className ? className : ""}`}>
-      <HighlightBox size="sm">
-        <div className="display-flex">
-          <div>
-            <Icon className="data-icon" />
-          </div>
-          <div className="margin-left-2 width-full">{children}</div>
+    <HighlightBox size="sm">
+      <div className="display-flex">
+        <div>
+          <Icon className="data-icon" />
         </div>
-      </HighlightBox>
-    </div>
+        <div className="margin-left-2 width-full">{children}</div>
+      </div>
+    </HighlightBox>
   );
 }
 
