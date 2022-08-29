@@ -13,55 +13,13 @@ import GuidedSearchCard from "../components/Home/GuidedSearchCard";
 import { logPageView } from "../analytics";
 
 const Hero = styled.img`
-  max-width: 110%;
-  margin-left: -5%;
-  border-radius: 10px;
-  @media only screen and (min-width: 768px) and (max-width: 1279px) {
-    border-radius: 5px;
-    width: 100%;
-    max-width: 110%;
-    margin: 0;
-  }
-  @media (max-width: 767px) {
-    border-radius: 0px;
-    max-width: 100vw;
-    margin-left: -4.5%;
-    width: 100vw;
-    object-fit: cover;
-    object-position: right;
-    height: calc(100vw - 50px);
-  }
+  min-height: 26vh;
+  object-fit: cover;
+  object-position: right;
 `;
 
-const ContentOverlay = styled.div`
-  position: relative;
-  margin-top: -28%;
-  @media (min-width: 40em) {
-    margin-top: -22%;
-  }
-`;
-
-const Heading = styled.h1`
-  color: black;
-  background-color: white;
-  padding: 1rem 1.2rem 0 1.2rem;
-  @media (min-width: 40em) {
-    color: white;
-    background-color: transparent;
-    padding: 0;
-  }
-  @media only screen and (min-width: 768px) and (max-width: 1279px) {
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-  @media only screen and (min-width: 768px) and (max-width: 1023px) {
-    width: 70%;
-  }
-  @media (max-width: 414px) {
-    font-size: 1.75rem;
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
+const OverlaySection = styled.div`
+  margin-top: -8vh;
 `;
 
 const Line = styled.div`
@@ -100,29 +58,36 @@ function Home() {
   }, []);
 
   return (
-    <GridContainer>
-      <Hero src={heroPath} alt="hero image" />
-      <ContentOverlay>
-        <Grid row>
-          <Grid col={12} desktop={{ col: 7 }}>
-            <Heading className="radius-lg padding-y-2 text-bold">
-              {t("homePageHeading")}
-            </Heading>
-          </Grid>
-          <Grid col={12}>
-            <CardGroup
-              className="bg-white radius-lg padding-x-1 tablet:padding-top-3 justify-content-around"
-              role="list"
-            >
-              <ZipCard />
-              <div className="display-flex flex-justify-center margin-bottom-2">
-                <Line></Line>
-                <Or>{t("or")}</Or>
+    <>
+      <div className="position-relative padding-x-0 tablet:padding-x-2">
+        <Hero src={heroPath} alt="hero image" />
+      </div>
+      <GridContainer>
+        <OverlaySection>
+          <Grid row>
+            <Grid col={12} desktop={{ col: 7 }} tablet={{ col: 8 }}>
+              <div className="display-none tablet:display-block position-absolute bottom-0 left-0">
+                <h1 className="text-white padding-2">{t("homePageHeading")}</h1>
               </div>
-              <GuidedSearchCard />
-            </CardGroup>
+              <div className="tablet:display-none bg-white radius-lg padding-3">
+                <h1 className="margin-0">{t("homePageHeading")}</h1>
+              </div>
+            </Grid>
+            <Grid col={12}>
+              <CardGroup
+                className="bg-white radius-lg padding-x-1 tablet:padding-top-3 justify-content-around"
+                role="list"
+              >
+                <ZipCard />
+                <div className="display-flex flex-justify-center margin-bottom-2">
+                  <Line></Line>
+                  <Or>{t("or")}</Or>
+                </div>
+                <GuidedSearchCard />
+              </CardGroup>
+            </Grid>
           </Grid>
-        </Grid>
+        </OverlaySection>
         <Grid row className="margin-top-3">
           <Grid col={12}>
             <CardGroup>
@@ -180,8 +145,8 @@ function Home() {
             </CardGroup>
           </Grid>
         </Grid>
-      </ContentOverlay>
-    </GridContainer>
+      </GridContainer>
+    </>
   );
 }
 
