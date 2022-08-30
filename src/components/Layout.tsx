@@ -50,18 +50,17 @@ function Layout() {
         <div className="margin-x-2 margin-top-2">
           <HighlightBox size="sm">
             <div className="display-flex flex-justify">
-              <div className="display-none tablet:display-block">
-                <Phone className="data-icon margin-right-2" />
-              </div>
-              <div>
-                <>
+              <div className="display-flex">
+                <div className="display-none tablet:display-block">
+                  <Phone className="data-icon margin-right-2" />
+                </div>
+                <div>
                   {t("crisisAlert")}{" "}
                   <Link href="tel:+18444938255" className="text-no-wrap">
                     {t("crisisAlertNumber")}
                   </Link>
-                </>
+                </div>
               </div>
-
               <Button
                 className="width-auto margin-left-1"
                 type="button"
