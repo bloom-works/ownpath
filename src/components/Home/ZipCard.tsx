@@ -24,43 +24,35 @@ function ZipCard() {
   const [showValidation, setShowValidation] = useState<boolean>(false);
 
   return (
-    <Card
-      className="margin-bottom-0"
-      containerProps={{
-        className: "border-0 margin-bottom-0",
-      }}
-      gridLayout={{ col: 12, tablet: { col: 4 } }}
-    >
-      <CardBody>
-        <h2>{t("zipCodePrompt")}</h2>
-        <form
-          onSubmit={(evt) => {
-            evt.preventDefault();
-            if (zipMeta.isValidZip) {
-              navigate({
-                pathname: "/search",
-                search: createSearchParams({
-                  ...filters,
-                  miles: `${zipMeta.defaultRadiusMiles}`,
-                }).toString(),
-              });
-            } else {
-              setShowValidation(true);
-            }
-          }}
+    <div>
+      <h2 className="margin-top-0">{t("zipCodePrompt")}</h2>
+      <form
+        onSubmit={(evt) => {
+          evt.preventDefault();
+          if (zipMeta.isValidZip) {
+            navigate({
+              pathname: "/search",
+              search: createSearchParams({
+                ...filters,
+                miles: `${zipMeta.defaultRadiusMiles}`,
+              }).toString(),
+            });
+          } else {
+            setShowValidation(true);
+          }
+        }}
+      >
+        <ZipInput
+          zip={filters.zip}
+          setZip={(zip) => setFilters({ ...filters, zip })}
+          showError={showValidation}
         >
-          <ZipInput
-            zip={filters.zip}
-            setZip={(zip) => setFilters({ ...filters, zip })}
-            showError={showValidation}
-          >
-            <ZipButton type="submit" className="usa-button margin-left-1">
-              {t("search")}
-            </ZipButton>
-          </ZipInput>
-        </form>
-      </CardBody>
-    </Card>
+          <ZipButton type="submit" className="usa-button margin-left-1">
+            {t("search")}
+          </ZipButton>
+        </ZipInput>
+      </form>
+    </div>
   );
 }
 

@@ -14,6 +14,8 @@ import { logPageView } from "../analytics";
 
 const Hero = styled.img`
   min-height: 26vh;
+  max-height: 22rem;
+  width: 100%;
   object-fit: cover;
   object-position: right;
 `;
@@ -22,30 +24,34 @@ const OverlaySection = styled.div`
   margin-top: -8vh;
 `;
 
-const Line = styled.div`
-  border-bottom: 1px solid black;
-  width: 100%;
-  margin-bottom: 1.2rem;
-  margin-left: 10%;
-  @media (min-width: 40em) {
-    border-bottom: none;
-    border-left: 1px solid black;
-    width: auto;
-    height: 100%;
-    position: relative;
-    right: -6%;
+const HorizontalLineText = styled.div`
+  display: flex;
+  flex-direction: row;
+  margin: 2rem;
+  &:before,
+  &:after {
+    content: "";
+    flex: 1 1;
+    border-bottom: 1px solid;
+    margin: auto;
+    margin-right: 1rem;
+    margin-left: 1rem;
   }
 `;
 
-const Or = styled.div`
-  background-color: white;
-  height: 2rem;
-  padding: 0 1rem;
-  position: relative;
-  left: -45%;
-  @media (min-width: 40em) {
-    padding: 0.25rem 1rem 0.5rem 1rem;
-    top: 40%;
+const VerticalLineText = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-right: 2rem;
+  margin-left: 2rem;
+  &:before,
+  &:after {
+    content: "";
+    flex: 1 1;
+    border-left: 1px solid;
+    margin: auto;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
   }
 `;
 
@@ -74,17 +80,20 @@ function Home() {
               </div>
             </Grid>
             <Grid col={12}>
-              <CardGroup
-                className="bg-white radius-lg padding-x-1 tablet:padding-top-3 justify-content-around"
-                role="list"
-              >
-                <ZipCard />
-                <div className="display-flex flex-justify-center margin-bottom-2">
-                  <Line></Line>
-                  <Or>{t("or")}</Or>
+              <div className="display-none tablet:display-block">
+                <div className="radius-lg bg-white padding-3 display-flex desktop:padding-y-4 tablet:margin-x-2 desktop:margin-x-0">
+                  <ZipCard />
+                  <VerticalLineText>{t("or")}</VerticalLineText>
+                  <GuidedSearchCard isMobile={false} />
                 </div>
-                <GuidedSearchCard />
-              </CardGroup>
+              </div>
+              <div className="tablet:display-none">
+                <div className="radius-lg bg-white padding-3 display-flex flex-column">
+                  <ZipCard />
+                  <HorizontalLineText>{t("or")}</HorizontalLineText>
+                  <GuidedSearchCard isMobile={true} />
+                </div>
+              </div>
             </Grid>
           </Grid>
         </OverlaySection>
