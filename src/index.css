@@ -50,13 +50,13 @@ p {
 
 @media screen and (max-width: 480px) {
   h1 {
-    font-size: 1.6rem;
+    font-size: 1.602rem;
   }
   h2 {
-    font-size: 1.2rem;
+    font-size: 1.266rem;
   }
   h3 {
-    font-size: 1.1rem;
+    font-size: 1.125rem;
   }
 }
 

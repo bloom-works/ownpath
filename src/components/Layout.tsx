@@ -28,7 +28,7 @@ function Layout() {
           <a href="/" title="Home" aria-label="Home">
             {i18n.language === "es" ? (
               <MiPropiaSendaLogo
-                height={38}
+                height={34}
                 width="auto"
                 title={t("ownPathLogoAlt")}
               />
@@ -42,7 +42,10 @@ function Layout() {
           </a>
           <div className="margin-x-1 tablet:margin-x-2">{t("by")}</div>
           <a href="https://bha.colorado.gov/" target="_blank" rel="noreferrer">
-            <ColoradoBhaLogo height={34} width="auto" />
+            <ColoradoBhaLogo
+              height={i18n.language === "es" ? 32 : 34}
+              width="auto"
+            />
           </a>
         </div>
       </Header>

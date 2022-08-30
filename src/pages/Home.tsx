@@ -78,13 +78,13 @@ function Home() {
               >
                 <h1 className="text-white padding-2">{t("homePageHeading")}</h1>
               </div>
-              <div className="tablet:display-none bg-white radius-lg padding-3">
+              <div className="tablet:display-none bg-white radius-lg padding-x-3 padding-top-3">
                 <h1 className="margin-0">{t("homePageHeading")}</h1>
               </div>
             </Grid>
             <Grid col={12}>
               <div className="display-none tablet:display-block" aria-hidden>
-                <div className="radius-lg bg-white padding-3 display-flex desktop:padding-y-4 tablet:margin-x-2 desktop:margin-x-0">
+                <div className="radius-lg bg-white padding-4 display-flex desktop:padding-y-4 tablet:margin-x-2 desktop:margin-x-0">
                   <ZipCard id="desktop_zip" />
                   <VerticalLineText>{t("or")}</VerticalLineText>
                   <GuidedSearchCard isMobile={false} />
