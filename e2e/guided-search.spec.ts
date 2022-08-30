@@ -9,7 +9,9 @@ test('Homepage has "Try our guided experience" button that leads to the guided-s
   page,
 }) => {
   await expect(page).toHaveTitle(/OwnPath/);
-  const guidedExperience = page.locator("text=Try our guided experience");
+  const guidedExperience = page.locator("a:visible", {
+    hasText: "Try our guided experience",
+  });
   await expect(guidedExperience).toHaveAttribute("href", "/guided-search");
   await guidedExperience.click();
   expect(page.url()).toContain("/guided-search");
