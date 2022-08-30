@@ -72,7 +72,10 @@ function Home() {
         <OverlaySection>
           <Grid row>
             <Grid col={12} desktop={{ col: 7 }} tablet={{ col: 8 }}>
-              <div className="display-none tablet:display-block position-absolute bottom-0 left-0">
+              <div
+                className="display-none tablet:display-block position-absolute bottom-0 left-0"
+                aria-hidden
+              >
                 <h1 className="text-white padding-2">{t("homePageHeading")}</h1>
               </div>
               <div className="tablet:display-none bg-white radius-lg padding-3">
@@ -80,7 +83,7 @@ function Home() {
               </div>
             </Grid>
             <Grid col={12}>
-              <div className="display-none tablet:display-block">
+              <div className="display-none tablet:display-block" aria-hidden>
                 <div className="radius-lg bg-white padding-3 display-flex desktop:padding-y-4 tablet:margin-x-2 desktop:margin-x-0">
                   <ZipCard />
                   <VerticalLineText>{t("or")}</VerticalLineText>
