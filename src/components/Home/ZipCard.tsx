@@ -13,7 +13,7 @@ const ZipButton = styled(Button)`
   margin-right: 0;
 `;
 
-function ZipCard() {
+function ZipCard({ id }: { id?: string }) {
   const [filters, setFilters] = useState<SearchFilters>(EMPTY_SEARCH_FILTERS);
 
   const { t } = useTranslation();
@@ -46,6 +46,7 @@ function ZipCard() {
           zip={filters.zip}
           setZip={(zip) => setFilters({ ...filters, zip })}
           showError={showValidation}
+          id={id}
         >
           <ZipButton type="submit" className="usa-button margin-left-1">
             {t("search")}

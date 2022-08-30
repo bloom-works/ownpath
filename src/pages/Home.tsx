@@ -85,7 +85,7 @@ function Home() {
             <Grid col={12}>
               <div className="display-none tablet:display-block" aria-hidden>
                 <div className="radius-lg bg-white padding-3 display-flex desktop:padding-y-4 tablet:margin-x-2 desktop:margin-x-0">
-                  <ZipCard />
+                  <ZipCard id="desktop_zip" />
                   <VerticalLineText>{t("or")}</VerticalLineText>
                   <GuidedSearchCard isMobile={false} />
                 </div>

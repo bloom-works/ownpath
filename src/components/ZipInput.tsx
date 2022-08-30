@@ -8,6 +8,7 @@ type ZipInputProps = {
   showError?: boolean;
   noLabel?: boolean;
   autoFocus?: boolean;
+  id?: string;
 };
 
 function ZipInput({
@@ -17,18 +18,20 @@ function ZipInput({
   noLabel = false,
   autoFocus = false,
   showError = false,
+  id,
 }: PropsWithChildren<ZipInputProps>) {
   const { t } = useTranslation();
+  const inputId = id || "zip";
 
   return (
     <div className="width-full">
-      <Label htmlFor="zip" className="margin-bottom-1" srOnly={noLabel}>
+      <Label htmlFor={inputId} className="margin-bottom-1" srOnly={noLabel}>
         {t("locationTitle")}
       </Label>
       <div className="display-flex">
         <TextInput
           className="margin-top-0 tablet:width-15"
-          id="zip"
+          id={inputId}
           name="zip"
           type="text"
           maxLength={5}
