@@ -16,11 +16,11 @@ function Footer() {
       primary={
         <div className="padding-x-4 display-flex flex-row">
           <Grid row className="flex-align-center padding-y-2">
-            <Grid col="auto">
-              <BhaLogo height="40" />
+            <Grid col="auto" className="display-none tablet:display-block">
+              <BhaLogo height="40" className="margin-right-2" />
             </Grid>
 
-            <Grid col className="margin-left-2">
+            <Grid col>
               <h2 className="margin-y-1">{t("privacyCommitmentHeading")}</h2>
               <p className="margin-y-1">{t("privacyCommitment")}</p>
             </Grid>
