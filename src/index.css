@@ -72,6 +72,10 @@ legend,
 [class*="font-heading-"] {
   font-family: "MuseoSlab";
 }
+.font-family-body {
+  font-family: Trebuchet MS, san-serif !important;
+}
+
 .usa-button,
 .usa-card__container,
 .usa-prose,
