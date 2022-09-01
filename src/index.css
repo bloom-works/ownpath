@@ -72,7 +72,8 @@ legend,
 [class*="font-heading-"] {
   font-family: "MuseoSlab";
 }
-.font-family-body {
+.font-family-body,
+[class*="font-body-"] {
   font-family: Trebuchet MS, san-serif !important;
 }
 
