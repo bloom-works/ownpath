@@ -58,7 +58,7 @@ function BasicResultDetail({ headingLevel, result }: BasicResultDetailProps) {
       </div>
 
       <ResultDatum Icon={DollarSign} key="fees">
-        <Heading className="margin-top-0 margin-bottom-05">
+        <Heading className="font-body-sm margin-top-0 margin-bottom-05">
           {t("feesTitle")}
         </Heading>
         {!!anyAreTrue(result.fees) ? (
@@ -77,7 +77,7 @@ function BasicResultDetail({ headingLevel, result }: BasicResultDetailProps) {
       </ResultDatum>
 
       <ResultDatum Icon={Clock} key="hours">
-        <Heading className="margin-top-0 margin-bottom-05">
+        <Heading className="font-body-sm margin-top-0 margin-bottom-05">
           {t("hours")}
         </Heading>
         <Hours hours={result.hours} />

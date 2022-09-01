@@ -6,6 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "@trussworks/react-uswds/lib/uswds.css";
 import "@trussworks/react-uswds/lib/index.css";
 import "./index.css";
+import "./fonts/Museo_Slab_500-webfont.woff";
 import "./i18n";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
