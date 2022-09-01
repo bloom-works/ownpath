@@ -4,7 +4,6 @@ import { useTranslation } from "react-i18next";
 
 import { ReactComponent as Globe } from "../images/globe.svg";
 import caretDownURL from "../images/caret-down.svg";
-import { useLocation, useSearchParams } from "react-router-dom";
 
 const StyledDropdown = styled(Dropdown)`
   border: none;
@@ -23,7 +22,6 @@ const StyledDropdown = styled(Dropdown)`
 
 function Banner() {
   const { t, i18n } = useTranslation();
-  const [searchParams, setSearchParams] = useSearchParams();
 
   return (
     <div className="Banner usa-dark-background font-body-3xs">
@@ -41,10 +39,7 @@ function Banner() {
               name="change-language"
               id="change-language"
               defaultValue={i18n.language}
-              onChange={(evt) => {
-                i18n.changeLanguage(evt.target.value);
-                setSearchParams({ ...searchParams, lng: evt.target.value });
-              }}
+              onChange={(evt) => i18n.changeLanguage(evt.target.value)}
             >
               <option className="usa-dark-background" value="en">
                 English

@@ -1,5 +1,5 @@
 import { Button, Header, Link as ExternalLink } from "@trussworks/react-uswds";
-import { Outlet, useLocation, Link } from "react-router-dom";
+import { Outlet, Link, useLocation } from "react-router-dom";
 import Banner from "./Banner";
 import Footer from "./Footer";
 import { ReactComponent as ColoradoBhaLogo } from "../images/logos/colorado_bha.svg";
@@ -18,15 +18,15 @@ const Wrapper = styled.div`
 
 function Layout() {
   const [showCrisisAlert, setShowCrisisAlert] = useState(true);
-  const location = useLocation();
 
   const { t, i18n } = useTranslation();
+  const location = useLocation();
   return (
     <Wrapper className="display-flex flex-column">
       <Header basic color="primary" role="banner">
         <Banner />
         <div className="display-flex flex-justify-center flex-align-center border-bottom border-base-lighter padding-y-2 padding-x-1">
-          <Link to={`/${location.search}`} title="Home" aria-label="Home">
+          <Link to="/" title="Home" aria-label="Home">
             {i18n.language === "es" ? (
               <MiPropiaSendaLogo
                 height={38}
