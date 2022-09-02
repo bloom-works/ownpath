@@ -98,7 +98,7 @@ function GuidedSearch() {
           />
         </div>
       )}
-      <h1 className="font-body-md margin-top-2 tablet:margin-top-4">
+      <h1 className="font-heading-md margin-top-2 tablet:margin-top-4">
         <span className="usa-sr-only">{t("guidedSearch")}</span>
         {t("question")} {currentStepIdx + 1} of {GUIDED_SEARCH_STEPS.length}
       </h1>
