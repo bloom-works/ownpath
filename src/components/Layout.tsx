@@ -29,7 +29,7 @@ function Layout() {
           <Link to="/" title="Home" aria-label="Home">
             {i18n.language === "es" ? (
               <MiPropiaSendaLogo
-                height={38}
+                height={34}
                 width="auto"
                 title={t("ownPathLogoAlt")}
               />
