@@ -109,6 +109,7 @@ function ResultDetail() {
                 <BulletedList
                   boolMap={data.populationsServed}
                   className="line-height-body-4"
+                  emptyMsg={t("moreInfo")}
                 />
               </div>
             </ResultDatum>
@@ -119,6 +120,7 @@ function ResultDetail() {
                   boolMap={data.accessibility}
                   translationPrefix="accessibilityValues"
                   className="line-height-body-4"
+                  emptyMsg={t("moreInfo")}
                 />
               </div>
             </ResultDatum>
