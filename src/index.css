@@ -99,6 +99,9 @@ legend,
   text-decoration: none;
 }
 
+.dark-background {
+  color: white;
+}
 .usa-link.dark-background {
   color: white;
 }

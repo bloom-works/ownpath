@@ -17,8 +17,8 @@ import DirectionsLink from "../components/ResultDetail/DirectionsLink";
 import ShareButton from "../components/ShareButton";
 import { logPageView } from "../analytics";
 import BackButton from "../components/BackButton";
-import HighlightBox from "../components/HighlightBox";
 import { anyAreTrue, getMapMarker } from "../utils";
+import ProviderUpdateInfo from "../components/ResultDetail/ProviderUpdateInfo";
 
 function ResultDetail() {
   // Ensure user sees the top of the page
@@ -218,10 +218,13 @@ function ResultDetail() {
               ]}
             />
             {data.lastUpdatedDate && (
-              <p className="margin-top-4">
+              <p className="margin-top-5">
                 {t("dataLastUpdated")}: {data.lastUpdatedDate}
               </p>
             )}
+            <div className="margin-top-2">
+              <ProviderUpdateInfo />
+            </div>
           </section>
         </Grid>
       </Grid>
