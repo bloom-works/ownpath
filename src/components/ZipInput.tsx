@@ -44,7 +44,7 @@ function ZipInput({
         />
         {children}
       </div>
-      {showError && <ErrorMessage>{t("zipCodeError")}</ErrorMessage>}
+      {showError && <ErrorMessage>{t("invalidZipcodeError")}</ErrorMessage>}
     </div>
   );
 }
