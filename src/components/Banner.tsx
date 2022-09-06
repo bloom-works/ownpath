@@ -26,7 +26,7 @@ function Banner() {
   return (
     <div className="Banner usa-dark-background font-body-3xs">
       <Grid row className="flex-justify-end">
-        <Grid col="auto" className="padding-x-4">
+        <Grid col="auto" className="padding-x-2">
           <Grid row className="flex-justify-end flex-align-center">
             <Globe height={15} fill="white" />
             <Label

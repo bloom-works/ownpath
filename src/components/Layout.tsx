@@ -1,5 +1,5 @@
-import { Button, Grid, Header, Link } from "@trussworks/react-uswds";
-import { Outlet, useLocation } from "react-router-dom";
+import { Button, Header, Link as ExternalLink } from "@trussworks/react-uswds";
+import { Outlet, Link, useLocation } from "react-router-dom";
 import Banner from "./Banner";
 import Footer from "./Footer";
 import { ReactComponent as ColoradoBhaLogo } from "../images/logos/colorado_bha.svg";
@@ -9,8 +9,8 @@ import { ReactComponent as Close } from "../images/close.svg";
 import { ReactComponent as MiPropiaSendaLogo } from "../images/logos/mi_propia_senda.svg";
 import styled from "styled-components";
 import { useState } from "react";
-import AppAlert from "./AppAlert";
 import { useTranslation } from "react-i18next";
+import HighlightBox from "./HighlightBox";
 
 const Wrapper = styled.div`
   min-height: 100%;
@@ -18,41 +18,62 @@ const Wrapper = styled.div`
 
 function Layout() {
   const [showCrisisAlert, setShowCrisisAlert] = useState(true);
-  const location = useLocation();
+
   const { t, i18n } = useTranslation();
+  const location = useLocation();
   return (
     <Wrapper className="display-flex flex-column">
       <Header basic color="primary" role="banner">
         <Banner />
         <div className="display-flex flex-justify-center flex-align-center border-bottom border-base-lighter padding-y-2 padding-x-1">
-          <a href="/" title="Home" aria-label="Home">
+          <Link to="/" title="Home" aria-label="Home">
             {i18n.language === "es" ? (
-              <MiPropiaSendaLogo height={38} width="auto" title={t("ownPathLogoAlt")} />
+              <MiPropiaSendaLogo
+                height={34}
+                width="auto"
+                title={t("ownPathLogoAlt")}
+              />
             ) : (
-              <OwnPathLogo height={38} width="auto" title={t("ownPathLogoAlt")} />
+              <OwnPathLogo
+                height={38}
+                width="auto"
+                title={t("ownPathLogoAlt")}
+              />
             )}
-          </a>
+          </Link>
           <div className="margin-x-1 tablet:margin-x-2">{t("by")}</div>
-          <a href="https://bha.colorado.gov/" target="_blank" rel="noreferrer">
-            <ColoradoBhaLogo height={34} width="auto" />
-          </a>
+          <ExternalLink
+            href="https://bha.colorado.gov/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <ColoradoBhaLogo
+              height={i18n.language === "es" ? 32 : 34}
+              width="auto"
+            />
+          </ExternalLink>
         </div>
       </Header>
       {showCrisisAlert && location.pathname !== "/guided-search" && (
         <div className="margin-x-2 margin-top-2">
-          <AppAlert Icon={Phone}>
+          <HighlightBox size="sm">
             <div className="display-flex flex-justify">
-              <div>
-                <>
+              <div className="display-flex">
+                <div className="display-none tablet:display-block">
+                  <Phone className="data-icon margin-right-2" />
+                </div>
+                <div>
                   {t("crisisAlert")}{" "}
-                  <Link href="tel:+18444938255" className="text-no-wrap">
+                  <ExternalLink
+                    href="tel:+18444938255"
+                    className="text-no-wrap"
+                  >
                     {t("crisisAlertNumber")}
-                  </Link>
-                </>
+                  </ExternalLink>
+                </div>
               </div>
-
               <Button
-                className="width-auto margin-x-1"
+                className="width-auto margin-left-1"
                 type="button"
                 unstyled
                 title="close"
@@ -61,7 +82,7 @@ function Layout() {
                 <Close className="data-icon" />
               </Button>
             </div>
-          </AppAlert>
+          </HighlightBox>
         </div>
       )}
 

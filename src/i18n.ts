@@ -29,8 +29,9 @@ i18n
   .use(languageDetector)
   .init({
     detection: {
-      order: ["querystring", "domainLanguageDetector"],
+      order: ["querystring", "localStorage", "domainLanguageDetector"],
       lookupQuerystring: "lng",
+      lookupLocalStorage: "lng",
     },
     fallbackLng: "en",
     interpolation: { escapeValue: false }, // React already does escaping
