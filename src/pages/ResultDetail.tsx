@@ -164,7 +164,7 @@ function ResultDetail() {
       </Grid>
       <Grid row>
         <Grid col={12}>
-          <section className="margin-top-4">
+          <section className="margin-top-10">
             <Accordion
               bordered
               items={[
@@ -217,14 +217,14 @@ function ResultDetail() {
                 },
               ]}
             />
-            {data.lastUpdatedDate && (
-              <p className="margin-top-5">
-                {t("dataLastUpdated")}: {data.lastUpdatedDate}
-              </p>
-            )}
             <div className="margin-top-2">
               <ProviderUpdateInfo />
             </div>
+            {data.lastUpdatedDate && (
+              <p className="margin-top-2">
+                {t("dataLastUpdated")}: {data.lastUpdatedDate}
+              </p>
+            )}
           </section>
         </Grid>
       </Grid>
