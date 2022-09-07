@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { createSearchParams, useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import { AnalyticsAction, logEvent } from "../../analytics";
 import { SearchFilters } from "../../types";
 import { EMPTY_SEARCH_FILTERS, getZipSearchMetadata } from "../../utils";
 import ZipInput from "../ZipInput";
@@ -39,6 +40,7 @@ function ZipCard({ id }: { id?: string }) {
             });
           } else {
             setShowValidation(true);
+            logEvent(AnalyticsAction.SearchError, { search: filters.zip });
           }
         }}
       >
