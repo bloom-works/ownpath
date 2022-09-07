@@ -1,5 +1,6 @@
 import {
   Button,
+  ButtonGroup,
   Fieldset,
   GridContainer,
   StepIndicatorStep,
@@ -90,14 +91,6 @@ function GuidedSearch() {
   const currentStep = GUIDED_SEARCH_STEPS[currentStepIdx];
   return (
     <GridContainer>
-      {currentStepIdx > 0 && (
-        <div className="margin-top-2 margin-bottom-5">
-          <BackButton
-            text={t("previousQuestion")}
-            onClick={() => setCurrentStepIdx((idx) => idx - 1)}
-          />
-        </div>
-      )}
       <h1 className="font-heading-md margin-top-2 tablet:margin-top-4">
         <span className="usa-sr-only">{t("guidedSearch")}</span>
         {t("question")} {currentStepIdx + 1} of {GUIDED_SEARCH_STEPS.length}
@@ -191,7 +184,18 @@ function GuidedSearch() {
           )}
         </div>
 
-        <Button type="submit">{t("next")}</Button>
+        <ButtonGroup>
+          <Button type="submit">{t("next")}</Button>
+          {currentStepIdx > 0 && (
+            <Button
+              type="button"
+              outline
+              onClick={() => setCurrentStepIdx((idx) => idx - 1)}
+            >
+              {t("previousQuestion")}
+            </Button>
+          )}
+        </ButtonGroup>
       </form>
     </GridContainer>
   );
