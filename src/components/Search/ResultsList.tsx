@@ -8,9 +8,9 @@ type ResultsListProps = {
 };
 
 const DESKTOP_CLASSES =
-  "border-bottom border-base-lighter padding-y-3 padding-x-2";
+  "border-bottom border-base-lighter padding-y-3 padding-x-5";
 const DESKTOP_CLASSES_ACTIVE =
-  "border-05 radius-sm border-primary-light padding-y-3 padding-x-2";
+  "border-05 radius-sm border-primary-light padding-y-3 padding-x-5";
 const MOBILE_CLASSES =
   "border border-base-lighter radius-lg padding-2 margin-bottom-1";
 
