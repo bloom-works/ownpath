@@ -244,5 +244,6 @@
   "linkCopied": "Link copied!",
   "phone": "Phone",
   "email": "Email",
-  "dataLastUpdated": "Data last updated"
+  "dataLastUpdated": "Data last updated",
+  "bhaProviderUpdate": "To update your provider information in the OwnPath directory, please visit the <1>Colorado BHA for Providers website</1> to update your information in the LADDERS platform. All updates to the provider data will appear in OwnPath in 5-7 business days."
 }

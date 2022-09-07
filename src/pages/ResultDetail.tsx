@@ -17,8 +17,8 @@ import DirectionsLink from "../components/ResultDetail/DirectionsLink";
 import ShareButton from "../components/ShareButton";
 import { logPageView } from "../analytics";
 import BackButton from "../components/BackButton";
-import HighlightBox from "../components/HighlightBox";
 import { anyAreTrue, getMapMarker } from "../utils";
+import ProviderUpdateInfo from "../components/ResultDetail/ProviderUpdateInfo";
 
 function ResultDetail() {
   // Ensure user sees the top of the page
@@ -164,7 +164,7 @@ function ResultDetail() {
       </Grid>
       <Grid row>
         <Grid col={12}>
-          <section className="margin-top-4">
+          <section className="margin-top-10">
             <Accordion
               bordered
               items={[
@@ -217,8 +217,11 @@ function ResultDetail() {
                 },
               ]}
             />
+            <div className="margin-top-2">
+              <ProviderUpdateInfo />
+            </div>
             {data.lastUpdatedDate && (
-              <p className="margin-top-4">
+              <p className="margin-top-2">
                 {t("dataLastUpdated")}: {data.lastUpdatedDate}
               </p>
             )}
