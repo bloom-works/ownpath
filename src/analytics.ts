@@ -26,6 +26,7 @@ export enum AnalyticsAction {
   ApplyFilter = "Apply filter",
   ToggleResultView = "Toggle result view",
   ClickMapMarker = "Click map marker",
+  SearchError = "Search error",
 }
 
 type AnalyticsEventProperties = {
@@ -33,4 +34,5 @@ type AnalyticsEventProperties = {
   label?: string;
   filter_type?: string;
   filter_value?: string;
+  search?: string;
 };

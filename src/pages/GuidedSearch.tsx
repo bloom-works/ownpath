@@ -115,6 +115,9 @@ function GuidedSearch() {
             const zipMeta = getZipSearchMetadata(searchFilters.zip);
             if (!zipMeta.isValidZip) {
               setShowZipValidation(true);
+              logEvent(AnalyticsAction.SearchError, {
+                search: searchFilters.zip,
+              });
               return;
             } else {
               // Otherwise, pre-populate miles with appropriate default radius
