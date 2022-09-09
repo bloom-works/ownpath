@@ -24,7 +24,7 @@ function DesktopResults({ results }: { results: CareProviderSearchResult[] }) {
   }, [mapRef, results]);
 
   return (
-    <div className="display-none tablet:display-block padding-x-4">
+    <div className="display-none tablet:display-block">
       <Grid row className="border-top border-base-lighter overflow-x-hidden">
         <Grid
           tablet={{ col: 7 }}
