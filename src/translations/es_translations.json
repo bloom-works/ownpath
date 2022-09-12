@@ -134,6 +134,7 @@
   "complaintFormInfo": "\n\nSi te\ngustaría reportar un problema con un proveedor de servicios para la salud del comportamiento, puedes enviar\nuna queja a la Administración para la Salud del Comportamiento llenando nuestro\n<1>Formulario de quejas individuales</1> o comunicándote con nosotros\npor:  ",
   "complaintFormExtraInfo": "Haremos todo lo posible por ayudarte y resolver el asunto. También puedes enviar tu queja directamente al proveedor de servicios para la salud del comportamiento. Para obtener más información, visita <1>https://bha.colorado.gov/contact/contact-us</1>.",
   "complaintFormUrl": "https://docs.google.com/forms/d/e/1FAIpQLSfGoqxFYuLycSzeAQxsNv1Yr_GxHdN1vuWYLfudMWZ-yQWUjQ/viewform",
+  "bhaProviderUpdate": "Proveedores: Para actualizar su información en el directorio de MiPropiaSenda, por favor visiten el <1>sitio web para proveedores de la BHA de Colorado</1> en la plataforma de LADDERS. Todos los cambios de los datos de proveedores aparecerán en MiPropiaSenda en 5 a 7 días hábiles. ",
   "faqPageHeading": "Preguntas frecuentes\r",
   "questionAbbreviation": "P",
   "answerAbbreviation": "R",
@@ -244,6 +245,5 @@
   "linkCopied": "¡Enlace copiado!",
   "phone": "Teléfono",
   "email": "Email",
-  "dataLastUpdated": "Última actualización",
-  "bhaProviderUpdate": "Para actualizar tu información como proveedor en el directorio de MiPropiaSenda, por favor visita el <1>sitio web para proveedores de la BHA de Colorado</1> en la plataforma de LADDERS. Todos los cambios de los datos de proveedores aparecerán en MiPropiaSenda en 5 a 7 días hábiles."
+  "dataLastUpdated": "Última actualización"
 }
