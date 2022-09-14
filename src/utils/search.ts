@@ -106,6 +106,17 @@ export function applySearchFilters(
   return { results };
 }
 
+export function countOptionalSearchFiltersUsed(filters: SearchFilters): number {
+  let count = 0;
+  const { zip, miles, ...optionalFilters } = filters;
+  for (const [_filter_k, filter_v] of Object.entries(optionalFilters)) {
+    if (filter_v.length !== 0) {
+      count += 1;
+    }
+  }
+  return count;
+}
+
 export const EMPTY_SEARCH_FILTERS: SearchFilters = {
   zip: "",
   miles: "",

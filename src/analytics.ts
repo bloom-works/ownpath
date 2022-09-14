@@ -29,12 +29,15 @@ export enum AnalyticsAction {
   ToggleResultView = "Toggle result view",
   ClickMapMarker = "Click map marker",
   SearchError = "Search error",
+  ViewSearchResults = "View search results",
 }
 
 type AnalyticsEventProperties = {
-  step?: number;
-  label?: string;
+  count?: number;
+  filter_count?: number;
   filter_type?: string;
   filter_value?: string;
+  label?: string;
   search?: string;
+  step?: number;
 };
