@@ -72,6 +72,9 @@ function GuidedSearch() {
     if (currentStepIdx < GUIDED_SEARCH_STEPS.length - 1) {
       setCurrentStepIdx((idx) => idx + 1);
     } else {
+      logEvent(AnalyticsAction.CompleteGuidedSearch, {
+        search: searchFilters.zip,
+      });
       const searchFiltersWithoutNoops: SearchFilters = {
         ...searchFilters,
         typesOfHelp: searchFilters.typesOfHelp.filter(

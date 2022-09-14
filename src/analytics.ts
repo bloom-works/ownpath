@@ -22,6 +22,8 @@ export const logEvent = (
 
 export enum AnalyticsAction {
   CompleteGuidedSearchQuestion = "Complete guided search question",
+  CompleteGuidedSearch = "Complete guided search",
+  CompleteZipSearch = "Complete zip search",
   UpdateFilter = "Update filter",
   ApplyFilter = "Apply filter",
   ToggleResultView = "Toggle result view",
