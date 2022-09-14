@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { ReactComponent as Share } from "../images/share.svg";
 import { isMobile } from "react-device-detect";
 import { useTranslation } from "react-i18next";
+import { AnalyticsAction, logEvent } from "../analytics";
 
 const TopToolTip = styled.span`
   margin-top: -2.5rem;
@@ -23,10 +24,12 @@ function ShareButton({ text }: ShareButtonProps) {
   const { t } = useTranslation();
   const [showCopiedToolTip, setShowCopiedToolTip] = useState(false);
   const onClick = () => {
+    const url = window.location.href;
+    logEvent(AnalyticsAction.ClickShare, { url });
     const shareData = {
       title: "OwnPath",
       text: "Search results from OwnPath",
-      url: window.location.href,
+      url,
     };
     if (navigator.canShare && navigator.canShare(shareData) && isMobile) {
       navigator.share(shareData);

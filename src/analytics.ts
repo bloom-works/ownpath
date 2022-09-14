@@ -30,6 +30,7 @@ export enum AnalyticsAction {
   ClickMapMarker = "Click map marker",
   SearchError = "Search error",
   ViewSearchResults = "View search results",
+  ClickShare = "Click share",
 }
 
 type AnalyticsEventProperties = {
@@ -40,4 +41,5 @@ type AnalyticsEventProperties = {
   label?: string;
   search?: string;
   step?: number;
+  url?: string;
 };
