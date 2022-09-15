@@ -58,7 +58,7 @@ export const getZipSearchMetadata = (zip: string): ZipSearchMetadata => {
   return {
     isValidZip: true,
     defaultRadiusMiles,
-    center: { lat: data.centroid_lat, lng: data.centroid_lon },
+    center: { lat: data.lat, lng: data.lng },
   };
 };
 

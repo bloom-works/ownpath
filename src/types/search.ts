@@ -30,9 +30,9 @@ export interface ZipData {
     STATE: string;
     POPULATION: number | null;
     POP_SQMI: number | null;
-    SQMI: number;
-    centroid_lon: number;
-    centroid_lat: number;
+    SQMI: number | null;
+    lng: number;
+    lat: number;
   };
 }
 
