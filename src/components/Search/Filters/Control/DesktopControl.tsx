@@ -1,6 +1,6 @@
 import { Grid } from "@trussworks/react-uswds";
 import { useTranslation } from "react-i18next";
-import { Dispatch, SetStateAction, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { SearchFilters, TypeOfHelp } from "../../../../types";
 import DesktopControlDropdown from "./DesktopControlDropdown";
 import FeePreferenceInput from "../FeePreferenceInput";
@@ -11,6 +11,7 @@ import AccessibilityInput from "../AccessibilityInput";
 import DistanceInput from "../DistanceInput";
 import ControlToggles from "./DesktopControlToggles";
 import AgeGroupInput from "../AgeGroupInput";
+import { useLocation, useNavigate } from "react-router-dom";
 
 type DesktopControlProps = {
   filters: SearchFilters;
@@ -24,10 +25,11 @@ function DesktopControl({
   distanceUpdatedExternally,
 }: DesktopControlProps) {
   const { t } = useTranslation();
-  // flags to display distance and age filters in active state
-  // ONLY after user has changed from default or guided search selection
+  const location = useLocation();
+  // flag to display distance filter in active state ONLY
+  // after user has explicitly changed from default value (zipcode search)
+  // or original selection (guided search)
   const [showDistanceActive, setShowDistanceActive] = useState(false);
-  const [showAgeActive, setShowAgeActive] = useState(false);
 
   return (
     <div className="display-none tablet:display-block">
@@ -111,16 +113,18 @@ function DesktopControl({
         </DesktopControlDropdown>
         <DesktopControlDropdown
           title={t("ageTitle")}
-          hasSelection={!!filters.age && showAgeActive}
+          hasSelection={!!filters.age}
+          clear={() => {
+            const updatedFilters = { ...filters };
+            delete updatedFilters.age;
+            setFilters(updatedFilters);
+          }}
         >
           <AgeGroupInput
             legend={t("ageTitle")}
             hideLegend
             filters={filters}
-            setFilters={(_filters) => {
-              setShowAgeActive(true);
-              setFilters(_filters);
-            }}
+            setFilters={setFilters}
           />
         </DesktopControlDropdown>
       </Grid>
