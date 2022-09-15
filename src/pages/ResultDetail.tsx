@@ -10,7 +10,6 @@ import Map from "../components/Map";
 import BasicResultDetail from "../components/ResultDetail/BasicResultDetail";
 import CARE_PROVIDER_DATA from "../data/ladders_data.json";
 import { CareProvider } from "../types";
-import ResultDatum from "../components/ResultDetail/ResultDatum";
 import BulletedList from "../components/BulletedList";
 import { useEffect } from "react";
 import DirectionsLink from "../components/ResultDetail/DirectionsLink";
