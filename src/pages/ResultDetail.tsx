@@ -93,7 +93,7 @@ function ResultDetail() {
             )}
           </Grid>
           <Grid tablet={{ col: 5 }}>
-            <BasicResultDetail headingLevel="h3" result={data} />
+            <BasicResultDetail result={data} />
           </Grid>
         </Grid>
       </section>

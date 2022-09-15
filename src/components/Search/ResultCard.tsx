@@ -21,7 +21,7 @@ export default function ResultCard({ data }: ResultCardProps) {
         <MilesAway meters={data.distance} />
       </div>
       <h2 className="margin-top-1 margin-bottom-3">{data.name}</h2>
-      <BasicResultDetail headingLevel="h3" result={data} isCondensed />
+      <BasicResultDetail result={data} isCondensed />
       <Link
         className="usa-button"
         to={`/result/${data.id}`}

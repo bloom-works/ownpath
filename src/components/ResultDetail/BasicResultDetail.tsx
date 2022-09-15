@@ -17,25 +17,19 @@ import { Fragment } from "react";
 import FeesInfo from "./FeesInfo";
 
 type BasicResultDetailProps = {
-  headingLevel: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
   result: CareProvider;
   isCondensed?: boolean;
 };
 
-function BasicResultDetail({
-  headingLevel,
-  result,
-  isCondensed,
-}: BasicResultDetailProps) {
+function BasicResultDetail({ result, isCondensed }: BasicResultDetailProps) {
   const { t } = useTranslation();
-  const Heading = headingLevel;
 
   return (
     <>
       <div className="margin-bottom-3">
         {result.phone && (
           <ResultDatum Icon={Telephone} key="telephone">
-            <Heading className="usa-sr-only">{t("telephoneNumber")}</Heading>
+            <h3 className="usa-sr-only">{t("telephoneNumber")}</h3>
             <Link variant="external" href={`tel:${result.phone}`}>
               {result.phone}
             </Link>
@@ -43,7 +37,7 @@ function BasicResultDetail({
         )}
         {!!result.address?.length && (
           <ResultDatum Icon={Location} key="address">
-            <Heading className="usa-sr-only">{t("address")}</Heading>
+            <h3 className="usa-sr-only">{t("address")}</h3>
             <div>
               {result.address.map((addr, idx) => (
                 <Fragment key={idx}>
@@ -56,16 +50,16 @@ function BasicResultDetail({
         )}
         {result.website && (
           <ResultDatum Icon={Website} key="website">
-            <Heading className="usa-sr-only">{t("website")}</Heading>
+            <h3 className="usa-sr-only">{t("website")}</h3>
             <WebsiteLink url={result.website} />
           </ResultDatum>
         )}
       </div>
 
       <ResultDatum Icon={DollarSign} key="fees">
-        <Heading className="font-body-sm margin-top-0 margin-bottom-05">
+        <h3 className="font-body-sm margin-top-0 margin-bottom-05">
           {t("feesTitle")}
-        </Heading>
+        </h3>
         {!!anyAreTrue(result.fees) ? (
           <>
             <FeesInfo fees={result.fees} isCondensed={isCondensed} />
@@ -79,9 +73,9 @@ function BasicResultDetail({
       </ResultDatum>
 
       <ResultDatum Icon={Clock} key="hours">
-        <Heading className="font-body-sm margin-top-0 margin-bottom-05">
+        <h3 className="font-body-sm margin-top-0 margin-bottom-05">
           {t("hours")}
-        </Heading>
+        </h3>
         <Hours hours={result.hours} />
       </ResultDatum>
     </>
