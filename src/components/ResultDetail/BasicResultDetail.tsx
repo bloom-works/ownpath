@@ -12,16 +12,21 @@ import Hours from "./Hours";
 
 import { CareProvider } from "../../types";
 import { anyAreTrue } from "../../utils";
-import CommaSeparatedList from "../CommaSeparatedList";
 import WebsiteLink from "./WebsiteLink";
 import { Fragment } from "react";
+import FeesInfo from "./FeesInfo";
 
 type BasicResultDetailProps = {
   headingLevel: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
   result: CareProvider;
+  isCondensed?: boolean;
 };
 
-function BasicResultDetail({ headingLevel, result }: BasicResultDetailProps) {
+function BasicResultDetail({
+  headingLevel,
+  result,
+  isCondensed,
+}: BasicResultDetailProps) {
   const { t } = useTranslation();
   const Heading = headingLevel;
 
@@ -63,10 +68,7 @@ function BasicResultDetail({ headingLevel, result }: BasicResultDetailProps) {
         </Heading>
         {!!anyAreTrue(result.fees) ? (
           <>
-            <CommaSeparatedList
-              boolMap={result.fees}
-              translationPrefix="feesValues"
-            />
+            <FeesInfo fees={result.fees} isCondensed={isCondensed} />
             {/* <Button type="button" unstyled className="font-ui-xs">
                 What do these mean?
               </Button> */}
