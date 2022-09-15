@@ -22,17 +22,24 @@ export const logEvent = (
 
 export enum AnalyticsAction {
   CompleteGuidedSearchQuestion = "Complete guided search question",
+  CompleteGuidedSearch = "Complete guided search",
+  CompleteZipSearch = "Complete zip search",
   UpdateFilter = "Update filter",
   ApplyFilter = "Apply filter",
   ToggleResultView = "Toggle result view",
   ClickMapMarker = "Click map marker",
   SearchError = "Search error",
+  ViewSearchResults = "View search results",
+  ClickShare = "Click share",
 }
 
 type AnalyticsEventProperties = {
-  step?: number;
-  label?: string;
+  count?: number;
+  filter_count?: number;
   filter_type?: string;
   filter_value?: string;
+  label?: string;
   search?: string;
+  step?: number;
+  url?: string;
 };

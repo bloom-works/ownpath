@@ -31,6 +31,9 @@ function ZipCard({ id }: { id?: string }) {
         onSubmit={(evt) => {
           evt.preventDefault();
           if (zipMeta.isValidZip) {
+            logEvent(AnalyticsAction.CompleteZipSearch, {
+              search: filters.zip,
+            });
             navigate({
               pathname: "/search",
               search: createSearchParams({

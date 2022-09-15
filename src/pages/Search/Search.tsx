@@ -6,6 +6,7 @@ import { useSearchParams, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import {
   applySearchFilters,
+  countOptionalSearchFiltersUsed,
   getFiltersFromSearchParams,
   MILE_DISTANCE_OPTIONS,
 } from "../../utils";
@@ -115,6 +116,11 @@ function Search() {
       CARE_PROVIDER_DATA as CareProvider[],
       filters
     );
+    logEvent(AnalyticsAction.ViewSearchResults, {
+      count: result.results.length,
+      filter_count: countOptionalSearchFiltersUsed(filters),
+      search: filters.zip,
+    });
     setSearchResult(result);
   };
 
