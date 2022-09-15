@@ -21,7 +21,7 @@ function BulletedList({
   }
 
   return (
-    <>
+    <ul>
       {Object.entries(boolMap)
         .filter(([_, val]) => !!val)
         .map(([key], idx) => (
@@ -29,7 +29,7 @@ function BulletedList({
             {t(`${translationPrefix}${key}`)}
           </li>
         ))}
-    </>
+    </ul>
   );
 }
 

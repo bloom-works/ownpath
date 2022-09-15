@@ -10,7 +10,6 @@ import Map from "../components/Map";
 import BasicResultDetail from "../components/ResultDetail/BasicResultDetail";
 import CARE_PROVIDER_DATA from "../data/ladders_data.json";
 import { CareProvider } from "../types";
-import ResultDatum from "../components/ResultDetail/ResultDatum";
 import BulletedList from "../components/BulletedList";
 import { useEffect } from "react";
 import DirectionsLink from "../components/ResultDetail/DirectionsLink";
@@ -103,27 +102,31 @@ function ResultDetail() {
         <Grid col={12} tablet={{ col: 6 }}>
           <section>
             <h2 className="margin-top-1">{t("details")}</h2>
-            <ResultDatum Icon={Populations} key="population">
-              <div>
-                <h3 className="display-inline">{t("populations")}: </h3>
-                <BulletedList
-                  boolMap={data.populationsServed}
-                  className="line-height-body-4"
-                  emptyMsg={t("moreInfo")}
-                />
+
+            <div>
+              <div className="display-flex flex-align-center margin-bottom-05">
+                <Populations className="data-icon width-3 margin-right-1" />
+                <h3 className="margin-0">{t("populations")}: </h3>
               </div>
-            </ResultDatum>
-            <ResultDatum Icon={Accessibility} key="accessibility">
-              <div>
-                <h3 className="display-inline">{t("accessibilityTitle")}: </h3>
-                <BulletedList
-                  boolMap={data.accessibility}
-                  translationPrefix="accessibilityValues"
-                  className="line-height-body-4"
-                  emptyMsg={t("moreInfo")}
-                />
+              <BulletedList
+                boolMap={data.populationsServed}
+                className="line-height-body-4"
+                emptyMsg={t("moreInfo")}
+              />
+            </div>
+
+            <div>
+              <div className="display-flex flex-align-center margin-bottom-05">
+                <Accessibility className="data-icon width-3 margin-right-1" />
+                <h3 className="margin-0">{t("accessibilityTitle")}: </h3>
               </div>
-            </ResultDatum>
+              <BulletedList
+                boolMap={data.accessibility}
+                translationPrefix="accessibilityValues"
+                className="line-height-body-4"
+                emptyMsg={t("moreInfo")}
+              />
+            </div>
           </section>
         </Grid>
         {(data.substanceUse.supported || data.mentalHealth.supported) && (
@@ -136,12 +139,10 @@ function ResultDetail() {
                     <h3 className="display-inline">
                       {t("substanceUseServices")}:
                     </h3>
-                    <ul>
-                      <BulletedList
-                        boolMap={data.substanceUse.services}
-                        className="line-height-body-4"
-                      />
-                    </ul>
+                    <BulletedList
+                      boolMap={data.substanceUse.services}
+                      className="line-height-body-4"
+                    />
                   </>
                 )}
               {data.mentalHealth.supported &&
@@ -150,12 +151,10 @@ function ResultDetail() {
                     <h3 className="display-inline">
                       {t("mentalHealthServices")}:
                     </h3>
-                    <ul>
-                      <BulletedList
-                        boolMap={data.mentalHealth.services}
-                        className="line-height-body-4"
-                      />
-                    </ul>
+                    <BulletedList
+                      boolMap={data.mentalHealth.services}
+                      className="line-height-body-4"
+                    />
                   </>
                 )}
             </section>

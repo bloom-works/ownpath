@@ -66,6 +66,10 @@ p {
   }
 }
 
+.ul {
+  list-style-position: outside;
+}
+
 /* override USWDS settings */
 .usa-header,
 legend,
