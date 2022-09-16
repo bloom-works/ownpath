@@ -105,6 +105,9 @@ legend,
   color: #2f6fa7;
   text-decoration: none;
 }
+.usa-link--external::after {
+  background-size: 120%;
+}
 
 .dark-background,
 .usa-link.dark-background {
