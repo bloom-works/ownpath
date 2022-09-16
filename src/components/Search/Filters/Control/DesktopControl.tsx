@@ -1,6 +1,6 @@
 import { Grid } from "@trussworks/react-uswds";
 import { useTranslation } from "react-i18next";
-import { Dispatch, SetStateAction, useEffect, useState } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
 import { SearchFilters, TypeOfHelp } from "../../../../types";
 import DesktopControlDropdown from "./DesktopControlDropdown";
 import FeePreferenceInput from "../FeePreferenceInput";
@@ -11,7 +11,6 @@ import AccessibilityInput from "../AccessibilityInput";
 import DistanceInput from "../DistanceInput";
 import ControlToggles from "./DesktopControlToggles";
 import AgeGroupInput from "../AgeGroupInput";
-import { useLocation, useNavigate } from "react-router-dom";
 
 type DesktopControlProps = {
   filters: SearchFilters;
@@ -25,7 +24,6 @@ function DesktopControl({
   distanceUpdatedExternally,
 }: DesktopControlProps) {
   const { t } = useTranslation();
-  const location = useLocation();
   // flag to display distance filter in active state ONLY
   // after user has explicitly changed from default value (zipcode search)
   // or original selection (guided search)
@@ -115,8 +113,7 @@ function DesktopControl({
           title={t("ageTitle")}
           hasSelection={!!filters.age}
           clear={() => {
-            const updatedFilters = { ...filters };
-            delete updatedFilters.age;
+            const { age, ...updatedFilters } = filters;
             setFilters(updatedFilters);
           }}
         >
