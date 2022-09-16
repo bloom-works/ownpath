@@ -23,7 +23,9 @@ function FeesInfo({
           </React.Fragment>
         ))}
       {!isCondensed && fees.PrivateInsurance && (
-        <div className="margin-top-05">*{t(`privateInsuranceNote`)}</div>
+        <div className="margin-top-05 font-body-3xs">
+          *{t(`privateInsuranceNote`)}
+        </div>
       )}
     </>
   );
