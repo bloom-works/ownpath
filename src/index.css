@@ -105,6 +105,10 @@ legend,
   color: #2f6fa7;
   text-decoration: none;
 }
+.usa-link--external::after,
+.usa-link--external:hover::after {
+  background-image: url(./images/launch.svg);
+}
 
 .dark-background,
 .usa-link.dark-background {
