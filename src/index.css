@@ -80,6 +80,9 @@ legend,
 [class*="font-body-"] {
   font-family: Trebuchet MS, san-serif !important;
 }
+.font-body-3xs {
+  font-size: 0.75rem;
+}
 
 .usa-button,
 .usa-card__container,
