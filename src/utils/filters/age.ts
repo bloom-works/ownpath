@@ -19,7 +19,7 @@ export const servesAgeGroup = (
 
   // Serves "adult" as long as any populations
   // (excluding 'modifier' populations: "Homeless",
-  // "LGBT", "Offender", "HIV", "AmericanIndian")
+  // "LGBTQIA+", "Offender", "HIV", "AmericanIndian")
   // other than youth, minors, or older adults are served
   const populations = Object.entries(careProvider.populationsServed)
     .filter(([_, served]) => !!served)
@@ -28,7 +28,7 @@ export const servesAgeGroup = (
   const modifiers: PopulationsServed[] = [
     "HIV",
     "Homeless",
-    "LGBT",
+    "LGBTQIA+",
     "AmericanIndian",
     "Offender",
     "ClientsreferredfromCourt/JudicialSystem",

@@ -517,7 +517,7 @@ describe("servesAgeGroup", () => {
       populationsServed: {
         ...servesYouth.populationsServed,
         Homeless: true,
-        LGBT: true,
+        "LGBTQIA+": true,
       },
     };
 
@@ -532,7 +532,7 @@ describe("servesAgeGroup", () => {
       populationsServed: {
         ...servesOlderAdults.populationsServed,
         Homeless: true,
-        LGBT: true,
+        "LGBTQIA+": true,
       },
     };
 
