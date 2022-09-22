@@ -24,10 +24,10 @@ function DesktopControl({
   distanceUpdatedExternally,
 }: DesktopControlProps) {
   const { t } = useTranslation();
-  // flags to display distance and age filters in active state
-  // ONLY after user has changed from default or guided search selection
+  // flag to display distance filter in active state ONLY
+  // after user has explicitly changed from default value (zipcode search)
+  // or original selection (guided search)
   const [showDistanceActive, setShowDistanceActive] = useState(false);
-  const [showAgeActive, setShowAgeActive] = useState(false);
 
   return (
     <div className="display-none tablet:display-block">
@@ -111,16 +111,17 @@ function DesktopControl({
         </DesktopControlDropdown>
         <DesktopControlDropdown
           title={t("ageTitle")}
-          hasSelection={!!filters.age && showAgeActive}
+          hasSelection={!!filters.age}
+          clear={() => {
+            const { age, ...updatedFilters } = filters;
+            setFilters(updatedFilters);
+          }}
         >
           <AgeGroupInput
             legend={t("ageTitle")}
             hideLegend
             filters={filters}
-            setFilters={(_filters) => {
-              setShowAgeActive(true);
-              setFilters(_filters);
-            }}
+            setFilters={setFilters}
           />
         </DesktopControlDropdown>
       </Grid>

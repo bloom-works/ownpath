@@ -11,7 +11,7 @@ test("Homepage has content and search works", async ({ page }) => {
     hasText: "Search",
   });
 
-  await page.locator("#desktop_zip").fill("80012");
+  await page.locator("input:visible").fill("80012");
   await search.click();
 
   expect(page.url()).toContain("/search?zip=80012&miles=5");
