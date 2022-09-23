@@ -54,3 +54,21 @@ test("Homepage has feedback form", async ({ page }) => {
   const feedbackUrl = await feedback.getAttribute("href");
   await expect(feedbackUrl).toContain("google.com/forms/");
 });
+
+test("Zip search from homepage works on valid zip", async ({ page }) => {
+  const zipInput = page.locator("input[name=zip]:visible");
+  const zipError = page.locator(".usa-error-message");
+  const searchButton = page.locator("button:visible", { hasText: "Search" });
+
+  await expect(zipInput).toHaveCount(1);
+  await expect(zipError).toHaveCount(0);
+  await expect(searchButton).toHaveCount(1);
+  await zipInput.fill("11111");
+  await searchButton.click();
+  await expect(zipError).toHaveCount(1);
+  await zipInput.fill("80203");
+  await searchButton.click();
+  await expect(page.url()).toContain("/search?");
+  await expect(page.url()).toContain("zip=80203");
+  await expect(page.url()).toContain("miles=5");
+});

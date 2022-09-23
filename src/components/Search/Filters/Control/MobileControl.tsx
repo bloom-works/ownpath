@@ -33,7 +33,11 @@ function MobileControl({ filters, setFilters }: MobileControlProps) {
   const countSelected = getAppliedOptionalFiltersCount(filters);
 
   return (
-    <div className="tablet:display-none" aria-hidden>
+    <div
+      className="tablet:display-none"
+      id="mobile-filter-container"
+      aria-hidden
+    >
       <form
         onSubmit={(e) => {
           e.preventDefault();
