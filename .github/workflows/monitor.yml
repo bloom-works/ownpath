@@ -16,10 +16,12 @@ jobs:
       - name: Install playwright
         run: npx playwright install --with-deps
       - name: run tests
-        run: URL=https://ownpath.co npm run test:e2e -- smoke
+        # run tests with CI = true against production site, and only with one browser
+        # (keep monitoring smoke tests light; x-browser functionality is tested in CI/CD pipeline)
+        run: export CI=true URL=https://ownpath.co && npm run test:e2e -- smoke --project=chromium
       - name: Upload test results
         if: always()
         uses: actions/upload-artifact@v2
         with:
-          name: playwright-report
-          path: playwright-report
+          name: test-results
+          path: test-results

@@ -11,6 +11,7 @@ src/data/ladders_data.json
 # testing
 **/coverage
 **/playwright-report
+**/test-results
 
 # production
 **/build
