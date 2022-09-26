@@ -1,0 +1,27 @@
+name: Monitor
+on:
+  schedule:
+    - cron: "0 * * * *"
+jobs:
+  playwright:
+    name: "Smoke test (prod)"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout project
+        uses: actions/checkout@v2
+      - name: Build image (application)
+        run: docker build -t test-image:latest .
+      - name: Install deps on github action container
+        run: npm i --legacy-peer-deps
+      - name: Install playwright
+        run: npx playwright install --with-deps
+      - name: run tests
+        # run tests with CI = true against production site, and only with one browser
+        # (keep monitoring smoke tests light; x-browser functionality is tested in CI/CD pipeline)
+        run: export CI=true URL=https://ownpath.co && npm run test:e2e -- smoke --project=chromium
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v2
+        with:
+          name: test-results
+          path: test-results

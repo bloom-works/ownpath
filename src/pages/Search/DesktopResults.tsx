@@ -30,6 +30,7 @@ function DesktopResults({ results }: { results: CareProviderSearchResult[] }) {
           tablet={{ col: 7 }}
           className="height-viewport"
           key="desktop-list"
+          id="desktop-list"
         >
           <ResultsList results={results} selectedResultId={selectedResultId} />
         </Grid>
