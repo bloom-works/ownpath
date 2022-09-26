@@ -7,7 +7,7 @@ import ContentCard from "../components/Home/ContentCard";
 import heroPath from "../images/hero.jpg";
 import { ReactComponent as ColoradoCrisisServicesLogo } from "../images/logos/colorado_crisis_services.svg";
 import { ReactComponent as IMatterLogo } from "../images/logos/imatter.svg";
-import { ReactComponent as StandUpColorado } from "../images/logos/stand_up_co.svg";
+import { ReactComponent as CdhsLogo } from "../images/logos/cdhs.svg";
 import ZipCard from "../components/Home/ZipCard";
 import GuidedSearchCard from "../components/Home/GuidedSearchCard";
 import { logPageView } from "../analytics";
@@ -140,18 +140,21 @@ function Home() {
                 }
               />
               <ContentCard
-                headerContent={<StandUpColorado />}
+                headerContent={<CdhsLogo />}
                 bodyContent={
                   <>
-                    <h2>{t("standUpColoradoHeading")}</h2>
-                    <p>{t("standUpColoradoContent")}</p>
+                    <h2>{t("domesticViolenceHeading")}</h2>
+                    <p>{t("domesticViolenceContent")}</p>
                   </>
                 }
                 cta={
-                  <>
-                    {t("standUpColoradoCta")}{" "}
-                    <Link href={t("standUpColoradoLink")}>(855) 978-2638.</Link>
-                  </>
+                  <Link
+                    href={t("domesticViolenceLink")}
+                    target="_blank"
+                    variant="external"
+                  >
+                    {t("domesticViolenceCta")}
+                  </Link>
                 }
               />
             </CardGroup>
