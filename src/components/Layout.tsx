@@ -86,7 +86,7 @@ function Layout() {
         </div>
       )}
 
-      <div className="flex-1 margin-bottom-4 margin-top-2">
+      <div className="flex-1">
         <Outlet />
       </div>
 

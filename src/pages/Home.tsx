@@ -4,7 +4,6 @@ import styled from "styled-components";
 
 import { useTranslation } from "react-i18next";
 import ContentCard from "../components/Home/ContentCard";
-import heroPath from "../images/hero.jpg";
 import { ReactComponent as ColoradoCrisisServicesLogo } from "../images/logos/colorado_crisis_services.svg";
 import { ReactComponent as IMatterLogo } from "../images/logos/imatter.svg";
 import { ReactComponent as CdhsLogo } from "../images/logos/cdhs.svg";
@@ -12,47 +11,16 @@ import ZipCard from "../components/Home/ZipCard";
 import GuidedSearchCard from "../components/Home/GuidedSearchCard";
 import { logPageView } from "../analytics";
 
-const Hero = styled.img`
-  min-height: 26vh;
-  max-height: 22rem;
-  width: 100%;
-  object-fit: cover;
-  object-position: right;
+const HeroSection = styled.div`
+  background-color: #dbf0f9;
 `;
 
-const OverlaySection = styled.div`
-  margin-top: -8vh;
+const GuidedSearchSection = styled.div`
+  background-color: #183647;
 `;
 
-const HorizontalLineText = styled.div`
-  display: flex;
-  flex-direction: row;
-  margin: 2rem;
-  &:before,
-  &:after {
-    content: "";
-    flex: 1 1;
-    border-bottom: 1px solid;
-    margin: auto;
-    margin-right: 1rem;
-    margin-left: 1rem;
-  }
-`;
-
-const VerticalLineText = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin-right: 2rem;
-  margin-left: 2rem;
-  &:before,
-  &:after {
-    content: "";
-    flex: 1 1;
-    border-left: 1px solid;
-    margin: auto;
-    margin-bottom: 1rem;
-    margin-top: 1rem;
-  }
+const ResourcesSection = styled.div`
+  background-color: #f5f9fc;
 `;
 
 function Home() {
@@ -65,102 +33,93 @@ function Home() {
 
   return (
     <>
-      <div className="position-relative padding-x-0 tablet:padding-x-2">
-        <Hero src={heroPath} alt="hero image" />
-      </div>
-      <GridContainer>
-        <OverlaySection>
+      <HeroSection>
+        <GridContainer>
           <Grid row>
-            <Grid col={12} desktop={{ col: 7 }} tablet={{ col: 8 }}>
-              <div
-                className="display-none tablet:display-block position-absolute bottom-0 left-0"
-                aria-hidden
-              >
-                <h1 className="text-white padding-2">{t("homePageHeading")}</h1>
-              </div>
-              <div className="tablet:display-none bg-white radius-lg padding-x-3 padding-top-3">
-                <h1 className="margin-0">{t("homePageHeading")}</h1>
-              </div>
-            </Grid>
             <Grid col={12}>
-              <div className="display-none tablet:display-block" aria-hidden>
-                <div className="radius-lg bg-white padding-4 display-flex desktop:padding-y-4 tablet:margin-x-2 desktop:margin-x-0">
-                  <ZipCard id="desktop_zip" />
-                  <VerticalLineText>{t("or")}</VerticalLineText>
-                  <GuidedSearchCard isMobile={false} />
-                </div>
-              </div>
-              <div className="tablet:display-none">
-                <div className="radius-lg bg-white padding-3 display-flex flex-column">
-                  <ZipCard />
-                  <HorizontalLineText>{t("or")}</HorizontalLineText>
-                  <GuidedSearchCard isMobile={true} />
-                </div>
+              <h1>{t("homePageHeading")}</h1>
+              <div className="padding-y-3">
+                <ZipCard id="desktop_zip" />
               </div>
             </Grid>
           </Grid>
-        </OverlaySection>
-        <Grid row className="margin-top-3">
-          <Grid col={12}>
-            <CardGroup>
-              <ContentCard
-                headerContent={<ColoradoCrisisServicesLogo />}
-                bodyContent={
-                  <>
-                    <h2>{t("crisisServicesHeading")}</h2>
-                    <p>{t("crisisServicesContent")}</p>
-                  </>
-                }
-                cta={
-                  <Link
-                    href={t("crisisServicesLink")}
-                    target="_blank"
-                    variant="external"
-                  >
-                    {t("crisisServicesCta")}
-                  </Link>
-                }
-              />
-              <ContentCard
-                headerContent={<IMatterLogo />}
-                bodyContent={
-                  <>
-                    <h2>{t("iMatterHeading")}</h2>
-                    <p>{t("iMatterContent")}</p>
-                  </>
-                }
-                cta={
-                  <Link
-                    href={t("iMatterLink")}
-                    target="_blank"
-                    variant="external"
-                  >
-                    {t("iMatterCta")}
-                  </Link>
-                }
-              />
-              <ContentCard
-                headerContent={<CdhsLogo />}
-                bodyContent={
-                  <>
-                    <h2>{t("domesticViolenceHeading")}</h2>
-                    <p>{t("domesticViolenceContent")}</p>
-                  </>
-                }
-                cta={
-                  <Link
-                    href={t("domesticViolenceLink")}
-                    target="_blank"
-                    variant="external"
-                  >
-                    {t("domesticViolenceCta")}
-                  </Link>
-                }
-              />
-            </CardGroup>
+        </GridContainer>
+      </HeroSection>
+      <GuidedSearchSection className="dark-background">
+        <GridContainer>
+          <Grid row>
+            <Grid col={12}>
+              <div className="padding-y-3">
+                <GuidedSearchCard isMobile={false} />
+              </div>
+            </Grid>
           </Grid>
-        </Grid>
-      </GridContainer>
+        </GridContainer>
+      </GuidedSearchSection>
+      <ResourcesSection>
+        <GridContainer>
+          <Grid row>
+            <Grid col={12}>
+              <CardGroup>
+                <ContentCard
+                  headerContent={<ColoradoCrisisServicesLogo />}
+                  bodyContent={
+                    <>
+                      <h2>{t("crisisServicesHeading")}</h2>
+                      <p>{t("crisisServicesContent")}</p>
+                    </>
+                  }
+                  cta={
+                    <Link
+                      href={t("crisisServicesLink")}
+                      target="_blank"
+                      variant="external"
+                    >
+                      {t("crisisServicesCta")}
+                    </Link>
+                  }
+                />
+                <ContentCard
+                  headerContent={<IMatterLogo />}
+                  bodyContent={
+                    <>
+                      <h2>{t("iMatterHeading")}</h2>
+                      <p>{t("iMatterContent")}</p>
+                    </>
+                  }
+                  cta={
+                    <Link
+                      href={t("iMatterLink")}
+                      target="_blank"
+                      variant="external"
+                    >
+                      {t("iMatterCta")}
+                    </Link>
+                  }
+                />
+                <ContentCard
+                  headerContent={<CdhsLogo />}
+                  bodyContent={
+                    <>
+                      <h2>{t("domesticViolenceHeading")}</h2>
+                      <p>{t("domesticViolenceContent")}</p>
+                    </>
+                  }
+                  cta={
+                    <Link
+                      href={t("domesticViolenceLink")}
+                      target="_blank"
+                      variant="external"
+                    >
+                      {t("domesticViolenceCta")}
+                    </Link>
+                  }
+                />
+              </CardGroup>
+            </Grid>
+          </Grid>
+        </GridContainer>
+      </ResourcesSection>
     </>
   );
 }
