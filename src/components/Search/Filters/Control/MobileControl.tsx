@@ -24,36 +24,22 @@ type MobileControlProps = {
 function MobileControl({ filters, setFilters }: MobileControlProps) {
   const { t } = useTranslation();
   const [isExpanded, setIsExpanded] = useState<boolean>(false);
-  const [controlFilters, setControlFilters] = useState(filters);
-
-  useEffect(() => {
-    setControlFilters(filters);
-  }, [filters]);
 
   const countSelected = getAppliedOptionalFiltersCount(filters);
 
   return (
     <div
-      className="tablet:display-none"
-      id="mobile-filter-container"
+      className="tablet:display-none padding-x-2"
       aria-hidden
+      id="mobile-filter-container"
     >
-      <form
-        onSubmit={(e) => {
-          e.preventDefault();
-          logEvent(AnalyticsAction.ApplyFilter, { label: "Apply button" });
-          setFilters(controlFilters);
-          setIsExpanded(false);
-          setTimeout(() => window.scrollTo(0, 0), 100);
-        }}
-      >
+      <div>
         <Button
           type="button"
           className="radius-pill display-flex flex-align-center flex-justify-center"
           onClick={() => {
             if (isExpanded) {
               setIsExpanded(false);
-              setControlFilters(filters);
             } else {
               setIsExpanded(true);
             }
@@ -75,7 +61,6 @@ function MobileControl({ filters, setFilters }: MobileControlProps) {
                   logEvent(AnalyticsAction.ApplyFilter, {
                     label: "Clear filters button",
                   });
-                  setControlFilters(getFiltersWithOptionalCleared(filters));
                   setFilters(getFiltersWithOptionalCleared(filters));
                 }}
                 unstyled
@@ -87,8 +72,8 @@ function MobileControl({ filters, setFilters }: MobileControlProps) {
           <div className="margin-y-3">
             <DistanceInput
               legend={t("distanceTitle")}
-              filters={controlFilters}
-              setFilters={setControlFilters}
+              filters={filters}
+              setFilters={setFilters}
             />
           </div>
           <div className="margin-y-3">
@@ -101,8 +86,8 @@ function MobileControl({ filters, setFilters }: MobileControlProps) {
                 TypeOfHelp.SuicidalIdeation,
               ]}
               optionLabelPrefix="typeOfHelpValues"
-              filters={controlFilters}
-              setFilters={setControlFilters}
+              filters={filters}
+              setFilters={setFilters}
             />
           </div>
           <div className="margin-y-3">
@@ -110,45 +95,45 @@ function MobileControl({ filters, setFilters }: MobileControlProps) {
               legend={t("feesTitle")}
               options={["PrivateInsurance", "Medicaid", "SlidingFeeScale"]}
               optionLabelPrefix="feesValues"
-              filters={controlFilters}
-              setFilters={setControlFilters}
+              filters={filters}
+              setFilters={setFilters}
             />
           </div>
           <div className="margin-y-3">
-            <AccessibilityInput
-              filters={controlFilters}
-              setFilters={setControlFilters}
-            />
+            <AccessibilityInput filters={filters} setFilters={setFilters} />
           </div>
           <div className="margin-y-3">
-            <HoursInput
-              filters={controlFilters}
-              setFilters={setControlFilters}
-            />
+            <HoursInput filters={filters} setFilters={setFilters} />
           </div>
           <div className="margin-y-3">
             <LanguageInput
               legend={t("languageTitle")}
-              filters={controlFilters}
-              setFilters={setControlFilters}
+              filters={filters}
+              setFilters={setFilters}
             />
           </div>
           <div className="margin-y-3">
             <AgeGroupInput
               legend={t("ageTitle")}
-              filters={controlFilters}
-              setFilters={setControlFilters}
+              filters={filters}
+              setFilters={setFilters}
             />
           </div>
-          <Button type="submit" className="usa-button">
-            {t("applyFilters")}
+          <Button
+            type="button"
+            className="usa-button"
+            onClick={() => {
+              setIsExpanded(false);
+              setTimeout(() => window.scrollTo(0, 0), 100);
+            }}
+          >
+            {t("close")}
           </Button>
           <div className="padding-top-2">
             <Button
               type="button"
               onClick={() => {
                 setIsExpanded(false);
-                setControlFilters(filters);
               }}
               unstyled
             >
@@ -156,7 +141,7 @@ function MobileControl({ filters, setFilters }: MobileControlProps) {
             </Button>
           </div>
         </div>
-      </form>
+      </div>
     </div>
   );
 }
