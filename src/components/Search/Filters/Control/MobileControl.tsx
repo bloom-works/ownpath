@@ -27,7 +27,6 @@ function MobileControl({
   setFilters,
   totalResultsCount,
 }: MobileControlProps) {
-  console.log("TOTAL RESULTS COUNT", totalResultsCount);
   const { t } = useTranslation();
   const [isExpanded, setIsExpanded] = useState<boolean>(false);
 
@@ -40,22 +39,6 @@ function MobileControl({
       id="mobile-filter-container"
     >
       <div className={isExpanded ? "display-block" : "display-none"}>
-        <div className="margin-y-2">
-          {countSelected > 0 && (
-            <Button
-              type="button"
-              onClick={() => {
-                logEvent(AnalyticsAction.ApplyFilter, {
-                  label: "Clear filters button",
-                });
-                setFilters(getFiltersWithOptionalCleared(filters));
-              }}
-              unstyled
-            >
-              {t(`clearAll`)}
-            </Button>
-          )}
-        </div>
         <div className="margin-y-3">
           <DistanceInput
             legend={t("distanceTitle")}
@@ -107,7 +90,7 @@ function MobileControl({
           />
         </div>
       </div>
-      <div className="position-sticky bottom-0 padding-y-2 bg-white">
+      <div className="position-sticky bottom-0 padding-y-2 bg-white text-center">
         <Button
           type="button"
           className="radius-pill display-flex flex-align-center flex-justify-center"
@@ -133,6 +116,21 @@ function MobileControl({
             </>
           )}
         </Button>
+        {countSelected > 0 && (
+          <Button
+            type="button"
+            className="margin-top-2 display-flex flex-align-center flex-justify-center"
+            onClick={() => {
+              logEvent(AnalyticsAction.ApplyFilter, {
+                label: "Clear filters button",
+              });
+              setFilters(getFiltersWithOptionalCleared(filters));
+            }}
+            unstyled
+          >
+            {t(`clearAll`)}
+          </Button>
+        )}
       </div>
     </div>
   );
