@@ -19,9 +19,15 @@ import AgeGroupInput from "../AgeGroupInput";
 type MobileControlProps = {
   filters: SearchFilters;
   setFilters: Dispatch<SetStateAction<SearchFilters>>;
+  totalResultsCount: number;
 };
 
-function MobileControl({ filters, setFilters }: MobileControlProps) {
+function MobileControl({
+  filters,
+  setFilters,
+  totalResultsCount,
+}: MobileControlProps) {
+  console.log("TOTAL RESULTS COUNT", totalResultsCount);
   const { t } = useTranslation();
   const [isExpanded, setIsExpanded] = useState<boolean>(false);
 
@@ -29,17 +35,86 @@ function MobileControl({ filters, setFilters }: MobileControlProps) {
 
   return (
     <div
-      className="tablet:display-none padding-x-2"
+      className="tablet:display-none"
       aria-hidden
       id="mobile-filter-container"
     >
-      <div>
+      <div className={isExpanded ? "display-block" : "display-none"}>
+        <div className="margin-y-2">
+          {countSelected > 0 && (
+            <Button
+              type="button"
+              onClick={() => {
+                logEvent(AnalyticsAction.ApplyFilter, {
+                  label: "Clear filters button",
+                });
+                setFilters(getFiltersWithOptionalCleared(filters));
+              }}
+              unstyled
+            >
+              {t(`clearAll`)}
+            </Button>
+          )}
+        </div>
+        <div className="margin-y-3">
+          <DistanceInput
+            legend={t("distanceTitle")}
+            filters={filters}
+            setFilters={setFilters}
+          />
+        </div>
+        <div className="margin-y-3">
+          <TypeOfHelpInput
+            legend={t("typeOfHelpTitle")}
+            options={[
+              TypeOfHelp.SubstanceUse,
+              TypeOfHelp.CourtMandatedTreatment,
+              TypeOfHelp.MentalHealth,
+              TypeOfHelp.SuicidalIdeation,
+            ]}
+            optionLabelPrefix="typeOfHelpValues"
+            filters={filters}
+            setFilters={setFilters}
+          />
+        </div>
+        <div className="margin-y-3">
+          <FeePreferenceInput
+            legend={t("feesTitle")}
+            options={["PrivateInsurance", "Medicaid", "SlidingFeeScale"]}
+            optionLabelPrefix="feesValues"
+            filters={filters}
+            setFilters={setFilters}
+          />
+        </div>
+        <div className="margin-y-3">
+          <AccessibilityInput filters={filters} setFilters={setFilters} />
+        </div>
+        <div className="margin-y-3">
+          <HoursInput filters={filters} setFilters={setFilters} />
+        </div>
+        <div className="margin-y-3">
+          <LanguageInput
+            legend={t("languageTitle")}
+            filters={filters}
+            setFilters={setFilters}
+          />
+        </div>
+        <div className="margin-y-3">
+          <AgeGroupInput
+            legend={t("ageTitle")}
+            filters={filters}
+            setFilters={setFilters}
+          />
+        </div>
+      </div>
+      <div className="position-sticky bottom-0 padding-y-2 bg-white">
         <Button
           type="button"
           className="radius-pill display-flex flex-align-center flex-justify-center"
           onClick={() => {
             if (isExpanded) {
               setIsExpanded(false);
+              window.scrollTo(0, 0);
             } else {
               setIsExpanded(true);
             }
@@ -47,100 +122,17 @@ function MobileControl({ filters, setFilters }: MobileControlProps) {
           outline={countSelected === 0}
           base={countSelected !== 0}
         >
-          <Filter className="margin-right-05" />
-          {t("toggleFiltersButton", {
-            count: countSelected,
-          })}
+          {isExpanded ? (
+            <>{t("viewResults", { count: totalResultsCount })} </>
+          ) : (
+            <>
+              <Filter className="margin-right-05" />
+              {t("toggleFiltersButton", {
+                count: countSelected,
+              })}
+            </>
+          )}
         </Button>
-        <div className={isExpanded ? "display-block" : "display-none"}>
-          <div className="margin-y-2">
-            {countSelected > 0 && (
-              <Button
-                type="button"
-                onClick={() => {
-                  logEvent(AnalyticsAction.ApplyFilter, {
-                    label: "Clear filters button",
-                  });
-                  setFilters(getFiltersWithOptionalCleared(filters));
-                }}
-                unstyled
-              >
-                {t(`clearAll`)}
-              </Button>
-            )}
-          </div>
-          <div className="margin-y-3">
-            <DistanceInput
-              legend={t("distanceTitle")}
-              filters={filters}
-              setFilters={setFilters}
-            />
-          </div>
-          <div className="margin-y-3">
-            <TypeOfHelpInput
-              legend={t("typeOfHelpTitle")}
-              options={[
-                TypeOfHelp.SubstanceUse,
-                TypeOfHelp.CourtMandatedTreatment,
-                TypeOfHelp.MentalHealth,
-                TypeOfHelp.SuicidalIdeation,
-              ]}
-              optionLabelPrefix="typeOfHelpValues"
-              filters={filters}
-              setFilters={setFilters}
-            />
-          </div>
-          <div className="margin-y-3">
-            <FeePreferenceInput
-              legend={t("feesTitle")}
-              options={["PrivateInsurance", "Medicaid", "SlidingFeeScale"]}
-              optionLabelPrefix="feesValues"
-              filters={filters}
-              setFilters={setFilters}
-            />
-          </div>
-          <div className="margin-y-3">
-            <AccessibilityInput filters={filters} setFilters={setFilters} />
-          </div>
-          <div className="margin-y-3">
-            <HoursInput filters={filters} setFilters={setFilters} />
-          </div>
-          <div className="margin-y-3">
-            <LanguageInput
-              legend={t("languageTitle")}
-              filters={filters}
-              setFilters={setFilters}
-            />
-          </div>
-          <div className="margin-y-3">
-            <AgeGroupInput
-              legend={t("ageTitle")}
-              filters={filters}
-              setFilters={setFilters}
-            />
-          </div>
-          <Button
-            type="button"
-            className="usa-button"
-            onClick={() => {
-              setIsExpanded(false);
-              setTimeout(() => window.scrollTo(0, 0), 100);
-            }}
-          >
-            {t("close")}
-          </Button>
-          <div className="padding-top-2">
-            <Button
-              type="button"
-              onClick={() => {
-                setIsExpanded(false);
-              }}
-              unstyled
-            >
-              {t("cancel")}
-            </Button>
-          </div>
-        </div>
       </div>
     </div>
   );

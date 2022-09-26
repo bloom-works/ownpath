@@ -214,6 +214,7 @@ function Search() {
             <MobileControl
               filters={searchFilters}
               setFilters={(filters) => setSearchParams({ ...filters })}
+              totalResultsCount={searchResult.results?.length || 0}
             />
           </div>
 
