@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { CardGroup, Grid, GridContainer, Link } from "@trussworks/react-uswds";
 import styled from "styled-components";
 
@@ -10,6 +10,7 @@ import { ReactComponent as CdhsLogo } from "../images/logos/cdhs.svg";
 import ZipCard from "../components/Home/ZipCard";
 import GuidedSearchCard from "../components/Home/GuidedSearchCard";
 import { logPageView } from "../analytics";
+import CrisisAlert from "../components/Home/CrisisAlert";
 
 const HeroSection = styled.div`
   background-color: #dbf0f9;
@@ -26,6 +27,8 @@ const ResourcesSection = styled.div`
 function Home() {
   const { t } = useTranslation();
 
+  const [showCrisisAlert, setShowCrisisAlert] = useState(true);
+
   useEffect(() => {
     window.scrollTo(0, 0);
     logPageView();
@@ -34,6 +37,11 @@ function Home() {
   return (
     <>
       <HeroSection>
+        <div className="padding-2">
+          {showCrisisAlert && (
+            <CrisisAlert onClose={() => setShowCrisisAlert(false)} />
+          )}
+        </div>
         <GridContainer>
           <Grid row>
             <Grid col={12}>
