@@ -45,7 +45,11 @@ function ControlToggles({ setFilters }: ControlTogglesProps) {
   if (!optionalFiltersApplied) return <></>;
 
   return (
-    <Grid row className="margin-bottom-2 flex-align-baseline">
+    <Grid
+      row
+      className="margin-bottom-2 flex-align-baseline"
+      id="active-filters-section"
+    >
       <span className="text-bold text-dark-blue margin-right-2">
         {t("filteredBy")}:
       </span>

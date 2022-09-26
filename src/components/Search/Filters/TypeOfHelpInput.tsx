@@ -54,7 +54,7 @@ function TypeOfHelpInput({
           />
           {option === TypeOfHelp.SuicidalIdeation &&
             filters.typesOfHelp.includes(TypeOfHelp.SuicidalIdeation) && (
-              <div className="margin-y-2">
+              <div className="margin-y-2" id="crisis-content-box">
                 <AppAlert Icon={Phone}>
                   <div>{t("suicidalIdeationAlert")}</div>
                   <div className="text-bold margin-top-1">
