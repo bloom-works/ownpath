@@ -62,58 +62,25 @@ function Home() {
             <Grid col={12}>
               <CardGroup>
                 <ContentCard
-                  headerContent={<ColoradoCrisisServicesLogo />}
-                  bodyContent={
-                    <>
-                      <h2>{t("crisisServicesHeading")}</h2>
-                      <p>{t("crisisServicesContent")}</p>
-                    </>
-                  }
-                  cta={
-                    <Link
-                      href={t("crisisServicesLink")}
-                      target="_blank"
-                      variant="external"
-                    >
-                      {t("crisisServicesCta")}
-                    </Link>
-                  }
+                  logo={<ColoradoCrisisServicesLogo />}
+                  header={t("crisisServicesHeading")}
+                  body={t("crisisServicesContent")}
+                  cta={t("crisisServicesCta")}
+                  url={t("crisisServicesLink")}
                 />
                 <ContentCard
-                  headerContent={<IMatterLogo />}
-                  bodyContent={
-                    <>
-                      <h2>{t("iMatterHeading")}</h2>
-                      <p>{t("iMatterContent")}</p>
-                    </>
-                  }
-                  cta={
-                    <Link
-                      href={t("iMatterLink")}
-                      target="_blank"
-                      variant="external"
-                    >
-                      {t("iMatterCta")}
-                    </Link>
-                  }
+                  logo={<IMatterLogo />}
+                  header={t("iMatterHeading")}
+                  body={t("iMatterContent")}
+                  cta={t("iMatterCta")}
+                  url={t("iMatterLink")}
                 />
                 <ContentCard
-                  headerContent={<CdhsLogo />}
-                  bodyContent={
-                    <>
-                      <h2>{t("domesticViolenceHeading")}</h2>
-                      <p>{t("domesticViolenceContent")}</p>
-                    </>
-                  }
-                  cta={
-                    <Link
-                      href={t("domesticViolenceLink")}
-                      target="_blank"
-                      variant="external"
-                    >
-                      {t("domesticViolenceCta")}
-                    </Link>
-                  }
+                  logo={<CdhsLogo />}
+                  header={t("domesticViolenceHeading")}
+                  body={t("domesticViolenceContent")}
+                  cta={t("domesticViolenceCta")}
+                  url={t("domesticViolenceLink")}
                 />
               </CardGroup>
             </Grid>
