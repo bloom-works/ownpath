@@ -20,7 +20,7 @@ test("Search displays results", async ({ page }) => {
   await expect(detailButtons).not.toHaveCount(0);
 
   await detailButtons.nth(0).click();
-  await expect(page.url()).toContain("/result/");
+  expect(page.url()).toContain("/result/");
 });
 
 test("Mobile has toggle-able result views", async ({ page }) => {
@@ -59,8 +59,8 @@ test("Distance filter works on mobile", async ({ page }) => {
     height: 640,
   });
   const filterToggle = page.locator("button", { hasText: "Filter results" });
-  const applyFilterButton = page.locator("button", {
-    hasText: "Apply filters",
+  const viewResultsButton = page.locator("button", {
+    hasText: /.*View \d+ results.*/,
   });
   const radios = page.locator("input:visible[name=distance]");
   const radioDefault = radios.nth(0);
@@ -73,7 +73,7 @@ test("Distance filter works on mobile", async ({ page }) => {
   await radioBigger.dispatchEvent("click");
   await expect(radioDefault).not.toBeChecked();
   await expect(radioBigger).toBeChecked();
-  await applyFilterButton.click();
+  await viewResultsButton.click();
   await expect(page.url()).toContain("miles=10");
 });
 
@@ -114,8 +114,8 @@ test("Clearable checkbox filter works on desktop", async ({ page }) => {
   await tuesday.dispatchEvent("click");
   await expect(monday).toBeChecked();
   await expect(tuesday).toBeChecked();
-  await expect(page.url()).toContain("hours=monday");
-  await expect(page.url()).toContain("hours=tuesday");
+  expect(page.url()).toContain("hours=monday");
+  expect(page.url()).toContain("hours=tuesday");
   await expect(activeFilters).toHaveCount(1);
   await expect(activeFilters).toContainText("Monday");
   await expect(activeFilters).toContainText("Tuesday");
@@ -127,8 +127,8 @@ test("Clearable checkbox filter works on desktop", async ({ page }) => {
   await daysFilterToggle.click();
   await expect(monday).not.toBeChecked();
   await expect(tuesday).toBeChecked();
-  await expect(page.url()).not.toContain("hours=monday");
-  await expect(page.url()).toContain("hours=tuesday");
+  expect(page.url()).not.toContain("hours=monday");
+  expect(page.url()).toContain("hours=tuesday");
   await expect(activeFilters).not.toContainText("Monday");
   await expect(activeFilters).toContainText("Tuesday");
 
@@ -139,8 +139,8 @@ test("Clearable checkbox filter works on desktop", async ({ page }) => {
   await daysFilterToggle.click();
   await expect(monday).not.toBeChecked();
   await expect(tuesday).not.toBeChecked();
-  await expect(page.url()).not.toContain("hours=monday");
-  await expect(page.url()).not.toContain("hours=tuesday");
+  expect(page.url()).not.toContain("hours=monday");
+  expect(page.url()).not.toContain("hours=tuesday");
   await expect(activeFilters).toHaveCount(0);
 });
 
@@ -150,8 +150,8 @@ test("Clearable checkbox filter works on mobile", async ({ page }) => {
     height: 640,
   });
   const filterToggle = page.locator("button", { hasText: "Filter results" });
-  const applyFilterButton = page.locator("button", {
-    hasText: "Apply filters",
+  const viewResultsButton = page.locator("button", {
+    hasText: /.*View \d+ results.*/,
   });
   const clearFilterButton = page.locator("#mobile-filter-container button", {
     hasText: "Clear all filters",
@@ -169,12 +169,12 @@ test("Clearable checkbox filter works on mobile", async ({ page }) => {
   await tuesday.dispatchEvent("click");
   await expect(monday).toBeChecked();
   await expect(tuesday).toBeChecked();
-  await applyFilterButton.click();
-  await expect(page.url()).toContain("hours=monday");
-  await expect(page.url()).toContain("hours=tuesday");
+  await viewResultsButton.click();
+  expect(page.url()).toContain("hours=monday");
+  expect(page.url()).toContain("hours=tuesday");
 
   await filterToggle.click();
   await clearFilterButton.click();
-  await expect(page.url()).not.toContain("hours=monday");
-  await expect(page.url()).not.toContain("hours=tuesday");
+  expect(page.url()).not.toContain("hours=monday");
+  expect(page.url()).not.toContain("hours=tuesday");
 });
