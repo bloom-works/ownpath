@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { CardGroup, Grid, GridContainer, Link } from "@trussworks/react-uswds";
+import { Grid, GridContainer } from "@trussworks/react-uswds";
 import styled from "styled-components";
 
 import { useTranslation } from "react-i18next";
@@ -11,9 +11,16 @@ import ZipCard from "../components/Home/ZipCard";
 import GuidedSearchCard from "../components/Home/GuidedSearchCard";
 import { logPageView } from "../analytics";
 import CrisisAlert from "../components/Home/CrisisAlert";
+import PeopleGridPath from "../images/people_grid.png";
 
 const HeroSection = styled.div`
   background-color: #dbf0f9;
+`;
+
+const PeopleGrid = styled.img`
+  height: 5rem;
+  object-fit: cover;
+  margin-bottom: 0.25rem;
 `;
 
 const GuidedSearchSection = styled.div`
@@ -51,11 +58,12 @@ function Home() {
             <Grid desktop={{ col: 8 }}>
               <h1>{t("homePageHeading")}</h1>
               <div className="padding-top-1 padding-bottom-10">
-                <ZipCard id="desktop_zip" />
+                <ZipCard />
               </div>
             </Grid>
           </Grid>
         </GridContainer>
+        <PeopleGrid src={PeopleGridPath} />
       </HeroSection>
       <GuidedSearchSection className="dark-background padding-y-8">
         <GridContainer>
