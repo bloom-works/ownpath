@@ -17,10 +17,10 @@ test("Homepage has working language menu", async ({ page }) => {
 });
 
 test("Homepage offers resources", async ({ page }) => {
-  const resourceCards = page.locator(".usa-card");
-  await expect(resourceCards).toHaveCount(3);
+  const resourceTitles = page.locator("#resources-section h2");
+  await expect(resourceTitles).toHaveCount(3);
 
-  const resourceLinks = page.locator(".usa-card .usa-card__footer .usa-link");
+  const resourceLinks = page.locator("#resources-section .usa-link");
   await expect(resourceLinks).toHaveCount(3);
 
   const banner = page.locator("text=Need immediate help");

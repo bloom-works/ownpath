@@ -63,7 +63,7 @@ function Home() {
             </Grid>
           </Grid>
         </GridContainer>
-        <PeopleGrid src={PeopleGridPath} />
+        <PeopleGrid src={PeopleGridPath} alt="Image of many faces" />
       </HeroSection>
       <GuidedSearchSection className="dark-background padding-y-8">
         <GridContainer>
@@ -72,7 +72,7 @@ function Home() {
           </Grid>
         </GridContainer>
       </GuidedSearchSection>
-      <ResourcesSection className="padding-y-6">
+      <ResourcesSection className="padding-y-6" id="resources-section">
         <GridContainer>
           <Grid row gap="lg">
             <ContentCard
