@@ -52,6 +52,7 @@ function ZipCard({ id }: { id?: string }) {
           setZip={(zip) => setFilters({ ...filters, zip })}
           showError={showValidation}
           id={id}
+          noLabel
         >
           <ZipButton type="submit" className="usa-button margin-left-1">
             {t("search")}

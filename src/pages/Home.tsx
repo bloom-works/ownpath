@@ -37,61 +37,57 @@ function Home() {
   return (
     <>
       <HeroSection>
-        <div className="padding-2">
-          {showCrisisAlert && (
-            <CrisisAlert onClose={() => setShowCrisisAlert(false)} />
-          )}
-        </div>
         <GridContainer>
           <Grid row>
             <Grid col={12}>
+              <div className="padding-y-2">
+                {showCrisisAlert && (
+                  <CrisisAlert onClose={() => setShowCrisisAlert(false)} />
+                )}
+              </div>
+            </Grid>
+          </Grid>
+          <Grid row>
+            <Grid desktop={{ col: 8 }}>
               <h1>{t("homePageHeading")}</h1>
-              <div className="padding-y-3">
+              <div className="padding-top-1 padding-bottom-10">
                 <ZipCard id="desktop_zip" />
               </div>
             </Grid>
           </Grid>
         </GridContainer>
       </HeroSection>
-      <GuidedSearchSection className="dark-background">
+      <GuidedSearchSection className="dark-background padding-y-8">
         <GridContainer>
           <Grid row>
-            <Grid col={12}>
-              <div className="padding-y-3">
-                <GuidedSearchCard isMobile={false} />
-              </div>
-            </Grid>
+            <GuidedSearchCard />
           </Grid>
         </GridContainer>
       </GuidedSearchSection>
-      <ResourcesSection>
+      <ResourcesSection className="padding-y-6">
         <GridContainer>
-          <Grid row>
-            <Grid col={12}>
-              <CardGroup>
-                <ContentCard
-                  logo={<ColoradoCrisisServicesLogo />}
-                  header={t("crisisServicesHeading")}
-                  body={t("crisisServicesContent")}
-                  cta={t("crisisServicesCta")}
-                  url={t("crisisServicesLink")}
-                />
-                <ContentCard
-                  logo={<IMatterLogo />}
-                  header={t("iMatterHeading")}
-                  body={t("iMatterContent")}
-                  cta={t("iMatterCta")}
-                  url={t("iMatterLink")}
-                />
-                <ContentCard
-                  logo={<CdhsLogo />}
-                  header={t("domesticViolenceHeading")}
-                  body={t("domesticViolenceContent")}
-                  cta={t("domesticViolenceCta")}
-                  url={t("domesticViolenceLink")}
-                />
-              </CardGroup>
-            </Grid>
+          <Grid row gap="lg">
+            <ContentCard
+              logo={<ColoradoCrisisServicesLogo />}
+              header={t("crisisServicesHeading")}
+              body={t("crisisServicesContent")}
+              cta={t("crisisServicesCta")}
+              url={t("crisisServicesLink")}
+            />
+            <ContentCard
+              logo={<IMatterLogo />}
+              header={t("iMatterHeading")}
+              body={t("iMatterContent")}
+              cta={t("iMatterCta")}
+              url={t("iMatterLink")}
+            />
+            <ContentCard
+              logo={<CdhsLogo height={60} />}
+              header={t("domesticViolenceHeading")}
+              body={t("domesticViolenceContent")}
+              cta={t("domesticViolenceCta")}
+              url={t("domesticViolenceLink")}
+            />
           </Grid>
         </GridContainer>
       </ResourcesSection>
