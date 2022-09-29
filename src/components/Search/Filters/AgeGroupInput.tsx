@@ -7,14 +7,14 @@ import FilterRadio from "./FilterRadio";
 
 type AgeGroupInputProps = {
   legend: string;
-  hideLegend?: boolean;
+  isMobile?: boolean;
   filters: SearchFilters;
   setFilters: Dispatch<SetStateAction<SearchFilters>>;
 };
 
 function AgeGroupInput({
   legend,
-  hideLegend,
+  isMobile,
   filters,
   setFilters,
 }: AgeGroupInputProps) {
@@ -33,10 +33,10 @@ function AgeGroupInput({
   };
 
   return (
-    <Fieldset legend={legend} legendStyle={hideLegend ? "srOnly" : "large"}>
+    <Fieldset legend={legend} legendStyle={isMobile ? "srOnly" : "large"}>
       {[AgeGroup.Under18, AgeGroup.Adult, AgeGroup.OlderAdult].map((option) => (
         <FilterRadio
-          name="age"
+          name={`age-${isMobile ? "mobile" : "desktop"}`}
           value={option}
           label={t(`ageValues${option}`)}
           selected={filters.age === option}

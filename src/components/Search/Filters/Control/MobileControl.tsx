@@ -15,6 +15,12 @@ import {
 } from "./utils";
 import { ReactComponent as Filter } from "../../../../images/filter.svg";
 import AgeGroupInput from "../AgeGroupInput";
+import styled from "styled-components";
+
+const FiltersButton = styled(Button)`
+  font-size: 1.25rem;
+  padding: 1rem 1.25rem;
+`;
 
 type MobileControlProps = {
   filters: SearchFilters;
@@ -90,10 +96,14 @@ function MobileControl({
           />
         </div>
       </div>
-      <div className="position-sticky bottom-0 padding-y-2 bg-white text-center">
-        <Button
+      <div
+        className={`position-sticky bottom-0 padding-y-2 bg-white text-center ${
+          isExpanded ? "border-top border-base-lighter" : ""
+        }`}
+      >
+        <FiltersButton
           type="button"
-          className="radius-pill display-flex flex-align-center flex-justify-center"
+          className="radius-pill display-flex flex-align-center flex-justify-center text-body-md"
           onClick={() => {
             if (isExpanded) {
               setIsExpanded(false);
@@ -115,7 +125,7 @@ function MobileControl({
               })}
             </>
           )}
-        </Button>
+        </FiltersButton>
         {countSelected > 0 && (
           <Button
             type="button"

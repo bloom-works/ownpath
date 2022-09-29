@@ -203,7 +203,7 @@ function Search() {
             </Grid>
             <DesktopControl
               distanceUpdatedExternally={distanceUpdated}
-              filters={searchFilters}
+              filters={{ ...searchFilters }}
               setFilters={(filters) => {
                 setSearchParams({ ...filters });
                 logEvent(AnalyticsAction.ApplyFilter, {
