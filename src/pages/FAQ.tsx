@@ -84,6 +84,7 @@ function FAQ() {
             "updates",
             "moreInfo",
             "toolkit",
+            "resources",
           ].map(getAccordionItem)}
           bordered={false}
         />
