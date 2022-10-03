@@ -11,16 +11,25 @@ import ZipCard from "../components/Home/ZipCard";
 import GuidedSearchCard from "../components/Home/GuidedSearchCard";
 import { logPageView } from "../analytics";
 import CrisisAlert from "../components/Home/CrisisAlert";
-import PeopleGridPath from "../images/people_grid.png";
+import PeopleGridMobilePath from "../images/people_grid.png";
+import PeopleGridDesktopPath from "../images/people_grid_desktop.png";
 
 const HeroSection = styled.div`
   background-color: #dbf0f9;
 `;
 
-const PeopleGrid = styled.img`
+const PeopleGridDesktop = styled.div`
+  @media (min-width: 1024px) {
+    background-image: url(${PeopleGridDesktopPath});
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+`;
+
+const PeopleGridMobile = styled.img`
   height: 5rem;
   object-fit: cover;
-  margin-bottom: 0.25rem;
 `;
 
 const GuidedSearchSection = styled.div`
@@ -43,7 +52,7 @@ function Home() {
 
   return (
     <>
-      <HeroSection>
+      <HeroSection className="padding-bottom-05">
         <GridContainer>
           <Grid row>
             <Grid col={12}>
@@ -54,16 +63,24 @@ function Home() {
               </div>
             </Grid>
           </Grid>
-          <Grid row>
-            <Grid desktop={{ col: 8 }}>
-              <h1>{t("homePageHeading")}</h1>
-              <div className="padding-top-1 padding-bottom-10">
-                <ZipCard />
-              </div>
-            </Grid>
-          </Grid>
         </GridContainer>
-        <PeopleGrid src={PeopleGridPath} alt="Image of many faces" />
+        <PeopleGridDesktop>
+          <GridContainer>
+            <Grid row>
+              <Grid desktop={{ col: 8 }}>
+                <h1>{t("homePageHeading")}</h1>
+                <div className="padding-top-1 padding-bottom-10">
+                  <ZipCard />
+                </div>
+              </Grid>
+            </Grid>
+          </GridContainer>
+        </PeopleGridDesktop>
+        <PeopleGridMobile
+          className="desktop:display-none"
+          src={PeopleGridMobilePath}
+          alt="Image of many faces"
+        />
       </HeroSection>
       <GuidedSearchSection className="dark-background padding-y-8">
         <GridContainer>
