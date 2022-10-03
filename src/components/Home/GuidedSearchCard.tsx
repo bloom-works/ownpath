@@ -6,8 +6,8 @@ function GuidedSearchCard() {
   const { t } = useTranslation();
   return (
     <div className="display-flex">
-      <div className="margin-right-6 display-none tablet:display-block">
-        <Hands className="data-icon " />
+      <div className="margin-right-2 display-none tablet:display-block">
+        <Hands className="data-icon" />
       </div>
       <div>
         <h2 className="margin-top-0">{t("guidedSearchHeading")}</h2>
