@@ -49,21 +49,25 @@ function MobileControl({
       id="mobile-filter-container"
     >
       <Grid
+        id="filter-close-bar"
         row
         className="position-sticky top-0 flex-justify-end bg-white z-top"
       >
-        <Button
-          className="width-auto margin-y-1"
-          type="button"
-          unstyled
-          title="close"
-          onClick={() => {
-            setIsExpanded(false);
-          }}
-        >
-          {t("close")} <Close className="data-icon" />
-        </Button>
+        {isExpanded && (
+          <Button
+            className="width-auto margin-y-1"
+            type="button"
+            unstyled
+            title="close"
+            onClick={() => {
+              setIsExpanded(false);
+            }}
+          >
+            {t("close")} <Close className="data-icon" />
+          </Button>
+        )}
       </Grid>
+
       <div className={isExpanded ? "display-block" : "display-none"}>
         <div className="margin-y-3">
           <DistanceInput
@@ -130,6 +134,7 @@ function MobileControl({
               window.scrollTo(0, 0);
             } else {
               setIsExpanded(true);
+              document.getElementById("filter-close-bar")?.scrollIntoView();
             }
           }}
           outline={countSelected === 0}
