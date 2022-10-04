@@ -76,6 +76,12 @@ function Search() {
   // has been updated (by expand radius button when no results)
   const [distanceUpdated, setDistanceUpdated] = useState(false);
 
+  // Flag to pass down into Mobile controls and results to hide
+  // those results when the mobile filter control menu drawer
+  // is open
+  const [isMobileFilterDrawerExpanded, setIsMobileFilterDrawerExpanded] =
+    useState<boolean>(false);
+
   const navigate = useNavigate();
 
   const isWidestRadius = (miles: string) =>
@@ -215,13 +221,19 @@ function Search() {
               filters={searchFilters}
               setFilters={(filters) => setSearchParams({ ...filters })}
               totalResultsCount={searchResult.results?.length || 0}
+              isExpanded={isMobileFilterDrawerExpanded}
+              setIsExpanded={setIsMobileFilterDrawerExpanded}
             />
           </div>
 
           {searchResult.results.length ? (
             <div>
               <DesktopResults results={searchResult.results} />
-              <MobileResults results={searchResult.results} />
+              {isMobileFilterDrawerExpanded ? (
+                <></>
+              ) : (
+                <MobileResults results={searchResult.results} />
+              )}
             </div>
           ) : (
             <div className="p-5">

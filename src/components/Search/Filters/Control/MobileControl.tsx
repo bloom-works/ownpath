@@ -1,4 +1,4 @@
-import { Button } from "@trussworks/react-uswds";
+import { Button, Grid } from "@trussworks/react-uswds";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { AnalyticsAction, logEvent } from "../../../../analytics";
@@ -16,6 +16,7 @@ import {
 import { ReactComponent as Filter } from "../../../../images/filter.svg";
 import AgeGroupInput from "../AgeGroupInput";
 import styled from "styled-components";
+import { ReactComponent as Close } from "../../../../images/close.svg";
 
 const FiltersButton = styled(Button)`
   font-size: 1.25rem;
@@ -26,15 +27,18 @@ type MobileControlProps = {
   filters: SearchFilters;
   setFilters: Dispatch<SetStateAction<SearchFilters>>;
   totalResultsCount: number;
+  isExpanded: boolean;
+  setIsExpanded: Dispatch<SetStateAction<boolean>>;
 };
 
 function MobileControl({
   filters,
   setFilters,
   totalResultsCount,
+  isExpanded,
+  setIsExpanded,
 }: MobileControlProps) {
   const { t } = useTranslation();
-  const [isExpanded, setIsExpanded] = useState<boolean>(false);
 
   const countSelected = getAppliedOptionalFiltersCount(filters);
 
@@ -44,6 +48,22 @@ function MobileControl({
       aria-hidden
       id="mobile-filter-container"
     >
+      <Grid
+        row
+        className="position-sticky top-0 flex-justify-end bg-white z-top"
+      >
+        <Button
+          className="width-auto margin-y-1"
+          type="button"
+          unstyled
+          title="close"
+          onClick={() => {
+            setIsExpanded(false);
+          }}
+        >
+          {t("close")} <Close className="data-icon" />
+        </Button>
+      </Grid>
       <div className={isExpanded ? "display-block" : "display-none"}>
         <div className="margin-y-3">
           <DistanceInput
