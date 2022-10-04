@@ -17,11 +17,9 @@ function ContentCard({ logo, header, body, cta, url }: ContentCardProps) {
         </div>
         <h2 className="margin-y-2">{header}</h2>
         <p>{body}</p>
-        {
-          <Link href={url} target="_blank" variant="external">
-            {cta}
-          </Link>
-        }
+        <Link href={url} target="_blank" variant="external">
+          {cta}
+        </Link>
       </div>
     </Grid>
   );
