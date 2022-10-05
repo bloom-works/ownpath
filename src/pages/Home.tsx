@@ -13,17 +13,21 @@ import { logPageView } from "../analytics";
 import CrisisAlert from "../components/Home/CrisisAlert";
 import PeopleGridMobilePath from "../images/people_grid.png";
 import PeopleGridDesktopPath from "../images/people_grid_desktop.png";
+import PeopleGridDesktopXlPath from "../images/people_grid_desktop_xl.png";
 
 const HeroSection = styled.div`
   background-color: #dbf0f9;
 `;
 
 const PeopleGridDesktop = styled.div`
+  background-position: right bottom;
+  background-repeat: no-repeat;
+  background-size: contain;
   @media (min-width: 1024px) {
     background-image: url(${PeopleGridDesktopPath});
-    background-position: right bottom;
-    background-repeat: no-repeat;
-    background-size: contain;
+  }
+  @media (min-width: 1440px) {
+    background-image: url(${PeopleGridDesktopXlPath});
   }
 `;
 
