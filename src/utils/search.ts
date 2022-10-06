@@ -15,11 +15,6 @@ import {
 } from "../types";
 import coloradoZipData from "../data/colorado_zip_data.json";
 import {
-  DENSE_DENSITY_CUTOFF_POP_PER_SQ_MI,
-  SPARSE_DENSITY_CUTOFF_POP_PER_SQ_MI,
-  DEFAULT_DENSE_RADIUS_MILES,
-  DEFAULT_SPARSE_RADIUS_MILES,
-  DEFAULT_RADIUS_MILES,
   compareDistance,
   isOpenOnSelectedDays,
   isWithinRadius,
@@ -27,6 +22,7 @@ import {
   meetsAnyFeePreference,
   offersAnyTypesOfHelpNeeded,
   servesAgeGroup,
+  getDefaultRadius,
 } from "./filters";
 import { supportsLanguages } from "./filters/languages";
 
@@ -49,15 +45,9 @@ export const getZipSearchMetadata = (zip: string): ZipSearchMetadata => {
   if (!data) {
     return { isValidZip: false };
   }
-  const defaultRadiusMiles =
-    data.POP_SQMI && data.POP_SQMI > DENSE_DENSITY_CUTOFF_POP_PER_SQ_MI
-      ? DEFAULT_DENSE_RADIUS_MILES
-      : data.POP_SQMI && data.POP_SQMI < SPARSE_DENSITY_CUTOFF_POP_PER_SQ_MI
-      ? DEFAULT_SPARSE_RADIUS_MILES
-      : DEFAULT_RADIUS_MILES;
   return {
     isValidZip: true,
-    defaultRadiusMiles,
+    defaultRadiusMiles: getDefaultRadius(data),
     center: { lat: data.lat, lng: data.lng },
   };
 };
