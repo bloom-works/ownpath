@@ -136,6 +136,10 @@ legend,
   background-color: var(--dark-blue, darkblue);
 }
 
+.usa-button.dark-background {
+  border: 1px solid white;
+}
+
 .usa-link {
   color: var(--blue, blue);
 }

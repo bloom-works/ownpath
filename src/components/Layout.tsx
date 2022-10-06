@@ -1,26 +1,20 @@
-import { Button, Header, Link as ExternalLink } from "@trussworks/react-uswds";
-import { Outlet, Link, useLocation } from "react-router-dom";
+import { Header, Link as ExternalLink } from "@trussworks/react-uswds";
+import { Outlet, Link } from "react-router-dom";
 import Banner from "./Banner";
 import Footer from "./Footer";
 import { ReactComponent as ColoradoBhaLogo } from "../images/logos/colorado_bha.svg";
 import { ReactComponent as OwnPathLogo } from "../images/logos/ownpath.svg";
-import { ReactComponent as Phone } from "../images/phone.svg";
-import { ReactComponent as Close } from "../images/close.svg";
 import { ReactComponent as MiPropiaSendaLogo } from "../images/logos/mi_propia_senda.svg";
 import styled from "styled-components";
-import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import HighlightBox from "./HighlightBox";
 
 const Wrapper = styled.div`
   min-height: 100%;
 `;
 
 function Layout() {
-  const [showCrisisAlert, setShowCrisisAlert] = useState(true);
-
   const { t, i18n } = useTranslation();
-  const location = useLocation();
+
   return (
     <Wrapper className="display-flex flex-column">
       <Header basic color="primary" role="banner">
@@ -54,39 +48,8 @@ function Layout() {
           </ExternalLink>
         </div>
       </Header>
-      {showCrisisAlert && location.pathname !== "/guided-search" && (
-        <div className="margin-x-2 margin-top-2">
-          <HighlightBox size="sm">
-            <div className="display-flex flex-justify">
-              <div className="display-flex">
-                <div className="display-none tablet:display-block">
-                  <Phone className="data-icon margin-right-2" />
-                </div>
-                <div>
-                  {t("crisisAlert")}{" "}
-                  <ExternalLink
-                    href="tel:+18444938255"
-                    className="text-no-wrap"
-                  >
-                    {t("crisisAlertNumber")}
-                  </ExternalLink>
-                </div>
-              </div>
-              <Button
-                className="width-auto margin-left-1"
-                type="button"
-                unstyled
-                title="close"
-                onClick={() => setShowCrisisAlert(false)}
-              >
-                <Close className="data-icon" />
-              </Button>
-            </div>
-          </HighlightBox>
-        </div>
-      )}
 
-      <div className="flex-1 margin-bottom-4 margin-top-2">
+      <div className="flex-1">
         <Outlet />
       </div>
 

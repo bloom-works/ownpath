@@ -1,35 +1,27 @@
-import { Card, CardBody, CardFooter } from "@trussworks/react-uswds";
+import { Grid, Link } from "@trussworks/react-uswds";
 import { ReactNode } from "react";
 
 type ContentCardProps = {
-  headerContent: ReactNode;
-  bodyContent: ReactNode;
-  cta?: ReactNode;
-  fullWidth?: boolean;
+  logo: ReactNode;
+  header: string;
+  body: string;
+  cta: string;
+  url: string;
 };
-function ContentCard({
-  headerContent,
-  bodyContent,
-  cta,
-  fullWidth = false,
-}: ContentCardProps) {
+function ContentCard({ logo, header, body, cta, url }: ContentCardProps) {
   return (
-    <Card
-      containerProps={{
-        className: `bg-base-lightest border-0 ${
-          fullWidth ? "display-flex flex-row" : ""
-        }`,
-      }}
-      gridLayout={{ mobile: { col: 12 }, tablet: { col: fullWidth ? 12 : 4 } }}
-    >
-      <div className="usa-card__header-alt height-15 display-flex flex-justify-center flex-align-center">
-        {headerContent}
+    <Grid tablet={{ col: true }}>
+      <div className="margin-y-3">
+        <div className="height-8 display-flex flex-justify-center flex-align-center">
+          {logo}
+        </div>
+        <h2 className="margin-y-2">{header}</h2>
+        <p>{body}</p>
+        <Link href={url} target="_blank" variant="external">
+          {cta}
+        </Link>
       </div>
-      <CardBody className={fullWidth ? "padding-top-2" : ""}>
-        {bodyContent}
-      </CardBody>
-      {cta && <CardFooter>{cta}</CardFooter>}
-    </Card>
+    </Grid>
   );
 }
 
