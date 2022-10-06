@@ -1,4 +1,4 @@
-import { UnrankedCareProviderSearchResult } from "../../types";
+import { UnrankedCareProviderSearchResult, ZipInfo } from "../../types";
 
 export const DEFAULT_RADIUS_MILES = 10;
 export const DEFAULT_DENSE_RADIUS_MILES = 5;
@@ -9,6 +9,16 @@ export const SPARSE_DENSITY_CUTOFF_POP_PER_SQ_MI = 100;
 export const METERS_IN_A_MILE = 1609.34;
 
 export const MILE_DISTANCE_OPTIONS = ["5", "10", "25", "50", "100"];
+
+export const getDefaultRadius = (data: ZipInfo): number => {
+  const defaultRadiusMiles =
+    data.POP_SQMI && data.POP_SQMI > DENSE_DENSITY_CUTOFF_POP_PER_SQ_MI
+      ? DEFAULT_DENSE_RADIUS_MILES
+      : data.POP_SQMI && data.POP_SQMI < SPARSE_DENSITY_CUTOFF_POP_PER_SQ_MI
+      ? DEFAULT_SPARSE_RADIUS_MILES
+      : DEFAULT_RADIUS_MILES;
+  return defaultRadiusMiles;
+};
 
 export const isWithinRadius = (
   careProvider: UnrankedCareProviderSearchResult,
