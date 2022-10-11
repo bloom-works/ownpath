@@ -24,16 +24,18 @@ export type SearchResult = {
   results: CareProviderSearchResult[];
 };
 
+export type ZipInfo = {
+  PO_NAME: string;
+  STATE: string;
+  POPULATION: number | null;
+  POP_SQMI: number | null;
+  SQMI: number | null;
+  lng: number;
+  lat: number;
+};
+
 export interface ZipData {
-  [key: string]: {
-    PO_NAME: string;
-    STATE: string;
-    POPULATION: number | null;
-    POP_SQMI: number | null;
-    SQMI: number | null;
-    lng: number;
-    lat: number;
-  };
+  [key: string]: ZipInfo;
 }
 
 export type ZipSearchMetadata =

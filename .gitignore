@@ -3,6 +3,9 @@
 # Processed data file
 src/data/ladders_data.json
 
+# Zip report
+src/data/zip_report.csv
+
 # dependencies
 **/node_modules
 /.pnp

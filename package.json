@@ -48,6 +48,7 @@
     "test:e2e": "playwright test",
     "eject": "react-scripts eject",
     "processdata": "ts-node src/data/process_data.ts",
+    "zipreport": "ts-node src/data/zip_report.ts",
     "generatetranslations": "ts-node src/translations/generate_translations.ts"
   },
   "eslintConfig": {
