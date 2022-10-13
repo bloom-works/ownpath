@@ -4,7 +4,7 @@ import { ReactComponent as ColoradoBhaLogoWhite } from "../images/logos/colorado
 import { ReactComponent as BhaLogo } from "../images/logos/bha.svg";
 
 const betaLabel = (
-  <span className="font-body-sm bg-primary-light radius-pill padding-x-1 margin-right-1">
+  <span className="font-body-sm bg-primary-light radius-pill padding-x-1 margin-right-1 text-ink">
     BETA
   </span>
 );
@@ -40,28 +40,34 @@ function Footer() {
             tablet={{ col: true }}
             className="flex-justify-end flex-align-end"
           >
-            <Grid col="auto" tablet={{ col: 6 }} className="font-body-2xs">
+            <Grid col="auto" tablet={{ col: 7 }} className="font-body-2xs">
               <Grid row>
                 <p>
                   {betaLabel}
-                  {t("betaExplanation")}
+                  {t("betaExplanation")} {t("feedbackPrompt")}{" "}
+                  <Link
+                    className="dark-background"
+                    variant="external"
+                    target="_blank "
+                    href={t("feedbackLink")}
+                  >
+                    {t("feedbackCta")}
+                  </Link>
                 </p>
               </Grid>
               <Grid row className="flex-justify font-body-sm">
-                {t("feedbackPrompt")}
                 <Link
-                  className="dark-background"
+                  className="dark-background margin-y-1"
+                  href="https://bha.colorado.gov/state-of-colorado-accessibility-statement"
                   variant="external"
-                  target="_blank "
-                  href={t("feedbackLink")}
                 >
-                  {t("feedbackCta")}
+                  {t("accessibilityStatement")}
                 </Link>
               </Grid>
             </Grid>
             <Grid
               col="auto"
-              tablet={{ col: 6 }}
+              tablet={{ col: 5 }}
               className="margin-top-2 tablet:margin-top-0"
             >
               <Grid row className="flex-justify-end">
