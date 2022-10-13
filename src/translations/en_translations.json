@@ -63,6 +63,7 @@
   "searchPageShare": "Share link",
   "clearAll": "Clear all filters",
   "filteredBy": "Filtered by",
+  "filterBy": "Filter by",
   "toggleFiltersButton_zero": "Filter results\n",
   "toggleFiltersButton_one": "Filter results ({{count}} selected)\n",
   "toggleFiltersButton_other": "Filter results ({{count}} selected)\n",

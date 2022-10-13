@@ -57,7 +57,7 @@ function MobileControl({
         >
           <h2 className="text-bold padding-y-2 display-flex flex-align-center margin-y-0">
             <Filter className="margin-right-1 text-blue" height={30} />
-            {t("filteredBy")}
+            {t("filterBy")}
             {"..."}
           </h2>
           <ModalToggleButton
