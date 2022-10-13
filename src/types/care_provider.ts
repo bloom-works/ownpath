@@ -65,7 +65,7 @@ export const POPULATIONS_SERVED = [
   "Men",
   "Military",
   "OlderAdults",
-  "PregnantWomen",
+  "PregnantPerson",
   "Women",
   "Youth",
   "Offender",
