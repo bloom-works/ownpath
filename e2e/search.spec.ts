@@ -153,7 +153,7 @@ test("Clearable checkbox filter works on mobile", async ({ page }) => {
   const viewResultsButton = page.locator("button", {
     hasText: /.*View \d+ results.*/,
   });
-  const clearFilterButton = page.locator("#mobile-filter-container button", {
+  const clearFilterButton = page.locator("#mobile-filter-menu button", {
     hasText: "Clear all filters",
   });
   const checkboxes = page.locator("input:visible[name=hours]");
