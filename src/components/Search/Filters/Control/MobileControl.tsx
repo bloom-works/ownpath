@@ -55,7 +55,7 @@ function MobileControl({
           row
           className="position-sticky top-neg-1 flex-justify flex-align-center bg-white z-top"
         >
-          <h2 className="text-bold padding-y-2 display-flex flex-align-center margin-y-0">
+          <h2 className="text-bold padding-y-2 display-flex flex-align-center margin-y-0 text-no-wrap">
             <Filter className="margin-right-1 text-blue" height={30} />
             {t("filterBy")}
             {"..."}
