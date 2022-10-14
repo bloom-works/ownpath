@@ -63,6 +63,7 @@
   "searchPageShare": "Comparte estos resultados ",
   "clearAll": "Borra todos los filtros",
   "filteredBy": "Filtrado por",
+  "filterBy": "Filtrar por",
   "toggleFiltersButton_zero": "Filtrar resultados",
   "toggleFiltersButton_one": "Filtrar resultados ({{ count}} seleccionados)",
   "toggleFiltersButton_other": "Filtrar resultados ({{ count}} seleccionados)",

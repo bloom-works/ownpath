@@ -172,6 +172,21 @@ legend,
   font-size: 1.5rem;
   margin-bottom: 1.5rem;
 }
+@media screen and (max-width: 480px) {
+  .usa-legend--large {
+    font-size: 1.125rem;
+  }
+}
+
+.usa-modal__content {
+  padding-top: 0;
+}
+.usa-modal-overlay {
+  padding: 0.25rem;
+}
+.usa-modal__close {
+  display: none;
+}
 
 /* override Bootstrap settings */
 .show > .btn-primary.dropdown-toggle {
@@ -201,6 +216,10 @@ legend,
 
 .text-dark-blue {
   color: var(--dark-blue, darkblue);
+}
+
+.text-blue {
+  color: var(--blue, blue);
 }
 
 .top-neg-50px {

@@ -39,7 +39,7 @@ function DesktopControl({
         >
           <TypeOfHelpInput
             legend={t("typeOfHelpTitle")}
-            hideLegend
+            isMobile
             options={[
               TypeOfHelp.MentalHealth,
               TypeOfHelp.CourtMandatedTreatment,
@@ -58,7 +58,7 @@ function DesktopControl({
         >
           <FeePreferenceInput
             legend={t("feesTitle")}
-            hideLegend
+            isMobile
             options={["PrivateInsurance", "Medicaid", "SlidingFeeScale"]}
             optionLabelPrefix="feesValues"
             filters={filters}
@@ -70,7 +70,7 @@ function DesktopControl({
           hasSelection={!!filters.hours?.length}
           clear={() => setFilters({ ...filters, hours: [] })}
         >
-          <HoursInput hideLegend filters={filters} setFilters={setFilters} />
+          <HoursInput isMobile filters={filters} setFilters={setFilters} />
         </DesktopControlDropdown>
         <DesktopControlDropdown
           title={t("languageTitle")}
@@ -79,7 +79,7 @@ function DesktopControl({
         >
           <LanguageInput
             legend={t("languageTitle")}
-            hideLegend
+            isMobile
             filters={filters}
             setFilters={setFilters}
           />
@@ -90,7 +90,7 @@ function DesktopControl({
           clear={() => setFilters({ ...filters, accessibility: [] })}
         >
           <AccessibilityInput
-            hideLegend
+            isMobile
             filters={filters}
             setFilters={setFilters}
           />
@@ -100,8 +100,9 @@ function DesktopControl({
           hasSelection={showDistanceActive || distanceUpdatedExternally}
         >
           <DistanceInput
+            key={filters.miles}
             legend={t("distanceTitle")}
-            hideLegend
+            isMobile
             filters={filters}
             setFilters={(_filters) => {
               setShowDistanceActive(true);
@@ -119,7 +120,7 @@ function DesktopControl({
         >
           <AgeGroupInput
             legend={t("ageTitle")}
-            hideLegend
+            isMobile
             filters={filters}
             setFilters={setFilters}
           />

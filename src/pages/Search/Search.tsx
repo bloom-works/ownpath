@@ -203,7 +203,7 @@ function Search() {
             </Grid>
             <DesktopControl
               distanceUpdatedExternally={distanceUpdated}
-              filters={searchFilters}
+              filters={{ ...searchFilters }}
               setFilters={(filters) => {
                 setSearchParams({ ...filters });
                 logEvent(AnalyticsAction.ApplyFilter, {
@@ -214,6 +214,7 @@ function Search() {
             <MobileControl
               filters={searchFilters}
               setFilters={(filters) => setSearchParams({ ...filters })}
+              totalResultsCount={searchResult.results?.length || 0}
             />
           </div>
 
