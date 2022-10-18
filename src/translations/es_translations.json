@@ -104,6 +104,8 @@
   "ClientsreferredfromCourt/JudicialSystem": "Personas recomendadas a través de los tribunales/sistema judicial",
   "AmericanIndian": "Personas indoamericanas",
   "HIV": "Personas con una prueba positiva del VIH",
+  "latinX": "Latinx",
+  "languagesSpoken": "Idiomas hablados",
   "services": "Servicios",
   "substanceUseServices": "Servicios de tratamiento por el uso de substancias (drogas)",
   "ClinicallyManagedHighIntensityResidentialServices": "Servicios de alta intensidad administrados clínicamente en un establecimiento residencial",
