@@ -69,7 +69,7 @@ function FAQ() {
       <Grid row className="flex-justify-center">
         <h1>{t("faqPageHeading")}</h1>
       </Grid>
-      <Grid>
+      <Grid className="margin-bottom-8">
         <Accordion
           items={[
             "whatIsOwnPath",
