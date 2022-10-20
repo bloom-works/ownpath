@@ -21,6 +21,9 @@ export const DAYS_OF_THE_WEEK = Object.values(DayOfWeek);
 
 export type WeeklyHours = { [K in DayOfWeek]: DailyHours } | null;
 
+// note: ordering of these consts determines ordering of the properties
+// on CareProvider, which determines display ordering on the site
+
 export const SUBSTANCE_USE_SERVICES = [
   "ClinicallyManagedHighIntensityResidentialServices",
   "ClinicallyManagedLowIntensityResidentialServices",
