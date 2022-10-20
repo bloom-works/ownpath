@@ -104,6 +104,8 @@
   "ClientsreferredfromCourt/JudicialSystem": "Person referred from Court/Judicial System",
   "AmericanIndian": "American Indian",
   "HIV": "Person who has tested positive for HIV",
+  "latinX": "LatinX",
+  "languagesSpoken": "Languages spoken",
   "services": "Services",
   "substanceUseServices": "Substance use (drug) treatment services",
   "ClinicallyManagedHighIntensityResidentialServices": "Clinically Managed High Intensity Residential Services",

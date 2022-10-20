@@ -5,6 +5,7 @@ import { Trans, useTranslation } from "react-i18next";
 
 import { ReactComponent as Populations } from "../images/populations.svg";
 import { ReactComponent as Accessibility } from "../images/accessibility.svg";
+import { ReactComponent as Languages } from "../images/languages.svg";
 
 import Map from "../components/Map";
 import BasicResultDetail from "../components/ResultDetail/BasicResultDetail";
@@ -123,6 +124,19 @@ function ResultDetail() {
               <BulletedList
                 boolMap={data.accessibility}
                 translationPrefix="accessibilityValues"
+                className="line-height-body-4"
+                emptyMsg={t("moreInfo")}
+              />
+            </div>
+
+            <div>
+              <div className="display-flex flex-align-center margin-bottom-05">
+                <Languages className="data-icon width-3 margin-right-1" />
+                <h3 className="margin-0">{t("languagesSpoken")}: </h3>
+              </div>
+              <BulletedList
+                boolMap={data.languages}
+                translationPrefix="languageValues"
                 className="line-height-body-4"
                 emptyMsg={t("moreInfo")}
               />
