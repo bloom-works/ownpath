@@ -21,6 +21,9 @@ export const DAYS_OF_THE_WEEK = Object.values(DayOfWeek);
 
 export type WeeklyHours = { [K in DayOfWeek]: DailyHours } | null;
 
+// note: ordering of these consts determines ordering of the properties
+// on CareProvider, which determines display ordering on the site
+
 export const SUBSTANCE_USE_SERVICES = [
   "ClinicallyManagedHighIntensityResidentialServices",
   "ClinicallyManagedLowIntensityResidentialServices",
@@ -60,19 +63,19 @@ export const MENTAL_HEALTH_SERVICES = [
 export type MentalHealthServices = typeof MENTAL_HEALTH_SERVICES[number];
 
 export const POPULATIONS_SERVED = [
-  "Homeless",
+  "AmericanIndian",
+  "Offender",
   "LGBTQIA+",
   "Men",
   "Military",
+  "Minors/Adolescents",
   "OlderAdults",
+  "Homeless",
+  "ClientsreferredfromCourt/JudicialSystem",
+  "HIV",
   "PregnantPerson",
   "Women",
   "Youth",
-  "Offender",
-  "Minors/Adolescents",
-  "ClientsreferredfromCourt/JudicialSystem",
-  "AmericanIndian",
-  "HIV",
 ] as const;
 export type PopulationsServed = typeof POPULATIONS_SERVED[number];
 
