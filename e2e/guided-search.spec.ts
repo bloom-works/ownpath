@@ -7,7 +7,7 @@ test.beforeEach(async ({ page }) => {
 
 test("Guided search experience works", async ({ page }) => {
   const guidedExperience = page.locator("a:visible", {
-    hasText: "Try our guided experience",
+    hasText: "guided search",
   });
   await expect(guidedExperience).toHaveAttribute("href", "/guided-search");
   await guidedExperience.click();
