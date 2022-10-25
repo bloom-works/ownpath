@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 import { useEffect } from "react";
 import { Navigate, useLocation, useSearchParams } from "react-router-dom";
+=======
+import { useEffect, useState } from "react";
+import { Navigate, useSearchParams } from "react-router-dom";
+>>>>>>> Adds compare selection UI component
 import { Grid, GridContainer } from "@trussworks/react-uswds";
 import { Marker } from "react-leaflet";
 
@@ -10,14 +15,24 @@ import { getMapMarker, getResultBounds } from "../utils";
 import CARE_PROVIDER_DATA from "../data/ladders_data.json";
 import { CareProvider } from "../types";
 import { logPageView } from "../analytics";
+<<<<<<< HEAD
 import { useTranslation } from "react-i18next";
 import CompareDetail from "../components/ResultDetail/CompareDetail";
+=======
+import CompareSelector from "../components/Compare/CompareSelector";
+
+export type CompareProviders = {
+  providerA?: CareProvider;
+  providerB?: CareProvider;
+};
+>>>>>>> Adds compare selection UI component
 
 export default function Compare() {
   useEffect(() => {
     logPageView();
   }, []);
 
+<<<<<<< HEAD
   const [params, _setParams] = useSearchParams();
   const location = useLocation();
   const { t } = useTranslation();
@@ -28,6 +43,13 @@ export default function Compare() {
   let { prevSearch } = (location.state ?? {}) as {
     prevSearch?: string;
   };
+=======
+  const [params] = useSearchParams();
+  const [compareProviders, setCompareProviders] = useState<CompareProviders>(
+    {}
+  );
+  useEffect(() => setCompareProviders({ providerA, providerB }), []);
+>>>>>>> Adds compare selection UI component
 
   const ids = params.getAll("id");
 
@@ -40,11 +62,13 @@ export default function Compare() {
   const providerB = (CARE_PROVIDER_DATA as CareProvider[]).find(
     (result) => `${result.id}` === ids[1]
   );
+
   if (!providerA || !providerB || providerA.id === providerB.id) {
     return <Navigate replace to="/Whoops" />;
   }
 
   return (
+<<<<<<< HEAD
     <GridContainer>
       <div className="margin-y-2 display-flex flex-justify">
         <BackButton
@@ -92,5 +116,22 @@ export default function Compare() {
         </Grid>
       </Grid>
     </GridContainer>
+=======
+    <>
+      <GridContainer>
+        <Grid row>
+          <h1>Compare</h1>
+        </Grid>
+        <Grid row>
+          <Grid col={6}>{providerA.name}</Grid>
+          <Grid col={6}>{providerB.name}</Grid>
+        </Grid>
+      </GridContainer>
+      <CompareSelector
+        providers={compareProviders}
+        setProviders={setCompareProviders}
+      />
+    </>
+>>>>>>> Adds compare selection UI component
   );
 }
