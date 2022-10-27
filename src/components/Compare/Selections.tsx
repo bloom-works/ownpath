@@ -4,6 +4,7 @@ import { ReactComponent as CaretDown } from "../../images/caret-down.svg";
 import { useState, Dispatch, SetStateAction } from "react";
 import { CareProvider } from "../../types";
 import { CompareProviders } from "../../pages/Compare";
+import { useTranslation } from "react-i18next";
 
 type SelectionsProps = {
   providers: CompareProviders;
@@ -12,6 +13,7 @@ type SelectionsProps = {
 
 function Selections({ providers, setProviders }: SelectionsProps) {
   const [showSelections, setShowSelections] = useState(true);
+  const { t } = useTranslation();
   return (
     <Grid row>
       {showSelections && (
@@ -31,7 +33,9 @@ function Selections({ providers, setProviders }: SelectionsProps) {
         className="tablet:display-none margin-0 bg-white text-black padding-x-1 padding-y-2 radius-lg width-full"
         onClick={() => setShowSelections(!showSelections)}
       >
-        # Location selected
+        {t("showCompareSelections", {
+          count: !!!providers?.providerA || !!!providers?.providerB ? 1 : 2,
+        })}
         <CaretDown
           height={7}
           fill="black"

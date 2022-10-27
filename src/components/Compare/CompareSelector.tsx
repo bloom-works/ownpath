@@ -1,5 +1,6 @@
 import { Button, Grid } from "@trussworks/react-uswds";
 import { Dispatch, SetStateAction } from "react";
+import { useTranslation } from "react-i18next";
 import { CompareProviders } from "../../pages/Compare";
 import Selections from "./Selections";
 
@@ -9,7 +10,10 @@ type CompareSelectorProps = {
 };
 
 function CompareSelector({ providers, setProviders }: CompareSelectorProps) {
+  const { t } = useTranslation();
+
   if (!providers.providerA && !providers.providerB) return <></>;
+
   return (
     <div className="bg-primary-darker width-full padding-y-4 padding-x-2">
       <Grid row>
@@ -27,14 +31,14 @@ function CompareSelector({ providers, setProviders }: CompareSelectorProps) {
               unstyled
               onClick={() => setProviders({})}
             >
-              Clear
+              {t("clear")}
             </Button>
             <Button
               className="tablet:margin-left-2 font-heading- margin-0 width-auto"
               type="button"
               disabled={!!!providers.providerA || !!!providers.providerB}
             >
-              Compare
+              {t("compareButton")}
             </Button>
           </Grid>
         </Grid>

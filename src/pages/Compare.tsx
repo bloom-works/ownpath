@@ -20,6 +20,7 @@ import { useTranslation } from "react-i18next";
 import CompareDetail from "../components/ResultDetail/CompareDetail";
 =======
 import CompareSelector from "../components/Compare/CompareSelector";
+import { useTranslation } from "react-i18next";
 
 export type CompareProviders = {
   providerA?: CareProvider;
@@ -28,6 +29,7 @@ export type CompareProviders = {
 >>>>>>> Adds compare selection UI component
 
 export default function Compare() {
+  const { t } = useTranslation();
   useEffect(() => {
     logPageView();
   }, []);
@@ -120,7 +122,7 @@ export default function Compare() {
     <>
       <GridContainer>
         <Grid row>
-          <h1>Compare</h1>
+          <h1>{t("comparePageHeading")}</h1>
         </Grid>
         <Grid row>
           <Grid col={6}>{providerA.name}</Grid>
