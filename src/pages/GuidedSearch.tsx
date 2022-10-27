@@ -8,7 +8,7 @@ import {
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { createSearchParams, useNavigate } from "react-router-dom";
-import { AnalyticsAction, logEvent, logPageView } from "../analytics";
+import { AnalyticsAction, logEvent, logPageView } from "../utils/analytics";
 import HelpRecipientInput, {
   HelpRecipient,
 } from "../components/GuidedSearch/HelpRecipientInput";
@@ -18,7 +18,7 @@ import LanguageInput from "../components/Search/Filters/LanguageInput";
 import TypeOfHelpInput from "../components/Search/Filters/TypeOfHelpInput";
 import AgeGroupInput from "../components/Search/Filters/AgeGroupInput";
 import { SearchFilters, TypeOfHelp } from "../types";
-import { EMPTY_SEARCH_FILTERS, getZipSearchMetadata } from "../utils";
+import { EMPTY_SEARCH_FILTERS, focusH1, getZipSearchMetadata } from "../utils";
 import AppAlert from "../components/AppAlert";
 import { ReactComponent as Info } from "../images/info.svg";
 import BackButton from "../components/BackButton";
@@ -38,10 +38,9 @@ const getStepStatus = (thisIdx: number, currentStepIdx: number) => {
   return "incomplete";
 };
 
-// TODO: validate zip
 function GuidedSearch() {
   useEffect(() => {
-    window.scrollTo(0, 0);
+    focusH1();
     logPageView();
   }, []);
 
@@ -49,6 +48,11 @@ function GuidedSearch() {
 
   // Index of current step
   const [currentStepIdx, setCurrentStepIdx] = useState(0);
+  // Refocus h1 element on step change
+  useEffect(() => {
+    focusH1();
+  }, [currentStepIdx]);
+
   // Object containing search filters from input from completed steps
   const [searchFilters, setSearchFilters] =
     useState<SearchFilters>(EMPTY_SEARCH_FILTERS);

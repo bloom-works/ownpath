@@ -12,7 +12,7 @@ import {
   getAppliedOptionalFiltersCount,
   getFiltersWithOptionalCleared,
 } from "./utils";
-import { logEvent, AnalyticsAction } from "../../../../analytics";
+import { logEvent, AnalyticsAction } from "../../../../utils/analytics";
 
 type DesktopControlToggleProps = {
   name: string;

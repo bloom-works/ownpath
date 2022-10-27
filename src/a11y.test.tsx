@@ -10,8 +10,6 @@ import { MemoryRouter } from "react-router-dom";
 import CARE_PROVIDER_DATA from "./data/ladders_data.json";
 import FAQ from "./pages/FAQ";
 
-window.scrollTo = jest.fn();
-
 afterAll(() => {
   jest.clearAllMocks();
 });

@@ -13,9 +13,11 @@ import { logPageView } from "../analytics";
 import { useTranslation } from "react-i18next";
 import CompareDetail from "../components/Compare/CompareDetail";
 import CompareSelector from "../components/Compare/CompareSelector";
+import { focusH1 } from "../utils";
 
 export default function Compare() {
   useEffect(() => {
+    focusH1();
     logPageView();
   }, []);
 
