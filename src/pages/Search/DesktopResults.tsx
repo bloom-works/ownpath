@@ -39,28 +39,26 @@ function DesktopResults({ results }: { results: CareProviderSearchResult[] }) {
           key="desktop-map"
           className="position-sticky top-0"
         >
-          <div className="border-right border-left border-base-lighter">
-            <ResultsMap bounds={getResultBounds(results)} mapRef={mapRef}>
-              {results.map(
-                (result) =>
-                  result.latlng && (
-                    <Marker
-                      position={result.latlng}
-                      icon={getMapMarker(result, selectedResultId)}
-                      zIndexOffset={selectedResultId === result.id ? 1000 : 1}
-                      key={result.id}
-                      eventHandlers={{
-                        click: () => {
-                          logEvent(AnalyticsAction.ClickMapMarker, {});
-                          setSelectedResultId(result.id);
-                          document.getElementById(result.id)?.scrollIntoView();
-                        },
-                      }}
-                    />
-                  )
-              )}
-            </ResultsMap>
-          </div>
+          <ResultsMap bounds={getResultBounds(results)} mapRef={mapRef}>
+            {results.map(
+              (result) =>
+                result.latlng && (
+                  <Marker
+                    position={result.latlng}
+                    icon={getMapMarker(result, selectedResultId)}
+                    zIndexOffset={selectedResultId === result.id ? 1000 : 1}
+                    key={result.id}
+                    eventHandlers={{
+                      click: () => {
+                        logEvent(AnalyticsAction.ClickMapMarker, {});
+                        setSelectedResultId(result.id);
+                        document.getElementById(result.id)?.scrollIntoView();
+                      },
+                    }}
+                  />
+                )
+            )}
+          </ResultsMap>
         </Grid>
       </Grid>
     </div>
