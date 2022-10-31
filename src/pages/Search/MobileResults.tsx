@@ -62,39 +62,37 @@ function MobileResults({ results }: { results: CareProviderSearchResult[] }) {
         <ResultsList results={results} isMobile />
       </div>
       <div className={isListView ? "display-none" : ""} key="mobile-map">
-        <div className="border border-base-lighter">
-          <ResultsMap
-            bounds={getResultBounds(results)}
-            mapRef={mapRef}
-            isMobile
-            onClick={() => {
-              // Clear selected result card when map is
-              // clicked anywhere that is not a marker
-              setSelectedResult(undefined);
-            }}
-          >
-            {results.map(
-              (result) =>
-                result.latlng && (
-                  <Marker
-                    title={result.id}
-                    position={result.latlng}
-                    icon={getMapMarker(result, selectedResult?.id)}
-                    zIndexOffset={selectedResult?.id === result.id ? 1000 : 1}
-                    key={result.id}
-                    eventHandlers={{
-                      click: () => {
-                        logEvent(AnalyticsAction.ClickMapMarker, {});
-                        setSelectedResult(
-                          results.find((r) => r.id === result.id)
-                        );
-                      },
-                    }}
-                  />
-                )
-            )}
-          </ResultsMap>
-        </div>
+        <ResultsMap
+          bounds={getResultBounds(results)}
+          mapRef={mapRef}
+          isMobile
+          onClick={() => {
+            // Clear selected result card when map is
+            // clicked anywhere that is not a marker
+            setSelectedResult(undefined);
+          }}
+        >
+          {results.map(
+            (result) =>
+              result.latlng && (
+                <Marker
+                  title={result.id}
+                  position={result.latlng}
+                  icon={getMapMarker(result, selectedResult?.id)}
+                  zIndexOffset={selectedResult?.id === result.id ? 1000 : 1}
+                  key={result.id}
+                  eventHandlers={{
+                    click: () => {
+                      logEvent(AnalyticsAction.ClickMapMarker, {});
+                      setSelectedResult(
+                        results.find((r) => r.id === result.id)
+                      );
+                    },
+                  }}
+                />
+              )
+          )}
+        </ResultsMap>
         {selectedResult ? (
           <div className="bg-white border border-base-lighter radius-lg padding-2 margin-bottom-1 position-relative top-neg-50px z-top">
             <Grid className="flex-justify-end" row>

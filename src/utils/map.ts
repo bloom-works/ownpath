@@ -41,7 +41,7 @@ export const rerenderMap = (
  * @param searchResults
  * @returns
  */
-export function getResultBounds(searchResults: CareProviderSearchResult[]) {
+export function getResultBounds(searchResults: CareProvider[]) {
   return latLngBounds(
     searchResults
       .map((result) => result.latlng)
