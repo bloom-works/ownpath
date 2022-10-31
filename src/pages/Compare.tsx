@@ -22,12 +22,15 @@ import CompareDetail from "../components/ResultDetail/CompareDetail";
 import CompareSelector from "../components/Compare/CompareSelector";
 import { useTranslation } from "react-i18next";
 
+<<<<<<< HEAD
 export type CompareProviders = {
   providerA?: CareProvider;
   providerB?: CareProvider;
 };
 >>>>>>> Adds compare selection UI component
 
+=======
+>>>>>>> PR feedback
 export default function Compare() {
   const { t } = useTranslation();
   useEffect(() => {
@@ -47,11 +50,21 @@ export default function Compare() {
   };
 =======
   const [params] = useSearchParams();
+<<<<<<< HEAD
   const [compareProviders, setCompareProviders] = useState<CompareProviders>(
     {}
   );
   useEffect(() => setCompareProviders({ providerA, providerB }), []);
 >>>>>>> Adds compare selection UI component
+=======
+  const [compareProviders, setCompareProviders] = useState<CareProvider[]>([]);
+  useEffect(() => {
+    const _p = [];
+    if (!!providerA) _p.push(providerA);
+    if (!!providerB) _p.push(providerB);
+    setCompareProviders(_p);
+  }, []);
+>>>>>>> PR feedback
 
   const ids = params.getAll("id");
 

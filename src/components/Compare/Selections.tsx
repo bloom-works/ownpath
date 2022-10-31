@@ -3,12 +3,11 @@ import { ReactComponent as Close } from "../../images/close.svg";
 import { ReactComponent as CaretDown } from "../../images/caret-down.svg";
 import { useState, Dispatch, SetStateAction } from "react";
 import { CareProvider } from "../../types";
-import { CompareProviders } from "../../pages/Compare";
 import { useTranslation } from "react-i18next";
 
 type SelectionsProps = {
-  providers: CompareProviders;
-  setProviders: Dispatch<SetStateAction<CompareProviders>>;
+  providers: CareProvider[];
+  setProviders: Dispatch<SetStateAction<CareProvider[]>>;
 };
 
 function Selections({ providers, setProviders }: SelectionsProps) {
@@ -19,22 +18,28 @@ function Selections({ providers, setProviders }: SelectionsProps) {
       {showSelections && (
         <>
           <Selection
-            provider={providers.providerA}
-            clearFunc={() => setProviders({ providerB: providers.providerB })}
+            provider={providers[0]}
+            clearFunc={() => {
+              const _p = [...providers];
+              setProviders(_p.slice(1));
+            }}
           />
           <Selection
-            provider={providers.providerB}
-            clearFunc={() => setProviders({ providerA: providers.providerA })}
+            provider={providers[1]}
+            clearFunc={() => {
+              const _p = [...providers];
+              setProviders(_p.slice(0, 1));
+            }}
           />
         </>
       )}
 
       <button
-        className="tablet:display-none margin-0 bg-white text-black padding-x-1 padding-y-2 radius-lg width-full"
+        className="tablet:display-none margin-0 bg-white text-black padding-x-1 padding-y-2 radius-lg width-full border-0"
         onClick={() => setShowSelections(!showSelections)}
       >
         {t("showCompareSelections", {
-          count: !!!providers?.providerA || !!!providers?.providerB ? 1 : 2,
+          count: providers.length,
         })}
         <CaretDown
           height={7}
