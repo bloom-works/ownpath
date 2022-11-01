@@ -71,15 +71,6 @@ p {
 }
 
 /* override USWDS settings */
-.usa-header,
-legend,
-[class*="font-heading-"] {
-  font-family: "MuseoSlab";
-}
-.font-family-body,
-[class*="font-body-"] {
-  font-family: Trebuchet MS, san-serif !important;
-}
 .font-body-3xs {
   font-size: 0.75rem;
 }
@@ -88,12 +79,12 @@ legend,
 .usa-card__container,
 .usa-prose,
 .usa-fieldset {
-  font-family: Trebuchet MS, san-serif !important;
+  font-family: Trebuchet MS, san-serif;
   font-weight: 500;
   font-size: 1rem;
 }
 .usa-link {
-  font-family: Trebuchet MS, san-serif !important;
+  font-family: Trebuchet MS, san-serif;
   font-size: 1rem;
 }
 .usa-link:visited,
@@ -118,11 +109,19 @@ legend,
   color: white;
 }
 
+.usa-button.dark-background:not(.usa-button--unstyled) {
+  border: 1px solid white;
+}
+
+.usa-button--unstyled:hover.dark-background {
+  color: white;
+}
+
 .usa-link.usa-button {
   color: white;
 }
 
-.usa-button:not(.usa-button--outline):not(.usa-button--base):not(.usa-button--unstyled) {
+.usa-button:not(.usa-button--outline):not(.usa-button--base):not(.usa-button--unstyled):not(.usa-button:disabled) {
   background-color: var(--blue, blue);
 }
 
@@ -134,10 +133,6 @@ legend,
 .usa-button--base,
 .usa-button--base:hover {
   background-color: var(--dark-blue, darkblue);
-}
-
-.usa-button.dark-background {
-  border: 1px solid white;
 }
 
 .usa-link {
@@ -188,6 +183,17 @@ legend,
   display: none;
 }
 
+.usa-header,
+legend,
+.font-family-heading,
+[class*="font-heading-"] {
+  font-family: "MuseoSlab";
+}
+.font-family-body,
+[class*="font-body-"] {
+  font-family: Trebuchet MS, san-serif !important;
+}
+
 /* override Bootstrap settings */
 .show > .btn-primary.dropdown-toggle {
   background-color: var(--dark-blue, darkblue);
@@ -224,6 +230,10 @@ legend,
 
 .top-neg-50px {
   top: -50px;
+}
+
+.rotate-180 {
+  transform: rotate(180deg);
 }
 
 code {
