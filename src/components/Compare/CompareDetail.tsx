@@ -5,11 +5,19 @@ import { useTranslation } from "react-i18next";
 
 import { CareProvider } from "../../types";
 import DirectionsLink from "../ResultDetail/DirectionsLink";
+import { getMilesToZipCenter } from "../../utils";
 
 // TODO: add badges for telehealth and accepting new patients when we have them
 
-function CompareDetail({ data }: { data: CareProvider }) {
+function CompareDetail({
+  data,
+  zip,
+}: {
+  data: CareProvider;
+  zip: string | null;
+}) {
   const { t } = useTranslation();
+  const miles = getMilesToZipCenter(zip, data);
 
   return (
     <>
@@ -40,6 +48,11 @@ function CompareDetail({ data }: { data: CareProvider }) {
             </>
           )}
         </div>
+        {miles !== null && (
+          <div className="margin-bottom-1">
+            {t("milesAwayFrom", { miles: miles.toFixed(1), zip })}
+          </div>
+        )}
         <DirectionsLink careProvider={data} />
       </div>
     </>

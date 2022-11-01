@@ -78,6 +78,7 @@
   "mapHelper": "Tap a marker to pull up information for that location. To zoom in or out on the map on a mobile device, use a two finger pinching gesture.",
   "fullDetail": "Full detail about this location",
   "milesAway": "{{ miles }} miles away",
+  "milesAwayFrom": "{{ miles }} miles away from {{zip}}",
   "detailsPageShare": "Share link",
   "backToSearch": "Back to search",
   "getDirections": "Get directions",

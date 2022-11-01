@@ -23,8 +23,26 @@ import {
   offersAnyTypesOfHelpNeeded,
   servesAgeGroup,
   getDefaultRadius,
+  getMilesFromMeters,
 } from "./filters";
 import { supportsLanguages } from "./filters/languages";
+
+export const getMilesToZipCenter = (
+  zip: string | null,
+  careProvider: CareProvider
+): number | null => {
+  if (!zip) {
+    return null;
+  }
+  const zipSearchMetadata = getZipSearchMetadata(zip);
+  if (!zipSearchMetadata.isValidZip || !careProvider.latlng) {
+    return null;
+  }
+  const meters = latLng(zipSearchMetadata.center).distanceTo(
+    careProvider.latlng
+  );
+  return getMilesFromMeters(meters);
+};
 
 export const addSearchMetadata = (
   careProviders: CareProvider[],
