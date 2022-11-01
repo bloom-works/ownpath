@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 import { CareProvider } from "../../types";
-import DirectionsLink from "./DirectionsLink";
+import DirectionsLink from "../ResultDetail/DirectionsLink";
 
 // TODO: add badges for telehealth and accepting new patients when we have them
 

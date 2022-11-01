@@ -185,6 +185,7 @@ p {
 
 .usa-header,
 legend,
+.font-family-heading,
 [class*="font-heading-"] {
   font-family: "MuseoSlab";
 }

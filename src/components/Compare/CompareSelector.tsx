@@ -26,7 +26,7 @@ function CompareSelector({ providers, setProviders }: CompareSelectorProps) {
             className="flex-align-center flex-justify-end height-full padding-top-2 tablet:padding-top-0 flex-justify tablet:flex-justify-end"
           >
             <Button
-              className="tablet:margin-left-2 dark-background font-heading- text-center width-auto"
+              className="tablet:margin-left-2 dark-background font-family-heading text-center width-auto"
               type="button"
               unstyled
               onClick={() => setProviders([])}
@@ -34,7 +34,7 @@ function CompareSelector({ providers, setProviders }: CompareSelectorProps) {
               {t("clear")}
             </Button>
             <Button
-              className="tablet:margin-left-2 font-heading- margin-0 width-auto"
+              className="tablet:margin-left-2 font-family-heading margin-0 width-auto"
               type="button"
               disabled={providers.length < 2}
             >
