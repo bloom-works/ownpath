@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Navigate, useLocation, useSearchParams } from "react-router-dom";
-import { Grid, GridContainer } from "@trussworks/react-uswds";
+import { Grid, GridContainer, Table } from "@trussworks/react-uswds";
 import { Marker } from "react-leaflet";
 
 import BackButton from "../components/BackButton";
@@ -13,6 +13,7 @@ import { logPageView } from "../analytics";
 import { useTranslation } from "react-i18next";
 import CompareDetail from "../components/Compare/CompareDetail";
 import CompareSelector from "../components/Compare/CompareSelector";
+import HoursTable from "../components/Compare/HoursTable";
 
 export default function Compare() {
   useEffect(() => {
@@ -103,6 +104,9 @@ export default function Compare() {
             <CompareDetail data={providerB} zip={zip} />
           </Grid>
         </Grid>
+        <hr className="margin-y-4" />
+        <h3 className="margin-0">{t("hours")}</h3>
+        <HoursTable providerA={providerA} providerB={providerB} />
       </GridContainer>
       <CompareSelector
         providers={compareProviders}
