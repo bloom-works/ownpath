@@ -10,7 +10,10 @@ import ResultDetail from "./pages/ResultDetail";
 import GuidedSearch from "./pages/GuidedSearch";
 import NotFound from "./pages/NotFound";
 import Search from "./pages/Search/Search";
-
+// Unfortunately I was unable to mock the JSON data set to be smaller subset,
+// so just bumping timeout to allow application of filters to complete
+// and component to render for testing so Search tests can complete
+jest.setTimeout(1000 * 60 * 3);
 afterAll(() => {
   jest.clearAllMocks();
 });
@@ -50,11 +53,6 @@ test("NotFound", async () => {
 });
 
 test("Search", async () => {
-  // Unfortunately I was unable to mock the JSON data set to be smaller subset,
-  // so just bumping timeout to allow application of filters to complete
-  // and component to render for testing
-  jest.setTimeout(1000 * 60 * 3);
-
   const { container } = render(<Search />, {
     wrapper: ({ children }) => (
       <MemoryRouter initialEntries={[{ search: "?zip=80012" }]}>
