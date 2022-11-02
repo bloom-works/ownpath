@@ -20,7 +20,13 @@ export default function ResultCard({ data }: ResultCardProps) {
         </p>
         <MilesAway meters={data.distance} />
       </div>
-      <h2 className="margin-top-1 margin-bottom-3">{data.name}</h2>
+      <Link
+        className="usa-link"
+        to={`/result/${data.id}`}
+        state={{ prevSearch: location.search, data }}
+      >
+        <h2 className="margin-top-1 margin-bottom-3">{data.name}</h2>
+      </Link>
       <BasicResultDetail result={data} isCondensed />
       <Link
         className="usa-button"
