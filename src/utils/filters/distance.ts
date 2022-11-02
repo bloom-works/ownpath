@@ -40,3 +40,7 @@ export const compareDistance = (
   }
   return a.distance - b.distance;
 };
+
+export const getMilesFromMeters = (meters: number): number => {
+  return meters / METERS_IN_A_MILE;
+};
