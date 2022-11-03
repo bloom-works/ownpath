@@ -41,6 +41,7 @@ export default function Compare() {
   };
 
   const ids = params.getAll("id");
+  const zip = params.get("zip");
 
   if (!ids || ids.length !== 2) {
     return <Navigate replace to="/" />;
@@ -97,11 +98,11 @@ export default function Compare() {
         <Grid row gap="md">
           <Grid col={6}>
             <p className="margin-y-2 text-bold">1.</p>
-            <CompareDetail data={providerA} />
+            <CompareDetail data={providerA} zip={zip} />
           </Grid>
           <Grid col={6}>
             <p className="margin-y-2 text-bold">2.</p>
-            <CompareDetail data={providerB} />
+            <CompareDetail data={providerB} zip={zip} />
           </Grid>
         </Grid>
       </GridContainer>
