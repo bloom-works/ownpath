@@ -3,7 +3,7 @@ import { Marker } from "react-leaflet";
 import { Map as LeafletMap } from "leaflet";
 import { useState, useRef, useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { logEvent, AnalyticsAction } from "../../analytics";
+import { logEvent, AnalyticsAction } from "../../utils/analytics";
 import MobileViewToggle from "../../components/Search/MobileViewToggle";
 import ResultCard from "../../components/Search/ResultCard";
 import ResultsList from "../../components/Search/ResultsList";

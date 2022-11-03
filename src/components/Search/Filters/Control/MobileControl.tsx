@@ -7,7 +7,7 @@ import {
 } from "@trussworks/react-uswds";
 import { Dispatch, useRef, SetStateAction } from "react";
 import { useTranslation } from "react-i18next";
-import { AnalyticsAction, logEvent } from "../../../../analytics";
+import { AnalyticsAction, logEvent } from "../../../../utils/analytics";
 import { SearchFilters, TypeOfHelp } from "../../../../types";
 import FeePreferenceInput from "../FeePreferenceInput";
 import HoursInput from "../HoursInput";
