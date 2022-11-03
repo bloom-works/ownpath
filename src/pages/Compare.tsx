@@ -9,7 +9,7 @@ import ShareButton from "../components/ShareButton";
 import { getMapMarker, getResultBounds } from "../utils";
 import CARE_PROVIDER_DATA from "../data/ladders_data.json";
 import { CareProvider } from "../types";
-import { logPageView } from "../analytics";
+import { logPageView } from "../utils/analytics";
 import { useTranslation } from "react-i18next";
 import CompareDetail from "../components/Compare/CompareDetail";
 import CompareSelector from "../components/Compare/CompareSelector";

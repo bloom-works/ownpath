@@ -21,7 +21,6 @@ import { SearchFilters, TypeOfHelp } from "../types";
 import { EMPTY_SEARCH_FILTERS, focusH1, getZipSearchMetadata } from "../utils";
 import AppAlert from "../components/AppAlert";
 import { ReactComponent as Info } from "../images/info.svg";
-import BackButton from "../components/BackButton";
 
 const GUIDED_SEARCH_STEPS = [
   "helpRecipient",
