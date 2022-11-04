@@ -93,7 +93,7 @@ function ResultDetail() {
               </div>
             )}
           </Grid>
-          <Grid tablet={{ col: 5 }}>
+          <Grid tablet={{ col: 5 }} className="padding-0 tablet:padding-1">
             <BasicResultDetail result={data} />
           </Grid>
         </Grid>
