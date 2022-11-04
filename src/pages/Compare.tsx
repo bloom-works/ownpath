@@ -13,6 +13,7 @@ import { logPageView } from "../utils/analytics";
 import { useTranslation } from "react-i18next";
 import CompareDetail from "../components/Compare/CompareDetail";
 import CompareSelector from "../components/Compare/CompareSelector";
+import HoursTable from "../components/Compare/HoursTable";
 import { focusH1 } from "../utils";
 
 export default function Compare() {
@@ -105,6 +106,9 @@ export default function Compare() {
             <CompareDetail data={providerB} zip={zip} />
           </Grid>
         </Grid>
+        <hr className="margin-y-4" />
+        <h3 className="margin-0">{t("hours")}</h3>
+        <HoursTable providerA={providerA} providerB={providerB} />
       </GridContainer>
       <CompareSelector
         providers={compareProviders}
