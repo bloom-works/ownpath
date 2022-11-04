@@ -9,11 +9,12 @@ import { ReactComponent as IMatterLogo } from "../images/logos/imatter.svg";
 import { ReactComponent as CdhsLogo } from "../images/logos/cdhs.svg";
 import ZipCard from "../components/Home/ZipCard";
 import GuidedSearchCard from "../components/Home/GuidedSearchCard";
-import { logPageView } from "../analytics";
+import { logPageView } from "../utils/analytics";
 import CrisisAlert from "../components/Home/CrisisAlert";
 import PeopleGridMobilePath from "../images/people_grid.png";
 import PeopleGridDesktopPath from "../images/people_grid_desktop.png";
 import PeopleGridDesktopXlPath from "../images/people_grid_desktop_xl.png";
+import { focusH1 } from "../utils";
 
 const HeroSection = styled.div`
   background-color: #dbf0f9;
@@ -50,7 +51,7 @@ function Home() {
   const [showCrisisAlert, setShowCrisisAlert] = useState(true);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    focusH1();
     logPageView();
   }, []);
 

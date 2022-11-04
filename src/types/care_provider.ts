@@ -65,6 +65,7 @@ export type MentalHealthServices = typeof MENTAL_HEALTH_SERVICES[number];
 export const POPULATIONS_SERVED = [
   "AmericanIndian",
   "Offender",
+  "Latinx",
   "LGBTQIA+",
   "Men",
   "Military",

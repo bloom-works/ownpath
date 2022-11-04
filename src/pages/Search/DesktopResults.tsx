@@ -2,7 +2,7 @@ import { Grid } from "@trussworks/react-uswds";
 import { Marker } from "react-leaflet";
 import { Map as LeafletMap } from "leaflet";
 import { useState, useRef, useEffect } from "react";
-import { logEvent, AnalyticsAction } from "../../analytics";
+import { logEvent, AnalyticsAction } from "../../utils/analytics";
 import ResultsList from "../../components/Search/ResultsList";
 import ResultsMap from "../../components/Search/ResultsMap";
 import { CareProviderSearchResult } from "../../types";

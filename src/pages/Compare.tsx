@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Navigate, useLocation, useSearchParams } from "react-router-dom";
-import { Grid, GridContainer, Table } from "@trussworks/react-uswds";
+import { Grid, GridContainer } from "@trussworks/react-uswds";
 import { Marker } from "react-leaflet";
 
 import BackButton from "../components/BackButton";
@@ -9,14 +9,16 @@ import ShareButton from "../components/ShareButton";
 import { getMapMarker, getResultBounds } from "../utils";
 import CARE_PROVIDER_DATA from "../data/ladders_data.json";
 import { CareProvider } from "../types";
-import { logPageView } from "../analytics";
+import { logPageView } from "../utils/analytics";
 import { useTranslation } from "react-i18next";
 import CompareDetail from "../components/Compare/CompareDetail";
 import CompareSelector from "../components/Compare/CompareSelector";
 import HoursTable from "../components/Compare/HoursTable";
+import { focusH1 } from "../utils";
 
 export default function Compare() {
   useEffect(() => {
+    focusH1();
     logPageView();
   }, []);
 

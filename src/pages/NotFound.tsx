@@ -2,10 +2,12 @@ import { GridContainer, Grid } from "@trussworks/react-uswds";
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
-import { logPageView } from "../analytics";
+import { focusH1 } from "../utils";
+import { logPageView } from "../utils/analytics";
 
 function NotFound() {
   useEffect(() => {
+    focusH1();
     logPageView();
   }, []);
 

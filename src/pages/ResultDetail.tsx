@@ -15,9 +15,9 @@ import BulletedList from "../components/BulletedList";
 import { useEffect } from "react";
 import DirectionsLink from "../components/ResultDetail/DirectionsLink";
 import ShareButton from "../components/ShareButton";
-import { logPageView } from "../analytics";
+import { logPageView } from "../utils/analytics";
 import BackButton from "../components/BackButton";
-import { anyAreTrue, getMapMarker } from "../utils";
+import { anyAreTrue, focusH1, getMapMarker } from "../utils";
 import ProviderUpdateInfo from "../components/ResultDetail/ProviderUpdateInfo";
 
 function ResultDetail() {
@@ -25,8 +25,8 @@ function ResultDetail() {
   // (when coming from scrolled results list,
   // they were landing at the same y-coordinate)
   useEffect(() => {
-    window.scrollTo(0, 0);
     logPageView();
+    focusH1();
   }, []);
 
   const { t } = useTranslation();
@@ -93,7 +93,7 @@ function ResultDetail() {
               </div>
             )}
           </Grid>
-          <Grid tablet={{ col: 5 }}>
+          <Grid tablet={{ col: 5 }} className="padding-0 tablet:padding-1">
             <BasicResultDetail result={data} />
           </Grid>
         </Grid>

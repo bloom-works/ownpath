@@ -7,13 +7,14 @@ import styled from "styled-components";
 import {
   applySearchFilters,
   countOptionalSearchFiltersUsed,
+  focusH1,
   getFiltersFromSearchParams,
   MILE_DISTANCE_OPTIONS,
 } from "../../utils";
 import CARE_PROVIDER_DATA from "../../data/ladders_data.json";
 import { CareProvider, SearchFilters, SearchResult } from "../../types";
 import DesktopControl from "../../components/Search/Filters/Control/DesktopControl";
-import { AnalyticsAction, logEvent, logPageView } from "../../analytics";
+import { AnalyticsAction, logEvent, logPageView } from "../../utils/analytics";
 import MobileControl from "../../components/Search/Filters/Control/MobileControl";
 import ZipInput from "../../components/ZipInput";
 import DesktopResults from "./DesktopResults";
@@ -131,7 +132,7 @@ function Search() {
         replace: true,
       });
     } else {
-      window.scrollTo(0, 0);
+      focusH1();
       performSearch(searchFilters);
       logPageView();
     }
@@ -143,113 +144,111 @@ function Search() {
 
   return (
     <div className="Search">
-      {searchResult && (
-        <div>
-          <div className="margin-y-2 padding-x-2 tablet:padding-x-5">
-            <Grid row className="margin-bottom-2">
-              <div className="width-full">
-                <div className="position-relative display-flex flex-align-baseline flex-wrap">
-                  <ResponsiveHeader className="margin-top-0 text-bold">
-                    {t("searchPageHeading", {
-                      count: searchResult.results.length,
-                      zip: showZipInput ? "" : searchFilters.zip,
-                    })}
-                    {showZipInput && <Ellipses>...</Ellipses>}
-                  </ResponsiveHeader>
-                  {showZipInput && (
-                    <SearchContainer>
-                      <ZipSearch
-                        onSubmit={() => {
-                          setSearchParams({ ...searchFilters, zip });
-                          setShowZipInput(false);
-                        }}
-                        className="tablet:margin-left-1"
+      <div>
+        <div className="margin-y-2 padding-x-2 tablet:padding-x-5">
+          <Grid row className="margin-bottom-2">
+            <div className="width-full">
+              <div className="position-relative display-flex flex-align-baseline flex-wrap">
+                <ResponsiveHeader className="margin-top-0 text-bold">
+                  {t("searchPageHeading", {
+                    count: searchResult?.results.length || 0,
+                    zip: showZipInput ? "" : searchFilters.zip,
+                  })}
+                  {showZipInput && <Ellipses>...</Ellipses>}
+                </ResponsiveHeader>
+                {showZipInput && (
+                  <SearchContainer>
+                    <ZipSearch
+                      onSubmit={() => {
+                        setSearchParams({ ...searchFilters, zip });
+                        setShowZipInput(false);
+                      }}
+                      className="tablet:margin-left-1"
+                    >
+                      <ZipInput
+                        zip={zip}
+                        setZip={(_zip) => setZip(_zip)}
+                        noLabel
+                        autoFocus
                       >
-                        <ZipInput
-                          zip={zip}
-                          setZip={(_zip) => setZip(_zip)}
-                          noLabel
-                          autoFocus
-                        >
-                          <Button className="margin-left-1" type="submit">
-                            {t("search")}
-                          </Button>
-                        </ZipInput>
-                      </ZipSearch>
-                    </SearchContainer>
+                        <Button className="margin-left-1" type="submit">
+                          {t("search")}
+                        </Button>
+                      </ZipInput>
+                    </ZipSearch>
+                  </SearchContainer>
+                )}
+                <Button
+                  className="margin-left-1 padding-y-05 width-auto"
+                  type="button"
+                  unstyled
+                  onClick={() => {
+                    setShowZipInput(!showZipInput);
+                    setZip(searchFilters.zip);
+                  }}
+                >
+                  {showZipInput ? (
+                    <>
+                      {t("cancel")} <Close className="margin-left-05" />
+                    </>
+                  ) : (
+                    t("change")
                   )}
-                  <Button
-                    className="margin-left-1 padding-y-05 width-auto"
-                    type="button"
-                    unstyled
-                    onClick={() => {
-                      setShowZipInput(!showZipInput);
-                      setZip(searchFilters.zip);
-                    }}
-                  >
-                    {showZipInput ? (
-                      <>
-                        {t("cancel")} <Close className="margin-left-05" />
-                      </>
-                    ) : (
-                      t("change")
-                    )}
-                  </Button>
-                  <ShareButtonContainer lang={i18n.language}>
-                    <ShareButton text={t("searchPageShare")} />
-                  </ShareButtonContainer>
-                </div>
+                </Button>
+                <ShareButtonContainer lang={i18n.language}>
+                  <ShareButton text={t("searchPageShare")} />
+                </ShareButtonContainer>
               </div>
-            </Grid>
-            <DesktopControl
-              distanceUpdatedExternally={distanceUpdated}
-              filters={{ ...searchFilters }}
-              setFilters={(filters) => {
-                setSearchParams({ ...filters });
-                logEvent(AnalyticsAction.ApplyFilter, {
-                  label: "Filter dropdown button",
-                });
-              }}
-            />
-            <MobileControl
-              filters={searchFilters}
-              setFilters={(filters) => setSearchParams({ ...filters })}
-              totalResultsCount={searchResult.results?.length || 0}
-            />
-          </div>
-
-          {searchResult.results.length ? (
-            <div>
-              <DesktopResults results={searchResult.results} />
-              <MobileResults results={searchResult.results} />
             </div>
-          ) : (
-            <div className="p-5">
-              {isWidestRadius(searchFilters.miles) ? (
+          </Grid>
+          <DesktopControl
+            distanceUpdatedExternally={distanceUpdated}
+            filters={{ ...searchFilters }}
+            setFilters={(filters) => {
+              setSearchParams({ ...filters });
+              logEvent(AnalyticsAction.ApplyFilter, {
+                label: "Filter dropdown button",
+              });
+            }}
+          />
+          <MobileControl
+            filters={searchFilters}
+            setFilters={(filters) => setSearchParams({ ...filters })}
+            totalResultsCount={searchResult?.results?.length || 0}
+          />
+        </div>
+
+        {searchResult?.results.length ? (
+          <div>
+            <DesktopResults results={searchResult.results} />
+            <MobileResults results={searchResult.results} />
+          </div>
+        ) : (
+          <div className="p-5">
+            {isWidestRadius(searchFilters.miles) ? (
+              <p>
+                {t("noResultsFilters", {
+                  miles: searchFilters.miles,
+                })}
+              </p>
+            ) : (
+              <>
                 <p>
-                  {t("noResultsFilters", {
+                  {t("noResultsRadius", {
                     miles: searchFilters.miles,
                   })}
                 </p>
-              ) : (
-                <>
-                  <p>
-                    {t("noResultsRadius", {
-                      miles: searchFilters.miles,
-                    })}
-                  </p>
-                  <Button
-                    type="button"
-                    onClick={() => expandSearchRadius(searchFilters.miles)}
-                  >
-                    {t("noResultsRadiusButton")}
-                  </Button>
-                </>
-              )}
-            </div>
-          )}
-        </div>
-      )}
+                <Button
+                  type="button"
+                  onClick={() => expandSearchRadius(searchFilters.miles)}
+                >
+                  {t("noResultsRadiusButton")}
+                </Button>
+              </>
+            )}
+          </div>
+        )}
+      </div>
     </div>
   );
 }

@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { ReactComponent as Share } from "../images/share.svg";
 import { isMobile } from "react-device-detect";
 import { useTranslation } from "react-i18next";
-import { AnalyticsAction, logEvent } from "../analytics";
+import { AnalyticsAction, logEvent } from "../utils/analytics";
 
 const TopToolTip = styled.span`
   margin-top: -2.5rem;

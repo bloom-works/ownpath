@@ -1,7 +1,7 @@
 import { Fieldset } from "@trussworks/react-uswds";
 import { Dispatch, SetStateAction } from "react";
 import { useTranslation } from "react-i18next";
-import { AnalyticsAction, logEvent } from "../../../analytics";
+import { AnalyticsAction, logEvent } from "../../../utils/analytics";
 import { SearchFilters } from "../../../types";
 import { MILE_DISTANCE_OPTIONS } from "../../../utils";
 import FilterRadio from "./FilterRadio";
