@@ -37,11 +37,7 @@ function HoursTable({
     };
   });
 
-  return (
-    <>
-      <CompareStripedRows rows={rowData} />
-    </>
-  );
+  return <CompareStripedRows rows={rowData} />;
 }
 
 export default HoursTable;

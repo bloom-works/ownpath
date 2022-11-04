@@ -1,6 +1,6 @@
 import { Grid } from "@trussworks/react-uswds";
 
-// TODO: display checkbox for boolean values
+import { ReactComponent as Check } from "../../images/check.svg";
 
 function CompareStripedRows({
   rows,
@@ -11,8 +11,22 @@ function CompareStripedRows({
     compareB: string | boolean;
   }[];
 }) {
+  const getTableCell = (value: string | boolean) => {
+    if (value === true) {
+      return (
+        <div className="display-flex flex-justify-center">
+          <Check />
+        </div>
+      );
+    } else if (value === false) {
+      return null;
+    } else {
+      return value;
+    }
+  };
+
   return (
-    <div className="border-top margin-top-05 margin-bottom-3">
+    <div className="border-top margin-top-05 margin-bottom-6">
       {rows.map((row, idx) => (
         <Grid
           row
@@ -24,10 +38,10 @@ function CompareStripedRows({
             {row.label}
           </Grid>
           <Grid col={6} tablet={{ col: 4 }}>
-            {row.compareA}
+            {getTableCell(row.compareA)}
           </Grid>
           <Grid col={6} tablet={{ col: 4 }}>
-            {row.compareB}
+            {getTableCell(row.compareB)}
           </Grid>
         </Grid>
       ))}
