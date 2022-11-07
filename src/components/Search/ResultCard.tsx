@@ -34,6 +34,7 @@ export default function ResultCard({ data }: ResultCardProps) {
         state={{ prevSearch: location.search, data }}
       >
         {t("fullDetail")}
+        <span className="usa-sr-only">{data.name}</span>
       </Link>
     </div>
   );
