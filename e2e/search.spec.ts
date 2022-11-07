@@ -78,7 +78,7 @@ test("Distance filter works on mobile", async ({ page }) => {
 });
 
 test("Distance filter works on desktop", async ({ page }) => {
-  const distanceFilterToggle = page.locator("button", { hasText: "Distance" });
+  const distanceFilterToggle = page.locator("button", { hasText: /Distance/ });
   const radios = page.locator("input:visible[name*=distance]");
   const radioDefault = radios.nth(0);
   const radioBigger = radios.nth(1);
@@ -133,7 +133,7 @@ test("Clearable checkbox filter works on desktop", async ({ page }) => {
   await expect(activeFilters).toContainText("Tuesday");
 
   const clearAll = page.locator("#active-filters-section button", {
-    hasText: "Clear",
+    hasText: "Clear all filters",
   });
   await clearAll.dispatchEvent("click");
   await daysFilterToggle.click();
