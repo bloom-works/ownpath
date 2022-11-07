@@ -26,10 +26,15 @@ function DesktopControlToggle({ name, onClick }: DesktopControlToggleProps) {
       onClick={onClick}
       unstyled
       className="margin-right-2 padding-y-05 text-no-underline text-dark-blue width-auto"
+      aria-label={`${t("clear")} ${name}`}
     >
       <span className="usa-sr-only">{t("clear")} </span>
       {name}
-      <Close height={10} className="margin-left-05" />
+      <Close
+        height={10}
+        className="margin-left-05"
+        aria-label={`${t("clear")} ${name}`}
+      />
     </Button>
   );
 }
