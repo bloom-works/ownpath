@@ -14,7 +14,7 @@ function CompareStripedRows({
   const getTableCell = (value: string | boolean) => {
     if (value === true) {
       return (
-        <div className="display-flex flex-justify-center">
+        <div className="display-flex flex-justify-center height-full flex-align-center">
           <Check />
         </div>
       );
