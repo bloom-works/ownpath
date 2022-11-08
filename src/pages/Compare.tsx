@@ -17,6 +17,7 @@ import HoursTable from "../components/Compare/HoursTable";
 import { focusH1 } from "../utils";
 import FeesTable from "../components/Compare/FeesTable";
 import PopulationsTable from "../components/Compare/PopulationsTable";
+import LanguagesTable from "../components/Compare/LanguagesTable";
 
 export default function Compare() {
   useEffect(() => {
@@ -113,6 +114,7 @@ export default function Compare() {
         <HoursTable providerA={providerA} providerB={providerB} />
         <FeesTable providerA={providerA} providerB={providerB} />
         <PopulationsTable providerA={providerA} providerB={providerB} />
+        <LanguagesTable providerA={providerA} providerB={providerB} />
       </GridContainer>
       <CompareSelector
         providers={compareProviders}
