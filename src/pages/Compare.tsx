@@ -6,7 +6,11 @@ import { Marker } from "react-leaflet";
 import BackButton from "../components/BackButton";
 import ResultsMap from "../components/Search/ResultsMap";
 import ShareButton from "../components/ShareButton";
-import { getMapMarker, getResultBounds } from "../utils";
+import {
+  getDistanceToZipCenter,
+  getMapMarker,
+  getResultBounds,
+} from "../utils";
 import CARE_PROVIDER_DATA from "../data/ladders_data.json";
 import { CareProvider } from "../types";
 import { logPageView } from "../utils/analytics";
@@ -48,19 +52,27 @@ export default function Compare() {
   const ids = params.getAll("id");
   const zip = params.get("zip");
 
-  if (!ids || ids.length !== 2) {
+  if (!ids || ids.length !== 2 || ids[0] === ids[1]) {
     return <Navigate replace to="/" />;
   }
-  const providerA = (CARE_PROVIDER_DATA as CareProvider[]).find(
-    (result) => `${result.id}` === ids[0]
-  );
-  const providerB = (CARE_PROVIDER_DATA as CareProvider[]).find(
-    (result) => `${result.id}` === ids[1]
-  );
 
-  if (!providerA || !providerB || providerA.id === providerB.id) {
+  const careProviders = ids
+    .map((id) => CARE_PROVIDER_DATA.find((result) => result.id === id))
+    .filter((data) => !!data) as CareProvider[];
+  if (careProviders.length !== 2) {
     return <Navigate replace to="/Whoops" />;
   }
+
+  const providerA = {
+    ...careProviders[0],
+    searchRank: 1,
+    distance: getDistanceToZipCenter(zip, careProviders[0]),
+  };
+  const providerB = {
+    ...careProviders[1],
+    searchRank: 2,
+    distance: getDistanceToZipCenter(zip, careProviders[1]),
+  };
 
   return (
     <>
@@ -83,7 +95,7 @@ export default function Compare() {
                 <Marker
                   title={providerA.id}
                   position={providerA.latlng}
-                  icon={getMapMarker({ ...providerA, searchRank: 1 })}
+                  icon={getMapMarker(providerA)}
                   key={providerA.id}
                   interactive={false}
                 />
@@ -92,7 +104,7 @@ export default function Compare() {
                 <Marker
                   title={providerB.id}
                   position={providerB.latlng}
-                  icon={getMapMarker({ ...providerB, searchRank: 2 })}
+                  icon={getMapMarker(providerB)}
                   key={providerB.id}
                   interactive={false}
                 />
@@ -102,11 +114,9 @@ export default function Compare() {
         </Grid>
         <Grid row gap="md">
           <Grid col={6}>
-            <p className="margin-y-2 text-bold">1.</p>
             <CompareDetail data={providerA} zip={zip} />
           </Grid>
           <Grid col={6}>
-            <p className="margin-y-2 text-bold">2.</p>
             <CompareDetail data={providerB} zip={zip} />
           </Grid>
         </Grid>
