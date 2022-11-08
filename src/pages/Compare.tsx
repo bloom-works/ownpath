@@ -33,6 +33,7 @@ export default function Compare() {
     if (!!providerA) _p.push(providerA);
     if (!!providerB) _p.push(providerB);
     setCompareProviders(_p);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // TODO: make this page zip-aware

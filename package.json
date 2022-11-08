@@ -19,6 +19,8 @@
     "@types/xlsx": "^0.0.36",
     "bootstrap": "^5.1.3",
     "csv-parse": "~5.2.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-unused-imports": "^2.0.0",
     "i18next": "~21.8.10",
     "i18next-browser-languagedetector": "~6.1.4",
     "jest-axe": "^6.0.0",
@@ -49,13 +51,40 @@
     "eject": "react-scripts eject",
     "processdata": "ts-node src/data/process_data.ts",
     "zipreport": "ts-node src/data/zip_report.ts",
-    "generatetranslations": "ts-node src/translations/generate_translations.ts"
+    "generatetranslations": "ts-node src/translations/generate_translations.ts",
+    "prepare": "husky install",
+    "lint": "eslint 'src' --ignore-pattern node_modules/"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": "eslint --fix"
   },
   "eslintConfig": {
     "extends": [
+      "eslint:recommended",
       "react-app",
-      "react-app/jest"
-    ]
+      "react-app/jest",
+      "plugin:react-hooks/recommended"
+    ],
+    "plugins": [
+      "unused-imports"
+    ],
+    "rules": {
+      "no-extra-boolean-cast": "off",
+      "no-var": "error",
+      "no-unused-vars": "off",
+      "@typescript-eslint/no-unused-vars": "off",
+      "import/first": "off",
+      "unused-imports/no-unused-imports": "error",
+      "unused-imports/no-unused-vars": [
+        "warn",
+        {
+          "vars": "all",
+          "varsIgnorePattern": "^_",
+          "args": "after-used",
+          "argsIgnorePattern": "^_"
+        }
+      ]
+    }
   },
   "browserslist": {
     "production": [
@@ -76,5 +105,9 @@
     "transformIgnorePatterns": [
       "/node_modules/(?!(react-leaflet|@react-leaflet|leaflet|react-markdown|vfile|unified|bail|is-plain-obj|trough|remark-parse|micromark|decode-named-character-reference|character-entities|remark-rehype|mdast*|unist*|trim-lines|property-information|hast*|space-separated-tokens|comma-separated-tokens|rehype-raw|web-namespaces|zwitch|html-void-elements))"
     ]
+  },
+  "devDependencies": {
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3"
   }
 }
