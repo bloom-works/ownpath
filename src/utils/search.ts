@@ -116,7 +116,8 @@ export function applySearchFilters(
 
 export function countOptionalSearchFiltersUsed(filters: SearchFilters): number {
   let count = 0;
-  const { ...optionalFilters } = filters;
+  // pluck zip and miles out of filters
+  const { zip: _zip, miles: _miles, ...optionalFilters } = filters;
   for (const [_filter_k, filter_v] of Object.entries(optionalFilters)) {
     if (filter_v.length !== 0) {
       count += 1;
