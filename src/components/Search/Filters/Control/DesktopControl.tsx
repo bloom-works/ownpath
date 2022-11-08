@@ -114,7 +114,7 @@ function DesktopControl({
           title={t("ageTitle")}
           hasSelection={!!filters.age}
           clear={() => {
-            const { age, ...updatedFilters } = filters;
+            const { ...updatedFilters } = filters;
             setFilters(updatedFilters);
           }}
         >
