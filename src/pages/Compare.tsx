@@ -109,9 +109,7 @@ export default function Compare() {
           </Grid>
         </Grid>
         <hr className="margin-y-4" />
-        <h3 className="margin-0">{t("hours")}</h3>
         <HoursTable providerA={providerA} providerB={providerB} />
-        <h3 className="margin-0">{t("feesTitle")}</h3>
         <FeesTable providerA={providerA} providerB={providerB} />
       </GridContainer>
       <CompareSelector
