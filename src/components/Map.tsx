@@ -10,7 +10,7 @@ import {
   useMapEvents,
   ZoomControl,
 } from "react-leaflet";
-import { CSSProperties, PropsWithChildren, Ref, RefObject } from "react";
+import { CSSProperties, PropsWithChildren, Ref } from "react";
 
 function MapEvents({
   eventHandlers,

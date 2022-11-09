@@ -1,6 +1,5 @@
 import * as fs from "fs";
 import * as path from "path";
-import { parse } from "csv-parse/sync";
 import CARE_PROVIDER_DATA from "./ladders_data.json";
 import coloradoZipData from "./colorado_zip_data.json";
 import { getDefaultRadius } from "../utils/filters/distance";
@@ -26,14 +25,14 @@ const getDistance = (
   lat2: number
 ): number => {
   //convert to radians
-  var ct = Math.PI / 180.0;
+  const ct = Math.PI / 180.0;
   lng1 *= ct;
   lat1 *= ct;
   lng2 *= ct;
   lat2 *= ct;
 
-  var R = 3959.0; //miles
-  var d =
+  const R = 3959.0; //miles
+  const d =
     Math.acos(
       Math.sin(lat1) * Math.sin(lat2) +
         Math.cos(lat1) * Math.cos(lat2) * Math.cos(lng2 - lng1)

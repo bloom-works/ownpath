@@ -136,10 +136,12 @@ function Search() {
       performSearch(searchFilters);
       logPageView();
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
     performSearch(searchFilters);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchParams]);
 
   return (
