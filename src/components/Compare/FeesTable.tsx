@@ -22,7 +22,7 @@ function FeesTable({
     };
   });
 
-  return <CompareStripedRows rows={rowData} />;
+  return <CompareStripedRows rows={rowData} title={t("feesTitle")} />;
 }
 
 export default FeesTable;
