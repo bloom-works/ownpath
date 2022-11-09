@@ -24,6 +24,7 @@ import PopulationsTable from "../components/Compare/PopulationsTable";
 import LanguagesTable from "../components/Compare/LanguagesTable";
 import MentalHealthServicesTable from "../components/Compare/MentalHealthServicesTable";
 import SubstanceUseServicesTable from "../components/Compare/SubstanceUseServicesTable";
+import AccessibilityTable from "../components/Compare/AccessibilityTable";
 
 export default function Compare() {
   useEffect(() => {
@@ -138,6 +139,7 @@ export default function Compare() {
         <h2>{t("details")}</h2>
         <hr className="margin-bottom-3" />
         <PopulationsTable providerA={providerA} providerB={providerB} />
+        <AccessibilityTable providerA={providerA} providerB={providerB} />
         <LanguagesTable providerA={providerA} providerB={providerB} />
       </GridContainer>
       <CompareSelector
