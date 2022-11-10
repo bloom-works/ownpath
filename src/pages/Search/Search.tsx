@@ -1,4 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, {
+  createContext,
+  useEffect,
+  useState,
+  Dispatch,
+  SetStateAction,
+} from "react";
 
 import { Button, Grid } from "@trussworks/react-uswds";
 import { useTranslation } from "react-i18next";
@@ -23,6 +29,7 @@ import { ReactComponent as Close } from "../../images/close.svg";
 import ShareButton, {
   ShareButtonContainer,
 } from "../../components/ShareButton";
+import CompareSelector from "../../components/Compare/CompareSelector";
 
 const ResponsiveHeader = styled.h1`
   font-size: 1.5rem;
@@ -58,6 +65,11 @@ const Ellipses = styled.div`
     display: inline-block;
   }
 `;
+
+export const CompareContext = createContext<{
+  providers: CareProvider[];
+  setProviders: Dispatch<SetStateAction<CareProvider[]>>;
+}>({ providers: [], setProviders: () => {} });
 
 function Search() {
   const { t, i18n } = useTranslation();
@@ -144,112 +156,122 @@ function Search() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchParams]);
 
+  const [compareProviders, setCompareProviders] = useState<CareProvider[]>([]);
+
   return (
     <div className="Search">
       <div>
-        <div className="margin-y-2 padding-x-2 tablet:padding-x-5">
-          <Grid row className="margin-bottom-2">
-            <div className="width-full">
-              <div className="position-relative display-flex flex-align-baseline flex-wrap">
-                <ResponsiveHeader className="margin-top-0 text-bold">
-                  {t("searchPageHeading", {
-                    count: searchResult?.results.length || 0,
-                    zip: showZipInput ? "" : searchFilters.zip,
-                  })}
-                  {showZipInput && <Ellipses>...</Ellipses>}
-                </ResponsiveHeader>
-                {showZipInput && (
-                  <SearchContainer>
-                    <ZipSearch
-                      onSubmit={() => {
-                        setSearchParams({ ...searchFilters, zip });
-                        setShowZipInput(false);
-                      }}
-                      className="tablet:margin-left-1"
-                    >
-                      <ZipInput
-                        zip={zip}
-                        setZip={(_zip) => setZip(_zip)}
-                        noLabel
-                        autoFocus
+        <CompareContext.Provider
+          value={{
+            providers: compareProviders,
+            setProviders: setCompareProviders,
+          }}
+        >
+          <div className="margin-y-2 padding-x-2 tablet:padding-x-5">
+            <Grid row className="margin-bottom-2">
+              <div className="width-full">
+                <div className="position-relative display-flex flex-align-baseline flex-wrap">
+                  <ResponsiveHeader className="margin-top-0 text-bold">
+                    {t("searchPageHeading", {
+                      count: searchResult?.results.length || 0,
+                      zip: showZipInput ? "" : searchFilters.zip,
+                    })}
+                    {showZipInput && <Ellipses>...</Ellipses>}
+                  </ResponsiveHeader>
+                  {showZipInput && (
+                    <SearchContainer>
+                      <ZipSearch
+                        onSubmit={() => {
+                          setSearchParams({ ...searchFilters, zip });
+                          setShowZipInput(false);
+                        }}
+                        className="tablet:margin-left-1"
                       >
-                        <Button className="margin-left-1" type="submit">
-                          {t("search")}
-                        </Button>
-                      </ZipInput>
-                    </ZipSearch>
-                  </SearchContainer>
-                )}
-                <Button
-                  className="margin-left-1 padding-y-05 width-auto"
-                  type="button"
-                  unstyled
-                  onClick={() => {
-                    setShowZipInput(!showZipInput);
-                    setZip(searchFilters.zip);
-                  }}
-                >
-                  {showZipInput ? (
-                    <>
-                      {t("cancel")} <Close className="margin-left-05" />
-                    </>
-                  ) : (
-                    t("change")
+                        <ZipInput
+                          zip={zip}
+                          setZip={(_zip) => setZip(_zip)}
+                          noLabel
+                          autoFocus
+                        >
+                          <Button className="margin-left-1" type="submit">
+                            {t("search")}
+                          </Button>
+                        </ZipInput>
+                      </ZipSearch>
+                    </SearchContainer>
                   )}
-                </Button>
-                <ShareButtonContainer lang={i18n.language}>
-                  <ShareButton text={t("searchPageShare")} />
-                </ShareButtonContainer>
+                  <Button
+                    className="margin-left-1 padding-y-05 width-auto"
+                    type="button"
+                    unstyled
+                    onClick={() => {
+                      setShowZipInput(!showZipInput);
+                      setZip(searchFilters.zip);
+                    }}
+                  >
+                    {showZipInput ? (
+                      <>
+                        {t("cancel")} <Close className="margin-left-05" />
+                      </>
+                    ) : (
+                      t("change")
+                    )}
+                  </Button>
+                  <ShareButtonContainer lang={i18n.language}>
+                    <ShareButton text={t("searchPageShare")} />
+                  </ShareButtonContainer>
+                </div>
               </div>
-            </div>
-          </Grid>
-          <DesktopControl
-            distanceUpdatedExternally={distanceUpdated}
-            filters={{ ...searchFilters }}
-            setFilters={(filters) => {
-              setSearchParams({ ...filters });
-              logEvent(AnalyticsAction.ApplyFilter, {
-                label: "Filter dropdown button",
-              });
-            }}
-          />
-          <MobileControl
-            filters={searchFilters}
-            setFilters={(filters) => setSearchParams({ ...filters })}
-            totalResultsCount={searchResult?.results?.length || 0}
-          />
-        </div>
-
-        {searchResult?.results.length ? (
-          <div>
-            <DesktopResults results={searchResult.results} />
-            <MobileResults results={searchResult.results} />
+            </Grid>
+            <DesktopControl
+              distanceUpdatedExternally={distanceUpdated}
+              filters={{ ...searchFilters }}
+              setFilters={(filters) => {
+                setSearchParams({ ...filters });
+                logEvent(AnalyticsAction.ApplyFilter, {
+                  label: "Filter dropdown button",
+                });
+              }}
+            />
+            <MobileControl
+              filters={searchFilters}
+              setFilters={(filters) => setSearchParams({ ...filters })}
+              totalResultsCount={searchResult?.results?.length || 0}
+            />
           </div>
-        ) : (
-          <div className="p-5">
-            {isWidestRadius(searchFilters.miles) ? (
-              <p>
-                {t("noResultsFilters", {
-                  miles: searchFilters.miles,
-                })}
-              </p>
-            ) : (
-              <>
+
+          {searchResult?.results.length ? (
+            <div>
+              <DesktopResults results={searchResult.results} />
+              <MobileResults results={searchResult.results} />
+            </div>
+          ) : (
+            <div className="p-5">
+              {isWidestRadius(searchFilters.miles) ? (
                 <p>
-                  {t("noResultsRadius", {
+                  {t("noResultsFilters", {
                     miles: searchFilters.miles,
                   })}
                 </p>
-                <Button
-                  type="button"
-                  onClick={() => expandSearchRadius(searchFilters.miles)}
-                >
-                  {t("noResultsRadiusButton")}
-                </Button>
-              </>
-            )}
-          </div>
-        )}
+              ) : (
+                <>
+                  <p>
+                    {t("noResultsRadius", {
+                      miles: searchFilters.miles,
+                    })}
+                  </p>
+                  <Button
+                    type="button"
+                    onClick={() => expandSearchRadius(searchFilters.miles)}
+                  >
+                    {t("noResultsRadiusButton")}
+                  </Button>
+                </>
+              )}
+            </div>
+          )}
+          <CompareSelector />
+        </CompareContext.Provider>
       </div>
     </div>
   );

@@ -1,16 +1,13 @@
 import { Grid, Button } from "@trussworks/react-uswds";
 import { ReactComponent as Close } from "../../images/close.svg";
 import { ReactComponent as CaretDown } from "../../images/caret-down.svg";
-import { useState, Dispatch, SetStateAction } from "react";
+import { useState, useContext } from "react";
 import { CareProvider } from "../../types";
 import { useTranslation } from "react-i18next";
+import { CompareContext } from "../../pages/Search/Search";
 
-type SelectionsProps = {
-  providers: CareProvider[];
-  setProviders: Dispatch<SetStateAction<CareProvider[]>>;
-};
-
-function Selections({ providers, setProviders }: SelectionsProps) {
+function Selections() {
+  const { providers, setProviders } = useContext(CompareContext);
   const [showSelections, setShowSelections] = useState(true);
   const { t } = useTranslation();
   return (

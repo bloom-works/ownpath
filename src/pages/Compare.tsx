@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { Navigate, useLocation, useSearchParams } from "react-router-dom";
 import { Grid, GridContainer } from "@trussworks/react-uswds";
 import { Marker } from "react-leaflet";
@@ -16,7 +16,6 @@ import { CareProvider } from "../types";
 import { logPageView } from "../utils/analytics";
 import { useTranslation } from "react-i18next";
 import CompareDetail from "../components/Compare/CompareDetail";
-import CompareSelector from "../components/Compare/CompareSelector";
 import HoursTable from "../components/Compare/HoursTable";
 import { handlePageLoad } from "../utils";
 import FeesTable from "../components/Compare/FeesTable";
@@ -35,15 +34,6 @@ export default function Compare() {
   const [params] = useSearchParams();
   const location = useLocation();
   const { t } = useTranslation();
-
-  const [compareProviders, setCompareProviders] = useState<CareProvider[]>([]);
-  useEffect(() => {
-    const _p = [];
-    if (!!providerA) _p.push(providerA);
-    if (!!providerB) _p.push(providerB);
-    setCompareProviders(_p);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   // TODO: make this page zip-aware
 
@@ -78,52 +68,48 @@ export default function Compare() {
   };
 
   return (
-    <>
-      <GridContainer>
-        <div className="margin-y-2 display-flex flex-justify">
-          <BackButton
-            text={t("backToSearch")}
-            href={`/search${prevSearch ?? ""}`}
-          />
-          <ShareButton text={t("detailsPageShare")} />
-        </div>
-        <Grid row>
-          <Grid col={12}>
-            <h1 className="margin-top-0">Compare locations</h1>
-            <ResultsMap
-              bounds={getResultBounds([providerA, providerB])}
-              isMobile={true}
-            >
-              {providerA.latlng && (
-                <Marker
-                  title={providerA.id}
-                  position={providerA.latlng}
-                  icon={getMapMarker(providerA)}
-                  key={providerA.id}
-                  interactive={false}
-                  keyboard={false}
-                />
-              )}
-              {providerB.latlng && (
-                <Marker
-                  title={providerB.id}
-                  position={providerB.latlng}
-                  icon={getMapMarker(providerB)}
-                  key={providerB.id}
-                  interactive={false}
-                  keyboard={false}
-                />
-              )}
-            </ResultsMap>
-          </Grid>
+    <GridContainer>
+      <div className="margin-y-2 display-flex flex-justify">
+        <BackButton
+          text={t("backToSearch")}
+          href={`/search${prevSearch ?? ""}`}
+        />
+        <ShareButton text={t("detailsPageShare")} />
+      </div>
+      <Grid row>
+        <Grid col={12}>
+          <h1 className="margin-top-0">Compare locations</h1>
+          <ResultsMap
+            bounds={getResultBounds([providerA, providerB])}
+            isMobile={true}
+          >
+            {providerA.latlng && (
+              <Marker
+                title={providerA.id}
+                position={providerA.latlng}
+                icon={getMapMarker(providerA)}
+                key={providerA.id}
+                interactive={false}
+              />
+            )}
+            {providerB.latlng && (
+              <Marker
+                title={providerB.id}
+                position={providerB.latlng}
+                icon={getMapMarker(providerB)}
+                key={providerB.id}
+                interactive={false}
+              />
+            )}
+          </ResultsMap>
         </Grid>
-        <Grid row gap="md">
-          <Grid col={6}>
-            <CompareDetail data={providerA} zip={zip} />
-          </Grid>
-          <Grid col={6}>
-            <CompareDetail data={providerB} zip={zip} />
-          </Grid>
+      </Grid>
+      <Grid row gap="md">
+        <Grid col={6}>
+          <CompareDetail data={providerA} zip={zip} />
+        </Grid>
+        <Grid col={6}>
+          <CompareDetail data={providerB} zip={zip} />
         </Grid>
         <hr className="margin-y-4" />
         <HoursTable providerA={providerA} providerB={providerB} />
@@ -143,11 +129,7 @@ export default function Compare() {
         <PopulationsTable providerA={providerA} providerB={providerB} />
         <AccessibilityTable providerA={providerA} providerB={providerB} />
         <LanguagesTable providerA={providerA} providerB={providerB} />
-      </GridContainer>
-      <CompareSelector
-        providers={compareProviders}
-        setProviders={setCompareProviders}
-      />
-    </>
+      </Grid>
+    </GridContainer>
   );
 }

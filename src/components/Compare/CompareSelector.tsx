@@ -1,24 +1,20 @@
-import { Button, Grid } from "@trussworks/react-uswds";
-import { Dispatch, SetStateAction } from "react";
+import { Button, Grid, Link } from "@trussworks/react-uswds";
+import { useContext } from "react";
 import { useTranslation } from "react-i18next";
-import { CareProvider } from "../../types";
 import Selections from "./Selections";
+import { CompareContext } from "../../pages/Search/Search";
 
-type CompareSelectorProps = {
-  providers: CareProvider[];
-  setProviders: Dispatch<SetStateAction<CareProvider[]>>;
-};
-
-function CompareSelector({ providers, setProviders }: CompareSelectorProps) {
+function CompareSelector() {
+  const { providers, setProviders } = useContext(CompareContext);
   const { t } = useTranslation();
 
   if (!providers.length) return <></>;
 
   return (
-    <div className="bg-primary-darker width-full padding-y-4 padding-x-2">
+    <div className="bg-primary-darker width-full padding-y-4 padding-x-2 position-sticky bottom-0 z-top">
       <Grid row>
         <Grid col={12} tablet={{ col: 8 }} desktop={{ col: 6 }}>
-          <Selections providers={providers} setProviders={setProviders} />
+          <Selections />
         </Grid>
         <Grid col={12} tablet={{ col: 4 }} desktop={{ col: 6 }}>
           <Grid
@@ -33,13 +29,22 @@ function CompareSelector({ providers, setProviders }: CompareSelectorProps) {
             >
               {t("clear")}
             </Button>
-            <Button
-              className="tablet:margin-left-2 font-family-heading margin-0 width-auto"
-              type="button"
-              disabled={providers.length < 2}
-            >
-              {t("compareButton")}
-            </Button>
+            {providers.length < 2 ? (
+              <Button
+                type="button"
+                className="usa-button tablet:margin-left-2 font-family-heading margin-0 width-auto"
+                disabled
+              >
+                {t("compareButton")}
+              </Button>
+            ) : (
+              <Link
+                href={`/compare?id=${providers[0].id}&id=${providers[1].id}`}
+                className="usa-button tablet:margin-left-2 font-family-heading margin-0 width-auto"
+              >
+                {t("compareButton")}
+              </Link>
+            )}
           </Grid>
         </Grid>
       </Grid>
