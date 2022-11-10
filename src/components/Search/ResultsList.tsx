@@ -35,7 +35,7 @@ function ResultsList({
           id={isMobile ? undefined : result.id}
           key={result.id}
         >
-          <ResultCard data={result} />
+          <ResultCard data={result} isMobile={isMobile} />
         </div>
       ))}
     </>

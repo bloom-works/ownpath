@@ -10,9 +10,10 @@ import MilesAway from "./MilesAway";
 
 type ResultCardProps = {
   data: CareProviderSearchResult;
+  isMobile?: boolean;
 };
 
-export default function ResultCard({ data }: ResultCardProps) {
+export default function ResultCard({ data, isMobile }: ResultCardProps) {
   const { providers, setProviders } = useContext(CompareContext);
   const location = useLocation();
   const { t } = useTranslation();
@@ -60,7 +61,7 @@ export default function ResultCard({ data }: ResultCardProps) {
           {t("fullDetail")} <span className="usa-sr-only">{data.name}</span>
         </Link>
         <Checkbox
-          id={`compare-${data.id}`}
+          id={`compare-${isMobile ? "mobile-" : ""}${data.id}`}
           name={`Compare ${data.name}`}
           label={t("compareCheckbox")}
           checked={!!providers.find((provider) => provider.id === data.id)}
