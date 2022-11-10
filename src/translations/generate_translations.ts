@@ -8,7 +8,7 @@ const workbook = readFile(csvPath);
 const english: { [key: string]: string } = {};
 const spanish: { [key: string]: string } = {};
 
-for (var i = 0; i < workbook.SheetNames.length; i++) {
+for (let i = 0; i < workbook.SheetNames.length; i++) {
   if (workbook.SheetNames[i].trim() === "How to use") continue;
 
   const rows: string[][] = utils.sheet_to_json(

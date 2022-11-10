@@ -3,7 +3,6 @@ import { render } from "./testHelper";
 import { axe } from "jest-axe";
 import { MemoryRouter } from "react-router-dom";
 import MOCK_CARE_PROVIDER_DATA from "./data/ladders_data.json";
-import * as utils from "./utils";
 import FAQ from "./pages/FAQ";
 import Home from "./pages/Home";
 import ResultDetail from "./pages/ResultDetail";
@@ -21,6 +20,7 @@ afterAll(() => {
 test("Home", async () => {
   const { container } = render(<Home />);
   expect(await axe(container)).toHaveNoViolations();
+  // eslint-disable-next-line testing-library/no-container
   expect(document.activeElement).toBe(container.querySelector("h1"));
 });
 
@@ -37,18 +37,21 @@ test("ResultDetail", async () => {
     ),
   });
   expect(await axe(container)).toHaveNoViolations();
+  // eslint-disable-next-line testing-library/no-container
   expect(document.activeElement).toBe(container.querySelector("h1"));
 });
 
 test("GuidedSearch", async () => {
   const { container } = render(<GuidedSearch />);
   expect(await axe(container)).toHaveNoViolations();
+  // eslint-disable-next-line testing-library/no-container
   expect(document.activeElement).toBe(container.querySelector("h1"));
 });
 
 test("NotFound", async () => {
   const { container } = render(<NotFound />);
   expect(await axe(container)).toHaveNoViolations();
+  // eslint-disable-next-line testing-library/no-container
   expect(document.activeElement).toBe(container.querySelector("h1"));
 });
 
@@ -61,11 +64,13 @@ test("Search", async () => {
     ),
   });
   expect(await axe(container)).toHaveNoViolations();
+  // eslint-disable-next-line testing-library/no-container
   expect(document.activeElement).toBe(container.querySelector("h1"));
 });
 
 test("FAQ", async () => {
   const { container } = render(<FAQ />);
   expect(await axe(container)).toHaveNoViolations();
+  // eslint-disable-next-line testing-library/no-container
   expect(document.activeElement).toBe(container.querySelector("h1"));
 });

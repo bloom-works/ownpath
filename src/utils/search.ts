@@ -23,25 +23,21 @@ import {
   offersAnyTypesOfHelpNeeded,
   servesAgeGroup,
   getDefaultRadius,
-  getMilesFromMeters,
 } from "./filters";
 import { supportsLanguages } from "./filters/languages";
 
-export const getMilesToZipCenter = (
+export const getDistanceToZipCenter = (
   zip: string | null,
   careProvider: CareProvider
-): number | null => {
+): number | undefined => {
   if (!zip) {
-    return null;
+    return undefined;
   }
   const zipSearchMetadata = getZipSearchMetadata(zip);
   if (!zipSearchMetadata.isValidZip || !careProvider.latlng) {
-    return null;
+    return undefined;
   }
-  const meters = latLng(zipSearchMetadata.center).distanceTo(
-    careProvider.latlng
-  );
-  return getMilesFromMeters(meters);
+  return latLng(zipSearchMetadata.center).distanceTo(careProvider.latlng);
 };
 
 export const addSearchMetadata = (
@@ -116,6 +112,7 @@ export function applySearchFilters(
 
 export function countOptionalSearchFiltersUsed(filters: SearchFilters): number {
   let count = 0;
+  // pluck zip and miles out of filters
   const { zip, miles, ...optionalFilters } = filters;
   for (const [_filter_k, filter_v] of Object.entries(optionalFilters)) {
     if (filter_v.length !== 0) {
