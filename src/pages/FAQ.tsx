@@ -6,7 +6,7 @@ import { logPageView } from "../utils/analytics";
 import styled from "styled-components";
 import { AccordionItemProps } from "@trussworks/react-uswds/lib/components/Accordion/Accordion";
 import ReactMarkdown from "react-markdown";
-import { focusH1 } from "../utils";
+import { handlePageLoad } from "../utils";
 
 const StyledAccordionContent = styled.div`
   margin: 2rem auto 3rem;
@@ -14,7 +14,7 @@ const StyledAccordionContent = styled.div`
 
 function FAQ() {
   useEffect(() => {
-    focusH1();
+    handlePageLoad();
     logPageView();
   }, []);
 

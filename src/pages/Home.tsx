@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Grid, GridContainer } from "@trussworks/react-uswds";
 import styled from "styled-components";
 
@@ -14,7 +14,7 @@ import CrisisAlert from "../components/Home/CrisisAlert";
 import PeopleGridMobilePath from "../images/people_grid.png";
 import PeopleGridDesktopPath from "../images/people_grid_desktop.png";
 import PeopleGridDesktopXlPath from "../images/people_grid_desktop_xl.png";
-import { focusH1 } from "../utils";
+import { handlePageLoad } from "../utils";
 
 const HeroSection = styled.div`
   background-color: #dbf0f9;
@@ -51,8 +51,8 @@ function Home() {
   const [showCrisisAlert, setShowCrisisAlert] = useState(true);
 
   useEffect(() => {
-    focusH1();
     logPageView();
+    handlePageLoad({ title: t("title"), noFocusH1: true });
   }, []);
 
   return (

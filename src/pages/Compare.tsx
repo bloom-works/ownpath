@@ -18,7 +18,7 @@ import { useTranslation } from "react-i18next";
 import CompareDetail from "../components/Compare/CompareDetail";
 import CompareSelector from "../components/Compare/CompareSelector";
 import HoursTable from "../components/Compare/HoursTable";
-import { focusH1 } from "../utils";
+import { handlePageLoad } from "../utils";
 import FeesTable from "../components/Compare/FeesTable";
 import PopulationsTable from "../components/Compare/PopulationsTable";
 import LanguagesTable from "../components/Compare/LanguagesTable";
@@ -28,7 +28,7 @@ import AccessibilityTable from "../components/Compare/AccessibilityTable";
 
 export default function Compare() {
   useEffect(() => {
-    focusH1();
+    handlePageLoad();
     logPageView();
   }, []);
 

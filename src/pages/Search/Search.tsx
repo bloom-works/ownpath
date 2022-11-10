@@ -7,7 +7,7 @@ import styled from "styled-components";
 import {
   applySearchFilters,
   countOptionalSearchFiltersUsed,
-  focusH1,
+  handlePageLoad,
   getFiltersFromSearchParams,
   MILE_DISTANCE_OPTIONS,
 } from "../../utils";
@@ -132,16 +132,16 @@ function Search() {
         replace: true,
       });
     } else {
-      focusH1();
+      handlePageLoad({ title: t("searchPageTitle") });
       performSearch(searchFilters);
       logPageView();
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
     performSearch(searchFilters);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchParams]);
 
   return (
