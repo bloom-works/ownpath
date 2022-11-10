@@ -32,6 +32,7 @@ function DesktopControl({
   return (
     <div className="display-none tablet:display-block">
       <Grid row className="margin-bottom-2">
+        <h2 className="usa-sr-only">{t("filterBy")}</h2>
         <DesktopControlDropdown
           title={t("typeOfHelpTitle")}
           hasSelection={!!filters.typesOfHelp?.length}

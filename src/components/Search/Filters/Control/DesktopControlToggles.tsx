@@ -19,14 +19,22 @@ type DesktopControlToggleProps = {
   onClick: () => void;
 };
 function DesktopControlToggle({ name, onClick }: DesktopControlToggleProps) {
+  const { t } = useTranslation();
   return (
     <Button
       type="button"
       onClick={onClick}
       unstyled
       className="margin-right-2 padding-y-05 text-no-underline text-dark-blue width-auto"
+      aria-label={`${t("clear")} ${name}`}
     >
-      {name} <Close height={10} className="margin-left-05" />
+      <span className="usa-sr-only">{t("clear")} </span>
+      {name}
+      <Close
+        height={10}
+        className="margin-left-05"
+        aria-label={`${t("clear")} ${name}`}
+      />
     </Button>
   );
 }

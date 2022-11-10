@@ -32,8 +32,9 @@ export default function ResultCard({ data }: ResultCardProps) {
         className="usa-button"
         to={`/result/${data.id}`}
         state={{ prevSearch: location.search, data }}
+        aria-label={`${t("fullDetail")} ${data.name}`}
       >
-        {t("fullDetail")}
+        {t("fullDetail")} <span className="usa-sr-only">{data.name}</span>
       </Link>
     </div>
   );
