@@ -1,5 +1,4 @@
 import { Tag } from "@trussworks/react-uswds";
-import { PropsWithChildren } from "react";
 import styled from "styled-components";
 
 const StyledBadge = styled(Tag)`
@@ -28,7 +27,7 @@ type BadgeProps = {
     text: string;
 };
 
-export default function Badge({ Icon, bgColor, text }: PropsWithChildren<BadgeProps>) {
+export default function Badge({ Icon, bgColor, text }: BadgeProps) {
     return (
         <StyledBadge background={`var(--badge-bg-${bgColor})`}>
             <span className="badge-icon"><Icon /></span>{' '}<span className="badge-text">{text}</span>
