@@ -55,6 +55,7 @@ function Selection({
   provider?: CareProvider;
   clearFunc: () => void;
 }) {
+  const { t } = useTranslation();
   return (
     <Grid
       tablet={{ col: true }}
@@ -73,7 +74,7 @@ function Selection({
             className="width-auto data-icon"
             onClick={clearFunc}
           >
-            <Close />
+            <Close title={`${t("clear")} ${provider.name}`} />
           </Button>
         </div>
       )}

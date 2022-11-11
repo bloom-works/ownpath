@@ -178,3 +178,56 @@ test("Clearable checkbox filter works on mobile", async ({ page }) => {
   expect(page.url()).not.toContain("hours=monday");
   expect(page.url()).not.toContain("hours=tuesday");
 });
+
+test("Compare selection works", async ({ page }) => {
+  const resultA = page.locator(".result-card").nth(0);
+
+  const checkboxA = resultA.nth(0).locator("text=Compare location");
+  const checkboxB = page
+    .locator(".result-card")
+    .nth(1)
+    .locator("text=Compare location");
+  const checkboxC = page
+    .locator(".result-card")
+    .nth(2)
+    .locator("text=Compare location");
+
+  const compareButton = page.locator("button", {
+    hasText: "Compare locations",
+  });
+  const compareLink = page.locator("a", {
+    hasText: "Compare locations",
+  });
+
+  expect(await compareButton.count()).toEqual(0);
+
+  await checkboxA.click();
+  expect(await compareLink.count()).toEqual(0);
+  expect(await compareButton.isDisabled()).toBeTruthy();
+  expect(await checkboxC.isDisabled()).not.toBeTruthy();
+
+  await checkboxB.click();
+  expect(await compareLink.getAttribute("href")).toContain("/compare");
+  expect(await compareButton.count()).toEqual(0);
+  expect(await checkboxC.isDisabled()).toBeTruthy();
+
+  await checkboxA.click();
+  expect(await compareLink.count()).toEqual(0);
+  expect(await compareButton.isDisabled()).toBeTruthy();
+  expect(await checkboxC.isDisabled()).not.toBeTruthy();
+
+  const nameA = await resultA.locator("h2").innerText();
+  const clearA = page.locator("button", { hasText: `Clear ${nameA}` });
+  const clearAll = page.locator("button", { hasText: /Clear$/ });
+  await checkboxA.click();
+  expect(await compareLink.getAttribute("href")).toContain("/compare");
+  expect(await compareButton.count()).toEqual(0);
+  expect(await checkboxC.isDisabled()).toBeTruthy();
+
+  await clearA.click();
+  expect(await compareLink.count()).toEqual(0);
+  expect(await compareButton.isDisabled()).toBeTruthy();
+  expect(await checkboxC.isDisabled()).not.toBeTruthy();
+  await clearAll.click();
+  expect(await compareButton.count()).toEqual(0);
+});

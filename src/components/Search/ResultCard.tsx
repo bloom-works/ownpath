@@ -32,7 +32,12 @@ export default function ResultCard({ data, isMobile }: ResultCardProps) {
     setProviders(p);
   };
   return (
-    <div>
+    <div
+      className="result-card"
+      // Only set id in the desktop list to avoid creating
+      // duplicate DOM elements with same id in mobile list
+      id={isMobile ? undefined : data.id}
+    >
       <div className="display-flex flex-justify">
         <p className="margin-top-0 margin-bottom-0 text-bold">
           {data.searchRank}.
