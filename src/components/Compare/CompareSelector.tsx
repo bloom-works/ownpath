@@ -1,12 +1,14 @@
-import { Button, Grid, Link } from "@trussworks/react-uswds";
+import { Button, Grid } from "@trussworks/react-uswds";
 import { useContext } from "react";
 import { useTranslation } from "react-i18next";
 import Selections from "./Selections";
 import { CompareContext } from "../../pages/Search/Search";
+import { Link, useLocation } from "react-router-dom";
 
 function CompareSelector() {
   const { providers, setProviders } = useContext(CompareContext);
   const { t } = useTranslation();
+  const location = useLocation();
 
   if (!providers.length) return <></>;
 
@@ -39,7 +41,8 @@ function CompareSelector() {
               </Button>
             ) : (
               <Link
-                href={`/compare?id=${providers[0].id}&id=${providers[1].id}`}
+                to={`/compare?id=${providers[0].id}&id=${providers[1].id}`}
+                state={{ prevSearch: location.search }}
                 className="usa-button tablet:margin-left-2 font-family-heading margin-0 width-auto"
               >
                 {t("compareButton")}

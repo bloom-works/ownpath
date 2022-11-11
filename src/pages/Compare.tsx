@@ -35,9 +35,6 @@ export default function Compare() {
   const location = useLocation();
   const { t } = useTranslation();
 
-  // TODO: make this page zip-aware
-
-  // TODO: set prevSearch when navigating to compare page
   let { prevSearch } = (location.state ?? {}) as {
     prevSearch?: string;
   };
