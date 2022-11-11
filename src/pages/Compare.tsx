@@ -22,6 +22,9 @@ import { focusH1 } from "../utils";
 import FeesTable from "../components/Compare/FeesTable";
 import PopulationsTable from "../components/Compare/PopulationsTable";
 import LanguagesTable from "../components/Compare/LanguagesTable";
+import MentalHealthServicesTable from "../components/Compare/MentalHealthServicesTable";
+import SubstanceUseServicesTable from "../components/Compare/SubstanceUseServicesTable";
+import AccessibilityTable from "../components/Compare/AccessibilityTable";
 
 export default function Compare() {
   useEffect(() => {
@@ -123,7 +126,20 @@ export default function Compare() {
         <hr className="margin-y-4" />
         <HoursTable providerA={providerA} providerB={providerB} />
         <FeesTable providerA={providerA} providerB={providerB} />
+        <h2>{t("services")}</h2>
+        <hr className="margin-bottom-3" />
+        <SubstanceUseServicesTable
+          providerA={providerA}
+          providerB={providerB}
+        />
+        <MentalHealthServicesTable
+          providerA={providerA}
+          providerB={providerB}
+        />
+        <h2>{t("details")}</h2>
+        <hr className="margin-bottom-3" />
         <PopulationsTable providerA={providerA} providerB={providerB} />
+        <AccessibilityTable providerA={providerA} providerB={providerB} />
         <LanguagesTable providerA={providerA} providerB={providerB} />
       </GridContainer>
       <CompareSelector
