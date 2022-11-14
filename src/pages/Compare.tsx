@@ -13,7 +13,7 @@ import {
 } from "../utils";
 import CARE_PROVIDER_DATA from "../data/ladders_data.json";
 import { CareProvider } from "../types";
-import { logPageView } from "../utils/analytics";
+import { AnalyticsAction, logEvent, logPageView } from "../utils/analytics";
 import { useTranslation } from "react-i18next";
 import CompareDetail from "../components/Compare/CompareDetail";
 import HoursTable from "../components/Compare/HoursTable";
@@ -68,6 +68,7 @@ export default function Compare() {
     <GridContainer>
       <div className="margin-y-2 display-flex flex-justify">
         <BackButton
+          onClick={() => logEvent(AnalyticsAction.ReturnToSearch)}
           text={t("backToSearch")}
           href={`/search${prevSearch ?? ""}`}
         />

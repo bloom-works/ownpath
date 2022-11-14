@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import Selections from "./Selections";
 import { CompareContext } from "../../pages/Search/Search";
 import { Link, useLocation } from "react-router-dom";
+import { logEvent, AnalyticsAction } from "../../utils/analytics";
 
 function CompareSelector() {
   const { providers, setProviders } = useContext(CompareContext);
@@ -41,6 +42,9 @@ function CompareSelector() {
               </Button>
             ) : (
               <Link
+                onClick={() => {
+                  logEvent(AnalyticsAction.ViewCompare);
+                }}
                 to={`/compare?id=${providers[0].id}&id=${providers[1].id}`}
                 state={{ prevSearch: location.search }}
                 className="usa-button tablet:margin-left-2 font-family-heading margin-0 width-auto"

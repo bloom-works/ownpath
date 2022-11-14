@@ -5,6 +5,7 @@ import { Link, useLocation } from "react-router-dom";
 import { CompareContext } from "../../pages/Search/Search";
 
 import { CareProviderSearchResult } from "../../types";
+import { AnalyticsAction, logEvent } from "../../utils/analytics";
 import BasicResultDetail from "../ResultDetail/BasicResultDetail";
 import MilesAway from "./MilesAway";
 
@@ -31,6 +32,7 @@ export default function ResultCard({ data, isMobile }: ResultCardProps) {
     }
     setProviders(p);
   };
+
   return (
     <div
       className="result-card"
@@ -70,7 +72,10 @@ export default function ResultCard({ data, isMobile }: ResultCardProps) {
           name={`Compare ${data.name}`}
           label={t("compareCheckbox")}
           checked={!!providers.find((provider) => provider.id === data.id)}
-          onChange={toggleCompareCheckbox}
+          onChange={() => {
+            toggleCompareCheckbox();
+            logEvent(AnalyticsAction.SelectLocationForCompare);
+          }}
           disabled={
             providers.length > 1 &&
             !!!providers.find((provider) => provider.id === data.id)
