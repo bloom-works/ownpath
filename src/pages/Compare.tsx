@@ -109,25 +109,19 @@ export default function Compare() {
         <Grid col={6}>
           <CompareDetail data={providerB} zip={zip} />
         </Grid>
-        <hr className="margin-y-4" />
-        <HoursTable providerA={providerA} providerB={providerB} />
-        <FeesTable providerA={providerA} providerB={providerB} />
-        <h2>{t("services")}</h2>
-        <hr className="margin-bottom-3" />
-        <SubstanceUseServicesTable
-          providerA={providerA}
-          providerB={providerB}
-        />
-        <MentalHealthServicesTable
-          providerA={providerA}
-          providerB={providerB}
-        />
-        <h2>{t("details")}</h2>
-        <hr className="margin-bottom-3" />
-        <PopulationsTable providerA={providerA} providerB={providerB} />
-        <AccessibilityTable providerA={providerA} providerB={providerB} />
-        <LanguagesTable providerA={providerA} providerB={providerB} />
       </Grid>
+      <hr className="margin-y-4" />
+      <HoursTable providerA={providerA} providerB={providerB} />
+      <FeesTable providerA={providerA} providerB={providerB} />
+      <h2>{t("services")}</h2>
+      <hr className="margin-bottom-3" />
+      <SubstanceUseServicesTable providerA={providerA} providerB={providerB} />
+      <MentalHealthServicesTable providerA={providerA} providerB={providerB} />
+      <h2>{t("details")}</h2>
+      <hr className="margin-bottom-3" />
+      <PopulationsTable providerA={providerA} providerB={providerB} />
+      <AccessibilityTable providerA={providerA} providerB={providerB} />
+      <LanguagesTable providerA={providerA} providerB={providerB} />
     </GridContainer>
   );
 }
