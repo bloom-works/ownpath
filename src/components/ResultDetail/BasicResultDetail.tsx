@@ -6,9 +6,7 @@ import { ReactComponent as Website } from "../../images/website.svg";
 import { ReactComponent as Location } from "../../images/location.svg";
 import { ReactComponent as DollarSign } from "../../images/dollar-sign.svg";
 import { ReactComponent as Clock } from "../../images/clock.svg";
-// TODO: wire in badges to list
-// import { ReactComponent as BadgeCheck } from "../../images/badge-check.svg";
-// import { ReactComponent as Telehealth } from "../../images/telehealth.svg";
+import { ReactComponent as Telehealth } from "../../images/telehealth.svg";
 
 import ResultDatum from "./ResultDatum";
 import Hours from "./Hours";
@@ -18,8 +16,7 @@ import { anyAreTrue } from "../../utils";
 import WebsiteLink from "./WebsiteLink";
 import { Fragment } from "react";
 import FeesInfo from "./FeesInfo";
-// TODO: wire in badges to list
-// import Badge from "../Badge";
+import Badge from "../Badge";
 
 type BasicResultDetailProps = {
   result: CareProvider;
@@ -31,6 +28,15 @@ function BasicResultDetail({ result, isCondensed }: BasicResultDetailProps) {
 
   return (
     <>
+      <div className="margin-bottom-3">
+        {result.offersTelehealth && (
+          <Badge
+            bgColor="yellow"
+            Icon={Telehealth}
+            text="Telehealth available"
+          />
+        )}
+      </div>
       <div className="margin-bottom-3">
         {result.phone && (
           <ResultDatum Icon={Telephone} key="telephone">

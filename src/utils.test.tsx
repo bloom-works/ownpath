@@ -78,6 +78,7 @@ const DUMMY_CARE_PROVIDER: CareProvider = {
   }, {} as { [key in Languages]: boolean }),
   latlng: null,
   lastUpdatedDate: "7/7/2022 7:00 AM",
+  offersTelehealth: true
 };
 
 const DUMMY_CARE_PROVIDER_RESULT = { ...DUMMY_CARE_PROVIDER, searchRank: 1 };
