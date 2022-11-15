@@ -18,7 +18,11 @@ import LanguageInput from "../components/Search/Filters/LanguageInput";
 import TypeOfHelpInput from "../components/Search/Filters/TypeOfHelpInput";
 import AgeGroupInput from "../components/Search/Filters/AgeGroupInput";
 import { SearchFilters, TypeOfHelp } from "../types";
-import { EMPTY_SEARCH_FILTERS, focusH1, getZipSearchMetadata } from "../utils";
+import {
+  EMPTY_SEARCH_FILTERS,
+  handlePageLoad,
+  getZipSearchMetadata,
+} from "../utils";
 import AppAlert from "../components/AppAlert";
 import { ReactComponent as Info } from "../images/info.svg";
 
@@ -39,7 +43,7 @@ const getStepStatus = (thisIdx: number, currentStepIdx: number) => {
 
 function GuidedSearch() {
   useEffect(() => {
-    focusH1();
+    handlePageLoad();
     logPageView();
   }, []);
 
@@ -49,7 +53,7 @@ function GuidedSearch() {
   const [currentStepIdx, setCurrentStepIdx] = useState(0);
   // Refocus h1 element on step change
   useEffect(() => {
-    focusH1();
+    handlePageLoad();
   }, [currentStepIdx]);
 
   // Object containing search filters from input from completed steps

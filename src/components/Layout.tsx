@@ -21,6 +21,7 @@ function Layout() {
         <Banner />
         <div className="display-flex flex-justify-center flex-align-center border-bottom border-base-lighter padding-y-2 padding-x-1">
           <Link to="/" title="Home" aria-label="Home">
+            <span className="usa-sr-only">{t("goToHomepage")}</span>
             {i18n.language === "es" ? (
               <MiPropiaSendaLogo
                 height={34}
