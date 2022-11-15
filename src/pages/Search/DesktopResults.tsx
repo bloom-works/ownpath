@@ -47,6 +47,7 @@ function DesktopResults({ results }: { results: CareProviderSearchResult[] }) {
                     position={result.latlng}
                     icon={getMapMarker(result, selectedResultId)}
                     zIndexOffset={selectedResultId === result.id ? 1000 : 1}
+                    keyboard={false}
                     key={result.id}
                     eventHandlers={{
                       click: () => {
