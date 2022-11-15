@@ -17,7 +17,7 @@ test("Compare displays all expected elements", async ({ page }) => {
   const paymentTypesAccepted = page.locator("h3", {
     hasText: "Payment types accepted",
   });
-  const services = page.locator("h2", { hasText: "Services" });
+  const services = page.locator("h2", { hasText: /Services$/ });
   const substanceUse = page.locator("h3", {
     hasText: "Substance use (drug) treatment services",
   });
