@@ -17,7 +17,7 @@ import DirectionsLink from "../components/ResultDetail/DirectionsLink";
 import ShareButton from "../components/ShareButton";
 import { logPageView } from "../utils/analytics";
 import BackButton from "../components/BackButton";
-import { anyAreTrue, focusH1, getMapMarker } from "../utils";
+import { anyAreTrue, handlePageLoad, getMapMarker } from "../utils";
 import ProviderUpdateInfo from "../components/ResultDetail/ProviderUpdateInfo";
 
 function ResultDetail() {
@@ -26,7 +26,7 @@ function ResultDetail() {
   // they were landing at the same y-coordinate)
   useEffect(() => {
     logPageView();
-    focusH1();
+    handlePageLoad();
   }, []);
 
   const { t } = useTranslation();

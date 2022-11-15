@@ -20,8 +20,6 @@ afterAll(() => {
 test("Home", async () => {
   const { container } = render(<Home />);
   expect(await axe(container)).toHaveNoViolations();
-  // eslint-disable-next-line testing-library/no-container
-  expect(document.activeElement).toBe(container.querySelector("h1"));
 });
 
 test("ResultDetail", async () => {
