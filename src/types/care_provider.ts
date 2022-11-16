@@ -38,7 +38,6 @@ export const SUBSTANCE_USE_SERVICES = [
   "MedicallyMonitoredInpatientDetoxification",
   "MedicallyMonitoredIntensiveResidentialTreatment",
   "MedicationAssistedTherapy",
-  "OffersTelehealth",
   "OpioidTreatmentPrograms",
   "Outpatient",
   "YouthTreatment",
@@ -55,7 +54,6 @@ export const MENTAL_HEALTH_SERVICES = [
   "Emergency",
   "Hospital",
   "IntensiveOutpatient",
-  "OffersTelehealth",
   "Outpatient",
   "PsychiatricResidential",
   "ResidentialChildCareFacility",
@@ -114,6 +112,11 @@ export const LANGUAGES = [
 ] as const;
 export type Languages = typeof LANGUAGES[number];
 
+export const ACCEPTING_NEW_PATIENTS_OPTIONS = [
+  "Yes"
+] as const;
+export type AcceptingNewPatientsOptions = typeof ACCEPTING_NEW_PATIENTS_OPTIONS[number];
+
 export const TELEHEALTH_OPTIONS = [
   "Telehealth Only",
   "Telehealth Available - With Restrictions",
@@ -125,6 +128,7 @@ export type CareProvider = {
   name: string;
   phone: string;
   hideAddress: boolean;
+  acceptingNewPatients: boolean;
   address: string[];
   addressStr: string;
   website: string;

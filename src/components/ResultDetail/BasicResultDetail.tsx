@@ -6,6 +6,7 @@ import { ReactComponent as Website } from "../../images/website.svg";
 import { ReactComponent as Location } from "../../images/location.svg";
 import { ReactComponent as DollarSign } from "../../images/dollar-sign.svg";
 import { ReactComponent as Clock } from "../../images/clock.svg";
+import { ReactComponent as BadgeCheck } from "../../images/badge-check.svg";
 import { ReactComponent as Telehealth } from "../../images/telehealth.svg";
 
 import ResultDatum from "./ResultDatum";
@@ -29,11 +30,20 @@ function BasicResultDetail({ result, isCondensed }: BasicResultDetailProps) {
   return (
     <>
       <div className="margin-bottom-3">
+        {result.acceptingNewPatients && (
+          <Badge
+            bgColor="blue"
+            Icon={BadgeCheck}
+            text={t("acceptingNewPatients")}
+            showTooltip
+            tooltipText={t("acceptingNewPatientsNote")}
+          />
+        )}
         {result.offersTelehealth && (
           <Badge
             bgColor="yellow"
             Icon={Telehealth}
-            text="Telehealth available"
+            text={t("telehealthAvailable")}
           />
         )}
       </div>

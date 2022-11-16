@@ -18,6 +18,7 @@ const INPUT_FILE = "../../raw_data/ladders.csv";
 const OUTPUT_FILE = "./ladders_data.json";
 
 type InputRow = {
+  AcceptingNewPatients: string;
   Accessibility: string;
   AccountID: string;
   AccountName: string;
@@ -123,6 +124,7 @@ const transformRow = (row: InputRow): CareProvider => {
     name: row.DisplayName,
     phone: row.Phone,
     hideAddress,
+    acceptingNewPatients: !!row.AcceptingNewPatients,
     address:
       hideAddress || !row.ProviderLocationDisplayLabel
         ? []

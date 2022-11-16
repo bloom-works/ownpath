@@ -41,6 +41,7 @@ const DUMMY_CARE_PROVIDER: CareProvider = {
   name: "Care Provider",
   phone: "123-456-7890",
   hideAddress: false,
+  acceptingNewPatients: true,
   address: [],
   addressStr: "",
   website: "",
