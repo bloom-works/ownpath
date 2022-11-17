@@ -1,7 +1,7 @@
 import { Grid, Button } from "@trussworks/react-uswds";
 import { ReactComponent as Close } from "../../images/close.svg";
 import { ReactComponent as CaretDown } from "../../images/caret-down.svg";
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import { CareProvider } from "../../types";
 import { useTranslation } from "react-i18next";
 import { CompareContext } from "../../pages/Search/Search";
@@ -11,6 +11,17 @@ function Selections() {
     useContext(CompareContext);
   const [showSelections, setShowSelections] = useState(true);
   const { t } = useTranslation();
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 640) {
+        console.log("WINDOW WIRTH", window.innerWidth);
+        setShowSelections(true);
+      }
+    };
+    window.addEventListener("resize", handleResize);
+  });
+
   return (
     <Grid row>
       {showSelections && (
