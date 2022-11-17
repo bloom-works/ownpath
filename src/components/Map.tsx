@@ -11,6 +11,7 @@ import {
   ZoomControl,
 } from "react-leaflet";
 import { CSSProperties, PropsWithChildren, Ref } from "react";
+import { useEffect } from "react";
 
 function MapEvents({
   eventHandlers,
@@ -37,6 +38,12 @@ function Map({
   eventHandlers = {},
   children,
 }: PropsWithChildren<MapProps>) {
+  useEffect(() => {
+    // set tabindex = -1 on all <a> elements within the map to
+    // keep it out of the keyboard navigation heirarchy
+    const links = document.querySelectorAll(".leaflet-container a");
+    links.forEach((el) => el.setAttribute("tabindex", "-1"));
+  });
   return (
     <MapContainer
       style={{ height: "500px", ...mapContainerStyles }}
@@ -44,6 +51,7 @@ function Map({
       zoomControl={false}
       {...mapContainerProps}
       ref={mapRef}
+      keyboard={false}
     >
       <ZoomControl position="topright" />
       <MapEvents eventHandlers={eventHandlers} />

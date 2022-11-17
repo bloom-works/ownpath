@@ -79,6 +79,7 @@ function MobileResults({ results }: { results: CareProviderSearchResult[] }) {
                   title={result.id}
                   position={result.latlng}
                   icon={getMapMarker(result, selectedResult?.id)}
+                  keyboard={false}
                   zIndexOffset={selectedResult?.id === result.id ? 1000 : 1}
                   key={result.id}
                   eventHandlers={{

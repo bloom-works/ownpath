@@ -101,6 +101,7 @@ export default function Compare() {
                   icon={getMapMarker(providerA)}
                   key={providerA.id}
                   interactive={false}
+                  keyboard={false}
                 />
               )}
               {providerB.latlng && (
@@ -110,6 +111,7 @@ export default function Compare() {
                   icon={getMapMarker(providerB)}
                   key={providerB.id}
                   interactive={false}
+                  keyboard={false}
                 />
               )}
             </ResultsMap>
