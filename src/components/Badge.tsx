@@ -22,12 +22,6 @@ const StyledBadge = styled(Tag)`
     }
 `;
 
-const StyledWrapperDiv = styled.div`
-    + .usa-tooltip__body {
-        font-family: "Source Sans Pro Web";
-    }
-`;
-
 type ConditionalBadgeProps =
     | {
         showTooltip?: false;
@@ -56,9 +50,9 @@ const WrapperDivForwardRef: React.ForwardRefRenderFunction<
     HTMLDivElement,
     WrapperDivProps
 > = ({ className, children, ...tooltipProps }: WrapperDivProps, ref) => (
-    <StyledWrapperDiv ref={ref} className={className} {...tooltipProps}>
+    <div ref={ref} className={className} {...tooltipProps}>
         {children}
-    </StyledWrapperDiv>
+    </div>
 );
 const WrapperDiv = React.forwardRef(WrapperDivForwardRef);
 
