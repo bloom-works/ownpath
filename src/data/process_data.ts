@@ -18,6 +18,7 @@ const INPUT_FILE = "../../raw_data/ladders.csv";
 const OUTPUT_FILE = "./ladders_data.json";
 
 type InputRow = {
+  AcceptingNewPatients: string;
   Accessibility: string;
   AccountID: string;
   AccountName: string;
@@ -39,6 +40,7 @@ type InputRow = {
   HoursofOperationWednesday: string;
   LanguagesSpoken: string;
   MentalHealthSettings: string;
+  OffersTelehealth: string;
   OpioidTreatmentPrograms: string;
   Phone: string;
   PopulationServed: string;
@@ -122,6 +124,7 @@ const transformRow = (row: InputRow): CareProvider => {
     name: row.DisplayName,
     phone: row.Phone,
     hideAddress,
+    acceptingNewPatients: !!row.AcceptingNewPatients,
     address:
       hideAddress || !row.ProviderLocationDisplayLabel
         ? []
@@ -162,6 +165,7 @@ const transformRow = (row: InputRow): CareProvider => {
     languages: getBooleanMap(LANGUAGES, splitBySemicolons(row.LanguagesSpoken)),
     latlng: getLatLng(row),
     lastUpdatedDate: row.ProviderDirectoryFormModifiedDate,
+    offersTelehealth: !!row.OffersTelehealth
   };
   return cleaned;
 };
