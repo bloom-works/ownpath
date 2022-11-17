@@ -85,6 +85,8 @@ Translations are maintained in a [google sheet](https://docs.google.com/spreadsh
 npm run generatetranslations [path to file]
 ```
 
+The download of the google sheet needs to be an `xlsx` file since there are several tabs contained in the translation doc. It is also recommended that the file be renamed to remove any whitespaces, e.g. `OwnPath-content-translations.xlsx`.
+
 This process must be run manually whenever content changes or updates are made in the google doc. The changes then need to be committed to the repo and merged to be reflected in the application. Any rows missing translations will be printed to the console where the script is run to help avoid accidentally adding un-translated content.
 
 ## Using SVGs
