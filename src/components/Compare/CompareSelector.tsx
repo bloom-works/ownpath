@@ -36,7 +36,7 @@ function CompareSelector() {
             {selectedCompareProviders.length < 2 ? (
               <Button
                 type="button"
-                className="usa-button tablet:margin-left-2 font-family-heading margin-0 width-auto"
+                className="usa-button tablet:margin-left-2 font-family-heading margin-0 width-auto text-black"
                 disabled
               >
                 {t("compareButton")}

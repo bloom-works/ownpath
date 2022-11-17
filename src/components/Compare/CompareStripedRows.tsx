@@ -64,13 +64,25 @@ function CompareStripedRows({
               (idx + 1) % 2 ? "bg-lightest-blue padding-05" : "padding-05"
             }
           >
-            <Grid col={12} tablet={{ col: 2 }} className="padding-y-1">
+            <Grid
+              col={12}
+              tablet={{ col: 2 }}
+              className="padding-y-1 text-bold tablet:text-normal"
+            >
               {row.label}
             </Grid>
-            <Grid col={6} tablet={{ col: 5 }} className="text-center">
+            <Grid
+              col={6}
+              tablet={{ col: 5 }}
+              className="text-center padding-y-2"
+            >
               {getTableCell(row.compareA, t("locationOne"))}
             </Grid>
-            <Grid col={6} tablet={{ col: 5 }} className="text-center">
+            <Grid
+              col={6}
+              tablet={{ col: 5 }}
+              className="text-center padding-y-2"
+            >
               {getTableCell(row.compareB, t("locationTwo"))}
             </Grid>
           </Grid>

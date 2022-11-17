@@ -1,7 +1,8 @@
 import { useEffect } from "react";
-import { Navigate, useLocation, useSearchParams } from "react-router-dom";
+import { Navigate, useLocation, useSearchParams, Link } from "react-router-dom";
 import { Grid, GridContainer } from "@trussworks/react-uswds";
 import { Marker } from "react-leaflet";
+import styled from "styled-components";
 
 import BackButton from "../components/BackButton";
 import ResultsMap from "../components/Search/ResultsMap";
@@ -24,6 +25,10 @@ import LanguagesTable from "../components/Compare/LanguagesTable";
 import MentalHealthServicesTable from "../components/Compare/MentalHealthServicesTable";
 import SubstanceUseServicesTable from "../components/Compare/SubstanceUseServicesTable";
 import AccessibilityTable from "../components/Compare/AccessibilityTable";
+
+const ShadowHR = styled.hr`
+  box-shadow: 0 4px 8px 0 black;
+`;
 
 export default function Compare() {
   useEffect(() => {
@@ -102,7 +107,22 @@ export default function Compare() {
           </ResultsMap>
         </Grid>
       </Grid>
-      <Grid row gap="md">
+      <Grid row gap="md" className="position-sticky top-0 bg-white z-top">
+        <Grid col={6}>
+          <p className="margin-y-2 text-bold">{providerA.searchRank}.</p>
+          <Link className="usa-link" to={`/result/${providerA.id}`}>
+            <h2 className="margin-top-0 margin-bottom-3">{providerA.name}</h2>
+          </Link>
+        </Grid>
+        <Grid col={6}>
+          <p className="margin-y-2 text-bold">{providerB.searchRank}.</p>
+          <Link className="usa-link" to={`/result/${providerB.id}`}>
+            <h2 className="margin-top-0 margin-bottom-3">{providerB.name}</h2>
+          </Link>
+        </Grid>
+        <ShadowHR className="margin-y-0 width-full" />
+      </Grid>
+      <Grid row gap="md" className="margin-top-1">
         <Grid col={6}>
           <CompareDetail data={providerA} zip={zip} />
         </Grid>
