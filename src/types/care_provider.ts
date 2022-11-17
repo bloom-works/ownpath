@@ -135,7 +135,7 @@ export type CareProvider = {
   substanceUse: {
     supported: boolean;
     duiSupported: boolean;
-    services: { [key in SubstanceUseServices]: boolean };
+    services: { [key in SubstanceUseServices]: boolean } & { PeerSupport: boolean };
   };
   mentalHealth: {
     supported: boolean;
