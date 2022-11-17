@@ -15,23 +15,28 @@ type ResultCardProps = {
 };
 
 export default function ResultCard({ data, isMobile }: ResultCardProps) {
-  const { providers, setProviders } = useContext(CompareContext);
+  const { selectedCompareProviders, setSelectedCompareProviders } =
+    useContext(CompareContext);
   const location = useLocation();
   const { t } = useTranslation();
 
   const toggleCompareCheckbox = () => {
-    const thisProviderIdx = providers.findIndex(
+    const thisProviderIdx = selectedCompareProviders.findIndex(
       (provider) => provider.id === data.id
     );
 
-    const p = [...providers];
+    const p = [...selectedCompareProviders];
     if (thisProviderIdx > -1) {
       p.splice(thisProviderIdx, 1);
     } else {
       p.push(data);
     }
-    setProviders(p);
+    setSelectedCompareProviders(p);
   };
+
+  const isSelectedForCompare = !!selectedCompareProviders.find(
+    (provider) => provider.id === data.id
+  );
 
   return (
     <div
@@ -71,14 +76,13 @@ export default function ResultCard({ data, isMobile }: ResultCardProps) {
           id={`compare-${isMobile ? "mobile-" : ""}${data.id}`}
           name={`Compare ${data.name}`}
           label={t("compareCheckbox")}
-          checked={!!providers.find((provider) => provider.id === data.id)}
+          checked={isSelectedForCompare}
           onChange={() => {
             toggleCompareCheckbox();
             logEvent(AnalyticsAction.SelectLocationForCompare);
           }}
           disabled={
-            providers.length > 1 &&
-            !!!providers.find((provider) => provider.id === data.id)
+            selectedCompareProviders.length > 1 && !isSelectedForCompare
           }
         />
       </Grid>

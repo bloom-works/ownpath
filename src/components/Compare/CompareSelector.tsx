@@ -7,11 +7,12 @@ import { Link, useLocation } from "react-router-dom";
 import { logEvent, AnalyticsAction } from "../../utils/analytics";
 
 function CompareSelector() {
-  const { providers, setProviders } = useContext(CompareContext);
+  const { selectedCompareProviders, setSelectedCompareProviders } =
+    useContext(CompareContext);
   const { t } = useTranslation();
   const location = useLocation();
 
-  if (!providers.length) return <></>;
+  if (!selectedCompareProviders.length) return <></>;
 
   return (
     <div className="bg-primary-darker width-full padding-y-4 padding-x-2 position-sticky bottom-0 z-top">
@@ -28,11 +29,11 @@ function CompareSelector() {
               className="tablet:margin-left-2 dark-background font-family-heading text-center width-auto"
               type="button"
               unstyled
-              onClick={() => setProviders([])}
+              onClick={() => setSelectedCompareProviders([])}
             >
               {t("clear")}
             </Button>
-            {providers.length < 2 ? (
+            {selectedCompareProviders.length < 2 ? (
               <Button
                 type="button"
                 className="usa-button tablet:margin-left-2 font-family-heading margin-0 width-auto"
@@ -45,7 +46,7 @@ function CompareSelector() {
                 onClick={() => {
                   logEvent(AnalyticsAction.ViewCompare);
                 }}
-                to={`/compare?id=${providers[0].id}&id=${providers[1].id}`}
+                to={`/compare?id=${selectedCompareProviders[0].id}&id=${selectedCompareProviders[1].id}`}
                 state={{ prevSearch: location.search }}
                 className="usa-button tablet:margin-left-2 font-family-heading margin-0 width-auto"
               >

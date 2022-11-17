@@ -7,7 +7,8 @@ import { useTranslation } from "react-i18next";
 import { CompareContext } from "../../pages/Search/Search";
 
 function Selections() {
-  const { providers, setProviders } = useContext(CompareContext);
+  const { selectedCompareProviders, setSelectedCompareProviders } =
+    useContext(CompareContext);
   const [showSelections, setShowSelections] = useState(true);
   const { t } = useTranslation();
   return (
@@ -15,17 +16,17 @@ function Selections() {
       {showSelections && (
         <>
           <Selection
-            provider={providers[0]}
+            provider={selectedCompareProviders[0]}
             clearFunc={() => {
-              const _p = [...providers];
-              setProviders(_p.slice(1));
+              const _p = [...selectedCompareProviders];
+              setSelectedCompareProviders(_p.slice(1));
             }}
           />
           <Selection
-            provider={providers[1]}
+            provider={selectedCompareProviders[1]}
             clearFunc={() => {
-              const _p = [...providers];
-              setProviders(_p.slice(0, 1));
+              const _p = [...selectedCompareProviders];
+              setSelectedCompareProviders(_p.slice(0, 1));
             }}
           />
         </>
@@ -36,7 +37,7 @@ function Selections() {
         onClick={() => setShowSelections(!showSelections)}
       >
         {t("showCompareSelections", {
-          count: providers.length,
+          count: selectedCompareProviders.length,
         })}
         <CaretDown
           height={7}

@@ -67,9 +67,9 @@ const Ellipses = styled.div`
 `;
 
 export const CompareContext = createContext<{
-  providers: CareProvider[];
-  setProviders: Dispatch<SetStateAction<CareProvider[]>>;
-}>({ providers: [], setProviders: () => {} });
+  selectedCompareProviders: CareProvider[];
+  setSelectedCompareProviders: Dispatch<SetStateAction<CareProvider[]>>;
+}>({ selectedCompareProviders: [], setSelectedCompareProviders: () => {} });
 
 function Search() {
   const { t, i18n } = useTranslation();
@@ -163,8 +163,8 @@ function Search() {
       <div>
         <CompareContext.Provider
           value={{
-            providers: compareProviders,
-            setProviders: setCompareProviders,
+            selectedCompareProviders: compareProviders,
+            setSelectedCompareProviders: setCompareProviders,
           }}
         >
           <div className="margin-y-2 padding-x-2 tablet:padding-x-5">
