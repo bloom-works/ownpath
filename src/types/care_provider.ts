@@ -2,10 +2,10 @@ import { LatLngLiteral } from "leaflet";
 
 export type DailyHours =
   | {
-      open: true;
-      start: string;
-      end: string;
-    }
+    open: true;
+    start: string;
+    end: string;
+  }
   | { open: false };
 
 export enum DayOfWeek {
@@ -112,11 +112,23 @@ export const LANGUAGES = [
 ] as const;
 export type Languages = typeof LANGUAGES[number];
 
+export const ACCEPTING_NEW_PATIENTS_OPTIONS = [
+  "Yes"
+] as const;
+export type AcceptingNewPatientsOptions = typeof ACCEPTING_NEW_PATIENTS_OPTIONS[number];
+
+export const TELEHEALTH_OPTIONS = [
+  "Telehealth Only",
+  "Telehealth Available - With Restrictions",
+] as const;
+export type TelehealthOptions = typeof TELEHEALTH_OPTIONS[number];
+
 export type CareProvider = {
   id: string;
   name: string;
   phone: string;
   hideAddress: boolean;
+  acceptingNewPatients: boolean;
   address: string[];
   addressStr: string;
   website: string;
@@ -136,4 +148,5 @@ export type CareProvider = {
   languages: { [key in Languages]: boolean };
   latlng: LatLngLiteral | null;
   lastUpdatedDate: string;
+  offersTelehealth: boolean;
 };
