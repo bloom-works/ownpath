@@ -136,11 +136,11 @@ export type CareProvider = {
     supported: boolean;
     duiSupported: boolean;
     /*
-    PeerSupport is derived from standalone column RSSOServicesProvided. The other services are
+    PeerSupport is derived from standalone column ActiveRSSOLicense. The other services are
     processed from a list of values contained in the SubstanceUseServices column. The values
     in SubstanceUseServices are parsed and dynamically set in the process_data file. This type
     relects the parsed values as keys from SubstanceUseServices and the additional PeerSupport property
-    that is set by the RSSOServicesProvided column.
+    that is set by the ActiveRSSOLicense column.
     */
     services: { [key in SubstanceUseServices]: boolean } & { PeerSupport: boolean };
   };

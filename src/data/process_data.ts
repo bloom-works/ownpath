@@ -47,7 +47,6 @@ type InputRow = {
   PopulationServed: string;
   ProviderDirectoryFormModifiedDate: string;
   ProviderLocationDisplayLabel: string;
-  RSSOServicesProvided: string;
   SubstanceUseServices: string;
   Website: string;
   lat: string;
@@ -143,7 +142,7 @@ const transformRow = (row: InputRow): CareProvider => {
         row.OpioidTreatmentPrograms === "1"
       ),
       duiSupported: row.DUIDWI === "1",
-      services: { PeerSupport: !!row.RSSOServicesProvided, ...getBooleanMap(SUBSTANCE_USE_SERVICES, substanceUseServices) },
+      services: { PeerSupport: !!(row.ActiveRSSOLicense === "1"), ...getBooleanMap(SUBSTANCE_USE_SERVICES, substanceUseServices) },
     },
     mentalHealth: {
       supported: !!(
