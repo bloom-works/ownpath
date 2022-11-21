@@ -25,6 +25,7 @@ type InputRow = {
   AddressOneLine: string;
   DisplayName: string;
   ActiveMHDesignation: string;
+  ActiveRSSOLicense: string;
   ActiveSUDLicense: string;
   CommunityMentalHealthCenter: string;
   CommunityMentalHealthClinic: string;
@@ -141,7 +142,7 @@ const transformRow = (row: InputRow): CareProvider => {
         row.OpioidTreatmentPrograms === "1"
       ),
       duiSupported: row.DUIDWI === "1",
-      services: getBooleanMap(SUBSTANCE_USE_SERVICES, substanceUseServices),
+      services: { PeerSupport: !!(row.ActiveRSSOLicense === "1"), ...getBooleanMap(SUBSTANCE_USE_SERVICES, substanceUseServices) },
     },
     mentalHealth: {
       supported: !!(
