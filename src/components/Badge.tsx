@@ -1,13 +1,15 @@
 import React from "react";
-import { Tag, Tooltip } from "@trussworks/react-uswds";
+import { Tooltip } from "@trussworks/react-uswds";
 import styled from "styled-components";
 
-const StyledBadge = styled(Tag)`
+const StyledBadge = styled.div`
   color: var(--dark-blue);
   font-family: "MuseoSlab";
   border-radius: 1rem;
   font-size: 0.75rem;
   padding: 0.5rem 1rem;
+  margin-bottom: 0.5rem;
+  width: min-content;
   text-transform: inherit;
   &:hover {
     cursor: pointer;
@@ -65,7 +67,7 @@ export default function Badge({
 }: BadgeProps) {
   const renderBadge = () => (
     <StyledBadge
-      background={`var(--badge-bg-${bgColor})`}
+      style={{ background: `var(--badge-bg-${bgColor})` }}
       className="text-no-wrap"
     >
       <span className="badge-icon">
