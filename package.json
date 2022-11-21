@@ -6,7 +6,7 @@
     "@playwright/test": "^1.25.0",
     "@testing-library/jest-dom": "~5.16.4",
     "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "~13.5.0",
+    "@testing-library/user-event": "~14.4.3",
     "@trussworks/react-uswds": "~3.0.2",
     "@types/jest": "~27.5.2",
     "@types/jest-axe": "^3.5.4",
