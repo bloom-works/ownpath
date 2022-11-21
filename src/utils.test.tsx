@@ -48,10 +48,10 @@ const DUMMY_CARE_PROVIDER: CareProvider = {
   substanceUse: {
     supported: false,
     duiSupported: false,
-    services: SUBSTANCE_USE_SERVICES.reduce((map, val) => {
+    services: { PeerSupport: true, ...SUBSTANCE_USE_SERVICES.reduce((map, val) => {
       map[val] = false;
       return map;
-    }, {} as { [key in SubstanceUseServices]: boolean }),
+    }, {} as { [key in SubstanceUseServices]: boolean })},
   },
   mentalHealth: {
     supported: false,
