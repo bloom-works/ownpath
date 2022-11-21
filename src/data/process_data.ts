@@ -18,12 +18,14 @@ const INPUT_FILE = "../../raw_data/ladders.csv";
 const OUTPUT_FILE = "./ladders_data.json";
 
 type InputRow = {
+  AcceptingNewPatients: string;
   Accessibility: string;
   AccountID: string;
   AccountName: string;
   AddressOneLine: string;
   DisplayName: string;
   ActiveMHDesignation: string;
+  ActiveRSSOLicense: string;
   ActiveSUDLicense: string;
   CommunityMentalHealthCenter: string;
   CommunityMentalHealthClinic: string;
@@ -39,6 +41,7 @@ type InputRow = {
   HoursofOperationWednesday: string;
   LanguagesSpoken: string;
   MentalHealthSettings: string;
+  OffersTelehealth: string;
   OpioidTreatmentPrograms: string;
   Phone: string;
   PopulationServed: string;
@@ -122,6 +125,7 @@ const transformRow = (row: InputRow): CareProvider => {
     name: row.DisplayName,
     phone: row.Phone,
     hideAddress,
+    acceptingNewPatients: !!row.AcceptingNewPatients,
     address:
       hideAddress || !row.ProviderLocationDisplayLabel
         ? []
@@ -138,7 +142,7 @@ const transformRow = (row: InputRow): CareProvider => {
         row.OpioidTreatmentPrograms === "1"
       ),
       duiSupported: row.DUIDWI === "1",
-      services: getBooleanMap(SUBSTANCE_USE_SERVICES, substanceUseServices),
+      services: { PeerSupport: !!(row.ActiveRSSOLicense === "1"), ...getBooleanMap(SUBSTANCE_USE_SERVICES, substanceUseServices) },
     },
     mentalHealth: {
       supported: !!(
@@ -162,6 +166,7 @@ const transformRow = (row: InputRow): CareProvider => {
     languages: getBooleanMap(LANGUAGES, splitBySemicolons(row.LanguagesSpoken)),
     latlng: getLatLng(row),
     lastUpdatedDate: row.ProviderDirectoryFormModifiedDate,
+    offersTelehealth: !!row.OffersTelehealth
   };
   return cleaned;
 };

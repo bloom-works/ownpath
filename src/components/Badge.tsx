@@ -1,4 +1,5 @@
-import { Tag } from "@trussworks/react-uswds";
+import React from "react";
+import { Tag, Tooltip } from "@trussworks/react-uswds";
 import styled from "styled-components";
 
 const StyledBadge = styled(Tag)`
@@ -21,16 +22,61 @@ const StyledBadge = styled(Tag)`
     }
 `;
 
-type BadgeProps = {
+type ConditionalBadgeProps =
+    | {
+        showTooltip?: false;
+        tooltipText?: never;
+    }
+    | {
+        showTooltip?: true;
+        tooltipText: string;
+    };
+
+type CommonBadgeProps = {
     bgColor: 'blue' | 'yellow';
     Icon: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
     text: string;
 };
 
-export default function Badge({ Icon, bgColor, text }: BadgeProps) {
-    return (
-        <StyledBadge background={`var(--badge-bg-${bgColor})`}>
-            <span className="badge-icon"><Icon /></span>{' '}<span className="badge-text">{text}</span>
+type BadgeProps = CommonBadgeProps & ConditionalBadgeProps;
+
+// ForwardRef of wrapper div around Tag component
+type WrapperDivProps = React.PropsWithChildren<{
+    className?: string;
+}> &
+    JSX.IntrinsicElements['div'] &
+    React.RefAttributes<HTMLDivElement>;
+const WrapperDivForwardRef: React.ForwardRefRenderFunction<
+    HTMLDivElement,
+    WrapperDivProps
+> = ({ className, children, ...tooltipProps }: WrapperDivProps, ref) => (
+    <div ref={ref} className={className} {...tooltipProps}>
+        {children}
+    </div>
+);
+const WrapperDiv = React.forwardRef(WrapperDivForwardRef);
+
+export default function Badge({ Icon, bgColor, text, tooltipText, showTooltip = false }: BadgeProps) {
+    const renderBadge = () => (
+        <StyledBadge
+            background={`var(--badge-bg-${bgColor})`}>
+            <span className="badge-icon"><Icon /></span>{' '}<span className="badge-text">
+                {text}
+            </span>
         </StyledBadge>
+    );
+
+    return (
+        showTooltip ?
+            <Tooltip<WrapperDivProps>
+                label={tooltipText ?? ''}
+                position="top"
+                className="margin-right-1"
+                asCustom={WrapperDiv}>
+                {renderBadge()}
+            </Tooltip>
+            :
+            <>{renderBadge()}</>
+
     );
 }
