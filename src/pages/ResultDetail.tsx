@@ -70,8 +70,8 @@ function ResultDetail() {
         <h2 className="usa-sr-only">Basic info</h2>
         <Grid row>
           <Grid
-            tablet={{ col: 5 }}
-            className="padding-0 tablet:padding-1 order-last order-md-first"
+            tablet={{ col: 6 }}
+            className="padding-0 tablet:padding-x-1 order-last order-md-first"
           >
             <BasicResultDetail result={data} />
           </Grid>
