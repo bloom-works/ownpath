@@ -69,7 +69,13 @@ function ResultDetail() {
       <section>
         <h2 className="usa-sr-only">Basic info</h2>
         <Grid row>
-          <Grid tablet={{ col: true }} className="tablet:order-last">
+          <Grid
+            tablet={{ col: 5 }}
+            className="padding-0 tablet:padding-1 order-last order-md-first"
+          >
+            <BasicResultDetail result={data} />
+          </Grid>
+          <Grid tablet={{ col: true }}>
             {data.latlng && data.address && (
               <div className="display-grid">
                 <Map
@@ -84,6 +90,7 @@ function ResultDetail() {
                     icon={getMapMarker(data)}
                     position={data.latlng}
                     interactive={false}
+                    keyboard={false}
                   />
                 </Map>
 
@@ -92,9 +99,6 @@ function ResultDetail() {
                 </div>
               </div>
             )}
-          </Grid>
-          <Grid tablet={{ col: 5 }} className="padding-0 tablet:padding-1">
-            <BasicResultDetail result={data} />
           </Grid>
         </Grid>
       </section>
