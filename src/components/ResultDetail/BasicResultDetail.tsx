@@ -44,6 +44,8 @@ function BasicResultDetail({ result, isCondensed }: BasicResultDetailProps) {
             bgColor="yellow"
             Icon={Telehealth}
             text={t("telehealthAvailable")}
+            showTooltip
+            tooltipText={t("telehealthAvailableNote")}
           />
         )}
       </div>

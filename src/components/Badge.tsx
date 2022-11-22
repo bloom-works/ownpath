@@ -7,7 +7,7 @@ const StyledBadge = styled.div`
   font-family: "MuseoSlab";
   border-radius: 1rem;
   font-size: 0.75rem;
-  padding: 0.5rem 1rem;
+  padding: 0.25rem 1rem;
   margin-bottom: 0.5rem;
   width: min-content;
   text-transform: inherit;
