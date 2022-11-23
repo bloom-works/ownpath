@@ -29,7 +29,7 @@ function BasicResultDetail({ result, isCondensed }: BasicResultDetailProps) {
 
   return (
     <>
-      <div className="margin-bottom-3">
+      <div className="margin-bottom-3 display-flex flex-wrap">
         {result.acceptingNewPatients && (
           <Badge
             bgColor="blue"
@@ -44,6 +44,8 @@ function BasicResultDetail({ result, isCondensed }: BasicResultDetailProps) {
             bgColor="yellow"
             Icon={Telehealth}
             text={t("telehealthAvailable")}
+            showTooltip
+            tooltipText={t("telehealthAvailableNote")}
           />
         )}
       </div>
