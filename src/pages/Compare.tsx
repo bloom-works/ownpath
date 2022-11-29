@@ -27,9 +27,7 @@ import SubstanceUseServicesTable from "../components/Compare/SubstanceUseService
 import AccessibilityTable from "../components/Compare/AccessibilityTable";
 
 const ShadowHR = styled.hr`
-  &.shadow {
-    box-shadow: 0 4px 8px 0 black;
-  }
+  box-shadow: 0 4px 8px 0 black;
 `;
 
 export default function Compare() {
@@ -48,14 +46,16 @@ export default function Compare() {
         currentStickyHeaderTop > initialStickyHeaderTop
       ) {
         if (
-          !document
-            .getElementById("sticky-header")
-            ?.classList.contains("shadow")
+          document
+            .getElementById("shadow-line")
+            ?.classList.contains("display-none")
         ) {
-          document.getElementById("sticky-header")?.classList.add("shadow");
+          document
+            .getElementById("shadow-line")
+            ?.classList.remove("display-none");
         }
       } else {
-        document.getElementById("sticky-header")?.classList.remove("shadow");
+        document.getElementById("shadow-line")?.classList.add("display-none");
       }
     };
     window.addEventListener("scroll", scroll);
@@ -150,7 +150,10 @@ export default function Compare() {
             <h2 className="margin-top-0 margin-bottom-3">{providerB.name}</h2>
           </Link>
         </Grid>
-        <ShadowHR className="margin-y-0 width-full" />
+        <ShadowHR
+          id="shadow-line"
+          className="margin-y-0 width-full display-none"
+        />
       </Grid>
       <Grid row gap="md" className="margin-top-1">
         <Grid col={6} tablet={{ col: 5, offset: 2 }}>
