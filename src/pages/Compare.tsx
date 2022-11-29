@@ -108,13 +108,13 @@ export default function Compare() {
         </Grid>
       </Grid>
       <Grid row gap="md" className="position-sticky top-0 bg-white z-top">
-        <Grid col={6}>
+        <Grid col={6} tablet={{ col: 5, offset: 2 }}>
           <p className="margin-y-2 text-bold">{providerA.searchRank}.</p>
           <Link className="usa-link" to={`/result/${providerA.id}`}>
             <h2 className="margin-top-0 margin-bottom-3">{providerA.name}</h2>
           </Link>
         </Grid>
-        <Grid col={6}>
+        <Grid col={6} tablet={{ col: 5 }}>
           <p className="margin-y-2 text-bold">{providerB.searchRank}.</p>
           <Link className="usa-link" to={`/result/${providerB.id}`}>
             <h2 className="margin-top-0 margin-bottom-3">{providerB.name}</h2>
@@ -123,10 +123,10 @@ export default function Compare() {
         <ShadowHR className="margin-y-0 width-full" />
       </Grid>
       <Grid row gap="md" className="margin-top-1">
-        <Grid col={6}>
+        <Grid col={6} tablet={{ col: 5, offset: 2 }}>
           <CompareDetail data={providerA} zip={zip} />
         </Grid>
-        <Grid col={6}>
+        <Grid col={6} tablet={{ col: 5 }}>
           <CompareDetail data={providerB} zip={zip} />
         </Grid>
       </Grid>
