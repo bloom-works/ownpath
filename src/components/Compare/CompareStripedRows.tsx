@@ -35,8 +35,11 @@ function CompareStripedRows({
       );
     } else if (value === false) {
       return (
-        <div className="usa-sr-only">
-          {srContext} {t("no")}—
+        <div className="display-flex flex-justify-center height-full flex-align-center">
+          <div className="usa-sr-only">
+            {srContext} {t("no")}
+          </div>
+          —
         </div>
       );
     } else {

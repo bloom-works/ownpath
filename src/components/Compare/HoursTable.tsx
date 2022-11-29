@@ -14,7 +14,7 @@ const formatHoursDisplay = (
   t: TFunction
 ): string => {
   if (!hours) {
-    return "--";
+    return "—";
   }
   const dayHours = hours[day];
   return dayHours.open ? `${dayHours.start}-${dayHours.end}` : t("closed");
