@@ -15,7 +15,6 @@ function Selections() {
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth > 640) {
-        console.log("WINDOW WIRTH", window.innerWidth);
         setShowSelections(true);
       }
     };

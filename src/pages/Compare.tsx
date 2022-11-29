@@ -27,13 +27,38 @@ import SubstanceUseServicesTable from "../components/Compare/SubstanceUseService
 import AccessibilityTable from "../components/Compare/AccessibilityTable";
 
 const ShadowHR = styled.hr`
-  box-shadow: 0 4px 8px 0 black;
+  &.shadow {
+    box-shadow: 0 4px 8px 0 black;
+  }
 `;
 
 export default function Compare() {
   useEffect(() => {
     handlePageLoad();
     logPageView();
+    const initialStickyHeaderTop =
+      document.getElementById("sticky-header")?.offsetTop;
+
+    const scroll = () => {
+      const currentStickyHeaderTop =
+        document.getElementById("sticky-header")?.offsetTop;
+      if (
+        !!currentStickyHeaderTop &&
+        !!initialStickyHeaderTop &&
+        currentStickyHeaderTop > initialStickyHeaderTop
+      ) {
+        if (
+          !document
+            .getElementById("sticky-header")
+            ?.classList.contains("shadow")
+        ) {
+          document.getElementById("sticky-header")?.classList.add("shadow");
+        }
+      } else {
+        document.getElementById("sticky-header")?.classList.remove("shadow");
+      }
+    };
+    window.addEventListener("scroll", scroll);
   }, []);
 
   const [params] = useSearchParams();
@@ -107,7 +132,12 @@ export default function Compare() {
           </ResultsMap>
         </Grid>
       </Grid>
-      <Grid row gap="md" className="position-sticky top-0 bg-white z-top">
+      <Grid
+        row
+        gap="md"
+        className="position-sticky top-0 bg-white z-top"
+        id="sticky-header"
+      >
         <Grid col={6} tablet={{ col: 5, offset: 2 }}>
           <p className="margin-y-2 text-bold">{providerA.searchRank}.</p>
           <Link className="usa-link" to={`/result/${providerA.id}`}>

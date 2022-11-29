@@ -62,6 +62,7 @@ function CompareStripedRows({
       <div className="border-top margin-top-05">
         {tableData.map((row, idx) => (
           <Grid
+            key={`${row.label}-${idx}`}
             row
             className={
               (idx + 1) % 2 ? "bg-lightest-blue padding-05" : "padding-05"
