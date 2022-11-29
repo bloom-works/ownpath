@@ -9,6 +9,7 @@ import ResultDetail from "./pages/ResultDetail";
 import GuidedSearch from "./pages/GuidedSearch";
 import NotFound from "./pages/NotFound";
 import Search from "./pages/Search/Search";
+import Compare from "./pages/Compare";
 // Unfortunately I was unable to mock the JSON data set to be smaller subset,
 // so just bumping timeout to allow application of filters to complete
 // and component to render for testing so Search tests can complete
@@ -68,6 +69,26 @@ test("Search", async () => {
 
 test("FAQ", async () => {
   const { container } = render(<FAQ />);
+  expect(await axe(container)).toHaveNoViolations();
+  // eslint-disable-next-line testing-library/no-container
+  expect(document.activeElement).toBe(container.querySelector("h1"));
+});
+
+test("Compare", async () => {
+  const { container } = render(<Compare />, {
+    wrapper: ({ children }) => (
+      <MemoryRouter
+        initialEntries={[
+          {
+            search: `?id=${MOCK_CARE_PROVIDER_DATA[0].id}&id=${MOCK_CARE_PROVIDER_DATA[1].id}`,
+          },
+        ]}
+      >
+        {children}
+      </MemoryRouter>
+    ),
+  });
+
   expect(await axe(container)).toHaveNoViolations();
   // eslint-disable-next-line testing-library/no-container
   expect(document.activeElement).toBe(container.querySelector("h1"));

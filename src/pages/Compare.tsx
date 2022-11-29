@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
-import { Navigate, useLocation, useSearchParams } from "react-router-dom";
+import { useEffect } from "react";
+import { Navigate, useLocation, useSearchParams, Link } from "react-router-dom";
 import { Grid, GridContainer } from "@trussworks/react-uswds";
 import { Marker } from "react-leaflet";
+import styled from "styled-components";
 
 import BackButton from "../components/BackButton";
 import ResultsMap from "../components/Search/ResultsMap";
@@ -13,10 +14,9 @@ import {
 } from "../utils";
 import CARE_PROVIDER_DATA from "../data/ladders_data.json";
 import { CareProvider } from "../types";
-import { logPageView } from "../utils/analytics";
+import { AnalyticsAction, logEvent, logPageView } from "../utils/analytics";
 import { useTranslation } from "react-i18next";
 import CompareDetail from "../components/Compare/CompareDetail";
-import CompareSelector from "../components/Compare/CompareSelector";
 import HoursTable from "../components/Compare/HoursTable";
 import { handlePageLoad } from "../utils";
 import FeesTable from "../components/Compare/FeesTable";
@@ -26,28 +26,45 @@ import MentalHealthServicesTable from "../components/Compare/MentalHealthService
 import SubstanceUseServicesTable from "../components/Compare/SubstanceUseServicesTable";
 import AccessibilityTable from "../components/Compare/AccessibilityTable";
 
+const ShadowHR = styled.hr`
+  box-shadow: 0 4px 8px 0 black;
+`;
+
 export default function Compare() {
   useEffect(() => {
     handlePageLoad();
     logPageView();
+    const initialStickyHeaderTop =
+      document.getElementById("sticky-header")?.offsetTop;
+
+    const scroll = () => {
+      const currentStickyHeaderTop =
+        document.getElementById("sticky-header")?.offsetTop;
+      if (
+        !!currentStickyHeaderTop &&
+        !!initialStickyHeaderTop &&
+        currentStickyHeaderTop > initialStickyHeaderTop
+      ) {
+        if (
+          document
+            .getElementById("shadow-line")
+            ?.classList.contains("display-none")
+        ) {
+          document
+            .getElementById("shadow-line")
+            ?.classList.remove("display-none");
+        }
+      } else {
+        document.getElementById("shadow-line")?.classList.add("display-none");
+      }
+    };
+    window.addEventListener("scroll", scroll);
   }, []);
 
   const [params] = useSearchParams();
   const location = useLocation();
   const { t } = useTranslation();
 
-  const [compareProviders, setCompareProviders] = useState<CareProvider[]>([]);
-  useEffect(() => {
-    const _p = [];
-    if (!!providerA) _p.push(providerA);
-    if (!!providerB) _p.push(providerB);
-    setCompareProviders(_p);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  // TODO: make this page zip-aware
-
-  // TODO: set prevSearch when navigating to compare page
   let { prevSearch } = (location.state ?? {}) as {
     prevSearch?: string;
   };
@@ -78,76 +95,86 @@ export default function Compare() {
   };
 
   return (
-    <>
-      <GridContainer>
-        <div className="margin-y-2 display-flex flex-justify">
-          <BackButton
-            text={t("backToSearch")}
-            href={`/search${prevSearch ?? ""}`}
-          />
-          <ShareButton text={t("detailsPageShare")} />
-        </div>
-        <Grid row>
-          <Grid col={12}>
-            <h1 className="margin-top-0">Compare locations</h1>
-            <ResultsMap
-              bounds={getResultBounds([providerA, providerB])}
-              isMobile={true}
-            >
-              {providerA.latlng && (
-                <Marker
-                  title={providerA.id}
-                  position={providerA.latlng}
-                  icon={getMapMarker(providerA)}
-                  key={providerA.id}
-                  interactive={false}
-                  keyboard={false}
-                />
-              )}
-              {providerB.latlng && (
-                <Marker
-                  title={providerB.id}
-                  position={providerB.latlng}
-                  icon={getMapMarker(providerB)}
-                  key={providerB.id}
-                  interactive={false}
-                  keyboard={false}
-                />
-              )}
-            </ResultsMap>
-          </Grid>
-        </Grid>
-        <Grid row gap="md">
-          <Grid col={6}>
-            <CompareDetail data={providerA} zip={zip} />
-          </Grid>
-          <Grid col={6}>
-            <CompareDetail data={providerB} zip={zip} />
-          </Grid>
-        </Grid>
-        <hr className="margin-y-4" />
-        <HoursTable providerA={providerA} providerB={providerB} />
-        <FeesTable providerA={providerA} providerB={providerB} />
-        <h2>{t("services")}</h2>
-        <hr className="margin-bottom-3" />
-        <SubstanceUseServicesTable
-          providerA={providerA}
-          providerB={providerB}
+    <GridContainer>
+      <div className="margin-y-2 display-flex flex-justify">
+        <BackButton
+          onClick={() => logEvent(AnalyticsAction.ReturnToSearch)}
+          text={t("backToSearch")}
+          href={`/search${prevSearch ?? ""}`}
         />
-        <MentalHealthServicesTable
-          providerA={providerA}
-          providerB={providerB}
+        <ShareButton text={t("detailsPageShare")} />
+      </div>
+      <Grid row>
+        <Grid col={12}>
+          <h1 className="margin-top-0">Compare locations</h1>
+          <ResultsMap
+            bounds={getResultBounds([providerA, providerB])}
+            isMobile={true}
+          >
+            {providerA.latlng && (
+              <Marker
+                title={providerA.id}
+                position={providerA.latlng}
+                icon={getMapMarker(providerA)}
+                key={providerA.id}
+                interactive={false}
+              />
+            )}
+            {providerB.latlng && (
+              <Marker
+                title={providerB.id}
+                position={providerB.latlng}
+                icon={getMapMarker(providerB)}
+                key={providerB.id}
+                interactive={false}
+              />
+            )}
+          </ResultsMap>
+        </Grid>
+      </Grid>
+      <Grid
+        row
+        gap="md"
+        className="position-sticky top-0 bg-white z-top"
+        id="sticky-header"
+      >
+        <Grid col={6} tablet={{ col: 5, offset: 2 }}>
+          <p className="margin-y-2 text-bold">{providerA.searchRank}.</p>
+          <Link className="usa-link" to={`/result/${providerA.id}`}>
+            <h2 className="margin-top-0 margin-bottom-3">{providerA.name}</h2>
+          </Link>
+        </Grid>
+        <Grid col={6} tablet={{ col: 5 }}>
+          <p className="margin-y-2 text-bold">{providerB.searchRank}.</p>
+          <Link className="usa-link" to={`/result/${providerB.id}`}>
+            <h2 className="margin-top-0 margin-bottom-3">{providerB.name}</h2>
+          </Link>
+        </Grid>
+        <ShadowHR
+          id="shadow-line"
+          className="margin-y-0 width-full display-none"
         />
-        <h2>{t("details")}</h2>
-        <hr className="margin-bottom-3" />
-        <PopulationsTable providerA={providerA} providerB={providerB} />
-        <AccessibilityTable providerA={providerA} providerB={providerB} />
-        <LanguagesTable providerA={providerA} providerB={providerB} />
-      </GridContainer>
-      <CompareSelector
-        providers={compareProviders}
-        setProviders={setCompareProviders}
-      />
-    </>
+      </Grid>
+      <Grid row gap="md" className="margin-top-1">
+        <Grid col={6} tablet={{ col: 5, offset: 2 }}>
+          <CompareDetail data={providerA} zip={zip} />
+        </Grid>
+        <Grid col={6} tablet={{ col: 5 }}>
+          <CompareDetail data={providerB} zip={zip} />
+        </Grid>
+      </Grid>
+      <hr className="margin-y-4" />
+      <HoursTable providerA={providerA} providerB={providerB} />
+      <FeesTable providerA={providerA} providerB={providerB} />
+      <h2>{t("services")}</h2>
+      <hr className="margin-bottom-3" />
+      <SubstanceUseServicesTable providerA={providerA} providerB={providerB} />
+      <MentalHealthServicesTable providerA={providerA} providerB={providerB} />
+      <h2>{t("details")}</h2>
+      <hr className="margin-bottom-3" />
+      <PopulationsTable providerA={providerA} providerB={providerB} />
+      <AccessibilityTable providerA={providerA} providerB={providerB} />
+      <LanguagesTable providerA={providerA} providerB={providerB} />
+    </GridContainer>
   );
 }

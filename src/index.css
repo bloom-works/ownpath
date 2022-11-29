@@ -121,6 +121,7 @@ p {
 
 .usa-link.usa-button {
   color: white;
+  text-decoration: none;
 }
 
 .usa-button:not(.usa-button--outline):not(.usa-button--base):not(.usa-button--unstyled):not(.usa-button:disabled) {
