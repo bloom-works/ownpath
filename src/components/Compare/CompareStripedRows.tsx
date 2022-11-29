@@ -36,7 +36,7 @@ function CompareStripedRows({
     } else if (value === false) {
       return (
         <div className="usa-sr-only">
-          {srContext} {t("no")}
+          {srContext} {t("no")}—
         </div>
       );
     } else {
