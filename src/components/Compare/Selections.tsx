@@ -1,34 +1,42 @@
 import { Grid, Button } from "@trussworks/react-uswds";
 import { ReactComponent as Close } from "../../images/close.svg";
 import { ReactComponent as CaretDown } from "../../images/caret-down.svg";
-import { useState, Dispatch, SetStateAction } from "react";
+import { useState, useContext, useEffect } from "react";
 import { CareProvider } from "../../types";
 import { useTranslation } from "react-i18next";
+import { CompareContext } from "../../pages/Search/Search";
 
-type SelectionsProps = {
-  providers: CareProvider[];
-  setProviders: Dispatch<SetStateAction<CareProvider[]>>;
-};
-
-function Selections({ providers, setProviders }: SelectionsProps) {
+function Selections() {
+  const { selectedCompareProviders, setSelectedCompareProviders } =
+    useContext(CompareContext);
   const [showSelections, setShowSelections] = useState(true);
   const { t } = useTranslation();
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 640) {
+        setShowSelections(true);
+      }
+    };
+    window.addEventListener("resize", handleResize);
+  });
+
   return (
     <Grid row>
       {showSelections && (
         <>
           <Selection
-            provider={providers[0]}
+            provider={selectedCompareProviders[0]}
             clearFunc={() => {
-              const _p = [...providers];
-              setProviders(_p.slice(1));
+              const _p = [...selectedCompareProviders];
+              setSelectedCompareProviders(_p.slice(1));
             }}
           />
           <Selection
-            provider={providers[1]}
+            provider={selectedCompareProviders[1]}
             clearFunc={() => {
-              const _p = [...providers];
-              setProviders(_p.slice(0, 1));
+              const _p = [...selectedCompareProviders];
+              setSelectedCompareProviders(_p.slice(0, 1));
             }}
           />
         </>
@@ -39,7 +47,7 @@ function Selections({ providers, setProviders }: SelectionsProps) {
         onClick={() => setShowSelections(!showSelections)}
       >
         {t("showCompareSelections", {
-          count: providers.length,
+          count: selectedCompareProviders.length,
         })}
         <CaretDown
           height={7}
@@ -58,6 +66,7 @@ function Selection({
   provider?: CareProvider;
   clearFunc: () => void;
 }) {
+  const { t } = useTranslation();
   return (
     <Grid
       tablet={{ col: true }}
@@ -76,7 +85,7 @@ function Selection({
             className="width-auto data-icon"
             onClick={clearFunc}
           >
-            <Close />
+            <Close title={`${t("clear")} ${provider.name}`} />
           </Button>
         </div>
       )}

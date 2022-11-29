@@ -178,3 +178,73 @@ test("Clearable checkbox filter works on mobile", async ({ page }) => {
   expect(page.url()).not.toContain("hours=monday");
   expect(page.url()).not.toContain("hours=tuesday");
 });
+
+test("Compare selection works", async ({ page }) => {
+  const resultA = page.locator(".result-card").nth(0);
+
+  const checkboxA = resultA.nth(0).locator("text=Compare location");
+  const checkboxB = page
+    .locator(".result-card")
+    .nth(1)
+    .locator("text=Compare location");
+  const checkboxC = page
+    .locator(".result-card")
+    .nth(2)
+    .locator("text=Compare location");
+
+  const compareButton = page.locator("button", {
+    hasText: "Compare locations",
+  });
+  const compareLink = page.locator("a", {
+    hasText: "Compare locations",
+  });
+
+  // Before any locations are selected for compare,
+  // the compare selection UI component is not present
+  expect(await compareButton.count()).toEqual(0);
+
+  // Selecting a single location for compare reveals
+  // compare selection UI with disabled button and no navigation link;
+  // other location checkboxes remain clickable in results
+  await checkboxA.click();
+  expect(await compareLink.count()).toEqual(0);
+  expect(await compareButton.isDisabled()).toBeTruthy();
+  expect(await checkboxC.isDisabled()).not.toBeTruthy();
+
+  // Selecting a second location for compare replaces the
+  // disabled compare button with navigation linkl other
+  // location checkboxes are disabled in results
+  await checkboxB.click();
+  expect(await compareLink.getAttribute("href")).toContain("/compare");
+  expect(await compareButton.count()).toEqual(0);
+  expect(await checkboxC.isDisabled()).toBeTruthy();
+
+  // Un-selecting a location for compare returns compare selection UI to:
+  // disabled button, no link; clickable checkboxes in results
+  await checkboxA.click();
+  expect(await compareLink.count()).toEqual(0);
+  expect(await compareButton.isDisabled()).toBeTruthy();
+  expect(await checkboxC.isDisabled()).not.toBeTruthy();
+
+  const nameA = await resultA.locator("h2").innerText();
+  const clearA = page.locator("button", { hasText: `Clear ${nameA}` });
+  const clearAll = page.locator("button", { hasText: /Clear$/ });
+
+  // Selecting second location returns compare selection UI to:
+  // no button; navigation link; disabled checkboxes in results
+  await checkboxA.click();
+  expect(await compareLink.getAttribute("href")).toContain("/compare");
+  expect(await compareButton.count()).toEqual(0);
+  expect(await checkboxC.isDisabled()).toBeTruthy();
+
+  // Clicking clear button for one location returns compare selection UI to:
+  // disabled button, no link; clickable checkboxes in results
+  await clearA.click();
+  expect(await compareLink.count()).toEqual(0);
+  expect(await compareButton.isDisabled()).toBeTruthy();
+  expect(await checkboxC.isDisabled()).not.toBeTruthy();
+
+  // Clicking clear all button removes compare selection UI from view
+  await clearAll.click();
+  expect(await compareButton.count()).toEqual(0);
+});

@@ -1,24 +1,24 @@
 import { Button, Grid } from "@trussworks/react-uswds";
-import { Dispatch, SetStateAction } from "react";
+import { useContext } from "react";
 import { useTranslation } from "react-i18next";
-import { CareProvider } from "../../types";
 import Selections from "./Selections";
+import { CompareContext } from "../../pages/Search/Search";
+import { Link, useLocation } from "react-router-dom";
+import { logEvent, AnalyticsAction } from "../../utils/analytics";
 
-type CompareSelectorProps = {
-  providers: CareProvider[];
-  setProviders: Dispatch<SetStateAction<CareProvider[]>>;
-};
-
-function CompareSelector({ providers, setProviders }: CompareSelectorProps) {
+function CompareSelector() {
+  const { selectedCompareProviders, setSelectedCompareProviders } =
+    useContext(CompareContext);
   const { t } = useTranslation();
+  const location = useLocation();
 
-  if (!providers.length) return <></>;
+  if (!selectedCompareProviders.length) return <></>;
 
   return (
-    <div className="bg-primary-darker width-full padding-y-4 padding-x-2">
+    <div className="bg-primary-darker width-full padding-y-4 padding-x-2 position-sticky bottom-0 z-top">
       <Grid row>
         <Grid col={12} tablet={{ col: 8 }} desktop={{ col: 6 }}>
-          <Selections providers={providers} setProviders={setProviders} />
+          <Selections />
         </Grid>
         <Grid col={12} tablet={{ col: 4 }} desktop={{ col: 6 }}>
           <Grid
@@ -29,17 +29,30 @@ function CompareSelector({ providers, setProviders }: CompareSelectorProps) {
               className="tablet:margin-left-2 dark-background font-family-heading text-center width-auto"
               type="button"
               unstyled
-              onClick={() => setProviders([])}
+              onClick={() => setSelectedCompareProviders([])}
             >
               {t("clear")}
             </Button>
-            <Button
-              className="tablet:margin-left-2 font-family-heading margin-0 width-auto"
-              type="button"
-              disabled={providers.length < 2}
-            >
-              {t("compareButton")}
-            </Button>
+            {selectedCompareProviders.length < 2 ? (
+              <Button
+                type="button"
+                className="usa-button tablet:margin-left-2 font-family-heading margin-0 width-auto text-black"
+                disabled
+              >
+                {t("compareButton")}
+              </Button>
+            ) : (
+              <Link
+                onClick={() => {
+                  logEvent(AnalyticsAction.ViewCompare);
+                }}
+                to={`/compare?id=${selectedCompareProviders[0].id}&id=${selectedCompareProviders[1].id}`}
+                state={{ prevSearch: location.search }}
+                className="usa-button tablet:margin-left-2 font-family-heading margin-0 width-auto"
+              >
+                {t("compareButton")}
+              </Link>
+            )}
           </Grid>
         </Grid>
       </Grid>

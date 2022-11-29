@@ -1,6 +1,5 @@
 import { Link as ExternalLink } from "@trussworks/react-uswds";
 import { Fragment } from "react";
-import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 import { CareProviderSearchResult } from "../../types";
@@ -23,10 +22,6 @@ function CompareDetail({
 
   return (
     <div className="display-flex height-full flex-column">
-      <p className="margin-y-2 text-bold">{data.searchRank}.</p>
-      <Link className="usa-link" to={`/result/${data.id}`}>
-        <h2 className="margin-top-0 margin-bottom-3">{data.name}</h2>
-      </Link>
       <div className="margin-bottom-3 display-none tablet:display-flex flex-wrap">
         {data.acceptingNewPatients && (
           <Badge

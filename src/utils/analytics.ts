@@ -14,10 +14,10 @@ export const logPageView = () => {
 
 export const logEvent = (
   action: AnalyticsAction,
-  properties: AnalyticsEventProperties
+  properties?: AnalyticsEventProperties
 ) => {
   initializeGA();
-  ReactGA.event(action, properties);
+  ReactGA.event(action, properties || {});
 };
 
 export enum AnalyticsAction {
@@ -31,6 +31,9 @@ export enum AnalyticsAction {
   SearchError = "Search error",
   ViewSearchResults = "View search results",
   ClickShare = "Click share",
+  SelectLocationForCompare = "Select location for compare",
+  ViewCompare = "View compare",
+  ReturnToSearch = "ReturnToSearch",
 }
 
 type AnalyticsEventProperties = {

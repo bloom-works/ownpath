@@ -30,12 +30,9 @@ function ResultsList({
               ? DESKTOP_CLASSES_ACTIVE
               : DESKTOP_CLASSES
           }
-          // Only set id in the desktop list to avoid creating
-          // duplicate DOM elements with same id in mobile list
-          id={isMobile ? undefined : result.id}
           key={result.id}
         >
-          <ResultCard data={result} />
+          <ResultCard data={result} isMobile={isMobile} />
         </div>
       ))}
     </>
