@@ -5,7 +5,7 @@ import { useState, useRef, useEffect } from "react";
 import { logEvent, AnalyticsAction } from "../../utils/analytics";
 import ResultsList from "../../components/Search/ResultsList";
 import ResultsMap from "../../components/Search/ResultsMap";
-import { CareProviderSearchResult } from "../../types";
+import { CareProviderSearchResult, Paging } from "../../types";
 import { getMapMarker, getResultBounds, rerenderMap } from "../../utils";
 
 /**
@@ -13,7 +13,13 @@ import { getMapMarker, getResultBounds, rerenderMap } from "../../utils";
  * which is visually hidden in mobile via CSS, but should still
  * be picked up by screen readers
  */
-function DesktopResults({ results }: { results: CareProviderSearchResult[] }) {
+function DesktopResults({
+  results,
+  paging,
+}: {
+  results: CareProviderSearchResult[];
+  paging: Paging;
+}) {
   const [selectedResultId, setSelectedResultId] = useState<string>("");
   const mapRef = useRef<LeafletMap>(null);
 
@@ -21,6 +27,7 @@ function DesktopResults({ results }: { results: CareProviderSearchResult[] }) {
   // filtered results correctly
   useEffect(() => {
     rerenderMap(mapRef, results);
+    console.log("Results", results.length);
   }, [mapRef, results]);
 
   return (
@@ -32,7 +39,15 @@ function DesktopResults({ results }: { results: CareProviderSearchResult[] }) {
           key="desktop-list"
           id="desktop-list"
         >
-          <ResultsList results={results} selectedResultId={selectedResultId} />
+          <h6 className="pagination-header">
+            Showing 1-20 of {results.length}
+          </h6>
+          <hr />
+          <ResultsList
+            paging={paging}
+            results={results}
+            selectedResultId={selectedResultId}
+          />
         </Grid>
         <Grid
           tablet={{ col: 5 }}

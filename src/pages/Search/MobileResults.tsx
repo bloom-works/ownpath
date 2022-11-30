@@ -8,7 +8,7 @@ import MobileViewToggle from "../../components/Search/MobileViewToggle";
 import ResultCard from "../../components/Search/ResultCard";
 import ResultsList from "../../components/Search/ResultsList";
 import ResultsMap from "../../components/Search/ResultsMap";
-import { CareProviderSearchResult } from "../../types";
+import { CareProviderSearchResult, Paging } from "../../types";
 import { getMapMarker, getResultBounds, rerenderMap } from "../../utils";
 import { ReactComponent as Close } from "../../images/close.svg";
 
@@ -18,7 +18,13 @@ import { ReactComponent as Close } from "../../images/close.svg";
  * and always hidden from screen readers (via aria-hidden=true)
  * to avoid duplication of results lists to screen readers
  */
-function MobileResults({ results }: { results: CareProviderSearchResult[] }) {
+function MobileResults({
+  results,
+  paging,
+}: {
+  results: CareProviderSearchResult[];
+  paging: Paging;
+}) {
   // Flag to track map vs list view
   const [isListView, setIsListView] = useState(true);
 
@@ -59,7 +65,7 @@ function MobileResults({ results }: { results: CareProviderSearchResult[] }) {
         onShowList={onShowList}
       />
       <div className={isListView ? "" : "display-none"} key="mobile-list">
-        <ResultsList results={results} isMobile />
+        <ResultsList paging={paging} results={results} isMobile />
       </div>
       <div className={isListView ? "display-none" : ""} key="mobile-map">
         <ResultsMap
@@ -114,7 +120,7 @@ function MobileResults({ results }: { results: CareProviderSearchResult[] }) {
           <Alert
             type="info"
             slim
-            headingLevel=""
+            headingLevel="h6"
             className="radius-lg margin-y-2"
           >
             {t("mapHelper")}

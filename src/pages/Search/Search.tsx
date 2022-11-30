@@ -18,7 +18,13 @@ import {
   MILE_DISTANCE_OPTIONS,
 } from "../../utils";
 import CARE_PROVIDER_DATA from "../../data/ladders_data.json";
-import { CareProvider, SearchFilters, SearchResult } from "../../types";
+import {
+  CareProvider,
+  CareProviderSearchResult,
+  SearchFilters,
+  SearchResult,
+  Paging,
+} from "../../types";
 import DesktopControl from "../../components/Search/Filters/Control/DesktopControl";
 import { AnalyticsAction, logEvent, logPageView } from "../../utils/analytics";
 import MobileControl from "../../components/Search/Filters/Control/MobileControl";
@@ -29,6 +35,7 @@ import { ReactComponent as Close } from "../../images/close.svg";
 import ShareButton, {
   ShareButtonContainer,
 } from "../../components/ShareButton";
+import ResultsPagination from "../../components/Pagination";
 import CompareSelector from "../../components/Compare/CompareSelector";
 
 const ResponsiveHeader = styled.h1`
@@ -71,6 +78,10 @@ export const CompareContext = createContext<{
   setSelectedCompareProviders: Dispatch<SetStateAction<CareProvider[]>>;
 }>({ selectedCompareProviders: [], setSelectedCompareProviders: () => {} });
 
+type SearchListProps = {
+  results: CareProviderSearchResult[];
+};
+
 function Search() {
   const { t, i18n } = useTranslation();
   // Search filters as URL search params
@@ -79,7 +90,6 @@ function Search() {
 
   // Filtered set of CareProviders OR error string
   const [searchResult, setSearchResult] = useState<SearchResult | null>(null);
-
   // flag to display change zip input
   const [showZipInput, setShowZipInput] = useState(false);
   // state var to hold zip to ensure changes are only applied after button click
@@ -136,6 +146,13 @@ function Search() {
     });
     setSearchResult(result);
   };
+
+  const [paging, setPaging] = useState<Paging>({
+    totalPages: 0,
+    currentPage: 1,
+    totalItems: 0,
+    pageSize: 20,
+  });
 
   useEffect(() => {
     // zip is the only required filter - redirect to homepage if it doesn't exist
@@ -240,14 +257,22 @@ function Search() {
             />
           </div>
 
-          {searchResult?.results.length ? (
-            <div>
-              <DesktopResults results={searchResult.results} />
-              <MobileResults results={searchResult.results} />
-            </div>
-          ) : (
-            <div className="p-5">
-              {isWidestRadius(searchFilters.miles) ? (
+        {searchResult?.results.length ? (
+          <div>
+            <DesktopResults paging={paging} results={searchResult.results} />
+            <MobileResults paging={paging} results={searchResult.results} />
+            <ResultsPagination paging={paging} results={searchResult.results} />
+          </div>
+        ) : (
+          <div className="p-5">
+            {isWidestRadius(searchFilters.miles) ? (
+              <p>
+                {t("noResultsFilters", {
+                  miles: searchFilters.miles,
+                })}
+              </p>
+            ) : (
+              <>
                 <p>
                   {t("noResultsFilters", {
                     miles: searchFilters.miles,

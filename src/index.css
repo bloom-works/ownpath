@@ -6,8 +6,8 @@
   --blue: #2f6fa7;
   --dark-blue: #05176c;
   --teal: #32747f;
-  --badge-bg-yellow: #F8D347;
-  --badge-bg-blue: #9AC6E5;
+  --badge-bg-yellow: #f8d347;
+  --badge-bg-blue: #9ac6e5;
 }
 
 @font-face {
@@ -282,4 +282,24 @@ code {
 
 .custom-map-marker-active > .map-marker-pin > .map-marker-text {
   color: #337ab7;
+}
+
+/* Pagination */
+
+.pagination-header {
+  margin-top: 1rem;
+  margin-left: 2.5rem;
+}
+
+.usa-pagination {
+  justify-content: left;
+  margin-left: 4rem;
+}
+
+.usa-pagination .usa-current {
+  background-color: var(--dark-blue);
+}
+
+.usa-pagination__button {
+  border-color: var(--grey);
 }

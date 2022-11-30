@@ -67,3 +67,10 @@ export type SearchFilters = {
   languages: Languages[];
   age?: AgeGroup;
 };
+
+export interface Paging {
+  totalPages: number;
+  currentPage: number;
+  totalItems: number;
+  pageSize: number;
+}
