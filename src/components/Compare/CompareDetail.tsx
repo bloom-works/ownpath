@@ -49,16 +49,18 @@ function CompareDetail({
             </ExternalLink>
           </>
         )}
-        {!!data.address?.length && (
+        {(!!data.address?.length || data.offersTelehealth) && (
           <>
             <h3 className="usa-sr-only">{t("address")}</h3>
             <div>
-              {data.address.map((addr, idx) => (
-                <Fragment key={idx}>
-                  {addr}
-                  <br />
-                </Fragment>
-              ))}
+              {data.address?.length
+                ? data.address.map((addr, idx) => (
+                    <Fragment key={idx}>
+                      {addr}
+                      <br />
+                    </Fragment>
+                  ))
+                : t("telehealthOnlyAddress")}
             </div>
           </>
         )}
