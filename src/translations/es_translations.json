@@ -59,6 +59,7 @@
   "dataCollectionAlert": "Nunca tendrá que crear una cuenta para utilizar este servicio, y no almacenamos ninguna información personal identificable sobre usted mientras utiliza este servicio.",
   "distanceQuestionyourself": "¿Qué tan lejos puedes trasladarte para obtener ayuda?",
   "distanceQuestionsomeone": "¿Qué tan lejos puede trasladarse tu ser querido para obtener ayuda?",
+  "telehealthIncludedAlert": "Los resultados de tu búsqueda también incluirán proveedores que solo ofrecen telemedicina (citas por teléfono o video) sin importar dónde estés ubicado en Colorado. ",
   "searchPageHeading_one": "{{ count }} resultado cercanos al {{ zip }}",
   "searchPageHeading_other": "{{ count }} resultados cercanos al {{ zip }} ",
   "searchPageTitle": "Resultados de búsqueda",

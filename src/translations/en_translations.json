@@ -59,6 +59,7 @@
   "dataCollectionAlert": "You’ll never need to create an account to use this service, and we do not store any personally identifiable information about you while using this service.",
   "distanceQuestionyourself": "How far can you travel for help?",
   "distanceQuestionsomeone": "How far can the person you care about travel for help?",
+  "telehealthIncludedAlert": "Your search results will also include providers who only offer telehealth (appointments by phone or video) regardless of where you're located in Colorado.",
   "searchPageHeading_one": "{{ count }} result near {{ zip }}",
   "searchPageHeading_other": "{{ count }} results near {{ zip }} ",
   "searchPageTitle": "Search results",
@@ -90,6 +91,10 @@
   "website": "Website",
   "details": "Details",
   "moreInfo": "Please call the provider for information",
+<<<<<<< HEAD
+=======
+  "moreInfoShort": "Call for hours",
+>>>>>>> Add telehealth only providers to search results
   "hours": "Hours of operation",
   "closed": "Closed",
   "populations": "Populations served",
