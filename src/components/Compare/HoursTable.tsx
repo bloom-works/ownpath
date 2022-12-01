@@ -29,22 +29,13 @@ function HoursTable({
 }) {
   const { t } = useTranslation();
 
-  const rowData =
-    !providerA.hours && !providerB.hours
-      ? [
-          {
-            label: "",
-            compareA: t("moreInfo"),
-            compareB: t("moreInfo"),
-          },
-        ]
-      : DAYS_OF_THE_WEEK.map((day) => {
-          return {
-            label: t(`hoursValues${day}`),
-            compareA: formatHoursDisplay(providerA.hours, day, t),
-            compareB: formatHoursDisplay(providerB.hours, day, t),
-          };
-        });
+  const rowData = DAYS_OF_THE_WEEK.map((day) => {
+    return {
+      label: t(`hoursValues${day}`),
+      compareA: formatHoursDisplay(providerA.hours, day, t),
+      compareB: formatHoursDisplay(providerB.hours, day, t),
+    };
+  });
 
   return <CompareStripedRows rows={rowData} title={t("hours")} />;
 }
