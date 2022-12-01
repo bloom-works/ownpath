@@ -23,7 +23,7 @@
     "eslint-plugin-unused-imports": "^2.0.0",
     "i18next": "~21.8.10",
     "i18next-browser-languagedetector": "~7.0.1",
-    "jest-axe": "^6.0.0",
+    "jest-axe": "^7.0.0",
     "leaflet": "~1.9.3",
     "react": "~18.2.0",
     "react-bootstrap": "^2.6.0",
