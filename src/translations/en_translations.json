@@ -91,10 +91,7 @@
   "website": "Website",
   "details": "Details",
   "moreInfo": "Please call the provider for information",
-<<<<<<< HEAD
-=======
   "moreInfoShort": "Call for hours",
->>>>>>> Add telehealth only providers to search results
   "hours": "Hours of operation",
   "closed": "Closed",
   "populations": "Populations served",
