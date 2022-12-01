@@ -3,6 +3,7 @@ import { Marker } from "react-leaflet";
 import { Navigate, useLocation, useParams } from "react-router-dom";
 import { Trans, useTranslation } from "react-i18next";
 
+import { ReactComponent as Telehealth } from "../images/telehealth.svg";
 import { ReactComponent as Populations } from "../images/populations.svg";
 import { ReactComponent as Accessibility } from "../images/accessibility.svg";
 import { ReactComponent as Languages } from "../images/languages.svg";
@@ -107,6 +108,23 @@ function ResultDetail() {
         <Grid col={12} tablet={{ col: 6 }}>
           <section>
             <h2 className="margin-top-1">{t("details")}</h2>
+            <div>
+              <div className="display-flex flex-align-center margin-bottom-05">
+                <Telehealth
+                  height={14}
+                  className="data-icon width-3 margin-right-1"
+                />
+                <h3 className="margin-0">{t("telehealth")}: </h3>
+              </div>
+              <ul className="margin-bottom-1">
+                <li className="line-height-body-4">
+                  {data.offersTelehealth ? t("available") : t("notAvailable")}
+                </li>
+              </ul>
+              <div className="margin-left-4 margin-bottom-2 font-body-3xs">
+                {t("telehealthAvailableNote")}
+              </div>
+            </div>
 
             <div>
               <div className="display-flex flex-align-center margin-bottom-05">

@@ -84,12 +84,7 @@ function BasicResultDetail({ result, isCondensed }: BasicResultDetailProps) {
           {t("feesTitle")}
         </h3>
         {!!anyAreTrue(result.fees) ? (
-          <>
-            <FeesInfo fees={result.fees} isCondensed={isCondensed} />
-            {/* <Button type="button" unstyled className="font-ui-xs">
-                What do these mean?
-              </Button> */}
-          </>
+          <FeesInfo fees={result.fees} isCondensed={isCondensed} />
         ) : (
           t("moreInfo")
         )}
