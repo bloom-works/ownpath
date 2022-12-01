@@ -166,12 +166,22 @@ export default function Compare() {
       </Grid>
       <hr className="margin-y-4" />
       <TelehealthTable providerA={providerA} providerB={providerB} />
+
       <HoursTable providerA={providerA} providerB={providerB} />
       <FeesTable providerA={providerA} providerB={providerB} />
-      <h2>{t("services")}</h2>
-      <hr className="margin-bottom-3" />
+
+      {providerA.substanceUse.supported &&
+        providerB.substanceUse.supported &&
+        providerA.mentalHealth.supported &&
+        providerB.mentalHealth.supported && (
+          <>
+            <h2>{t("services")}</h2>
+            <hr className="margin-bottom-3" />
+          </>
+        )}
       <SubstanceUseServicesTable providerA={providerA} providerB={providerB} />
       <MentalHealthServicesTable providerA={providerA} providerB={providerB} />
+
       <h2>{t("details")}</h2>
       <hr className="margin-bottom-3" />
       <PopulationsTable providerA={providerA} providerB={providerB} />

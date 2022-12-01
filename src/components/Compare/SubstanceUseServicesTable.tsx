@@ -12,6 +12,10 @@ function SubstanceUseServicesTable({
 }) {
   const { t } = useTranslation();
 
+  if (!providerA.substanceUse.supported && !providerB.substanceUse.supported) {
+    return <></>;
+  }
+
   const rowData = SUBSTANCE_USE_SERVICES.map((service) => {
     return {
       label: t(service),
