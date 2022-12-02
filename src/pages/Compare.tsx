@@ -25,6 +25,7 @@ import LanguagesTable from "../components/Compare/LanguagesTable";
 import MentalHealthServicesTable from "../components/Compare/MentalHealthServicesTable";
 import SubstanceUseServicesTable from "../components/Compare/SubstanceUseServicesTable";
 import AccessibilityTable from "../components/Compare/AccessibilityTable";
+import TelehealthTable from "../components/Compare/TelehealthTable";
 
 const ShadowHR = styled.hr`
   box-shadow: 0 4px 8px 0 black;
@@ -164,6 +165,7 @@ export default function Compare() {
         </Grid>
       </Grid>
       <hr className="margin-y-4" />
+      <TelehealthTable providerA={providerA} providerB={providerB} />
       <HoursTable providerA={providerA} providerB={providerB} />
       <FeesTable providerA={providerA} providerB={providerB} />
       <h2>{t("services")}</h2>
