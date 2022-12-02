@@ -116,6 +116,16 @@ const getLatLng = (row: InputRow): LatLngLiteral | null => {
   return null;
 };
 
+const getFormattedPhone = (row: InputRow): string => {
+  let phoneNumber = "";
+  const phoneRegex = /\(?(\d{3})\)?[-\s]?(\d{3})[-\s]?(\d{4})/;
+  const match = row.Phone.match(phoneRegex);
+  if (match) {
+    phoneNumber = `(${match[1]}) ${match[2]}-${match[3]}`;
+  }
+  return phoneNumber;
+};
+
 const transformRow = (row: InputRow): CareProvider => {
   const hideAddress = !!(row.HideAddress === "1");
   const substanceUseServices = splitBySemicolons(row.SubstanceUseServices);
@@ -123,7 +133,7 @@ const transformRow = (row: InputRow): CareProvider => {
   const cleaned = {
     id: row.AccountID,
     name: row.DisplayName,
-    phone: row.Phone,
+    phone: getFormattedPhone(row),
     hideAddress,
     acceptingNewPatients: !!row.AcceptingNewPatients,
     address:
@@ -142,7 +152,10 @@ const transformRow = (row: InputRow): CareProvider => {
         row.OpioidTreatmentPrograms === "1"
       ),
       duiSupported: row.DUIDWI === "1",
-      services: { PeerSupport: !!(row.ActiveRSSOLicense === "1"), ...getBooleanMap(SUBSTANCE_USE_SERVICES, substanceUseServices) },
+      services: {
+        PeerSupport: !!(row.ActiveRSSOLicense === "1"),
+        ...getBooleanMap(SUBSTANCE_USE_SERVICES, substanceUseServices),
+      },
     },
     mentalHealth: {
       supported: !!(
@@ -166,7 +179,7 @@ const transformRow = (row: InputRow): CareProvider => {
     languages: getBooleanMap(LANGUAGES, splitBySemicolons(row.LanguagesSpoken)),
     latlng: getLatLng(row),
     lastUpdatedDate: row.ProviderDirectoryFormModifiedDate,
-    offersTelehealth: !!row.OffersTelehealth
+    offersTelehealth: !!row.OffersTelehealth,
   };
   return cleaned;
 };
