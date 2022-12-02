@@ -81,7 +81,7 @@
   "mapHelper": "Tap a marker to pull up information for that location. To zoom in or out on the map on a mobile device, use a two finger pinching gesture.",
   "fullDetail": "Full detail about this provider",
   "milesAway": "{{ miles }} miles away",
-  "compareCheckbox": "Compare location",
+  "compareCheckbox": "Compare provider",
   "detailsPageShare": "Share link",
   "backToSearch": "Back to search",
   "getDirections": "Get directions",

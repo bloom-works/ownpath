@@ -48,10 +48,13 @@ const DUMMY_CARE_PROVIDER: CareProvider = {
   substanceUse: {
     supported: false,
     duiSupported: false,
-    services: { PeerSupport: true, ...SUBSTANCE_USE_SERVICES.reduce((map, val) => {
-      map[val] = false;
-      return map;
-    }, {} as { [key in SubstanceUseServices]: boolean })},
+    services: {
+      PeerSupport: true,
+      ...SUBSTANCE_USE_SERVICES.reduce((map, val) => {
+        map[val] = false;
+        return map;
+      }, {} as { [key in SubstanceUseServices]: boolean }),
+    },
   },
   mentalHealth: {
     supported: false,
@@ -79,7 +82,7 @@ const DUMMY_CARE_PROVIDER: CareProvider = {
   }, {} as { [key in Languages]: boolean }),
   latlng: null,
   lastUpdatedDate: "7/7/2022 7:00 AM",
-  offersTelehealth: true
+  offersTelehealth: true,
 };
 
 const DUMMY_CARE_PROVIDER_RESULT = { ...DUMMY_CARE_PROVIDER, searchRank: 1 };
@@ -143,9 +146,16 @@ describe("isWithinRadius", () => {
     }
   );
 
-  test("it returns false if there is no distance", () => {
-    const result = isWithinRadius(DUMMY_CARE_PROVIDER_RESULT, 1000);
+  test("it returns false if there is no distance and telehealth is not provided", () => {
+    const result = isWithinRadius(
+      { ...DUMMY_CARE_PROVIDER_RESULT, offersTelehealth: false },
+      1000
+    );
     expect(result).toEqual(false);
+  });
+  test("it returns true if there is no distance and telehealth is provided", () => {
+    const result = isWithinRadius(DUMMY_CARE_PROVIDER_RESULT, 1000);
+    expect(result).toEqual(true);
   });
 });
 
@@ -184,11 +194,16 @@ describe("applySearchFilters", () => {
     });
   });
 
-  test("it returns CareProviders within radius, excluding those that are too far or do not have lat/lng data", () => {
+  test("it returns CareProviders within radius and those without distance but with telehealth, excluding those that are too far and those without distance and without telehealth", () => {
     const DATA = [
       {
         ...DUMMY_CARE_PROVIDER,
-        id: "no-distance",
+        id: "telehealth",
+      },
+      {
+        ...DUMMY_CARE_PROVIDER,
+        offersTelehealth: false,
+        id: "no-telehealth",
       },
       {
         ...DUMMY_CARE_PROVIDER,
@@ -213,12 +228,13 @@ describe("applySearchFilters", () => {
       miles: `${DEFAULT_RADIUS_MILES}`,
     });
 
-    // Only 'close' and 'further' should be returned in results
-    expect(results).toHaveLength(2);
+    // Only 'close', 'further', and 'telehealth' should be returned in results
+    expect(results).toHaveLength(3);
 
-    // and results should be sorted by distance
+    // and results should be sorted by distance with the no-distance results at the end
     expect(results[0].id).toEqual("close");
     expect(results[1].id).toEqual("further");
+    expect(results[2].id).toEqual("telehealth");
   });
 });
 
