@@ -9,8 +9,6 @@ import Badge from "../Badge";
 import { ReactComponent as BadgeCheck } from "../../images/badge-check.svg";
 import { ReactComponent as Telehealth } from "../../images/telehealth.svg";
 
-// TODO: add badges for telehealth and accepting new patients when we have them
-
 function CompareDetail({
   data,
   zip,
@@ -26,7 +24,7 @@ function CompareDetail({
         {data.acceptingNewPatients && (
           <Badge
             bgColor="blue"
-            Icon={BadgeCheck}
+            Icon={<BadgeCheck />}
             text={t("acceptingNewPatients")}
             showTooltip
             tooltipText={t("acceptingNewPatientsNote")}
@@ -35,7 +33,7 @@ function CompareDetail({
         {data.offersTelehealth && (
           <Badge
             bgColor="yellow"
-            Icon={Telehealth}
+            Icon={<Telehealth height={13} />}
             text={t("telehealthAvailable")}
           />
         )}

@@ -33,7 +33,7 @@ function BasicResultDetail({ result, isCondensed }: BasicResultDetailProps) {
         {result.acceptingNewPatients && (
           <Badge
             bgColor="blue"
-            Icon={BadgeCheck}
+            Icon={<BadgeCheck />}
             text={t("acceptingNewPatients")}
             showTooltip
             tooltipText={t("acceptingNewPatientsNote")}
@@ -42,7 +42,7 @@ function BasicResultDetail({ result, isCondensed }: BasicResultDetailProps) {
         {result.offersTelehealth && (
           <Badge
             bgColor="yellow"
-            Icon={Telehealth}
+            Icon={<Telehealth height={13} />}
             text={t("telehealthAvailable")}
             showTooltip
             tooltipText={t("telehealthAvailableNote")}
