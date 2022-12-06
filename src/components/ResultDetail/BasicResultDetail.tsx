@@ -51,7 +51,11 @@ function BasicResultDetail({ result, isCondensed }: BasicResultDetailProps) {
       </div>
       <div className="margin-bottom-3">
         {result.phone && (
-          <ResultDatum Icon={Telephone} key="telephone">
+          <ResultDatum
+            Icon={Telephone}
+            iconClassName="margin-top-05"
+            key="telephone"
+          >
             <h3 className="usa-sr-only">{t("telephoneNumber")}</h3>
             <Link variant="external" href={`tel:${result.phone}`}>
               {result.phone}
@@ -61,6 +65,7 @@ function BasicResultDetail({ result, isCondensed }: BasicResultDetailProps) {
         {(!!result.address?.length || result.offersTelehealth) && (
           <ResultDatum
             Icon={result.address?.length ? Location : Telehealth}
+            iconClassName={"margin-top-05"}
             key="address"
           >
             <h3 className="usa-sr-only">{t("address")}</h3>
