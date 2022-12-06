@@ -34,9 +34,7 @@ export enum AnalyticsAction {
   SelectLocationForCompare = "Select location for compare",
   ViewCompare = "View compare",
   ReturnToSearch = "ReturnToSearch",
-  ClickNext = "Click Next Page Button",
-  ClickPrevious = "Click Previous Page Button",
-  ClickPageNumber = "Click Page Number",
+  ClickPaginationButton = "Click Pagination Button for results",
 }
 
 type AnalyticsEventProperties = {

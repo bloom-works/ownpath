@@ -34,6 +34,7 @@ function ResultsPagination({
   results: CareProviderSearchResult[];
 }) {
   const { paging, setPaging } = useContext(PaginationContext);
+  const pageNumber = paging.currentPage;
 
   useEffect(() => {
     setPaging((paging) => ({
@@ -45,8 +46,7 @@ function ResultsPagination({
   }, []);
 
   const clickNext = () => {
-    const pageNumber = paging.currentPage;
-    logEvent(AnalyticsAction.ClickNext, { pageNumber });
+    logEvent(AnalyticsAction.ClickPaginationButton, { pageNumber });
     setPaging((paging) => ({
       ...paging,
       currentPage: paging.currentPage++,
@@ -54,8 +54,7 @@ function ResultsPagination({
   };
 
   const clickPrevious = () => {
-    const pageNumber = paging.currentPage;
-    logEvent(AnalyticsAction.ClickNext, { pageNumber });
+    logEvent(AnalyticsAction.ClickPaginationButton, { pageNumber });
     setPaging((paging) => ({
       ...paging,
       currentPage: paging.currentPage--,
@@ -63,8 +62,7 @@ function ResultsPagination({
   };
 
   const clickPageNumber = (page: any) => {
-    const pageNumber = paging.currentPage;
-    logEvent(AnalyticsAction.ClickNext, { pageNumber });
+    logEvent(AnalyticsAction.ClickPaginationButton, { pageNumber });
     setPaging((paging) => ({
       ...paging,
       currentPage: parseInt(page.target.innerHTML),
