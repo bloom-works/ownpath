@@ -59,7 +59,10 @@ function BasicResultDetail({ result, isCondensed }: BasicResultDetailProps) {
           </ResultDatum>
         )}
         {(!!result.address?.length || result.offersTelehealth) && (
-          <ResultDatum Icon={Location} key="address">
+          <ResultDatum
+            Icon={result.address?.length ? Location : Telehealth}
+            key="address"
+          >
             <h3 className="usa-sr-only">{t("address")}</h3>
             <div>
               {result.address?.length
