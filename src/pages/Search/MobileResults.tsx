@@ -114,7 +114,7 @@ function MobileResults({ results }: { results: CareProviderSearchResult[] }) {
           <Alert
             type="info"
             slim
-            headingLevel=""
+            headingLevel="h5"
             className="radius-lg margin-y-2"
           >
             {t("mapHelper")}

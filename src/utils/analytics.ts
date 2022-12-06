@@ -34,6 +34,9 @@ export enum AnalyticsAction {
   SelectLocationForCompare = "Select location for compare",
   ViewCompare = "View compare",
   ReturnToSearch = "ReturnToSearch",
+  ClickNext = "Click Next Page Button",
+  ClickPrevious = "Click Previous Page Button",
+  ClickPageNumber = "Click Page Number",
 }
 
 type AnalyticsEventProperties = {
@@ -45,4 +48,5 @@ type AnalyticsEventProperties = {
   search?: string;
   step?: number;
   url?: string;
+  pageNumber?: number;
 };
