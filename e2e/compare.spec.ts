@@ -2,10 +2,10 @@ import { test, expect } from "@playwright/test";
 import CARE_PROVIDER_DATA from "../src/data/ladders_data.json";
 
 const baseURL = process.env.URL || "http://localhost:3000";
+const providerA = CARE_PROVIDER_DATA[0];
+const providerB = CARE_PROVIDER_DATA[1];
 test.beforeEach(async ({ page }) => {
-  await page.goto(
-    `${baseURL}/compare?id=${CARE_PROVIDER_DATA[0].id}&id=${CARE_PROVIDER_DATA[1].id}`
-  );
+  await page.goto(`${baseURL}/compare?id=${providerA.id}&id=${providerB.id}`);
 });
 
 test("Compare displays all expected elements", async ({ page }) => {
@@ -30,8 +30,14 @@ test("Compare displays all expected elements", async ({ page }) => {
   expect(await getDirectionsLink.count()).toEqual(2);
   expect(await hoursOfOperationTable.count()).toEqual(1);
   expect(await paymentTypesAccepted.count()).toEqual(1);
-  expect(await services.count()).toEqual(1);
-  expect(await substanceUse.count()).toEqual(1);
-  expect(await mentalHealth.count()).toEqual(1);
+
+  const hasMentalHealth =
+    providerA.mentalHealth.supported || providerB.mentalHealth.supported;
+  const hasSubstanceUse =
+    providerA.substanceUse.supported || providerB.substanceUse.supported;
+  const hasServices = hasMentalHealth || hasSubstanceUse;
+  expect(await services.count()).toEqual(hasServices ? 1 : 0);
+  expect(await substanceUse.count()).toEqual(hasSubstanceUse ? 1 : 0);
+  expect(await mentalHealth.count()).toEqual(hasMentalHealth ? 1 : 0);
   expect(await details.count()).toEqual(1);
 });
