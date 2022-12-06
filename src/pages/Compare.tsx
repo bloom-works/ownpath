@@ -170,15 +170,15 @@ export default function Compare() {
       <HoursTable providerA={providerA} providerB={providerB} />
       <FeesTable providerA={providerA} providerB={providerB} />
 
-      {providerA.substanceUse.supported &&
-        providerB.substanceUse.supported &&
-        providerA.mentalHealth.supported &&
-        providerB.mentalHealth.supported && (
-          <>
-            <h2>{t("services")}</h2>
-            <hr className="margin-bottom-3" />
-          </>
-        )}
+      {(providerA.substanceUse.supported ||
+        providerB.substanceUse.supported ||
+        providerA.mentalHealth.supported ||
+        providerB.mentalHealth.supported) && (
+        <>
+          <h2>{t("services")}</h2>
+          <hr className="margin-bottom-3" />
+        </>
+      )}
       <SubstanceUseServicesTable providerA={providerA} providerB={providerB} />
       <MentalHealthServicesTable providerA={providerA} providerB={providerB} />
 
