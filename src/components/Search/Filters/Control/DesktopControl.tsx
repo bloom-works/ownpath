@@ -11,6 +11,7 @@ import AccessibilityInput from "../AccessibilityInput";
 import DistanceInput from "../DistanceInput";
 import ControlToggles from "./DesktopControlToggles";
 import AgeGroupInput from "../AgeGroupInput";
+import TelehealthInput from "../TelehealthInput";
 
 type DesktopControlProps = {
   filters: SearchFilters;
@@ -34,81 +35,14 @@ function DesktopControl({
       <Grid row className="margin-bottom-2">
         <h2 className="usa-sr-only">{t("filterBy")}</h2>
         <DesktopControlDropdown
-          title={t("typeOfHelpTitle")}
-          hasSelection={!!filters.typesOfHelp?.length}
-          clear={() => setFilters({ ...filters, typesOfHelp: [] })}
-        >
-          <TypeOfHelpInput
-            legend={t("typeOfHelpTitle")}
-            isMobile
-            options={[
-              TypeOfHelp.MentalHealth,
-              TypeOfHelp.CourtMandatedTreatment,
-              TypeOfHelp.SubstanceUse,
-              TypeOfHelp.SuicidalIdeation,
-            ]}
-            optionLabelPrefix="typeOfHelpValues"
-            filters={filters}
-            setFilters={setFilters}
-          />
-        </DesktopControlDropdown>
-        <DesktopControlDropdown
-          title={t("feesTitle")}
-          hasSelection={!!filters.feePreferences?.length}
-          clear={() => setFilters({ ...filters, feePreferences: [] })}
-        >
-          <FeePreferenceInput
-            legend={t("feesTitle")}
-            isMobile
-            options={["PrivateInsurance", "Medicaid", "SlidingFeeScale"]}
-            optionLabelPrefix="feesValues"
-            filters={filters}
-            setFilters={setFilters}
-          />
-        </DesktopControlDropdown>
-        <DesktopControlDropdown
-          title={t("hoursTitle")}
-          hasSelection={!!filters.hours?.length}
-          clear={() => setFilters({ ...filters, hours: [] })}
-        >
-          <HoursInput isMobile filters={filters} setFilters={setFilters} />
-        </DesktopControlDropdown>
-        <DesktopControlDropdown
-          title={t("languageTitle")}
-          hasSelection={!!filters.languages?.length}
-          clear={() => setFilters({ ...filters, languages: [] })}
-        >
-          <LanguageInput
-            legend={t("languageTitle")}
-            isMobile
-            filters={filters}
-            setFilters={setFilters}
-          />
-        </DesktopControlDropdown>
-        <DesktopControlDropdown
           title={t("accessibilityTitle")}
           hasSelection={!!filters.accessibility?.length}
           clear={() => setFilters({ ...filters, accessibility: [] })}
         >
           <AccessibilityInput
-            isMobile
+            compact
             filters={filters}
             setFilters={setFilters}
-          />
-        </DesktopControlDropdown>
-        <DesktopControlDropdown
-          title={t("distanceTitle")}
-          hasSelection={showDistanceActive || distanceUpdatedExternally}
-        >
-          <DistanceInput
-            key={filters.miles}
-            legend={t("distanceTitle")}
-            isMobile
-            filters={filters}
-            setFilters={(_filters) => {
-              setShowDistanceActive(true);
-              setFilters(_filters);
-            }}
           />
         </DesktopControlDropdown>
         <DesktopControlDropdown
@@ -122,7 +56,85 @@ function DesktopControl({
         >
           <AgeGroupInput
             legend={t("ageTitle")}
-            isMobile
+            compact
+            filters={filters}
+            setFilters={setFilters}
+          />
+        </DesktopControlDropdown>
+        <DesktopControlDropdown
+          title={t("distanceTitle")}
+          hasSelection={showDistanceActive || distanceUpdatedExternally}
+        >
+          <DistanceInput
+            key={filters.miles}
+            legend={t("distanceTitle")}
+            compact
+            filters={filters}
+            setFilters={(_filters) => {
+              setShowDistanceActive(true);
+              setFilters(_filters);
+            }}
+          />
+        </DesktopControlDropdown>
+        <DesktopControlDropdown
+          title={t("feesTitle")}
+          hasSelection={!!filters.feePreferences?.length}
+          clear={() => setFilters({ ...filters, feePreferences: [] })}
+        >
+          <FeePreferenceInput
+            legend={t("feesTitle")}
+            compact
+            options={["PrivateInsurance", "Medicaid", "SlidingFeeScale"]}
+            optionLabelPrefix="feesValues"
+            filters={filters}
+            setFilters={setFilters}
+          />
+        </DesktopControlDropdown>
+        <DesktopControlDropdown
+          title={t("hoursTitle")}
+          hasSelection={!!filters.hours?.length}
+          clear={() => setFilters({ ...filters, hours: [] })}
+        >
+          <HoursInput compact filters={filters} setFilters={setFilters} />
+        </DesktopControlDropdown>
+        <DesktopControlDropdown
+          title={t("languageTitle")}
+          hasSelection={!!filters.languages?.length}
+          clear={() => setFilters({ ...filters, languages: [] })}
+        >
+          <LanguageInput
+            legend={t("languageTitle")}
+            compact
+            filters={filters}
+            setFilters={setFilters}
+          />
+        </DesktopControlDropdown>
+        <DesktopControlDropdown
+          title={t("telehealthTitle")}
+          hasSelection={!!filters.telehealth}
+        >
+          <TelehealthInput
+            legend={t("telehealthTitle")}
+            compact
+            filters={filters}
+            setFilters={setFilters}
+          />
+        </DesktopControlDropdown>
+        <DesktopControlDropdown
+          title={t("typeOfHelpTitle")}
+          hasSelection={!!filters.typesOfHelp?.length}
+          clear={() => setFilters({ ...filters, typesOfHelp: [] })}
+        >
+          <TypeOfHelpInput
+            legend={t("typeOfHelpTitle")}
+            compact
+            options={[
+              TypeOfHelp.MentalHealth,
+              TypeOfHelp.CourtMandatedTreatment,
+              TypeOfHelp.SubstanceUse,
+              TypeOfHelp.SuicidalIdeation,
+            ]}
+            optionLabelPrefix="typeOfHelpValues"
             filters={filters}
             setFilters={setFilters}
           />

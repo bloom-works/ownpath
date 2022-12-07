@@ -8,6 +8,7 @@ import {
   Languages,
   SearchFilters,
   SearchResult,
+  Telehealth,
   TypeOfHelp,
   UnrankedCareProviderSearchResult,
   ZipData,
@@ -25,6 +26,7 @@ import {
   getDefaultRadius,
 } from "./filters";
 import { supportsLanguages } from "./filters/languages";
+import { providesTelehealth } from "./filters/telehealth";
 
 export const getDistanceToZipCenter = (
   zip: string | null,
@@ -79,6 +81,7 @@ export function applySearchFilters(
     hours,
     languages,
     age,
+    telehealth,
   } = filters;
 
   const zipSearchMetadata = getZipSearchMetadata(zip);
@@ -100,7 +103,8 @@ export function applySearchFilters(
         meetsAccessibilityNeeds(result, accessibility) &&
         isOpenOnSelectedDays(result, hours) &&
         supportsLanguages(result, languages) &&
-        servesAgeGroup(result, age)
+        servesAgeGroup(result, age) &&
+        providesTelehealth(result, telehealth)
     )
     .sort(compareDistance)
     .map((result, idx) => {
@@ -152,8 +156,10 @@ export function getFiltersFromSearchParams(
     hours: searchParams.getAll("hours") as DayOfWeek[],
     languages: searchParams.getAll("languages") as Languages[],
     age: searchParams.get("age") as AgeGroup,
+    telehealth: searchParams.get("telehealth") as Telehealth,
   };
 
   if (!filters.age) delete filters.age;
+  if (!filters.telehealth) delete filters.telehealth;
   return filters;
 }
