@@ -2,10 +2,10 @@ import { LatLngLiteral } from "leaflet";
 
 export type DailyHours =
   | {
-    open: true;
-    start: string;
-    end: string;
-  }
+      open: true;
+      start: string;
+      end: string;
+    }
   | { open: false };
 
 export enum DayOfWeek {
@@ -109,13 +109,13 @@ export const LANGUAGES = [
   "Cambodian",
   "Mongolian",
   "Cantonese",
+  "AmericanSignLanguage(ASL)",
 ] as const;
 export type Languages = typeof LANGUAGES[number];
 
-export const ACCEPTING_NEW_PATIENTS_OPTIONS = [
-  "Yes"
-] as const;
-export type AcceptingNewPatientsOptions = typeof ACCEPTING_NEW_PATIENTS_OPTIONS[number];
+export const ACCEPTING_NEW_PATIENTS_OPTIONS = ["Yes"] as const;
+export type AcceptingNewPatientsOptions =
+  typeof ACCEPTING_NEW_PATIENTS_OPTIONS[number];
 
 export const TELEHEALTH_OPTIONS = [
   "Telehealth Only",
@@ -142,7 +142,9 @@ export type CareProvider = {
     relects the parsed values as keys from SubstanceUseServices and the additional PeerSupport property
     that is set by the ActiveRSSOLicense column.
     */
-    services: { [key in SubstanceUseServices]: boolean } & { PeerSupport: boolean };
+    services: { [key in SubstanceUseServices]: boolean } & {
+      PeerSupport: boolean;
+    };
   };
   mentalHealth: {
     supported: boolean;
