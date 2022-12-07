@@ -36,7 +36,7 @@ type ConditionalBadgeProps =
 
 type CommonBadgeProps = {
   bgColor: "blue" | "yellow";
-  Icon: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
+  Icon: React.ReactNode;
   text: string;
 };
 
@@ -70,9 +70,7 @@ export default function Badge({
       style={{ background: `var(--badge-bg-${bgColor})` }}
       className="text-no-wrap"
     >
-      <span className="badge-icon">
-        <Icon />
-      </span>{" "}
+      <span className="badge-icon">{Icon}</span>{" "}
       <span className="badge-text">{text}</span>
     </StyledBadge>
   );

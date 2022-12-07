@@ -187,11 +187,16 @@ function GuidedSearch() {
               </div>
             </>
           ) : currentStep === "distance" ? (
-            <DistanceInput
-              legend={t(`distanceQuestion${helpRecipient}`)}
-              filters={searchFilters}
-              setFilters={setSearchFilters}
-            />
+            <>
+              <DistanceInput
+                legend={t(`distanceQuestion${helpRecipient}`)}
+                filters={searchFilters}
+                setFilters={setSearchFilters}
+              />
+              <div className="margin-y-2">
+                <AppAlert Icon={Info}>{t("telehealthIncludedAlert")}</AppAlert>
+              </div>
+            </>
           ) : (
             <></>
           )}

@@ -33,7 +33,7 @@ function BasicResultDetail({ result, isCondensed }: BasicResultDetailProps) {
         {result.acceptingNewPatients && (
           <Badge
             bgColor="blue"
-            Icon={BadgeCheck}
+            Icon={<BadgeCheck />}
             text={t("acceptingNewPatients")}
             showTooltip
             tooltipText={t("acceptingNewPatientsNote")}
@@ -42,7 +42,7 @@ function BasicResultDetail({ result, isCondensed }: BasicResultDetailProps) {
         {result.offersTelehealth && (
           <Badge
             bgColor="yellow"
-            Icon={Telehealth}
+            Icon={<Telehealth height={13} />}
             text={t("telehealthAvailable")}
             showTooltip
             tooltipText={t("telehealthAvailableNote")}
@@ -51,23 +51,33 @@ function BasicResultDetail({ result, isCondensed }: BasicResultDetailProps) {
       </div>
       <div className="margin-bottom-3">
         {result.phone && (
-          <ResultDatum Icon={Telephone} key="telephone">
+          <ResultDatum
+            Icon={Telephone}
+            iconClassName="margin-top-05"
+            key="telephone"
+          >
             <h3 className="usa-sr-only">{t("telephoneNumber")}</h3>
             <Link variant="external" href={`tel:${result.phone}`}>
               {result.phone}
             </Link>
           </ResultDatum>
         )}
-        {!!result.address?.length && (
-          <ResultDatum Icon={Location} key="address">
+        {(!!result.address?.length || result.offersTelehealth) && (
+          <ResultDatum
+            Icon={result.address?.length ? Location : Telehealth}
+            iconClassName={"margin-top-05"}
+            key="address"
+          >
             <h3 className="usa-sr-only">{t("address")}</h3>
             <div>
-              {result.address.map((addr, idx) => (
-                <Fragment key={idx}>
-                  {addr}
-                  <br />
-                </Fragment>
-              ))}
+              {result.address?.length
+                ? result.address.map((addr, idx) => (
+                    <Fragment key={idx}>
+                      {addr}
+                      <br />
+                    </Fragment>
+                  ))
+                : t("telehealthOnlyAddress")}
             </div>
           </ResultDatum>
         )}
@@ -84,12 +94,7 @@ function BasicResultDetail({ result, isCondensed }: BasicResultDetailProps) {
           {t("feesTitle")}
         </h3>
         {!!anyAreTrue(result.fees) ? (
-          <>
-            <FeesInfo fees={result.fees} isCondensed={isCondensed} />
-            {/* <Button type="button" unstyled className="font-ui-xs">
-                What do these mean?
-              </Button> */}
-          </>
+          <FeesInfo fees={result.fees} isCondensed={isCondensed} />
         ) : (
           t("moreInfo")
         )}

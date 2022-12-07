@@ -49,7 +49,7 @@ export default function ResultCard({ data, isMobile }: ResultCardProps) {
         <p className="margin-top-0 margin-bottom-0 text-bold">
           {data.searchRank}.
         </p>
-        <MilesAway meters={data.distance} />
+        {data.distance && <MilesAway meters={data.distance} />}
       </div>
       <Link
         className="usa-link"
