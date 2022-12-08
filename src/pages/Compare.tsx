@@ -108,29 +108,31 @@ export default function Compare() {
       <Grid row>
         <Grid col={12}>
           <h1 className="margin-top-0">Compare locations</h1>
-          <ResultsMap
-            bounds={getResultBounds([providerA, providerB])}
-            isMobile={true}
-          >
-            {providerA.latlng && (
-              <Marker
-                title={providerA.id}
-                position={providerA.latlng}
-                icon={getMapMarker(providerA)}
-                key={providerA.id}
-                interactive={false}
-              />
-            )}
-            {providerB.latlng && (
-              <Marker
-                title={providerB.id}
-                position={providerB.latlng}
-                icon={getMapMarker(providerB)}
-                key={providerB.id}
-                interactive={false}
-              />
-            )}
-          </ResultsMap>
+          {providerA.latlng && providerB.latlng && (
+            <ResultsMap
+              bounds={getResultBounds([providerA, providerB])}
+              isMobile={true}
+            >
+              {providerA.latlng && (
+                <Marker
+                  title={providerA.id}
+                  position={providerA.latlng}
+                  icon={getMapMarker(providerA)}
+                  key={providerA.id}
+                  interactive={false}
+                />
+              )}
+              {providerB.latlng && (
+                <Marker
+                  title={providerB.id}
+                  position={providerB.latlng}
+                  icon={getMapMarker(providerB)}
+                  key={providerB.id}
+                  interactive={false}
+                />
+              )}
+            </ResultsMap>
+          )}
         </Grid>
       </Grid>
       <Grid
