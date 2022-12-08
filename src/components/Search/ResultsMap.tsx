@@ -4,6 +4,7 @@ import {
   Map as LeafletMap,
 } from "leaflet";
 import { Ref, PropsWithChildren } from "react";
+import { ZoomControl } from "react-leaflet";
 import Map from "../Map";
 
 export type ResultsMapProps = {
@@ -37,6 +38,7 @@ function ResultsMap({
       mapRef={mapRef}
       eventHandlers={{ click: onClick }}
     >
+      {!isMobile && <ZoomControl position="topright" />}
       {children}
     </Map>
   );

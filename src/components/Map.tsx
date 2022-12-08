@@ -8,7 +8,6 @@ import {
   TileLayer,
   TileLayerProps,
   useMapEvents,
-  ZoomControl,
 } from "react-leaflet";
 import { CSSProperties, PropsWithChildren, Ref } from "react";
 import { useEffect } from "react";
@@ -53,7 +52,6 @@ function Map({
       ref={mapRef}
       keyboard={false}
     >
-      <ZoomControl position="topright" />
       <MapEvents eventHandlers={eventHandlers} />
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
