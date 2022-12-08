@@ -18,7 +18,12 @@ import {
   MILE_DISTANCE_OPTIONS,
 } from "../../utils";
 import CARE_PROVIDER_DATA from "../../data/ladders_data.json";
-import { CareProvider, SearchFilters, SearchResult, Paging } from "../../types";
+import {
+  CareProvider,
+  SearchFilters,
+  SearchResult,
+  PaginationConfig,
+} from "../../types";
 import DesktopControl from "../../components/Search/Filters/Control/DesktopControl";
 import { AnalyticsAction, logEvent, logPageView } from "../../utils/analytics";
 import MobileControl from "../../components/Search/Filters/Control/MobileControl";
@@ -73,18 +78,18 @@ export const CompareContext = createContext<{
 }>({ selectedCompareProviders: [], setSelectedCompareProviders: () => {} });
 
 type PaginationContextProviderProps = {
-  paging: Paging;
-  setPaging: Dispatch<SetStateAction<Paging>>;
+  paginationConfig: PaginationConfig;
+  setPaginationConfig: Dispatch<SetStateAction<PaginationConfig>>;
 };
 
 export const PaginationContext = createContext<PaginationContextProviderProps>({
-  paging: {
+  paginationConfig: {
     totalPages: 0,
     currentPage: 1,
     totalItems: 0,
     pageSize: 20,
   },
-  setPaging: () => {},
+  setPaginationConfig: () => {},
 });
 
 function Search() {
@@ -106,7 +111,7 @@ function Search() {
   const [distanceUpdated, setDistanceUpdated] = useState(false);
 
   // Pagination State for Search Results
-  const [paging, setPaging] = useState<Paging>({
+  const [paginationConfig, setPaginationConfig] = useState<PaginationConfig>({
     totalPages: 0,
     currentPage: 1,
     totalItems: 0,
@@ -191,7 +196,9 @@ function Search() {
             setSelectedCompareProviders: setCompareProviders,
           }}
         >
-          <PaginationContext.Provider value={{ paging, setPaging }}>
+          <PaginationContext.Provider
+            value={{ paginationConfig, setPaginationConfig }}
+          >
             <div className="margin-y-2 padding-x-2 tablet:padding-x-5">
               <Grid row className="margin-bottom-2">
                 <div className="width-full">

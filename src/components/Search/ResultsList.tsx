@@ -3,6 +3,7 @@ import { CareProviderSearchResult } from "../../types";
 import ResultCard from "./ResultCard";
 import { PaginationContext } from "../../pages/Search/Search";
 import styled from "styled-components";
+import { useTranslation } from "react-i18next";
 
 type ResultsListProps = {
   results: CareProviderSearchResult[];
@@ -31,22 +32,22 @@ function ResultsList({
   selectedResultId,
   isMobile = false,
 }: ResultsListProps) {
-  const { paging } = useContext(PaginationContext);
+  const { t } = useTranslation();
+  const { paginationConfig } = useContext(PaginationContext);
 
   const resultsSlice = results
-    .slice((paging.currentPage - 1) * paging.pageSize)
-    .slice(0, paging.pageSize);
+    .slice((paginationConfig.currentPage - 1) * paginationConfig.pageSize)
+    .slice(0, paginationConfig.pageSize);
 
-  console.log(resultsSlice.length);
-  console.log(resultsSlice[0].searchRank);
   return (
     <>
       <StyledResultsPagination>
         <div>
-          Showing{" "}
+          {t("Showing")}{" "}
           {`${resultsSlice[0].searchRank} - ${
             resultsSlice[0].searchRank + resultsSlice.length - 1
-          } of ${results.length} results`}
+          } of ${results.length}`}{" "}
+          {t("results")}
         </div>
         <hr className="hr" />
       </StyledResultsPagination>
