@@ -11,16 +11,13 @@ export const providesTelehealth = (
 
   // Telehealth only filter -> return results with offersTelehealth = true
   if (telehealth === Telehealth.TelehealthOnly) {
-    return careProvider.offersTelehealth === true;
+    return !careProvider.latlng && careProvider.offersTelehealth === true;
   }
 
   // In person only filter -> result results with address, and
   // address does not contain the word "telehealth"
   if (telehealth === Telehealth.InPersonOnly) {
-    return (
-      !!careProvider.address?.length &&
-      !careProvider.addressStr.match(/telehealth/i)
-    );
+    return !!careProvider.latlng;
   }
 
   return false;

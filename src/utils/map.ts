@@ -37,14 +37,21 @@ export const rerenderMap = (
 
 /**
  * Helper function to get bounds for the search result map
- * based on the returned set of CareProviderSearchResults
+ * based on the returned set of CareProviderSearchResults.
+ * If none of the care providers have latlng data, then the
+ * bounds are set based on points pulled from the northwestern
+ * and southeastern most points in CO.
  * @param searchResults
  * @returns
  */
 export function getResultBounds(searchResults: CareProvider[]) {
-  return latLngBounds(
-    searchResults
-      .map((result) => result.latlng)
-      .filter((location): location is LatLngLiteral => !!location)
-  );
+  const latLngs = searchResults
+    .map((result) => result.latlng)
+    .filter((latlng): latlng is LatLngLiteral => !!latlng);
+
+  const coloradoCorners = [
+    { lat: 41.00629, lng: -109.066143 },
+    { lat: 36.998627, lng: -102.048286 },
+  ];
+  return latLngBounds(latLngs.length ? latLngs : coloradoCorners);
 }

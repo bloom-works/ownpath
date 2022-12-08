@@ -242,8 +242,16 @@ function Search() {
 
           {searchResult?.results.length ? (
             <div>
-              <DesktopResults results={searchResult.results} />
-              <MobileResults results={searchResult.results} />
+              <DesktopResults
+                results={searchResult.results}
+                filters={searchFilters}
+                setFilters={(filters) => setSearchParams({ ...filters })}
+              />
+              <MobileResults
+                results={searchResult.results}
+                filters={searchFilters}
+                setFilters={(filters) => setSearchParams({ ...filters })}
+              />
             </div>
           ) : (
             <div className="p-5">

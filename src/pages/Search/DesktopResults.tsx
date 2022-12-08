@@ -1,19 +1,25 @@
 import { Grid } from "@trussworks/react-uswds";
 import { Marker } from "react-leaflet";
 import { Map as LeafletMap } from "leaflet";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, Dispatch, SetStateAction } from "react";
 import { logEvent, AnalyticsAction } from "../../utils/analytics";
 import ResultsList from "../../components/Search/ResultsList";
 import ResultsMap from "../../components/Search/ResultsMap";
-import { CareProviderSearchResult } from "../../types";
+import { CareProviderSearchResult, SearchFilters } from "../../types";
 import { getMapMarker, getResultBounds, rerenderMap } from "../../utils";
+import ResultMapTelehealthToggleButton from "../../components/Search/ResultMapTelehealthToggleButton";
 
+type DesktopResultsProps = {
+  results: CareProviderSearchResult[];
+  filters: SearchFilters;
+  setFilters: Dispatch<SetStateAction<SearchFilters>>;
+};
 /**
  * The side-by-side list + map view for desktop or tablet,
  * which is visually hidden in mobile via CSS, but should still
  * be picked up by screen readers
  */
-function DesktopResults({ results }: { results: CareProviderSearchResult[] }) {
+function DesktopResults({ results, filters, setFilters }: DesktopResultsProps) {
   const [selectedResultId, setSelectedResultId] = useState<string>("");
   const mapRef = useRef<LeafletMap>(null);
 
@@ -59,6 +65,10 @@ function DesktopResults({ results }: { results: CareProviderSearchResult[] }) {
                   />
                 )
             )}
+            <ResultMapTelehealthToggleButton
+              filters={filters}
+              setFilters={setFilters}
+            />
           </ResultsMap>
         </Grid>
       </Grid>
