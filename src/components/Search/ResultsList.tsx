@@ -24,6 +24,7 @@ const StyledResultsPagination = styled.div`
   margin-left: 2.5rem;
   .hr {
     margin-left: -3.5rem;
+    color: #51534b;
   }
 `;
 
