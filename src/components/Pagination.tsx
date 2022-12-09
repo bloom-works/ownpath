@@ -24,21 +24,21 @@ function ResultsPagination({
     }));
   }, []);
 
-  const clickNext = () => {
-    logEvent(AnalyticsAction.ClickPaginationButton, { pageNumber });
-    setPaginationConfig((paginationConfig) => ({
-      ...paginationConfig,
-      currentPage: paginationConfig.currentPage++,
-    }));
-  };
+  // const clickNext = () => {
+  //   logEvent(AnalyticsAction.ClickPaginationButton, { pageNumber });
+  //   setPaginationConfig((paginationConfig) => ({
+  //     ...paginationConfig,
+  //     currentPage: paginationConfig.currentPage++,
+  //   }));
+  // };
 
-  const clickPrevious = () => {
-    logEvent(AnalyticsAction.ClickPaginationButton, { pageNumber });
-    setPaginationConfig((paginationConfig) => ({
-      ...paginationConfig,
-      currentPage: paginationConfig.currentPage--,
-    }));
-  };
+  // const clickPrevious = () => {
+  //   logEvent(AnalyticsAction.ClickPaginationButton, { pageNumber });
+  //   setPaginationConfig((paginationConfig) => ({
+  //     ...paginationConfig,
+  //     currentPage: paginationConfig.currentPage--,
+  //   }));
+  // };
 
   const clickPageNumber = (page: any) => {
     logEvent(AnalyticsAction.ClickPaginationButton, { pageNumber });
@@ -53,9 +53,7 @@ function ResultsPagination({
       pathname=""
       currentPage={paginationConfig.currentPage}
       maxSlots={5}
-      onClickNext={clickNext}
       onClickPageNumber={clickPageNumber}
-      onClickPrevious={clickPrevious}
       totalPages={paginationConfig.totalPages}
     />
   );

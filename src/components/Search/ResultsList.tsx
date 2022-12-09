@@ -44,11 +44,11 @@ function ResultsList({
     <>
       <StyledResultsPagination>
         <div>
-          {t("Showing")}{" "}
-          {`${resultsSlice[0].searchRank} - ${
-            resultsSlice[0].searchRank + resultsSlice.length - 1
-          } of ${results.length}`}{" "}
-          {t("results")}
+          {t("paginationHeading", {
+            firstResult: resultsSlice[0].searchRank,
+            lastResult: resultsSlice[0].searchRank + resultsSlice.length - 1,
+            results: results.length,
+          })}
         </div>
         <hr className="hr" />
       </StyledResultsPagination>
