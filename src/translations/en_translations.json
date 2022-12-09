@@ -159,7 +159,7 @@
   "acceptingNewPatientsNote": "Always contact the provider to make sure they’re taking new patients.",
   "telehealthAvailable": "Telehealth options available",
   "telehealthAvailableNote": "Appointments by phone or video are available, but may require an in-person visit or be limited to a service area. Please contact the provider for more information.",
-  "telehealthMapExplainer": "This is a provider in Colorado who only offers telehealth (appointments by phone or video) and doesn't have a physical location",
+  "telehealthMapAlert": "This is a provider in Colorado who only offers telehealth (appointments by phone or video) and doesn't have a physical location",
   "faqPageHeading": "Frequently Asked Questions",
   "questionAbbreviation": "Q",
   "answerAbbreviation": "A",

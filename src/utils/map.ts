@@ -55,3 +55,5 @@ export function getResultBounds(searchResults: CareProvider[]) {
   ];
   return latLngBounds(latLngs.length ? latLngs : coloradoCorners);
 }
+
+export const CO_CENTER = { lat: 39.113014, lng: -105.358887 };

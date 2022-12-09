@@ -26,6 +26,7 @@ import MentalHealthServicesTable from "../components/Compare/MentalHealthService
 import SubstanceUseServicesTable from "../components/Compare/SubstanceUseServicesTable";
 import AccessibilityTable from "../components/Compare/AccessibilityTable";
 import TelehealthTable from "../components/Compare/TelehealthTable";
+import TelehealthOnlyMap from "../components/TelehealthOnlyMap";
 
 const ShadowHR = styled.hr`
   box-shadow: 0 4px 8px 0 black;
@@ -108,10 +109,10 @@ export default function Compare() {
       <Grid row>
         <Grid col={12}>
           <h1 className="margin-top-0">Compare locations</h1>
-          {providerA.latlng && providerB.latlng && (
+          {providerA.latlng && providerB.latlng ? (
             <ResultsMap
               bounds={getResultBounds([providerA, providerB])}
-              isMobile={true}
+              mapHeight="300px"
             >
               {providerA.latlng && (
                 <Marker
@@ -132,6 +133,8 @@ export default function Compare() {
                 />
               )}
             </ResultsMap>
+          ) : (
+            <TelehealthOnlyMap alertMessage={t("compareTelehealthMapAlert")} />
           )}
         </Grid>
       </Grid>

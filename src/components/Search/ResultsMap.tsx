@@ -10,6 +10,7 @@ import Map from "../Map";
 export type ResultsMapProps = {
   bounds: LatLngBounds;
   mapRef?: Ref<LeafletMap>;
+  mapHeight?: string;
   isMobile?: boolean;
   onClick?: LeafletMouseEventHandlerFn;
 };
@@ -17,6 +18,7 @@ export type ResultsMapProps = {
 function ResultsMap({
   bounds,
   mapRef,
+  mapHeight,
   isMobile = false,
   onClick,
   children,
@@ -25,12 +27,12 @@ function ResultsMap({
     <Map
       mapContainerProps={{
         bounds,
-        boundsOptions: { padding: [20, 20] },
+        boundsOptions: { padding: [30, 30] },
         zoomSnap: 0.5,
         zoomDelta: 0.5,
       }}
       mapContainerStyles={{
-        height: isMobile ? "300px" : "100vh",
+        height: mapHeight || "100vh",
         display: "flex",
         alignItems: isMobile ? "flex-end" : "flex-start",
         justifyContent: "center",

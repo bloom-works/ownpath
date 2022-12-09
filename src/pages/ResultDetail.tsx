@@ -20,8 +20,8 @@ import { logPageView } from "../utils/analytics";
 import BackButton from "../components/BackButton";
 import { anyAreTrue, handlePageLoad, getMapMarker } from "../utils";
 import ProviderUpdateInfo from "../components/ResultDetail/ProviderUpdateInfo";
-import TelehealthOnlyMap from "../components/ResultDetail/TelehealthOnlyMap";
 import CallProviderLink from "../components/ResultDetail/CallProviderLink";
+import TelehealthOnlyMap from "../components/TelehealthOnlyMap";
 
 function ResultDetail() {
   // Ensure user sees the top of the page
@@ -97,7 +97,10 @@ function ResultDetail() {
                   />
                 </Map>
               ) : (
-                <TelehealthOnlyMap />
+                <TelehealthOnlyMap
+                  alertMessage={t("telehealthMapAlert")}
+                  mapContainerStyles={{ borderRadius: "10px" }}
+                />
               )}
 
               <div className="margin-y-2">

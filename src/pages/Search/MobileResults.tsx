@@ -72,6 +72,7 @@ function MobileResults({ results, filters, setFilters }: MobileResultsProps) {
         <ResultsMap
           bounds={getResultBounds(results)}
           mapRef={mapRef}
+          mapHeight="300px"
           isMobile
           onClick={() => {
             // Clear selected result card when map is
