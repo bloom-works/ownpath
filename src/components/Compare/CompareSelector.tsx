@@ -45,6 +45,9 @@ function CompareSelector() {
               <Link
                 onClick={() => {
                   logEvent(AnalyticsAction.ViewCompare);
+                  setTimeout(() => {
+                    setSelectedCompareProviders([]);
+                  }, 100);
                 }}
                 to={`/compare?id=${selectedCompareProviders[0].id}&id=${selectedCompareProviders[1].id}`}
                 state={{ prevSearch: location.search }}

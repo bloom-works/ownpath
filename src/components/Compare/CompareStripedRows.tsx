@@ -68,11 +68,7 @@ function CompareStripedRows({
               (idx + 1) % 2 ? "bg-lightest-blue padding-05" : "padding-05"
             }
           >
-            <Grid
-              col={12}
-              tablet={{ col: 2 }}
-              className="padding-y-1 text-bold tablet:text-normal"
-            >
+            <Grid col={12} tablet={{ col: 2 }} className="padding-y-1">
               {row.label}
             </Grid>
             <Grid

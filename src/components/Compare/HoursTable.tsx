@@ -14,7 +14,7 @@ const formatHoursDisplay = (
   t: TFunction
 ): string => {
   if (!hours) {
-    return "—";
+    return day === DayOfWeek.Monday ? t("moreInfoShort") : "—";
   }
   const dayHours = hours[day];
   return dayHours.open ? `${dayHours.start}-${dayHours.end}` : t("closed");
