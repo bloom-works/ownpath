@@ -188,6 +188,36 @@ p {
   display: none;
 }
 
+.usa-pagination {
+  justify-content: left;
+  margin-left: 4rem;
+}
+
+.usa-pagination .usa-current {
+  background-color: var(--dark-blue);
+}
+
+.usa-pagination__button {
+  border-color: var(--grey);
+  color: var(--blue);
+}
+
+.usa-pagination .usa-current:focus {
+  background-color: var(--dark-blue);
+}
+
+.usa-button .usa-button--unstyled .usa-pagination__button {
+  color: var(--blue);
+}
+
+.usa-button.usa-button--unstyled.usa-pagination__button.usa-current:hover {
+  background-color: var(--dark-blue);
+}
+
+.usa-pagination__link {
+  color: var(--blue);
+}
+
 .usa-header,
 legend,
 .font-family-heading,
@@ -291,34 +321,4 @@ code {
 .pagination-header {
   margin-top: 1rem;
   margin-left: 2.5rem;
-}
-
-.usa-pagination {
-  justify-content: left;
-  margin-left: 4rem;
-}
-
-.usa-pagination .usa-current {
-  background-color: var(--dark-blue);
-}
-
-.usa-pagination__button {
-  border-color: var(--grey);
-  color: var(--blue);
-}
-
-.usa-pagination .usa-current:focus {
-  background-color: var(--dark-blue);
-}
-
-.usa-button .usa-button--unstyled .usa-pagination__button {
-  color: var(--blue);
-}
-
-.usa-button.usa-button--unstyled.usa-pagination__button.usa-current:hover {
-  background-color: var(--dark-blue);
-}
-
-.usa-pagination__link {
-  color: var(--blue);
 }
