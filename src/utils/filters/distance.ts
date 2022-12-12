@@ -20,13 +20,22 @@ export const getDefaultRadius = (data: ZipInfo): number => {
   return defaultRadiusMiles;
 };
 
+/**
+ *
+ * @param careProvider
+ * @param miles
+ * @returns true if provider has a location and location is within radius,
+ * otherwise returns value of `offersTelehealth` so telehealth-nly providers
+ * (without location data) are included in results
+ */
 export const isWithinRadius = (
   careProvider: UnrankedCareProviderSearchResult,
   miles: number
 ): boolean => {
   const radiusMeters = miles * METERS_IN_A_MILE;
-  // TODO: figure out how places that don't have location will work w filters
-  return !!(careProvider.distance && careProvider.distance <= radiusMeters);
+  return careProvider.distance
+    ? careProvider.distance <= radiusMeters
+    : careProvider.offersTelehealth;
 };
 
 export const compareDistance = (

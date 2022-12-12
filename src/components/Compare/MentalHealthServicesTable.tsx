@@ -12,6 +12,10 @@ function MentalHealthServicesTable({
 }) {
   const { t } = useTranslation();
 
+  if (!providerA.mentalHealth.supported && !providerB.mentalHealth.supported) {
+    return <></>;
+  }
+
   const rowData = MENTAL_HEALTH_SERVICES.map((service) => {
     return {
       label: t(service),
