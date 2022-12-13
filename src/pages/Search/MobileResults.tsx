@@ -104,6 +104,9 @@ function MobileResults({ results, filters, setFilters }: MobileResultsProps) {
           <ResultMapTelehealthToggleButton
             filters={filters}
             setFilters={setFilters}
+            onClick={() => {
+              setIsListView(true);
+            }}
           />
         </ResultsMap>
         {selectedResult ? (
@@ -126,7 +129,7 @@ function MobileResults({ results, filters, setFilters }: MobileResultsProps) {
           <Alert
             type="info"
             slim
-            headingLevel=""
+            headingLevel="h5"
             className="radius-lg margin-y-2"
           >
             {t("mapHelper")}

@@ -13,11 +13,13 @@ const ToggleTelehealthMapButton = styled(Button)`
 type ResultMapTelehealthToggleButtonProps = {
   filters: SearchFilters;
   setFilters: Dispatch<SetStateAction<SearchFilters>>;
+  onClick?: () => void;
 };
 
 function ResultMapTelehealthToggleButton({
   filters,
   setFilters,
+  onClick,
 }: ResultMapTelehealthToggleButtonProps) {
   const { t } = useTranslation();
 
@@ -41,6 +43,7 @@ function ResultMapTelehealthToggleButton({
               ? Telehealth.InPersonAndTelehealth
               : Telehealth.TelehealthOnly,
         });
+        if (onClick) onClick();
       }}
     >
       <TelehealthIcon className="margin-right-2" />
