@@ -19,5 +19,6 @@ export const getFiltersWithOptionalCleared = (filters: SearchFilters) => {
     languages: [],
   };
   delete updatedFilters.age;
+  delete updatedFilters.telehealth;
   return updatedFilters;
 };
