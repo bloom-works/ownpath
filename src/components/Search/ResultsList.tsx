@@ -1,4 +1,3 @@
-import { Ref, useEffect, useRef } from "react";
 import { CareProviderSearchResult } from "../../types";
 import ResultCard from "./ResultCard";
 
@@ -20,19 +19,10 @@ function ResultsList({
   selectedResultId,
   isMobile = false,
 }: ResultsListProps) {
-  const listRef: Ref<HTMLDivElement> = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (listRef?.current) {
-      listRef.current.scrollTop = 0;
-    }
-  }, [results]);
-
   return (
     <>
       {results.map((result) => (
         <div
-          ref={listRef}
           className={
             isMobile
               ? MOBILE_CLASSES

@@ -23,15 +23,22 @@ function DesktopResults({ results, filters, setFilters }: DesktopResultsProps) {
   const [selectedResultId, setSelectedResultId] = useState<string>("");
   const mapRef = useRef<LeafletMap>(null);
 
-  // Rerender map whenever search filters change to ensure map displays
-  // filtered results correctly
+  // Rerender map and reset scroll list to top
+  // whenever search filters change to ensure
+  // filtered results are displayed correctly
   useEffect(() => {
     rerenderMap(mapRef, results);
+    const scrollList = document.getElementById("scroll-list");
+    if (scrollList) scrollList.scrollTop = 0;
   }, [mapRef, results]);
 
   return (
     <div className="display-none tablet:display-block">
-      <Grid row className="border-top border-base-lighter overflow-x-hidden">
+      <Grid
+        id="scroll-list"
+        row
+        className="border-top border-base-lighter overflow-x-hidden"
+      >
         <Grid
           tablet={{ col: 7 }}
           className="height-viewport"
