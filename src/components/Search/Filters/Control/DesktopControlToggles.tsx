@@ -135,7 +135,7 @@ function ControlToggles({ setFilters }: ControlTogglesProps) {
       {!!filters.telehealth && (
         <DesktopControlToggle
           key="telehealth"
-          name={t(`telehealthValues${filters.telehealth}`)}
+          name={t(`telehealthShortValues${filters.telehealth}`)}
           onClick={() => {
             const updatedFilters = { ...filters };
             delete updatedFilters.telehealth;
