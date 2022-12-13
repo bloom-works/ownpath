@@ -203,7 +203,7 @@ function GuidedSearch() {
         </div>
 
         <ButtonGroup>
-          <Button type="submit">{t("next")}</Button>
+          <Button type="submit">{t("nextQuestion")}</Button>
           {currentStepIdx > 0 && (
             <Button
               type="button"
