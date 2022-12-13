@@ -210,6 +210,9 @@ p {
   color: var(--blue);
 }
 
+.usa-button.usa-button--unstyled.usa-pagination__button:hover {
+  border-bottom: solid 1px;
+}
 .usa-button.usa-button--unstyled.usa-pagination__button.usa-current:hover {
   background-color: var(--dark-blue);
 }

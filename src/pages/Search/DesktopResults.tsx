@@ -1,12 +1,13 @@
 import { Grid } from "@trussworks/react-uswds";
 import { Marker } from "react-leaflet";
 import { Map as LeafletMap } from "leaflet";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useContext } from "react";
 import { logEvent, AnalyticsAction } from "../../utils/analytics";
 import ResultsList from "../../components/Search/ResultsList";
 import ResultsMap from "../../components/Search/ResultsMap";
 import { CareProviderSearchResult } from "../../types";
 import { getMapMarker, getResultBounds, rerenderMap } from "../../utils";
+import { PaginationContext } from "./Search";
 
 /**
  * The side-by-side list + map view for desktop or tablet,
@@ -22,6 +23,11 @@ function DesktopResults({ results }: { results: CareProviderSearchResult[] }) {
   useEffect(() => {
     rerenderMap(mapRef, results);
   }, [mapRef, results]);
+
+  const { paginationConfig } = useContext(PaginationContext);
+  const resultsSlice = results
+    .slice((paginationConfig.currentPage - 1) * paginationConfig.pageSize)
+    .slice(0, paginationConfig.pageSize);
 
   return (
     <div className="display-none tablet:display-block">
@@ -39,8 +45,8 @@ function DesktopResults({ results }: { results: CareProviderSearchResult[] }) {
           key="desktop-map"
           className="position-sticky top-0"
         >
-          <ResultsMap bounds={getResultBounds(results)} mapRef={mapRef}>
-            {results.map(
+          <ResultsMap bounds={getResultBounds(resultsSlice)} mapRef={mapRef}>
+            {resultsSlice.map(
               (result) =>
                 result.latlng && (
                   <Marker

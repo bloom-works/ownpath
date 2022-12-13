@@ -1,7 +1,7 @@
 import { Grid, Button, Alert } from "@trussworks/react-uswds";
 import { Marker } from "react-leaflet";
 import { Map as LeafletMap } from "leaflet";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useContext } from "react";
 import { useTranslation } from "react-i18next";
 import { logEvent, AnalyticsAction } from "../../utils/analytics";
 import MobileViewToggle from "../../components/Search/MobileViewToggle";
@@ -11,6 +11,7 @@ import ResultsMap from "../../components/Search/ResultsMap";
 import { CareProviderSearchResult } from "../../types";
 import { getMapMarker, getResultBounds, rerenderMap } from "../../utils";
 import { ReactComponent as Close } from "../../images/close.svg";
+import { PaginationContext } from "./Search";
 
 /**
  * The toggle-able list + map views for mobile,
@@ -46,6 +47,11 @@ function MobileResults({ results }: { results: CareProviderSearchResult[] }) {
     setIsListView(true);
   };
 
+  const { paginationConfig } = useContext(PaginationContext);
+  const resultsSlice = results
+    .slice((paginationConfig.currentPage - 1) * paginationConfig.pageSize)
+    .slice(0, paginationConfig.pageSize);
+
   const [selectedResult, setSelectedResult] =
     useState<CareProviderSearchResult>();
   return (
@@ -63,7 +69,7 @@ function MobileResults({ results }: { results: CareProviderSearchResult[] }) {
       </div>
       <div className={isListView ? "display-none" : ""} key="mobile-map">
         <ResultsMap
-          bounds={getResultBounds(results)}
+          bounds={getResultBounds(resultsSlice)}
           mapRef={mapRef}
           isMobile
           onClick={() => {
@@ -72,7 +78,7 @@ function MobileResults({ results }: { results: CareProviderSearchResult[] }) {
             setSelectedResult(undefined);
           }}
         >
-          {results.map(
+          {resultsSlice.map(
             (result) =>
               result.latlng && (
                 <Marker
