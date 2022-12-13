@@ -38,6 +38,7 @@ function TelehealthOnlyMap({
       mapContainerProps={{
         center: CO_CENTER,
         zoom: 6,
+        dragging: false,
       }}
       mapContainerStyles={{
         flex: 1,
