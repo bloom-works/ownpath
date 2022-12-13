@@ -31,7 +31,8 @@ export const rerenderMap = (
 ) => {
   setTimeout(() => {
     mapRef.current?.invalidateSize();
-    mapRef.current?.fitBounds(getResultBounds(results), { animate: false });
+    const bounds = getResultBounds(results);
+    bounds && mapRef.current?.fitBounds(bounds, { animate: false });
   }, 100);
 };
 
@@ -49,11 +50,7 @@ export function getResultBounds(searchResults: CareProvider[]) {
     .map((result) => result.latlng)
     .filter((latlng): latlng is LatLngLiteral => !!latlng);
 
-  const coloradoCorners = [
-    { lat: 41.00629, lng: -109.066143 },
-    { lat: 36.998627, lng: -102.048286 },
-  ];
-  return latLngBounds(latLngs.length ? latLngs : coloradoCorners);
+  return latLngs.length ? latLngBounds(latLngs) : undefined;
 }
 
 export const CO_CENTER = { lat: 39.113014, lng: -105.358887 };

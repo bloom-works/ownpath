@@ -8,7 +8,7 @@ import { ZoomControl } from "react-leaflet";
 import Map from "../Map";
 
 export type ResultsMapProps = {
-  bounds: LatLngBounds;
+  bounds?: LatLngBounds;
   mapRef?: Ref<LeafletMap>;
   mapHeight?: string;
   isMobile?: boolean;
