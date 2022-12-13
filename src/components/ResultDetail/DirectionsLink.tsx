@@ -20,7 +20,6 @@ function DirectionsLink({
 
   return (
     <ExternalLink
-      variant="external"
       className="usa-button margin-right-0 display-flex flex-align-center flex-justify-center"
       target="_blank "
       href={googleMapsDirectionsURL}

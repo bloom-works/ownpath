@@ -16,12 +16,11 @@ function CallProviderLink({
 
   return (
     <ExternalLink
-      variant="external"
       className="usa-button margin-right-0 display-flex flex-align-center flex-justify-center"
       target="_blank "
       href={`tel:${careProvider.phone}`}
     >
-      <Telephone className="margin-right-1" />
+      <Telephone className="margin-right-1 margin-bottom-05" />
       {t("callProvider")}
     </ExternalLink>
   );

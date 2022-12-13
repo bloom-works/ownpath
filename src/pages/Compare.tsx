@@ -109,7 +109,7 @@ export default function Compare() {
       <Grid row>
         <Grid col={12}>
           <h1 className="margin-top-0">Compare locations</h1>
-          {providerA.latlng && providerB.latlng ? (
+          {providerA.latlng || providerB.latlng ? (
             <ResultsMap
               bounds={getResultBounds([providerA, providerB])}
               mapHeight="300px"
