@@ -73,6 +73,17 @@ function ControlToggles({ setFilters }: ControlTogglesProps) {
           }
         />
       ))}
+      {!!filters.age && (
+        <DesktopControlToggle
+          key="age"
+          name={t(`ageShortValues${filters.age}`)}
+          onClick={() => {
+            const updatedFilters = { ...filters };
+            delete updatedFilters.age;
+            setFilters(updatedFilters);
+          }}
+        />
+      )}
       {filters.feePreferences.map((filter) => (
         <DesktopControlToggle
           key="fee-preference"
@@ -121,13 +132,13 @@ function ControlToggles({ setFilters }: ControlTogglesProps) {
           }
         />
       ))}
-      {!!filters.age && (
+      {!!filters.telehealth && (
         <DesktopControlToggle
-          key="age"
-          name={t(`ageShortValues${filters.age}`)}
+          key="telehealth"
+          name={t(`telehealthValues${filters.telehealth}`)}
           onClick={() => {
             const updatedFilters = { ...filters };
-            delete updatedFilters.age;
+            delete updatedFilters.telehealth;
             setFilters(updatedFilters);
           }}
         />

@@ -153,6 +153,7 @@ function Search() {
 
   useEffect(() => {
     performSearch(searchFilters);
+    handlePageLoad({ title: t("searchPageTitle") });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchParams]);
 

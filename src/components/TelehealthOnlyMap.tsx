@@ -1,4 +1,3 @@
-import { useTranslation } from "react-i18next";
 import Map from "./Map";
 import styled from "styled-components";
 import AppAlert from "./AppAlert";
@@ -31,7 +30,6 @@ function TelehealthOnlyMap({
   alertMessage,
   mapContainerStyles = {},
 }: TelehealthOnlyMapProps) {
-  const { t } = useTranslation();
   const mapRef = useRef<LeafletMap>(null);
 
   return (
