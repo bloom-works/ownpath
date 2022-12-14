@@ -176,6 +176,10 @@ p {
   .usa-legend--large {
     font-size: 1.125rem;
   }
+  .usa-pagination {
+    justify-content: center !important;
+    margin-left: 0 !important;
+  }
 }
 
 .usa-modal__content {
