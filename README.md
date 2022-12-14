@@ -1,5 +1,19 @@
 # Colorado Care Directory by the Behavioral Health Administration
 
+## Accessibility
+
+This application leverages libraries and frameworks that are built with accessibility in mind. By leveraging [USWDS](https://designsystem.digital.gov/) and [react-boostrap](https://react-bootstrap.netlify.app/#rb-docs-content), development starts from a foundation of accessibility by default.
+
+Automated [aXe tests](https://github.com/dequelabs/axe-core) run on every change to the application to check for adherence to WCAG guidelines and other best practices. However, automated testing will only catch a percentage of accessibility and usibility problems. To this end, we attempt to test new features and interactions with assistive technologies such as screen readers. Additionally, we have conducted research and testing with folks who are regular users of assistive technologies, to attempt to understand where real pain points exist. Ideally, continued research and testing with disabled users will be a regular part of the application development cycle.
+
+Specifically, we have taken these steps to make the app accessible to all users:
+
+- Human translation and localization of the entire application into Spanish, with more languages to come.
+- Meaningful labels/titles/descriptions of all elements are present in the DOM for screen readers, even when they are not visible.
+- Logical ordering and grouping of content, with appropriate heading levels throughout.
+- Correct use of button and anchor elements based on functionality.
+- Visual-only elements (e.g. maps and map markers) are hidden from screen readers.
+
 ## Dev Setup
 
 This setups up a dev environment within a container to reduce "it works on my machine" problems and to create a clean, consistent environment (but adds some complexity compared to the non-container setup below). Optionally, it pairs really well with [VSCode's Remote Container extension pack](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack).
