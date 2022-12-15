@@ -201,6 +201,7 @@
   "locationTwo": "Provider two",
   "yes": "Yes",
   "no": "No",
+  "compareTelehealthMapAlert": "These providers only offer telehealth (appointments by phone or video) and don’t have a physical location.",
   "locationTitle": "Zip code",
   "distanceTitle": "Distance",
   "distanceValuesTemplate": "Within {{ n }} miles",

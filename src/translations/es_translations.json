@@ -201,6 +201,7 @@
   "locationTwo": "Proveedor dos",
   "yes": "Sí",
   "no": "No",
+  "compareTelehealthMapAlert": "Estos proveedores solo ofrecen telemedicina (citas por teléfono o video) y no tienen un local físico. ",
   "locationTitle": "Código postal",
   "distanceTitle": "Distancia",
   "distanceValuesTemplate": "Máximo {{ n }} millas",
