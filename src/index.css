@@ -172,13 +172,21 @@ p {
   font-size: 1.5rem;
   margin-bottom: 1.5rem;
 }
-@media screen and (max-width: 480px) {
-  .usa-legend--large {
-    font-size: 1.125rem;
+
+@media screen and (max-width: 640px) {
+  .usa-pagination__arrow {
+    display: inherit;
   }
+
   .usa-pagination {
     justify-content: center !important;
     margin-left: 0 !important;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .usa-legend--large {
+    font-size: 1.125rem;
   }
 }
 
