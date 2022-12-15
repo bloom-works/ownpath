@@ -6,7 +6,8 @@ export const getAppliedOptionalFiltersCount = (filters: SearchFilters) =>
   filters.hours.length +
   filters.typesOfHelp.length +
   filters.languages.length +
-  (!!filters.age ? 1 : 0);
+  (!!filters.age ? 1 : 0) +
+  (!!filters.telehealth ? 1 : 0);
 
 export const getFiltersWithOptionalCleared = (filters: SearchFilters) => {
   const updatedFilters = {
@@ -18,5 +19,6 @@ export const getFiltersWithOptionalCleared = (filters: SearchFilters) => {
     languages: [],
   };
   delete updatedFilters.age;
+  delete updatedFilters.telehealth;
   return updatedFilters;
 };
