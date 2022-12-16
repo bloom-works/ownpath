@@ -74,3 +74,9 @@ export type SearchFilters = {
   age?: AgeGroup;
   telehealth?: Telehealth;
 };
+export interface PaginationConfig {
+  totalPages: number;
+  currentPage: number;
+  totalItems: number;
+  pageSize: number;
+}
