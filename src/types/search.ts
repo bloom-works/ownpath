@@ -57,6 +57,12 @@ export enum TypeOfHelp {
   None = "none",
 }
 
+export enum Telehealth {
+  InPersonAndTelehealth = "in_person_telehealth",
+  InPersonOnly = "in_person_only",
+  TelehealthOnly = "telehealth_only",
+}
+
 export type SearchFilters = {
   zip: string;
   miles: string;
@@ -66,6 +72,7 @@ export type SearchFilters = {
   hours: DayOfWeek[];
   languages: Languages[];
   age?: AgeGroup;
+  telehealth?: Telehealth;
 };
 export interface PaginationConfig {
   totalPages: number;

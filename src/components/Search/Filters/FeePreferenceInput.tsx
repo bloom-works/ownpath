@@ -8,7 +8,7 @@ import FilterCheckbox from "./FilterCheckbox";
 
 type FeePreferenceInputProps = {
   legend: string;
-  isMobile?: boolean;
+  compact?: boolean;
   options: FeePreference[];
   optionLabelPrefix: string;
   filters: SearchFilters;
@@ -17,7 +17,7 @@ type FeePreferenceInputProps = {
 
 function FeePreferenceInput({
   legend,
-  isMobile = false,
+  compact = false,
   options,
   optionLabelPrefix,
   filters,
@@ -39,7 +39,7 @@ function FeePreferenceInput({
   };
 
   return (
-    <Fieldset legend={legend} legendStyle={isMobile ? "srOnly" : "large"}>
+    <Fieldset legend={legend} legendStyle={compact ? "srOnly" : "large"}>
       {options.map((option) => (
         <FilterCheckbox
           name="payment options"

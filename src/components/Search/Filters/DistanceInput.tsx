@@ -8,14 +8,14 @@ import FilterRadio from "./FilterRadio";
 
 type DistanceInputProps = {
   legend: string;
-  isMobile?: boolean;
+  compact?: boolean;
   filters: SearchFilters;
   setFilters: Dispatch<SetStateAction<SearchFilters>>;
 };
 
 function DistanceInput({
   legend,
-  isMobile,
+  compact = false,
   filters,
   setFilters,
 }: DistanceInputProps) {
@@ -31,10 +31,10 @@ function DistanceInput({
   };
 
   return (
-    <Fieldset legend={legend} legendStyle={isMobile ? "srOnly" : "large"}>
+    <Fieldset legend={legend} legendStyle={compact ? "srOnly" : "large"}>
       {MILE_DISTANCE_OPTIONS.map((miles) => (
         <FilterRadio
-          name={`distance-${isMobile ? "mobile" : "desktop"}`}
+          name={`distance-${compact ? "desktop" : "mobile"}`}
           value={miles}
           label={t("distanceValuesTemplate", { n: miles })}
           selected={filters.miles === miles}

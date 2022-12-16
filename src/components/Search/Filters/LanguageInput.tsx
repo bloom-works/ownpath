@@ -8,14 +8,14 @@ import FilterCheckbox from "./FilterCheckbox";
 
 type LanguageInputProps = {
   legend: string;
-  isMobile?: boolean;
+  compact?: boolean;
   filters: SearchFilters;
   setFilters: Dispatch<SetStateAction<SearchFilters>>;
 };
 
 function LanguageInput({
   legend,
-  isMobile = false,
+  compact = false,
   filters,
   setFilters,
 }: LanguageInputProps) {
@@ -34,7 +34,7 @@ function LanguageInput({
   };
 
   return (
-    <Fieldset legend={legend} legendStyle={isMobile ? "srOnly" : "large"}>
+    <Fieldset legend={legend} legendStyle={compact ? "srOnly" : "large"}>
       {LANGUAGES.map((option) => (
         <FilterCheckbox
           name="languages"

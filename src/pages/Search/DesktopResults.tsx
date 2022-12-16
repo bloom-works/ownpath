@@ -1,27 +1,43 @@
 import { Grid } from "@trussworks/react-uswds";
 import { Marker } from "react-leaflet";
 import { Map as LeafletMap } from "leaflet";
-import { useState, useRef, useEffect, useContext } from "react";
+import {
+  useState,
+  useRef,
+  useEffect,
+  Dispatch,
+  SetStateAction,
+  useContext,
+} from "react";
 import { logEvent, AnalyticsAction } from "../../utils/analytics";
 import ResultsList from "../../components/Search/ResultsList";
 import ResultsMap from "../../components/Search/ResultsMap";
-import { CareProviderSearchResult } from "../../types";
+import { CareProviderSearchResult, SearchFilters } from "../../types";
 import { getMapMarker, getResultBounds, rerenderMap } from "../../utils";
+import ResultMapTelehealthToggleButton from "../../components/Search/ResultMapTelehealthToggleButton";
 import { PaginationContext } from "./Search";
 
+type DesktopResultsProps = {
+  results: CareProviderSearchResult[];
+  filters: SearchFilters;
+  setFilters: Dispatch<SetStateAction<SearchFilters>>;
+};
 /**
  * The side-by-side list + map view for desktop or tablet,
  * which is visually hidden in mobile via CSS, but should still
  * be picked up by screen readers
  */
-function DesktopResults({ results }: { results: CareProviderSearchResult[] }) {
+function DesktopResults({ results, filters, setFilters }: DesktopResultsProps) {
   const [selectedResultId, setSelectedResultId] = useState<string>("");
   const mapRef = useRef<LeafletMap>(null);
 
-  // Rerender map whenever search filters change to ensure map displays
-  // filtered results correctly
+  // Rerender map and reset scroll list to top
+  // whenever search filters change to ensure
+  // filtered results are displayed correctly
   useEffect(() => {
     rerenderMap(mapRef, results);
+    const scrollList = document.getElementById("scroll-list");
+    if (scrollList) scrollList.scrollTop = 0;
   }, [mapRef, results]);
 
   const { paginationConfig } = useContext(PaginationContext);
@@ -31,7 +47,11 @@ function DesktopResults({ results }: { results: CareProviderSearchResult[] }) {
 
   return (
     <div className="display-none tablet:display-block">
-      <Grid row className="border-top border-base-lighter overflow-x-hidden">
+      <Grid
+        id="scroll-list"
+        row
+        className="border-top border-base-lighter overflow-x-hidden"
+      >
         <Grid
           tablet={{ col: 7 }}
           className="height-viewport"
@@ -65,6 +85,10 @@ function DesktopResults({ results }: { results: CareProviderSearchResult[] }) {
                   />
                 )
             )}
+            <ResultMapTelehealthToggleButton
+              filters={filters}
+              setFilters={setFilters}
+            />
           </ResultsMap>
         </Grid>
       </Grid>

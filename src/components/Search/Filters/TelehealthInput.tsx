@@ -1,46 +1,51 @@
 import { Fieldset } from "@trussworks/react-uswds";
 import { Dispatch, SetStateAction } from "react";
 import { useTranslation } from "react-i18next";
+import { SearchFilters, Telehealth } from "../../../types";
 import { AnalyticsAction, logEvent } from "../../../utils/analytics";
-import { SearchFilters, AgeGroup } from "../../../types";
 import FilterRadio from "./FilterRadio";
 
-type AgeGroupInputProps = {
+type TelehealthInputProps = {
   legend: string;
   compact?: boolean;
   filters: SearchFilters;
   setFilters: Dispatch<SetStateAction<SearchFilters>>;
 };
 
-function AgeGroupInput({
+function TelehealthInput({
   legend,
   compact = false,
   filters,
   setFilters,
-}: AgeGroupInputProps) {
+}: TelehealthInputProps) {
   const { t } = useTranslation();
-  const setAgeFilter = (age: AgeGroup) => {
+
+  const setTelehealthFilter = (telehealth: Telehealth) => {
     logEvent(AnalyticsAction.UpdateFilter, {
-      label: "age group",
-      filter_type: "age group",
-      filter_value: age,
+      label: "telehealth",
+      filter_type: "telehealth",
+      filter_value: telehealth,
     });
 
     setFilters({
       ...filters,
-      age,
+      telehealth,
     });
   };
 
   return (
     <Fieldset legend={legend} legendStyle={compact ? "srOnly" : "large"}>
-      {[AgeGroup.Under18, AgeGroup.Adult, AgeGroup.OlderAdult].map((option) => (
+      {[
+        Telehealth.InPersonAndTelehealth,
+        Telehealth.InPersonOnly,
+        Telehealth.TelehealthOnly,
+      ].map((option) => (
         <FilterRadio
-          name={`age-${compact ? "desktop" : "mobile"}`}
+          name={`telehealth-${compact ? "desktop" : "mobile"}`}
           value={option}
-          label={t(`ageValues${option}`)}
-          selected={filters.age === option}
-          onChange={() => setAgeFilter(option)}
+          label={t(`telehealthValues${option}`)}
+          selected={filters.telehealth === option}
+          onChange={() => setTelehealthFilter(option)}
           key={option}
         />
       ))}
@@ -48,4 +53,4 @@ function AgeGroupInput({
   );
 }
 
-export default AgeGroupInput;
+export default TelehealthInput;

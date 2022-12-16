@@ -27,7 +27,7 @@ function ResultsMap({
     <Map
       mapContainerProps={{
         bounds,
-        boundsOptions: { padding: [5, 5] },
+        boundsOptions: { padding: [30, 30] },
         zoomSnap: 0.5,
         zoomDelta: 0.5,
       }}

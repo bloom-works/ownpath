@@ -20,6 +20,8 @@ import { logPageView } from "../utils/analytics";
 import BackButton from "../components/BackButton";
 import { anyAreTrue, handlePageLoad, getMapMarker } from "../utils";
 import ProviderUpdateInfo from "../components/ResultDetail/ProviderUpdateInfo";
+import CallProviderLink from "../components/ResultDetail/CallProviderLink";
+import TelehealthOnlyMap from "../components/TelehealthOnlyMap";
 
 function ResultDetail() {
   // Ensure user sees the top of the page
@@ -77,8 +79,8 @@ function ResultDetail() {
             <BasicResultDetail result={data} />
           </Grid>
           <Grid tablet={{ col: true }}>
-            {data.latlng && data.address && (
-              <div className="display-grid">
+            <div className="display-grid">
+              {data.latlng && data.address ? (
                 <Map
                   mapContainerProps={{ center: data.latlng, zoom: 14 }}
                   mapContainerStyles={{
@@ -94,12 +96,21 @@ function ResultDetail() {
                     keyboard={false}
                   />
                 </Map>
+              ) : (
+                <TelehealthOnlyMap
+                  alertMessage={t("telehealthMapAlert")}
+                  mapContainerStyles={{ borderRadius: "10px" }}
+                />
+              )}
 
-                <div className="margin-y-2">
+              <div className="margin-y-2">
+                {data.latlng && data.address ? (
                   <DirectionsLink careProvider={data} />
-                </div>
+                ) : (
+                  <CallProviderLink careProvider={data} />
+                )}
               </div>
-            )}
+            </div>
           </Grid>
         </Grid>
       </section>
