@@ -1,13 +1,21 @@
 import { Grid } from "@trussworks/react-uswds";
 import { Marker } from "react-leaflet";
 import { Map as LeafletMap } from "leaflet";
-import { useState, useRef, useEffect, Dispatch, SetStateAction } from "react";
+import {
+  useState,
+  useRef,
+  useEffect,
+  Dispatch,
+  SetStateAction,
+  useContext,
+} from "react";
 import { logEvent, AnalyticsAction } from "../../utils/analytics";
 import ResultsList from "../../components/Search/ResultsList";
 import ResultsMap from "../../components/Search/ResultsMap";
 import { CareProviderSearchResult, SearchFilters } from "../../types";
 import { getMapMarker, getResultBounds, rerenderMap } from "../../utils";
 import ResultMapTelehealthToggleButton from "../../components/Search/ResultMapTelehealthToggleButton";
+import { PaginationContext } from "./Search";
 
 type DesktopResultsProps = {
   results: CareProviderSearchResult[];
@@ -32,6 +40,11 @@ function DesktopResults({ results, filters, setFilters }: DesktopResultsProps) {
     if (scrollList) scrollList.scrollTop = 0;
   }, [mapRef, results]);
 
+  const { paginationConfig } = useContext(PaginationContext);
+  const resultsSlice = results
+    .slice((paginationConfig.currentPage - 1) * paginationConfig.pageSize)
+    .slice(0, paginationConfig.pageSize);
+
   return (
     <div className="display-none tablet:display-block">
       <Grid
@@ -52,8 +65,8 @@ function DesktopResults({ results, filters, setFilters }: DesktopResultsProps) {
           key="desktop-map"
           className="position-sticky top-0"
         >
-          <ResultsMap bounds={getResultBounds(results)} mapRef={mapRef}>
-            {results.map(
+          <ResultsMap bounds={getResultBounds(resultsSlice)} mapRef={mapRef}>
+            {resultsSlice.map(
               (result) =>
                 result.latlng && (
                   <Marker
