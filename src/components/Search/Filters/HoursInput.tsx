@@ -7,16 +7,12 @@ import { toggleItemInList } from "../../../utils";
 import FilterCheckbox from "./FilterCheckbox";
 
 type HoursInputProps = {
-  isMobile?: boolean;
+  compact?: boolean;
   filters: SearchFilters;
   setFilters: Dispatch<SetStateAction<SearchFilters>>;
 };
 
-function HoursInput({
-  isMobile = false,
-  filters,
-  setFilters,
-}: HoursInputProps) {
+function HoursInput({ compact = false, filters, setFilters }: HoursInputProps) {
   const { t } = useTranslation();
 
   const setHoursFilter = (day: DayOfWeek) => {
@@ -34,7 +30,7 @@ function HoursInput({
   return (
     <Fieldset
       legend={t("hoursTitle")}
-      legendStyle={isMobile ? "srOnly" : "large"}
+      legendStyle={compact ? "srOnly" : "large"}
     >
       {DAYS_OF_THE_WEEK.map((option) => (
         <FilterCheckbox

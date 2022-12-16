@@ -1,16 +1,23 @@
 import { Grid, Button, Alert } from "@trussworks/react-uswds";
 import { Marker } from "react-leaflet";
 import { Map as LeafletMap } from "leaflet";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, Dispatch, SetStateAction } from "react";
 import { useTranslation } from "react-i18next";
 import { logEvent, AnalyticsAction } from "../../utils/analytics";
 import MobileViewToggle from "../../components/Search/MobileViewToggle";
 import ResultCard from "../../components/Search/ResultCard";
 import ResultsList from "../../components/Search/ResultsList";
 import ResultsMap from "../../components/Search/ResultsMap";
-import { CareProviderSearchResult } from "../../types";
+import { CareProviderSearchResult, SearchFilters } from "../../types";
 import { getMapMarker, getResultBounds, rerenderMap } from "../../utils";
 import { ReactComponent as Close } from "../../images/close.svg";
+import ResultMapTelehealthToggleButton from "../../components/Search/ResultMapTelehealthToggleButton";
+
+type MobileResultsProps = {
+  results: CareProviderSearchResult[];
+  filters: SearchFilters;
+  setFilters: Dispatch<SetStateAction<SearchFilters>>;
+};
 
 /**
  * The toggle-able list + map views for mobile,
@@ -18,7 +25,7 @@ import { ReactComponent as Close } from "../../images/close.svg";
  * and always hidden from screen readers (via aria-hidden=true)
  * to avoid duplication of results lists to screen readers
  */
-function MobileResults({ results }: { results: CareProviderSearchResult[] }) {
+function MobileResults({ results, filters, setFilters }: MobileResultsProps) {
   // Flag to track map vs list view
   const [isListView, setIsListView] = useState(true);
 
@@ -65,6 +72,7 @@ function MobileResults({ results }: { results: CareProviderSearchResult[] }) {
         <ResultsMap
           bounds={getResultBounds(results)}
           mapRef={mapRef}
+          mapHeight="300px"
           isMobile
           onClick={() => {
             // Clear selected result card when map is
@@ -93,6 +101,13 @@ function MobileResults({ results }: { results: CareProviderSearchResult[] }) {
                 />
               )
           )}
+          <ResultMapTelehealthToggleButton
+            filters={filters}
+            setFilters={setFilters}
+            onClick={() => {
+              setIsListView(true);
+            }}
+          />
         </ResultsMap>
         {selectedResult ? (
           <div className="bg-white border border-base-lighter radius-lg padding-2 margin-bottom-1 position-relative top-neg-50px z-top">

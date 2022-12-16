@@ -11,7 +11,7 @@ import { ReactComponent as Phone } from "../../../images/phone.svg";
 
 type TypeOfHelpInputProps = {
   legend: string;
-  isMobile?: boolean;
+  compact?: boolean;
   options: TypeOfHelp[];
   optionLabelPrefix: string;
   filters: SearchFilters;
@@ -20,7 +20,7 @@ type TypeOfHelpInputProps = {
 
 function TypeOfHelpInput({
   legend,
-  isMobile = false,
+  compact = false,
   options,
   optionLabelPrefix,
   filters,
@@ -41,7 +41,7 @@ function TypeOfHelpInput({
   };
 
   return (
-    <Fieldset legend={legend} legendStyle={isMobile ? "srOnly" : "large"}>
+    <Fieldset legend={legend} legendStyle={compact ? "srOnly" : "large"}>
       {options.map((option) => (
         <React.Fragment key={option}>
           <FilterCheckbox

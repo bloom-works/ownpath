@@ -11,13 +11,13 @@ import { toggleItemInList } from "../../../utils";
 import FilterCheckbox from "./FilterCheckbox";
 
 type AccessibilityInputProps = {
-  isMobile?: boolean;
+  compact?: boolean;
   filters: SearchFilters;
   setFilters: Dispatch<SetStateAction<SearchFilters>>;
 };
 
 function AccessibilityInput({
-  isMobile = false,
+  compact = false,
   filters,
   setFilters,
 }: AccessibilityInputProps) {
@@ -43,7 +43,7 @@ function AccessibilityInput({
   return (
     <Fieldset
       legend={t("accessibilityTitle")}
-      legendStyle={isMobile ? "srOnly" : "large"}
+      legendStyle={compact ? "srOnly" : "large"}
     >
       {ACCESSIBILITY_OPTIONS.map((option) => (
         <FilterCheckbox

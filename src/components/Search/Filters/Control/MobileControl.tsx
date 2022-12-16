@@ -23,6 +23,7 @@ import { ReactComponent as Filter } from "../../../../images/filter.svg";
 import AgeGroupInput from "../AgeGroupInput";
 import styled from "styled-components";
 import { ReactComponent as Close } from "../../../../images/close.svg";
+import TelehealthInput from "../TelehealthInput";
 
 const FiltersModalToggleButton = styled(ModalToggleButton)`
   font-size: 1.25rem;
@@ -72,8 +73,44 @@ function MobileControl({
           </ModalToggleButton>
         </Grid>
         <div className="margin-y-3">
+          <AccessibilityInput filters={filters} setFilters={setFilters} />
+        </div>
+        <div className="margin-y-3">
+          <AgeGroupInput
+            legend={t("ageTitle")}
+            filters={filters}
+            setFilters={setFilters}
+          />
+        </div>
+        <div className="margin-y-3">
           <DistanceInput
             legend={t("distanceTitle")}
+            filters={filters}
+            setFilters={setFilters}
+          />
+        </div>
+        <div className="margin-y-3">
+          <FeePreferenceInput
+            legend={t("feesTitle")}
+            options={["PrivateInsurance", "Medicaid", "SlidingFeeScale"]}
+            optionLabelPrefix="feesValues"
+            filters={filters}
+            setFilters={setFilters}
+          />
+        </div>
+        <div className="margin-y-3">
+          <HoursInput filters={filters} setFilters={setFilters} />
+        </div>
+        <div className="margin-y-3">
+          <LanguageInput
+            legend={t("languageTitle")}
+            filters={filters}
+            setFilters={setFilters}
+          />
+        </div>
+        <div className="margin-y-3">
+          <TelehealthInput
+            legend={t("telehealthTitle")}
             filters={filters}
             setFilters={setFilters}
           />
@@ -92,35 +129,7 @@ function MobileControl({
             setFilters={setFilters}
           />
         </div>
-        <div className="margin-y-3">
-          <FeePreferenceInput
-            legend={t("feesTitle")}
-            options={["PrivateInsurance", "Medicaid", "SlidingFeeScale"]}
-            optionLabelPrefix="feesValues"
-            filters={filters}
-            setFilters={setFilters}
-          />
-        </div>
-        <div className="margin-y-3">
-          <AccessibilityInput filters={filters} setFilters={setFilters} />
-        </div>
-        <div className="margin-y-3">
-          <HoursInput filters={filters} setFilters={setFilters} />
-        </div>
-        <div className="margin-y-3">
-          <LanguageInput
-            legend={t("languageTitle")}
-            filters={filters}
-            setFilters={setFilters}
-          />
-        </div>
-        <div className="margin-y-3">
-          <AgeGroupInput
-            legend={t("ageTitle")}
-            filters={filters}
-            setFilters={setFilters}
-          />
-        </div>
+
         <div className="position-sticky bottom-neg-1 padding-y-2 bg-white text-center  border-top border-base-lighter">
           <FiltersModalToggleButton
             modalRef={modalRef}

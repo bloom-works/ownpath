@@ -62,7 +62,8 @@ function BasicResultDetail({ result, isCondensed }: BasicResultDetailProps) {
             </Link>
           </ResultDatum>
         )}
-        {(!!result.address?.length || result.offersTelehealth) && (
+        {((!!result.address?.length && !!result.latlng) ||
+          result.offersTelehealth) && (
           <ResultDatum
             Icon={result.address?.length ? Location : Telehealth}
             iconClassName={"margin-top-05"}
@@ -70,7 +71,7 @@ function BasicResultDetail({ result, isCondensed }: BasicResultDetailProps) {
           >
             <h3 className="usa-sr-only">{t("address")}</h3>
             <div>
-              {result.address?.length
+              {result.address?.length && !!result.latlng
                 ? result.address.map((addr, idx) => (
                     <Fragment key={idx}>
                       {addr}

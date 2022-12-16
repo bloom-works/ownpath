@@ -8,6 +8,7 @@ import { getMilesFromMeters } from "../../utils";
 import Badge from "../Badge";
 import { ReactComponent as BadgeCheck } from "../../images/badge-check.svg";
 import { ReactComponent as Telehealth } from "../../images/telehealth.svg";
+import CallProviderLink from "../ResultDetail/CallProviderLink";
 
 function CompareDetail({
   data,
@@ -71,7 +72,11 @@ function CompareDetail({
           })}
         </div>
       )}
-      <DirectionsLink careProvider={data} />
+      {data.latlng && data.address ? (
+        <DirectionsLink careProvider={data} />
+      ) : (
+        <CallProviderLink careProvider={data} />
+      )}
     </div>
   );
 }

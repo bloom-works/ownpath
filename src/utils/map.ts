@@ -31,20 +31,26 @@ export const rerenderMap = (
 ) => {
   setTimeout(() => {
     mapRef.current?.invalidateSize();
-    mapRef.current?.fitBounds(getResultBounds(results), { animate: false });
+    const bounds = getResultBounds(results);
+    bounds && mapRef.current?.fitBounds(bounds, { animate: false });
   }, 100);
 };
 
 /**
  * Helper function to get bounds for the search result map
- * based on the returned set of CareProviderSearchResults
+ * based on the returned set of CareProviderSearchResults.
+ * If none of the care providers have latlng data, then the
+ * bounds are set based on points pulled from the northwestern
+ * and southeastern most points in CO.
  * @param searchResults
  * @returns
  */
 export function getResultBounds(searchResults: CareProvider[]) {
-  return latLngBounds(
-    searchResults
-      .map((result) => result.latlng)
-      .filter((location): location is LatLngLiteral => !!location)
-  );
+  const latLngs = searchResults
+    .map((result) => result.latlng)
+    .filter((latlng): latlng is LatLngLiteral => !!latlng);
+
+  return latLngs.length ? latLngBounds(latLngs) : undefined;
 }
+
+export const CO_CENTER = { lat: 39.113014, lng: -105.358887 };

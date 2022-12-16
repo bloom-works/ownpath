@@ -26,6 +26,7 @@ import MentalHealthServicesTable from "../components/Compare/MentalHealthService
 import SubstanceUseServicesTable from "../components/Compare/SubstanceUseServicesTable";
 import AccessibilityTable from "../components/Compare/AccessibilityTable";
 import TelehealthTable from "../components/Compare/TelehealthTable";
+import TelehealthOnlyMap from "../components/TelehealthOnlyMap";
 
 const ShadowHR = styled.hr`
   box-shadow: 0 4px 8px 0 black;
@@ -108,29 +109,33 @@ export default function Compare() {
       <Grid row>
         <Grid col={12}>
           <h1 className="margin-top-0">Compare locations</h1>
-          <ResultsMap
-            bounds={getResultBounds([providerA, providerB])}
-            isMobile={true}
-          >
-            {providerA.latlng && (
-              <Marker
-                title={providerA.id}
-                position={providerA.latlng}
-                icon={getMapMarker(providerA)}
-                key={providerA.id}
-                interactive={false}
-              />
-            )}
-            {providerB.latlng && (
-              <Marker
-                title={providerB.id}
-                position={providerB.latlng}
-                icon={getMapMarker(providerB)}
-                key={providerB.id}
-                interactive={false}
-              />
-            )}
-          </ResultsMap>
+          {providerA.latlng || providerB.latlng ? (
+            <ResultsMap
+              bounds={getResultBounds([providerA, providerB])}
+              mapHeight="300px"
+            >
+              {providerA.latlng && (
+                <Marker
+                  title={providerA.id}
+                  position={providerA.latlng}
+                  icon={getMapMarker(providerA)}
+                  key={providerA.id}
+                  interactive={false}
+                />
+              )}
+              {providerB.latlng && (
+                <Marker
+                  title={providerB.id}
+                  position={providerB.latlng}
+                  icon={getMapMarker(providerB)}
+                  key={providerB.id}
+                  interactive={false}
+                />
+              )}
+            </ResultsMap>
+          ) : (
+            <TelehealthOnlyMap alertMessage={t("compareTelehealthMapAlert")} />
+          )}
         </Grid>
       </Grid>
       <Grid
