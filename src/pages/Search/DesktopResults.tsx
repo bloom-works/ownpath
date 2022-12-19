@@ -31,19 +31,19 @@ function DesktopResults({ results, filters, setFilters }: DesktopResultsProps) {
   const [selectedResultId, setSelectedResultId] = useState<string>("");
   const mapRef = useRef<LeafletMap>(null);
 
-  // Rerender map and reset scroll list to top
-  // whenever search filters change to ensure
-  // filtered results are displayed correctly
-  useEffect(() => {
-    rerenderMap(mapRef, results);
-    const scrollList = document.getElementById("scroll-list");
-    if (scrollList) scrollList.scrollTop = 0;
-  }, [mapRef, results]);
-
   const { paginationConfig } = useContext(PaginationContext);
   const resultsSlice = results
     .slice((paginationConfig.currentPage - 1) * paginationConfig.pageSize)
     .slice(0, paginationConfig.pageSize);
+
+  // Rerender map and reset scroll list to top
+  // whenever search filters or results page
+  // change to ensure filtered results are displayed correctly
+  useEffect(() => {
+    rerenderMap(mapRef, resultsSlice);
+    const scrollList = document.getElementById("scroll-list");
+    if (scrollList) scrollList.scrollTop = 0;
+  }, [mapRef, resultsSlice]);
 
   return (
     <div className="display-none tablet:display-block">
