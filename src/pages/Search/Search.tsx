@@ -80,6 +80,8 @@ export const CompareContext = createContext<{
 type PaginationContextProviderProps = {
   paginationConfig: PaginationConfig;
   setPaginationConfig: Dispatch<SetStateAction<PaginationConfig>>;
+  didChangePage: boolean;
+  setDidChangePage: Dispatch<SetStateAction<boolean>>;
 };
 
 export const PaginationContext = createContext<PaginationContextProviderProps>({
@@ -90,6 +92,8 @@ export const PaginationContext = createContext<PaginationContextProviderProps>({
     pageSize: 20,
   },
   setPaginationConfig: () => {},
+  didChangePage: false,
+  setDidChangePage: () => {},
 });
 
 function Search() {
@@ -117,6 +121,7 @@ function Search() {
     totalItems: 0,
     pageSize: 20,
   });
+  const [didChangePage, setDidChangePage] = useState<boolean>(false);
 
   const navigate = useNavigate();
 
@@ -198,7 +203,12 @@ function Search() {
           }}
         >
           <PaginationContext.Provider
-            value={{ paginationConfig, setPaginationConfig }}
+            value={{
+              paginationConfig,
+              setPaginationConfig,
+              didChangePage,
+              setDidChangePage,
+            }}
           >
             <div className="margin-y-2 padding-x-2 tablet:padding-x-5">
               <Grid row className="margin-bottom-2">

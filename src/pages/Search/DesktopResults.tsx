@@ -31,7 +31,7 @@ function DesktopResults({ results, filters, setFilters }: DesktopResultsProps) {
   const [selectedResultId, setSelectedResultId] = useState<string>("");
   const mapRef = useRef<LeafletMap>(null);
 
-  const { paginationConfig } = useContext(PaginationContext);
+  const { paginationConfig, didChangePage } = useContext(PaginationContext);
   const resultsSlice = results
     .slice((paginationConfig.currentPage - 1) * paginationConfig.pageSize)
     .slice(0, paginationConfig.pageSize);
@@ -41,19 +41,20 @@ function DesktopResults({ results, filters, setFilters }: DesktopResultsProps) {
   // change to ensure filtered results are displayed correctly
   useEffect(() => {
     rerenderMap(mapRef, resultsSlice);
-    // Scroll page to top (0)
     window.scrollTo(0, 0);
 
     // Scroll results list to top (0)
     const scrollList = document.getElementById("scroll-list");
     if (scrollList) scrollList.scrollTop = 0;
 
-    // Set focus to first result in list (first item in list is the pagination
-    // header "show # of ## results"; skip that by selecting 2nd child)
+    // Set focus to first result in list if user
+    // changed the page
     const firstResultLink = document.querySelector(
       "#desktop-list>div:nth-child(2) a"
     );
-    if (firstResultLink) (firstResultLink as HTMLElement).focus();
+    if (firstResultLink && didChangePage === true) {
+      (firstResultLink as HTMLElement).focus();
+    }
   }, [mapRef, resultsSlice]);
 
   return (
