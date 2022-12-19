@@ -41,8 +41,19 @@ function DesktopResults({ results, filters, setFilters }: DesktopResultsProps) {
   // change to ensure filtered results are displayed correctly
   useEffect(() => {
     rerenderMap(mapRef, resultsSlice);
+    // Scroll page to top (0)
+    window.scrollTo(0, 0);
+
+    // Scroll results list to top (0)
     const scrollList = document.getElementById("scroll-list");
     if (scrollList) scrollList.scrollTop = 0;
+
+    // Set focus to first result in list (first item in list is the pagination
+    // header "show # of ## results"; skip that by selecting 2nd child)
+    const firstResultLink = document.querySelector(
+      "#desktop-list>div:nth-child(2) a"
+    );
+    if (firstResultLink) (firstResultLink as HTMLElement).focus();
   }, [mapRef, resultsSlice]);
 
   return (
