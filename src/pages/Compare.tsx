@@ -184,14 +184,14 @@ export default function Compare() {
           <hr className="margin-bottom-3" />
         </>
       )}
-      <SubstanceUseServicesTable providerA={providerA} providerB={providerB} />
       <MentalHealthServicesTable providerA={providerA} providerB={providerB} />
+      <SubstanceUseServicesTable providerA={providerA} providerB={providerB} />
 
       <h2>{t("details")}</h2>
       <hr className="margin-bottom-3" />
-      <PopulationsTable providerA={providerA} providerB={providerB} />
       <AccessibilityTable providerA={providerA} providerB={providerB} />
       <LanguagesTable providerA={providerA} providerB={providerB} />
+      <PopulationsTable providerA={providerA} providerB={providerB} />
     </GridContainer>
   );
 }
