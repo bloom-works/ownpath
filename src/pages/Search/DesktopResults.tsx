@@ -31,19 +31,31 @@ function DesktopResults({ results, filters, setFilters }: DesktopResultsProps) {
   const [selectedResultId, setSelectedResultId] = useState<string>("");
   const mapRef = useRef<LeafletMap>(null);
 
-  // Rerender map and reset scroll list to top
-  // whenever search filters change to ensure
-  // filtered results are displayed correctly
-  useEffect(() => {
-    rerenderMap(mapRef, results);
-    const scrollList = document.getElementById("scroll-list");
-    if (scrollList) scrollList.scrollTop = 0;
-  }, [mapRef, results]);
-
-  const { paginationConfig } = useContext(PaginationContext);
+  const { paginationConfig, didChangePage } = useContext(PaginationContext);
   const resultsSlice = results
     .slice((paginationConfig.currentPage - 1) * paginationConfig.pageSize)
     .slice(0, paginationConfig.pageSize);
+
+  // Rerender map and reset scroll list to top
+  // whenever search filters or results page
+  // change to ensure filtered results are displayed correctly
+  useEffect(() => {
+    rerenderMap(mapRef, resultsSlice);
+    window.scrollTo(0, 0);
+
+    // Scroll results list to top (0)
+    const scrollList = document.getElementById("scroll-list");
+    if (scrollList) scrollList.scrollTop = 0;
+
+    // Set focus to first result in list if user
+    // changed the page
+    const firstResultLink = document.querySelector(
+      "#desktop-list>div:nth-child(2) a"
+    );
+    if (firstResultLink && didChangePage === true) {
+      (firstResultLink as HTMLElement).focus();
+    }
+  }, [mapRef, resultsSlice]);
 
   return (
     <div className="display-none tablet:display-block">
