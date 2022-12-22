@@ -11,7 +11,7 @@ function ResultsPagination({
   results: CareProviderSearchResult[];
 }) {
   const { t } = useTranslation();
-  const { paginationConfig, setPaginationConfig } =
+  const { paginationConfig, setPaginationConfig, setDidChangePage } =
     useContext(PaginationContext);
   const pageNumber = paginationConfig.currentPage;
 
@@ -24,7 +24,7 @@ function ResultsPagination({
     }));
   }, [results]);
 
-  // HACKKKKKK this component to inject translated content and add missing labels for svg icons
+  // HACK this component to inject translated content and add missing labels for svg icons
   useEffect(() => {
     // Set next button content to translated language, and add title to svg
     if (document.querySelector("button.usa-pagination__next-page")?.innerHTML) {
@@ -65,6 +65,8 @@ function ResultsPagination({
       ...paginationConfig,
       currentPage: paginationConfig.currentPage + 1,
     }));
+
+    setDidChangePage(true);
   };
 
   const clickPrevious = () => {
@@ -73,6 +75,8 @@ function ResultsPagination({
       ...paginationConfig,
       currentPage: paginationConfig.currentPage - 1,
     }));
+
+    setDidChangePage(true);
   };
 
   const clickPageNumber = (page: any) => {
@@ -81,6 +85,8 @@ function ResultsPagination({
       ...paginationConfig,
       currentPage: parseInt(page.target.innerHTML),
     }));
+
+    setDidChangePage(true);
   };
   return paginationConfig.totalPages > 1 ? (
     <Pagination
