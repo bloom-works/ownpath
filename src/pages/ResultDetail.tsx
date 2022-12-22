@@ -127,7 +127,7 @@ function ResultDetail() {
               <BulletedList
                 boolMap={data.accessibility}
                 translationPrefix="accessibilityValues"
-                className="line-height-body-4"
+                className="line-height-body-4 margin-left-3"
                 emptyMsg={t("moreInfo")}
               />
             </div>
@@ -140,7 +140,7 @@ function ResultDetail() {
               <BulletedList
                 boolMap={data.languages}
                 translationPrefix="languageValues"
-                className="line-height-body-4"
+                className="line-height-body-4 margin-left-3"
                 emptyMsg={t("moreInfo")}
               />
             </div>
@@ -152,7 +152,7 @@ function ResultDetail() {
               </div>
               <BulletedList
                 boolMap={data.populationsServed}
-                className="line-height-body-4"
+                className="line-height-body-4 margin-left-3"
                 emptyMsg={t("moreInfo")}
               />
             </div>
@@ -166,11 +166,11 @@ function ResultDetail() {
                 <h3 className="margin-0">{t("telehealth")}: </h3>
               </div>
               <ul className="margin-bottom-1">
-                <li className="line-height-body-4">
+                <li className="line-height-body-4 margin-left-3">
                   {data.offersTelehealth ? t("available") : t("notAvailable")}
                 </li>
               </ul>
-              <div className="margin-left-4 margin-bottom-2 font-body-3xs">
+              <div className="margin-left-5 margin-bottom-2 font-body-3xs">
                 {t("telehealthAvailableNote")}
               </div>
             </div>
