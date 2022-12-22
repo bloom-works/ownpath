@@ -41,6 +41,7 @@ export const SUBSTANCE_USE_SERVICES = [
   "OpioidTreatmentPrograms",
   "Outpatient",
   "YouthTreatment",
+  "LevelIIFourPlus",
 ] as const;
 export type SubstanceUseServices = typeof SUBSTANCE_USE_SERVICES[number];
 
