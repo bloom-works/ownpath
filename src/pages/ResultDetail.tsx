@@ -85,7 +85,7 @@ function ResultDetail() {
                   mapContainerProps={{ center: data.latlng, zoom: 14 }}
                   mapContainerStyles={{
                     flex: 1,
-                    height: "300px",
+                    height: "250px",
                     borderRadius: "10px",
                   }}
                 >
