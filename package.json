@@ -21,7 +21,7 @@
     "csv-parse": "~5.2.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-unused-imports": "^2.0.0",
-    "i18next": "~22.0.6",
+    "i18next": "~22.4.5",
     "i18next-browser-languagedetector": "~7.0.1",
     "jest-axe": "^7.0.0",
     "leaflet": "~1.9.3",
