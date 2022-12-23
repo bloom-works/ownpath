@@ -29,9 +29,16 @@ function Footer() {
       }
       secondary={
         <>
-          <Grid row>
+          <Grid row gap>
             <Link className="dark-background margin-y-1" href="/faq">
               {t("faqPageHeading")}
+            </Link>
+            <Link
+              className="dark-background margin-y-1"
+              href="https://bha.colorado.gov/state-of-colorado-accessibility-statement"
+              variant="external"
+            >
+              {t("accessibilityStatement")}
             </Link>
           </Grid>
           <hr />
@@ -54,15 +61,6 @@ function Footer() {
                     {t("feedbackCta")}
                   </Link>
                 </p>
-              </Grid>
-              <Grid row className="flex-justify font-body-sm">
-                <Link
-                  className="dark-background margin-y-1"
-                  href="https://bha.colorado.gov/state-of-colorado-accessibility-statement"
-                  variant="external"
-                >
-                  {t("accessibilityStatement")}
-                </Link>
               </Grid>
             </Grid>
             <Grid
