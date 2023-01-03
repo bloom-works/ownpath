@@ -33,7 +33,7 @@
     "react-i18next": "~11.17.2",
     "react-leaflet": "~4.2.0",
     "react-markdown": "^8.0.3",
-    "react-router-dom": "~6.4.4",
+    "react-router-dom": "~6.6.1",
     "react-scripts": "~5.0.1",
     "styled-components": "~5.3.6",
     "ts-jest": "^28.0.7",
