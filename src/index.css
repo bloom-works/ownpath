@@ -103,6 +103,11 @@ p {
   background-image: url(./images/launch.svg);
 }
 
+.usa-link--external.dark-background::after,
+.usa-link--external.dark-background:hover::after {
+  background-image: url(./images/launch_white.svg);
+}
+
 .dark-background,
 .usa-link.dark-background {
   color: white;

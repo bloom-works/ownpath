@@ -17,7 +17,11 @@ function BulletedList({
   const { t } = useTranslation();
 
   if (emptyMsg && !anyAreTrue(boolMap)) {
-    return <p>{emptyMsg}</p>;
+    return (
+      <ul>
+        <li className={className}>{emptyMsg}</li>
+      </ul>
+    );
   }
 
   return (

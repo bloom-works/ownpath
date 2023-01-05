@@ -19,6 +19,7 @@ test("Guided search experience works", async ({ page }) => {
   const radioButtons = page.locator(".usa-radio input");
   const firstRadio = radioButtons.nth(0);
   const next = page.locator("button", { hasText: "Next question" });
+  const finish = page.locator("button", { hasText: "View providers" });
   const back = page.locator("button", { hasText: "Previous question" });
 
   // who is getting help
@@ -90,7 +91,7 @@ test("Guided search experience works", async ({ page }) => {
   await expect(question).toContainText("How far");
   await expect(radioButtons).not.toHaveCount(0);
   await expect(checkboxes).toHaveCount(0);
-  await next.click();
+  await finish.click();
 
   // results
   const header = page.locator("h1");
