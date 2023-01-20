@@ -42,7 +42,7 @@ function ResultsList({
 
   return (
     <>
-      <StyledResultsPagination>
+      <StyledResultsPagination className="print-hide">
         <div>
           {t("paginationHeading", {
             firstResult: resultsSlice[0].searchRank,

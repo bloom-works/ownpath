@@ -211,12 +211,12 @@ function Search() {
               setDidChangePage,
             }}
           >
-            <div className="margin-y-2 padding-x-2 tablet:padding-x-5">
+            <div className="print-heading margin-y-2 padding-x-2 tablet:padding-x-5">
               <Grid row className="margin-bottom-2">
                 <div className="width-full">
-                  <div className="position-relative display-flex flex-align-baseline flex-justify">
+                  <div className="position-relative display-flex flex-align-baseline flex-justify flex-column-reverse flex-md-row">
                     <div className=" display-flex flex-align-baseline flex-wrap">
-                      <ResponsiveHeader className="margin-top-0 text-bold">
+                      <ResponsiveHeader className="margin-top-0 text-bold margin-right-1">
                         {t("searchPageHeading", {
                           count: searchResult?.results.length || 0,
                           zip: showZipInput ? "" : searchFilters.zip,
@@ -246,7 +246,7 @@ function Search() {
                         </SearchContainer>
                       )}
                       <Button
-                        className="margin-left-1 padding-y-05 width-auto"
+                        className="padding-y-05 width-auto"
                         type="button"
                         unstyled
                         onClick={() => {
@@ -263,9 +263,17 @@ function Search() {
                         )}
                       </Button>
                     </div>
-                    <div className="display-flex flex-justify-end flex-align-baseline">
+                    <div className="display-flex flex-justify-end flex-align-baseline width-full tablet:width-auto">
                       <PrintButton
-                        onClick={() => {}}
+                        onClick={() => {
+                          searchResult?.results.length &&
+                            setPaginationConfig({
+                              ...paginationConfig,
+                              pageSize: searchResult.results.length,
+                            });
+
+                          window.print();
+                        }}
                         className={"margin-right-1"}
                       />
                       <ShareButtonContainer lang={i18n.language}>
