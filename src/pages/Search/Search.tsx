@@ -31,9 +31,7 @@ import ZipInput from "../../components/ZipInput";
 import DesktopResults from "./DesktopResults";
 import MobileResults from "./MobileResults";
 import { ReactComponent as Close } from "../../images/close.svg";
-import ShareButton, {
-  ShareButtonContainer,
-} from "../../components/ShareButton";
+import ShareButton from "../../components/ShareButton";
 import CompareSelector from "../../components/Compare/CompareSelector";
 import ResultsPagination from "../../components/Pagination";
 import { PrintButton } from "../../components/PrintButton";
@@ -277,15 +275,8 @@ function Search() {
                       </Button>
                     </div>
                     <div className="display-flex flex-justify-end flex-align-center width-full tablet:width-auto">
-                      <PrintButton
-                        onClick={() => {
-                          window.print();
-                        }}
-                        className={"margin-right-1"}
-                      />
-                      <ShareButtonContainer lang={i18n.language}>
-                        <ShareButton text={t("searchPageShare")} />
-                      </ShareButtonContainer>
+                      <PrintButton className={"margin-right-1"} />
+                      <ShareButton text={t("searchPageShare")} />
                     </div>
                   </div>
                 </div>

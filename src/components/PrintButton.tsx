@@ -4,17 +4,16 @@ import { useTranslation } from "react-i18next";
 import { isMobile } from "react-device-detect";
 
 type PrintButtonProps = {
-  onClick: () => void;
   className?: string;
 };
 
-export const PrintButton = ({ onClick, className }: PrintButtonProps) => {
+export const PrintButton = ({ className }: PrintButtonProps) => {
   const { t } = useTranslation();
 
   if (isMobile) return <></>;
   return (
     <Button
-      onClick={onClick}
+      onClick={() => window.print()}
       type="button"
       unstyled
       className={`display-flex align-items-center margin-y-1 width-auto ${
