@@ -95,16 +95,16 @@ const ShareButtonContainerES = styled.div`
 const ShareButtonContainer = ({
   lang,
   children,
-}: PropsWithChildren<{ lang: string }>) =>
-  lang === "en" ? (
-    <ShareButtonContainerEN className="tablet:margin-left-1">
-      {children}
-    </ShareButtonContainerEN>
-  ) : (
-    <ShareButtonContainerES className="tablet:margin-left-1">
-      {children}
-    </ShareButtonContainerES>
-  );
+}: PropsWithChildren<{ lang: string }>) => <>{children}</>;
+// lang === "en" ? (
+//   <ShareButtonContainerEN className="tablet:margin-left-1">
+//     {children}
+//   </ShareButtonContainerEN>
+// ) : (
+//   <ShareButtonContainerES className="tablet:margin-left-1">
+//     {children}
+//   </ShareButtonContainerES>
+// );
 
 export default ShareButton;
 export { ShareButtonContainer };
