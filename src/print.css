@@ -21,4 +21,8 @@
   #desktop-list {
     width: 100% !important;
   }
+
+  .overflow-x-hidden {
+    overflow-x: visible !important;
+  }
 }
