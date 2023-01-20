@@ -183,6 +183,19 @@ function Search() {
       performSearch(searchFilters);
       logPageView();
     }
+
+    const onBeforePrint = () => {
+      // set page size to total results count so everything gets printed
+      searchResult?.results.length &&
+        setPaginationConfig({
+          ...paginationConfig,
+          pageSize: searchResult.results.length,
+        });
+    };
+    window.addEventListener("beforeprint", onBeforePrint);
+    return () => {
+      window.removeEventListener("beforeprint", onBeforePrint);
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -263,15 +276,9 @@ function Search() {
                         )}
                       </Button>
                     </div>
-                    <div className="display-flex flex-justify-end flex-align-baseline width-full tablet:width-auto">
+                    <div className="display-flex flex-justify-end flex-align-center width-full tablet:width-auto">
                       <PrintButton
                         onClick={() => {
-                          searchResult?.results.length &&
-                            setPaginationConfig({
-                              ...paginationConfig,
-                              pageSize: searchResult.results.length,
-                            });
-
                           window.print();
                         }}
                         className={"margin-right-1"}

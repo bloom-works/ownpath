@@ -17,4 +17,8 @@
   .print-no-margin {
     margin-bottom: 0 !important;
   }
+
+  #desktop-list {
+    width: 100% !important;
+  }
 }

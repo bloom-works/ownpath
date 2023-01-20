@@ -61,6 +61,7 @@ export default function Compare() {
       }
     };
     window.addEventListener("scroll", scroll);
+    return window.addEventListener("scroll", scroll);
   }, []);
 
   const [params] = useSearchParams();

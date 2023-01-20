@@ -297,5 +297,6 @@
   "dataLastUpdated": "Última actualización",
   "telehealthOnlyAddress": "Solo telemedicina",
   "next": "Siguiente",
-  "previous": "Anterior"
+  "previous": "Anterior",
+  "print": "Imprimir"
 }
