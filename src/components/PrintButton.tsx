@@ -7,7 +7,7 @@ type PrintButtonProps = {
   className?: string;
 };
 
-export const PrintButton = ({ className }: PrintButtonProps) => {
+const PrintButton = ({ className }: PrintButtonProps) => {
   const { t } = useTranslation();
 
   if (isMobile) return <></>;
@@ -25,3 +25,5 @@ export const PrintButton = ({ className }: PrintButtonProps) => {
     </Button>
   );
 };
+
+export default PrintButton;

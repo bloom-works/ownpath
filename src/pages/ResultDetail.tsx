@@ -22,7 +22,7 @@ import { anyAreTrue, handlePageLoad, getMapMarker } from "../utils";
 import ProviderUpdateInfo from "../components/ResultDetail/ProviderUpdateInfo";
 import CallProviderLink from "../components/ResultDetail/CallProviderLink";
 import TelehealthOnlyMap from "../components/TelehealthOnlyMap";
-import { PrintButton } from "../components/PrintButton";
+import PrintButton from "../components/PrintButton";
 
 function ResultDetail() {
   // Ensure user sees the top of the page

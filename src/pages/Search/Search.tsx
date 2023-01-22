@@ -34,7 +34,7 @@ import { ReactComponent as Close } from "../../images/close.svg";
 import ShareButton from "../../components/ShareButton";
 import CompareSelector from "../../components/Compare/CompareSelector";
 import ResultsPagination from "../../components/Pagination";
-import { PrintButton } from "../../components/PrintButton";
+import PrintButton from "../../components/PrintButton";
 
 const ResponsiveHeader = styled.h1`
   font-size: 1.5rem;
@@ -96,7 +96,7 @@ export const PaginationContext = createContext<PaginationContextProviderProps>({
 });
 
 function Search() {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   // Search filters as URL search params
   const [searchParams, setSearchParams] = useSearchParams();
   let searchFilters = getFiltersFromSearchParams(searchParams);
