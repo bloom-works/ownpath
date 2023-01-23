@@ -5,7 +5,7 @@ import {
   ModalRef,
   ModalToggleButton,
 } from "@trussworks/react-uswds";
-import { Dispatch, useRef, SetStateAction } from "react";
+import { Dispatch, useRef, SetStateAction, useContext } from "react";
 import { useTranslation } from "react-i18next";
 import { AnalyticsAction, logEvent } from "../../../../utils/analytics";
 import { SearchFilters, TypeOfHelp } from "../../../../types";
@@ -24,6 +24,7 @@ import AgeGroupInput from "../AgeGroupInput";
 import styled from "styled-components";
 import { ReactComponent as Close } from "../../../../images/close.svg";
 import TelehealthInput from "../TelehealthInput";
+import { SurveyTriggerContext } from "../../../../App";
 
 const FiltersModalToggleButton = styled(ModalToggleButton)`
   font-size: 1.25rem;
@@ -43,6 +44,10 @@ function MobileControl({
 }: MobileControlProps) {
   const modalRef = useRef<ModalRef>(null);
   const { t } = useTranslation();
+
+  // Global application state to track trigger events for showing user
+  // option to take site survey
+  const { incrementTriggerEventCount } = useContext(SurveyTriggerContext);
 
   const countSelected = getAppliedOptionalFiltersCount(filters);
   return (
@@ -79,14 +84,20 @@ function MobileControl({
           <AgeGroupInput
             legend={t("ageTitle")}
             filters={filters}
-            setFilters={setFilters}
+            setFilters={(_filters) => {
+              incrementTriggerEventCount();
+              setFilters(_filters);
+            }}
           />
         </div>
         <div className="margin-y-3">
           <DistanceInput
             legend={t("distanceTitle")}
             filters={filters}
-            setFilters={setFilters}
+            setFilters={(_filters) => {
+              incrementTriggerEventCount();
+              setFilters(_filters);
+            }}
           />
         </div>
         <div className="margin-y-3">
@@ -95,7 +106,10 @@ function MobileControl({
             options={["PrivateInsurance", "Medicaid", "SlidingFeeScale"]}
             optionLabelPrefix="feesValues"
             filters={filters}
-            setFilters={setFilters}
+            setFilters={(_filters) => {
+              incrementTriggerEventCount();
+              setFilters(_filters);
+            }}
           />
         </div>
         <div className="margin-y-3">
@@ -105,14 +119,20 @@ function MobileControl({
           <LanguageInput
             legend={t("languageTitle")}
             filters={filters}
-            setFilters={setFilters}
+            setFilters={(_filters) => {
+              incrementTriggerEventCount();
+              setFilters(_filters);
+            }}
           />
         </div>
         <div className="margin-y-3">
           <TelehealthInput
             legend={t("telehealthTitle")}
             filters={filters}
-            setFilters={setFilters}
+            setFilters={(_filters) => {
+              incrementTriggerEventCount();
+              setFilters(_filters);
+            }}
           />
         </div>
         <div className="margin-y-3">
@@ -126,7 +146,10 @@ function MobileControl({
             ]}
             optionLabelPrefix="typeOfHelpValues"
             filters={filters}
-            setFilters={setFilters}
+            setFilters={(_filters) => {
+              incrementTriggerEventCount();
+              setFilters(_filters);
+            }}
           />
         </div>
 
@@ -148,6 +171,7 @@ function MobileControl({
                 logEvent(AnalyticsAction.ApplyFilter, {
                   label: "Clear filters button",
                 });
+                incrementTriggerEventCount();
                 setFilters(getFiltersWithOptionalCleared(filters));
               }}
               unstyled

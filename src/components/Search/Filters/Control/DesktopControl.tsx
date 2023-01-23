@@ -1,6 +1,6 @@
 import { Grid } from "@trussworks/react-uswds";
 import { useTranslation } from "react-i18next";
-import { Dispatch, SetStateAction, useState } from "react";
+import { Dispatch, SetStateAction, useContext, useState } from "react";
 import { SearchFilters, TypeOfHelp } from "../../../../types";
 import DesktopControlDropdown from "./DesktopControlDropdown";
 import FeePreferenceInput from "../FeePreferenceInput";
@@ -12,6 +12,7 @@ import DistanceInput from "../DistanceInput";
 import ControlToggles from "./DesktopControlToggles";
 import AgeGroupInput from "../AgeGroupInput";
 import TelehealthInput from "../TelehealthInput";
+import { SurveyTriggerContext } from "../../../../App";
 
 type DesktopControlProps = {
   filters: SearchFilters;
@@ -25,6 +26,10 @@ function DesktopControl({
   distanceUpdatedExternally,
 }: DesktopControlProps) {
   const { t } = useTranslation();
+  // Global application state to track trigger events for showing user
+  // option to take site survey
+  const { incrementTriggerEventCount } = useContext(SurveyTriggerContext);
+
   // flag to display distance filter in active state ONLY
   // after user has explicitly changed from default value (zipcode search)
   // or original selection (guided search)
@@ -42,13 +47,17 @@ function DesktopControl({
           <AccessibilityInput
             compact
             filters={filters}
-            setFilters={setFilters}
+            setFilters={(_filters) => {
+              incrementTriggerEventCount();
+              setFilters(_filters);
+            }}
           />
         </DesktopControlDropdown>
         <DesktopControlDropdown
           title={t("ageTitle")}
           hasSelection={!!filters.age}
           clear={() => {
+            incrementTriggerEventCount();
             // pluck age out of filters
             const { age, ...updatedFilters } = filters;
             setFilters(updatedFilters);
@@ -58,7 +67,10 @@ function DesktopControl({
             legend={t("ageTitle")}
             compact
             filters={filters}
-            setFilters={setFilters}
+            setFilters={(_filters) => {
+              incrementTriggerEventCount();
+              setFilters(_filters);
+            }}
           />
         </DesktopControlDropdown>
         <DesktopControlDropdown
@@ -71,6 +83,7 @@ function DesktopControl({
             compact
             filters={filters}
             setFilters={(_filters) => {
+              incrementTriggerEventCount();
               setShowDistanceActive(true);
               setFilters(_filters);
             }}
@@ -79,7 +92,10 @@ function DesktopControl({
         <DesktopControlDropdown
           title={t("feesTitle")}
           hasSelection={!!filters.feePreferences?.length}
-          clear={() => setFilters({ ...filters, feePreferences: [] })}
+          clear={() => {
+            incrementTriggerEventCount();
+            setFilters({ ...filters, feePreferences: [] });
+          }}
         >
           <FeePreferenceInput
             legend={t("feesTitle")}
@@ -87,26 +103,38 @@ function DesktopControl({
             options={["PrivateInsurance", "Medicaid", "SlidingFeeScale"]}
             optionLabelPrefix="feesValues"
             filters={filters}
-            setFilters={setFilters}
+            setFilters={(_filters) => {
+              incrementTriggerEventCount();
+              setFilters(_filters);
+            }}
           />
         </DesktopControlDropdown>
         <DesktopControlDropdown
           title={t("hoursTitle")}
           hasSelection={!!filters.hours?.length}
-          clear={() => setFilters({ ...filters, hours: [] })}
+          clear={() => {
+            incrementTriggerEventCount();
+            setFilters({ ...filters, hours: [] });
+          }}
         >
           <HoursInput compact filters={filters} setFilters={setFilters} />
         </DesktopControlDropdown>
         <DesktopControlDropdown
           title={t("languageTitle")}
           hasSelection={!!filters.languages?.length}
-          clear={() => setFilters({ ...filters, languages: [] })}
+          clear={() => {
+            incrementTriggerEventCount();
+            setFilters({ ...filters, languages: [] });
+          }}
         >
           <LanguageInput
             legend={t("languageTitle")}
             compact
             filters={filters}
-            setFilters={setFilters}
+            setFilters={(_filters) => {
+              incrementTriggerEventCount();
+              setFilters(_filters);
+            }}
           />
         </DesktopControlDropdown>
         <DesktopControlDropdown
@@ -117,13 +145,19 @@ function DesktopControl({
             legend={t("telehealthTitle")}
             compact
             filters={filters}
-            setFilters={setFilters}
+            setFilters={(_filters) => {
+              incrementTriggerEventCount();
+              setFilters(_filters);
+            }}
           />
         </DesktopControlDropdown>
         <DesktopControlDropdown
           title={t("typeOfHelpTitle")}
           hasSelection={!!filters.typesOfHelp?.length}
-          clear={() => setFilters({ ...filters, typesOfHelp: [] })}
+          clear={() => {
+            incrementTriggerEventCount();
+            setFilters({ ...filters, typesOfHelp: [] });
+          }}
         >
           <TypeOfHelpInput
             legend={t("typeOfHelpTitle")}
@@ -136,11 +170,19 @@ function DesktopControl({
             ]}
             optionLabelPrefix="typeOfHelpValues"
             filters={filters}
-            setFilters={setFilters}
+            setFilters={(_filters) => {
+              incrementTriggerEventCount();
+              setFilters(_filters);
+            }}
           />
         </DesktopControlDropdown>
       </Grid>
-      <ControlToggles setFilters={setFilters} />
+      <ControlToggles
+        setFilters={(_filters) => {
+          incrementTriggerEventCount();
+          setFilters(_filters);
+        }}
+      />
     </div>
   );
 }

@@ -5,7 +5,7 @@ import {
   GridContainer,
   StepIndicatorStep,
 } from "@trussworks/react-uswds";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { createSearchParams, useNavigate } from "react-router-dom";
 import { AnalyticsAction, logEvent, logPageView } from "../utils/analytics";
@@ -25,6 +25,7 @@ import {
 } from "../utils";
 import AppAlert from "../components/AppAlert";
 import { ReactComponent as Info } from "../images/info.svg";
+import { SurveyTriggerContext } from "../App";
 
 const GUIDED_SEARCH_STEPS = [
   "helpRecipient",
@@ -68,6 +69,10 @@ function GuidedSearch() {
   // don't show validation errors until clicking next or clicking out of input
   const [showZipValidation, setShowZipValidation] = useState<boolean>(false);
 
+  // Global application state to track trigger events for showing user
+  // option to take site survey
+  const { incrementTriggerEventCount } = useContext(SurveyTriggerContext);
+
   // Helper func to progress through steps, or navigate to
   // search results with supplied filters if all steps completed
   const navigate = useNavigate();
@@ -91,6 +96,9 @@ function GuidedSearch() {
           (f) => f !== "DontKnow" && f !== "SelfPay"
         ),
       };
+      // Completing guided search counts towards trigger event count
+      // for showing user site survey
+      incrementTriggerEventCount();
       navigate({
         pathname: "/search",
         search: createSearchParams(searchFiltersWithoutNoops).toString(),
