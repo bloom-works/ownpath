@@ -35,6 +35,13 @@ function Footer() {
             </Link>
             <Link
               className="dark-background margin-y-1"
+              href={t("surveyLink")}
+              variant="external"
+            >
+              {t("ownpathSurvey")}
+            </Link>
+            <Link
+              className="dark-background margin-y-1"
               href="https://bha.colorado.gov/state-of-colorado-accessibility-statement"
               variant="external"
             >
