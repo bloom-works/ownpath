@@ -63,7 +63,7 @@ function ResultDetail() {
           href={`/search${prevSearch ?? ""}`}
         />
         <div className="display-flex flex-align-center">
-          <PrintButton className="margin-right-1" />
+          <PrintButton className="margin-right-3" />
           <ShareButton text={t("detailsPageShare")} />
         </div>
       </div>

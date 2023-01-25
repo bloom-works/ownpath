@@ -274,8 +274,8 @@ function Search() {
                         )}
                       </Button>
                     </div>
-                    <div className="display-flex flex-justify-end flex-align-center width-full tablet:width-auto">
-                      <PrintButton className={"margin-right-1"} />
+                    <div className="display-flex flex-justify-end flex-align-center width-full desktop:width-auto">
+                      <PrintButton className={"margin-right-3"} />
                       <ShareButton text={t("searchPageShare")} />
                     </div>
                   </div>
