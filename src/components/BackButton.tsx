@@ -1,5 +1,6 @@
-import { Button, Link } from "@trussworks/react-uswds";
+import { Button } from "@trussworks/react-uswds";
 import { ReactComponent as ArrowLeft } from "../images/arrow-left.svg";
+import { Link } from "react-router-dom";
 
 type BackButtonProps = {
   text: string;
@@ -11,8 +12,8 @@ function BackButton({ text, href, onClick }: BackButtonProps) {
   if (href)
     return (
       <Link
-        className="usa-button usa-button--unstyled display-flex flex-align-center"
-        href={href}
+        className="display-flex flex-align-center usa-button usa-button--unstyled width-auto"
+        to={href}
       >
         <ArrowLeft className="margin-right-1" />
         {text}

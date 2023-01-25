@@ -2,6 +2,7 @@ import { Checkbox, Grid } from "@trussworks/react-uswds";
 import { useContext } from "react";
 import { useTranslation } from "react-i18next";
 import { Link, useLocation } from "react-router-dom";
+import { SurveyTriggerContext } from "../../App";
 import { CompareContext } from "../../pages/Search/Search";
 
 import { CareProviderSearchResult } from "../../types";
@@ -19,6 +20,10 @@ export default function ResultCard({ data, isMobile }: ResultCardProps) {
     useContext(CompareContext);
   const location = useLocation();
   const { t } = useTranslation();
+
+  // Global application state to track trigger events for showing user
+  // option to take site survey
+  const { incrementTriggerEventCount } = useContext(SurveyTriggerContext);
 
   const toggleCompareCheckbox = () => {
     const thisProviderIdx = selectedCompareProviders.findIndex(
@@ -52,6 +57,7 @@ export default function ResultCard({ data, isMobile }: ResultCardProps) {
         {data.distance && <MilesAway meters={data.distance} />}
       </div>
       <Link
+        onClick={incrementTriggerEventCount}
         className="usa-link"
         to={`/result/${data.id}`}
         state={{ prevSearch: location.search, data }}
@@ -65,6 +71,7 @@ export default function ResultCard({ data, isMobile }: ResultCardProps) {
         className="flex-justify-center tablet:flex-justify flex-align-center"
       >
         <Link
+          onClick={incrementTriggerEventCount}
           className="usa-button"
           to={`/result/${data.id}`}
           state={{ prevSearch: location.search, data }}

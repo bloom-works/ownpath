@@ -1,9 +1,8 @@
 import React, { createContext, useEffect, useRef, useState } from "react";
-import { Modal, ModalRef, ModalToggleButton } from "@trussworks/react-uswds";
+import { Modal, ModalRef } from "@trussworks/react-uswds";
 import { Route, Routes } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
-import { ReactComponent as Close } from "./images/close.svg";
 import Layout from "./components/Layout";
 import Search from "./pages/Search/Search";
 import Home from "./pages/Home";
@@ -12,6 +11,9 @@ import NotFound from "./pages/NotFound";
 import GuidedSearch from "./pages/GuidedSearch";
 import FAQ from "./pages/FAQ";
 import Compare from "./pages/Compare";
+import SurveyPrompt from "./components/SurveyPrompt";
+
+const TRIGGER_EVENT_THRESHOLD = 3;
 
 export const SurveyTriggerContext = createContext<{
   triggerEventCount: number;
@@ -29,9 +31,7 @@ function App() {
   const [count, setCount] = useState(0);
   const [surveyPrompted, setSurveyPrompted] = useState(false);
   useEffect(() => {
-    console.log("COUNT", count);
-    console.log("prompted", surveyPrompted);
-    if (count > 2 && !surveyPrompted) {
+    if (count > TRIGGER_EVENT_THRESHOLD - 1 && !surveyPrompted) {
       modalRef.current?.toggleModal();
       setSurveyPrompted(true);
     }
@@ -42,25 +42,16 @@ function App() {
       <SurveyTriggerContext.Provider
         value={{
           triggerEventCount: count,
-          incrementTriggerEventCount: () =>
+          incrementTriggerEventCount: () => {
             setCount((count) => {
-              if (count < 3) return count + 1;
+              if (count < TRIGGER_EVENT_THRESHOLD) return count + 1;
               return count;
-            }),
+            });
+          },
         }}
       >
         <Modal id="survey-modal" ref={modalRef}>
-          <ModalToggleButton
-            modalRef={modalRef}
-            className="width-auto margin-y-1"
-            type="button"
-            unstyled
-            title="cancel"
-            closer
-          >
-            {t("cancel")} <Close className="data-icon margin-left-1" />
-          </ModalToggleButton>
-          MODAL CONTENT HERE!!!!!!!!!!!!!!!!!!!
+          <SurveyPrompt modalRef={modalRef} />
         </Modal>
         <Routes>
           <Route path="/" element={<Layout />}>
