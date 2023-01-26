@@ -90,6 +90,7 @@ function ResultsPagination({
   };
   return paginationConfig.totalPages > 1 ? (
     <Pagination
+      className="print-hide"
       key={paginationConfig.currentPage}
       pathname=""
       currentPage={paginationConfig.currentPage}

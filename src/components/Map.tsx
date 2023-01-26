@@ -45,6 +45,7 @@ function Map({
   });
   return (
     <MapContainer
+      className="print-hide"
       style={{ height: "500px", ...mapContainerStyles }}
       scrollWheelZoom={false}
       zoomControl={false}

@@ -22,6 +22,7 @@ import { anyAreTrue, handlePageLoad, getMapMarker } from "../utils";
 import ProviderUpdateInfo from "../components/ResultDetail/ProviderUpdateInfo";
 import CallProviderLink from "../components/ResultDetail/CallProviderLink";
 import TelehealthOnlyMap from "../components/TelehealthOnlyMap";
+import PrintButton from "../components/PrintButton";
 
 function ResultDetail() {
   // Ensure user sees the top of the page
@@ -61,7 +62,10 @@ function ResultDetail() {
           text={t("backToSearch")}
           href={`/search${prevSearch ?? ""}`}
         />
-        <ShareButton text={t("detailsPageShare")} />
+        <div className="display-flex flex-align-center">
+          <PrintButton className="margin-right-3" />
+          <ShareButton text={t("detailsPageShare")} />
+        </div>
       </div>
       <Grid row className="flex-justify flex-align-baseline margin-bottom-2">
         <Grid col={12} tablet={{ col: 8 }}>
@@ -209,7 +213,7 @@ function ResultDetail() {
         )}
       </Grid>
       <Grid row>
-        <Grid col={12}>
+        <Grid col={12} className="print-hide">
           <section className="margin-top-10">
             <Accordion
               bordered
@@ -266,13 +270,13 @@ function ResultDetail() {
             <div className="margin-top-2">
               <ProviderUpdateInfo />
             </div>
-            {data.lastUpdatedDate && (
-              <p className="margin-top-2">
-                {t("dataLastUpdated")}: {data.lastUpdatedDate}
-              </p>
-            )}
           </section>
         </Grid>
+        {data.lastUpdatedDate && (
+          <p className="margin-top-2">
+            {t("dataLastUpdated")}: {data.lastUpdatedDate}
+          </p>
+        )}
       </Grid>
     </GridContainer>
   );

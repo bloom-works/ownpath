@@ -5,6 +5,7 @@ import { Marker } from "react-leaflet";
 import styled from "styled-components";
 
 import BackButton from "../components/BackButton";
+import PrintButton from "../components/PrintButton";
 import ResultsMap from "../components/Search/ResultsMap";
 import ShareButton from "../components/ShareButton";
 import {
@@ -61,6 +62,7 @@ export default function Compare() {
       }
     };
     window.addEventListener("scroll", scroll);
+    return window.addEventListener("scroll", scroll);
   }, []);
 
   const [params] = useSearchParams();
@@ -104,7 +106,10 @@ export default function Compare() {
           text={t("backToSearch")}
           href={`/search${prevSearch ?? ""}`}
         />
-        <ShareButton text={t("detailsPageShare")} />
+        <div className="display-flex flex-align-center">
+          <PrintButton className="margin-right-3" />
+          <ShareButton text={t("detailsPageShare")} />
+        </div>
       </div>
       <Grid row>
         <Grid col={12}>
