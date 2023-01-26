@@ -297,5 +297,6 @@
   "dataLastUpdated": "Data last updated",
   "telehealthOnlyAddress": "Telehealth only",
   "next": "Next",
-  "previous": "Previous"
+  "previous": "Previous",
+  "print": "Print"
 }

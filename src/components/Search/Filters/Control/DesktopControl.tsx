@@ -31,7 +31,7 @@ function DesktopControl({
   const [showDistanceActive, setShowDistanceActive] = useState(false);
 
   return (
-    <div className="display-none tablet:display-block">
+    <div className="display-none tablet:display-block print-hide">
       <Grid row className="margin-bottom-2">
         <h2 className="usa-sr-only">{t("filterBy")}</h2>
         <DesktopControlDropdown
