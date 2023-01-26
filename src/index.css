@@ -124,7 +124,7 @@ p {
   color: white;
 }
 
-.usa-link.usa-button {
+.usa-link.usa-button:not(.usa-button--unstyled) {
   color: white;
   text-decoration: none;
 }

@@ -75,7 +75,7 @@ function DesktopResults({ results, filters, setFilters }: DesktopResultsProps) {
         <Grid
           tablet={{ col: 5 }}
           key="desktop-map"
-          className="position-sticky top-0"
+          className="position-sticky top-0 print-hide"
         >
           <ResultsMap bounds={getResultBounds(resultsSlice)} mapRef={mapRef}>
             {resultsSlice.map(

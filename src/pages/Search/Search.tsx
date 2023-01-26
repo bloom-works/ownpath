@@ -31,11 +31,10 @@ import ZipInput from "../../components/ZipInput";
 import DesktopResults from "./DesktopResults";
 import MobileResults from "./MobileResults";
 import { ReactComponent as Close } from "../../images/close.svg";
-import ShareButton, {
-  ShareButtonContainer,
-} from "../../components/ShareButton";
+import ShareButton from "../../components/ShareButton";
 import CompareSelector from "../../components/Compare/CompareSelector";
 import ResultsPagination from "../../components/Pagination";
+import PrintButton from "../../components/PrintButton";
 
 const ResponsiveHeader = styled.h1`
   font-size: 1.5rem;
@@ -97,7 +96,7 @@ export const PaginationContext = createContext<PaginationContextProviderProps>({
 });
 
 function Search() {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   // Search filters as URL search params
   const [searchParams, setSearchParams] = useSearchParams();
   let searchFilters = getFiltersFromSearchParams(searchParams);
@@ -182,6 +181,19 @@ function Search() {
       performSearch(searchFilters);
       logPageView();
     }
+
+    const onBeforePrint = () => {
+      // set page size to total results count so everything gets printed
+      searchResult?.results.length &&
+        setPaginationConfig({
+          ...paginationConfig,
+          pageSize: searchResult.results.length,
+        });
+    };
+    window.addEventListener("beforeprint", onBeforePrint);
+    return () => {
+      window.removeEventListener("beforeprint", onBeforePrint);
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -210,59 +222,62 @@ function Search() {
               setDidChangePage,
             }}
           >
-            <div className="margin-y-2 padding-x-2 tablet:padding-x-5">
+            <div className="print-heading margin-y-2 padding-x-2 tablet:padding-x-5">
               <Grid row className="margin-bottom-2">
                 <div className="width-full">
-                  <div className="position-relative display-flex flex-align-baseline flex-wrap">
-                    <ResponsiveHeader className="margin-top-0 text-bold">
-                      {t("searchPageHeading", {
-                        count: searchResult?.results.length || 0,
-                        zip: showZipInput ? "" : searchFilters.zip,
-                      })}
-                      {showZipInput && <Ellipses>...</Ellipses>}
-                    </ResponsiveHeader>
-                    {showZipInput && (
-                      <SearchContainer>
-                        <ZipSearch
-                          onSubmit={() => {
-                            setSearchParams({ ...searchFilters, zip });
-                            setShowZipInput(false);
-                          }}
-                          className="tablet:margin-left-1"
-                        >
-                          <ZipInput
-                            zip={zip}
-                            setZip={(_zip) => setZip(_zip)}
-                            noLabel
-                            autoFocus
+                  <div className="position-relative display-flex flex-align-baseline flex-justify flex-column-reverse flex-md-row">
+                    <div className=" display-flex flex-align-baseline flex-wrap">
+                      <ResponsiveHeader className="margin-top-0 text-bold margin-right-1">
+                        {t("searchPageHeading", {
+                          count: searchResult?.results.length || 0,
+                          zip: showZipInput ? "" : searchFilters.zip,
+                        })}
+                        {showZipInput && <Ellipses>...</Ellipses>}
+                      </ResponsiveHeader>
+                      {showZipInput && (
+                        <SearchContainer>
+                          <ZipSearch
+                            onSubmit={() => {
+                              setSearchParams({ ...searchFilters, zip });
+                              setShowZipInput(false);
+                            }}
+                            className="tablet:margin-left-1"
                           >
-                            <Button className="margin-left-1" type="submit">
-                              {t("search")}
-                            </Button>
-                          </ZipInput>
-                        </ZipSearch>
-                      </SearchContainer>
-                    )}
-                    <Button
-                      className="margin-left-1 padding-y-05 width-auto"
-                      type="button"
-                      unstyled
-                      onClick={() => {
-                        setShowZipInput(!showZipInput);
-                        setZip(searchFilters.zip);
-                      }}
-                    >
-                      {showZipInput ? (
-                        <>
-                          {t("cancel")} <Close className="margin-left-05" />
-                        </>
-                      ) : (
-                        t("change")
+                            <ZipInput
+                              zip={zip}
+                              setZip={(_zip) => setZip(_zip)}
+                              noLabel
+                              autoFocus
+                            >
+                              <Button className="margin-left-1" type="submit">
+                                {t("search")}
+                              </Button>
+                            </ZipInput>
+                          </ZipSearch>
+                        </SearchContainer>
                       )}
-                    </Button>
-                    <ShareButtonContainer lang={i18n.language}>
+                      <Button
+                        className="padding-y-05 width-auto"
+                        type="button"
+                        unstyled
+                        onClick={() => {
+                          setShowZipInput(!showZipInput);
+                          setZip(searchFilters.zip);
+                        }}
+                      >
+                        {showZipInput ? (
+                          <>
+                            {t("cancel")} <Close className="margin-left-05" />
+                          </>
+                        ) : (
+                          t("change")
+                        )}
+                      </Button>
+                    </div>
+                    <div className="display-flex flex-justify-end flex-align-center width-full desktop:width-auto">
+                      <PrintButton className={"margin-right-3"} />
                       <ShareButton text={t("searchPageShare")} />
-                    </ShareButtonContainer>
+                    </div>
                   </div>
                 </div>
               </Grid>
