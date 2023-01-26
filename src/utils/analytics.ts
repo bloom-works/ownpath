@@ -35,6 +35,7 @@ export enum AnalyticsAction {
   ViewCompare = "View compare",
   ReturnToSearch = "ReturnToSearch",
   ClickPaginationButton = "Click Pagination Button for results",
+  VisitSurveyFromFooter = "Click OwnPath Survey Link in Footer ",
 }
 
 type AnalyticsEventProperties = {

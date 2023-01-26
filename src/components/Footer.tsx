@@ -2,6 +2,7 @@ import { Grid, Footer as USWDSFooter, Link } from "@trussworks/react-uswds";
 import { useTranslation } from "react-i18next";
 import { ReactComponent as ColoradoBhaLogoWhite } from "../images/logos/colorado_bha_white.svg";
 import { ReactComponent as BhaLogo } from "../images/logos/bha.svg";
+import { AnalyticsAction, logEvent } from "../utils/analytics";
 
 const betaLabel = (
   <span className="font-body-sm bg-primary-light radius-pill padding-x-1 margin-right-1 text-ink">
@@ -34,6 +35,7 @@ function Footer() {
               {t("faqPageHeading")}
             </Link>
             <Link
+              onClick={() => logEvent(AnalyticsAction.VisitSurveyFromFooter)}
               className="dark-background margin-y-1"
               href={t("surveyLink")}
               variant="external"
