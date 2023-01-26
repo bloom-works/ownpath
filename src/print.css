@@ -1,0 +1,28 @@
+@media print {
+  button,
+  header,
+  footer,
+  .pagination-heading,
+  .pagination-buttons,
+  a.usa-button,
+  .usa-checkbox,
+  .print-hide {
+    display: none !important;
+  }
+
+  h1,
+  h2,
+  .print-heading,
+  .print-heading > *,
+  .print-no-margin {
+    margin-bottom: 0 !important;
+  }
+
+  #desktop-list {
+    width: 100% !important;
+  }
+
+  .overflow-x-hidden {
+    overflow-x: visible !important;
+  }
+}
