@@ -32,7 +32,8 @@ export const rerenderMap = (
   setTimeout(() => {
     mapRef.current?.invalidateSize();
     const bounds = getResultBounds(results);
-    bounds && mapRef.current?.fitBounds(bounds, { animate: false });
+    bounds &&
+      mapRef.current?.fitBounds(bounds, { animate: false, padding: [50, 50] });
   }, 100);
 };
 

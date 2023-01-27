@@ -10,7 +10,10 @@ type BackButtonProps = {
 function BackButton({ text, href, onClick }: BackButtonProps) {
   if (href)
     return (
-      <Link className="display-flex flex-align-center" href={href}>
+      <Link
+        className="usa-button usa-button--unstyled display-flex flex-align-center"
+        href={href}
+      >
         <ArrowLeft className="margin-right-1" />
         {text}
       </Link>

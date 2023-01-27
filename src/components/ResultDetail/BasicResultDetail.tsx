@@ -29,7 +29,7 @@ function BasicResultDetail({ result, isCondensed }: BasicResultDetailProps) {
 
   return (
     <>
-      <div className="margin-bottom-3 display-flex flex-wrap">
+      <div className="margin-bottom-3 print-no-margin display-flex flex-wrap">
         {result.acceptingNewPatients && (
           <Badge
             bgColor="blue"
@@ -49,7 +49,7 @@ function BasicResultDetail({ result, isCondensed }: BasicResultDetailProps) {
           />
         )}
       </div>
-      <div className="margin-bottom-3">
+      <div className="margin-bottom-3 print-no-margin">
         {result.phone && (
           <ResultDatum
             Icon={Telephone}
