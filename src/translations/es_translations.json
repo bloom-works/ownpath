@@ -12,6 +12,8 @@
   "privacyCommitmentHeading": "Nuestro compromiso",
   "privacyCommitment": "Nunca tendrás que crear una cuenta para usar este servicio, y no guardamos ninguna información sobre ti que te identifique personalmente mientras usas este servicio. Aunque hacemos todo lo posible para mantener actualizada la información en el sitio web, la opción más precisa es comunicarse directamente con el proveedor. ",
   "accessibilityStatement": "Declaración sobre la accessibilidad",
+  "ownpathSurvey": "Encuesta de MiPropiaSenda",
+  "surveyLink": "https://docs.google.com/forms/d/e/1FAIpQLSc0lAKgppWGgqIp5Fg_LXlAdSrBMw_8PoOpeU8gtxXahDp8EA/viewform",
   "homePageHeading": "Encuentra opciones de apoyo para la salud mental y con el uso de sustancias en Colorado.",
   "zipCodePrompt": "Ingresa tu código postal para encontrar atención cercana a tu área.",
   "or": "o",
@@ -298,5 +300,8 @@
   "telehealthOnlyAddress": "Solo telemedicina",
   "next": "Siguiente",
   "previous": "Anterior",
-  "print": "Imprimir"
+  "print": "Imprimir",
+  "surveyPrompt": "¡Gracias por visitar MiPropiaSenda! Tus comentarios son importantes para la Administración para la Salud del Comportamiento (BHA, por sus siglas en inglés). Antes de irte, por favor contesta esta encuesta. Todas las preguntas son opcionales.",
+  "surveyYes": "Contesta una breve encuesta",
+  "surveyNo": "No gracias, quiero irme"
 }
