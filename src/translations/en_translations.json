@@ -12,6 +12,8 @@
   "privacyCommitmentHeading": "Our commitment to you",
   "privacyCommitment": "You’ll never need to create an account to use this service, and we do not store any personally identifiable information about you while using this service. While we do our best to make sure information on the site is current, it’s always most accurate to reach out directly to a provider.",
   "accessibilityStatement": "Accessibility Statement",
+  "ownpathSurvey": "OwnPath Survey",
+  "surveyLink": "https://docs.google.com/forms/d/e/1FAIpQLSdbFNnsH8yaYLTsdJVQCYyRokBSDqypS8qwHklIcA7u-5JG1Q/viewform",
   "homePageHeading": "Find behavioral health care in Colorado that’s meaningful for you.\n",
   "zipCodePrompt": "Enter your zip code to find care near your area.",
   "or": "or",
@@ -298,5 +300,8 @@
   "telehealthOnlyAddress": "Telehealth only",
   "next": "Next",
   "previous": "Previous",
-  "print": "Print"
+  "print": "Print",
+  "surveyPrompt": "Thank you for visiting OwnPath! Your feedback is important to the Behavioral Health Administration (BHA). Before you go, please complete this survey. All question are optional.",
+  "surveyYes": "Take a short survey",
+  "surveyNo": "No thanks, I want to leave"
 }
