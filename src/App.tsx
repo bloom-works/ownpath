@@ -1,5 +1,4 @@
-import React, { createContext, useEffect, useRef, useState } from "react";
-import { Modal, ModalRef } from "@trussworks/react-uswds";
+import React, { createContext, useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
@@ -16,9 +15,8 @@ import SurveyPrompt from "./components/SurveyPrompt";
 const TRIGGER_EVENT_THRESHOLD = 3;
 
 export const SurveyTriggerContext = createContext<{
-  triggerEventCount: number;
   incrementTriggerEventCount: () => void;
-}>({ triggerEventCount: 0, incrementTriggerEventCount: () => {} });
+}>({ incrementTriggerEventCount: () => {} });
 
 function App() {
   const { t } = useTranslation();
@@ -27,32 +25,26 @@ function App() {
     document.title = t("title");
   });
 
-  const modalRef = useRef<ModalRef>(null);
   const [count, setCount] = useState(0);
-  const [surveyPrompted, setSurveyPrompted] = useState(false);
-  useEffect(() => {
-    if (count > TRIGGER_EVENT_THRESHOLD - 1 && !surveyPrompted) {
-      modalRef.current?.toggleModal();
-      setSurveyPrompted(true);
-    }
-  }, [count, surveyPrompted]);
+  const [shouldShowSurvey, setShouldShowSurvey] = useState(false);
 
   return (
     <main className="App">
       <SurveyTriggerContext.Provider
         value={{
-          triggerEventCount: count,
           incrementTriggerEventCount: () => {
             setCount((count) => {
-              if (count < TRIGGER_EVENT_THRESHOLD) return count + 1;
-              return count;
+              if (count === TRIGGER_EVENT_THRESHOLD) setShouldShowSurvey(true);
+              return count + 1;
             });
           },
         }}
       >
-        <Modal id="survey-modal" ref={modalRef}>
-          <SurveyPrompt modalRef={modalRef} />
-        </Modal>
+        <SurveyPrompt
+          className={`${shouldShowSurvey ? "" : "hide"}`}
+          hide={() => setShouldShowSurvey(false)}
+        />
+
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
