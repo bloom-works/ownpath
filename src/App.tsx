@@ -23,10 +23,15 @@ function App() {
 
   useEffect(() => {
     document.title = t("title");
-  });
+  }, []);
 
   const [count, setCount] = useState(0);
   const [shouldShowSurvey, setShouldShowSurvey] = useState(false);
+
+  useEffect(() => {
+    console.log("count", count);
+    console.log("should show", shouldShowSurvey);
+  });
 
   return (
     <main className="App">
@@ -34,15 +39,16 @@ function App() {
         value={{
           incrementTriggerEventCount: () => {
             setCount((count) => {
-              if (count === TRIGGER_EVENT_THRESHOLD) setShouldShowSurvey(true);
+              if (count === TRIGGER_EVENT_THRESHOLD - 1)
+                setShouldShowSurvey(true);
               return count + 1;
             });
           },
         }}
       >
         <SurveyPrompt
-          className={`${shouldShowSurvey ? "" : "hide"}`}
-          hide={() => setShouldShowSurvey(false)}
+          shouldShowSurvey={shouldShowSurvey}
+          hideFunc={() => setShouldShowSurvey(false)}
         />
 
         <Routes>
