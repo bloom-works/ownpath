@@ -23,7 +23,7 @@ function App() {
 
   useEffect(() => {
     document.title = t("title");
-  }, []);
+  });
 
   const [count, setCount] = useState(0);
   const [shouldShowSurvey, setShouldShowSurvey] = useState(false);
