@@ -271,5 +271,6 @@ test("Survey prompt displays after event threshold met", async ({ page }) => {
   await pageNextButton.click();
   expect(await surveyPrompt.isVisible()).toBeFalsy();
   await fullDetailButton.first().click();
+  await page.waitForTimeout(1000);
   expect(await surveyPrompt.isVisible()).toBeTruthy();
 });

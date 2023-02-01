@@ -28,11 +28,6 @@ function App() {
   const [count, setCount] = useState(0);
   const [shouldShowSurvey, setShouldShowSurvey] = useState(false);
 
-  useEffect(() => {
-    console.log("count", count);
-    console.log("should show", shouldShowSurvey);
-  });
-
   return (
     <main className="App">
       <SurveyTriggerContext.Provider
