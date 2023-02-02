@@ -43,6 +43,7 @@ const StyledZipContainer = styled.div`
     height: 3rem;
     background-image: none;
     padding-left: 0.8rem;
+    min-width: 160px;
   }
 
   & #zip[value=""] {
@@ -96,7 +97,6 @@ function SearchCard() {
       >
         <StyledZipContainer className="grid-gap-sm">
           <ZipInput
-            className="mobile-lg:min-width-card"
             zip={filters.zip}
             setZip={(zip) => setFilters({ ...filters, zip })}
             placeholder={t("zipCode")}
