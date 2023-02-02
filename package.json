@@ -29,7 +29,7 @@
     "react-bootstrap": "^2.7.0",
     "react-device-detect": "^2.2.2",
     "react-dom": "~18.2.0",
-    "react-ga4": "^1.4.1",
+    "react-ga4": "^2.0.0",
     "react-i18next": "~11.17.2",
     "react-leaflet": "~4.2.0",
     "react-markdown": "^8.0.3",
