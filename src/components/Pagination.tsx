@@ -1,6 +1,7 @@
 import { Pagination } from "@trussworks/react-uswds";
 import { useEffect, useContext } from "react";
 import { useTranslation } from "react-i18next";
+import { SurveyTriggerContext } from "../App";
 import { PaginationContext } from "../pages/Search/Search";
 import { CareProviderSearchResult } from "../types";
 import { AnalyticsAction, logEvent } from "../utils/analytics";
@@ -11,6 +12,11 @@ function ResultsPagination({
   results: CareProviderSearchResult[];
 }) {
   const { t } = useTranslation();
+
+  // Global application state to track trigger events for showing user
+  // option to take site survey
+  const { incrementTriggerEventCount } = useContext(SurveyTriggerContext);
+
   const { paginationConfig, setPaginationConfig, setDidChangePage } =
     useContext(PaginationContext);
   const pageNumber = paginationConfig.currentPage;
@@ -60,7 +66,7 @@ function ResultsPagination({
 
   const clickNext = () => {
     logEvent(AnalyticsAction.ClickPaginationButton, { pageNumber });
-
+    incrementTriggerEventCount();
     setPaginationConfig(() => ({
       ...paginationConfig,
       currentPage: paginationConfig.currentPage + 1,
@@ -71,6 +77,7 @@ function ResultsPagination({
 
   const clickPrevious = () => {
     logEvent(AnalyticsAction.ClickPaginationButton, { pageNumber });
+    incrementTriggerEventCount();
     setPaginationConfig(() => ({
       ...paginationConfig,
       currentPage: paginationConfig.currentPage - 1,
@@ -81,6 +88,7 @@ function ResultsPagination({
 
   const clickPageNumber = (page: any) => {
     logEvent(AnalyticsAction.ClickPaginationButton, { pageNumber });
+    incrementTriggerEventCount();
     setPaginationConfig(() => ({
       ...paginationConfig,
       currentPage: parseInt(page.target.innerHTML),

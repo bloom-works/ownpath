@@ -1,5 +1,5 @@
 import { Button } from "@trussworks/react-uswds";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { createSearchParams, useNavigate } from "react-router-dom";
 import styled from "styled-components";
@@ -7,6 +7,7 @@ import { AnalyticsAction, logEvent } from "../../utils/analytics";
 import { SearchFilters } from "../../types";
 import { EMPTY_SEARCH_FILTERS, getZipSearchMetadata } from "../../utils";
 import ZipInput from "../ZipInput";
+import { SurveyTriggerContext } from "../../App";
 
 const ZipButton = styled(Button)`
   max-width: 6rem;
@@ -21,6 +22,11 @@ function ZipCard() {
   const navigate = useNavigate();
 
   const zipMeta = getZipSearchMetadata(filters.zip);
+
+  // Global application state to track trigger events for showing user
+  // option to take site survey
+  const { incrementTriggerEventCount } = useContext(SurveyTriggerContext);
+
   // don't show validation errors until clicking search or clicking out of input
   const [showValidation, setShowValidation] = useState<boolean>(false);
 
@@ -34,6 +40,7 @@ function ZipCard() {
             logEvent(AnalyticsAction.CompleteZipSearch, {
               search: filters.zip,
             });
+            incrementTriggerEventCount();
             navigate({
               pathname: "/search",
               search: createSearchParams({
