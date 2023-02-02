@@ -63,7 +63,7 @@ function ControlToggles({ setFilters }: ControlTogglesProps) {
       </span>
       {filters.accessibility.map((filter) => (
         <DesktopControlToggle
-          key="accessibility"
+          key={`${filter}`}
           name={t(`accessibilityShortValues${filter}`)}
           onClick={() =>
             setFilters({
@@ -86,7 +86,7 @@ function ControlToggles({ setFilters }: ControlTogglesProps) {
       )}
       {filters.feePreferences.map((filter) => (
         <DesktopControlToggle
-          key="fee-preference"
+          key={`${filter}`}
           name={t(`feesValues${filter}`)}
           onClick={() =>
             setFilters({
@@ -98,7 +98,7 @@ function ControlToggles({ setFilters }: ControlTogglesProps) {
       ))}
       {filters.hours.map((filter) => (
         <DesktopControlToggle
-          key="hours"
+          key={`${filter}`}
           name={t(`hoursValues${filter}`)}
           onClick={() =>
             setFilters({
@@ -110,7 +110,7 @@ function ControlToggles({ setFilters }: ControlTogglesProps) {
       ))}
       {filters.languages.map((filter) => (
         <DesktopControlToggle
-          key="languages"
+          key={`${filter}`}
           name={t(`languageShortValues${filter}`)}
           onClick={() =>
             setFilters({
@@ -122,7 +122,7 @@ function ControlToggles({ setFilters }: ControlTogglesProps) {
       ))}
       {filters.typesOfHelp.map((filter) => (
         <DesktopControlToggle
-          key="types-of-help"
+          key={`${filter}`}
           name={t(`typeOfHelpShortValues${filter}`)}
           onClick={() =>
             setFilters({

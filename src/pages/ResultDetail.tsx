@@ -2,6 +2,7 @@ import { Accordion, Grid, GridContainer, Link } from "@trussworks/react-uswds";
 import { Marker } from "react-leaflet";
 import { Navigate, useLocation, useParams } from "react-router-dom";
 import { Trans, useTranslation } from "react-i18next";
+import { isMobile } from "react-device-detect";
 
 import { ReactComponent as Telehealth } from "../images/telehealth.svg";
 import { ReactComponent as Populations } from "../images/populations.svg";
@@ -86,7 +87,11 @@ function ResultDetail() {
             <div className="display-grid">
               {data.latlng && data.address ? (
                 <Map
-                  mapContainerProps={{ center: data.latlng, zoom: 14 }}
+                  mapContainerProps={{
+                    center: data.latlng,
+                    zoom: 14,
+                    dragging: isMobile ? false : true,
+                  }}
                   mapContainerStyles={{
                     flex: 1,
                     height: "250px",
