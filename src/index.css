@@ -77,13 +77,13 @@ p {
   font-size: 0.75rem;
 }
 
+.usa-modal,
 .usa-button,
 .usa-card__container,
 .usa-prose,
 .usa-fieldset {
   font-family: Trebuchet MS, san-serif;
   font-weight: 500;
-  font-size: 1rem;
 }
 .usa-link {
   font-family: Trebuchet MS, san-serif;

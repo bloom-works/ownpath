@@ -30,6 +30,7 @@ function ResultsMap({
         boundsOptions: { padding: [30, 30] },
         zoomSnap: 0.5,
         zoomDelta: 0.5,
+        dragging: isMobile ? false : true,
       }}
       mapContainerStyles={{
         height: mapHeight || "100vh",

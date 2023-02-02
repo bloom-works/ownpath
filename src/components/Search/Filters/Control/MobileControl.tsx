@@ -5,7 +5,7 @@ import {
   ModalRef,
   ModalToggleButton,
 } from "@trussworks/react-uswds";
-import { Dispatch, useRef, SetStateAction } from "react";
+import { Dispatch, useRef, SetStateAction, useContext } from "react";
 import { useTranslation } from "react-i18next";
 import { AnalyticsAction, logEvent } from "../../../../utils/analytics";
 import { SearchFilters, TypeOfHelp } from "../../../../types";
@@ -24,8 +24,9 @@ import AgeGroupInput from "../AgeGroupInput";
 import styled from "styled-components";
 import { ReactComponent as Close } from "../../../../images/close.svg";
 import TelehealthInput from "../TelehealthInput";
+import { SurveyTriggerContext } from "../../../../App";
 
-const FiltersModalToggleButton = styled(ModalToggleButton)`
+const FiltersModalToggleButton = styled(Button)`
   font-size: 1.25rem;
   padding: 1rem 1.25rem;
 `;
@@ -43,6 +44,10 @@ function MobileControl({
 }: MobileControlProps) {
   const modalRef = useRef<ModalRef>(null);
   const { t } = useTranslation();
+
+  // Global application state to track trigger events for showing user
+  // option to take site survey
+  const { incrementTriggerEventCount } = useContext(SurveyTriggerContext);
 
   const countSelected = getAppliedOptionalFiltersCount(filters);
   return (
@@ -132,7 +137,10 @@ function MobileControl({
 
         <div className="position-sticky bottom-neg-1 padding-y-2 bg-white text-center  border-top border-base-lighter">
           <FiltersModalToggleButton
-            modalRef={modalRef}
+            onClick={() => {
+              incrementTriggerEventCount();
+              modalRef.current?.toggleModal();
+            }}
             type="button"
             className="radius-pill display-flex flex-align-center flex-justify-center text-body-md"
             outline={countSelected === 0}
@@ -145,6 +153,7 @@ function MobileControl({
               type="button"
               className="margin-top-2 display-flex flex-align-center flex-justify-center"
               onClick={() => {
+                incrementTriggerEventCount();
                 logEvent(AnalyticsAction.ApplyFilter, {
                   label: "Clear filters button",
                 });
@@ -159,7 +168,10 @@ function MobileControl({
       </Modal>
       <div className="position-sticky bottom-0 padding-y-2 bg-white text-center">
         <FiltersModalToggleButton
-          modalRef={modalRef}
+          type="button"
+          onClick={() => {
+            modalRef.current?.toggleModal();
+          }}
           className="radius-pill display-flex flex-align-center flex-justify-center text-body-md"
           outline={countSelected === 0}
           base={countSelected !== 0}
