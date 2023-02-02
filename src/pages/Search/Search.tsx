@@ -246,13 +246,13 @@ function Search() {
                             <ZipInput
                               zip={zip}
                               setZip={(_zip) => setZip(_zip)}
+                              className="width-card"
                               noLabel
                               autoFocus
-                            >
-                              <Button className="margin-left-1" type="submit">
-                                {t("search")}
-                              </Button>
-                            </ZipInput>
+                            />
+                            <Button className="margin-left-1" type="submit">
+                              {t("search")}
+                            </Button>
                           </ZipSearch>
                         </SearchContainer>
                       )}
