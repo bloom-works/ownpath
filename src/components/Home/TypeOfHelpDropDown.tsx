@@ -21,8 +21,10 @@ function TypeOfHelpDropDown({
       onChange={(evt) => {
         setTypeOfHelp(evt.target.value);
       }}
+      defaultValue=""
+      aria-label={t("dropdownPrompt")}
     >
-      <option value="" disabled selected hidden>
+      <option key="default" value="" disabled hidden>
         {t("dropdownPrompt")}
       </option>
       {[
@@ -32,7 +34,7 @@ function TypeOfHelpDropDown({
         TypeOfHelp.SuicidalIdeation,
         TypeOfHelp.Unsure,
       ].map((typeOfHelp) => (
-        <option className="text-black" value={typeOfHelp}>
+        <option key={typeOfHelp} className="text-black" value={typeOfHelp}>
           {t(`typeOfHelpValues${typeOfHelp}`)}
         </option>
       ))}

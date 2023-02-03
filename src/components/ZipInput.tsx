@@ -29,7 +29,9 @@ function ZipInput({
       </Label>
       <div className="display-flex">
         <TextInput
-          className="margin-top-0 width-full"
+          className={`margin-top-0 width-full ${
+            showError ? "border-2px border-secondary-dark" : ""
+          }`}
           id="zip"
           name="zip"
           type="text"

@@ -15,7 +15,13 @@ import PeopleGridMobilePath from "../images/people_grid_mobile.png";
 import PeopleGridDesktopPath from "../images/people_grid_desktop.png";
 import { handlePageLoad } from "../utils";
 import { Link } from "react-router-dom";
-import HighlightBox from "../components/HighlightBox";
+
+const ResponsiveH1 = styled.h1`
+  font-size: 2.25rem;
+  @media (min-width: 480px) {
+    font-size: 3.25rem;
+  }
+`;
 
 const HeroSection = styled.div`
   background-color: #dbf0f9;
@@ -34,12 +40,12 @@ const PeopleGridDesktop = styled.div`
 const PeopleGridMobile = styled.img`
   height: 5rem;
   object-fit: cover;
+  margin-top: -2rem;
 `;
-
-const GuidedSearchGridContainer = styled(GridContainer)``;
 
 const GuidedSearchSection = styled.div`
   background-color: #32747f;
+  padding: 0.75rem;
 `;
 
 const ResourcesSection = styled.div`
@@ -74,7 +80,7 @@ function Home() {
           <GridContainer>
             <Grid row>
               <Grid desktop={{ col: 8 }}>
-                <h1>{t("homePageHeading")}</h1>
+                <ResponsiveH1>{t("homePageHeading")}</ResponsiveH1>
                 <div className="padding-top-1 padding-bottom-6">
                   <SearchCard />
                 </div>
@@ -85,22 +91,20 @@ function Home() {
             <Grid row>
               <Grid desktop={{ col: 8 }}>
                 <GuidedSearchSection className="dark-background desktop:radius-lg margin-bottom-8">
-                  <HighlightBox size="sm">
-                    <div className="display-flex">
-                      <div>
-                        <Hands className="text-white" height={20} />
-                      </div>
-                      <div className="margin-left-2 width-full">
-                        {t("guidedSearchPrompt")}{" "}
-                        <Link
-                          className="usa-link usa-link--unstyled dark-background text-bold"
-                          to="/guided-search"
-                        >
-                          {t("guidedSearchButton")}
-                        </Link>
-                      </div>
+                  <div className="display-flex">
+                    <div className="display-none desktop:display-block">
+                      <Hands className="text-white" height={20} />
                     </div>
-                  </HighlightBox>
+                    <div className="margin-left-1 width-full">
+                      {t("guidedSearchPrompt")}{" "}
+                      <Link
+                        className="usa-link usa-link--unstyled dark-background text-bold"
+                        to="/guided-search"
+                      >
+                        {t("guidedSearchButton")}
+                      </Link>
+                    </div>
+                  </div>
                 </GuidedSearchSection>
               </Grid>
             </Grid>

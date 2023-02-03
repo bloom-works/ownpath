@@ -43,11 +43,11 @@ const StyledZipContainer = styled.div`
     height: 3rem;
     background-image: none;
     padding-left: 0.8rem;
-    min-width: 160px;
+    min-width: 180px;
   }
 
   & #zip[value=""] {
-    color: var(--grey, gray);
+    color: #71767a;
     padding-left: 2rem;
     background-image: url(${locationURL});
     background-repeat: no-repeat;
