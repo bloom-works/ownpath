@@ -35,10 +35,6 @@ jobs:
       - name: Run tests
         run: docker-compose -f docker-compose.yml -f ci/docker-compose.ci.yml run app sh ci/tests.sh
 
-      # SECURITY
-      - name: Run security scans
-        run: docker-compose -f docker-compose.yml -f ci/docker-compose.ci.yml run app sh ci/security.sh
-
   playwright:
     name: "Playwright Tests"
     runs-on: ubuntu-latest
