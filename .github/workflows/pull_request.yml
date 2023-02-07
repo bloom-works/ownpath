@@ -30,9 +30,6 @@ jobs:
       # COMMON PR CHECKS
       # Add/remove what you do/don't use. Common ones provided below
       # --------
-      # LINTER
-      - name: Run linter
-        run: docker-compose -f docker-compose.yml -f ci/docker-compose.ci.yml run app sh ci/linter.sh
 
       # TESTS
       - name: Run tests
