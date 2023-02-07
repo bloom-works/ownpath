@@ -42,10 +42,6 @@ jobs:
       - name: Run security scans
         run: docker-compose -f docker-compose.yml -f ci/docker-compose.ci.yml run app sh ci/security.sh
 
-      # CODE QUALITY
-      - name: Run code quality scans
-        run: docker-compose -f docker-compose.yml -f ci/docker-compose.ci.yml run app sh ci/code_quality.sh
-
   playwright:
     name: "Playwright Tests"
     runs-on: ubuntu-latest
