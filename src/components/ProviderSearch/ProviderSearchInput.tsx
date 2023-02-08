@@ -19,11 +19,8 @@ function ProviderSearchInput({}) {
   const navigate = useNavigate();
 
   // Take user to provider detail page when they click a provider name
-  const handleOnSelect = () => {
-    console.log("providersList", providersList);
-    // navigate({
-    //   pathname: `/result/${providerId}`,
-    // });
+  const handleOnSelect = (providersList: Item) => {
+    navigate(`/result/${providersList.id}`);
   };
 
   return (
