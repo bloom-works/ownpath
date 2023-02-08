@@ -30,7 +30,7 @@ function ProviderSearchInput({}) {
       >
         <ReactSearchAutocomplete<Item>
           items={providersList}
-          placeholder={t("Search providers")}
+          placeholder={t("providerSearchPlaceholder")}
           fuseOptions={{ keys: ["name"] }}
           resultStringKeyName="name"
           maxResults={6}
