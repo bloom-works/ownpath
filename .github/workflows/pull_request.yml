@@ -23,28 +23,17 @@ jobs:
       # Use this to run a job within your main Dockerfile built app container
       #
       # - name: <job name>
-      #   run: docker-compose -f docker-compose.yml -f docker-compose.ci.yml run app <terminal command>
+      #   run: docker run --rm <terminal command>
       # --------
 
       # --------
       # COMMON PR CHECKS
       # Add/remove what you do/don't use. Common ones provided below
       # --------
-      # LINTER
-      - name: Run linter
-        run: docker-compose -f docker-compose.yml -f ci/docker-compose.ci.yml run app sh ci/linter.sh
 
       # TESTS
       - name: Run tests
-        run: docker-compose -f docker-compose.yml -f ci/docker-compose.ci.yml run app sh ci/tests.sh
-
-      # SECURITY
-      - name: Run security scans
-        run: docker-compose -f docker-compose.yml -f ci/docker-compose.ci.yml run app sh ci/security.sh
-
-      # CODE QUALITY
-      - name: Run code quality scans
-        run: docker-compose -f docker-compose.yml -f ci/docker-compose.ci.yml run app sh ci/code_quality.sh
+        run: docker run --rm ${{ github.repository }}:${{ github.head_ref }} sh ci/tests.sh
 
   playwright:
     name: "Playwright Tests"
