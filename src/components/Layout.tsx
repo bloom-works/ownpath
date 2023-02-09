@@ -20,8 +20,8 @@ function Layout() {
     <Wrapper className="display-flex flex-column">
       <Header basic color="primary" role="banner">
         <Banner />
-        <div className="display-flex flex-justify-center ">
-          <div className=" display-flex flex-justify-left border-bottom border-base-lighter padding-y-2 padding-x-1">
+        <div className="display-flex flex-justify padding-x-6 border-bottom border-base-lighter">
+          <div className=" display-flex flex-justify-left padding-y-2 padding-x-1">
             <Link to="/" title="Home" aria-label="Home">
               <span className="usa-sr-only">{t("goToHomepage")}</span>
               {i18n.language === "es" ? (
@@ -50,7 +50,7 @@ function Layout() {
               />
             </ExternalLink>
           </div>
-          <div className="display-flex flex-justify-end">
+          <div className="display-flex flex-align-center">
             <ProviderSearchInput />
           </div>
         </div>

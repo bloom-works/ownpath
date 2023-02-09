@@ -2,6 +2,8 @@ import { ReactSearchAutocomplete } from "react-search-autocomplete";
 import CARE_PROVIDER_DATA from "../../data/ladders_data.json";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { AnalyticsAction, logEvent } from "../../utils/analytics";
 
 type Item = {
   id: string;
@@ -18,27 +20,30 @@ function ProviderSearchInput({}) {
   const { t } = useTranslation();
   const navigate = useNavigate();
 
-  // Take user to provider detail page when they click a provider name
+  const [searchString, setSearchString] = useState("");
+
   const handleOnSelect = (providersList: Item) => {
+    logEvent(AnalyticsAction.SearchProviderByName);
+
+    // setTimeout otherwise search string is not cleared when selecting via click
+    setTimeout(() => setSearchString(""), 1);
     navigate(`/result/${providersList.id}`);
   };
 
   return (
-    <div>
-      <div
-        style={{ width: 300, marginLeft: 100, marginBottom: 20, marginTop: 20 }}
-      >
-        <ReactSearchAutocomplete<Item>
-          items={providersList}
-          placeholder={t("providerSearchPlaceholder")}
-          fuseOptions={{ keys: ["name"] }}
-          resultStringKeyName="name"
-          maxResults={6}
-          onSelect={handleOnSelect}
-          styling={{ zIndex: 4 }} // To display it on top of the search box below
-          autoFocus={false}
-        />
-      </div>
+    <div className="width-card-lg">
+      <ReactSearchAutocomplete<Item>
+        items={providersList}
+        placeholder={t("providerSearchPlaceholder")}
+        fuseOptions={{ keys: ["name"] }}
+        resultStringKeyName="name"
+        maxResults={6}
+        onSelect={handleOnSelect}
+        styling={{ zIndex: 4, borderRadius: "4px", boxShadow: "none" }}
+        autoFocus={false}
+        inputSearchString={searchString}
+        onSearch={(s) => setSearchString(s)}
+      />
     </div>
   );
 }

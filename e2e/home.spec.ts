@@ -72,3 +72,12 @@ test("Zip search from homepage works on valid zip", async ({ page }) => {
   await expect(page.url()).toContain("zip=80203");
   await expect(page.url()).toContain("miles=5");
 });
+
+test("Provider search works", async ({ page }) => {
+  const providerSearch = page.locator("input[placeholder='Search providers']");
+
+  await providerSearch.fill("Str");
+  await page.locator("div[title='Strides LLC']").click();
+
+  await expect(page.url()).toContain("0016100001HA43IAAT");
+});
