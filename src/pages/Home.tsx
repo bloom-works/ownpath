@@ -30,9 +30,9 @@ const HeroSection = styled.div`
 const PeopleGridDesktop = styled.div`
   background-position: right bottom;
   background-repeat: no-repeat;
-  background-size: contain;
 
-  @media (min-width: 1180px) {
+  @media (min-width: 1024px) {
+    background-size: 40%;
     background-image: url(${PeopleGridDesktopPath});
   }
 `;
