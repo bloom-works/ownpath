@@ -1,6 +1,24 @@
-import { Dropdown } from "@trussworks/react-uswds";
+// import { Dropdown } from "@trussworks/react-uswds";
+import { useState } from "react";
+import Dropdown from "react-bootstrap/Dropdown";
 import { useTranslation } from "react-i18next";
+import styled from "styled-components";
 import { SearchFilters, TypeOfHelp } from "../../types";
+
+const DropdownToggle = styled(Dropdown.Toggle)`
+  background-color: white;
+  height: -webkit-fill-available;
+
+  &:hover,
+  &:focus {
+    background-color: white;
+    color: black;
+  }
+
+  border-width: 1px;
+  border-radius: 0.25rem;
+  border-color: #565c65;
+`;
 
 function TypeOfHelpDropDown({
   filters,
@@ -11,33 +29,50 @@ function TypeOfHelpDropDown({
 }) {
   const { t } = useTranslation();
 
+  const [selected, setSelected] = useState<string>("");
   return (
     <Dropdown
-      className={`height-6 margin-top-0 radius-md ${
-        !!filters.typesOfHelp.length ? "text-black" : "text-base"
-      }`}
       id="type-of-help-dropdown"
-      name="type-of-help"
-      onChange={(evt) => {
-        setTypeOfHelp(evt.target.value);
-      }}
       defaultValue=""
       aria-label={t("dropdownPrompt")}
     >
-      <option key="default" value="" disabled hidden>
-        {t("dropdownPrompt")}
-      </option>
-      {[
-        TypeOfHelp.MentalHealth,
-        TypeOfHelp.SubstanceUse,
-        TypeOfHelp.CourtMandatedTreatment,
-        TypeOfHelp.SuicidalIdeation,
-        TypeOfHelp.Unsure,
-      ].map((typeOfHelp) => (
-        <option key={typeOfHelp} className="text-black" value={typeOfHelp}>
-          {t(`typeOfHelpValues${typeOfHelp}`)}
-        </option>
-      ))}
+      <DropdownToggle
+        className={!!filters.typesOfHelp.length ? "text-black" : "text-base"}
+      >
+        {selected === ""
+          ? t("dropdownPrompt")
+          : t(`typeOfHelpValues${selected}`)}
+      </DropdownToggle>
+      <Dropdown.Menu>
+        <div className="padding-2">
+          <Dropdown.Item key="default" value="" disabled hidden>
+            {t("dropdownPrompt")}
+          </Dropdown.Item>
+          {[
+            TypeOfHelp.MentalHealth,
+            TypeOfHelp.SubstanceUse,
+            TypeOfHelp.CourtMandatedTreatment,
+            TypeOfHelp.SuicidalIdeation,
+            TypeOfHelp.Unsure,
+          ].map((typeOfHelp) => (
+            <Dropdown.Item
+              key={typeOfHelp}
+              className="text-black"
+              value={typeOfHelp}
+              onClick={() => {
+                setSelected(typeOfHelp);
+
+                // Ignore no-op value "unsure"
+                if (typeOfHelp !== TypeOfHelp.Unsure) {
+                  setTypeOfHelp(typeOfHelp);
+                }
+              }}
+            >
+              {t(`typeOfHelpValues${typeOfHelp}`)}
+            </Dropdown.Item>
+          ))}
+        </div>
+      </Dropdown.Menu>
     </Dropdown>
   );
 }
