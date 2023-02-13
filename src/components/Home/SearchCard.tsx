@@ -4,16 +4,15 @@ import { useTranslation } from "react-i18next";
 import { createSearchParams, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { AnalyticsAction, logEvent } from "../../utils/analytics";
-import { SearchFilters } from "../../types";
-import {
-  EMPTY_SEARCH_FILTERS,
-  getZipSearchMetadata,
-  toggleItemInList,
-} from "../../utils";
+import { SearchFilters, TypeOfHelp } from "../../types";
+import { EMPTY_SEARCH_FILTERS, getZipSearchMetadata } from "../../utils";
 import ZipInput from "../ZipInput";
 import { SurveyTriggerContext } from "../../App";
 import TypeOfHelpDropDown from "./TypeOfHelpDropDown";
 import locationURL from "../../images/location.svg";
+import { ReactComponent as Phone } from "../../images/phone.svg";
+
+import AppAlert from "../AppAlert";
 
 const SearchButton = styled(Button)`
   @media (min-width: 480px) {
@@ -43,7 +42,12 @@ const StyledZipContainer = styled.div`
     height: 3rem;
     background-image: none;
     padding-left: 0.8rem;
-    min-width: 180px;
+    width: 180px;
+  }
+
+  .usa-error-message {
+    white-space: normal;
+    width: 180px;
   }
 
   & #zip[value=""] {
@@ -71,8 +75,19 @@ function SearchCard() {
   // don't show validation errors until clicking search or clicking out of input
   const [showValidation, setShowValidation] = useState<boolean>(false);
 
+  console.log("filters", filters);
   return (
     <div>
+      {filters.typesOfHelp.includes(TypeOfHelp.SuicidalIdeation) && (
+        <div className="margin-y-2" id="crisis-content-box">
+          <AppAlert Icon={Phone}>
+            <div>{t("suicidalIdeationAlert")}</div>
+            <div className="text-bold margin-top-1">
+              {t("suicidalIdeationCta")}
+            </div>
+          </AppAlert>
+        </div>
+      )}
       <h2 className="margin-top-0 font-body-sm">{t("zipCodePrompt")}</h2>
       <form
         onSubmit={(evt) => {
@@ -105,10 +120,10 @@ function SearchCard() {
           />
           <TypeOfHelpDropDown
             filters={filters}
-            setTypeOfHelp={(typeOfHelp) =>
+            setTypeOfHelp={(typeOfHelp: TypeOfHelp) =>
               setFilters({
                 ...filters,
-                typesOfHelp: toggleItemInList(filters.typesOfHelp, typeOfHelp),
+                typesOfHelp: [typeOfHelp],
               })
             }
           />

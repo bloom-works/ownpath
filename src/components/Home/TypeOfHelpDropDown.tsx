@@ -7,7 +7,7 @@ import { SearchFilters, TypeOfHelp } from "../../types";
 
 const DropdownToggle = styled(Dropdown.Toggle)`
   background-color: white;
-  height: -webkit-fill-available;
+  height: 3rem;
 
   &:hover,
   &:focus {
@@ -30,7 +30,7 @@ function TypeOfHelpDropDown({
   setTypeOfHelp,
 }: {
   filters: SearchFilters;
-  setTypeOfHelp: (typeOfHelp: string) => void;
+  setTypeOfHelp: (typeOfHelp: TypeOfHelp) => void;
 }) {
   const { t } = useTranslation();
 
