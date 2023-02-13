@@ -95,7 +95,7 @@ function SearchCard() {
           }
         }}
       >
-        <StyledZipContainer className="grid-gap-sm">
+        <StyledZipContainer>
           <ZipInput
             zip={filters.zip}
             setZip={(zip) => setFilters({ ...filters, zip })}

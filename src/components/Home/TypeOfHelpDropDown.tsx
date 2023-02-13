@@ -12,7 +12,12 @@ const DropdownToggle = styled(Dropdown.Toggle)`
   &:hover,
   &:focus {
     background-color: white;
-    color: black;
+    color: #71767a;
+    border-color: #565c65;
+  }
+
+  &.show {
+    color: white !important;
   }
 
   border-width: 1px;

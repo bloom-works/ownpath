@@ -32,7 +32,7 @@ const PeopleGridDesktop = styled.div`
   background-repeat: no-repeat;
 
   @media (min-width: 1024px) {
-    background-size: 40%;
+    background-size: 36%;
     background-image: url(${PeopleGridDesktopPath});
   }
 `;
