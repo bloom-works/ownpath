@@ -24,7 +24,7 @@ function Banner() {
   const { t, i18n } = useTranslation();
 
   return (
-    <div className="Banner usa-dark-background font-body-3xs">
+    <div className="Banner usa-dark-background font-body-3xs margin-bottom-1">
       <Grid row className="flex-justify-end">
         <Grid col="auto" className="padding-x-2">
           <Grid row className="flex-justify-end flex-align-center">

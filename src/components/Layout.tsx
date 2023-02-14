@@ -13,6 +13,15 @@ const Wrapper = styled.div`
   min-height: 100%;
 `;
 
+const ResponsiveHeader = styled.div`
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column-reverse;
+  @media (min-width: 640px) {
+    flex-direction: row;
+  }
+`;
+
 function Layout() {
   const { t, i18n } = useTranslation();
 
@@ -20,8 +29,8 @@ function Layout() {
     <Wrapper className="display-flex flex-column">
       <Header basic color="primary" role="banner">
         <Banner />
-        <div className="display-flex flex-justify padding-x-6 border-bottom border-base-lighter">
-          <div className=" display-flex flex-justify-left padding-y-2 padding-x-1">
+        <ResponsiveHeader className="padding-x-0 tablet:padding-x-6 border-bottom border-base-lighter">
+          <div className=" display-flex flex-justify-center padding-y-2 padding-x-1">
             <Link to="/" title="Home" aria-label="Home">
               <span className="usa-sr-only">{t("goToHomepage")}</span>
               {i18n.language === "es" ? (
@@ -50,10 +59,10 @@ function Layout() {
               />
             </ExternalLink>
           </div>
-          <div className="display-flex flex-align-center">
+          <div className="display-flex flex-align-center flex-justify-center">
             <ProviderSearchInput />
           </div>
-        </div>
+        </ResponsiveHeader>
       </Header>
       <div className="flex-1">
         <Outlet />
