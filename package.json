@@ -14,7 +14,7 @@
     "@types/node": "~18.11.18",
     "@types/react": "~18.0.27",
     "@types/react-dom": "~18.0.10",
-    "@types/react-leaflet": "~2.8.2",
+    "@types/react-leaflet": "~3.0.0",
     "@types/styled-components": "~5.1.26",
     "@types/xlsx": "^0.0.36",
     "bootstrap": "^5.2.3",
