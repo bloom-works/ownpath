@@ -42,12 +42,20 @@ const StyledZipContainer = styled.div`
     height: 3rem;
     background-image: none;
     padding-left: 0.8rem;
-    width: 180px;
+    width: 100%;
+
+    @media (min-width: 480px) {
+      width: 180px;
+    }
   }
 
   .usa-error-message {
     white-space: normal;
-    width: 180px;
+    width: width: 100%;
+
+    @media (min-width: 480px) {
+      width: 180px;
+    };
   }
 
   & #zip[value=""] {

@@ -42,7 +42,9 @@ function TypeOfHelpDropDown({
       aria-label={t("dropdownPrompt")}
     >
       <DropdownToggle
-        className={!!filters.typesOfHelp.length ? "text-black" : "text-base"}
+        className={`width-full tablet:width-auto ${
+          !!filters.typesOfHelp.length ? "text-black" : "text-base"
+        }`}
       >
         {selected === ""
           ? t("dropdownPrompt")
@@ -62,7 +64,7 @@ function TypeOfHelpDropDown({
           ].map((typeOfHelp) => (
             <Dropdown.Item
               key={typeOfHelp}
-              className="text-black"
+              className="text-black text-wrap"
               value={typeOfHelp}
               onClick={() => {
                 setSelected(typeOfHelp);

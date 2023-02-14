@@ -35,6 +35,7 @@ function ZipInput({
           id="zip"
           name="zip"
           type="text"
+          inputMode="numeric"
           maxLength={5}
           value={zip}
           placeholder={placeholder}
