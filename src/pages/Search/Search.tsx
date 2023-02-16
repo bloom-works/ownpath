@@ -55,9 +55,6 @@ const ZipSearch = styled.form`
   width: fit-content;
   @media screen and (max-width: 40em) {
     width: 100%;
-    input {
-      width: 70%;
-    }
     button {
       width: 30%;
     }
@@ -241,18 +238,18 @@ function Search() {
                               setSearchParams({ ...searchFilters, zip });
                               setShowZipInput(false);
                             }}
-                            className="tablet:margin-left-1"
+                            className="tablet:margin-left-1 display-flex"
                           >
                             <ZipInput
                               zip={zip}
                               setZip={(_zip) => setZip(_zip)}
+                              className="width-full"
                               noLabel
                               autoFocus
-                            >
-                              <Button className="margin-left-1" type="submit">
-                                {t("search")}
-                              </Button>
-                            </ZipInput>
+                            />
+                            <Button className="margin-left-1" type="submit">
+                              {t("search")}
+                            </Button>
                           </ZipSearch>
                         </SearchContainer>
                       )}

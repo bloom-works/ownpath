@@ -24,7 +24,6 @@ const ResponsiveHeader = styled.div`
 
 function Layout() {
   const { t, i18n } = useTranslation();
-
   return (
     <Wrapper className="display-flex flex-column">
       <Header basic color="primary" role="banner">
