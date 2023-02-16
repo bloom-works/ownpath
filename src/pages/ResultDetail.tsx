@@ -26,17 +26,16 @@ import TelehealthOnlyMap from "../components/TelehealthOnlyMap";
 import PrintButton from "../components/PrintButton";
 
 function ResultDetail() {
+  const { t } = useTranslation();
+  const location = useLocation();
+  const params = useParams();
   // Ensure user sees the top of the page
   // (when coming from scrolled results list,
   // they were landing at the same y-coordinate)
   useEffect(() => {
     logPageView();
     handlePageLoad();
-  }, []);
-
-  const { t } = useTranslation();
-  const location = useLocation();
-  const params = useParams();
+  }, [params]);
 
   // If user navigated from /search results page, they have sent the entity-specific
   // data and the url search params as `prevSearch`

@@ -11,7 +11,7 @@ test("Homepage has content and search works", async ({ page }) => {
     hasText: "Search",
   });
 
-  await page.locator("input:visible").fill("80012");
+  await page.locator("input[name=zip]:visible").fill("80012");
   await search.click();
   await page.waitForTimeout(2000); // wait for search to finish
   // TODO: create loading state for search result page

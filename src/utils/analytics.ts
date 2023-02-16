@@ -37,6 +37,7 @@ export enum AnalyticsAction {
   ClickPaginationButton = "Click Pagination Button for results",
   VisitSurveyFromFooter = "Click OwnPath Survey Link in Footer ",
   VisitSurveyFromPrompt = "Click OwnPath Survey Link in prompt pop up",
+  SearchProviderByName = "Search for provider by name",
 }
 
 type AnalyticsEventProperties = {
