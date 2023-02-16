@@ -6,8 +6,19 @@ import styled from "styled-components";
 import { SearchFilters, TypeOfHelp } from "../../types";
 
 const DropdownToggle = styled(Dropdown.Toggle)`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
   background-color: white;
   height: 3rem;
+  border-width: 1px;
+  border-radius: 0.25rem;
+  border-color: #565c65;
+  width: 350px;
+  @media (max-width: 640px) {
+    width: 100%;
+  }
 
   &:hover,
   &:focus {
@@ -19,10 +30,12 @@ const DropdownToggle = styled(Dropdown.Toggle)`
   &.show {
     color: white !important;
   }
-
-  border-width: 1px;
-  border-radius: 0.25rem;
-  border-color: #565c65;
+`;
+const DropdownMenu = styled(Dropdown.Menu)`
+  width: 350px;
+  @media (max-width: 640px) {
+    width: 100%;
+  }
 `;
 
 function TypeOfHelpDropDown({
@@ -42,15 +55,13 @@ function TypeOfHelpDropDown({
       aria-label={t("dropdownPrompt")}
     >
       <DropdownToggle
-        className={`width-full tablet:width-auto ${
-          !!filters.typesOfHelp.length ? "text-black" : "text-base"
-        }`}
+        className={!!filters.typesOfHelp.length ? "text-black" : "text-base"}
       >
         {selected === ""
           ? t("dropdownPrompt")
-          : t(`typeOfHelpValues${selected}`)}
+          : t(`typeOfHelpShortValues${selected}`)}
       </DropdownToggle>
-      <Dropdown.Menu>
+      <DropdownMenu>
         <div className="padding-2">
           <Dropdown.Item key="default" value="" disabled hidden>
             {t("dropdownPrompt")}
@@ -79,7 +90,7 @@ function TypeOfHelpDropDown({
             </Dropdown.Item>
           ))}
         </div>
-      </Dropdown.Menu>
+      </DropdownMenu>
     </Dropdown>
   );
 }
