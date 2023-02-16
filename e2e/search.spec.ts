@@ -260,17 +260,12 @@ test("Survey prompt displays after event threshold met", async ({ page }) => {
   const monday = page.locator("input:visible[value=monday]");
   // - Paginate
   const pageNextButton = page.locator("button", { hasText: /Next/ });
-  // - View result detail
-  const fullDetailButton = page.locator("a", { hasText: /Full detail/ });
 
-  // Threshold is 3 events; then survey prompt should become visible
+  // Threshold is 2 events; then survey prompt should become visible
   expect(await surveyPrompt.isVisible()).toBeFalsy();
   await daysFilters.click();
   await monday.dispatchEvent("click");
   expect(await surveyPrompt.isVisible()).toBeFalsy();
   await pageNextButton.click();
-  expect(await surveyPrompt.isVisible()).toBeFalsy();
-  await fullDetailButton.first().click();
-  await page.waitForTimeout(1000);
   expect(await surveyPrompt.isVisible()).toBeTruthy();
 });

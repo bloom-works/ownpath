@@ -12,7 +12,7 @@ import FAQ from "./pages/FAQ";
 import Compare from "./pages/Compare";
 import SurveyPrompt from "./components/SurveyPrompt";
 
-const TRIGGER_EVENT_THRESHOLD = 3;
+const TRIGGER_EVENT_THRESHOLD = 2;
 
 export const SurveyTriggerContext = createContext<{
   incrementTriggerEventCount: () => void;
@@ -25,7 +25,7 @@ function App() {
     document.title = t("title");
   });
 
-  const [count, setCount] = useState(0);
+  const [_, setCount] = useState(0);
   const [shouldShowSurvey, setShouldShowSurvey] = useState(false);
 
   return (
