@@ -185,6 +185,7 @@ function GuidedSearch() {
             <>
               <Fieldset legend={t("locationQuestion")} legendStyle="large">
                 <ZipInput
+                  className="width-card"
                   zip={searchFilters.zip}
                   setZip={(zip) => setSearchFilters({ ...searchFilters, zip })}
                   showError={showZipValidation}

@@ -81,3 +81,23 @@ test("Provider search works", async ({ page }) => {
 
   await expect(page.url()).toContain("0016100001HA43IAAT");
 });
+
+test("Zip search with type of help works", async ({ page }) => {
+  const zipInput = page.locator("input[name=zip]:visible");
+  const typeOfHelpDropdown = page.locator("button", {
+    hasText: /I\'m looking for help with/,
+  });
+  const mentalHealthOption = page.locator("a:visible", {
+    hasText: /Mental health/,
+  });
+  const searchButton = page.locator("button:visible", { hasText: "Search" });
+
+  await zipInput.fill("80012");
+  await typeOfHelpDropdown.click();
+  await mentalHealthOption.click();
+  await searchButton.click();
+
+  await expect(page.url()).toContain("/search");
+  await expect(page.url()).toContain("zip=80012");
+  await expect(page.url()).toContain("typesOfHelp=mental_health");
+});

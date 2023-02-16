@@ -7,14 +7,21 @@ import ContentCard from "../components/Home/ContentCard";
 import { ReactComponent as ColoradoCrisisServicesLogo } from "../images/logos/colorado_crisis_services.svg";
 import { ReactComponent as IMatterLogo } from "../images/logos/imatter.svg";
 import { ReactComponent as CdhsLogo } from "../images/logos/cdhs.svg";
-import ZipCard from "../components/Home/ZipCard";
-import GuidedSearchCard from "../components/Home/GuidedSearchCard";
+import SearchCard from "../components/Home/SearchCard";
+import { ReactComponent as Hands } from "../images/hands.svg";
 import { logPageView } from "../utils/analytics";
 import CrisisAlert from "../components/Home/CrisisAlert";
-import PeopleGridMobilePath from "../images/people_grid.png";
+import PeopleGridMobilePath from "../images/people_grid_mobile.png";
 import PeopleGridDesktopPath from "../images/people_grid_desktop.png";
-import PeopleGridDesktopXlPath from "../images/people_grid_desktop_xl.png";
 import { handlePageLoad } from "../utils";
+import { Link } from "react-router-dom";
+
+const ResponsiveH1 = styled.h1`
+  font-size: 2.25rem;
+  @media (min-width: 480px) {
+    font-size: 3.25rem;
+  }
+`;
 
 const HeroSection = styled.div`
   background-color: #dbf0f9;
@@ -23,22 +30,22 @@ const HeroSection = styled.div`
 const PeopleGridDesktop = styled.div`
   background-position: right bottom;
   background-repeat: no-repeat;
-  background-size: contain;
+
   @media (min-width: 1024px) {
+    background-size: 36%;
     background-image: url(${PeopleGridDesktopPath});
-  }
-  @media (min-width: 1440px) {
-    background-image: url(${PeopleGridDesktopXlPath});
   }
 `;
 
 const PeopleGridMobile = styled.img`
   height: 5rem;
   object-fit: cover;
+  margin-top: -2rem;
 `;
 
 const GuidedSearchSection = styled.div`
-  background-color: #183647;
+  background-color: #32747f;
+  padding: 0.75rem;
 `;
 
 const ResourcesSection = styled.div`
@@ -73,10 +80,32 @@ function Home() {
           <GridContainer>
             <Grid row>
               <Grid desktop={{ col: 8 }}>
-                <h1>{t("homePageHeading")}</h1>
-                <div className="padding-top-1 padding-bottom-10">
-                  <ZipCard />
+                <ResponsiveH1>{t("homePageHeading")}</ResponsiveH1>
+                <div className="padding-top-1 padding-bottom-6">
+                  <SearchCard />
                 </div>
+              </Grid>
+            </Grid>
+          </GridContainer>
+          <GridContainer className=" padding-x-0 desktop:padding-x-4">
+            <Grid row>
+              <Grid desktop={{ col: 8 }}>
+                <GuidedSearchSection className="dark-background desktop:radius-lg margin-bottom-8">
+                  <div className="display-flex">
+                    <div className="display-none desktop:display-block">
+                      <Hands className="text-white" height={20} />
+                    </div>
+                    <div className="margin-left-1 width-full">
+                      {t("guidedSearchPrompt")}{" "}
+                      <Link
+                        className="usa-link usa-link--unstyled dark-background text-bold"
+                        to="/guided-search"
+                      >
+                        {t("guidedSearchButton")}
+                      </Link>
+                    </div>
+                  </div>
+                </GuidedSearchSection>
               </Grid>
             </Grid>
           </GridContainer>
@@ -87,13 +116,6 @@ function Home() {
           alt="Image of many faces"
         />
       </HeroSection>
-      <GuidedSearchSection className="dark-background padding-y-8">
-        <GridContainer>
-          <Grid row>
-            <GuidedSearchCard />
-          </Grid>
-        </GridContainer>
-      </GuidedSearchSection>
       <ResourcesSection className="padding-y-6" id="resources-section">
         <GridContainer>
           <Grid row gap="lg">
