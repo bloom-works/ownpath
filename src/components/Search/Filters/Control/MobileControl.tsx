@@ -25,6 +25,7 @@ import styled from "styled-components";
 import { ReactComponent as Close } from "../../../../images/close.svg";
 import TelehealthInput from "../TelehealthInput";
 import { SurveyTriggerContext } from "../../../../App";
+import PopulationsServedInput from "../PopulationsServedInput";
 
 const FiltersModalToggleButton = styled(Button)`
   font-size: 1.25rem;
@@ -130,6 +131,29 @@ function MobileControl({
               TypeOfHelp.SuicidalIdeation,
             ]}
             optionLabelPrefix="typeOfHelpValues"
+            filters={filters}
+            setFilters={setFilters}
+          />
+        </div>
+        <div className="margin-y-3">
+          <PopulationsServedInput
+            legend={t("populationsServedTitle")}
+            options={[
+              "AmericanIndian",
+              "Offender",
+              "Latinx",
+              "LGBTQIA+",
+              "Men",
+              "Military",
+              "Minors/Adolescents",
+              "OlderAdults",
+              "Homeless",
+              "ClientsreferredfromCourt/JudicialSystem",
+              "HIV",
+              "PregnantPerson",
+              "Women",
+              "Youth",
+            ]}
             filters={filters}
             setFilters={setFilters}
           />
