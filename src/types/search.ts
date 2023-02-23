@@ -5,6 +5,7 @@ import {
   DayOfWeek,
   FeePreference,
   Languages,
+  PopulationsServed,
 } from ".";
 
 export type CareProviderSearchMetadata = {
@@ -73,6 +74,7 @@ export type SearchFilters = {
   languages: Languages[];
   age?: AgeGroup;
   telehealth?: Telehealth;
+  populationsServed: PopulationsServed[];
 };
 export interface PaginationConfig {
   totalPages: number;

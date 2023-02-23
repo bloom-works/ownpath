@@ -13,6 +13,7 @@ import ControlToggles from "./DesktopControlToggles";
 import AgeGroupInput from "../AgeGroupInput";
 import TelehealthInput from "../TelehealthInput";
 import { SurveyTriggerContext } from "../../../../App";
+import PopulationsServedInput from "../PopulationsServedInput";
 
 type DesktopControlProps = {
   filters: SearchFilters;
@@ -151,6 +152,37 @@ function DesktopControl({
               TypeOfHelp.SuicidalIdeation,
             ]}
             optionLabelPrefix="typeOfHelpValues"
+            filters={filters}
+            setFilters={setFiltersAndIncrement}
+          />
+        </DesktopControlDropdown>
+
+        <DesktopControlDropdown
+          title={t("populationsServedTitle")}
+          hasSelection={!!filters.populationsServed?.length}
+          clear={() =>
+            setFiltersAndIncrement({ ...filters, populationsServed: [] })
+          }
+        >
+          <PopulationsServedInput
+            legend={t("populationsServedTitle")}
+            compact
+            options={[
+              "AmericanIndian",
+              "Offender",
+              "Latinx",
+              "LGBTQIA+",
+              "Men",
+              "Military",
+              "Minors/Adolescents",
+              "OlderAdults",
+              "Homeless",
+              "ClientsreferredfromCourt/JudicialSystem",
+              "HIV",
+              "PregnantPerson",
+              "Women",
+              "Youth",
+            ]}
             filters={filters}
             setFilters={setFiltersAndIncrement}
           />
