@@ -32,6 +32,7 @@ import {
   meetsAccessibilityNeeds,
   isOpenOnSelectedDays,
   supportsLanguages,
+  supportsPopulationsServed,
   DEFAULT_SPARSE_RADIUS_MILES,
   servesAgeGroup,
 } from "./utils";
@@ -443,6 +444,34 @@ describe("supportsLanguages", () => {
       true
     );
     expect(supportsLanguages(spanishProvider, ["Mandarin"])).toEqual(false);
+  });
+});
+
+describe("supportsPopulationsServed", () => {
+  test("true if no populations are specified", () => {
+    expect(supportsPopulationsServed(DUMMY_CARE_PROVIDER, [])).toEqual(true);
+  });
+
+  test("true if some but not all populations are supported", () => {
+    const americanIndianProvider = {
+      ...DUMMY_CARE_PROVIDER,
+      populationsServed: {
+        ...DUMMY_CARE_PROVIDER.populationsServed,
+        PregnantPerson: true,
+      },
+    };
+    expect(
+      supportsPopulationsServed(americanIndianProvider, ["PregnantPerson"])
+    ).toBe(true);
+    expect(
+      supportsPopulationsServed(americanIndianProvider, [
+        "PregnantPerson",
+        "Men",
+      ])
+    ).toEqual(true);
+    expect(
+      supportsPopulationsServed(americanIndianProvider, ["Latinx"])
+    ).toEqual(false);
   });
 });
 

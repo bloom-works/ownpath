@@ -143,16 +143,13 @@ function MobileControl({
               "Offender",
               "Latinx",
               "LGBTQIA+",
-              "Men",
               "Military",
-              "Minors/Adolescents",
-              "OlderAdults",
+              "Men",
               "Homeless",
               "ClientsreferredfromCourt/JudicialSystem",
               "HIV",
               "PregnantPerson",
               "Women",
-              "Youth",
             ]}
             filters={filters}
             setFilters={setFilters}
