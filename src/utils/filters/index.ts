@@ -6,3 +6,4 @@ export * from "./hours";
 export * from "./languages";
 export * from "./shared";
 export * from "./typeOfHelp";
+export * from "./populationServed";

@@ -132,6 +132,21 @@ function ControlToggles({ setFilters }: ControlTogglesProps) {
           }
         />
       ))}
+      {filters.populationsServed.map((filter) => (
+        <DesktopControlToggle
+          key={`${filter}`}
+          name={t(`${filter}`)}
+          onClick={() =>
+            setFilters({
+              ...filters,
+              populationsServed: toggleItemInList(
+                filters.populationsServed,
+                filter
+              ),
+            })
+          }
+        />
+      ))}
       {!!filters.telehealth && (
         <DesktopControlToggle
           key="telehealth"
