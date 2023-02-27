@@ -81,7 +81,7 @@ function Footer() {
                 <ColoradoBhaLogoWhite height={30} />
               </Grid>
               <Grid row className="flex-justify-end margin-top-2">
-                © 2022
+                © 2023
               </Grid>
             </Grid>
           </Grid>
