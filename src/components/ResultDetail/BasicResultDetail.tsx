@@ -29,44 +29,41 @@ function BasicResultDetail({ result, isCondensed }: BasicResultDetailProps) {
 
   return (
     <>
-      <div className="margin-bottom-3 print-no-margin display-flex flex-wrap">
-        {result.acceptingNewPatients && (
-          <Badge
-            bgColor="blue"
-            Icon={<BadgeCheck />}
-            text={t("acceptingNewPatients")}
-            showTooltip
-            tooltipText={t("acceptingNewPatientsNote")}
-          />
-        )}
-        {result.offersTelehealth && (
-          <Badge
-            bgColor="yellow"
-            Icon={<Telehealth height={13} />}
-            text={t("telehealthAvailable")}
-            showTooltip
-            tooltipText={t("telehealthAvailableNote")}
-          />
-        )}
-      </div>
+      {(result.acceptingNewPatients || result.offersTelehealth) && (
+        <div className="margin-bottom-1 print-no-margin display-flex flex-wrap">
+          {result.acceptingNewPatients && (
+            <Badge
+              bgColor="blue"
+              Icon={<BadgeCheck />}
+              text={t("acceptingNewPatients")}
+              showTooltip
+              tooltipText={t("acceptingNewPatientsNote")}
+            />
+          )}
+          {result.offersTelehealth && (
+            <Badge
+              bgColor="yellow"
+              Icon={<Telehealth height={13} />}
+              text={t("telehealthAvailable")}
+              showTooltip
+              tooltipText={t("telehealthAvailableNote")}
+            />
+          )}
+        </div>
+      )}
       <div className="margin-bottom-3 print-no-margin">
-        {result.phone && (
-          <ResultDatum
-            Icon={Telephone}
-            iconClassName="margin-top-05"
-            key="telephone"
-          >
-            <h3 className="usa-sr-only">{t("telephoneNumber")}</h3>
-            <Link variant="external" href={`tel:${result.phone}`}>
-              {result.phone}
-            </Link>
-          </ResultDatum>
-        )}
         {((!!result.address?.length && !!result.latlng) ||
           result.offersTelehealth) && (
           <ResultDatum
-            Icon={result.address?.length ? Location : Telehealth}
+            Icon={
+              !isCondensed
+                ? result.address?.length
+                  ? Location
+                  : Telehealth
+                : undefined
+            }
             iconClassName={"margin-top-05"}
+            className={isCondensed ? "margin-y-0" : ""}
             key="address"
           >
             <h3 className="usa-sr-only">{t("address")}</h3>
@@ -82,8 +79,25 @@ function BasicResultDetail({ result, isCondensed }: BasicResultDetailProps) {
             </div>
           </ResultDatum>
         )}
-        {result.website && (
-          <ResultDatum Icon={Website} key="website">
+        {result.phone && (
+          <ResultDatum
+            Icon={!isCondensed ? Telephone : undefined}
+            iconClassName="margin-top-05"
+            className={isCondensed ? "margin-y-0" : ""}
+            key="telephone"
+          >
+            <h3 className="usa-sr-only">{t("telephoneNumber")}</h3>
+            <Link variant="external" href={`tel:${result.phone}`}>
+              {result.phone}
+            </Link>
+          </ResultDatum>
+        )}
+        {!isCondensed && result.website && (
+          <ResultDatum
+            Icon={!isCondensed ? Website : undefined}
+            className={isCondensed ? "margin-y-0" : ""}
+            key="website"
+          >
             <h3 className="usa-sr-only">{t("website")}</h3>
             <WebsiteLink url={result.website} />
           </ResultDatum>
@@ -91,9 +105,11 @@ function BasicResultDetail({ result, isCondensed }: BasicResultDetailProps) {
       </div>
 
       <ResultDatum Icon={DollarSign} key="fees">
-        <h3 className="font-body-sm margin-top-0 margin-bottom-05">
-          {t("feesTitle")}
-        </h3>
+        {!isCondensed && (
+          <h3 className="font-body-sm margin-top-0 margin-bottom-05">
+            {t("feesTitle")}
+          </h3>
+        )}
         {!!anyAreTrue(result.fees) ? (
           <FeesInfo fees={result.fees} isCondensed={isCondensed} />
         ) : (
@@ -101,12 +117,14 @@ function BasicResultDetail({ result, isCondensed }: BasicResultDetailProps) {
         )}
       </ResultDatum>
 
-      <ResultDatum Icon={Clock} key="hours">
-        <h3 className="font-body-sm margin-top-0 margin-bottom-05">
-          {t("hours")}
-        </h3>
-        <Hours hours={result.hours} />
-      </ResultDatum>
+      {!isCondensed && (
+        <ResultDatum Icon={Clock} key="hours">
+          <h3 className="font-body-sm margin-top-0 margin-bottom-05">
+            {t("hours")}
+          </h3>
+          <Hours hours={result.hours} />
+        </ResultDatum>
+      )}
     </>
   );
 }

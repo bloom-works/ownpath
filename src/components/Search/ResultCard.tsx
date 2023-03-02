@@ -62,7 +62,7 @@ export default function ResultCard({ data, isMobile }: ResultCardProps) {
         to={`/result/${data.id}`}
         state={{ prevSearch: location.search, data }}
       >
-        <h2 className="margin-top-1 margin-bottom-3">{data.name}</h2>
+        <h2 className="margin-top-1 margin-bottom-1">{data.name}</h2>
       </Link>
       <BasicResultDetail result={data} isCondensed />
       <Grid

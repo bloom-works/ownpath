@@ -6,6 +6,7 @@ import {
   DayOfWeek,
   FeePreference,
   Languages,
+  PopulationsServed,
   SearchFilters,
   SearchResult,
   Telehealth,
@@ -27,6 +28,7 @@ import {
 } from "./filters";
 import { supportsLanguages } from "./filters/languages";
 import { providesTelehealth } from "./filters/telehealth";
+import { supportsPopulationsServed } from "./filters";
 
 export const getDistanceToZipCenter = (
   zip: string | null,
@@ -82,6 +84,7 @@ export function applySearchFilters(
     languages,
     age,
     telehealth,
+    populationsServed,
   } = filters;
 
   const zipSearchMetadata = getZipSearchMetadata(zip);
@@ -104,7 +107,8 @@ export function applySearchFilters(
         isOpenOnSelectedDays(result, hours) &&
         supportsLanguages(result, languages) &&
         servesAgeGroup(result, age) &&
-        providesTelehealth(result, telehealth)
+        providesTelehealth(result, telehealth) &&
+        supportsPopulationsServed(result, populationsServed)
     )
     .sort(compareDistance)
     .map((result, idx) => {
@@ -134,6 +138,7 @@ export const EMPTY_SEARCH_FILTERS: SearchFilters = {
   accessibility: [],
   hours: [],
   languages: [],
+  populationsServed: [],
 };
 
 /**
@@ -157,6 +162,9 @@ export function getFiltersFromSearchParams(
     languages: searchParams.getAll("languages") as Languages[],
     age: searchParams.get("age") as AgeGroup,
     telehealth: searchParams.get("telehealth") as Telehealth,
+    populationsServed: searchParams.getAll(
+      "populationsServed"
+    ) as PopulationsServed[],
   };
 
   if (!filters.age) delete filters.age;
