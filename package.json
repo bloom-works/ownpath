@@ -31,7 +31,7 @@
     "react-dom": "~18.2.0",
     "react-ga4": "^2.0.0",
     "react-i18next": "~11.17.2",
-    "react-leaflet": "~4.2.0",
+    "react-leaflet": "~4.2.1",
     "react-markdown": "^8.0.3",
     "react-router-dom": "~6.8.1",
     "react-scripts": "~5.0.1",
