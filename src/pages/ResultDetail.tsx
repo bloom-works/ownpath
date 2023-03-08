@@ -126,6 +126,33 @@ function ResultDetail() {
       <Grid row gap>
         <Grid col={12} tablet={{ col: 6 }}>
           <section>
+            <h2 className="margin-top-1">{t("services")}</h2>
+
+            <h3 className="display-inline">{t("mentalHealthServices")}:</h3>
+            <BulletedList
+              boolMap={
+                data.mentalHealth.supported &&
+                anyAreTrue(data.mentalHealth.services)
+                  ? data.mentalHealth.services
+                  : { [`${t("moreInfo")}`]: true }
+              }
+              className="line-height-body-4"
+            />
+
+            <h3 className="display-inline">{t("substanceUseServices")}:</h3>
+            <BulletedList
+              boolMap={
+                data.substanceUse.supported &&
+                anyAreTrue(data.substanceUse.services)
+                  ? data.substanceUse.services
+                  : { [`${t("moreInfo")}`]: true }
+              }
+              className="line-height-body-4"
+            />
+          </section>
+        </Grid>
+        <Grid col={12} tablet={{ col: 6 }}>
+          <section>
             <h2 className="margin-top-1">{t("details")}</h2>
             <div>
               <div className="display-flex flex-align-center margin-bottom-05">
@@ -184,37 +211,6 @@ function ResultDetail() {
             </div>
           </section>
         </Grid>
-        {(data.substanceUse.supported || data.mentalHealth.supported) && (
-          <Grid col={12} tablet={{ col: 6 }}>
-            <section>
-              <h2 className="margin-top-1">{t("services")}</h2>
-              {data.mentalHealth.supported &&
-                anyAreTrue(data.mentalHealth.services) && (
-                  <>
-                    <h3 className="display-inline">
-                      {t("mentalHealthServices")}:
-                    </h3>
-                    <BulletedList
-                      boolMap={data.mentalHealth.services}
-                      className="line-height-body-4"
-                    />
-                  </>
-                )}
-              {data.substanceUse.supported &&
-                anyAreTrue(data.substanceUse.services) && (
-                  <>
-                    <h3 className="display-inline">
-                      {t("substanceUseServices")}:
-                    </h3>
-                    <BulletedList
-                      boolMap={data.substanceUse.services}
-                      className="line-height-body-4"
-                    />
-                  </>
-                )}
-            </section>
-          </Grid>
-        )}
       </Grid>
       <Grid row>
         <Grid col={12} className="print-hide">
