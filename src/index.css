@@ -262,8 +262,13 @@ legend,
 }
 
 /* create custom classes and styles */
-.data-icon {
+svg.data-icon {
   color: var(--dark-blue, darkblue);
+  background: #f5f9fc;
+  border-radius: 5px;
+  height: 20px;
+  width: 20px;
+  padding: 2px;
 }
 
 .bg-lightest-blue {

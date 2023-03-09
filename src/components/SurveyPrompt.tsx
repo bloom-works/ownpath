@@ -59,6 +59,7 @@ const SurveyPrompt = ({
           </Button>
         </div>
       </Collapsible>
+
     </SlideUp>
   );
 };

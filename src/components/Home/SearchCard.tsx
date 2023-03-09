@@ -9,7 +9,7 @@ import { EMPTY_SEARCH_FILTERS, getZipSearchMetadata } from "../../utils";
 import ZipInput from "../ZipInput";
 import { SurveyTriggerContext } from "../../App";
 import TypeOfHelpDropDown from "./TypeOfHelpDropDown";
-import locationURL from "../../images/location.svg";
+import locationURL from "../../images/location_blue.svg";
 import { ReactComponent as Phone } from "../../images/phone.svg";
 
 import AppAlert from "../AppAlert";
