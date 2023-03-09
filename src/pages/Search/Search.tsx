@@ -36,6 +36,18 @@ import CompareSelector from "../../components/Compare/CompareSelector";
 import ResultsPagination from "../../components/Pagination";
 import PrintButton from "../../components/PrintButton";
 
+export const SEARCH_FILTER_ORDER = [
+  "TypeOfHelp",
+  "Distance",
+  "Age",
+  "Populations",
+  "Language",
+  "Fees",
+  "Hours",
+  "Accessibility",
+  "Telehealth",
+] as const;
+
 const ResponsiveHeader = styled.h1`
   font-size: 1.5rem;
   @media (min-width: 40em) {

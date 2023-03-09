@@ -26,6 +26,7 @@ import { ReactComponent as Close } from "../../../../images/close.svg";
 import TelehealthInput from "../TelehealthInput";
 import { SurveyTriggerContext } from "../../../../App";
 import PopulationsServedInput from "../PopulationsServedInput";
+import { SEARCH_FILTER_ORDER } from "../../../../pages/Search/Search";
 
 const FiltersModalToggleButton = styled(Button)`
   font-size: 1.25rem;
@@ -78,84 +79,121 @@ function MobileControl({
             {t("cancel")} <Close className="data-icon margin-left-1" />
           </ModalToggleButton>
         </Grid>
-        <div className="margin-y-3">
-          <AccessibilityInput filters={filters} setFilters={setFilters} />
-        </div>
-        <div className="margin-y-3">
-          <AgeGroupInput
-            legend={t("ageTitle")}
-            filters={filters}
-            setFilters={setFilters}
-          />
-        </div>
-        <div className="margin-y-3">
-          <DistanceInput
-            legend={t("distanceTitle")}
-            filters={filters}
-            setFilters={setFilters}
-          />
-        </div>
-        <div className="margin-y-3">
-          <FeePreferenceInput
-            legend={t("feesTitle")}
-            options={["PrivateInsurance", "Medicaid", "SlidingFeeScale"]}
-            optionLabelPrefix="feesValues"
-            filters={filters}
-            setFilters={setFilters}
-          />
-        </div>
-        <div className="margin-y-3">
-          <HoursInput filters={filters} setFilters={setFilters} />
-        </div>
-        <div className="margin-y-3">
-          <LanguageInput
-            legend={t("languageTitle")}
-            filters={filters}
-            setFilters={setFilters}
-          />
-        </div>
-        <div className="margin-y-3">
-          <TelehealthInput
-            legend={t("telehealthTitle")}
-            filters={filters}
-            setFilters={setFilters}
-          />
-        </div>
-        <div className="margin-y-3">
-          <TypeOfHelpInput
-            legend={t("typeOfHelpTitle")}
-            options={[
-              TypeOfHelp.SubstanceUse,
-              TypeOfHelp.CourtMandatedTreatment,
-              TypeOfHelp.MentalHealth,
-              TypeOfHelp.SuicidalIdeation,
-            ]}
-            optionLabelPrefix="typeOfHelpValues"
-            filters={filters}
-            setFilters={setFilters}
-          />
-        </div>
-        <div className="margin-y-3">
-          <PopulationsServedInput
-            legend={t("populationsServedTitle")}
-            options={[
-              "AmericanIndian",
-              "Offender",
-              "Latinx",
-              "LGBTQIA+",
-              "Military",
-              "Men",
-              "Homeless",
-              "ClientsreferredfromCourt/JudicialSystem",
-              "HIV",
-              "PregnantPerson",
-              "Women",
-            ]}
-            filters={filters}
-            setFilters={setFilters}
-          />
-        </div>
-
+        {SEARCH_FILTER_ORDER.map((filter) => {
+          if (filter === "Accessibility") {
+            return (
+              <div className="margin-y-3">
+                <AccessibilityInput filters={filters} setFilters={setFilters} />
+              </div>
+            );
+          }
+          if (filter === "Age") {
+            return (
+              <div className="margin-y-3">
+                <AgeGroupInput
+                  legend={t("ageTitle")}
+                  filters={filters}
+                  setFilters={setFilters}
+                />
+              </div>
+            );
+          }
+          if (filter === "Distance") {
+            return (
+              <div className="margin-y-3">
+                <DistanceInput
+                  legend={t("distanceTitle")}
+                  filters={filters}
+                  setFilters={setFilters}
+                />
+              </div>
+            );
+          }
+          if (filter === "Fees") {
+            return (
+              <div className="margin-y-3">
+                <FeePreferenceInput
+                  legend={t("feesTitle")}
+                  options={["PrivateInsurance", "Medicaid", "SlidingFeeScale"]}
+                  optionLabelPrefix="feesValues"
+                  filters={filters}
+                  setFilters={setFilters}
+                />
+              </div>
+            );
+          }
+          if (filter === "Hours") {
+            return (
+              <div className="margin-y-3">
+                <HoursInput filters={filters} setFilters={setFilters} />
+              </div>
+            );
+          }
+          if (filter === "Language") {
+            return (
+              <div className="margin-y-3">
+                <LanguageInput
+                  legend={t("languageTitle")}
+                  filters={filters}
+                  setFilters={setFilters}
+                />
+              </div>
+            );
+          }
+          if (filter === "Telehealth") {
+            return (
+              <div className="margin-y-3">
+                <TelehealthInput
+                  legend={t("telehealthTitle")}
+                  filters={filters}
+                  setFilters={setFilters}
+                />
+              </div>
+            );
+          }
+          if (filter === "TypeOfHelp") {
+            return (
+              <div className="margin-y-3">
+                <TypeOfHelpInput
+                  legend={t("typeOfHelpTitle")}
+                  options={[
+                    TypeOfHelp.SubstanceUse,
+                    TypeOfHelp.CourtMandatedTreatment,
+                    TypeOfHelp.MentalHealth,
+                    TypeOfHelp.SuicidalIdeation,
+                  ]}
+                  optionLabelPrefix="typeOfHelpValues"
+                  filters={filters}
+                  setFilters={setFilters}
+                />
+              </div>
+            );
+          }
+          if (filter === "Populations") {
+            return (
+              <div className="margin-y-3">
+                <PopulationsServedInput
+                  legend={t("populationsServedTitle")}
+                  options={[
+                    "AmericanIndian",
+                    "Offender",
+                    "Latinx",
+                    "LGBTQIA+",
+                    "Military",
+                    "Men",
+                    "Homeless",
+                    "ClientsreferredfromCourt/JudicialSystem",
+                    "HIV",
+                    "PregnantPerson",
+                    "Women",
+                  ]}
+                  filters={filters}
+                  setFilters={setFilters}
+                />
+              </div>
+            );
+          }
+        })}
         <div className="position-sticky bottom-neg-1 padding-y-2 bg-white text-center  border-top border-base-lighter">
           <FiltersModalToggleButton
             onClick={() => {
