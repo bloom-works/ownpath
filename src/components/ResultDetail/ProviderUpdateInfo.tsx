@@ -14,7 +14,7 @@ function ProviderUpdateInfo() {
   return (
     <Highlight className="dark-backround radius-sm padding-2 display-flex">
       <div className="margin-right-2">
-        <Identification className="data-icon" />
+        <Identification />
       </div>
       <div className="dark-background">
         <Trans i18nKey="bhaProviderUpdate">
