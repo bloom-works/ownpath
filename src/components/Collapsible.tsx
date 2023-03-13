@@ -2,19 +2,21 @@ import { Button } from "@trussworks/react-uswds";
 import { useState } from "react";
 import { ReactComponent as Minimize } from "../images/angle-down.svg";
 import { ReactComponent as Maximize } from "../images/angle-up.svg";
-import { ReactComponent as Close } from "../images/close-survey.svg";
+import { ReactComponent as Close } from "../images/close.svg";
+
+type CollapsibleProps = {
+  open?: boolean;
+  title: React.ReactNode;
+  children: React.ReactNode;
+  hideSurvey: () => void;
+};
 
 const Collapsible = ({
   open,
   title,
   children,
   hideSurvey,
-}: {
-  open?: boolean;
-  title: string;
-  children: React.ReactNode;
-  hideSurvey: () => void;
-}) => {
+}: CollapsibleProps) => {
   const [isOpen, setIsOpen] = useState(open);
 
   const handleCollapse = () => {
@@ -23,9 +25,9 @@ const Collapsible = ({
 
   return (
     <div>
-      <div className="p-1 border-bottom d-flex justify-content-between align-items-center">
-        <h6 className="text-bold margin-left-2">{title}</h6>
-        <div className="display-flex flex-justify-end margin-right-0 tablet:margin-right-2">
+      <div className="padding-1 border-bottom d-flex flex-justify flex-align-center">
+        <div className="margin-left-2">{title}</div>
+        <div className="display-flex flex-justify-end flex-align-center margin-right-0 tablet:margin-right-2">
           <Button
             type="button"
             unstyled

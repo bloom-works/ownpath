@@ -31,7 +31,11 @@ const SurveyPrompt = ({
         shouldShowSurvey ? "" : "hidden"
       }`}
     >
-      <Collapsible hideSurvey={hideFunc} open title={t("ownpathSurvey")}>
+      <Collapsible
+        hideSurvey={hideFunc}
+        open
+        title={<h2 className="font-body-md m-0">{t("ownpathSurvey")}</h2>}
+      >
         <div className="margin-1 tablet:margin-x-3 ">
           <span className="text-bold font-family-heading margin-bottom-1 text-no-wrap">
             {t("surveyHeading")}
@@ -59,7 +63,6 @@ const SurveyPrompt = ({
           </Button>
         </div>
       </Collapsible>
-
     </SlideUp>
   );
 };
