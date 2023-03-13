@@ -40,7 +40,7 @@ const SurveyPrompt = ({
           title="cancel"
           onClick={hideFunc}
         >
-          <Close className="data-icon margin-left-1" />
+          <Close className="text-dark-blue margin-left-1" />
         </Button>
       </div>
       <div className="margin-1 tablet:margin-x-3 ">
