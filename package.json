@@ -18,7 +18,7 @@
     "@types/styled-components": "~5.1.26",
     "@types/xlsx": "^0.0.36",
     "bootstrap": "^5.2.3",
-    "csv-parse": "~5.3.3",
+    "csv-parse": "~5.3.6",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-unused-imports": "^2.0.0",
     "i18next": "~22.4.9",
