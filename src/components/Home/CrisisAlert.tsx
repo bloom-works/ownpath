@@ -18,7 +18,7 @@ function CrisisAlert({ onClose }: CrisisAlertProps) {
     <ShadowBox className="display-flex flex-justify padding-2 radius-lg bg-white ">
       <div className="display-flex">
         <div className="display-none tablet:display-block">
-          <Phone className="data-icon margin-right-2" />
+          <Phone className="text-dark-blue margin-right-2" />
         </div>
         <div>
           {t("crisisAlert")}{" "}
@@ -34,7 +34,7 @@ function CrisisAlert({ onClose }: CrisisAlertProps) {
         title="close"
         onClick={onClose}
       >
-        <Close className="data-icon" />
+        <Close className="text-dark-blue" />
       </Button>
     </ShadowBox>
   );

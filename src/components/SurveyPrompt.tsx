@@ -1,9 +1,8 @@
 import { useTranslation } from "react-i18next";
 import { Button, Link } from "@trussworks/react-uswds";
-
-import { ReactComponent as Close } from "../images/close-circle.svg";
 import styled from "styled-components";
 import { AnalyticsAction, logEvent } from "../utils/analytics";
+import Collapsible from "./Collapsible";
 
 const SlideUp = styled.div`
   bottom: 0;
@@ -32,43 +31,38 @@ const SurveyPrompt = ({
         shouldShowSurvey ? "" : "hidden"
       }`}
     >
-      <div className="display-flex flex-justify-end margin-right-0 tablet:margin-right-2">
-        <Button
-          className="width-auto"
-          type="button"
-          unstyled
-          title="cancel"
-          onClick={hideFunc}
-        >
-          <Close className="data-icon margin-left-1" />
-        </Button>
-      </div>
-      <div className="margin-1 tablet:margin-x-3 ">
-        <span className="text-bold font-family-heading margin-bottom-1 text-no-wrap">
-          {t("surveyHeading")}
-        </span>
-        <br />
-        {t("surveyPrompt")}
-      </div>
-      <div className="display-flex flex-column flex-align-center">
-        <Link
-          onClick={() => logEvent(AnalyticsAction.VisitSurveyFromPrompt)}
-          className="usa-button margin-x-3 margin-top-2 font-family-heading"
-          target="_blank"
-          href={t("surveyLink")}
-          tabIndex={shouldShowSurvey ? undefined : -1}
-        >
-          {t("surveyYes")}
-        </Link>
-        <Button
-          type="button"
-          onClick={hideFunc}
-          className="margin-top-2 font-body-2xs width-auto"
-          unstyled
-        >
-          {t("surveyNo")}
-        </Button>
-      </div>
+      <Collapsible
+        hideSurvey={hideFunc}
+        open
+        title={<h2 className="font-body-md m-0">{t("ownpathSurvey")}</h2>}
+      >
+        <div className="margin-1 tablet:margin-x-3 ">
+          <span className="text-bold font-family-heading margin-bottom-1 text-no-wrap">
+            {t("surveyHeading")}
+          </span>
+          <br />
+          {t("surveyPrompt")}
+        </div>
+        <div className="display-flex flex-column flex-align-center">
+          <Link
+            onClick={() => logEvent(AnalyticsAction.VisitSurveyFromPrompt)}
+            className="usa-button margin-x-3 margin-top-2 font-family-heading"
+            target="_blank"
+            href={t("surveyLink")}
+            tabIndex={shouldShowSurvey ? undefined : -1}
+          >
+            {t("surveyYes")}
+          </Link>
+          <Button
+            type="button"
+            onClick={hideFunc}
+            className="margin-top-2 font-body-2xs width-auto"
+            unstyled
+          >
+            {t("surveyNo")}
+          </Button>
+        </div>
+      </Collapsible>
     </SlideUp>
   );
 };
