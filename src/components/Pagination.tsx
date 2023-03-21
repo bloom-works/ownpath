@@ -28,6 +28,7 @@ function ResultsPagination({
       totalItems: results.length,
       totalPages: Math.ceil(results.length / paginationConfig.pageSize),
     }));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [results]);
 
   // HACK this component to inject translated content and add missing labels for svg icons

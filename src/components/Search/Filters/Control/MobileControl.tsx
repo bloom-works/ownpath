@@ -193,6 +193,8 @@ function MobileControl({
               </div>
             );
           }
+
+          return <></>;
         })}
         <div className="position-sticky bottom-neg-1 padding-y-2 bg-white text-center  border-top border-base-lighter">
           <FiltersModalToggleButton

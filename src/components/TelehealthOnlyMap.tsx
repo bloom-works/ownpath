@@ -2,7 +2,7 @@ import Map from "./Map";
 import styled from "styled-components";
 import AppAlert from "./AppAlert";
 import { ReactComponent as Info } from "../images/info.svg";
-import { CSSProperties, useRef } from "react";
+import { CSSProperties, RefObject, useRef } from "react";
 import { Map as LeafletMap } from "leaflet";
 import { CO_CENTER } from "../utils";
 import { Pane } from "react-leaflet";
@@ -25,16 +25,18 @@ const ShadowOverlayContainer = styled.div`
 type TelehealthOnlyMapProps = {
   alertMessage: string;
   mapContainerStyles?: CSSProperties;
+  externalMapRef?: RefObject<LeafletMap>;
 };
 function TelehealthOnlyMap({
   alertMessage,
   mapContainerStyles = {},
+  externalMapRef,
 }: TelehealthOnlyMapProps) {
   const mapRef = useRef<LeafletMap>(null);
 
   return (
     <Map
-      mapRef={mapRef}
+      mapRef={externalMapRef ?? mapRef}
       mapContainerProps={{
         center: CO_CENTER,
         zoom: 6,
@@ -50,7 +52,9 @@ function TelehealthOnlyMap({
       }}
     >
       <Pane name="shadow">
-        <ShadowOverlayContainer></ShadowOverlayContainer>
+        <ShadowOverlayContainer
+          style={mapContainerStyles}
+        ></ShadowOverlayContainer>
       </Pane>
       <MessageOverlayContainer>
         <AppAlert Icon={Info}>{alertMessage}</AppAlert>

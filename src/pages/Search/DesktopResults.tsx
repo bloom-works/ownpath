@@ -16,6 +16,8 @@ import { CareProviderSearchResult, SearchFilters } from "../../types";
 import { getMapMarker, getResultBounds, rerenderMap } from "../../utils";
 import ResultMapTelehealthToggleButton from "../../components/Search/ResultMapTelehealthToggleButton";
 import { PaginationContext } from "./Search";
+import TelehealthOnlyMap from "../../components/TelehealthOnlyMap";
+import { useTranslation } from "react-i18next";
 
 type DesktopResultsProps = {
   results: CareProviderSearchResult[];
@@ -28,6 +30,7 @@ type DesktopResultsProps = {
  * be picked up by screen readers
  */
 function DesktopResults({ results, filters, setFilters }: DesktopResultsProps) {
+  const { t } = useTranslation();
   const [selectedResultId, setSelectedResultId] = useState<string>("");
   const mapRef = useRef<LeafletMap>(null);
 
@@ -55,7 +58,12 @@ function DesktopResults({ results, filters, setFilters }: DesktopResultsProps) {
     if (firstResultLink && didChangePage === true) {
       (firstResultLink as HTMLElement).focus();
     }
+    //eslint-disable-next-line
   }, [mapRef, resultsSlice]);
+
+  const onlyTelehealthOnlyWithoutFilter =
+    resultsSlice.every((result) => !result.latlng) &&
+    filters.telehealth === undefined;
 
   return (
     <div className="display-none tablet:display-block">
@@ -77,31 +85,38 @@ function DesktopResults({ results, filters, setFilters }: DesktopResultsProps) {
           key="desktop-map"
           className="position-sticky top-0 print-hide"
         >
-          <ResultsMap bounds={getResultBounds(resultsSlice)} mapRef={mapRef}>
-            {resultsSlice.map(
-              (result) =>
-                result.latlng && (
-                  <Marker
-                    position={result.latlng}
-                    icon={getMapMarker(result, selectedResultId)}
-                    zIndexOffset={selectedResultId === result.id ? 1000 : 1}
-                    keyboard={false}
-                    key={result.id}
-                    eventHandlers={{
-                      click: () => {
-                        logEvent(AnalyticsAction.ClickMapMarker, {});
-                        setSelectedResultId(result.id);
-                        document.getElementById(result.id)?.scrollIntoView();
-                      },
-                    }}
-                  />
-                )
-            )}
-            <ResultMapTelehealthToggleButton
-              filters={filters}
-              setFilters={setFilters}
+          {onlyTelehealthOnlyWithoutFilter ? (
+            <TelehealthOnlyMap
+              alertMessage={t("searchTelehealthMapAlert")}
+              mapContainerStyles={{ height: "100vh" }}
             />
-          </ResultsMap>
+          ) : (
+            <ResultsMap bounds={getResultBounds(resultsSlice)} mapRef={mapRef}>
+              {resultsSlice.map(
+                (result) =>
+                  result.latlng && (
+                    <Marker
+                      position={result.latlng}
+                      icon={getMapMarker(result, selectedResultId)}
+                      zIndexOffset={selectedResultId === result.id ? 1000 : 1}
+                      keyboard={false}
+                      key={result.id}
+                      eventHandlers={{
+                        click: () => {
+                          logEvent(AnalyticsAction.ClickMapMarker, {});
+                          setSelectedResultId(result.id);
+                          document.getElementById(result.id)?.scrollIntoView();
+                        },
+                      }}
+                    />
+                  )
+              )}
+              <ResultMapTelehealthToggleButton
+                filters={filters}
+                setFilters={setFilters}
+              />
+            </ResultsMap>
+          )}
         </Grid>
       </Grid>
     </div>
