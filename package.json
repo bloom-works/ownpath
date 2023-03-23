@@ -36,7 +36,7 @@
     "react-router-dom": "~6.9.0",
     "react-scripts": "~5.0.1",
     "react-search-autocomplete": "^8.3.2",
-    "styled-components": "~5.3.8",
+    "styled-components": "~5.3.9",
     "ts-jest": "^28.0.7",
     "ts-node": "~10.9.1",
     "typescript": "~5.0.2",
