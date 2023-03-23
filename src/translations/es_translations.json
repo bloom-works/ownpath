@@ -88,6 +88,7 @@
   "compareCheckbox": "Compara proveedor",
   "telehealthOnlyProvidersButton": "Quiero ver solo proveedores de telemedicina",
   "allProvidersButton": "Quiero ver todos los proveedores",
+  "searchTelehealthMapAlert": "Los proveedores que cumplen con los parámetros de tu búsqueda solo ofrecen telemedicina (citas por teléfono o video) y no tienen un local físico. ",
   "paginationHeading": "Mostrando {{ firstResult }} - {{ lastResult }} de {{ results }} ",
   "providerSearchPlaceholder": "Busca proveedores",
   "detailsPageShare": "Comparte enlace",

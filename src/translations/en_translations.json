@@ -88,6 +88,7 @@
   "compareCheckbox": "Compare provider",
   "telehealthOnlyProvidersButton": "Show me telehealth-only providers",
   "allProvidersButton": "Show me all providers",
+  "searchTelehealthMapAlert": "The providers that fit your search criteria only offer telehealth (appointments by phone or video) and do not have physical locations.",
   "paginationHeading": "Showing {{ firstResult }} - {{ lastResult }} of {{ results }} ",
   "providerSearchPlaceholder": "Search providers",
   "detailsPageShare": "Share link",
