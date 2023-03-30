@@ -228,6 +228,8 @@ function DesktopControl({
               </DesktopControlDropdown>
             );
           }
+
+          return <></>;
         })}
       </Grid>
       <ControlToggles setFilters={setFiltersAndIncrement} />

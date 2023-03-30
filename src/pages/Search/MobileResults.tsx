@@ -20,6 +20,7 @@ import { getMapMarker, getResultBounds, rerenderMap } from "../../utils";
 import { ReactComponent as Close } from "../../images/close.svg";
 import { PaginationContext } from "./Search";
 import ResultMapTelehealthToggleButton from "../../components/Search/ResultMapTelehealthToggleButton";
+import TelehealthOnlyMap from "../../components/TelehealthOnlyMap";
 
 type MobileResultsProps = {
   results: CareProviderSearchResult[];
@@ -68,6 +69,10 @@ function MobileResults({ results, filters, setFilters }: MobileResultsProps) {
 
   const [selectedResult, setSelectedResult] =
     useState<CareProviderSearchResult>();
+
+  const onlyTelehealthOnlyWithoutFilter =
+    resultsSlice.every((result) => !result.latlng) &&
+    filters.telehealth === undefined;
   return (
     <div
       className="tablet:display-none border-top border-base-lighter padding-x-2 tablet:padding-x-0"
@@ -82,46 +87,55 @@ function MobileResults({ results, filters, setFilters }: MobileResultsProps) {
         <ResultsList results={results} isMobile />
       </div>
       <div className={isListView ? "display-none" : ""} key="mobile-map">
-        <ResultsMap
-          bounds={getResultBounds(resultsSlice)}
-          mapRef={mapRef}
-          mapHeight="300px"
-          isMobile
-          onClick={() => {
-            // Clear selected result card when map is
-            // clicked anywhere that is not a marker
-            setSelectedResult(undefined);
-          }}
-        >
-          {resultsSlice.map(
-            (result) =>
-              result.latlng && (
-                <Marker
-                  title={result.id}
-                  position={result.latlng}
-                  icon={getMapMarker(result, selectedResult?.id)}
-                  keyboard={false}
-                  zIndexOffset={selectedResult?.id === result.id ? 1000 : 1}
-                  key={result.id}
-                  eventHandlers={{
-                    click: () => {
-                      logEvent(AnalyticsAction.ClickMapMarker, {});
-                      setSelectedResult(
-                        results.find((r) => r.id === result.id)
-                      );
-                    },
-                  }}
-                />
-              )
+        <>
+          {onlyTelehealthOnlyWithoutFilter ? (
+            <TelehealthOnlyMap
+              externalMapRef={mapRef}
+              alertMessage={t("searchTelehealthMapAlert")}
+            />
+          ) : (
+            <ResultsMap
+              bounds={getResultBounds(resultsSlice)}
+              mapRef={mapRef}
+              mapHeight="300px"
+              isMobile
+              onClick={() => {
+                // Clear selected result card when map is
+                // clicked anywhere that is not a marker
+                setSelectedResult(undefined);
+              }}
+            >
+              {resultsSlice.map(
+                (result) =>
+                  result.latlng && (
+                    <Marker
+                      title={result.id}
+                      position={result.latlng}
+                      icon={getMapMarker(result, selectedResult?.id)}
+                      keyboard={false}
+                      zIndexOffset={selectedResult?.id === result.id ? 1000 : 1}
+                      key={result.id}
+                      eventHandlers={{
+                        click: () => {
+                          logEvent(AnalyticsAction.ClickMapMarker, {});
+                          setSelectedResult(
+                            results.find((r) => r.id === result.id)
+                          );
+                        },
+                      }}
+                    />
+                  )
+              )}
+              <ResultMapTelehealthToggleButton
+                filters={filters}
+                setFilters={setFilters}
+                onClick={() => {
+                  setIsListView(true);
+                }}
+              />
+            </ResultsMap>
           )}
-          <ResultMapTelehealthToggleButton
-            filters={filters}
-            setFilters={setFilters}
-            onClick={() => {
-              setIsListView(true);
-            }}
-          />
-        </ResultsMap>
+        </>
         {selectedResult ? (
           <div className="bg-white border border-base-lighter radius-lg padding-2 margin-bottom-1 position-relative top-neg-50px z-top">
             <Grid className="flex-justify-end" row>

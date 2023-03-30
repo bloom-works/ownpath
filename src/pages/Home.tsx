@@ -60,6 +60,8 @@ function Home() {
   useEffect(() => {
     logPageView();
     handlePageLoad({ title: t("title"), noFocusH1: true });
+
+    //eslint-disable-next-line
   }, []);
 
   return (
