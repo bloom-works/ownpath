@@ -45,11 +45,6 @@ resource "aws_s3_bucket" "storage" {
     force_destroy = true
 }
 
-resource "aws_s3_bucket_acl" "storage" {
-    bucket = aws_s3_bucket.storage.bucket
-    acl = "private"
-}
-
 resource "aws_s3_bucket_versioning" "storage" {
     bucket = aws_s3_bucket.storage.bucket
     versioning_configuration {
