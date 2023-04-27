@@ -59,13 +59,6 @@ resource "aws_s3_bucket" "storage" {
     force_destroy = true
 }
 
-resource "aws_s3_bucket_acl" "storage_acl" {
-    bucket = aws_s3_bucket.storage.bucket
-
-    # TODO This might be able to be `private` when CloudFront is up
-    acl = "public-read"
-}
-
 resource "aws_s3_bucket_policy" "storage_policy" {
     bucket = aws_s3_bucket.storage.bucket
     policy = data.aws_iam_policy_document.storage_policy.json
