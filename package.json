@@ -53,7 +53,6 @@
     "processdata": "ts-node src/data/process_data.ts",
     "zipreport": "ts-node src/data/zip_report.ts",
     "generatetranslations": "ts-node src/translations/generate_translations.ts",
-    "prepare": "husky install",
     "lint": "eslint 'src' --ignore-pattern node_modules/"
   },
   "lint-staged": {
@@ -109,7 +108,6 @@
     ]
   },
   "devDependencies": {
-    "husky": "^8.0.3",
     "lint-staged": "^13.2.0"
   }
 }
