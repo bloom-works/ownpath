@@ -22,14 +22,19 @@ const StyledDropdown = styled(Dropdown)`
 `;
 
 
+const MaintenanceBanner = styled.div`
+  background-color: #F8D347;
+`
+
 function Banner() {
   const { t, i18n } = useTranslation();
 
   return (
     <>
-    <div className="Banner bg-secondary-dark text-white font-body-xs padding-y-1 padding-x-3 desktop:padding-x-0 display-flex flex-align-center flex-justify-center">
-      <Info className="margin-right-1 display-none desktop:display-block" /> This site will be undergoing maintenance from approximately 11am to 2pm on April 27, 2023. If you see an error, please refresh the page.
-    </div>
+    <MaintenanceBanner className="Banner bg-secondary-dark text-black font-body-xs padding-y-1 padding-x-3 desktop:padding-x-0 display-flex flex-align-center flex-justify-center">
+      <Info className="margin-right-1 display-none desktop:display-block" /> 
+      OwnPath is getting better! Scheduled maintenance will be from 11am to 2pm today. If the page doesn't load, please refresh.
+    </MaintenanceBanner>
     <div className="Banner usa-dark-background font-body-3xs margin-bottom-1">
       <Grid row className="flex-justify-end">
         <Grid col="auto" className="padding-x-2">
