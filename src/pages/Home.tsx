@@ -4,9 +4,6 @@ import styled from "styled-components";
 
 import { useTranslation } from "react-i18next";
 import ContentCard from "../components/Home/ContentCard";
-import { ReactComponent as ColoradoCrisisServicesLogo } from "../images/logos/colorado_crisis_services.svg";
-import { ReactComponent as IMatterLogo } from "../images/logos/imatter.svg";
-import { ReactComponent as CdhsLogo } from "../images/logos/cdhs.svg";
 import SearchCard from "../components/Home/SearchCard";
 import { ReactComponent as Hands } from "../images/hands.svg";
 import { logPageView } from "../utils/analytics";
@@ -122,21 +119,21 @@ function Home() {
         <GridContainer>
           <Grid row gap="lg">
             <ContentCard
-              logo={<ColoradoCrisisServicesLogo />}
+              logo={require("../images/logos/colorado-crisis-services.png")}
               header={t("crisisServicesHeading")}
               body={t("crisisServicesContent")}
               cta={t("crisisServicesCta")}
               url={t("crisisServicesLink")}
             />
             <ContentCard
-              logo={<IMatterLogo />}
+              logo={require("../images/logos/imatter.png")}
               header={t("iMatterHeading")}
               body={t("iMatterContent")}
               cta={t("iMatterCta")}
               url={t("iMatterLink")}
             />
             <ContentCard
-              logo={<CdhsLogo height={60} />}
+              logo={require("../images/logos/cdhs.png")}
               header={t("domesticViolenceHeading")}
               body={t("domesticViolenceContent")}
               cta={t("domesticViolenceCta")}

@@ -1,8 +1,7 @@
 import { Grid, Link } from "@trussworks/react-uswds";
-import { ReactNode } from "react";
 
 type ContentCardProps = {
-  logo: ReactNode;
+  logo: string;
   header: string;
   body: string;
   cta: string;
@@ -11,15 +10,15 @@ type ContentCardProps = {
 function ContentCard({ logo, header, body, cta, url }: ContentCardProps) {
   return (
     <Grid tablet={{ col: true }}>
-      <div className="margin-y-3">
-        <div className="height-8 display-flex flex-justify-center flex-align-center">
-          {logo}
+      <div className="margin-bottom-3 margin-top-6 margin-left-3">
+        <div className="height-8 d-inline-flex flex-justify-center flex-align-center">
+          <img alt="logo" src={logo} />
         </div>
-        <h2 className="margin-y-2">{header}</h2>
+        <h2 className="margin-bottom-3 margin-top-2">{header}</h2>
         <p>{body}</p>
-        <Link href={url} target="_blank" variant="external">
+        <div className="margin-bottom-6"><Link href={url} target="_blank" variant="external">
           {cta}
-        </Link>
+        </Link></div>
       </div>
     </Grid>
   );
